@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://net/avatar/laser_cursor.gd" id="1_kpp1q"]
+[ext_resource type="Material" path="res://data/net/laser_dot.tres" id="2_hyg0d"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="3_x48e1"]
+[ext_resource type="Script" path="res://net/avatar/net_nameplate.gd" id="4_yljbg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_kdarh"]
+material = ExtResource("2_hyg0d")
+
+[node name="LaserCursor" type="Node3D" unique_id=897722653]
+script = ExtResource("1_kpp1q")
+
+[node name="Dot" type="MeshInstance3D" parent="." unique_id=1241794391]
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_kdarh")
+
+[node name="Plate" type="Label3D" parent="." unique_id=1228543277]
+visible = false
+pixel_size = 0.0022
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+font = ExtResource("3_x48e1")
+font_size = 36
+outline_size = 10
+script = ExtResource("4_yljbg")
+target_pixels = 15.0
+fade_start = 2000.0
+fade_end = 4000.0
+base_alpha = 0.62

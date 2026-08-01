@@ -28,40 +28,40 @@ rings = 10
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ekj5"]
 size = Vector3(0.17, 0.3, 0.26)
 
-[node name="DiegeticLever" type="StaticBody3D" unique_id=541544192]
+[node name="DiegeticLever" type="StaticBody3D" unique_id=122036863]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_87p0w")
 control_id = &"lever"
 label_text = "LEVER"
 
-[node name="Base" type="MeshInstance3D" parent="." unique_id=1629332494]
+[node name="Base" type="MeshInstance3D" parent="." unique_id=373816733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, 0)
 mesh = SubResource("BoxMesh_wbqmq")
 surface_material_override/0 = ExtResource("2_f1ubv")
 
-[node name="Boss" type="MeshInstance3D" parent="." unique_id=1624345290]
+[node name="Boss" type="MeshInstance3D" parent="." unique_id=619831358]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_v746a")
 surface_material_override/0 = ExtResource("2_f1ubv")
 
-[node name="Arm" type="Node3D" parent="." unique_id=1990205921]
+[node name="Arm" type="Node3D" parent="." unique_id=2145373108]
 
-[node name="Shaft" type="MeshInstance3D" parent="Arm" unique_id=67084407]
+[node name="Shaft" type="MeshInstance3D" parent="Arm" unique_id=1030846806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
 mesh = SubResource("BoxMesh_e8jlf")
 surface_material_override/0 = ExtResource("3_2dqq3")
 
-[node name="Grip" type="MeshInstance3D" parent="Arm" unique_id=1681147227]
+[node name="Grip" type="MeshInstance3D" parent="Arm" unique_id=245410569]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0)
 mesh = SubResource("SphereMesh_4v0n0")
 surface_material_override/0 = ExtResource("4_4cso7")
 
-[node name="Hit" type="CollisionShape3D" parent="." unique_id=1739515000]
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=1725429412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
 shape = SubResource("BoxShape3D_2ekj5")
 
-[node name="Label" type="Label3D" parent="." unique_id=754840638]
+[node name="Label" type="Label3D" parent="." unique_id=1228022371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0)
 pixel_size = 0.0014
 double_sided = false
@@ -73,7 +73,7 @@ font = ExtResource("5_82ikr")
 font_size = 48
 outline_size = 10
 
-[node name="State" type="Label3D" parent="." unique_id=699226472]
+[node name="State" type="Label3D" parent="." unique_id=579549299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0.082)
 pixel_size = 0.0014
 double_sided = false
@@ -85,6 +85,6 @@ font = ExtResource("5_82ikr")
 font_size = 48
 outline_size = 10
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1841245041]
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=904146506]
 unit_size = 3.0
 max_distance = 40.0

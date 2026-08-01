@@ -1,0 +1,74 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://net/avatar/player_avatar.gd" id="1_13r6o"]
+[ext_resource type="ArrayMesh" path="res://data/net/avatar_capsule.res" id="2_g8hbi"]
+[ext_resource type="Material" path="res://data/net/avatar_ghost.tres" id="3_0wsfa"]
+[ext_resource type="ArrayMesh" path="res://data/net/avatar_sphere.res" id="4_knvmq"]
+[ext_resource type="ArrayMesh" path="res://data/net/avatar_visor.res" id="5_4x7m2"]
+[ext_resource type="ArrayMesh" path="res://data/net/avatar_temples.res" id="6_xeydp"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="7_2w5oa"]
+[ext_resource type="Script" path="res://net/avatar/net_nameplate.gd" id="8_0k37l"]
+[ext_resource type="Material" path="res://data/net/beacon.tres" id="9_io5wk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pgwjm"]
+radius = 0.34
+height = 1.8
+
+[sub_resource type="QuadMesh" id="QuadMesh_2bxh3"]
+material = ExtResource("9_io5wk")
+center_offset = Vector3(0, 0.5, 0)
+
+[node name="PlayerAvatar" type="Node3D" unique_id=18072564]
+script = ExtResource("1_13r6o")
+
+[node name="Body" type="Node3D" parent="." unique_id=1692486573]
+
+[node name="Shell" type="MeshInstance3D" parent="Body" unique_id=163576717]
+gi_mode = 0
+mesh = ExtResource("2_g8hbi")
+
+[node name="Ghost" type="MeshInstance3D" parent="Body" unique_id=1519532664]
+visible = false
+material_override = ExtResource("3_0wsfa")
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("2_g8hbi")
+
+[node name="Bubble" type="MeshInstance3D" parent="Body" unique_id=556378703]
+visible = false
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("4_knvmq")
+
+[node name="Visor" type="MeshInstance3D" parent="Body" unique_id=32654949]
+gi_mode = 0
+mesh = ExtResource("5_4x7m2")
+
+[node name="Temples" type="MeshInstance3D" parent="Body" unique_id=613188752]
+gi_mode = 0
+mesh = ExtResource("6_xeydp")
+
+[node name="Hull" type="AnimatableBody3D" parent="Body" unique_id=1716990428]
+collision_layer = 4
+collision_mask = 0
+sync_to_physics = false
+
+[node name="Shape" type="CollisionShape3D" parent="Body/Hull" unique_id=2137379428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_pgwjm")
+
+[node name="Plate" type="Label3D" parent="." unique_id=853711210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
+pixel_size = 0.0022
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+font = ExtResource("7_2w5oa")
+font_size = 42
+outline_size = 10
+script = ExtResource("8_0k37l")
+
+[node name="Beacon" type="MeshInstance3D" parent="." unique_id=1113288200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55, 0)
+visible = false
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_2bxh3")

@@ -26,6 +26,20 @@ extends Node3D
 ## service a fixed number of queries; the target index refreshes a fixed number
 ## of rows; the ray pool is fixed. Adding forty more bodies makes each of them
 ## think less often. It does not make the frame longer.
+##
+## MULTIPLAYER: THIS WHOLE FILE IS THE HOST'S AND ON A GUEST IT DOES NOTHING.
+## `_physics_process` and `_on_spawned` are the only two ways anything in here
+## happens, and both stop at `NetGame.is_authority()` — so no think, path,
+## perception, enrolment, spawn, reinforcement or ledger push occurs anywhere but
+## on the host. A guest's bodies are puppets driven by `FirefightWarLink`.
+##
+## THE CHECK IS PER FRAME AND NOT LATCHED IN `_ready`, and that is not caution.
+## `NetGame` applies `--host` / `--join` a frame AFTER the main scene is up, so a
+## build launched straight into this demo reads `is_authority()` as true in
+## `_ready` and false a moment later. MEASURED with it latched: a guest ran its
+## own war of 71 bodies underneath the 66 it was being sent.
+##
+## Single player is untouched — `is_authority()` is true with no session at all.
 
 ## Emitted on the slow tick with the current standings, for the diegetic banners
 ## and the debug overlay. `owned` is indexed by `Factions.F`.
@@ -236,6 +250,8 @@ func _exit_tree() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not NetGame.is_authority():
+		return
 	if _opening_pending:
 		_try_opening()
 	_read_viewer()
@@ -263,7 +279,8 @@ func _physics_process(delta: float) -> void:
 		_command_accum = 0.0
 
 
-## Bodies of a faction currently standing. Read by the banners and the overlay.
+## Bodies of a faction standing. Zero on a guest, which enrols none: the counts
+## there come off the wire, through `FirefightWarLink.standings`.
 func body_count(faction: int) -> int:
 	var n: int = 0
 	for a: FirefightAgent in _agents:
@@ -304,13 +321,6 @@ func callouts() -> PackedInt32Array:
 ## The last few things said, oldest first. Formatted for a single overlay line.
 func callout_log() -> PackedStringArray:
 	return _call_log
-
-
-func _calls_total() -> int:
-	var n: int = 0
-	for k: int in _calls.size():
-		n += _calls[k]
-	return n
 
 
 ## Vantage and cover leases currently held across the whole battle, as
@@ -844,36 +854,18 @@ func _on_callout(kind: int, _p: Vector3, _target_id: int, squad_id: StringName) 
 		_call_log.remove_at(0)
 
 
+## THE COMMS AND COVER OVERLAY LINES THIS USED TO WRITE NOW LIVE ON THE DEMO
+## ROOT, built out of the public accessors above. They moved because this node
+## wrote them whether or not the overlay was up and never took them down, leaving
+## three stale lines on an autoload after the scene unloaded. The stdout copy
+## stays: it is a time series a `tools/watch.gd` run scrapes out of the log.
 func _publish(delta: float) -> void:
-	DebugHUD.note(&"firefight_comms", "comms  %d said  %s" % [_calls_total(), " ".join(_call_log)])
-	var claims: Vector2i = _cover.claims_held()
-	(
-		DebugHUD
-		. note(
-			&"firefight_cover",
-			(
-				"cover  %d vantage / %d held of %d points  %d crossing  %d crossed"
-				% [
-					claims.x,
-					claims.y,
-					0 if cover_set == null else cover_set.size(),
-					_paths.traversing(),
-					_paths.crossings_total(),
-				]
-			)
-		)
-	)
-	# WHY the meter above reads what it reads. A cover count on its own says
-	# nothing about which of the scoring gates is eating the field, and tuning a
-	# weight without this line is guessing at which one to turn.
-	var ledger: String = _cover.rejection_line()
-	if not ledger.is_empty():
-		DebugHUD.note(&"firefight_cover_why", "cover  " + ledger)
-		if cover_report_period > 0.0:
-			_cover_report -= delta
-			if _cover_report <= 0.0:
-				_cover_report = cover_report_period
-				print("cover  ", ledger)
+	if cover_report_period > 0.0:
+		var ledger: String = _cover.rejection_line()
+		_cover_report -= delta
+		if _cover_report <= 0.0 and not ledger.is_empty():
+			_cover_report = cover_report_period
+			print("cover  ", ledger)
 	var owned := PackedInt32Array()
 	var bodies := PackedInt32Array()
 	owned.resize(Factions.COUNT)
@@ -888,6 +880,8 @@ func _publish(delta: float) -> void:
 
 
 func _on_spawned(actor: EnemyActor) -> void:
+	if not NetGame.is_authority():
+		return
 	var agent: FirefightAgent = _by_actor.get(actor)
 	if agent == null:
 		agent = _enrol(actor)

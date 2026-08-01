@@ -9,9 +9,19 @@ extends Node
 ##
 ## Demos are registered here rather than discovered, so a missing scene is a loud
 ## error at the moment you try to enter it instead of a black screen.
+##
+## WHEN A GAME IS NETWORKED, THE HOST OWNS THIS. `NetGame` installs itself through
+## `set_network` on boot; after that a client asking to `go()` somewhere is
+## refused, and everything the host routes to is announced on `route_started` so
+## the clients can be sent after it through `follow_host`. None of that changes
+## anything in single-player, where there is no network object to ask.
 
 ## Emitted after a demo's scene is live. `demo_id` is empty for the main menu.
 signal demo_changed(demo_id: String)
+## Emitted the moment a route is COMMITTED to, before the fade — so a client can
+## start loading the same scene while the host is still fading out, rather than a
+## whole transition behind it. `NetGame` is the only listener that matters.
+signal route_started(demo_id: String)
 signal pause_changed(is_paused: bool)
 ## Emitted when a requested demo could not be loaded, so UI can say why.
 signal route_failed(demo_id: String, message: String)
@@ -93,6 +103,16 @@ var _fade_seconds: float = 0.28
 var _menu_scene: String = "res://ui/main_menu.tscn"
 var _paused: bool = false
 var _transitioning: bool = false
+## `NetGame`, or null in a build with no `net/`. Held as a plain Object and called
+## by name so this file names no autoload and compiles anywhere — including under
+## `--script`, where autoloads do not exist.
+var _net: Object = null
+## A `follow_host` that arrived mid-transition, applied when that one lands. The
+## host can only issue one route per transition, but the client's transition
+## starts a round trip later and ends a round trip later, so there is a real
+## window in which the next instruction would otherwise be dropped in silence.
+var _pending_follow: String = ""
+var _has_pending_follow: bool = false
 
 
 func _ready() -> void:
@@ -116,6 +136,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func go(demo_id: String) -> void:
 	if _transitioning:
 		return
+	if not _may_route():
+		_route_error(demo_id, "The host decides where everyone goes. Leave the game to pick.")
+		return
 	var info: Dictionary = demo_info(demo_id)
 	if info.is_empty():
 		_route_error(demo_id, "No demo is registered under the id '%s'." % demo_id)
@@ -135,8 +158,16 @@ func go(demo_id: String) -> void:
 
 ## Leave whatever is running and return to the main menu. Also the pause menu's
 ## exit: it unpauses, releases the mouse and forgets the current demo.
+##
+## A CLIENT asking for the menu is a client asking to leave the game, so that is
+## what it gets — `NetGame.leave()` drops the session and routes them home by
+## itself. That keeps the pause menu's existing exit button doing the obvious
+## thing without the pause menu having to know a network exists.
 func back_to_menu() -> void:
 	if _transitioning:
+		return
+	if not _may_route():
+		_net.call(&"leave")
 		return
 	if not ResourceLoader.exists(_menu_scene):
 		_route_error("", "The main menu scene %s does not exist." % _menu_scene)
@@ -149,6 +180,42 @@ func reload_current() -> void:
 	if current_demo.is_empty():
 		return
 	await go(current_demo)
+
+
+## `NetGame` hands itself over here on boot, and nothing else ever calls this.
+##
+## Push rather than pull, deliberately: this file must not name the `NetGame`
+## autoload. A `--script` harness or a bake tool that compiles `core/` has no
+## autoloads at all, and a hard reference would take the whole of `core/` down
+## with it. Passed as an Object and called by name for the same reason.
+func set_network(net: Object) -> void:
+	_net = net
+
+
+## Route because the HOST said so. `demo_id` is empty for the main menu.
+##
+## The one path that skips the client guard, and `NetGame` is its only caller. A
+## demo the host has and this build does not is reported through `route_failed`
+## rather than crashing — the client stays where it is, out of step but alive,
+## which is the better of the two bad outcomes.
+func follow_host(demo_id: String) -> void:
+	if _transitioning:
+		_pending_follow = demo_id
+		_has_pending_follow = true
+		return
+	_has_pending_follow = false
+	_pending_follow = ""
+	# No "already there" shortcut on purpose: the host only announces a route it
+	# actually took, so being told to go where you already are means it RELOADED,
+	# and following it is the whole job.
+	if demo_id.is_empty():
+		await _switch_to(_menu_scene, "")
+		return
+	var info: Dictionary = demo_info(demo_id)
+	if info.is_empty() or not ResourceLoader.exists(String(info["scene"])):
+		_route_error(demo_id, "The host went to '%s', which this build does not have." % demo_id)
+		return
+	await _switch_to(String(info["scene"]), demo_id)
 
 
 func has_demo(demo_id: String) -> bool:
@@ -223,13 +290,29 @@ func main_menu_scene() -> String:
 	return _menu_scene
 
 
+## True when the local machine may choose the scene: always in single-player, and
+## on the host in a networked session. A client is refused.
+func _may_route() -> bool:
+	if _net == null or not _net.has_method(&"is_networked"):
+		return true
+	if not bool(_net.call(&"is_networked")):
+		return true
+	return bool(_net.call(&"is_host"))
+
+
 func _switch_to(path: String, demo_id: String) -> void:
 	_transitioning = true
+	# Announced BEFORE the fade, not after the swap: a client told at the end of
+	# the host's transition starts its own a whole transition late, and the host
+	# would be playing while everybody else is still looking at black.
+	route_started.emit(demo_id)
 	set_paused(false)
 	await _fade_to(1.0)
 	var err: Error = get_tree().change_scene_to_file(path)
 	if err != OK:
 		_transitioning = false
+		_has_pending_follow = false
+		_pending_follow = ""
 		await _fade_to(0.0)
 		_route_error(demo_id, "Loading %s failed with error %d." % [path, err])
 		return
@@ -242,6 +325,11 @@ func _switch_to(path: String, demo_id: String) -> void:
 	demo_changed.emit(demo_id)
 	await _fade_to(0.0)
 	_transitioning = false
+	if _has_pending_follow:
+		var next: String = _pending_follow
+		_has_pending_follow = false
+		_pending_follow = ""
+		follow_host(next)
 
 
 func _fade_to(alpha: float) -> void:

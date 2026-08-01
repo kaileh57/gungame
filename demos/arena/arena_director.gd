@@ -134,8 +134,11 @@ var _squads: Dictionary = {}
 var _boards: Dictionary = {}
 var _viewer: Node3D = null
 var _squad_clock: float = 0.0
-## Where idle bodies drift, written by the demo. See `set_hunt_point`.
+## The one player, cached. See `set_hunt_points`, which is the only writer.
 var _hunt_point: Vector3 = Vector3.ZERO
+## Every player's position, when there is more than one. Empty in single player,
+## where `_hunt_point` is the whole answer and no distance has to be measured.
+var _hunt_points: PackedVector3Array = PackedVector3Array()
 ## The player's own target row, so "is this body coming for me" is a comparison
 ## and not a guess. Zero until `register_target` is handed a PLAYER-faction node.
 var _player_id: int = 0
@@ -213,7 +216,7 @@ func _physics_process(delta: float) -> void:
 		_ctx.blackboard = _board_for(brain.faction)
 		# Pushed on the tick rather than at adopt: the hunt point moves with the
 		# player, and a body holding a stale one walks at where you used to be.
-		brain.hunt_point = _hunt_point
+		brain.hunt_point = _nearest_hunt_point(brain.actor.global_position)
 		brain.hunt_standoff = hunt_standoff
 		brain.hunt_step = hunt_step if hunt_the_player else 0.0
 		brain.hunt_delay = hunt_delay
@@ -289,11 +292,18 @@ func register_viewer(node: Node3D) -> void:
 	_viewer = node
 
 
-## Where idle bodies drift. The demo writes the player's own position here every
-## frame; anything else — a zone marker, the middle of the floor — would work and
-## would read as a patrol instead of a hunt.
-func set_hunt_point(p: Vector3) -> void:
-	_hunt_point = p
+## Where idle bodies drift: every player in the compound. The demo writes the live
+## positions here every frame; anything else — a zone marker, the middle of the
+## floor — would work and would read as a patrol instead of a hunt.
+##
+## A LIST AND NOT A POINT, because there can be four of them. An idle body creeps
+## toward the NEAREST, which is the only sensible reading of "hunt the player" once
+## the compound holds more than one: a single shared point would send the whole wave
+## past three people to converge on a midpoint nobody is standing on.
+func set_hunt_points(points: PackedVector3Array) -> void:
+	_hunt_points = points
+	if points.size() == 1:
+		_hunt_point = points[0]
 
 
 ## Put a target into the world's table. The player calls this for itself; the
@@ -302,9 +312,18 @@ func set_hunt_point(p: Vector3) -> void:
 ## A PLAYER-faction target is also remembered by row and hooked for damage, so
 ## `focus_counts` and `player_hits` can answer the two questions this demo is
 ## for — how many of them are coming for you, and are their rounds arriving.
-func register_target(t: AITarget) -> int:
+##
+## `own` FALSE is the other three people in a networked compound. They are targets
+## in every way that matters to a brain — `AITargetIndex` flags a row as a player
+## off `AITarget.faction`, so `player_first`, `player_bias` and the whole priority
+## solve treat them exactly as they treat you. What they are not is the body THIS
+## machine is looking through, and `focus_counts`, `player_hits` and the awareness
+## census all answer "is the wave coming for ME". Letting whoever registered last
+## claim `_player_id` would quietly re-aim every one of those readouts at somebody
+## else's screen.
+func register_target(t: AITarget, own: bool = true) -> int:
 	var id: int = _index.add(t)
-	if t != null and t.faction == Factions.PLAYER:
+	if t != null and t.faction == Factions.PLAYER and own:
 		_player_id = id
 		_player_target = t
 		if not t.damaged.is_connected(_on_player_damaged):
@@ -461,6 +480,21 @@ func player_damage() -> float:
 ## and what tells a three-way brawl from a one-sided one.
 func faction_counts() -> PackedInt32Array:
 	return _census_faction
+
+
+## The player this body should be creeping toward. One comparison per player per
+## agent tick, and in single player the list is empty and it is not even that.
+func _nearest_hunt_point(from: Vector3) -> Vector3:
+	if _hunt_points.size() < 2:
+		return _hunt_point
+	var best: Vector3 = _hunt_points[0]
+	var best_d: float = from.distance_squared_to(best)
+	for i: int in range(1, _hunt_points.size()):
+		var d: float = from.distance_squared_to(_hunt_points[i])
+		if d < best_d:
+			best_d = d
+			best = _hunt_points[i]
+	return best
 
 
 func _on_player_damaged(amount: float, _from: Vector3, _attacker: Node) -> void:

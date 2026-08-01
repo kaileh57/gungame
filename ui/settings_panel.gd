@@ -21,7 +21,52 @@ signal closed
 ## next load.
 const ROWS: Array[Dictionary] = [
 	{"kind": "preset"},
-	{"kind": "header", "label": "Resolution"},
+	{"kind": "header", "label": "Display"},
+	{
+		"kind": "option",
+		"key": &"window_mode",
+		"label": "Window mode",
+		"values": [0, 1, 2],
+		## Checked against `GameSettings.WINDOW_MODE_NAMES` at boot — see
+		## `_verify_coverage`. A const cannot read an autoload, so the two are kept
+		## in step by an assertion rather than by sharing one array.
+		"names": ["Windowed", "Borderless", "Fullscreen"],
+		"hint":
+		(
+			"Borderless is a frameless window over the whole screen: alt-tabs instantly. "
+			+ "Fullscreen is exclusive: lower input lag, and nothing else gets a pixel. "
+			+ "Alt+Enter cycles all three from anywhere in the game."
+		)
+	},
+	{
+		"kind": "resolution",
+		"key": &"resolution",
+		"label": "Window size",
+		"hint":
+		(
+			"The size of the window in Windowed mode. Both fullscreen modes take the whole "
+			+ "screen and ignore it — no game can change a monitor's own mode. A size larger "
+			+ "than the desktop's free area is shrunk to fit; the figure on the right is what "
+			+ "the window actually is."
+		)
+	},
+	{
+		"kind": "slider",
+		"key": &"ui_scale",
+		"label": "HUD scale",
+		"min": 0.70,
+		"max": 1.40,
+		"step": 0.05,
+		"fmt": "%.0f%%",
+		"mul": 100.0,
+		"hint":
+		(
+			"Size of the menus, the HUD and the reticle, on top of the scaling the window "
+			+ "already does for itself. Worth turning down on an ultrawide, where the canvas "
+			+ "is scaled off a height that is small next to the width."
+		)
+	},
+	{"kind": "header", "label": "Rendering"},
 	{
 		"kind": "slider",
 		"key": &"render_scale",
@@ -157,6 +202,22 @@ const VALUE_WIDTH: int = 96
 ## read and slow enough not to be its own load.
 const FPS_PERIOD: float = 0.25
 
+## Common display aspects, for labelling a size in the window-size picker. Matched
+## by nearest ratio rather than by reducing the fraction, because 1366x768 reduces
+## to 683:384 — true, useless, and every player alive calls that screen 16:9.
+const ASPECT_LABELS: Dictionary = {
+	"5:4": 1.25,
+	"4:3": 1.3333333,
+	"3:2": 1.5,
+	"16:10": 1.6,
+	"16:9": 1.7777778,
+	"21:9": 2.3703704,
+	"32:9": 3.5555556,
+}
+## How far a size's ratio may sit from a listed aspect and still be called it.
+## 3440x1440 is 2.389 against 21:9's 2.370, and it is sold as 21:9.
+const ASPECT_TOLERANCE: float = 0.03
+
 var _widgets: Dictionary = {}
 var _preset_picker: OptionButton = null
 ## Set while a widget is being written from the store, so the widget's own change
@@ -190,6 +251,9 @@ func _process(delta: float) -> void:
 	var fps: int = Engine.get_frames_per_second()
 	_fps_label.text = "%d fps   %.2f ms" % [fps, 1000.0 / maxf(float(fps), 1.0)]
 	_fps_label.add_theme_color_override("font_color", UiStyle.meter_color(float(fps) / 120.0))
+	# On the same beat, because the answer changes without anything telling us: the
+	# player can drag the window frame, and the OS decides the size in fullscreen.
+	_write_window_readout()
 
 
 ## Show the page and pull every widget back into line with the store.
@@ -226,6 +290,8 @@ func _build() -> void:
 				_rows_box.add_child(_make_slider_row(row))
 			"option":
 				_rows_box.add_child(_make_option_row(row))
+			"resolution":
+				_rows_box.add_child(_make_resolution_row(row))
 
 
 func _make_header(text: String) -> Control:
@@ -322,6 +388,71 @@ func _make_option_row(row_def: Dictionary) -> Control:
 	return row
 
 
+## The one row whose choices are not known until the game is running: the sizes
+## depend on the screen the window happens to be on. Built empty and filled by
+## `_refresh_resolution_row`, which runs on every open and on every window-mode
+## change, so moving the window to a second monitor is enough to re-offer that
+## monitor's sizes.
+func _make_resolution_row(row_def: Dictionary) -> Control:
+	var key: StringName = row_def["key"]
+	var row := _row_shell(String(row_def["label"]), String(row_def.get("hint", "")))
+	var picker := OptionButton.new()
+	picker.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	picker.item_selected.connect(_on_resolution_selected)
+	row.add_child(picker)
+	var actual := Label.new()
+	actual.custom_minimum_size = Vector2(float(VALUE_WIDTH), 0.0)
+	actual.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	actual.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	actual.add_theme_color_override("font_color", UiStyle.TEXT_DIM)
+	actual.add_theme_font_size_override("font_size", UiStyle.FONT_SIZE_SMALL)
+	actual.tooltip_text = "What the window actually is right now."
+	row.add_child(actual)
+	var sizes: Array[Vector2i] = []
+	_widgets[key] = {
+		"kind": "resolution", "node": picker, "value": actual, "sizes": sizes, "def": row_def
+	}
+	return row
+
+
+## Rebuild the size list and the enabled state. Cheap — a dozen items — so it runs
+## on every sync rather than trying to work out when the display changed.
+func _refresh_resolution_row() -> void:
+	if not _widgets.has(&"resolution"):
+		return
+	var widget: Dictionary = _widgets[&"resolution"]
+	var picker := widget["node"] as OptionButton
+	var sizes: Array[Vector2i] = GameSettings.resolution_options()
+	widget["sizes"] = sizes
+	picker.clear()
+	for i: int in sizes.size():
+		picker.add_item(_resolution_label(sizes[i]), i)
+	# `resolution_options` guarantees the stored size is in the list, so a -1 here
+	# would be a bug in that guarantee rather than a config to be papered over.
+	picker.selected = maxi(0, sizes.find(GameSettings.resolution))
+	# Both fullscreen modes take the whole screen; Godot cannot change a monitor's
+	# video mode, so offering a choice there would be offering a lie.
+	picker.disabled = GameSettings.window_mode != GameSettings.WINDOW_WINDOWED
+	_write_window_readout()
+
+
+func _write_window_readout() -> void:
+	if not _widgets.has(&"resolution"):
+		return
+	var actual: Vector2i = GameSettings.window_size()
+	var label := _widgets[&"resolution"]["value"] as Label
+	label.text = "" if actual.x <= 0 else "%dx%d" % [actual.x, actual.y]
+
+
+func _on_resolution_selected(index: int) -> void:
+	if _applying:
+		return
+	var sizes: Array[Vector2i] = _widgets[&"resolution"]["sizes"]
+	if index < 0 or index >= sizes.size():
+		return
+	GameSettings.set_value(&"resolution", sizes[index])
+
+
 func _on_preset_selected(index: int) -> void:
 	if _applying:
 		return
@@ -364,6 +495,10 @@ func _on_setting_changed(key: StringName, value: Variant) -> void:
 		_sync_preset()
 	elif _widgets.has(key):
 		_write_widget(key, value)
+	# Going fullscreen greys the size picker out; coming back enables it. The mode
+	# row cannot do that to itself, so it is done from here where both are visible.
+	if key == &"window_mode":
+		_refresh_resolution_row()
 	_applying = false
 
 
@@ -380,6 +515,8 @@ func _write_widget(key: StringName, value: Variant) -> void:
 			var picker := widget["node"] as OptionButton
 			var values: Array = widget["def"]["values"]
 			picker.selected = maxi(0, values.find(value))
+		"resolution":
+			_refresh_resolution_row()
 
 
 func _write_slider_label(widget: Dictionary, value: float) -> void:
@@ -416,6 +553,30 @@ func _on_reset() -> void:
 	sync_all()
 
 
+## "1920 x 1080   16:9". The aspect is dropped when the size is not close to any
+## aspect a person would recognise.
+static func _resolution_label(size: Vector2i) -> String:
+	var aspect: String = _aspect_label(size)
+	if aspect.is_empty():
+		return "%d x %d" % [size.x, size.y]
+	return "%d x %d   %s" % [size.x, size.y, aspect]
+
+
+## The nearest common aspect within `ASPECT_TOLERANCE`, or an empty string.
+static func _aspect_label(size: Vector2i) -> String:
+	if size.x <= 0 or size.y <= 0:
+		return ""
+	var ratio: float = float(size.x) / float(size.y)
+	var best: String = ""
+	var best_error: float = ASPECT_TOLERANCE
+	for text: String in ASPECT_LABELS:
+		var error: float = absf(ratio - float(ASPECT_LABELS[text])) / ratio
+		if error < best_error:
+			best_error = error
+			best = text
+	return best
+
+
 ## A key in the store with no row is a key the player cannot reach. Raised loudly
 ## at boot rather than discovered by a player who wanted to turn fog off.
 func _verify_coverage() -> void:
@@ -424,11 +585,29 @@ func _verify_coverage() -> void:
 		if key == &"quality_preset" or _widgets.has(key):
 			continue
 		missing.append(String(key))
-	if missing.is_empty():
+	if not missing.is_empty():
+		push_error(
+			(
+				"SettingsPanel: GameSettings has %d key(s) with no row: %s."
+				% [missing.size(), ", ".join(missing)]
+			)
+		)
+	_verify_window_modes()
+
+
+## The window-mode row spells its three choices out as a const, because a const
+## cannot call an autoload. This is the price of that: a check that the words on
+## the buttons still mean what `GameSettings` thinks they mean.
+func _verify_window_modes() -> void:
+	if not _widgets.has(&"window_mode"):
+		return
+	var shown: Array = _widgets[&"window_mode"]["def"]["names"]
+	var owned: PackedStringArray = GameSettings.WINDOW_MODE_NAMES
+	if shown.size() == owned.size() and Array(owned) == shown:
 		return
 	push_error(
 		(
-			"SettingsPanel: GameSettings has %d key(s) with no row: %s."
-			% [missing.size(), ", ".join(missing)]
+			"SettingsPanel: the window-mode row offers %s, GameSettings defines %s."
+			% [str(shown), str(Array(owned))]
 		)
 	)

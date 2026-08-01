@@ -15,11 +15,22 @@ extends Node3D
 ## of taking the optic off entirely. Scavenging still walks the seed by one.
 ##
 ## The bench never touches the player. It emits, the demo wires.
+##
+## FOUR PEOPLE, ONE BENCH. There is exactly one console and it is the host's. A
+## client's round flashes a cap and asks; the host decides, rolls, and publishes
+## what is on the stand, where the dial is pointing and where the lever is sitting,
+## so all four seats are looking at the same console rather than four private ones.
+##
+## And `equip_requested` carries WHO. A cap is worked by a bullet, and by the time
+## the host's copy of that bullet reaches the control `RangeNet.actor()` is already
+## the peer id of whoever fired it — so the gun goes to the player who shot the
+## button and not to whoever happens to be standing at the bench.
 
 ## A new weapon is on the stand. Nothing has been equipped yet.
 signal weapon_rolled(spec: GunSpec)
-## Put this weapon in a holster slot. Slot 1 is only ever asked for a sidearm.
-signal equip_requested(slot: int, spec: GunSpec)
+## Put this weapon in a holster slot, for the player whose round worked the cap.
+## Slot 1 is only ever asked for a sidearm.
+signal equip_requested(slot: int, spec: GunSpec, id: int)
 ## Stand every target back up and zero the score.
 signal reset_requested
 ## Fresh paper on the board at 25 m.
@@ -47,6 +58,7 @@ const CARD_ROWS: Array = [
 	["HANDLING", &"handling", 100.0],
 	["RELIABILITY", &"reliability", 100.0],
 ]
+const RangeNetScript := preload("res://demos/range/range_net.gd")
 
 ## Where the bench weapon stands. Model units are 90 mm, so the assembly is
 ## scaled here and nowhere else.
@@ -70,6 +82,8 @@ var _spec: GunSpec = null
 var _display: Node3D = null
 var _seed: int = 0
 var _rand: RandomNumberGenerator = RandomNumberGenerator.new()
+var _net: RangeNetScript = null
+var _authority: bool = true
 
 
 func _ready() -> void:
@@ -80,8 +94,15 @@ func _ready() -> void:
 	_parts = get_node_or_null(parts_path) as DiegeticReadout
 	_bind_controls(self)
 	_set_enabled(&"equip_sidearm", false)
-	# The bench is not empty when you walk in. Somebody left a gun on it.
-	scavenge()
+	_bind_net()
+	# The bench is not empty when you walk in. Somebody left a gun on it — and
+	# because the opening seed and the dial are the same everywhere, every machine
+	# leaves the SAME gun on it, so a client has something on the stand before the
+	# host's first packet rather than an empty rig for a round trip.
+	if _authority:
+		scavenge()
+	else:
+		_show(GunFactory.roll(_seed, _wanted_class()))
 	set_process(display_spin > 0.0)
 
 
@@ -97,6 +118,8 @@ func current() -> GunSpec:
 
 ## Roll a fresh weapon of the dialled class onto the stand and step the seed.
 func scavenge() -> GunSpec:
+	if not _authority:
+		return _spec
 	var spec: GunSpec = GunFactory.roll(_seed, _wanted_class())
 	_seed += 1
 	if spec == null:
@@ -104,19 +127,21 @@ func scavenge() -> GunSpec:
 		return null
 	_show(spec)
 	weapon_rolled.emit(spec)
+	_publish()
 	return spec
 
 
 ## Swap one slot for a random other part of the same kind, keeping the roll seed
 ## so the weapon is recognisably the same gun with one different bone in it.
 func reroll(kind: StringName) -> GunSpec:
-	if _spec == null:
-		return null
+	if not _authority or _spec == null:
+		return _spec
 	var next: GunSpec = GunFactory.reroll_slot(_spec, kind, _rand)
 	if next == null:
 		return null
 	_show(next)
 	weapon_rolled.emit(next)
+	_publish()
 	return next
 
 
@@ -125,14 +150,50 @@ func wanted_class() -> String:
 	return _wanted_class()
 
 
-func _wanted_class() -> String:
+## Where the selector is pointing, as a detent index.
+func dial_index() -> int:
 	var dial := _controls.get(&"class_dial") as DiegeticDial
-	if dial == null:
-		return ""
-	return CLASSES[clampi(dial.selected_index(), 0, CLASSES.size() - 1)]
+	return 0 if dial == null else dial.selected_index()
+
+
+## Whether the scavenge lever is thrown right now. It springs back on its own, so
+## this is only ever true for the half second after somebody pulls it.
+func lever_on() -> bool:
+	var lever := _controls.get(&"scavenge_lever") as DiegeticLever
+	return lever != null and lever.is_on()
+
+
+## The host's picture of the console. Applied whole: what is on the stand, where
+## the selector points and which way the lever is thrown.
+func apply_state(spec: GunSpec, dial: int, lever: bool) -> void:
+	if _authority:
+		return
+	var knob := _controls.get(&"class_dial") as DiegeticDial
+	if knob != null:
+		knob.set_value(float(dial), false)
+	var arm := _controls.get(&"scavenge_lever") as DiegeticLever
+	if arm != null:
+		arm.set_on(lever, false)
+	if spec != null:
+		_show(spec)
+
+
+## One control actuated on the host. The value is the state; the flash and the
+## clack are what make it read as somebody else's hand on the console.
+func apply_control(id: StringName, value: float) -> void:
+	if _authority:
+		return
+	var control := _controls.get(id) as DiegeticControl
+	if control == null:
+		return
+	control.set_value(value, false)
+	control.flash()
+	_clack(control)
 
 
 func _show(spec: GunSpec) -> void:
+	if spec == null:
+		return
 	_spec = spec
 	_write_card(spec)
 	_write_parts(spec)
@@ -277,6 +338,15 @@ func _bar_color(ceiling: float, value: float) -> Color:
 # --- controls ---------------------------------------------------------------
 
 
+func _bind_net() -> void:
+	_net = RangeNetScript.of(self) as RangeNetScript
+	if _net == null:
+		return
+	_authority = _net.is_authority()
+	_net.bench_state.connect(apply_state)
+	_net.control_state.connect(apply_control)
+
+
 func _bind_controls(node: Node) -> void:
 	for child: Node in node.get_children():
 		var control := child as DiegeticControl
@@ -292,7 +362,7 @@ func _bind_controls(node: Node) -> void:
 ## The lever is a lever, not a switch: throwing it either way scavenges, and it
 ## springs back to SET a moment later so the next pull reads as a pull.
 func _on_lever(_on: bool, control: DiegeticControl) -> void:
-	if control.control_id != &"scavenge_lever":
+	if control.control_id != &"scavenge_lever" or not _authority:
 		return
 	scavenge()
 	if _on:
@@ -304,26 +374,60 @@ func _reset_lever(control: DiegeticControl) -> void:
 	var lever := control as DiegeticLever
 	if lever != null and lever.is_on():
 		lever.set_on(false, false)
+		_publish()
 
 
+## A cap was knocked in. On the host this runs for every player's round, and
+## `RangeNet.actor()` is whoever fired the one being resolved right now — which is
+## the whole answer to "who does this gun belong to".
 func _on_pressed(control: DiegeticControl) -> void:
+	if not _authority:
+		return
 	var id: StringName = control.control_id
+	var who: int = 1 if _net == null else _net.actor()
+	if _net != null:
+		_net.publish_control(control)
 	if SLOTS.has(id):
 		reroll(SLOTS[id] as StringName)
 		return
 	match id:
 		&"equip_primary":
 			if _spec != null:
-				equip_requested.emit(WeaponHolster.PRIMARY_SLOT, _spec)
+				equip_requested.emit(WeaponHolster.PRIMARY_SLOT, _spec, who)
 		&"equip_sidearm":
 			if _spec != null and _spec.sidearm:
-				equip_requested.emit(1, _spec)
+				equip_requested.emit(1, _spec, who)
 		&"reset_range":
 			reset_requested.emit()
 		&"clear_paper":
 			paper_clear_requested.emit()
 		&"class_dial":
 			pass
+
+
+## Push the whole console: the gun on the stand, the selector and the lever. Sent
+## as one because they are one thing to look at, and because a client that missed
+## a single control event is corrected by the next publish either way.
+func _publish() -> void:
+	if _net != null and _authority:
+		_net.publish_bench(_spec, dial_index(), lever_on())
+
+
+## The control's own clack, played where the control is. `DiegeticControl` plays
+## this itself when a round actuates it, which only ever happens on the host, so a
+## remote actuation would otherwise be a silent one.
+func _clack(control: DiegeticControl) -> void:
+	var speaker := control.get_node_or_null(^"Sound") as AudioStreamPlayer3D
+	if speaker != null and control.sound != null:
+		speaker.stream = control.sound
+		speaker.play()
+
+
+func _wanted_class() -> String:
+	var dial := _controls.get(&"class_dial") as DiegeticDial
+	if dial == null:
+		return ""
+	return CLASSES[clampi(dial.selected_index(), 0, CLASSES.size() - 1)]
 
 
 func _set_enabled(id: StringName, on: bool) -> void:

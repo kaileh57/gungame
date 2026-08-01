@@ -554,120 +554,120 @@ profiles = Array[ExtResource("22_i8m5a")]([SubResource("Resource_ji7x6"), SubRes
 resource_local_to_scene = true
 script = ExtResource("26_safos")
 
-[node name="Arena" type="Node3D" unique_id=1238047108]
+[node name="Arena" type="Node3D" unique_id=1202605839]
 script = ExtResource("1_slurm")
 spawner_paths = Array[NodePath]([NodePath("SpawnerScav"), NodePath("SpawnerFoundry"), NodePath("SpawnerChoir")])
 gate_paths = Array[NodePath]([NodePath("Compound/GateNorthWest"), NodePath("Compound/GateNorthEast"), NodePath("Compound/DoorEast"), NodePath("Compound/DoorWest")])
 patrol_anchors = PackedVector3Array(-29, 0, -21, -15, 0, -23, 1, 0, -23, 16, 0, -22, 29, 0, -20, -29, 0, -8, -18, 0, -5, 0, 0, -10, 14, 0, -9, 28, 0, -7, -24, 0, 9, -12, 0, 12, -4, 0, 6, 8, 0, 10, 13, 0, 13, 22, 0, 5, 29, 0, 12, 33.4, 3.4, 2, -27, 2.8, -19)
 
-[node name="World" type="WorldEnvironment" parent="." unique_id=1721437316 instance=ExtResource("2_8kqdc")]
+[node name="World" type="WorldEnvironment" parent="." unique_id=2108736239 instance=ExtResource("2_8kqdc")]
 environment = ExtResource("3_67bew")
 script = ExtResource("4_gmv0y")
 
-[node name="Vfx" type="Node3D" parent="." unique_id=1322522026 instance=ExtResource("5_c0342")]
+[node name="Vfx" type="Node3D" parent="." unique_id=64469703 instance=ExtResource("5_c0342")]
 script = ExtResource("6_n6j30")
 preset_budget_scale = PackedFloat32Array(0.3, 0.5, 0.75, 1, 1)
 
-[node name="Compound" type="Node3D" parent="." unique_id=617494177]
+[node name="Compound" type="Node3D" parent="." unique_id=1963172775]
 
-[node name="Shell" type="MeshInstance3D" parent="Compound" unique_id=646364557]
+[node name="Shell" type="MeshInstance3D" parent="Compound" unique_id=1035084300]
 mesh = SubResource("ArrayMesh_goxcv")
 
-[node name="ShellBody" type="StaticBody3D" parent="Compound" unique_id=2025086431]
+[node name="ShellBody" type="StaticBody3D" parent="Compound" unique_id=1839838471]
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape3D" parent="Compound/ShellBody" unique_id=88329410]
+[node name="Shape" type="CollisionShape3D" parent="Compound/ShellBody" unique_id=1814529182]
 shape = SubResource("ConcavePolygonShape3D_ne7wn")
 
-[node name="Nav" type="NavigationRegion3D" parent="Compound" unique_id=2043102959]
+[node name="Nav" type="NavigationRegion3D" parent="Compound" unique_id=959398721]
 navigation_mesh = SubResource("NavigationMesh_adn7q")
 
-[node name="GateNorthWest" type="Node3D" parent="Compound" unique_id=1212795695]
+[node name="GateNorthWest" type="Node3D" parent="Compound" unique_id=891055173]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14, 0, -30.45)
 script = ExtResource("8_g2t5w")
 travel = Vector3(0, 3.85, 0)
 seconds = 1.5
 
-[node name="Leaf" type="StaticBody3D" parent="Compound/GateNorthWest" unique_id=363906368]
+[node name="Leaf" type="StaticBody3D" parent="Compound/GateNorthWest" unique_id=615564110]
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Compound/GateNorthWest/Leaf" unique_id=1886518158]
+[node name="Mesh" type="MeshInstance3D" parent="Compound/GateNorthWest/Leaf" unique_id=1261921928]
 mesh = SubResource("ArrayMesh_1enta")
 
-[node name="Shape" type="CollisionShape3D" parent="Compound/GateNorthWest/Leaf" unique_id=540977802]
+[node name="Shape" type="CollisionShape3D" parent="Compound/GateNorthWest/Leaf" unique_id=1771248029]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 shape = SubResource("BoxShape3D_njclx")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/GateNorthWest" unique_id=393502936]
+[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/GateNorthWest" unique_id=29903093]
 unit_size = 6.0
 max_distance = 90.0
 
-[node name="GateNorthEast" type="Node3D" parent="Compound" unique_id=1037807657]
+[node name="GateNorthEast" type="Node3D" parent="Compound" unique_id=207854233]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14, 0, -30.45)
 script = ExtResource("8_g2t5w")
 travel = Vector3(0, 3.85, 0)
 seconds = 1.5
 
-[node name="Leaf" type="StaticBody3D" parent="Compound/GateNorthEast" unique_id=1730375385]
+[node name="Leaf" type="StaticBody3D" parent="Compound/GateNorthEast" unique_id=596730894]
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Compound/GateNorthEast/Leaf" unique_id=621828449]
+[node name="Mesh" type="MeshInstance3D" parent="Compound/GateNorthEast/Leaf" unique_id=1697902085]
 mesh = SubResource("ArrayMesh_tuc35")
 
-[node name="Shape" type="CollisionShape3D" parent="Compound/GateNorthEast/Leaf" unique_id=1925076279]
+[node name="Shape" type="CollisionShape3D" parent="Compound/GateNorthEast/Leaf" unique_id=473876926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 shape = SubResource("BoxShape3D_4oqot")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/GateNorthEast" unique_id=1794850735]
+[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/GateNorthEast" unique_id=373741811]
 unit_size = 6.0
 max_distance = 90.0
 
-[node name="DoorEast" type="Node3D" parent="Compound" unique_id=1835256521]
+[node name="DoorEast" type="Node3D" parent="Compound" unique_id=2011017669]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 38.45, 0, -6)
 script = ExtResource("8_g2t5w")
 travel = Vector3(0, 3.45, 0)
 seconds = 1.5
 
-[node name="Leaf" type="StaticBody3D" parent="Compound/DoorEast" unique_id=2071699912]
+[node name="Leaf" type="StaticBody3D" parent="Compound/DoorEast" unique_id=590498484]
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Compound/DoorEast/Leaf" unique_id=953104425]
+[node name="Mesh" type="MeshInstance3D" parent="Compound/DoorEast/Leaf" unique_id=1793509667]
 mesh = SubResource("ArrayMesh_tb6r7")
 
-[node name="Shape" type="CollisionShape3D" parent="Compound/DoorEast/Leaf" unique_id=1562673000]
+[node name="Shape" type="CollisionShape3D" parent="Compound/DoorEast/Leaf" unique_id=261430393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 shape = SubResource("BoxShape3D_hj1va")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/DoorEast" unique_id=2099868305]
+[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/DoorEast" unique_id=1988683807]
 unit_size = 6.0
 max_distance = 90.0
 
-[node name="DoorWest" type="Node3D" parent="Compound" unique_id=996000226]
+[node name="DoorWest" type="Node3D" parent="Compound" unique_id=284920231]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -38.45, 0, 2)
 script = ExtResource("8_g2t5w")
 travel = Vector3(0, 3.45, 0)
 seconds = 1.5
 
-[node name="Leaf" type="StaticBody3D" parent="Compound/DoorWest" unique_id=844698398]
+[node name="Leaf" type="StaticBody3D" parent="Compound/DoorWest" unique_id=769223856]
 collision_mask = 0
 
-[node name="Mesh" type="MeshInstance3D" parent="Compound/DoorWest/Leaf" unique_id=1445897908]
+[node name="Mesh" type="MeshInstance3D" parent="Compound/DoorWest/Leaf" unique_id=914692382]
 mesh = SubResource("ArrayMesh_fr0ed")
 
-[node name="Shape" type="CollisionShape3D" parent="Compound/DoorWest/Leaf" unique_id=424629218]
+[node name="Shape" type="CollisionShape3D" parent="Compound/DoorWest/Leaf" unique_id=376580621]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 shape = SubResource("BoxShape3D_b4s1l")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/DoorWest" unique_id=1735541716]
+[node name="Sound" type="AudioStreamPlayer3D" parent="Compound/DoorWest" unique_id=1584257659]
 unit_size = 6.0
 max_distance = 90.0
 
-[node name="Station" type="Node3D" parent="Compound" unique_id=469939318]
+[node name="Station" type="Node3D" parent="Compound" unique_id=1174844179]
 script = ExtResource("9_8b0nu")
 species = Array[StringName]([&"rat", &"picker", &"gasman", &"marksman", &"latchdog", &"sentinel", &"wasp", &"foreman", &"husk", &"stilt", &"skitter", &"gorger"])
 species_labels = PackedStringArray("SCAV RAT", "PICKER", "GASMAN", "MARKSMAN", "LATCHDOG", "SENTINEL", "WASP", "FOREMAN", "HUSK", "STILT", "SKITTER", "GORGER")
 
-[node name="SpeciesDial" type="StaticBody3D" parent="Compound/Station" unique_id=1769277182 instance=ExtResource("10_f4j8k")]
+[node name="SpeciesDial" type="StaticBody3D" parent="Compound/Station" unique_id=1938835309 instance=ExtResource("10_f4j8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.4, 2.55, 26.18)
 collision_layer = 2
 collision_mask = 0
@@ -676,7 +676,7 @@ options = PackedStringArray("I", "II", "III", "IV")
 control_id = &"SpeciesDial"
 label_text = "SPECIES"
 
-[node name="FactionDial" type="StaticBody3D" parent="Compound/Station" unique_id=1301263111 instance=ExtResource("10_f4j8k")]
+[node name="FactionDial" type="StaticBody3D" parent="Compound/Station" unique_id=1342694053 instance=ExtResource("10_f4j8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.9, 2.55, 26.18)
 collision_layer = 2
 collision_mask = 0
@@ -685,7 +685,7 @@ options = PackedStringArray("I", "II", "III", "IV")
 control_id = &"FactionDial"
 label_text = "FACTION"
 
-[node name="MixDial" type="StaticBody3D" parent="Compound/Station" unique_id=895321718 instance=ExtResource("10_f4j8k")]
+[node name="MixDial" type="StaticBody3D" parent="Compound/Station" unique_id=1225998919 instance=ExtResource("10_f4j8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.4, 2.55, 26.18)
 collision_layer = 2
 collision_mask = 0
@@ -694,7 +694,7 @@ options = PackedStringArray("I", "II", "III", "IV")
 control_id = &"MixDial"
 label_text = "MIX"
 
-[node name="CountDial" type="StaticBody3D" parent="Compound/Station" unique_id=41668257 instance=ExtResource("10_f4j8k")]
+[node name="CountDial" type="StaticBody3D" parent="Compound/Station" unique_id=1645683993 instance=ExtResource("10_f4j8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.1, 2.55, 26.18)
 collision_layer = 2
 collision_mask = 0
@@ -703,7 +703,7 @@ options = PackedStringArray("I", "II", "III", "IV")
 control_id = &"CountDial"
 label_text = "COUNT"
 
-[node name="AggressionDial" type="StaticBody3D" parent="Compound/Station" unique_id=104614007 instance=ExtResource("10_f4j8k")]
+[node name="AggressionDial" type="StaticBody3D" parent="Compound/Station" unique_id=2094238063 instance=ExtResource("10_f4j8k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6, 2.55, 26.18)
 collision_layer = 2
 collision_mask = 0
@@ -712,7 +712,7 @@ options = PackedStringArray("I", "II", "III", "IV")
 control_id = &"AggressionDial"
 label_text = "POSTURE"
 
-[node name="SpawnLever" type="StaticBody3D" parent="Compound/Station" unique_id=541544192 instance=ExtResource("12_8wofl")]
+[node name="SpawnLever" type="StaticBody3D" parent="Compound/Station" unique_id=122036863 instance=ExtResource("12_8wofl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2, 2.02, 26)
 collision_layer = 2
 collision_mask = 0
@@ -722,7 +722,7 @@ on_text = "GO"
 control_id = &"SpawnLever"
 label_text = "SPAWN"
 
-[node name="ClearLever" type="StaticBody3D" parent="Compound/Station" unique_id=696980451 instance=ExtResource("12_8wofl")]
+[node name="ClearLever" type="StaticBody3D" parent="Compound/Station" unique_id=131456945 instance=ExtResource("12_8wofl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.02, 26)
 collision_layer = 2
 collision_mask = 0
@@ -732,7 +732,7 @@ on_text = "WIPE"
 control_id = &"ClearLever"
 label_text = "CLEAR"
 
-[node name="DebugLever" type="StaticBody3D" parent="Compound/Station" unique_id=2027138845 instance=ExtResource("12_8wofl")]
+[node name="DebugLever" type="StaticBody3D" parent="Compound/Station" unique_id=2146858302 instance=ExtResource("12_8wofl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.2, 2.02, 26)
 collision_layer = 2
 collision_mask = 0
@@ -740,11 +740,11 @@ script = ExtResource("13_6iyr8")
 control_id = &"DebugLever"
 label_text = "AI DEBUG"
 
-[node name="Readout" type="Node3D" parent="Compound/Station" unique_id=1219635950 instance=ExtResource("14_h8s5c")]
+[node name="Readout" type="Node3D" parent="Compound/Station" unique_id=365799567 instance=ExtResource("14_h8s5c")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.7, 2.55, 26.18)
 script = ExtResource("15_6h56v")
 
-[node name="StationSign" type="Label3D" parent="Compound" unique_id=1006865125]
+[node name="StationSign" type="Label3D" parent="Compound" unique_id=2004453134]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 3.5, 26.39)
 pixel_size = 0.0022
 double_sided = false
@@ -755,7 +755,7 @@ text = "ENEMY TEST ARENA"
 font = ExtResource("16_elmva")
 font_size = 64
 
-[node name="RangeMark" type="Label3D" parent="Compound" unique_id=689278129]
+[node name="RangeMark" type="Label3D" parent="Compound" unique_id=49242662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, -28.8)
 pixel_size = 0.003
 double_sided = false
@@ -766,13 +766,13 @@ text = "76 m"
 font = ExtResource("16_elmva")
 font_size = 64
 
-[node name="Director" type="Node" parent="." unique_id=85790404]
+[node name="Director" type="Node" parent="." unique_id=218459560]
 script = ExtResource("17_6lld6")
 cover_set = SubResource("Resource_5wkpr")
 perception_tuning = ExtResource("19_dkl1n")
 role_doctrine = ExtResource("20_25mxn")
 
-[node name="SpawnerScav" type="Node3D" parent="." unique_id=757833754]
+[node name="SpawnerScav" type="Node3D" parent="." unique_id=1178799616]
 script = ExtResource("21_mbxwy")
 species = Array[StringName]([&"rat", &"picker", &"gasman", &"marksman", &"latchdog", &"sentinel", &"wasp", &"foreman", &"husk", &"stilt", &"skitter", &"gorger"])
 profiles = SubResource("Resource_pyipg")
@@ -784,7 +784,7 @@ door_clearance = 2.2
 yaw_jitter = 0.25
 spread_radius = 1.1
 
-[node name="SpawnerFoundry" type="Node3D" parent="." unique_id=392846475]
+[node name="SpawnerFoundry" type="Node3D" parent="." unique_id=894525166]
 script = ExtResource("21_mbxwy")
 species = Array[StringName]([&"rat", &"picker", &"gasman", &"marksman", &"latchdog", &"sentinel", &"wasp", &"foreman", &"husk", &"stilt", &"skitter", &"gorger"])
 profiles = SubResource("Resource_pyipg")
@@ -798,7 +798,7 @@ yaw_jitter = 0.25
 spread_radius = 1.1
 seed_value = 8932
 
-[node name="SpawnerChoir" type="Node3D" parent="." unique_id=498875860]
+[node name="SpawnerChoir" type="Node3D" parent="." unique_id=2108270059]
 script = ExtResource("21_mbxwy")
 species = Array[StringName]([&"rat", &"picker", &"gasman", &"marksman", &"latchdog", &"sentinel", &"wasp", &"foreman", &"husk", &"stilt", &"skitter", &"gorger"])
 profiles = SubResource("Resource_pyipg")
@@ -812,7 +812,7 @@ yaw_jitter = 0.25
 spread_radius = 1.1
 seed_value = 16851
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1931569987 instance=ExtResource("24_10vxt")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=539354987 instance=ExtResource("24_10vxt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 22)
 collision_layer = 4
 collision_mask = 3
@@ -821,15 +821,15 @@ safe_margin = 0.008
 script = ExtResource("25_j6ua3")
 slide = SubResource("Resource_cgtyk")
 
-[node name="Target" type="Node3D" parent="Player" unique_id=1045950074]
+[node name="Target" type="Node3D" parent="Player" unique_id=97826029]
 script = ExtResource("27_oo6gy")
 body_radius = 0.34
 
-[node name="CombatHud" type="CanvasLayer" parent="." unique_id=1147256423 instance=ExtResource("28_inmi0")]
+[node name="CombatHud" type="CanvasLayer" parent="." unique_id=26623305 instance=ExtResource("28_inmi0")]
 layer = 10
 script = ExtResource("29_7c514")
 
-[node name="Loadout" type="Node" parent="." unique_id=1171574046]
+[node name="Loadout" type="Node" parent="." unique_id=881711359]
 script = ExtResource("30_osjvu")
 start_seeds = PackedInt32Array(90210, 31337, 4711)
 start_classes = PackedStringArray("", "", "Sidearm")

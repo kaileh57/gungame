@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://demos/movement/hologram.gdshader" id="1_sb68l"]
+
+[resource]
+render_priority = 2
+shader = ExtResource("1_sb68l")
+shader_parameter/scan_density = null
+shader_parameter/scan_drift = null
+shader_parameter/scan_depth = null
+shader_parameter/edge_softness = null
+shader_parameter/flicker_rate = null
+shader_parameter/flicker_depth = null
+shader_parameter/view_falloff = null
+shader_parameter/taper_power = null

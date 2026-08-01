@@ -45,12 +45,18 @@ func _ready() -> void:
 
 
 ## Paper takes the shot, records it and scores it, and is never any worse off.
+##
+## A client's own round does not land here — the host owns the group, because a
+## group made of four machines' guesses is not a group. The hole comes back through
+## `_note_remote_hit` with the point the host resolved.
 func apply_bullet_damage(
 	amount: float, at: Vector3, _normal: Vector3, _dir: Vector3, _zone: StringName, _crit: float
 ) -> void:
-	var local: Vector3 = _face.to_local(at)
-	var offset := Vector2(local.x, local.y)
+	if not authority:
+		return
+	var offset: Vector2 = _hole_at(at)
 	var ring: int = maxi(0, 10 - roundi(offset.length() / ring_spacing))
+	struck.emit(amount, at, ring >= 10)
 	_push_hole(offset)
 	scored.emit(
 		points + ring * 2,
@@ -60,6 +66,18 @@ func apply_bullet_damage(
 	)
 	registered.emit(ring >= 10, false)
 	group_measured.emit(_spread * 1000.0, _holes.size(), _gun_name)
+
+
+## A hole the host put in this board. Same arithmetic, no scoring: the points for
+## it are already on their way as their own event.
+func _note_remote_hit(at: Vector3) -> void:
+	_push_hole(_hole_at(at))
+	group_measured.emit(_spread * 1000.0, _holes.size(), _gun_name)
+
+
+func _hole_at(at: Vector3) -> Vector2:
+	var local: Vector3 = _face.to_local(at)
+	return Vector2(local.x, local.y)
 
 
 ## Called before the shot is scored so the board belongs to whoever is shooting

@@ -14,9 +14,22 @@ extends Node3D
 ## reads its own properties every tick. Two are copied into helper resources at
 ## `_ready` and would otherwise go stale, so they are mirrored here; see
 ## `_mirror_derived`.
+##
+## THE BENCH IS SHARED. In a session every knob on it is replicated and anybody may turn
+## anything, which is what makes it a tuning table rather than four separate benches.
+## The split that makes that work is `knob_actuated` versus `tuning_changed`:
+## `knob_actuated` fires ONLY when a physical control on this machine was operated, and
+## `MovementLink` puts that on the wire; `receive()` is the other end and deliberately
+## does not fire it, so there is no echo to break. Everything a remote turn touches —
+## the property, the knob position, the readout — moves exactly as it does locally, and
+## the control flashes, because a dial that moves on its own with no acknowledgement
+## reads as a bug rather than as somebody else's hand.
 
 ## Emitted after any knob, preset or reset changes the controller.
 signal tuning_changed(prop: StringName, value: float)
+## Emitted when a control ON THIS MACHINE was operated. Never fired for a value that
+## arrived over the wire. This is the signal that goes on the wire.
+signal knob_actuated(id: StringName, value: float)
 
 ## Ids of the three controls that are not sliders. `MovementTuning` owns them so
 ## the builder can name them without loading this file.
@@ -41,6 +54,7 @@ var _player: PlayerController = null
 var _readout: DiegeticReadout = null
 var _preset: DiegeticDial = null
 var _slowmo: DiegeticLever = null
+var _reset: DiegeticControl = null
 var _sliders: Dictionary = {}
 ## Property values as the controller was baked, captured before anything is
 ## written. "REFERENCE" means exactly this. Keyed by control id.
@@ -142,6 +156,55 @@ func apply_preset(index: int) -> void:
 		apply(id, float(over[id]))
 
 
+## Apply a knob somebody else turned. Identical to operating it here, except that it
+## does not go back on the wire. The control is moved to match and flashed when the value
+## really changed, so a knob turning under your nose is legible as a hand and not a
+## glitch.
+func receive(id: StringName, value: float) -> void:
+	if _player == null:
+		return
+	if id == ID_PRESET:
+		var index: int = int(round(value))
+		apply_preset(index)
+		if _preset != null:
+			_preset.set_value(float(index), false)
+			_preset.flash()
+		return
+	if id == ID_RESET:
+		reset_to_reference()
+		if _preset != null:
+			_preset.set_value(0.0, false)
+		if _reset != null:
+			_reset.flash()
+		return
+	if id == ID_SLOWMO:
+		_set_slow(value > 0.5)
+		if _slowmo != null:
+			_slowmo.set_on(value > 0.5, false)
+			_slowmo.flash()
+		return
+	var before: float = _value_of(id)
+	apply(id, value)
+	if not is_equal_approx(before, _value_of(id)) and _sliders.has(id):
+		(_sliders[id] as DiegeticSlider).flash()
+
+
+## Every replicated value on this bench, in APPLY ORDER. The preset is first on purpose:
+## selecting one resets everything under it, so a snapshot that applied it last would
+## wipe the very numbers it was sent to carry.
+func snapshot() -> Dictionary:
+	var ids := PackedStringArray()
+	var values := PackedFloat32Array()
+	ids.append(String(ID_PRESET))
+	values.append(float(_preset.selected_index()) if _preset != null else 0.0)
+	for id: StringName in _defaults:
+		ids.append(String(id))
+		values.append(_value_of(id))
+	ids.append(String(ID_SLOWMO))
+	values.append(1.0 if _slowmo != null and _slowmo.is_on() else 0.0)
+	return {&"ids": ids, &"values": values}
+
+
 ## Peak speed, deepest fall, longest hang, last vault rise and the two jump rulers,
 ## cleared by a reset or by the dial. The signs on the course tell you the distances;
 ## this tells you what you did with them.
@@ -200,6 +263,7 @@ func _bind_control(control: DiegeticControl) -> void:
 			_slowmo.toggled.connect(_on_slowmo)
 		return
 	if id == ID_RESET:
+		_reset = control
 		control.pressed.connect(_on_reset)
 		return
 	var slider := control as DiegeticSlider
@@ -248,22 +312,48 @@ func _mirror_derived(id: StringName, value: float) -> void:
 # --- handlers ---------------------------------------------------------------
 
 
+## The four handlers below are the ONLY places a local hand reaches the bench: every one
+## of them is wired to a signal a physical control emits on actuation, and none of them
+## can be reached from `set_value(v, false)`, which is what `apply()` and `receive()` use.
+## That is why emitting `knob_actuated` here cannot loop back through the wire.
 func _on_slider_changed(value: float, id: StringName) -> void:
 	apply(id, value, false)
+	knob_actuated.emit(id, value)
 
 
 func _on_preset_selected(index: int, _text: String) -> void:
 	apply_preset(index)
+	knob_actuated.emit(ID_PRESET, float(index))
 
 
 func _on_reset() -> void:
 	reset_to_reference()
 	if _preset != null:
 		_preset.set_value(0.0, false)
+	knob_actuated.emit(ID_RESET, 0.0)
 
 
 func _on_slowmo(on: bool) -> void:
+	_set_slow(on)
+	knob_actuated.emit(ID_SLOWMO, 1.0 if on else 0.0)
+
+
+func _set_slow(on: bool) -> void:
 	Engine.time_scale = SLOW_SCALE if on else 1.0
+
+
+## What a knob currently reads, straight off the object that owns it rather than out of a
+## cache. Rows live on the controller or on `PlayerSlide`; a preset-only property such as
+## `terminal_velocity` lives on the controller and has no row at all.
+func _value_of(id: StringName) -> float:
+	if _player == null:
+		return 0.0
+	if _rows.has(id):
+		var row: Dictionary = _rows[id]
+		var host: Object = MovementTuning.host_of(_player, row)
+		return 0.0 if host == null else float(host.get(row[MovementTuning.KEY_PROP]))
+	var raw: Variant = _player.get(id)
+	return 0.0 if raw == null else float(raw)
 
 
 func _on_landed(_surface: int, _impact: float, fall_height: float) -> void:

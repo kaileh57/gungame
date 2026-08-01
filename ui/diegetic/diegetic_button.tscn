@@ -56,7 +56,7 @@ rings = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_k58m3"]
 size = Vector3(0.15, 0.15, 0.09)
 
-[node name="DiegeticButton" type="StaticBody3D" unique_id=1664760757]
+[node name="DiegeticButton" type="StaticBody3D" unique_id=2069199919]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_t0wwd")
@@ -65,28 +65,28 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"button"
 label_text = "BUTTON"
 
-[node name="Housing" type="MeshInstance3D" parent="." unique_id=1790660605]
+[node name="Housing" type="MeshInstance3D" parent="." unique_id=1961940111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.025)
 mesh = SubResource("BoxMesh_174rx")
 surface_material_override/0 = ExtResource("3_rl86w")
 
-[node name="Cap" type="Node3D" parent="." unique_id=189344332]
+[node name="Cap" type="Node3D" parent="." unique_id=653560749]
 
-[node name="CapBody" type="MeshInstance3D" parent="Cap" unique_id=1634419118]
+[node name="CapBody" type="MeshInstance3D" parent="Cap" unique_id=1749794818]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.01)
 mesh = SubResource("CylinderMesh_qbp2q")
 surface_material_override/0 = ExtResource("4_rgvvd")
 
-[node name="Lamp" type="MeshInstance3D" parent="Cap" unique_id=1313341690]
+[node name="Lamp" type="MeshInstance3D" parent="Cap" unique_id=1253418253]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.026)
 mesh = SubResource("CylinderMesh_jms35")
 surface_material_override/0 = SubResource("ShaderMaterial_6gsks")
 
-[node name="Hit" type="CollisionShape3D" parent="." unique_id=616281704]
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=394692220]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.012)
 shape = SubResource("BoxShape3D_k58m3")
 
-[node name="Label" type="Label3D" parent="." unique_id=536927266]
+[node name="Label" type="Label3D" parent="." unique_id=1876451136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098, 0.002)
 pixel_size = 0.0014
 double_sided = false
@@ -98,6 +98,6 @@ font = ExtResource("5_gpwkt")
 font_size = 48
 outline_size = 10
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=619474585]
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=891765197]
 unit_size = 3.0
 max_distance = 40.0

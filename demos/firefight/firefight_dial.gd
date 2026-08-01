@@ -11,9 +11,19 @@ extends FirefightControl
 ## It restores real time on the way out. A demo that leaves the engine running at
 ## a quarter speed hands the main menu back broken, and that is the kind of bug
 ## nobody thinks to look for.
+##
+## IN MULTIPLAYER IT IS ONE OBJECT IN ONE SHARED WORLD, so the host owns it. A
+## client that operates it does not turn its own drum: it emits
+## `detent_requested`, the link sends that to the host as intent, and the detent
+## comes back to everybody in the state packet through `set_detent`. Every
+## machine's needle, and every machine's `Engine.time_scale`, therefore agree —
+## which they have to, because a client's dead reckoning of a hundred bodies is
+## measured in simulated seconds and would run at the wrong speed otherwise.
 
 ## The dial reached a new detent. `scale` is the time scale now in force.
 signal detent_changed(index: int, scale: float)
+## A client operated the dial and is asking the host to step it.
+signal detent_requested
 
 ## Engine time scales the needle stops at, slowest first. Five is as many notches
 ## as fit legibly on a drum this size.
@@ -68,13 +78,40 @@ func scale_now() -> float:
 	return detents[_index] if _index < detents.size() else 1.0
 
 
-func activate(spectator: Node) -> void:
+func detent_index() -> int:
+	return _index
+
+
+## Step to the next detent. The authoritative move: the host's own press lands
+## here, and so does a client's request once the host has accepted it.
+func step_detent() -> void:
 	if detents.is_empty():
 		return
-	_index = (_index + 1) % detents.size()
+	set_detent((_index + 1) % detents.size())
+
+
+## Put the dial ON a detent. This is the path the wire takes, so it has to be
+## safe to call with the value the dial is already showing — which it is, and
+## which is why the state packet can carry the detent unconditionally.
+func set_detent(index: int) -> void:
+	if detents.is_empty():
+		return
+	var want: int = clampi(index, 0, detents.size() - 1)
+	if want == _index:
+		return
+	_index = want
 	_want_angle = _angle_for(_index)
 	set_physics_process(true)
 	_apply_scale()
+
+
+func activate(spectator: Node) -> void:
+	if detents.is_empty():
+		return
+	if NetGame.is_authority():
+		step_detent()
+	else:
+		detent_requested.emit()
 	super(spectator)
 
 

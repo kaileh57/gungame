@@ -176,6 +176,37 @@ func shots_fired() -> int:
 	return _shots
 
 
+## What a round hit, as one byte. A body takes its own hit reaction and bleeds
+## through the rig; scenery gets the dust and the hole. Collision layer is the
+## only thing available at the point of impact that tells the two apart, and it
+## is exact.
+##
+## Static and public because the replication link needs the SAME answer for a
+## shot it is about to put on the wire as this file draws locally. Resolving it
+## once here is what keeps a client's impacts identical to the host's rather than
+## merely similar.
+static func surface_of(hit: Object) -> int:
+	var body := hit as CollisionObject3D
+	if body == null:
+		return FirefightWarWire.SURFACE_NONE
+	if (body.collision_layer & (GameLayers.ENEMY | GameLayers.ENEMY_HITBOX)) != 0:
+		return VFXSurface.Kind.FLESH
+	if (body.collision_layer & GameLayers.WORLD) != 0:
+		return VFXSurface.Kind.SAND
+	return VFXSurface.Kind.METAL
+
+
+## Draw a round somebody else's machine fired. Cosmetic, and only cosmetic: no
+## suppression, no noise, no damage. All three of those are decisions, they
+## belong to the host, and the host has already made them by the time this runs.
+func remote_shot(origin: Vector3, landed: Vector3, surface: int) -> void:
+	_shots += 1
+	var direction: Vector3 = landed - origin
+	if direction.length_squared() < 1e-6:
+		return
+	_draw(origin, landed, direction.normalized(), surface)
+
+
 func _on_fired(
 	origin: Vector3, direction: Vector3, hit_position: Vector3, hit: Object, actor: EnemyActor
 ) -> void:
@@ -183,31 +214,24 @@ func _on_fired(
 	var landed: Vector3 = hit_position
 	if landed.distance_squared_to(origin) < 1e-4:
 		landed = origin + direction * 60.0
-	_draw(origin, landed, direction, hit)
+	_draw(origin, landed, direction, surface_of(hit))
 	AINoiseBus.emit_gunshot(origin, report_energy, actor.faction, actor.target().target_id)
 	_suppress(landed, actor.faction)
 
 
-func _draw(origin: Vector3, landed: Vector3, direction: Vector3, hit: Object) -> void:
+func _draw(origin: Vector3, landed: Vector3, direction: Vector3, surface: int) -> void:
 	if _vfx == null:
 		return
 	_muzzle(origin, direction)
 	if _tracer_credit >= 1.0:
 		_tracer_credit -= 1.0
 		_vfx.tracer(origin, landed, tracer_speed)
-	var body := hit as CollisionObject3D
-	if body == null:
+	if surface == FirefightWarWire.SURFACE_NONE:
 		return
-	# A body takes its own hit reaction and bleeds through the rig; scenery gets
-	# the dust and the hole. Layer is the only thing available here that tells
-	# the two apart, and it is exact.
-	if (body.collision_layer & (GameLayers.ENEMY | GameLayers.ENEMY_HITBOX)) != 0:
+	if surface == VFXSurface.Kind.FLESH:
 		_vfx.impact(landed, -direction, VFXSurface.Kind.FLESH, 0.8)
 		return
-	var kind: int = VFXSurface.Kind.METAL
-	if (body.collision_layer & GameLayers.WORLD) != 0:
-		kind = VFXSurface.Kind.SAND
-	_vfx.impact(landed, -direction, kind, 1.0)
+	_vfx.impact(landed, -direction, surface, 1.0)
 
 
 ## The flash at the barrel and the powder it leaves behind.

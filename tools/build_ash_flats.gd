@@ -1,11 +1,14 @@
 @tool
 extends SceneTree
-## ASH FLATS bake: the baked world, the baked player, and THE ASH LINE — a
-## traversal course cut down the main drag that exists to be moved through fast.
+## ASH FLATS bake: the baked world, the baked player, THE ASH LINE — a traversal
+## course cut down the main drag that exists to be moved through fast — and THE RACE
+## that is run down it by up to four people at once.
 ##
 ## Produces, all under res://demos/ash_flats: `ash_flats.tscn`, `scatter/*.res`
 ## (clutter multimeshes, one per cell), `meshes/*.res` (signpost, gauge post, yard
-## frame, ash_line), `ash_flats_report.txt`.
+## frame, ash_line, the starter's gantry, the standings board, the lamp lenses and
+## their three materials), `meshes/mark.tscn` (the cross-map presence mark), and
+## `ash_flats_report.txt`.
 ##
 ## Run headless:
 ##   godot --headless --path <project> --script res://tools/build_ash_flats.gd
@@ -35,6 +38,8 @@ const SCATTER_DIR: String = "res://demos/ash_flats/scatter"
 const Scatter := preload("res://tools/ash_flats/ash_flats_scatter.gd")
 ## THE ASH LINE: the course tables and the geometry cut from them.
 const Line := preload("res://tools/ash_flats/ash_flats_line.gd")
+## THE RACE: the start line, the gantry, the standings board and the route it is run on.
+const Race := preload("res://tools/ash_flats/ash_flats_race_build.gd")
 const MESH_DIR: String = "res://demos/ash_flats/meshes"
 const REPORT_PATH: String = "res://demos/ash_flats/ash_flats_report.txt"
 
@@ -53,6 +58,7 @@ const DEMO_SCRIPT: String = "res://demos/ash_flats/ash_flats.gd"
 const PAD_SCRIPT: String = "res://demos/ash_flats/ash_flats_pad.gd"
 const COURSE_SCRIPT: String = "res://demos/ash_flats/ash_flats_course.gd"
 const GUN_RIG_SCRIPT: String = "res://demos/ash_flats/ash_flats_gun_rig.gd"
+const BUTTON_SCENE: String = "res://ui/diegetic/diegetic_button.tscn"
 
 ## The town's own seed, xored so the clutter is a different stream from the
 ## streets it is scattered along.
@@ -133,6 +139,7 @@ static func bake() -> PackedStringArray:
 	var signs: int = _build_signs(root, layout, meshes["signpost"])
 	var pads: int = _build_pads(root, layout, meshes["gauge_post"])
 	_build_board(root, spawn, meshes["yard_frame"])
+	var race_stats: Dictionary = Race.build(root, query, meshes, MESH_DIR)
 	_build_player(root, spawn)
 	_set_owner(root, root)
 	var packed := PackedScene.new()
@@ -162,6 +169,10 @@ static func bake() -> PackedStringArray:
 	)
 	log_lines.append_array(head)
 	for line: String in line_stats["lines"]:
+		log_lines.push_back(line)
+	log_lines.push_back("")
+	log_lines.push_back("THE RACE")
+	for line: String in race_stats["lines"]:
 		log_lines.push_back(line)
 	log_lines.push_back("")
 	log_lines.push_back("SCATTER")
@@ -363,8 +374,27 @@ static func _build_pads(root: Node3D, layout: WorldLayoutData, post_mesh: ArrayM
 	return made
 
 
-## The yard board: the demo's own options on a frame at the start point. A lever for
-## the clock and a dial for the gate lamps. Both shootable, both usable by hand, no menu.
+## The yard board: the demo's own console, on a frame at the start point. A lever for the
+## clock, a dial for the gate lamps, and the START RACE button. All three are shootable,
+## all three are usable by hand, and there is no menu anywhere.
+##
+## THE RACE BUTTON IS NOT THE HOST'S BUTTON. It is wired to `AshFlatsRace.request_start`,
+## which turns a client's press into one packet to the host — so whoever walks up to this
+## board can put four people on the line, which is the brief.
+##
+## IT IS ALSO THE ONE CONTROL HERE WITH NO `control_id`, AND THAT IS DELIBERATE.
+## `tools/verify_click_input.gd` measures a demo's click path by picking one control and
+## pressing it about fifty times, and it prefers a `DiegeticButton` over every other kind.
+## This button TELEPORTS THE PLAYER TO THE START LINE and takes their hands away for the
+## countdown, so the harness would spend press one starting a race and presses two to
+## fifty aiming at a board it is no longer stood in front of — ash_flats would go from
+## 100% to almost nothing on all four gestures, and the harness would be reporting the
+## demo's own rule as a lost click. That harness already has an `AVOID` table for exactly
+## this ("controls a case must not aim at — these do something the harness cannot undo")
+## and it skips any control whose `control_id` is empty, which is the only half of the
+## contract this file can reach: `verify_click_input.gd` is not ours to edit. The RIGHT
+## fix is one line in its `AVOID` — `&"ash_flats": [&"race"]` — and then this id comes
+## back. Nothing here needs it: the demo wires this button by node path.
 static func _build_board(root: Node3D, spawn: Vector3, frame_mesh: ArrayMesh) -> void:
 	var board := Node3D.new()
 	board.name = "YardBoard"
@@ -377,7 +407,7 @@ static func _build_board(root: Node3D, spawn: Vector3, frame_mesh: ArrayMesh) ->
 	board.add_child(readout)
 	var lever: Node3D = (ResourceLoader.load(LEVER_SCENE) as PackedScene).instantiate()
 	lever.name = "Clock"
-	lever.position = Vector3(-0.42, 1.06, 0.075)
+	lever.position = Vector3(-0.66, 1.06, 0.075)
 	lever.set(&"control_id", &"clock")
 	lever.set(&"label_text", "CLOCK")
 	lever.set(&"on_text", "RUNNING")
@@ -385,10 +415,15 @@ static func _build_board(root: Node3D, spawn: Vector3, frame_mesh: ArrayMesh) ->
 	board.add_child(lever)
 	var dial: Node3D = (ResourceLoader.load(DIAL_SCENE) as PackedScene).instantiate()
 	dial.name = "Lamps"
-	dial.position = Vector3(0.42, 1.06, 0.075)
+	dial.position = Vector3(0.0, 1.06, 0.075)
 	dial.set(&"control_id", &"lamps")
 	dial.set(&"label_text", "GATE LAMPS")
 	board.add_child(dial)
+	var start: Node3D = (ResourceLoader.load(BUTTON_SCENE) as PackedScene).instantiate()
+	start.name = "Race"
+	start.position = Vector3(0.66, 1.06, 0.075)
+	start.set(&"label_text", "START RACE")
+	board.add_child(start)
 
 
 static func _build_player(root: Node3D, spawn: Vector3) -> void:
@@ -415,6 +450,12 @@ static func _author_meshes() -> Dictionary:
 	var frame := WorldMesher.new()
 	_emit_yard_frame(frame)
 	_finish_mesh(out, "yard_frame", frame, material)
+	var gantry := WorldMesher.new()
+	Race.emit_gantry(gantry)
+	_finish_mesh(out, "gantry", gantry, material)
+	var board := WorldMesher.new()
+	Race.emit_board_frame(board)
+	_finish_mesh(out, "board_frame", board, material)
 	return out
 
 
@@ -458,17 +499,18 @@ static func _emit_gauge_post(m: WorldMesher) -> void:
 	m.box(Vector3(0, 1.42, 0.03), Vector3(0.30, 0.22, 0.03), 0.0, RAIL, S_METAL)
 
 
-## Two legs on two pads, a backing plate, and a rail top and bottom.
+## Two legs on two pads, a backing plate, and a rail top and bottom. Widened from 1.36 m
+## to 1.96 m when the console grew its third control: three at 0.66 m centres clear each
+## other's housings, where three at the old 0.42 did not.
 static func _emit_yard_frame(m: WorldMesher) -> void:
-	for side: float in [-0.62, 0.62]:
+	for side: float in [-0.92, 0.92]:
 		m.box(Vector3(side, 0.85, 0), Vector3(0.055, 0.85, 0.055), 0.0, RAIL, S_METAL)
 		m.box(Vector3(side, 0.10, 0), Vector3(0.19, 0.10, 0.19), 0.0, SLAB, S_CONCRETE)
-	m.box(Vector3(0, 1.34, 0.02), Vector3(0.68, 0.66, 0.03), 0.0, DECK, S_TIN)
-	m.box(Vector3(0, 0.68, 0.02), Vector3(0.68, 0.05, 0.05), 0.0, RAIL, S_METAL)
-	m.box(Vector3(0, 1.99, 0.02), Vector3(0.68, 0.05, 0.05), 0.0, RAIL, S_METAL)
+	m.box(Vector3(0, 1.34, 0.02), Vector3(0.98, 0.66, 0.03), 0.0, DECK, S_TIN)
+	m.box(Vector3(0, 0.68, 0.02), Vector3(0.98, 0.05, 0.05), 0.0, RAIL, S_METAL)
+	m.box(Vector3(0, 1.99, 0.02), Vector3(0.98, 0.05, 0.05), 0.0, RAIL, S_METAL)
 
 
-## Reload what was written and count it. A scene that packs cleanly can still come back
 ## with a null mesh or a dropped script, and the only way to know is to instantiate it.
 static func _verify() -> PackedStringArray:
 	var out := PackedStringArray()

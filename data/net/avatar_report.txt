@@ -1,0 +1,11 @@
+AVATAR BAKE
+
+  capsule   PASS  tris   384  volume -0.554078  open 0  degenerate 0
+  sphere    PASS  tris   360  volume -0.565159  open 0  degenerate 0
+  visor     PASS  tris    84  volume -0.002392  open 0  degenerate 0
+  temples   PASS  tris    24  volume -0.000780  open 0  degenerate 0
+  scene     player_avatar.tscn                 11 nodes
+  scene     laser_cursor.tscn                  3 nodes
+
+  shells 4  failures 0
+VERDICT: PASS

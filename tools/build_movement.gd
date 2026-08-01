@@ -32,7 +32,11 @@ const SCRIPT_CONSOLE: String = "res://demos/movement/movement_console.gd"
 const SCRIPT_INTERACTOR: String = "res://demos/movement/course_interactor.gd"
 const SCRIPT_GATE: String = "res://demos/movement/split_gate.gd"
 const SCRIPT_TIMER: String = "res://demos/movement/run_timer.gd"
+const SCRIPT_BOARD: String = "res://demos/movement/movement_scoreboard.gd"
+const SCRIPT_LINK: String = "res://demos/movement/movement_link.gd"
 const SCRIPT_LADDER: String = "res://systems/player/player_ladder.gd"
+const SOUND_PASS: String = "res://demos/movement/gate_pass.res"
+const SOUND_LAP: String = "res://demos/movement/gate_lap.res"
 
 const WORLD_SCENE: String = "res://art/scav_world.tscn"
 const PLAYER_SCENE: String = "res://data/player/player.tscn"
@@ -222,6 +226,14 @@ const GATE_NAMES: PackedStringArray = ["START", "LEDGE BANK", "TOWER", "SLOPE FA
 ## Lintel half-extents. The gate's name is painted 4 mm PROUD of this, not at a
 ## hand-picked 0.21 that sat 10 mm inside it and hid all five signs.
 const GATE_LINTEL: Vector3 = Vector3(2.30, 0.22, 0.22)
+## Centre height of that lintel. The board, the beacon and the lintel share it.
+const GATE_LINTEL_Y: float = 3.05
+## Lap board, on the west flank facing the bench. NOT beside the start gate, which is
+## where it wants to be and cannot go: the gap run's nine lanes are 2.7 m wide on a 2.9 m
+## pitch, so every metre of ground between x = -13 and x = +13 south of the take-offs is
+## somebody's run-up, and a post in one of those is a post you sprint into. This is the
+## same band the GAP RUN sign already stands in, at the rim of the authored view cone.
+const BOARD_AT: Vector3 = Vector3(-14.4, 0.0, 4.6)
 
 ## Where the player stands on load. Yaw 0 faces -Z, at the mouth of the bench with
 ## the whole course in front and nothing at all behind.
@@ -236,6 +248,9 @@ const RANGE_SIGN: float = 62.0
 
 var _built: bool = false
 var _kit: CourseKit = null
+var _pass_sound: AudioStream = null
+var _lap_sound: AudioStream = null
+var _holo: ShaderMaterial = null
 
 
 func _process(_delta: float) -> bool:
@@ -249,6 +264,7 @@ func _process(_delta: float) -> bool:
 func _build() -> void:
 	DirAccess.make_dir_recursive_absolute(OUT_DIR)
 	_kit = CourseKit.new(COLOUR_SEED, load(DISPLAY_FONT) as Font)
+	_bake_assets()
 
 	var root := Node3D.new()
 	root.name = "Movement"
@@ -281,10 +297,13 @@ func _build() -> void:
 	# their triangles did not, and fifty-five solids — six benches, the master
 	# column under the screen and all five gates — were invisible in the demo.
 	var console: Node3D = _console(root)
-	_loop(root)
+	var timer: Node = _loop(root)
+	var board: Node3D = CourseMarks.scoreboard(_kit, root, BOARD_AT, _holo)
+	board.set_script(load(SCRIPT_BOARD))
+	CourseMarks.link(root, load(SCRIPT_LINK), console, timer, board)
 	_interactor(root)
 
-	var mesh: ArrayMesh = _save_mesh()
+	var mesh: ArrayMesh = _kit.save_mesh(load(WORLD_MATERIAL) as Material, MESH_PATH)
 	var view := MeshInstance3D.new()
 	view.name = "CourseMesh"
 	view.mesh = mesh
@@ -296,10 +315,17 @@ func _build() -> void:
 	root.set(&"player_path", NodePath("Player"))
 	root.set(&"console_path", root.get_path_to(console))
 
-	_own(root, root)
-	_save(root, SCENE_PATH)
+	CourseKit.claim(root, root)
+	CourseKit.pack_scene(root, SCENE_PATH)
 	_report(mesh, player)
 	root.free()
+
+
+## The two chimes and the projector material, written before anything references them.
+func _bake_assets() -> void:
+	_pass_sound = CourseMarks.save(CourseMarks.chime_pass(), SOUND_PASS) as AudioStream
+	_lap_sound = CourseMarks.save(CourseMarks.chime_lap(), SOUND_LAP) as AudioStream
+	_holo = CourseMarks.projector()
 
 
 # ------------------------------------------------------------------ stations
@@ -880,8 +906,9 @@ func _dress(control: Node3D, label_pixel_size: float) -> void:
 
 
 ## Five arches and the clock that reads them. Only the posts collide; the opening
-## between them is genuinely open and the trigger volume fills it.
-func _loop(root: Node3D) -> void:
+## between them is genuinely open and the trigger volume fills it. Each arch carries a
+## marker lamp and a flare on its lintel; the clock lights exactly one of them.
+func _loop(root: Node3D) -> Node:
 	var loop := Node3D.new()
 	loop.name = "SpeedLoop"
 	root.add_child(loop)
@@ -901,12 +928,13 @@ func _loop(root: Node3D) -> void:
 			_kit.box(body, post, Vector3(0.18, 1.75, 0.18), _kit.rusty(), _METAL, heading)
 		# Narrower than the posts' outer faces and deeper than them, so the lintel
 		# lands inside both and shares no plane with either.
-		var lintel: Vector3 = at + Vector3(0.0, 3.05, 0.0)
+		var lintel: Vector3 = at + Vector3(0.0, GATE_LINTEL_Y, 0.0)
 		_kit.box(body, lintel, GATE_LINTEL, _kit.rusty(), _METAL, heading)
 		_gate(loop, script, i, Transform3D(b, at))
 	var timer: Node = load(SCRIPT_TIMER).new()
 	timer.name = "RunTimer"
 	loop.add_child(timer)
+	return timer
 
 
 func _gate(loop: Node3D, script: Script, index: int, pose: Transform3D) -> void:
@@ -915,7 +943,11 @@ func _gate(loop: Node3D, script: Script, index: int, pose: Transform3D) -> void:
 	gate.transform = pose
 	gate.set(&"gate_index", index)
 	gate.set(&"gate_name", GATE_NAMES[index])
+	gate.set(&"pass_sound", _pass_sound)
+	gate.set(&"lap_sound", _lap_sound)
 	loop.add_child(gate)
+	gate.add_child(CourseMarks.sound_node())
+	CourseMarks.beacon(gate, _holo, GATE_LINTEL_Y + GATE_LINTEL.y)
 
 	var shape := BoxShape3D.new()
 	shape.size = Vector3(4.4, 2.9, 0.7)
@@ -928,7 +960,7 @@ func _gate(loop: Node3D, script: Script, index: int, pose: Transform3D) -> void:
 	var board: Label3D = _kit.label(
 		gate,
 		"%s\n- - . - -" % GATE_NAMES[index],
-		Vector3(0.0, 3.05, GATE_LINTEL.z + 0.004),
+		Vector3(0.0, GATE_LINTEL_Y, GATE_LINTEL.z + 0.004),
 		0.26,
 		Palette.GOLD,
 		RANGE_SIGN
@@ -944,39 +976,7 @@ func _interactor(root: Node3D) -> void:
 	root.add_child(hands)
 
 
-# ----------------------------------------------------------------- packaging
-
-
-func _save_mesh() -> ArrayMesh:
-	var mesh: ArrayMesh = _kit.mesh.build_mesh(load(WORLD_MATERIAL) as Material)
-	var err: Error = ResourceSaver.save(mesh, MESH_PATH)
-	if err != OK:
-		push_error("build_movement: could not save %s (error %d)." % [MESH_PATH, err])
-		return mesh
-	# Reload so the packed scene stores an external reference rather than inlining
-	# a few thousand triangles into the .tscn.
-	return load(MESH_PATH) as ArrayMesh
-
-
-func _save(root: Node, path: String) -> void:
-	var packed := PackedScene.new()
-	var err: Error = packed.pack(root)
-	if err != OK:
-		push_error("build_movement: packing failed (error %d)." % err)
-		return
-	err = ResourceSaver.save(packed, path)
-	if err != OK:
-		push_error("build_movement: could not save %s (error %d)." % [path, err])
-
-
-## `PackedScene.pack` keeps only nodes owned by the root, and an instanced scene
-## must be owned but never descended into — its children belong to their own file.
-func _own(node: Node, root: Node) -> void:
-	for child: Node in node.get_children():
-		if child.owner == null:
-			child.owner = root
-		if child.scene_file_path.is_empty():
-			_own(child, root)
+# ----------------------------------------------------------------- reporting
 
 
 ## Every assertion worth making about this bake, printed. The tuning table is

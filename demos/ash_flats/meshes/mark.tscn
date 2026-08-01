@@ -1,0 +1,25 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://data/net/beacon.tres" id="1_7fua3"]
+[ext_resource type="QuadMesh" path="res://demos/ash_flats/meshes/mark_quad.res" id="2_l2x4n"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="3_ptv8s"]
+
+[node name="Mark" type="Node3D" unique_id=610066003]
+
+[node name="Shaft" type="MeshInstance3D" parent="." unique_id=1651297725]
+material_override = ExtResource("1_7fua3")
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("2_l2x4n")
+
+[node name="Name" type="Label3D" parent="." unique_id=1971046640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.003
+billboard = 1
+no_depth_test = true
+render_priority = 4
+modulate = Color(0.7137255, 0.6745098, 0.5882353, 1)
+outline_modulate = Color(0.05, 0.045, 0.04, 1)
+font = ExtResource("3_ptv8s")
+font_size = 64
+outline_size = 16

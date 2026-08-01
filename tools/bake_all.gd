@@ -129,6 +129,16 @@ const PLAN: Array[Dictionary] = [
 		"note": "the player and freecam prefabs every demo instances",
 	},
 	{
+		"id": "avatar",
+		"script": "res://tools/build_avatar.gd",
+		"out":
+		[
+			"res://data/net/player_avatar.tscn",
+			"res://data/net/laser_cursor.tscn",
+		],
+		"note": "multiplayer presence — the capsule avatar, the laser dot and the beacon",
+	},
+	{
 		"id": "gun_cache",
 		"script": "res://tools/build_gun_cache.gd",
 		"out": ["res://data/guns/cache/viewmodel_rig.tscn"],

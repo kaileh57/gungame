@@ -5,8 +5,9 @@ build_main_menu
   wrote       res://data/ui/ui_theme.tres
   wrote       res://ui/settings_panel.tscn
   wrote       res://ui/pause_menu.tscn
+  wrote       res://data/ui/lobby_sign.tscn
   wrote       res://ui/main_menu.tscn
 
-shells checked        100
+shells checked        116
 failures              0
 RESULT: PASS

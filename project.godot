@@ -22,6 +22,7 @@ Factions="*res://systems/ai/factions.gd"
 PartLibrary="*res://core/part_library.gd"
 GunFactory="*res://systems/guns/gun_factory.gd"
 SceneRouter="*res://core/scene_router.gd"
+NetGame="*res://net/net_game.gd"
 DebugHUD="*res://ui/debug/debug_hud.gd"
 
 [demos]

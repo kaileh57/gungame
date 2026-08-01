@@ -149,6 +149,20 @@ static var _death_cue: AudioStreamWAV = null
 
 var health: float = 100.0
 var alive: bool = true
+## A REMOTE AUTHORITY OWNS THIS BODY. Set by a demo's networking layer on a CLIENT,
+## and never on the host or in single player, where `NetGame.is_authority()` is true
+## and this node is the authority it names.
+##
+## The AI that shoots you only exists on the host: it is the host's raycast that
+## reached your silhouette and the host's ledger that says what came off. So on a
+## client this node stops being a simulation and becomes a display — `apply_damage`
+## refuses, regeneration and the respawn clock stop, and `sync_health` is the only
+## thing that moves the number. Everything downstream of the number is unchanged,
+## which is the point: the vignette, the directional lobe, the damage numbers, the
+## trauma, the death banner and the weapon reload all run exactly as they do in
+## single player, because they are driven from the same three places they always
+## were.
+var network_driven: bool = false
 ## The player's own snapshot, held so `AITarget._refresh_stance` keeps working when
 ## a scene points `receiver_path` at this node instead of at the controller.
 var state: PlayerState = null
@@ -222,7 +236,7 @@ func bind(player: CharacterBody3D) -> void:
 ## which side of the fight it landed on. Returns the damage actually taken, which is
 ## zero for a refused hit, so a caller that wants to know can ask.
 func apply_damage(amount: float, from_position: Vector3, attacker: Node = null) -> float:
-	if not alive or amount <= 0.0 or _invulnerable > 0.0:
+	if not alive or amount <= 0.0 or _invulnerable > 0.0 or network_driven:
 		return 0.0
 	var taken: float = amount * damage_scale * (1.0 - clampf(armour, 0.0, 95.0) * 0.01)
 	if taken <= 0.0:
@@ -297,8 +311,43 @@ func target() -> Node3D:
 	return _target
 
 
+## THE NETWORK SEAM, the mirror of `apply_damage`. A remote authority says what this
+## body has left, what came off to get there, where from, and whether it is still
+## standing. Ignored unless `network_driven` is set, so nothing can drive a body that
+## belongs to this machine.
+##
+## The order is the same order a local hit runs in and for the same reason: the
+## feedback fires against the health the hit was measured at, then the number moves,
+## then the state change. Doing it the other way round pops the vignette after the
+## bar has already emptied.
+##
+## `alive` is what the two state changes hang off, and both are edge triggered. A
+## repeated "you are dead" message — which a re-send or a late packet is — must not
+## restart the death cue, and a revive is the host's respawn clock finishing, which
+## goes through `PlayerController.respawn()` so the body is put back on the demo's
+## own spawn mark exactly as a local death does it.
+func sync_health(now: float, took: float, from_position: Vector3, standing: bool) -> void:
+	if not network_driven:
+		return
+	if took > 0.0 and alive:
+		_feedback(took, from_position)
+		damaged.emit(took, from_position, null)
+	health = clampf(now, 0.0, max_health)
+	_since_damage = 0.0 if took > 0.0 else _since_damage
+	_publish()
+	if standing == alive:
+		return
+	if not standing:
+		_go_down(from_position, null)
+		return
+	if _player != null:
+		_player.call(&"respawn")
+	else:
+		restore()
+
+
 func _tick_death(delta: float) -> void:
-	if not auto_respawn or _player == null:
+	if not auto_respawn or _player == null or network_driven:
 		return
 	_death_clock += delta
 	if _death_clock < death_seconds:
@@ -308,7 +357,7 @@ func _tick_death(delta: float) -> void:
 
 
 func _regenerate(delta: float) -> void:
-	if not regen_enabled or _since_damage < regen_delay:
+	if not regen_enabled or _since_damage < regen_delay or network_driven:
 		return
 	var ceiling: float = max_health * clampf(regen_ceiling, 0.0, 1.0)
 	if health >= ceiling:

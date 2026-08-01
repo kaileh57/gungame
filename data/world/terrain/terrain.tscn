@@ -402,2108 +402,2108 @@
 [ext_resource type="Shape3D" path="res://data/world/terrain/chunk_08_09_col.res" id="400_efjl8"]
 [ext_resource type="Shape3D" path="res://data/world/terrain/chunk_09_09_col.res" id="401_npvbn"]
 
-[node name="Terrain" type="Node3D" unique_id=974773340]
+[node name="Terrain" type="Node3D" unique_id=628217855]
 script = ExtResource("1_ntv6d")
 
-[node name="chunk_00_00" type="Node3D" parent="." unique_id=325762611]
+[node name="chunk_00_00" type="Node3D" parent="." unique_id=1466769040]
 metadata/chunk_radius = 294.91452
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_00" unique_id=963093091]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_00" unique_id=940984118]
 cast_shadow = 0
 mesh = ExtResource("2_ife41")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_00" unique_id=1883010892]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_00" unique_id=222034215]
 cast_shadow = 0
 mesh = ExtResource("3_61tm3")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_00" unique_id=1111973285]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_00" unique_id=1687980627]
 cast_shadow = 0
 mesh = ExtResource("4_xk4a1")
 metadata/lod = 2
 
-[node name="chunk_01_00" type="Node3D" parent="." unique_id=910667620]
+[node name="chunk_01_00" type="Node3D" parent="." unique_id=472873182]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_00" unique_id=1988182223]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_00" unique_id=18714080]
 cast_shadow = 0
 mesh = ExtResource("5_j5ox3")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_00" unique_id=666848041]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_00" unique_id=1809317779]
 cast_shadow = 0
 mesh = ExtResource("6_m7wjj")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_00" unique_id=22001231]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_00" unique_id=547209633]
 cast_shadow = 0
 mesh = ExtResource("7_qciv5")
 metadata/lod = 2
 
-[node name="chunk_02_00" type="Node3D" parent="." unique_id=1054082837]
+[node name="chunk_02_00" type="Node3D" parent="." unique_id=504910726]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_00" unique_id=1972297884]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_00" unique_id=305670616]
 cast_shadow = 0
 mesh = ExtResource("8_l7hfh")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_00" unique_id=447470759]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_00" unique_id=1335466995]
 cast_shadow = 0
 mesh = ExtResource("9_ont6q")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_00" unique_id=1689510832]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_00" unique_id=795480558]
 cast_shadow = 0
 mesh = ExtResource("10_m0uu1")
 metadata/lod = 2
 
-[node name="chunk_03_00" type="Node3D" parent="." unique_id=895676381]
+[node name="chunk_03_00" type="Node3D" parent="." unique_id=20020443]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_00" unique_id=536112800]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_00" unique_id=847645666]
 cast_shadow = 0
 mesh = ExtResource("11_ixvec")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_00" unique_id=560548560]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_00" unique_id=1067614284]
 cast_shadow = 0
 mesh = ExtResource("12_7qlv4")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_00" unique_id=1516082094]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_00" unique_id=1893021160]
 cast_shadow = 0
 mesh = ExtResource("13_b0diq")
 metadata/lod = 2
 
-[node name="chunk_04_00" type="Node3D" parent="." unique_id=951961410]
+[node name="chunk_04_00" type="Node3D" parent="." unique_id=2052268848]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_00" unique_id=108953824]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_00" unique_id=474177262]
 cast_shadow = 0
 mesh = ExtResource("14_06h3l")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_00" unique_id=1207903002]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_00" unique_id=805593894]
 cast_shadow = 0
 mesh = ExtResource("15_xq31j")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_00" unique_id=1150431950]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_00" unique_id=1410007020]
 cast_shadow = 0
 mesh = ExtResource("16_g1c8q")
 metadata/lod = 2
 
-[node name="chunk_05_00" type="Node3D" parent="." unique_id=42359808]
+[node name="chunk_05_00" type="Node3D" parent="." unique_id=1439861208]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_00" unique_id=1745131349]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_00" unique_id=600556259]
 cast_shadow = 0
 mesh = ExtResource("17_x5gdj")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_00" unique_id=714383819]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_00" unique_id=1376889945]
 cast_shadow = 0
 mesh = ExtResource("18_i4o0h")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_00" unique_id=689838584]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_00" unique_id=1254621824]
 cast_shadow = 0
 mesh = ExtResource("19_3mr84")
 metadata/lod = 2
 
-[node name="chunk_06_00" type="Node3D" parent="." unique_id=1214448865]
+[node name="chunk_06_00" type="Node3D" parent="." unique_id=396738800]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_00" unique_id=836221234]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_00" unique_id=29288620]
 cast_shadow = 0
 mesh = ExtResource("20_e3pis")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_00" unique_id=1623868566]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_00" unique_id=1916883307]
 cast_shadow = 0
 mesh = ExtResource("21_dcmtu")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_00" unique_id=1096837389]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_00" unique_id=828254402]
 cast_shadow = 0
 mesh = ExtResource("22_wkqgv")
 metadata/lod = 2
 
-[node name="chunk_07_00" type="Node3D" parent="." unique_id=1414067339]
+[node name="chunk_07_00" type="Node3D" parent="." unique_id=940330032]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_00" unique_id=1666400210]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_00" unique_id=71333261]
 cast_shadow = 0
 mesh = ExtResource("23_7w7ny")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_00" unique_id=690939968]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_00" unique_id=107132625]
 cast_shadow = 0
 mesh = ExtResource("24_thrc7")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_00" unique_id=765100756]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_00" unique_id=1674109371]
 cast_shadow = 0
 mesh = ExtResource("25_hpqxg")
 metadata/lod = 2
 
-[node name="chunk_08_00" type="Node3D" parent="." unique_id=466959574]
+[node name="chunk_08_00" type="Node3D" parent="." unique_id=1474654740]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_00" unique_id=771171928]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_00" unique_id=1494612010]
 cast_shadow = 0
 mesh = ExtResource("26_63qmj")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_00" unique_id=637707188]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_00" unique_id=2131962290]
 cast_shadow = 0
 mesh = ExtResource("27_g251b")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_00" unique_id=1378371364]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_00" unique_id=718575385]
 cast_shadow = 0
 mesh = ExtResource("28_qcgnx")
 metadata/lod = 2
 
-[node name="chunk_09_00" type="Node3D" parent="." unique_id=1774394734]
+[node name="chunk_09_00" type="Node3D" parent="." unique_id=1388503970]
 metadata/chunk_radius = 294.91452
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_00" unique_id=2065409572]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_00" unique_id=1737256106]
 cast_shadow = 0
 mesh = ExtResource("29_8a24n")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_00" unique_id=1051782698]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_00" unique_id=679438813]
 cast_shadow = 0
 mesh = ExtResource("30_qtfak")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_00" unique_id=614464748]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_00" unique_id=99614369]
 cast_shadow = 0
 mesh = ExtResource("31_7qxna")
 metadata/lod = 2
 
-[node name="chunk_00_01" type="Node3D" parent="." unique_id=1401725452]
+[node name="chunk_00_01" type="Node3D" parent="." unique_id=1429748347]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_01" unique_id=79163747]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_01" unique_id=1383557713]
 cast_shadow = 0
 mesh = ExtResource("32_3v4p7")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_01" unique_id=31833270]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_01" unique_id=1303090783]
 cast_shadow = 0
 mesh = ExtResource("33_mcs67")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_01" unique_id=33813726]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_01" unique_id=1157998366]
 cast_shadow = 0
 mesh = ExtResource("34_a7fst")
 metadata/lod = 2
 
-[node name="chunk_01_01" type="Node3D" parent="." unique_id=2052022760]
+[node name="chunk_01_01" type="Node3D" parent="." unique_id=1486448754]
 metadata/chunk_radius = 142.4673
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_01" unique_id=87499279]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_01" unique_id=1527714393]
 cast_shadow = 0
 mesh = ExtResource("35_oema8")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_01" unique_id=1721149251]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_01" unique_id=1755574891]
 cast_shadow = 0
 mesh = ExtResource("36_0b1kb")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_01" unique_id=1283258693]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_01" unique_id=1648537550]
 cast_shadow = 0
 mesh = ExtResource("37_r4oye")
 metadata/lod = 2
 
-[node name="chunk_02_01" type="Node3D" parent="." unique_id=1748520136]
+[node name="chunk_02_01" type="Node3D" parent="." unique_id=1880016149]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_01" unique_id=1653473395]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_01" unique_id=1166849095]
 cast_shadow = 0
 mesh = ExtResource("38_xrsxd")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_01" unique_id=835608789]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_01" unique_id=543963063]
 cast_shadow = 0
 mesh = ExtResource("39_waeup")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_01" unique_id=1042876165]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_01" unique_id=277743777]
 cast_shadow = 0
 mesh = ExtResource("40_dmcyt")
 metadata/lod = 2
 
-[node name="chunk_03_01" type="Node3D" parent="." unique_id=942725706]
+[node name="chunk_03_01" type="Node3D" parent="." unique_id=245032670]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_01" unique_id=2055591557]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_01" unique_id=1577079568]
 cast_shadow = 0
 mesh = ExtResource("41_2kgqh")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_01" unique_id=535202773]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_01" unique_id=776637626]
 cast_shadow = 0
 mesh = ExtResource("42_tlkg8")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_01" unique_id=41904941]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_01" unique_id=1571298187]
 cast_shadow = 0
 mesh = ExtResource("43_jcaqq")
 metadata/lod = 2
 
-[node name="chunk_04_01" type="Node3D" parent="." unique_id=285574013]
+[node name="chunk_04_01" type="Node3D" parent="." unique_id=1991150068]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_01" unique_id=1718686181]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_01" unique_id=104858007]
 cast_shadow = 0
 mesh = ExtResource("44_2uc16")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_01" unique_id=679468219]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_01" unique_id=727015098]
 cast_shadow = 0
 mesh = ExtResource("45_catsa")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_01" unique_id=1934320787]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_01" unique_id=2015680815]
 cast_shadow = 0
 mesh = ExtResource("46_a8c5l")
 metadata/lod = 2
 
-[node name="chunk_05_01" type="Node3D" parent="." unique_id=1202995612]
+[node name="chunk_05_01" type="Node3D" parent="." unique_id=1621364295]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_01" unique_id=1321428466]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_01" unique_id=114349336]
 cast_shadow = 0
 mesh = ExtResource("47_hef2c")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_01" unique_id=254444842]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_01" unique_id=61757529]
 cast_shadow = 0
 mesh = ExtResource("48_kqwaa")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_01" unique_id=1299157213]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_01" unique_id=2129299295]
 cast_shadow = 0
 mesh = ExtResource("49_uwpss")
 metadata/lod = 2
 
-[node name="chunk_06_01" type="Node3D" parent="." unique_id=1360484944]
+[node name="chunk_06_01" type="Node3D" parent="." unique_id=1251710218]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_01" unique_id=945262956]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_01" unique_id=1785633739]
 cast_shadow = 0
 mesh = ExtResource("50_ggp3v")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_01" unique_id=215693487]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_01" unique_id=1865819534]
 cast_shadow = 0
 mesh = ExtResource("51_15fra")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_01" unique_id=2060085798]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_01" unique_id=1988548588]
 cast_shadow = 0
 mesh = ExtResource("52_snj88")
 metadata/lod = 2
 
-[node name="chunk_07_01" type="Node3D" parent="." unique_id=432452181]
+[node name="chunk_07_01" type="Node3D" parent="." unique_id=1039056438]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_01" unique_id=2142791154]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_01" unique_id=889467502]
 cast_shadow = 0
 mesh = ExtResource("53_kpi6w")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_01" unique_id=1227924445]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_01" unique_id=2021358417]
 cast_shadow = 0
 mesh = ExtResource("54_ovm2q")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_01" unique_id=1108722010]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_01" unique_id=359210265]
 cast_shadow = 0
 mesh = ExtResource("55_mdlfy")
 metadata/lod = 2
 
-[node name="chunk_08_01" type="Node3D" parent="." unique_id=7613631]
+[node name="chunk_08_01" type="Node3D" parent="." unique_id=176143621]
 metadata/chunk_radius = 142.4673
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_01" unique_id=1642076559]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_01" unique_id=320206195]
 cast_shadow = 0
 mesh = ExtResource("56_entft")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_01" unique_id=1697926708]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_01" unique_id=1295247543]
 cast_shadow = 0
 mesh = ExtResource("57_fmgtv")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_01" unique_id=1027460521]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_01" unique_id=921579211]
 cast_shadow = 0
 mesh = ExtResource("58_evtuy")
 metadata/lod = 2
 
-[node name="chunk_09_01" type="Node3D" parent="." unique_id=1587037692]
+[node name="chunk_09_01" type="Node3D" parent="." unique_id=1894470783]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_01" unique_id=1152600581]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_01" unique_id=933384476]
 cast_shadow = 0
 mesh = ExtResource("59_jd7t8")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_01" unique_id=1345227003]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_01" unique_id=1837159465]
 cast_shadow = 0
 mesh = ExtResource("60_xctwo")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_01" unique_id=1180493520]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_01" unique_id=2115333094]
 cast_shadow = 0
 mesh = ExtResource("61_vkvg4")
 metadata/lod = 2
 
-[node name="chunk_00_02" type="Node3D" parent="." unique_id=1076844930]
+[node name="chunk_00_02" type="Node3D" parent="." unique_id=1127559235]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_02" unique_id=1185729923]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_02" unique_id=2079037200]
 cast_shadow = 0
 mesh = ExtResource("62_splfw")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_02" unique_id=638432502]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_02" unique_id=1106393512]
 cast_shadow = 0
 mesh = ExtResource("63_x0j1q")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_02" unique_id=104782296]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_02" unique_id=344756523]
 cast_shadow = 0
 mesh = ExtResource("64_j88wg")
 metadata/lod = 2
 
-[node name="chunk_01_02" type="Node3D" parent="." unique_id=709556062]
+[node name="chunk_01_02" type="Node3D" parent="." unique_id=2039395747]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_02" unique_id=467621764]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_02" unique_id=288903734]
 cast_shadow = 0
 mesh = ExtResource("65_np3tx")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_02" unique_id=485964260]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_02" unique_id=767054282]
 cast_shadow = 0
 mesh = ExtResource("66_upi23")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_02" unique_id=600846531]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_02" unique_id=2143541275]
 cast_shadow = 0
 mesh = ExtResource("67_amqyo")
 metadata/lod = 2
 
-[node name="chunk_02_02" type="Node3D" parent="." unique_id=1942976333]
+[node name="chunk_02_02" type="Node3D" parent="." unique_id=261557513]
 metadata/chunk_radius = 76.637794
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_02" unique_id=2042028358]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_02" unique_id=1763818106]
 cast_shadow = 0
 mesh = ExtResource("68_bfkwj")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_02" unique_id=2139167200]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_02" unique_id=424925779]
 cast_shadow = 0
 mesh = ExtResource("69_m2jwx")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_02" unique_id=1918705134]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_02" unique_id=1812494995]
 cast_shadow = 0
 mesh = ExtResource("70_bi6hj")
 metadata/lod = 2
 
-[node name="chunk_03_02" type="Node3D" parent="." unique_id=1630945408]
+[node name="chunk_03_02" type="Node3D" parent="." unique_id=928425719]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_02" unique_id=478176532]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_02" unique_id=434479479]
 cast_shadow = 0
 mesh = ExtResource("71_c5o3t")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_02" unique_id=1182762358]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_02" unique_id=1219686420]
 cast_shadow = 0
 mesh = ExtResource("72_8eg55")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_02" unique_id=158299327]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_02" unique_id=1077402047]
 cast_shadow = 0
 mesh = ExtResource("73_0p2k6")
 metadata/lod = 2
 
-[node name="chunk_04_02" type="Node3D" parent="." unique_id=1623884510]
+[node name="chunk_04_02" type="Node3D" parent="." unique_id=119086491]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_02" unique_id=902415771]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_02" unique_id=780221871]
 cast_shadow = 0
 mesh = ExtResource("74_dl7x1")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_02" unique_id=295704962]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_02" unique_id=1613032895]
 cast_shadow = 0
 mesh = ExtResource("75_kvejg")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_02" unique_id=1204225939]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_02" unique_id=40204908]
 cast_shadow = 0
 mesh = ExtResource("76_6ayv4")
 metadata/lod = 2
 
-[node name="chunk_05_02" type="Node3D" parent="." unique_id=1124161889]
+[node name="chunk_05_02" type="Node3D" parent="." unique_id=981772416]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_02" unique_id=678880830]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_02" unique_id=631856328]
 cast_shadow = 0
 mesh = ExtResource("77_28x8j")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_02" unique_id=1596577947]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_02" unique_id=51732340]
 cast_shadow = 0
 mesh = ExtResource("78_lrt0v")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_02" unique_id=2081173293]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_02" unique_id=680440354]
 cast_shadow = 0
 mesh = ExtResource("79_ex0vo")
 metadata/lod = 2
 
-[node name="chunk_06_02" type="Node3D" parent="." unique_id=1770602728]
+[node name="chunk_06_02" type="Node3D" parent="." unique_id=533628662]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_02" unique_id=1325031206]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_02" unique_id=303140764]
 cast_shadow = 0
 mesh = ExtResource("80_6ut32")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_02" unique_id=948286866]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_02" unique_id=217658367]
 cast_shadow = 0
 mesh = ExtResource("81_ycwqa")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_02" unique_id=805018765]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_02" unique_id=274754140]
 cast_shadow = 0
 mesh = ExtResource("82_rtc0q")
 metadata/lod = 2
 
-[node name="chunk_07_02" type="Node3D" parent="." unique_id=1112956716]
+[node name="chunk_07_02" type="Node3D" parent="." unique_id=4966300]
 metadata/chunk_radius = 76.637794
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_02" unique_id=1102583049]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_02" unique_id=2047654149]
 cast_shadow = 0
 mesh = ExtResource("83_ohc2l")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_02" unique_id=1868137814]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_02" unique_id=1568217243]
 cast_shadow = 0
 mesh = ExtResource("84_400mk")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_02" unique_id=1468955016]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_02" unique_id=575317187]
 cast_shadow = 0
 mesh = ExtResource("85_orhoo")
 metadata/lod = 2
 
-[node name="chunk_08_02" type="Node3D" parent="." unique_id=890599007]
+[node name="chunk_08_02" type="Node3D" parent="." unique_id=135748987]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_02" unique_id=1214586479]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_02" unique_id=434991127]
 cast_shadow = 0
 mesh = ExtResource("86_8s7cd")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_02" unique_id=583033072]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_02" unique_id=1680013923]
 cast_shadow = 0
 mesh = ExtResource("87_4ceh0")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_02" unique_id=855472675]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_02" unique_id=211841714]
 cast_shadow = 0
 mesh = ExtResource("88_5aauv")
 metadata/lod = 2
 
-[node name="chunk_09_02" type="Node3D" parent="." unique_id=2051539228]
+[node name="chunk_09_02" type="Node3D" parent="." unique_id=1557490389]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_02" unique_id=698859430]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_02" unique_id=986350304]
 cast_shadow = 0
 mesh = ExtResource("89_2444b")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_02" unique_id=2129049555]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_02" unique_id=1540223080]
 cast_shadow = 0
 mesh = ExtResource("90_e4boj")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_02" unique_id=1837024588]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_02" unique_id=577216398]
 cast_shadow = 0
 mesh = ExtResource("91_q5pxj")
 metadata/lod = 2
 
-[node name="chunk_00_03" type="Node3D" parent="." unique_id=924554791]
+[node name="chunk_00_03" type="Node3D" parent="." unique_id=618365495]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_03" unique_id=1667932941]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_03" unique_id=518271151]
 cast_shadow = 0
 mesh = ExtResource("92_2a1kt")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_03" unique_id=1517811383]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_03" unique_id=1995769473]
 cast_shadow = 0
 mesh = ExtResource("93_7nc5l")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_03" unique_id=1545112966]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_03" unique_id=1005763663]
 cast_shadow = 0
 mesh = ExtResource("94_7qshm")
 metadata/lod = 2
 
-[node name="chunk_01_03" type="Node3D" parent="." unique_id=1915588933]
+[node name="chunk_01_03" type="Node3D" parent="." unique_id=1542332168]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_03" unique_id=1498186427]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_03" unique_id=1711712340]
 cast_shadow = 0
 mesh = ExtResource("95_fuh31")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_03" unique_id=1313529505]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_03" unique_id=141196055]
 cast_shadow = 0
 mesh = ExtResource("96_nhckj")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_03" unique_id=1811091401]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_03" unique_id=529140134]
 cast_shadow = 0
 mesh = ExtResource("97_sjyfd")
 metadata/lod = 2
 
-[node name="chunk_02_03" type="Node3D" parent="." unique_id=2041107002]
+[node name="chunk_02_03" type="Node3D" parent="." unique_id=1771800206]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_03" unique_id=1776889690]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_03" unique_id=1530037243]
 cast_shadow = 0
 mesh = ExtResource("98_70jf1")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_03" unique_id=1490094458]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_03" unique_id=1502308095]
 cast_shadow = 0
 mesh = ExtResource("99_yoqye")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_03" unique_id=1377148730]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_03" unique_id=191619517]
 cast_shadow = 0
 mesh = ExtResource("100_v1rsw")
 metadata/lod = 2
 
-[node name="chunk_03_03" type="Node3D" parent="." unique_id=581146848]
+[node name="chunk_03_03" type="Node3D" parent="." unique_id=853425377]
 metadata/chunk_radius = 55.849537
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_03" unique_id=2114270361]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_03" unique_id=1760346649]
 cast_shadow = 0
 mesh = ExtResource("101_geckl")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_03" unique_id=1077124823]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_03" unique_id=1274985889]
 cast_shadow = 0
 mesh = ExtResource("102_pqh0a")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_03" unique_id=1620384792]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_03" unique_id=707377178]
 cast_shadow = 0
 mesh = ExtResource("103_qrhkg")
 metadata/lod = 2
 
-[node name="chunk_04_03" type="Node3D" parent="." unique_id=572152165]
+[node name="chunk_04_03" type="Node3D" parent="." unique_id=1349571403]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_03" unique_id=1021089586]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_03" unique_id=1213382360]
 cast_shadow = 0
 mesh = ExtResource("104_efuas")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_03" unique_id=1338378090]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_03" unique_id=619464054]
 cast_shadow = 0
 mesh = ExtResource("105_71fry")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_03" unique_id=178937581]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_03" unique_id=1585843149]
 cast_shadow = 0
 mesh = ExtResource("106_wxiwe")
 metadata/lod = 2
 
-[node name="chunk_05_03" type="Node3D" parent="." unique_id=2006386626]
+[node name="chunk_05_03" type="Node3D" parent="." unique_id=1715090378]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_03" unique_id=303013940]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_03" unique_id=1004855950]
 cast_shadow = 0
 mesh = ExtResource("107_t0k4o")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_03" unique_id=105557699]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_03" unique_id=1438057203]
 cast_shadow = 0
 mesh = ExtResource("108_h4j3s")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_03" unique_id=136923471]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_03" unique_id=189365753]
 cast_shadow = 0
 mesh = ExtResource("109_8bkui")
 metadata/lod = 2
 
-[node name="chunk_06_03" type="Node3D" parent="." unique_id=1319470]
+[node name="chunk_06_03" type="Node3D" parent="." unique_id=1258221798]
 metadata/chunk_radius = 55.849537
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_03" unique_id=610931237]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_03" unique_id=1880443208]
 cast_shadow = 0
 mesh = ExtResource("110_t0kg4")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_03" unique_id=103423086]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_03" unique_id=1835827869]
 cast_shadow = 0
 mesh = ExtResource("111_jyvys")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_03" unique_id=328137580]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_03" unique_id=1159195527]
 cast_shadow = 0
 mesh = ExtResource("112_q8qsc")
 metadata/lod = 2
 
-[node name="chunk_07_03" type="Node3D" parent="." unique_id=877552451]
+[node name="chunk_07_03" type="Node3D" parent="." unique_id=1615544933]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_03" unique_id=260447290]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_03" unique_id=1426986513]
 cast_shadow = 0
 mesh = ExtResource("113_nmp7i")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_03" unique_id=465461557]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_03" unique_id=1011736964]
 cast_shadow = 0
 mesh = ExtResource("114_fl4yb")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_03" unique_id=10806241]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_03" unique_id=1148297927]
 cast_shadow = 0
 mesh = ExtResource("115_umpvp")
 metadata/lod = 2
 
-[node name="chunk_08_03" type="Node3D" parent="." unique_id=1312927109]
+[node name="chunk_08_03" type="Node3D" parent="." unique_id=901230848]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_03" unique_id=1607463864]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_03" unique_id=36535965]
 cast_shadow = 0
 mesh = ExtResource("116_8trl3")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_03" unique_id=174600834]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_03" unique_id=397584766]
 cast_shadow = 0
 mesh = ExtResource("117_4xy3l")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_03" unique_id=1374348904]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_03" unique_id=1221856336]
 cast_shadow = 0
 mesh = ExtResource("118_ktupv")
 metadata/lod = 2
 
-[node name="chunk_09_03" type="Node3D" parent="." unique_id=513178304]
+[node name="chunk_09_03" type="Node3D" parent="." unique_id=1787591680]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_03" unique_id=372313154]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_03" unique_id=2040663466]
 cast_shadow = 0
 mesh = ExtResource("119_o045t")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_03" unique_id=1670881988]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_03" unique_id=596503707]
 cast_shadow = 0
 mesh = ExtResource("120_k1sg6")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_03" unique_id=970397267]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_03" unique_id=1145272485]
 cast_shadow = 0
 mesh = ExtResource("121_m84f0")
 metadata/lod = 2
 
-[node name="chunk_00_04" type="Node3D" parent="." unique_id=686903294]
+[node name="chunk_00_04" type="Node3D" parent="." unique_id=1776753660]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_04" unique_id=1926055825]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_04" unique_id=593733703]
 cast_shadow = 0
 mesh = ExtResource("122_iywgg")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_04" unique_id=84746350]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_04" unique_id=1265535369]
 cast_shadow = 0
 mesh = ExtResource("123_xcshw")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_04" unique_id=1918769112]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_04" unique_id=1286186417]
 cast_shadow = 0
 mesh = ExtResource("124_ikknk")
 metadata/lod = 2
 
-[node name="chunk_01_04" type="Node3D" parent="." unique_id=962367093]
+[node name="chunk_01_04" type="Node3D" parent="." unique_id=457757706]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_04" unique_id=1714462601]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_04" unique_id=29669467]
 cast_shadow = 0
 mesh = ExtResource("125_tql4r")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_04" unique_id=1168829718]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_04" unique_id=944529075]
 cast_shadow = 0
 mesh = ExtResource("126_1hax7")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_04" unique_id=584893279]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_04" unique_id=723680713]
 cast_shadow = 0
 mesh = ExtResource("127_180p0")
 metadata/lod = 2
 
-[node name="chunk_02_04" type="Node3D" parent="." unique_id=1321558493]
+[node name="chunk_02_04" type="Node3D" parent="." unique_id=1737732407]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_04" unique_id=1472782577]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_04" unique_id=1149570002]
 cast_shadow = 0
 mesh = ExtResource("128_q25u7")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_04" unique_id=700591527]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_04" unique_id=705819929]
 cast_shadow = 0
 mesh = ExtResource("129_hduqt")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_04" unique_id=1324871523]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_04" unique_id=704790134]
 cast_shadow = 0
 mesh = ExtResource("130_175kl")
 metadata/lod = 2
 
-[node name="chunk_03_04" type="Node3D" parent="." unique_id=2047787115]
+[node name="chunk_03_04" type="Node3D" parent="." unique_id=1394403878]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_04" unique_id=603835423]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_04" unique_id=956338489]
 cast_shadow = 0
 mesh = ExtResource("131_m01qt")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_04" unique_id=275508705]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_04" unique_id=2034050292]
 cast_shadow = 0
 mesh = ExtResource("132_7n1l8")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_04" unique_id=2033454738]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_04" unique_id=1222718282]
 cast_shadow = 0
 mesh = ExtResource("133_8fms7")
 metadata/lod = 2
 
-[node name="chunk_04_04" type="Node3D" parent="." unique_id=1922342316]
+[node name="chunk_04_04" type="Node3D" parent="." unique_id=739500842]
 metadata/chunk_radius = 52.384823
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_04" unique_id=355941325]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_04" unique_id=1444634365]
 cast_shadow = 0
 mesh = ExtResource("134_qrrci")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_04" unique_id=2133467461]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_04" unique_id=1133155445]
 cast_shadow = 0
 mesh = ExtResource("135_8oyvq")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_04" unique_id=554984199]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_04" unique_id=1449349531]
 cast_shadow = 0
 mesh = ExtResource("136_cxm5f")
 metadata/lod = 2
 
-[node name="chunk_05_04" type="Node3D" parent="." unique_id=2003805561]
+[node name="chunk_05_04" type="Node3D" parent="." unique_id=1628760774]
 metadata/chunk_radius = 52.384823
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_04" unique_id=538373689]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_04" unique_id=1698538802]
 cast_shadow = 0
 mesh = ExtResource("137_h3r20")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_04" unique_id=1033863924]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_04" unique_id=280287243]
 cast_shadow = 0
 mesh = ExtResource("138_sgexy")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_04" unique_id=521522003]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_04" unique_id=205213438]
 cast_shadow = 0
 mesh = ExtResource("139_tgtkd")
 metadata/lod = 2
 
-[node name="chunk_06_04" type="Node3D" parent="." unique_id=1097853654]
+[node name="chunk_06_04" type="Node3D" parent="." unique_id=977100837]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_04" unique_id=1906746206]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_04" unique_id=899695203]
 cast_shadow = 0
 mesh = ExtResource("140_dq1sg")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_04" unique_id=1886762626]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_04" unique_id=1951102854]
 cast_shadow = 0
 mesh = ExtResource("141_fa8bp")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_04" unique_id=115837477]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_04" unique_id=394911053]
 cast_shadow = 0
 mesh = ExtResource("142_mq7dh")
 metadata/lod = 2
 
-[node name="chunk_07_04" type="Node3D" parent="." unique_id=464177909]
+[node name="chunk_07_04" type="Node3D" parent="." unique_id=239990172]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_04" unique_id=1970936754]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_04" unique_id=1739026386]
 cast_shadow = 0
 mesh = ExtResource("143_s40gp")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_04" unique_id=2056709148]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_04" unique_id=221069328]
 cast_shadow = 0
 mesh = ExtResource("144_eccxg")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_04" unique_id=1553426511]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_04" unique_id=688392102]
 cast_shadow = 0
 mesh = ExtResource("145_tlvha")
 metadata/lod = 2
 
-[node name="chunk_08_04" type="Node3D" parent="." unique_id=1320677830]
+[node name="chunk_08_04" type="Node3D" parent="." unique_id=2126536561]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_04" unique_id=1284060410]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_04" unique_id=1694351683]
 cast_shadow = 0
 mesh = ExtResource("146_i8iqk")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_04" unique_id=1225711776]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_04" unique_id=1185043521]
 cast_shadow = 0
 mesh = ExtResource("147_8qegh")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_04" unique_id=1334732065]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_04" unique_id=1644869727]
 cast_shadow = 0
 mesh = ExtResource("148_j3ujk")
 metadata/lod = 2
 
-[node name="chunk_09_04" type="Node3D" parent="." unique_id=1857563980]
+[node name="chunk_09_04" type="Node3D" parent="." unique_id=1381689536]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_04" unique_id=1894796641]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_04" unique_id=1379194917]
 cast_shadow = 0
 mesh = ExtResource("149_2017d")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_04" unique_id=553331383]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_04" unique_id=1270551631]
 cast_shadow = 0
 mesh = ExtResource("150_chaq7")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_04" unique_id=591696845]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_04" unique_id=2120108371]
 cast_shadow = 0
 mesh = ExtResource("151_jjang")
 metadata/lod = 2
 
-[node name="chunk_00_05" type="Node3D" parent="." unique_id=529954082]
+[node name="chunk_00_05" type="Node3D" parent="." unique_id=814284004]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_05" unique_id=1640910651]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_05" unique_id=122558275]
 cast_shadow = 0
 mesh = ExtResource("152_y2vmq")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_05" unique_id=1868107437]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_05" unique_id=1307238589]
 cast_shadow = 0
 mesh = ExtResource("153_2ri55")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_05" unique_id=327926244]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_05" unique_id=477887485]
 cast_shadow = 0
 mesh = ExtResource("154_dnr8f")
 metadata/lod = 2
 
-[node name="chunk_01_05" type="Node3D" parent="." unique_id=2028226920]
+[node name="chunk_01_05" type="Node3D" parent="." unique_id=1877865525]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_05" unique_id=1529096265]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_05" unique_id=117552767]
 cast_shadow = 0
 mesh = ExtResource("155_p7ury")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_05" unique_id=1348606300]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_05" unique_id=344989256]
 cast_shadow = 0
 mesh = ExtResource("156_v7uub")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_05" unique_id=824332798]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_05" unique_id=775519499]
 cast_shadow = 0
 mesh = ExtResource("157_ykbs8")
 metadata/lod = 2
 
-[node name="chunk_02_05" type="Node3D" parent="." unique_id=815958529]
+[node name="chunk_02_05" type="Node3D" parent="." unique_id=389092022]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_05" unique_id=1155897294]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_05" unique_id=1111988509]
 cast_shadow = 0
 mesh = ExtResource("158_nv1b0")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_05" unique_id=393669817]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_05" unique_id=1673731331]
 cast_shadow = 0
 mesh = ExtResource("159_2qt6y")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_05" unique_id=1411249791]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_05" unique_id=83044149]
 cast_shadow = 0
 mesh = ExtResource("160_a4dd0")
 metadata/lod = 2
 
-[node name="chunk_03_05" type="Node3D" parent="." unique_id=5412941]
+[node name="chunk_03_05" type="Node3D" parent="." unique_id=1638376460]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_05" unique_id=1409837545]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_05" unique_id=1483658474]
 cast_shadow = 0
 mesh = ExtResource("161_s4f6k")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_05" unique_id=678469708]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_05" unique_id=353560309]
 cast_shadow = 0
 mesh = ExtResource("162_uja07")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_05" unique_id=713369627]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_05" unique_id=1470847862]
 cast_shadow = 0
 mesh = ExtResource("163_sxo05")
 metadata/lod = 2
 
-[node name="chunk_04_05" type="Node3D" parent="." unique_id=1887514563]
+[node name="chunk_04_05" type="Node3D" parent="." unique_id=1413156036]
 metadata/chunk_radius = 52.384823
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_05" unique_id=1688907752]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_05" unique_id=1695041633]
 cast_shadow = 0
 mesh = ExtResource("164_xdp8y")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_05" unique_id=1726447365]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_05" unique_id=2128814107]
 cast_shadow = 0
 mesh = ExtResource("165_ix7j8")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_05" unique_id=323410396]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_05" unique_id=183081726]
 cast_shadow = 0
 mesh = ExtResource("166_lhd21")
 metadata/lod = 2
 
-[node name="chunk_05_05" type="Node3D" parent="." unique_id=158806347]
+[node name="chunk_05_05" type="Node3D" parent="." unique_id=599048354]
 metadata/chunk_radius = 52.384823
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_05" unique_id=1638214606]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_05" unique_id=1174793685]
 cast_shadow = 0
 mesh = ExtResource("167_u0ap1")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_05" unique_id=204065410]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_05" unique_id=1288454143]
 cast_shadow = 0
 mesh = ExtResource("168_732lj")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_05" unique_id=1624530623]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_05" unique_id=968553154]
 cast_shadow = 0
 mesh = ExtResource("169_3tfty")
 metadata/lod = 2
 
-[node name="chunk_06_05" type="Node3D" parent="." unique_id=132837321]
+[node name="chunk_06_05" type="Node3D" parent="." unique_id=1715195095]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_05" unique_id=2143892548]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_05" unique_id=1015738043]
 cast_shadow = 0
 mesh = ExtResource("170_vnr86")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_05" unique_id=1660458391]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_05" unique_id=792393709]
 cast_shadow = 0
 mesh = ExtResource("171_yllvd")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_05" unique_id=20426028]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_05" unique_id=1257113336]
 cast_shadow = 0
 mesh = ExtResource("172_dscx6")
 metadata/lod = 2
 
-[node name="chunk_07_05" type="Node3D" parent="." unique_id=699001771]
+[node name="chunk_07_05" type="Node3D" parent="." unique_id=138641921]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_05" unique_id=1380377734]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_05" unique_id=648488211]
 cast_shadow = 0
 mesh = ExtResource("173_f3us8")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_05" unique_id=2120802446]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_05" unique_id=1856942817]
 cast_shadow = 0
 mesh = ExtResource("174_30n62")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_05" unique_id=484794225]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_05" unique_id=1432172739]
 cast_shadow = 0
 mesh = ExtResource("175_odl2w")
 metadata/lod = 2
 
-[node name="chunk_08_05" type="Node3D" parent="." unique_id=1996499758]
+[node name="chunk_08_05" type="Node3D" parent="." unique_id=1448258906]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_05" unique_id=209257963]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_05" unique_id=1558864329]
 cast_shadow = 0
 mesh = ExtResource("176_q4lxv")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_05" unique_id=1508976662]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_05" unique_id=664787597]
 cast_shadow = 0
 mesh = ExtResource("177_npvgw")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_05" unique_id=2089636633]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_05" unique_id=1638160878]
 cast_shadow = 0
 mesh = ExtResource("178_8nyd5")
 metadata/lod = 2
 
-[node name="chunk_09_05" type="Node3D" parent="." unique_id=632830663]
+[node name="chunk_09_05" type="Node3D" parent="." unique_id=846442251]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_05" unique_id=417249285]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_05" unique_id=855133733]
 cast_shadow = 0
 mesh = ExtResource("179_omxcl")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_05" unique_id=1452485475]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_05" unique_id=1401322901]
 cast_shadow = 0
 mesh = ExtResource("180_1rmb4")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_05" unique_id=2010213798]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_05" unique_id=568166492]
 cast_shadow = 0
 mesh = ExtResource("181_27t4g")
 metadata/lod = 2
 
-[node name="chunk_00_06" type="Node3D" parent="." unique_id=359450275]
+[node name="chunk_00_06" type="Node3D" parent="." unique_id=437292686]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_06" unique_id=1288945031]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_06" unique_id=1968029127]
 cast_shadow = 0
 mesh = ExtResource("182_wl02g")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_06" unique_id=1433186212]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_06" unique_id=1481121084]
 cast_shadow = 0
 mesh = ExtResource("183_5dbhp")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_06" unique_id=472374267]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_06" unique_id=2049285600]
 cast_shadow = 0
 mesh = ExtResource("184_3p2s6")
 metadata/lod = 2
 
-[node name="chunk_01_06" type="Node3D" parent="." unique_id=1409009911]
+[node name="chunk_01_06" type="Node3D" parent="." unique_id=80418938]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_06" unique_id=40591003]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_06" unique_id=2144221419]
 cast_shadow = 0
 mesh = ExtResource("185_sm1kp")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_06" unique_id=767629078]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_06" unique_id=1881994042]
 cast_shadow = 0
 mesh = ExtResource("186_64jxo")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_06" unique_id=1845307702]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_06" unique_id=56128346]
 cast_shadow = 0
 mesh = ExtResource("187_nvhkx")
 metadata/lod = 2
 
-[node name="chunk_02_06" type="Node3D" parent="." unique_id=1714883869]
+[node name="chunk_02_06" type="Node3D" parent="." unique_id=261402838]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_06" unique_id=1396140622]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_06" unique_id=1112654145]
 cast_shadow = 0
 mesh = ExtResource("188_4s7n4")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_06" unique_id=203550735]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_06" unique_id=938822596]
 cast_shadow = 0
 mesh = ExtResource("189_vn38i")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_06" unique_id=2141802041]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_06" unique_id=1129620153]
 cast_shadow = 0
 mesh = ExtResource("190_vmv6x")
 metadata/lod = 2
 
-[node name="chunk_03_06" type="Node3D" parent="." unique_id=1868832158]
+[node name="chunk_03_06" type="Node3D" parent="." unique_id=259701385]
 metadata/chunk_radius = 55.849537
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_06" unique_id=1069611498]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_06" unique_id=1891717826]
 cast_shadow = 0
 mesh = ExtResource("191_wv3ca")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_06" unique_id=969231930]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_06" unique_id=2116342568]
 cast_shadow = 0
 mesh = ExtResource("192_2mn2r")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_06" unique_id=1374588684]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_06" unique_id=161495483]
 cast_shadow = 0
 mesh = ExtResource("193_0xyip")
 metadata/lod = 2
 
-[node name="chunk_04_06" type="Node3D" parent="." unique_id=471945982]
+[node name="chunk_04_06" type="Node3D" parent="." unique_id=1527632550]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_06" unique_id=662968928]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_06" unique_id=823222839]
 cast_shadow = 0
 mesh = ExtResource("194_hwin3")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_06" unique_id=1146275675]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_06" unique_id=264407273]
 cast_shadow = 0
 mesh = ExtResource("195_m35ht")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_06" unique_id=1243482485]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_06" unique_id=1819588481]
 cast_shadow = 0
 mesh = ExtResource("196_t3gk7")
 metadata/lod = 2
 
-[node name="chunk_05_06" type="Node3D" parent="." unique_id=507160976]
+[node name="chunk_05_06" type="Node3D" parent="." unique_id=839713863]
 metadata/chunk_radius = 54.1449
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_06" unique_id=2123995703]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_06" unique_id=823458982]
 cast_shadow = 0
 mesh = ExtResource("197_30kq3")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_06" unique_id=362127254]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_06" unique_id=225771974]
 cast_shadow = 0
 mesh = ExtResource("198_ypcx5")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_06" unique_id=918642172]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_06" unique_id=783017575]
 cast_shadow = 0
 mesh = ExtResource("199_im5kl")
 metadata/lod = 2
 
-[node name="chunk_06_06" type="Node3D" parent="." unique_id=253566520]
+[node name="chunk_06_06" type="Node3D" parent="." unique_id=1196188141]
 metadata/chunk_radius = 55.849537
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_06" unique_id=134098991]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_06" unique_id=588442372]
 cast_shadow = 0
 mesh = ExtResource("200_p8egy")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_06" unique_id=1036397821]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_06" unique_id=1935294617]
 cast_shadow = 0
 mesh = ExtResource("201_0flp7")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_06" unique_id=1255438537]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_06" unique_id=185893796]
 cast_shadow = 0
 mesh = ExtResource("202_pnm1q")
 metadata/lod = 2
 
-[node name="chunk_07_06" type="Node3D" parent="." unique_id=1082338287]
+[node name="chunk_07_06" type="Node3D" parent="." unique_id=819454744]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_06" unique_id=149938752]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_06" unique_id=667907550]
 cast_shadow = 0
 mesh = ExtResource("203_na147")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_06" unique_id=1424368088]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_06" unique_id=392953646]
 cast_shadow = 0
 mesh = ExtResource("204_y5qi0")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_06" unique_id=1571363757]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_06" unique_id=1272224051]
 cast_shadow = 0
 mesh = ExtResource("205_deyf4")
 metadata/lod = 2
 
-[node name="chunk_08_06" type="Node3D" parent="." unique_id=2122470712]
+[node name="chunk_08_06" type="Node3D" parent="." unique_id=2034571559]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_06" unique_id=1430169057]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_06" unique_id=871903377]
 cast_shadow = 0
 mesh = ExtResource("206_pd83s")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_06" unique_id=2111685435]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_06" unique_id=410282930]
 cast_shadow = 0
 mesh = ExtResource("207_lk386")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_06" unique_id=1317136058]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_06" unique_id=1654339439]
 cast_shadow = 0
 mesh = ExtResource("208_fp3mx")
 metadata/lod = 2
 
-[node name="chunk_09_06" type="Node3D" parent="." unique_id=1677968518]
+[node name="chunk_09_06" type="Node3D" parent="." unique_id=1541806908]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_06" unique_id=1657523317]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_06" unique_id=952345568]
 cast_shadow = 0
 mesh = ExtResource("209_hha26")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_06" unique_id=831609294]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_06" unique_id=1953674180]
 cast_shadow = 0
 mesh = ExtResource("210_l8vr1")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_06" unique_id=43594646]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_06" unique_id=407872944]
 cast_shadow = 0
 mesh = ExtResource("211_k62ux")
 metadata/lod = 2
 
-[node name="chunk_00_07" type="Node3D" parent="." unique_id=1680826442]
+[node name="chunk_00_07" type="Node3D" parent="." unique_id=1268898938]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_07" unique_id=629736167]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_07" unique_id=1724851045]
 cast_shadow = 0
 mesh = ExtResource("212_p4cx0")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_07" unique_id=1247526142]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_07" unique_id=1708071327]
 cast_shadow = 0
 mesh = ExtResource("213_pnehl")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_07" unique_id=542557840]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_07" unique_id=397845480]
 cast_shadow = 0
 mesh = ExtResource("214_lmmns")
 metadata/lod = 2
 
-[node name="chunk_01_07" type="Node3D" parent="." unique_id=507911268]
+[node name="chunk_01_07" type="Node3D" parent="." unique_id=510258050]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_07" unique_id=100887852]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_07" unique_id=1263044067]
 cast_shadow = 0
 mesh = ExtResource("215_7tj2n")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_07" unique_id=662335935]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_07" unique_id=661483467]
 cast_shadow = 0
 mesh = ExtResource("216_c8uuo")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_07" unique_id=158088665]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_07" unique_id=1227168962]
 cast_shadow = 0
 mesh = ExtResource("217_vlxcn")
 metadata/lod = 2
 
-[node name="chunk_02_07" type="Node3D" parent="." unique_id=1704612865]
+[node name="chunk_02_07" type="Node3D" parent="." unique_id=2000426929]
 metadata/chunk_radius = 76.637794
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_07" unique_id=603239426]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_07" unique_id=162862662]
 cast_shadow = 0
 mesh = ExtResource("218_x0awc")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_07" unique_id=1767726848]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_07" unique_id=1177896754]
 cast_shadow = 0
 mesh = ExtResource("219_r0ldt")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_07" unique_id=1799052144]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_07" unique_id=504651894]
 cast_shadow = 0
 mesh = ExtResource("220_ck8l6")
 metadata/lod = 2
 
-[node name="chunk_03_07" type="Node3D" parent="." unique_id=1161169244]
+[node name="chunk_03_07" type="Node3D" parent="." unique_id=1771566127]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_07" unique_id=877532356]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_07" unique_id=993871467]
 cast_shadow = 0
 mesh = ExtResource("221_3vr1h")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_07" unique_id=1501325839]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_07" unique_id=372775822]
 cast_shadow = 0
 mesh = ExtResource("222_umvxn")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_07" unique_id=1283645790]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_07" unique_id=1916268856]
 cast_shadow = 0
 mesh = ExtResource("223_4pb30")
 metadata/lod = 2
 
-[node name="chunk_04_07" type="Node3D" parent="." unique_id=19208226]
+[node name="chunk_04_07" type="Node3D" parent="." unique_id=406153807]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_07" unique_id=1094319720]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_07" unique_id=753097947]
 cast_shadow = 0
 mesh = ExtResource("224_t0x16")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_07" unique_id=81027470]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_07" unique_id=1910665234]
 cast_shadow = 0
 mesh = ExtResource("225_fxjr4")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_07" unique_id=1390788490]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_07" unique_id=1913852270]
 cast_shadow = 0
 mesh = ExtResource("226_mu0w1")
 metadata/lod = 2
 
-[node name="chunk_05_07" type="Node3D" parent="." unique_id=779406189]
+[node name="chunk_05_07" type="Node3D" parent="." unique_id=1064564549]
 metadata/chunk_radius = 65.64114
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_07" unique_id=1183710350]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_07" unique_id=827879794]
 cast_shadow = 0
 mesh = ExtResource("227_2b6y2")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_07" unique_id=874793528]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_07" unique_id=2116974733]
 cast_shadow = 0
 mesh = ExtResource("228_8wqgo")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_07" unique_id=113810472]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_07" unique_id=503438185]
 cast_shadow = 0
 mesh = ExtResource("229_crayr")
 metadata/lod = 2
 
-[node name="chunk_06_07" type="Node3D" parent="." unique_id=922570505]
+[node name="chunk_06_07" type="Node3D" parent="." unique_id=1624204471]
 metadata/chunk_radius = 67.05416
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_07" unique_id=674470849]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_07" unique_id=100306135]
 cast_shadow = 0
 mesh = ExtResource("230_eled8")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_07" unique_id=388955043]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_07" unique_id=1977712044]
 cast_shadow = 0
 mesh = ExtResource("231_x6kis")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_07" unique_id=1842866392]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_07" unique_id=1918653272]
 cast_shadow = 0
 mesh = ExtResource("232_hnmrq")
 metadata/lod = 2
 
-[node name="chunk_07_07" type="Node3D" parent="." unique_id=775277412]
+[node name="chunk_07_07" type="Node3D" parent="." unique_id=1177764506]
 metadata/chunk_radius = 76.637794
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_07" unique_id=1476824337]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_07" unique_id=1709902530]
 cast_shadow = 0
 mesh = ExtResource("233_8fr7g")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_07" unique_id=102809600]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_07" unique_id=552583091]
 cast_shadow = 0
 mesh = ExtResource("234_m66y2")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_07" unique_id=1864358196]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_07" unique_id=1287417181]
 cast_shadow = 0
 mesh = ExtResource("235_ju1tt")
 metadata/lod = 2
 
-[node name="chunk_08_07" type="Node3D" parent="." unique_id=529993728]
+[node name="chunk_08_07" type="Node3D" parent="." unique_id=187475930]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_07" unique_id=882277103]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_07" unique_id=2101734007]
 cast_shadow = 0
 mesh = ExtResource("236_y2muq")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_07" unique_id=456786964]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_07" unique_id=1588006992]
 cast_shadow = 0
 mesh = ExtResource("237_tqvb3")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_07" unique_id=171047415]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_07" unique_id=1354657049]
 cast_shadow = 0
 mesh = ExtResource("238_tqanw")
 metadata/lod = 2
 
-[node name="chunk_09_07" type="Node3D" parent="." unique_id=1028965796]
+[node name="chunk_09_07" type="Node3D" parent="." unique_id=1112165439]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_07" unique_id=970407358]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_07" unique_id=866899257]
 cast_shadow = 0
 mesh = ExtResource("239_yq6ya")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_07" unique_id=956192394]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_07" unique_id=1192602296]
 cast_shadow = 0
 mesh = ExtResource("240_hm1y0")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_07" unique_id=60780997]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_07" unique_id=1786076613]
 cast_shadow = 0
 mesh = ExtResource("241_ei6tc")
 metadata/lod = 2
 
-[node name="chunk_00_08" type="Node3D" parent="." unique_id=1154975095]
+[node name="chunk_00_08" type="Node3D" parent="." unique_id=1482545132]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_08" unique_id=1528575307]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_08" unique_id=2084585277]
 cast_shadow = 0
 mesh = ExtResource("242_mf3ct")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_08" unique_id=693463753]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_08" unique_id=180217758]
 cast_shadow = 0
 mesh = ExtResource("243_13upn")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_08" unique_id=1411025555]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_08" unique_id=1284221615]
 cast_shadow = 0
 mesh = ExtResource("244_yni5m")
 metadata/lod = 2
 
-[node name="chunk_01_08" type="Node3D" parent="." unique_id=671147332]
+[node name="chunk_01_08" type="Node3D" parent="." unique_id=1337488514]
 metadata/chunk_radius = 142.4673
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_08" unique_id=65655277]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_08" unique_id=1985384895]
 cast_shadow = 0
 mesh = ExtResource("245_tsdej")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_08" unique_id=1724068824]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_08" unique_id=1716441187]
 cast_shadow = 0
 mesh = ExtResource("246_b1jjt")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_08" unique_id=681591460]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_08" unique_id=1814791885]
 cast_shadow = 0
 mesh = ExtResource("247_m6isl")
 metadata/lod = 2
 
-[node name="chunk_02_08" type="Node3D" parent="." unique_id=640350905]
+[node name="chunk_02_08" type="Node3D" parent="." unique_id=1930374680]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_08" unique_id=189500094]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_08" unique_id=558588060]
 cast_shadow = 0
 mesh = ExtResource("248_0po7v")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_08" unique_id=676883917]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_08" unique_id=1980989571]
 cast_shadow = 0
 mesh = ExtResource("249_gitpp")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_08" unique_id=833327886]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_08" unique_id=108171636]
 cast_shadow = 0
 mesh = ExtResource("250_kxdu8")
 metadata/lod = 2
 
-[node name="chunk_03_08" type="Node3D" parent="." unique_id=905894596]
+[node name="chunk_03_08" type="Node3D" parent="." unique_id=1511628732]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_08" unique_id=1430571350]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_08" unique_id=1362184505]
 cast_shadow = 0
 mesh = ExtResource("251_82fyx")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_08" unique_id=1527862989]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_08" unique_id=518942039]
 cast_shadow = 0
 mesh = ExtResource("252_g15fo")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_08" unique_id=1255597574]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_08" unique_id=1781621268]
 cast_shadow = 0
 mesh = ExtResource("253_o17xn")
 metadata/lod = 2
 
-[node name="chunk_04_08" type="Node3D" parent="." unique_id=611226379]
+[node name="chunk_04_08" type="Node3D" parent="." unique_id=859423174]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_08" unique_id=1132443909]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_08" unique_id=15380742]
 cast_shadow = 0
 mesh = ExtResource("254_nu1du")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_08" unique_id=1589570987]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_08" unique_id=1852667251]
 cast_shadow = 0
 mesh = ExtResource("255_w5lhv")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_08" unique_id=160039711]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_08" unique_id=1923494588]
 cast_shadow = 0
 mesh = ExtResource("256_n5mvn")
 metadata/lod = 2
 
-[node name="chunk_05_08" type="Node3D" parent="." unique_id=1169090841]
+[node name="chunk_05_08" type="Node3D" parent="." unique_id=1303916770]
 metadata/chunk_radius = 107.33383
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_08" unique_id=1151295177]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_08" unique_id=60720440]
 cast_shadow = 0
 mesh = ExtResource("257_11ba4")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_08" unique_id=2131843885]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_08" unique_id=1181942958]
 cast_shadow = 0
 mesh = ExtResource("258_si26w")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_08" unique_id=2113606542]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_08" unique_id=452710050]
 cast_shadow = 0
 mesh = ExtResource("259_rakwu")
 metadata/lod = 2
 
-[node name="chunk_06_08" type="Node3D" parent="." unique_id=131733965]
+[node name="chunk_06_08" type="Node3D" parent="." unique_id=1025489386]
 metadata/chunk_radius = 108.20374
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_08" unique_id=405418643]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_08" unique_id=984529662]
 cast_shadow = 0
 mesh = ExtResource("260_ud5hj")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_08" unique_id=2131887547]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_08" unique_id=1905135343]
 cast_shadow = 0
 mesh = ExtResource("261_7kcoo")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_08" unique_id=910751539]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_08" unique_id=856619729]
 cast_shadow = 0
 mesh = ExtResource("262_djury")
 metadata/lod = 2
 
-[node name="chunk_07_08" type="Node3D" parent="." unique_id=1088756849]
+[node name="chunk_07_08" type="Node3D" parent="." unique_id=108661604]
 metadata/chunk_radius = 114.390305
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_08" unique_id=1493866529]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_08" unique_id=45934921]
 cast_shadow = 0
 mesh = ExtResource("263_y3le2")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_08" unique_id=846157011]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_08" unique_id=118266369]
 cast_shadow = 0
 mesh = ExtResource("264_ot8sp")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_08" unique_id=167762315]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_08" unique_id=1089073228]
 cast_shadow = 0
 mesh = ExtResource("265_hd285")
 metadata/lod = 2
 
-[node name="chunk_08_08" type="Node3D" parent="." unique_id=1702046212]
+[node name="chunk_08_08" type="Node3D" parent="." unique_id=253094013]
 metadata/chunk_radius = 142.4673
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_08" unique_id=1849880487]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_08" unique_id=1529244300]
 cast_shadow = 0
 mesh = ExtResource("266_s6oee")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_08" unique_id=997950809]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_08" unique_id=78986830]
 cast_shadow = 0
 mesh = ExtResource("267_swsai")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_08" unique_id=253774206]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_08" unique_id=234930669]
 cast_shadow = 0
 mesh = ExtResource("268_aqsrx")
 metadata/lod = 2
 
-[node name="chunk_09_08" type="Node3D" parent="." unique_id=1265029972]
+[node name="chunk_09_08" type="Node3D" parent="." unique_id=1506324286]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_08" unique_id=1096863616]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_08" unique_id=624478958]
 cast_shadow = 0
 mesh = ExtResource("269_i26eb")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_08" unique_id=185556128]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_08" unique_id=432600299]
 cast_shadow = 0
 mesh = ExtResource("270_msohe")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_08" unique_id=1749378506]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_08" unique_id=1240561352]
 cast_shadow = 0
 mesh = ExtResource("271_hkjlt")
 metadata/lod = 2
 
-[node name="chunk_00_09" type="Node3D" parent="." unique_id=1965594127]
+[node name="chunk_00_09" type="Node3D" parent="." unique_id=784194172]
 metadata/chunk_radius = 294.91452
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_00_09" unique_id=673270782]
+[node name="lod0" type="MeshInstance3D" parent="chunk_00_09" unique_id=832128345]
 cast_shadow = 0
 mesh = ExtResource("272_ucty6")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_00_09" unique_id=106741366]
+[node name="lod1" type="MeshInstance3D" parent="chunk_00_09" unique_id=27006185]
 cast_shadow = 0
 mesh = ExtResource("273_o5uog")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_00_09" unique_id=614463109]
+[node name="lod2" type="MeshInstance3D" parent="chunk_00_09" unique_id=267094651]
 cast_shadow = 0
 mesh = ExtResource("274_molo6")
 metadata/lod = 2
 
-[node name="chunk_01_09" type="Node3D" parent="." unique_id=726768606]
+[node name="chunk_01_09" type="Node3D" parent="." unique_id=1477802887]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_01_09" unique_id=1077337136]
+[node name="lod0" type="MeshInstance3D" parent="chunk_01_09" unique_id=1808398669]
 cast_shadow = 0
 mesh = ExtResource("275_a7k1t")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_01_09" unique_id=55095874]
+[node name="lod1" type="MeshInstance3D" parent="chunk_01_09" unique_id=224622668]
 cast_shadow = 0
 mesh = ExtResource("276_wjkqk")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_01_09" unique_id=747374910]
+[node name="lod2" type="MeshInstance3D" parent="chunk_01_09" unique_id=2072111235]
 cast_shadow = 0
 mesh = ExtResource("277_x0ptm")
 metadata/lod = 2
 
-[node name="chunk_02_09" type="Node3D" parent="." unique_id=814640332]
+[node name="chunk_02_09" type="Node3D" parent="." unique_id=864527560]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_02_09" unique_id=1113904437]
+[node name="lod0" type="MeshInstance3D" parent="chunk_02_09" unique_id=2127747957]
 cast_shadow = 0
 mesh = ExtResource("278_6wd2s")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_02_09" unique_id=1550043512]
+[node name="lod1" type="MeshInstance3D" parent="chunk_02_09" unique_id=1530964365]
 cast_shadow = 0
 mesh = ExtResource("279_dfmum")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_02_09" unique_id=1241930096]
+[node name="lod2" type="MeshInstance3D" parent="chunk_02_09" unique_id=314087100]
 cast_shadow = 0
 mesh = ExtResource("280_csldw")
 metadata/lod = 2
 
-[node name="chunk_03_09" type="Node3D" parent="." unique_id=1282245783]
+[node name="chunk_03_09" type="Node3D" parent="." unique_id=1859781978]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_03_09" unique_id=1558675045]
+[node name="lod0" type="MeshInstance3D" parent="chunk_03_09" unique_id=1735286876]
 cast_shadow = 0
 mesh = ExtResource("281_d5grl")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_03_09" unique_id=1171483627]
+[node name="lod1" type="MeshInstance3D" parent="chunk_03_09" unique_id=2125408757]
 cast_shadow = 0
 mesh = ExtResource("282_dtxp0")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_03_09" unique_id=469802091]
+[node name="lod2" type="MeshInstance3D" parent="chunk_03_09" unique_id=569049474]
 cast_shadow = 0
 mesh = ExtResource("283_kq35e")
 metadata/lod = 2
 
-[node name="chunk_04_09" type="Node3D" parent="." unique_id=1651992213]
+[node name="chunk_04_09" type="Node3D" parent="." unique_id=837018602]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_04_09" unique_id=355685667]
+[node name="lod0" type="MeshInstance3D" parent="chunk_04_09" unique_id=1010424343]
 cast_shadow = 0
 mesh = ExtResource("284_28qcp")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_04_09" unique_id=429125321]
+[node name="lod1" type="MeshInstance3D" parent="chunk_04_09" unique_id=1439346366]
 cast_shadow = 0
 mesh = ExtResource("285_ixt5j")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_04_09" unique_id=320859460]
+[node name="lod2" type="MeshInstance3D" parent="chunk_04_09" unique_id=1369632166]
 cast_shadow = 0
 mesh = ExtResource("286_e8g6f")
 metadata/lod = 2
 
-[node name="chunk_05_09" type="Node3D" parent="." unique_id=394949033]
+[node name="chunk_05_09" type="Node3D" parent="." unique_id=124701688]
 metadata/chunk_radius = 211.80031
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_05_09" unique_id=56598060]
+[node name="lod0" type="MeshInstance3D" parent="chunk_05_09" unique_id=343154550]
 cast_shadow = 0
 mesh = ExtResource("287_pkgs0")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_05_09" unique_id=1362567872]
+[node name="lod1" type="MeshInstance3D" parent="chunk_05_09" unique_id=963371690]
 cast_shadow = 0
 mesh = ExtResource("288_64sk8")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_05_09" unique_id=968052662]
+[node name="lod2" type="MeshInstance3D" parent="chunk_05_09" unique_id=1321019450]
 cast_shadow = 0
 mesh = ExtResource("289_t5vun")
 metadata/lod = 2
 
-[node name="chunk_06_09" type="Node3D" parent="." unique_id=554749143]
+[node name="chunk_06_09" type="Node3D" parent="." unique_id=317900640]
 metadata/chunk_radius = 212.24248
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_06_09" unique_id=52093178]
+[node name="lod0" type="MeshInstance3D" parent="chunk_06_09" unique_id=1895102162]
 cast_shadow = 0
 mesh = ExtResource("290_75bax")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_06_09" unique_id=770837763]
+[node name="lod1" type="MeshInstance3D" parent="chunk_06_09" unique_id=253448615]
 cast_shadow = 0
 mesh = ExtResource("291_lkq7r")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_06_09" unique_id=890241029]
+[node name="lod2" type="MeshInstance3D" parent="chunk_06_09" unique_id=639686510]
 cast_shadow = 0
 mesh = ExtResource("292_1tsrb")
 metadata/lod = 2
 
-[node name="chunk_07_09" type="Node3D" parent="." unique_id=592067065]
+[node name="chunk_07_09" type="Node3D" parent="." unique_id=545108839]
 metadata/chunk_radius = 215.4622
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_07_09" unique_id=1193661200]
+[node name="lod0" type="MeshInstance3D" parent="chunk_07_09" unique_id=550366991]
 cast_shadow = 0
 mesh = ExtResource("293_2mj6w")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_07_09" unique_id=1126984642]
+[node name="lod1" type="MeshInstance3D" parent="chunk_07_09" unique_id=985818049]
 cast_shadow = 0
 mesh = ExtResource("294_pw22s")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_07_09" unique_id=1165419683]
+[node name="lod2" type="MeshInstance3D" parent="chunk_07_09" unique_id=1667772178]
 cast_shadow = 0
 mesh = ExtResource("295_yjdna")
 metadata/lod = 2
 
-[node name="chunk_08_09" type="Node3D" parent="." unique_id=324133371]
+[node name="chunk_08_09" type="Node3D" parent="." unique_id=866044493]
 metadata/chunk_radius = 231.59393
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_08_09" unique_id=1828823586]
+[node name="lod0" type="MeshInstance3D" parent="chunk_08_09" unique_id=121525532]
 cast_shadow = 0
 mesh = ExtResource("296_uac3o")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_08_09" unique_id=1542098576]
+[node name="lod1" type="MeshInstance3D" parent="chunk_08_09" unique_id=1438375730]
 cast_shadow = 0
 mesh = ExtResource("297_vgfbn")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_08_09" unique_id=1049714513]
+[node name="lod2" type="MeshInstance3D" parent="chunk_08_09" unique_id=2029022955]
 cast_shadow = 0
 mesh = ExtResource("298_wcph8")
 metadata/lod = 2
 
-[node name="chunk_09_09" type="Node3D" parent="." unique_id=694610344]
+[node name="chunk_09_09" type="Node3D" parent="." unique_id=2100955504]
 metadata/chunk_radius = 294.91452
 
-[node name="lod0" type="MeshInstance3D" parent="chunk_09_09" unique_id=1675510640]
+[node name="lod0" type="MeshInstance3D" parent="chunk_09_09" unique_id=1330595]
 cast_shadow = 0
 mesh = ExtResource("299_budlc")
 metadata/lod = 0
 
-[node name="lod1" type="MeshInstance3D" parent="chunk_09_09" unique_id=795931049]
+[node name="lod1" type="MeshInstance3D" parent="chunk_09_09" unique_id=855394535]
 cast_shadow = 0
 mesh = ExtResource("300_gaaiq")
 metadata/lod = 1
 
-[node name="lod2" type="MeshInstance3D" parent="chunk_09_09" unique_id=794488975]
+[node name="lod2" type="MeshInstance3D" parent="chunk_09_09" unique_id=1122035722]
 cast_shadow = 0
 mesh = ExtResource("301_3ryeb")
 metadata/lod = 2
 
-[node name="Collision" type="StaticBody3D" parent="." unique_id=1392533487]
+[node name="Collision" type="StaticBody3D" parent="." unique_id=1569665788]
 collision_mask = 0
 
-[node name="shape_00_00" type="CollisionShape3D" parent="Collision" unique_id=167768824]
+[node name="shape_00_00" type="CollisionShape3D" parent="Collision" unique_id=615060846]
 shape = ExtResource("302_yf3jd")
 
-[node name="shape_01_00" type="CollisionShape3D" parent="Collision" unique_id=1688511315]
+[node name="shape_01_00" type="CollisionShape3D" parent="Collision" unique_id=105059161]
 shape = ExtResource("303_625ym")
 
-[node name="shape_02_00" type="CollisionShape3D" parent="Collision" unique_id=1835601238]
+[node name="shape_02_00" type="CollisionShape3D" parent="Collision" unique_id=313403454]
 shape = ExtResource("304_bqofr")
 
-[node name="shape_03_00" type="CollisionShape3D" parent="Collision" unique_id=296935043]
+[node name="shape_03_00" type="CollisionShape3D" parent="Collision" unique_id=179266308]
 shape = ExtResource("305_v3fwu")
 
-[node name="shape_04_00" type="CollisionShape3D" parent="Collision" unique_id=1353446338]
+[node name="shape_04_00" type="CollisionShape3D" parent="Collision" unique_id=1400585826]
 shape = ExtResource("306_t3u1j")
 
-[node name="shape_05_00" type="CollisionShape3D" parent="Collision" unique_id=1835575988]
+[node name="shape_05_00" type="CollisionShape3D" parent="Collision" unique_id=1450204900]
 shape = ExtResource("307_krget")
 
-[node name="shape_06_00" type="CollisionShape3D" parent="Collision" unique_id=800102264]
+[node name="shape_06_00" type="CollisionShape3D" parent="Collision" unique_id=1592527576]
 shape = ExtResource("308_pliro")
 
-[node name="shape_07_00" type="CollisionShape3D" parent="Collision" unique_id=759455159]
+[node name="shape_07_00" type="CollisionShape3D" parent="Collision" unique_id=295446806]
 shape = ExtResource("309_t4lam")
 
-[node name="shape_08_00" type="CollisionShape3D" parent="Collision" unique_id=1496580273]
+[node name="shape_08_00" type="CollisionShape3D" parent="Collision" unique_id=246472081]
 shape = ExtResource("310_txu0m")
 
-[node name="shape_09_00" type="CollisionShape3D" parent="Collision" unique_id=1589037037]
+[node name="shape_09_00" type="CollisionShape3D" parent="Collision" unique_id=2120170513]
 shape = ExtResource("311_a17k5")
 
-[node name="shape_00_01" type="CollisionShape3D" parent="Collision" unique_id=1055009161]
+[node name="shape_00_01" type="CollisionShape3D" parent="Collision" unique_id=869676709]
 shape = ExtResource("312_n2auf")
 
-[node name="shape_01_01" type="CollisionShape3D" parent="Collision" unique_id=1556102232]
+[node name="shape_01_01" type="CollisionShape3D" parent="Collision" unique_id=1523170766]
 shape = ExtResource("313_wmd5k")
 
-[node name="shape_02_01" type="CollisionShape3D" parent="Collision" unique_id=292722142]
+[node name="shape_02_01" type="CollisionShape3D" parent="Collision" unique_id=1931138729]
 shape = ExtResource("314_3a1ag")
 
-[node name="shape_03_01" type="CollisionShape3D" parent="Collision" unique_id=1359738867]
+[node name="shape_03_01" type="CollisionShape3D" parent="Collision" unique_id=2041236625]
 shape = ExtResource("315_72nty")
 
-[node name="shape_04_01" type="CollisionShape3D" parent="Collision" unique_id=25900169]
+[node name="shape_04_01" type="CollisionShape3D" parent="Collision" unique_id=1926654384]
 shape = ExtResource("316_7e6uc")
 
-[node name="shape_05_01" type="CollisionShape3D" parent="Collision" unique_id=1169303987]
+[node name="shape_05_01" type="CollisionShape3D" parent="Collision" unique_id=931831707]
 shape = ExtResource("317_ngmy7")
 
-[node name="shape_06_01" type="CollisionShape3D" parent="Collision" unique_id=746630332]
+[node name="shape_06_01" type="CollisionShape3D" parent="Collision" unique_id=187827806]
 shape = ExtResource("318_6cvod")
 
-[node name="shape_07_01" type="CollisionShape3D" parent="Collision" unique_id=839940196]
+[node name="shape_07_01" type="CollisionShape3D" parent="Collision" unique_id=1432671959]
 shape = ExtResource("319_or4ob")
 
-[node name="shape_08_01" type="CollisionShape3D" parent="Collision" unique_id=2066656693]
+[node name="shape_08_01" type="CollisionShape3D" parent="Collision" unique_id=1751279045]
 shape = ExtResource("320_uphc0")
 
-[node name="shape_09_01" type="CollisionShape3D" parent="Collision" unique_id=588492597]
+[node name="shape_09_01" type="CollisionShape3D" parent="Collision" unique_id=904063263]
 shape = ExtResource("321_dnsjt")
 
-[node name="shape_00_02" type="CollisionShape3D" parent="Collision" unique_id=848179851]
+[node name="shape_00_02" type="CollisionShape3D" parent="Collision" unique_id=2101252498]
 shape = ExtResource("322_df0i2")
 
-[node name="shape_01_02" type="CollisionShape3D" parent="Collision" unique_id=247580219]
+[node name="shape_01_02" type="CollisionShape3D" parent="Collision" unique_id=1417638112]
 shape = ExtResource("323_kt0pf")
 
-[node name="shape_02_02" type="CollisionShape3D" parent="Collision" unique_id=559077933]
+[node name="shape_02_02" type="CollisionShape3D" parent="Collision" unique_id=352162335]
 shape = ExtResource("324_8nb8t")
 
-[node name="shape_03_02" type="CollisionShape3D" parent="Collision" unique_id=1657595086]
+[node name="shape_03_02" type="CollisionShape3D" parent="Collision" unique_id=1348595781]
 shape = ExtResource("325_633j0")
 
-[node name="shape_04_02" type="CollisionShape3D" parent="Collision" unique_id=1310902095]
+[node name="shape_04_02" type="CollisionShape3D" parent="Collision" unique_id=282850273]
 shape = ExtResource("326_m0rqf")
 
-[node name="shape_05_02" type="CollisionShape3D" parent="Collision" unique_id=1396144889]
+[node name="shape_05_02" type="CollisionShape3D" parent="Collision" unique_id=1400933071]
 shape = ExtResource("327_dhy2e")
 
-[node name="shape_06_02" type="CollisionShape3D" parent="Collision" unique_id=278701188]
+[node name="shape_06_02" type="CollisionShape3D" parent="Collision" unique_id=227794582]
 shape = ExtResource("328_kh65i")
 
-[node name="shape_07_02" type="CollisionShape3D" parent="Collision" unique_id=17299678]
+[node name="shape_07_02" type="CollisionShape3D" parent="Collision" unique_id=441570436]
 shape = ExtResource("329_fq3u8")
 
-[node name="shape_08_02" type="CollisionShape3D" parent="Collision" unique_id=1319291597]
+[node name="shape_08_02" type="CollisionShape3D" parent="Collision" unique_id=131729668]
 shape = ExtResource("330_m3p7n")
 
-[node name="shape_09_02" type="CollisionShape3D" parent="Collision" unique_id=1444664450]
+[node name="shape_09_02" type="CollisionShape3D" parent="Collision" unique_id=1899557184]
 shape = ExtResource("331_sdjl5")
 
-[node name="shape_00_03" type="CollisionShape3D" parent="Collision" unique_id=1643335373]
+[node name="shape_00_03" type="CollisionShape3D" parent="Collision" unique_id=1405796847]
 shape = ExtResource("332_1cdwc")
 
-[node name="shape_01_03" type="CollisionShape3D" parent="Collision" unique_id=1305469515]
+[node name="shape_01_03" type="CollisionShape3D" parent="Collision" unique_id=1000659556]
 shape = ExtResource("333_rfq03")
 
-[node name="shape_02_03" type="CollisionShape3D" parent="Collision" unique_id=22501634]
+[node name="shape_02_03" type="CollisionShape3D" parent="Collision" unique_id=514001956]
 shape = ExtResource("334_ffdk5")
 
-[node name="shape_03_03" type="CollisionShape3D" parent="Collision" unique_id=716109941]
+[node name="shape_03_03" type="CollisionShape3D" parent="Collision" unique_id=406631099]
 shape = ExtResource("335_gm1mc")
 
-[node name="shape_04_03" type="CollisionShape3D" parent="Collision" unique_id=1019144505]
+[node name="shape_04_03" type="CollisionShape3D" parent="Collision" unique_id=1835492305]
 shape = ExtResource("336_wj1cy")
 
-[node name="shape_05_03" type="CollisionShape3D" parent="Collision" unique_id=377705173]
+[node name="shape_05_03" type="CollisionShape3D" parent="Collision" unique_id=650854274]
 shape = ExtResource("337_22v2x")
 
-[node name="shape_06_03" type="CollisionShape3D" parent="Collision" unique_id=150642891]
+[node name="shape_06_03" type="CollisionShape3D" parent="Collision" unique_id=883499821]
 shape = ExtResource("338_sqrkj")
 
-[node name="shape_07_03" type="CollisionShape3D" parent="Collision" unique_id=590560519]
+[node name="shape_07_03" type="CollisionShape3D" parent="Collision" unique_id=487492599]
 shape = ExtResource("339_480ce")
 
-[node name="shape_08_03" type="CollisionShape3D" parent="Collision" unique_id=1647496023]
+[node name="shape_08_03" type="CollisionShape3D" parent="Collision" unique_id=1842984041]
 shape = ExtResource("340_e5gf3")
 
-[node name="shape_09_03" type="CollisionShape3D" parent="Collision" unique_id=1673450009]
+[node name="shape_09_03" type="CollisionShape3D" parent="Collision" unique_id=493211044]
 shape = ExtResource("341_0eh2a")
 
-[node name="shape_00_04" type="CollisionShape3D" parent="Collision" unique_id=1565017797]
+[node name="shape_00_04" type="CollisionShape3D" parent="Collision" unique_id=488917456]
 shape = ExtResource("342_hq4e5")
 
-[node name="shape_01_04" type="CollisionShape3D" parent="Collision" unique_id=1363456175]
+[node name="shape_01_04" type="CollisionShape3D" parent="Collision" unique_id=353938486]
 shape = ExtResource("343_0dtqe")
 
-[node name="shape_02_04" type="CollisionShape3D" parent="Collision" unique_id=1922453121]
+[node name="shape_02_04" type="CollisionShape3D" parent="Collision" unique_id=1247745219]
 shape = ExtResource("344_l7706")
 
-[node name="shape_03_04" type="CollisionShape3D" parent="Collision" unique_id=638542452]
+[node name="shape_03_04" type="CollisionShape3D" parent="Collision" unique_id=1706508226]
 shape = ExtResource("345_25tax")
 
-[node name="shape_04_04" type="CollisionShape3D" parent="Collision" unique_id=862986484]
+[node name="shape_04_04" type="CollisionShape3D" parent="Collision" unique_id=743208294]
 shape = ExtResource("346_3uo8i")
 
-[node name="shape_05_04" type="CollisionShape3D" parent="Collision" unique_id=1120660796]
+[node name="shape_05_04" type="CollisionShape3D" parent="Collision" unique_id=1086926702]
 shape = ExtResource("347_u8w6a")
 
-[node name="shape_06_04" type="CollisionShape3D" parent="Collision" unique_id=1251009239]
+[node name="shape_06_04" type="CollisionShape3D" parent="Collision" unique_id=1072006907]
 shape = ExtResource("348_bf2l3")
 
-[node name="shape_07_04" type="CollisionShape3D" parent="Collision" unique_id=319000673]
+[node name="shape_07_04" type="CollisionShape3D" parent="Collision" unique_id=1147125980]
 shape = ExtResource("349_16pmw")
 
-[node name="shape_08_04" type="CollisionShape3D" parent="Collision" unique_id=1717743975]
+[node name="shape_08_04" type="CollisionShape3D" parent="Collision" unique_id=597077101]
 shape = ExtResource("350_tcjpm")
 
-[node name="shape_09_04" type="CollisionShape3D" parent="Collision" unique_id=147683253]
+[node name="shape_09_04" type="CollisionShape3D" parent="Collision" unique_id=1622282436]
 shape = ExtResource("351_oxn5v")
 
-[node name="shape_00_05" type="CollisionShape3D" parent="Collision" unique_id=1753984563]
+[node name="shape_00_05" type="CollisionShape3D" parent="Collision" unique_id=963524596]
 shape = ExtResource("352_3nl47")
 
-[node name="shape_01_05" type="CollisionShape3D" parent="Collision" unique_id=1764600978]
+[node name="shape_01_05" type="CollisionShape3D" parent="Collision" unique_id=1075428921]
 shape = ExtResource("353_fto1w")
 
-[node name="shape_02_05" type="CollisionShape3D" parent="Collision" unique_id=1407598515]
+[node name="shape_02_05" type="CollisionShape3D" parent="Collision" unique_id=237467831]
 shape = ExtResource("354_g4ou6")
 
-[node name="shape_03_05" type="CollisionShape3D" parent="Collision" unique_id=517796660]
+[node name="shape_03_05" type="CollisionShape3D" parent="Collision" unique_id=1194536959]
 shape = ExtResource("355_kgk5k")
 
-[node name="shape_04_05" type="CollisionShape3D" parent="Collision" unique_id=1705487229]
+[node name="shape_04_05" type="CollisionShape3D" parent="Collision" unique_id=2053525181]
 shape = ExtResource("356_ygvum")
 
-[node name="shape_05_05" type="CollisionShape3D" parent="Collision" unique_id=857807045]
+[node name="shape_05_05" type="CollisionShape3D" parent="Collision" unique_id=1990164228]
 shape = ExtResource("357_g1rer")
 
-[node name="shape_06_05" type="CollisionShape3D" parent="Collision" unique_id=1288791385]
+[node name="shape_06_05" type="CollisionShape3D" parent="Collision" unique_id=141456428]
 shape = ExtResource("358_oog6a")
 
-[node name="shape_07_05" type="CollisionShape3D" parent="Collision" unique_id=1219812]
+[node name="shape_07_05" type="CollisionShape3D" parent="Collision" unique_id=1960479432]
 shape = ExtResource("359_x3to8")
 
-[node name="shape_08_05" type="CollisionShape3D" parent="Collision" unique_id=654492303]
+[node name="shape_08_05" type="CollisionShape3D" parent="Collision" unique_id=2030320666]
 shape = ExtResource("360_b1ihq")
 
-[node name="shape_09_05" type="CollisionShape3D" parent="Collision" unique_id=182863597]
+[node name="shape_09_05" type="CollisionShape3D" parent="Collision" unique_id=1349876167]
 shape = ExtResource("361_0j8nh")
 
-[node name="shape_00_06" type="CollisionShape3D" parent="Collision" unique_id=1004848003]
+[node name="shape_00_06" type="CollisionShape3D" parent="Collision" unique_id=514035673]
 shape = ExtResource("362_mw7ll")
 
-[node name="shape_01_06" type="CollisionShape3D" parent="Collision" unique_id=1017374609]
+[node name="shape_01_06" type="CollisionShape3D" parent="Collision" unique_id=1897472454]
 shape = ExtResource("363_q7r5k")
 
-[node name="shape_02_06" type="CollisionShape3D" parent="Collision" unique_id=616191515]
+[node name="shape_02_06" type="CollisionShape3D" parent="Collision" unique_id=1268253541]
 shape = ExtResource("364_men3x")
 
-[node name="shape_03_06" type="CollisionShape3D" parent="Collision" unique_id=376439707]
+[node name="shape_03_06" type="CollisionShape3D" parent="Collision" unique_id=1513302317]
 shape = ExtResource("365_38u6n")
 
-[node name="shape_04_06" type="CollisionShape3D" parent="Collision" unique_id=1594092825]
+[node name="shape_04_06" type="CollisionShape3D" parent="Collision" unique_id=1738207416]
 shape = ExtResource("366_uywkf")
 
-[node name="shape_05_06" type="CollisionShape3D" parent="Collision" unique_id=405485616]
+[node name="shape_05_06" type="CollisionShape3D" parent="Collision" unique_id=185590781]
 shape = ExtResource("367_18yfi")
 
-[node name="shape_06_06" type="CollisionShape3D" parent="Collision" unique_id=106574198]
+[node name="shape_06_06" type="CollisionShape3D" parent="Collision" unique_id=562054863]
 shape = ExtResource("368_x4451")
 
-[node name="shape_07_06" type="CollisionShape3D" parent="Collision" unique_id=862132005]
+[node name="shape_07_06" type="CollisionShape3D" parent="Collision" unique_id=2008539038]
 shape = ExtResource("369_tak3y")
 
-[node name="shape_08_06" type="CollisionShape3D" parent="Collision" unique_id=1323211316]
+[node name="shape_08_06" type="CollisionShape3D" parent="Collision" unique_id=433550462]
 shape = ExtResource("370_n2ry6")
 
-[node name="shape_09_06" type="CollisionShape3D" parent="Collision" unique_id=21251825]
+[node name="shape_09_06" type="CollisionShape3D" parent="Collision" unique_id=1345470128]
 shape = ExtResource("371_1o2rv")
 
-[node name="shape_00_07" type="CollisionShape3D" parent="Collision" unique_id=1547492914]
+[node name="shape_00_07" type="CollisionShape3D" parent="Collision" unique_id=1423596481]
 shape = ExtResource("372_rs8yt")
 
-[node name="shape_01_07" type="CollisionShape3D" parent="Collision" unique_id=46940873]
+[node name="shape_01_07" type="CollisionShape3D" parent="Collision" unique_id=1810837763]
 shape = ExtResource("373_kvred")
 
-[node name="shape_02_07" type="CollisionShape3D" parent="Collision" unique_id=871430487]
+[node name="shape_02_07" type="CollisionShape3D" parent="Collision" unique_id=1854052428]
 shape = ExtResource("374_fqibc")
 
-[node name="shape_03_07" type="CollisionShape3D" parent="Collision" unique_id=81306878]
+[node name="shape_03_07" type="CollisionShape3D" parent="Collision" unique_id=102589855]
 shape = ExtResource("375_ytp1e")
 
-[node name="shape_04_07" type="CollisionShape3D" parent="Collision" unique_id=389640452]
+[node name="shape_04_07" type="CollisionShape3D" parent="Collision" unique_id=1231921608]
 shape = ExtResource("376_d7b4y")
 
-[node name="shape_05_07" type="CollisionShape3D" parent="Collision" unique_id=137149775]
+[node name="shape_05_07" type="CollisionShape3D" parent="Collision" unique_id=1417394986]
 shape = ExtResource("377_55hmr")
 
-[node name="shape_06_07" type="CollisionShape3D" parent="Collision" unique_id=1604152780]
+[node name="shape_06_07" type="CollisionShape3D" parent="Collision" unique_id=639572673]
 shape = ExtResource("378_lo17d")
 
-[node name="shape_07_07" type="CollisionShape3D" parent="Collision" unique_id=612506140]
+[node name="shape_07_07" type="CollisionShape3D" parent="Collision" unique_id=401902639]
 shape = ExtResource("379_lshjw")
 
-[node name="shape_08_07" type="CollisionShape3D" parent="Collision" unique_id=851525009]
+[node name="shape_08_07" type="CollisionShape3D" parent="Collision" unique_id=1249651194]
 shape = ExtResource("380_lgbxp")
 
-[node name="shape_09_07" type="CollisionShape3D" parent="Collision" unique_id=34694358]
+[node name="shape_09_07" type="CollisionShape3D" parent="Collision" unique_id=951676804]
 shape = ExtResource("381_u86xp")
 
-[node name="shape_00_08" type="CollisionShape3D" parent="Collision" unique_id=830299767]
+[node name="shape_00_08" type="CollisionShape3D" parent="Collision" unique_id=372973972]
 shape = ExtResource("382_tkvi4")
 
-[node name="shape_01_08" type="CollisionShape3D" parent="Collision" unique_id=1774288121]
+[node name="shape_01_08" type="CollisionShape3D" parent="Collision" unique_id=710575030]
 shape = ExtResource("383_psqk2")
 
-[node name="shape_02_08" type="CollisionShape3D" parent="Collision" unique_id=195855507]
+[node name="shape_02_08" type="CollisionShape3D" parent="Collision" unique_id=1110392577]
 shape = ExtResource("384_hwdph")
 
-[node name="shape_03_08" type="CollisionShape3D" parent="Collision" unique_id=1667570346]
+[node name="shape_03_08" type="CollisionShape3D" parent="Collision" unique_id=1204040986]
 shape = ExtResource("385_7yve4")
 
-[node name="shape_04_08" type="CollisionShape3D" parent="Collision" unique_id=2034439104]
+[node name="shape_04_08" type="CollisionShape3D" parent="Collision" unique_id=416937625]
 shape = ExtResource("386_k6kkq")
 
-[node name="shape_05_08" type="CollisionShape3D" parent="Collision" unique_id=274862448]
+[node name="shape_05_08" type="CollisionShape3D" parent="Collision" unique_id=918649578]
 shape = ExtResource("387_33g1h")
 
-[node name="shape_06_08" type="CollisionShape3D" parent="Collision" unique_id=1962745939]
+[node name="shape_06_08" type="CollisionShape3D" parent="Collision" unique_id=809771106]
 shape = ExtResource("388_jfsbm")
 
-[node name="shape_07_08" type="CollisionShape3D" parent="Collision" unique_id=1846632850]
+[node name="shape_07_08" type="CollisionShape3D" parent="Collision" unique_id=39157153]
 shape = ExtResource("389_ako3o")
 
-[node name="shape_08_08" type="CollisionShape3D" parent="Collision" unique_id=75781746]
+[node name="shape_08_08" type="CollisionShape3D" parent="Collision" unique_id=258982856]
 shape = ExtResource("390_r5evk")
 
-[node name="shape_09_08" type="CollisionShape3D" parent="Collision" unique_id=1515263461]
+[node name="shape_09_08" type="CollisionShape3D" parent="Collision" unique_id=1770155854]
 shape = ExtResource("391_6vgol")
 
-[node name="shape_00_09" type="CollisionShape3D" parent="Collision" unique_id=1774736446]
+[node name="shape_00_09" type="CollisionShape3D" parent="Collision" unique_id=1794704640]
 shape = ExtResource("392_f8lhp")
 
-[node name="shape_01_09" type="CollisionShape3D" parent="Collision" unique_id=1023669711]
+[node name="shape_01_09" type="CollisionShape3D" parent="Collision" unique_id=830956924]
 shape = ExtResource("393_8hfyf")
 
-[node name="shape_02_09" type="CollisionShape3D" parent="Collision" unique_id=1208251070]
+[node name="shape_02_09" type="CollisionShape3D" parent="Collision" unique_id=232389294]
 shape = ExtResource("394_bbfy3")
 
-[node name="shape_03_09" type="CollisionShape3D" parent="Collision" unique_id=1881929791]
+[node name="shape_03_09" type="CollisionShape3D" parent="Collision" unique_id=1306559429]
 shape = ExtResource("395_g33dv")
 
-[node name="shape_04_09" type="CollisionShape3D" parent="Collision" unique_id=619771672]
+[node name="shape_04_09" type="CollisionShape3D" parent="Collision" unique_id=926233697]
 shape = ExtResource("396_eqa7n")
 
-[node name="shape_05_09" type="CollisionShape3D" parent="Collision" unique_id=368363615]
+[node name="shape_05_09" type="CollisionShape3D" parent="Collision" unique_id=1889830138]
 shape = ExtResource("397_f1ju6")
 
-[node name="shape_06_09" type="CollisionShape3D" parent="Collision" unique_id=1912543195]
+[node name="shape_06_09" type="CollisionShape3D" parent="Collision" unique_id=1962651273]
 shape = ExtResource("398_lwve5")
 
-[node name="shape_07_09" type="CollisionShape3D" parent="Collision" unique_id=363117011]
+[node name="shape_07_09" type="CollisionShape3D" parent="Collision" unique_id=2003545956]
 shape = ExtResource("399_t13ox")
 
-[node name="shape_08_09" type="CollisionShape3D" parent="Collision" unique_id=1475554436]
+[node name="shape_08_09" type="CollisionShape3D" parent="Collision" unique_id=1399009008]
 shape = ExtResource("400_efjl8")
 
-[node name="shape_09_09" type="CollisionShape3D" parent="Collision" unique_id=1275326961]
+[node name="shape_09_09" type="CollisionShape3D" parent="Collision" unique_id=330710164]
 shape = ExtResource("401_npvbn")

@@ -1038,3 +1038,29 @@ rather than shipping ramps inside each other.
   camera anywhere, which is how the cover behaviour was finally photographed)
   and its `--spawn` now clamps to the dial's detent count instead of wrapping.
   Both are additive; nothing else in the tool moved.
+
+## Multiplayer — open item
+
+`verify_scenes` reports FAIL for range, bestiary, gunbench, movement and visuals:
+four leaked ObjectDB instances and one resource still in use at exit, identical in
+every one. **Shutdown only.** Every scene exits 0, runs its full 120 frames and
+logs zero script errors; nothing here reaches gameplay.
+
+Identified but not closed. `--verbose` names it:
+
+    Leaked instance: Node — Node path: (empty)
+    Leaked instance: PhysicsRayQueryParameters3D
+    Resource still in use: res://net/avatar/net_presence.gd
+
+The node is detached from the tree and then never freed. Two things already
+ruled out by measurement, so do not retry them:
+
+- It is not the static singleton cache. That was removed (the node is now found
+  by name under `/root`) and the leak is byte-identical afterwards.
+- It is not `enter()`. `ash_flats`, `arena` and `firefight` all call it and all
+  pass; `leave()` is called only by `movement`, which is one of five failures.
+
+So the difference between the five that leak and the three that do not is still
+unaccounted for, and that difference is the thing to find. Next step: log the
+instance id at `add_child` and at `_exit_tree` in a failing demo and a passing
+one, and find who calls `remove_child` on it. Do not tune around it.

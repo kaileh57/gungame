@@ -46,47 +46,47 @@ shader_parameter/flicker = 0.025
 shader_parameter/roughness_base = 0.38
 shader_parameter/metallic_base = 0.15
 
-[node name="DiegeticReadout" type="Node3D" unique_id=1219635950]
+[node name="DiegeticReadout" type="Node3D" unique_id=365799567]
 script = ExtResource("1_15yb1")
 
-[node name="Back" type="MeshInstance3D" parent="." unique_id=1215299604]
+[node name="Back" type="MeshInstance3D" parent="." unique_id=845480623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.035)
 mesh = SubResource("BoxMesh_rcnfg")
 surface_material_override/0 = ExtResource("2_tovwg")
 
-[node name="FrameTop" type="MeshInstance3D" parent="." unique_id=510294331]
+[node name="FrameTop" type="MeshInstance3D" parent="." unique_id=1294943524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1825, -0.015)
 mesh = SubResource("BoxMesh_v81e1")
 surface_material_override/0 = ExtResource("2_tovwg")
 
-[node name="FrameBottom" type="MeshInstance3D" parent="." unique_id=1919213303]
+[node name="FrameBottom" type="MeshInstance3D" parent="." unique_id=2034089009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1825, -0.015)
 mesh = SubResource("BoxMesh_qv4ru")
 surface_material_override/0 = ExtResource("2_tovwg")
 
-[node name="FrameLeft" type="MeshInstance3D" parent="." unique_id=600159762]
+[node name="FrameLeft" type="MeshInstance3D" parent="." unique_id=147855635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2725, 0, -0.015)
 mesh = SubResource("BoxMesh_3ewd5")
 surface_material_override/0 = ExtResource("2_tovwg")
 
-[node name="FrameRight" type="MeshInstance3D" parent="." unique_id=343903251]
+[node name="FrameRight" type="MeshInstance3D" parent="." unique_id=978777907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2725, 0, -0.015)
 mesh = SubResource("BoxMesh_jnb73")
 surface_material_override/0 = ExtResource("2_tovwg")
 
-[node name="Screen" type="MeshInstance3D" parent="." unique_id=1097340599]
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=2140271979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.008)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_8g1gs")
 surface_material_override/0 = SubResource("ShaderMaterial_y1g5d")
 
-[node name="Display" type="SubViewport" parent="Screen" unique_id=172907282]
+[node name="Display" type="SubViewport" parent="Screen" unique_id=1287478661]
 disable_3d = true
 gui_disable_input = true
 size = Vector2i(512, 320)
 render_target_update_mode = 0
 
-[node name="Canvas" type="Control" parent="Screen/Display" unique_id=127331919]
+[node name="Canvas" type="Control" parent="Screen/Display" unique_id=591130271]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 512.0

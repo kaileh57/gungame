@@ -615,138 +615,138 @@ _surfaces = [{
 resource_local_to_scene = true
 script = ExtResource("26_yy3fr")
 
-[node name="Gunbench" type="Node3D" unique_id=458870046]
+[node name="Gunbench" type="Node3D" unique_id=1240577721]
 script = ExtResource("1_pi6s6")
 
-[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=1721437316 instance=ExtResource("2_54n4g")]
+[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=2108736239 instance=ExtResource("2_54n4g")]
 environment = ExtResource("3_mhc72")
 script = ExtResource("4_boaiy")
 
-[node name="Vfx" type="Node3D" parent="." unique_id=1322522026 instance=ExtResource("5_e0761")]
+[node name="Vfx" type="Node3D" parent="." unique_id=64469703 instance=ExtResource("5_e0761")]
 script = ExtResource("6_w66kl")
 preset_budget_scale = PackedFloat32Array(0.3, 0.5, 0.75, 1, 1)
 
-[node name="Shell" type="StaticBody3D" parent="." unique_id=1766618961]
+[node name="Shell" type="StaticBody3D" parent="." unique_id=1709736033]
 collision_mask = 0
 
-[node name="Floor" type="MeshInstance3D" parent="Shell" unique_id=12845908]
+[node name="Floor" type="MeshInstance3D" parent="Shell" unique_id=127092169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 material_override = ExtResource("7_8d0ua")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.317
 mesh = SubResource("ArrayMesh_8bel3")
 
-[node name="FloorShape" type="CollisionShape3D" parent="Shell" unique_id=13897215]
+[node name="FloorShape" type="CollisionShape3D" parent="Shell" unique_id=451028565]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 shape = SubResource("BoxShape3D_g3ctu")
 
-[node name="Ceiling" type="MeshInstance3D" parent="Shell" unique_id=1804837583]
+[node name="Ceiling" type="MeshInstance3D" parent="Shell" unique_id=625857998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.45, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.634
 mesh = SubResource("ArrayMesh_a06pg")
 
-[node name="CeilingShape" type="CollisionShape3D" parent="Shell" unique_id=2132727410]
+[node name="CeilingShape" type="CollisionShape3D" parent="Shell" unique_id=1101589843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.45, 0)
 shape = SubResource("BoxShape3D_qm7au")
 
-[node name="WallNorth" type="MeshInstance3D" parent="Shell" unique_id=353037366]
+[node name="WallNorth" type="MeshInstance3D" parent="Shell" unique_id=1818100692]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, -5.25)
 material_override = ExtResource("7_8d0ua")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.9510000000000001
 mesh = SubResource("ArrayMesh_3vjbm")
 
-[node name="WallNorthShape" type="CollisionShape3D" parent="Shell" unique_id=856296638]
+[node name="WallNorthShape" type="CollisionShape3D" parent="Shell" unique_id=1598333563]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, -5.25)
 shape = SubResource("BoxShape3D_1fi6m")
 
-[node name="WallWest" type="MeshInstance3D" parent="Shell" unique_id=2054398843]
+[node name="WallWest" type="MeshInstance3D" parent="Shell" unique_id=759079334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85, 2.05, 0)
 material_override = ExtResource("7_8d0ua")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.268
 mesh = SubResource("ArrayMesh_lnrxi")
 
-[node name="WallWestShape" type="CollisionShape3D" parent="Shell" unique_id=1792019452]
+[node name="WallWestShape" type="CollisionShape3D" parent="Shell" unique_id=858029546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85, 2.05, 0)
 shape = SubResource("BoxShape3D_bnx3w")
 
-[node name="WallSouth" type="MeshInstance3D" parent="Shell" unique_id=591670583]
+[node name="WallSouth" type="MeshInstance3D" parent="Shell" unique_id=2072144177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 5.25)
 material_override = ExtResource("7_8d0ua")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.585
 mesh = SubResource("ArrayMesh_hu23w")
 
-[node name="WallSouthShape" type="CollisionShape3D" parent="Shell" unique_id=1167595602]
+[node name="WallSouthShape" type="CollisionShape3D" parent="Shell" unique_id=1528430182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 5.25)
 shape = SubResource("BoxShape3D_tqhom")
 
-[node name="WallEast" type="MeshInstance3D" parent="Shell" unique_id=1162480959]
+[node name="WallEast" type="MeshInstance3D" parent="Shell" unique_id=1628535644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85, 2.05, 0)
 material_override = ExtResource("7_8d0ua")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.9019999999999999
 mesh = SubResource("ArrayMesh_lhilr")
 
-[node name="WallEastShape" type="CollisionShape3D" parent="Shell" unique_id=1011244027]
+[node name="WallEastShape" type="CollisionShape3D" parent="Shell" unique_id=892678200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85, 2.05, 0)
 shape = SubResource("BoxShape3D_dfwvn")
 
-[node name="Bench" type="Node3D" parent="." unique_id=469277658]
+[node name="Bench" type="Node3D" parent="." unique_id=530381600]
 
-[node name="Top" type="MeshInstance3D" parent="Bench" unique_id=101522985]
+[node name="Top" type="MeshInstance3D" parent="Bench" unique_id=1101784420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, -4.475)
 material_override = ExtResource("9_e1xp2")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.21899999999999986
 mesh = SubResource("ArrayMesh_rr0ok")
 
-[node name="Leg1" type="MeshInstance3D" parent="Bench" unique_id=461415589]
+[node name="Leg1" type="MeshInstance3D" parent="Bench" unique_id=1529655509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55, 0.45, -4.81)
 material_override = ExtResource("9_e1xp2")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5359999999999998
 mesh = SubResource("ArrayMesh_ev8u6")
 
-[node name="Leg2" type="MeshInstance3D" parent="Bench" unique_id=822882080]
+[node name="Leg2" type="MeshInstance3D" parent="Bench" unique_id=724209730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55, 0.45, -4.14)
 material_override = ExtResource("9_e1xp2")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8529999999999998
 mesh = SubResource("ArrayMesh_ev8u6")
 
-[node name="Leg3" type="MeshInstance3D" parent="Bench" unique_id=2012469525]
+[node name="Leg3" type="MeshInstance3D" parent="Bench" unique_id=1628196852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 0.45, -4.81)
 material_override = ExtResource("9_e1xp2")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.1699999999999997
 mesh = SubResource("ArrayMesh_ev8u6")
 
-[node name="Leg4" type="MeshInstance3D" parent="Bench" unique_id=1651710998]
+[node name="Leg4" type="MeshInstance3D" parent="Bench" unique_id=389582457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 0.45, -4.14)
 material_override = ExtResource("9_e1xp2")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.4869999999999997
 mesh = SubResource("ArrayMesh_ev8u6")
 
-[node name="Board" type="MeshInstance3D" parent="Bench" unique_id=1779453042]
+[node name="Board" type="MeshInstance3D" parent="Bench" unique_id=237701471]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, -4.98)
 material_override = ExtResource("9_e1xp2")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8039999999999997
 mesh = SubResource("ArrayMesh_lvx67")
 
-[node name="NamePlate" type="MeshInstance3D" parent="Bench" unique_id=280865619]
+[node name="NamePlate" type="MeshInstance3D" parent="Bench" unique_id=1559911837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28, -4.99)
 material_override = ExtResource("10_as804")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.12099999999999977
 mesh = SubResource("ArrayMesh_a0gtm")
 
-[node name="NameText" type="Label3D" parent="Bench" unique_id=1328223552]
+[node name="NameText" type="Label3D" parent="Bench" unique_id=1199806223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28, -4.955)
 pixel_size = 0.0042
 double_sided = false
@@ -759,16 +759,16 @@ font = ExtResource("11_lx4pa")
 font_size = 44
 outline_size = 8
 
-[node name="BenchBody" type="StaticBody3D" parent="Bench" unique_id=1493087901]
+[node name="BenchBody" type="StaticBody3D" parent="Bench" unique_id=1782080998]
 collision_mask = 0
 
-[node name="TopShape" type="CollisionShape3D" parent="Bench/BenchBody" unique_id=2145561381]
+[node name="TopShape" type="CollisionShape3D" parent="Bench/BenchBody" unique_id=1410153255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -4.475)
 shape = SubResource("BoxShape3D_15t6o")
 
-[node name="Cards" type="Node3D" parent="." unique_id=923256706]
+[node name="Cards" type="Node3D" parent="." unique_id=1716024160]
 
-[node name="Stat" type="Node3D" parent="Cards" unique_id=1219635950 instance=ExtResource("12_ndahf")]
+[node name="Stat" type="Node3D" parent="Cards" unique_id=365799567 instance=ExtResource("12_ndahf")]
 transform = Transform3D(2.05, 0, 0, 0, 2.05, 0, 0, 0, 2.05, -1.72, 2.33, -4.813)
 script = ExtResource("13_8xxy6")
 glow = 1.5
@@ -780,7 +780,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Hands" type="Node3D" parent="Cards" unique_id=516040860 instance=ExtResource("12_ndahf")]
+[node name="Hands" type="Node3D" parent="Cards" unique_id=774767026 instance=ExtResource("12_ndahf")]
 transform = Transform3D(2.05, 0, 0, 0, 2.05, 0, 0, 0, 2.05, 0, 2.33, -4.813)
 script = ExtResource("13_8xxy6")
 glow = 1.5
@@ -793,7 +793,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Rival" type="Node3D" parent="Cards" unique_id=482158682 instance=ExtResource("12_ndahf")]
+[node name="Rival" type="Node3D" parent="Cards" unique_id=1693407118 instance=ExtResource("12_ndahf")]
 transform = Transform3D(2.05, 0, 0, 0, 2.05, 0, 0, 0, 2.05, 1.72, 2.33, -4.813)
 script = ExtResource("13_8xxy6")
 glow = 1.5
@@ -806,7 +806,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Cartridge" type="Node3D" parent="Cards" unique_id=1637805836 instance=ExtResource("12_ndahf")]
+[node name="Cartridge" type="Node3D" parent="Cards" unique_id=1587342038 instance=ExtResource("12_ndahf")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -0.95, 1.52, -4.855)
 script = ExtResource("13_8xxy6")
 glow = 1.5
@@ -819,7 +819,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Delta" type="Node3D" parent="Cards" unique_id=1135836988 instance=ExtResource("12_ndahf")]
+[node name="Delta" type="Node3D" parent="Cards" unique_id=664252403 instance=ExtResource("12_ndahf")]
 transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 0.95, 1.52, -4.855)
 script = ExtResource("13_8xxy6")
 glow = 1.5
@@ -832,7 +832,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="HandsPlate" type="MeshInstance3D" parent="Cards" unique_id=2123695662]
+[node name="HandsPlate" type="MeshInstance3D" parent="Cards" unique_id=879354234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.885, -4.9110003)
 material_override = ExtResource("10_as804")
 gi_mode = 0
@@ -846,7 +846,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="HandsText" type="Label3D" parent="Cards" unique_id=1414902647]
+[node name="HandsText" type="Label3D" parent="Cards" unique_id=1814068245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.885, -4.8820004)
 pixel_size = 0.0019
 double_sided = false
@@ -859,46 +859,46 @@ font = ExtResource("11_lx4pa")
 font_size = 48
 outline_size = 8
 
-[node name="Stands" type="Node3D" parent="." unique_id=1117792277]
+[node name="Stands" type="Node3D" parent="." unique_id=933893064]
 
-[node name="MainStand" type="Node3D" parent="Stands" unique_id=1571970900]
+[node name="MainStand" type="Node3D" parent="Stands" unique_id=1163177141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55, 0, -2.4)
 script = ExtResource("14_4lony")
 
-[node name="Base" type="MeshInstance3D" parent="Stands/MainStand" unique_id=103035510]
+[node name="Base" type="MeshInstance3D" parent="Stands/MainStand" unique_id=2102406169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.7549999999999998
 mesh = SubResource("ArrayMesh_hem1a")
 
-[node name="Column" type="Node3D" parent="Stands/MainStand" unique_id=784330510]
+[node name="Column" type="Node3D" parent="Stands/MainStand" unique_id=1943279364]
 
-[node name="Post" type="MeshInstance3D" parent="Stands/MainStand/Column" unique_id=1392547227]
+[node name="Post" type="MeshInstance3D" parent="Stands/MainStand/Column" unique_id=414334508]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.07199999999999984
 mesh = SubResource("ArrayMesh_mxsly")
 
-[node name="Platter" type="MeshInstance3D" parent="Stands/MainStand/Column" unique_id=1983334266]
+[node name="Platter" type="MeshInstance3D" parent="Stands/MainStand/Column" unique_id=759123273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.38899999999999985
 mesh = SubResource("ArrayMesh_uh28i")
 
-[node name="Station" type="Node3D" parent="Stands/MainStand/Column" unique_id=613020772]
+[node name="Station" type="Node3D" parent="Stands/MainStand/Column" unique_id=300916571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 
-[node name="Arm" type="MeshInstance3D" parent="Stands/MainStand/Column/Station" unique_id=331734952]
+[node name="Arm" type="MeshInstance3D" parent="Stands/MainStand/Column/Station" unique_id=186293152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.19)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.7059999999999998
 mesh = SubResource("ArrayMesh_ctebk")
 
-[node name="Plate" type="MeshInstance3D" parent="Stands/MainStand/Column/Station" unique_id=860991062]
+[node name="Plate" type="MeshInstance3D" parent="Stands/MainStand/Column/Station" unique_id=1963420206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3665)
 material_override = ExtResource("10_as804")
 gi_mode = 0
@@ -912,7 +912,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Grab" type="StaticBody3D" parent="Stands/MainStand/Column/Station" unique_id=1664760757 instance=ExtResource("15_c67w7")]
+[node name="Grab" type="StaticBody3D" parent="Stands/MainStand/Column/Station" unique_id=2069199919 instance=ExtResource("15_c67w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235, -0.03, 0.389)
 collision_layer = 2
 collision_mask = 0
@@ -925,7 +925,7 @@ control_id = &"grab_main"
 label_text = "GRAB A"
 cooldown = 0.22
 
-[node name="Name" type="Label3D" parent="Stands/MainStand/Column/Station" unique_id=2044316016]
+[node name="Name" type="Label3D" parent="Stands/MainStand/Column/Station" unique_id=931702181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0, 0.39299998)
 pixel_size = 0.0013
 double_sided = false
@@ -939,11 +939,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 307.69232
 
-[node name="Pivot" type="Node3D" parent="Stands/MainStand" unique_id=1078767075]
+[node name="Pivot" type="Node3D" parent="Stands/MainStand" unique_id=641398829]
 
-[node name="Tags" type="Node3D" parent="Stands/MainStand/Pivot" unique_id=1938666401]
+[node name="Tags" type="Node3D" parent="Stands/MainStand/Pivot" unique_id=119539339]
 
-[node name="Tag0" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1676667612]
+[node name="Tag0" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1819551398]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -956,7 +956,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag1" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1098509516]
+[node name="Tag1" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1078659938]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -969,7 +969,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag2" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1680743488]
+[node name="Tag2" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1902465644]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -982,7 +982,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag3" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=426461037]
+[node name="Tag3" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=139195720]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -995,7 +995,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag4" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1902972387]
+[node name="Tag4" type="Label3D" parent="Stands/MainStand/Pivot/Tags" unique_id=1044243889]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -1008,52 +1008,52 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Body" type="StaticBody3D" parent="Stands/MainStand" unique_id=142227459]
+[node name="Body" type="StaticBody3D" parent="Stands/MainStand" unique_id=190159827]
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape3D" parent="Stands/MainStand/Body" unique_id=259886759]
+[node name="Shape" type="CollisionShape3D" parent="Stands/MainStand/Body" unique_id=1387685069]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79, 0)
 shape = SubResource("CylinderShape3D_6rrpy")
 
-[node name="RivalStand" type="Node3D" parent="Stands" unique_id=1949194297]
+[node name="RivalStand" type="Node3D" parent="Stands" unique_id=933379340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 0, -2.4)
 script = ExtResource("14_4lony")
 station_mark = "B"
 
-[node name="Base" type="MeshInstance3D" parent="Stands/RivalStand" unique_id=168842785]
+[node name="Base" type="MeshInstance3D" parent="Stands/RivalStand" unique_id=1939410373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.3399999999999999
 mesh = SubResource("ArrayMesh_bbc3e")
 
-[node name="Column" type="Node3D" parent="Stands/RivalStand" unique_id=1321990050]
+[node name="Column" type="Node3D" parent="Stands/RivalStand" unique_id=807761370]
 
-[node name="Post" type="MeshInstance3D" parent="Stands/RivalStand/Column" unique_id=1383719446]
+[node name="Post" type="MeshInstance3D" parent="Stands/RivalStand/Column" unique_id=353998429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.6569999999999999
 mesh = SubResource("ArrayMesh_5q0gt")
 
-[node name="Platter" type="MeshInstance3D" parent="Stands/RivalStand/Column" unique_id=1223358729]
+[node name="Platter" type="MeshInstance3D" parent="Stands/RivalStand/Column" unique_id=819927027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.974
 mesh = SubResource("ArrayMesh_ud6t5")
 
-[node name="Station" type="Node3D" parent="Stands/RivalStand/Column" unique_id=2114976734]
+[node name="Station" type="Node3D" parent="Stands/RivalStand/Column" unique_id=2010973728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 
-[node name="Arm" type="MeshInstance3D" parent="Stands/RivalStand/Column/Station" unique_id=1464263645]
+[node name="Arm" type="MeshInstance3D" parent="Stands/RivalStand/Column/Station" unique_id=299437130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.19)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.2909999999999999
 mesh = SubResource("ArrayMesh_kx0rb")
 
-[node name="Plate" type="MeshInstance3D" parent="Stands/RivalStand/Column/Station" unique_id=1781300459]
+[node name="Plate" type="MeshInstance3D" parent="Stands/RivalStand/Column/Station" unique_id=1602835070]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3665)
 material_override = ExtResource("10_as804")
 gi_mode = 0
@@ -1067,7 +1067,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Grab" type="StaticBody3D" parent="Stands/RivalStand/Column/Station" unique_id=352716759 instance=ExtResource("15_c67w7")]
+[node name="Grab" type="StaticBody3D" parent="Stands/RivalStand/Column/Station" unique_id=1295966015 instance=ExtResource("15_c67w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.235, -0.03, 0.389)
 collision_layer = 2
 collision_mask = 0
@@ -1080,7 +1080,7 @@ control_id = &"grab_rival"
 label_text = "GRAB B"
 cooldown = 0.22
 
-[node name="Name" type="Label3D" parent="Stands/RivalStand/Column/Station" unique_id=1510785794]
+[node name="Name" type="Label3D" parent="Stands/RivalStand/Column/Station" unique_id=1290545067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0, 0.39299998)
 pixel_size = 0.0013
 double_sided = false
@@ -1094,11 +1094,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 307.69232
 
-[node name="Pivot" type="Node3D" parent="Stands/RivalStand" unique_id=1397998000]
+[node name="Pivot" type="Node3D" parent="Stands/RivalStand" unique_id=531132729]
 
-[node name="Tags" type="Node3D" parent="Stands/RivalStand/Pivot" unique_id=103878666]
+[node name="Tags" type="Node3D" parent="Stands/RivalStand/Pivot" unique_id=1300507790]
 
-[node name="Tag0" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=851546667]
+[node name="Tag0" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=247913533]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -1111,7 +1111,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag1" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=174110610]
+[node name="Tag1" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=166939614]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -1124,7 +1124,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag2" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=1377357070]
+[node name="Tag2" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=1874738471]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -1137,7 +1137,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag3" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=1767388297]
+[node name="Tag3" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=1196808168]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -1150,7 +1150,7 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Tag4" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=2101371689]
+[node name="Tag4" type="Label3D" parent="Stands/RivalStand/Pivot/Tags" unique_id=479677939]
 visible = false
 pixel_size = 0.0008
 billboard = 2
@@ -1163,30 +1163,30 @@ font = ExtResource("11_lx4pa")
 font_size = 26
 outline_size = 8
 
-[node name="Body" type="StaticBody3D" parent="Stands/RivalStand" unique_id=1790789680]
+[node name="Body" type="StaticBody3D" parent="Stands/RivalStand" unique_id=260598938]
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape3D" parent="Stands/RivalStand/Body" unique_id=194933552]
+[node name="Shape" type="CollisionShape3D" parent="Stands/RivalStand/Body" unique_id=547029567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79, 0)
 shape = SubResource("CylinderShape3D_cfool")
 
-[node name="Console" type="Node3D" parent="." unique_id=291367006]
+[node name="Console" type="Node3D" parent="." unique_id=1211381898]
 
-[node name="Cabinet" type="MeshInstance3D" parent="Console" unique_id=1581416374]
+[node name="Cabinet" type="MeshInstance3D" parent="Console" unique_id=843967143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.425, -1.05)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.9249999999999998
 mesh = SubResource("ArrayMesh_nyxxc")
 
-[node name="Shelf" type="MeshInstance3D" parent="Console" unique_id=1748786834]
+[node name="Shelf" type="MeshInstance3D" parent="Console" unique_id=524345757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.885, -1.05)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.24199999999999977
 mesh = SubResource("ArrayMesh_f3dup")
 
-[node name="Face" type="MeshInstance3D" parent="Console" unique_id=2027312777]
+[node name="Face" type="MeshInstance3D" parent="Console" unique_id=515131023]
 transform = Transform3D(1, 0, 0, 0, 0.43837115, 0.89879405, 0, -0.89879405, 0.43837115, 0, 1.0840385, -1.05)
 material_override = ExtResource("10_as804")
 gi_mode = 0
@@ -1200,10 +1200,10 @@ metadata/mount_axis = 1
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Panel" type="Node3D" parent="Console" unique_id=1529358443]
+[node name="Panel" type="Node3D" parent="Console" unique_id=764717622]
 transform = Transform3D(1, 0, 0, 0, 0.43837115, 0.89879405, 0, -0.89879405, 0.43837115, 0, 1.0840385, -1.05)
 
-[node name="Roll" type="StaticBody3D" parent="Console/Panel" unique_id=338336635 instance=ExtResource("15_c67w7")]
+[node name="Roll" type="StaticBody3D" parent="Console/Panel" unique_id=355506261 instance=ExtResource("15_c67w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 0.045)
 collision_layer = 2
 collision_mask = 0
@@ -1214,7 +1214,7 @@ control_id = &"roll"
 label_text = "ROLL"
 cooldown = 0.22
 
-[node name="Class" type="StaticBody3D" parent="Console/Panel" unique_id=1769277182 instance=ExtResource("18_sfms0")]
+[node name="Class" type="StaticBody3D" parent="Console/Panel" unique_id=1938835309 instance=ExtResource("18_sfms0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0.045)
 collision_layer = 2
 collision_mask = 0
@@ -1224,7 +1224,7 @@ control_id = &"class"
 label_text = "CLASS"
 cooldown = 0.22
 
-[node name="Tier" type="StaticBody3D" parent="Console/Panel" unique_id=3929648 instance=ExtResource("18_sfms0")]
+[node name="Tier" type="StaticBody3D" parent="Console/Panel" unique_id=1629572548 instance=ExtResource("18_sfms0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0.045)
 collision_layer = 2
 collision_mask = 0
@@ -1234,7 +1234,7 @@ control_id = &"tier"
 label_text = "TIER"
 cooldown = 0.22
 
-[node name="Compare" type="StaticBody3D" parent="Console/Panel" unique_id=1017859589 instance=ExtResource("15_c67w7")]
+[node name="Compare" type="StaticBody3D" parent="Console/Panel" unique_id=2045688767 instance=ExtResource("15_c67w7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 0.045)
 collision_layer = 2
 collision_mask = 0
@@ -1245,16 +1245,16 @@ control_id = &"compare"
 label_text = "COMPARE"
 cooldown = 0.22
 
-[node name="Deck" type="Node3D" parent="Console" unique_id=740504988]
+[node name="Deck" type="Node3D" parent="Console" unique_id=358054139]
 
-[node name="LeverPost" type="MeshInstance3D" parent="Console/Deck" unique_id=1597665302]
+[node name="LeverPost" type="MeshInstance3D" parent="Console/Deck" unique_id=631364808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28, 0.475, -0.9)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8759999999999997
 mesh = SubResource("ArrayMesh_or1sx")
 
-[node name="Strip" type="StaticBody3D" parent="Console/Deck" unique_id=541544192 instance=ExtResource("20_s43wu")]
+[node name="Strip" type="StaticBody3D" parent="Console/Deck" unique_id=122036863 instance=ExtResource("20_s43wu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28, 0.97499996, -0.9)
 collision_layer = 2
 collision_mask = 0
@@ -1264,36 +1264,36 @@ on_text = "STRIPPED"
 control_id = &"strip"
 label_text = "STRIP"
 
-[node name="Body" type="StaticBody3D" parent="Console" unique_id=255808884]
+[node name="Body" type="StaticBody3D" parent="Console" unique_id=469895564]
 collision_mask = 0
 
-[node name="Shape" type="CollisionShape3D" parent="Console/Body" unique_id=2003273751]
+[node name="Shape" type="CollisionShape3D" parent="Console/Body" unique_id=1944998651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465, -1.05)
 shape = SubResource("BoxShape3D_yjqm3")
 
-[node name="LeverPostShape" type="CollisionShape3D" parent="Console/Body" unique_id=1349116626]
+[node name="LeverPostShape" type="CollisionShape3D" parent="Console/Body" unique_id=281163012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28, 0.475, -0.9)
 shape = SubResource("BoxShape3D_tyel0")
 
-[node name="Rack" type="Node3D" parent="." unique_id=1809505439]
+[node name="Rack" type="Node3D" parent="." unique_id=1329537901]
 
-[node name="RailTop" type="MeshInstance3D" parent="Rack" unique_id=446996860]
+[node name="RailTop" type="MeshInstance3D" parent="Rack" unique_id=1542947966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.64, 1.86, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.19299999999999962
 mesh = SubResource("ArrayMesh_bxiuu")
 
-[node name="RailLow" type="MeshInstance3D" parent="Rack" unique_id=2046414940]
+[node name="RailLow" type="MeshInstance3D" parent="Rack" unique_id=1974321573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.64, 1.02, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5099999999999996
 mesh = SubResource("ArrayMesh_bxiuu")
 
-[node name="Pegs" type="Node3D" parent="Rack" unique_id=1888072144]
+[node name="Pegs" type="Node3D" parent="Rack" unique_id=1370119114]
 
-[node name="Peg0" type="StaticBody3D" parent="Rack/Pegs" unique_id=1643771276]
+[node name="Peg0" type="StaticBody3D" parent="Rack/Pegs" unique_id=1139359470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48, 1.45, -3)
 collision_layer = 2
 collision_mask = 0
@@ -1301,24 +1301,24 @@ script = ExtResource("22_k7bpm")
 control_id = &"peg_0"
 cooldown = 0.3
 
-[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg0" unique_id=1467729042]
+[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg0" unique_id=1071228179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.41, -0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8269999999999995
 mesh = SubResource("ArrayMesh_vx6fk")
 
-[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg0" unique_id=292784348]
+[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg0" unique_id=2039902128]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.43, 0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.14399999999999946
 mesh = SubResource("ArrayMesh_vx6fk")
 
-[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg0" unique_id=251953947]
+[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg0" unique_id=1503909226]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.02, 0, 0)
 
-[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg0" unique_id=1848054934]
+[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg0" unique_id=2038252291]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, -0.28, 0)
 pixel_size = 0.0012
 double_sided = false
@@ -1332,11 +1332,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 750.0
 
-[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg0" unique_id=1436828711]
+[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg0" unique_id=1747920676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
 shape = SubResource("BoxShape3D_d4vkx")
 
-[node name="Peg1" type="StaticBody3D" parent="Rack/Pegs" unique_id=593750235]
+[node name="Peg1" type="StaticBody3D" parent="Rack/Pegs" unique_id=652006251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48, 1.45, -1.8)
 collision_layer = 2
 collision_mask = 0
@@ -1344,24 +1344,24 @@ script = ExtResource("22_k7bpm")
 control_id = &"peg_1"
 cooldown = 0.3
 
-[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg1" unique_id=42851250]
+[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg1" unique_id=1401713900]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.41, -0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.46099999999999947
 mesh = SubResource("ArrayMesh_13pco")
 
-[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg1" unique_id=463123738]
+[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg1" unique_id=1812523380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.43, 0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.7779999999999995
 mesh = SubResource("ArrayMesh_13pco")
 
-[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg1" unique_id=1450686470]
+[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg1" unique_id=1034878501]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.02, 0, 0)
 
-[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg1" unique_id=1234860326]
+[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg1" unique_id=1817817692]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, -0.28, 0)
 pixel_size = 0.0012
 double_sided = false
@@ -1375,11 +1375,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 750.0
 
-[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg1" unique_id=1983571808]
+[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg1" unique_id=518689213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
 shape = SubResource("BoxShape3D_ymbms")
 
-[node name="Peg2" type="StaticBody3D" parent="Rack/Pegs" unique_id=77757724]
+[node name="Peg2" type="StaticBody3D" parent="Rack/Pegs" unique_id=2039176772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48, 1.45, -0.6)
 collision_layer = 2
 collision_mask = 0
@@ -1387,24 +1387,24 @@ script = ExtResource("22_k7bpm")
 control_id = &"peg_2"
 cooldown = 0.3
 
-[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg2" unique_id=668084670]
+[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg2" unique_id=890729862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.41, -0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.09499999999999953
 mesh = SubResource("ArrayMesh_pecph")
 
-[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg2" unique_id=1803661102]
+[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg2" unique_id=2036154501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.43, 0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.41199999999999953
 mesh = SubResource("ArrayMesh_pecph")
 
-[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg2" unique_id=1864459768]
+[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg2" unique_id=349980575]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.02, 0, 0)
 
-[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg2" unique_id=2107689860]
+[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg2" unique_id=1012171132]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, -0.28, 0)
 pixel_size = 0.0012
 double_sided = false
@@ -1418,11 +1418,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 750.0
 
-[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg2" unique_id=2032052651]
+[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg2" unique_id=943179432]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
 shape = SubResource("BoxShape3D_h4c5i")
 
-[node name="Peg3" type="StaticBody3D" parent="Rack/Pegs" unique_id=340930407]
+[node name="Peg3" type="StaticBody3D" parent="Rack/Pegs" unique_id=1243082528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48, 1.45, 0.6)
 collision_layer = 2
 collision_mask = 0
@@ -1430,24 +1430,24 @@ script = ExtResource("22_k7bpm")
 control_id = &"peg_3"
 cooldown = 0.3
 
-[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg3" unique_id=167182120]
+[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg3" unique_id=942497394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.41, -0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.7289999999999995
 mesh = SubResource("ArrayMesh_lej0w")
 
-[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg3" unique_id=1905447880]
+[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg3" unique_id=376542418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.43, 0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.0459999999999996
 mesh = SubResource("ArrayMesh_lej0w")
 
-[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg3" unique_id=1236912044]
+[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg3" unique_id=2065427604]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.02, 0, 0)
 
-[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg3" unique_id=1003168579]
+[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg3" unique_id=958962475]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, -0.28, 0)
 pixel_size = 0.0012
 double_sided = false
@@ -1461,11 +1461,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 750.0
 
-[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg3" unique_id=1098886444]
+[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg3" unique_id=1726562260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
 shape = SubResource("BoxShape3D_4nf3p")
 
-[node name="Peg4" type="StaticBody3D" parent="Rack/Pegs" unique_id=1419769059]
+[node name="Peg4" type="StaticBody3D" parent="Rack/Pegs" unique_id=1564972537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48, 1.45, 1.8)
 collision_layer = 2
 collision_mask = 0
@@ -1473,24 +1473,24 @@ script = ExtResource("22_k7bpm")
 control_id = &"peg_4"
 cooldown = 0.3
 
-[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg4" unique_id=1582027274]
+[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg4" unique_id=1691796194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.41, -0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.3629999999999996
 mesh = SubResource("ArrayMesh_lqllx")
 
-[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg4" unique_id=97560599]
+[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg4" unique_id=863579471]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.43, 0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.6799999999999996
 mesh = SubResource("ArrayMesh_lqllx")
 
-[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg4" unique_id=1127382818]
+[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg4" unique_id=1436922168]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.02, 0, 0)
 
-[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg4" unique_id=1556948403]
+[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg4" unique_id=380279351]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, -0.28, 0)
 pixel_size = 0.0012
 double_sided = false
@@ -1504,11 +1504,11 @@ outline_size = 8
 autowrap_mode = 3
 width = 750.0
 
-[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg4" unique_id=1055374262]
+[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg4" unique_id=1801807480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
 shape = SubResource("BoxShape3D_qqknl")
 
-[node name="Peg5" type="StaticBody3D" parent="Rack/Pegs" unique_id=1712249031]
+[node name="Peg5" type="StaticBody3D" parent="Rack/Pegs" unique_id=897843674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48, 1.45, 3)
 collision_layer = 2
 collision_mask = 0
@@ -1516,24 +1516,24 @@ script = ExtResource("22_k7bpm")
 control_id = &"peg_5"
 cooldown = 0.3
 
-[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg5" unique_id=1032890584]
+[node name="HookTop" type="MeshInstance3D" parent="Rack/Pegs/Peg5" unique_id=1446187590]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0.41, -0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.9969999999999997
 mesh = SubResource("ArrayMesh_hgbjs")
 
-[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg5" unique_id=678750373]
+[node name="HookLow" type="MeshInstance3D" parent="Rack/Pegs/Peg5" unique_id=865257699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, -0.43, 0.3)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.3139999999999996
 mesh = SubResource("ArrayMesh_hgbjs")
 
-[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg5" unique_id=1190046624]
+[node name="Mount" type="Node3D" parent="Rack/Pegs/Peg5" unique_id=979573082]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.02, 0, 0)
 
-[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg5" unique_id=1339247647]
+[node name="Tag" type="Label3D" parent="Rack/Pegs/Peg5" unique_id=1630222039]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1, -0.28, 0)
 pixel_size = 0.0012
 double_sided = false
@@ -1547,13 +1547,13 @@ outline_size = 8
 autowrap_mode = 3
 width = 750.0
 
-[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg5" unique_id=1429098283]
+[node name="Hit" type="CollisionShape3D" parent="Rack/Pegs/Peg5" unique_id=13564518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
 shape = SubResource("BoxShape3D_1ayth")
 
-[node name="RollStation" type="Node3D" parent="Rack" unique_id=632650713]
+[node name="RollStation" type="Node3D" parent="Rack" unique_id=1975319843]
 
-[node name="Plate" type="MeshInstance3D" parent="Rack/RollStation" unique_id=892332012]
+[node name="Plate" type="MeshInstance3D" parent="Rack/RollStation" unique_id=130069780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.566, 1.5, -4.28)
 material_override = ExtResource("10_as804")
 gi_mode = 0
@@ -1567,7 +1567,7 @@ metadata/mount_axis = 0
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Header" type="Label3D" parent="Rack/RollStation" unique_id=302911851]
+[node name="Header" type="Label3D" parent="Rack/RollStation" unique_id=1955799750]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.532, 1.66, -4.28)
 pixel_size = 0.0021
 double_sided = false
@@ -1580,7 +1580,7 @@ font = ExtResource("11_lx4pa")
 font_size = 48
 outline_size = 8
 
-[node name="Roll" type="StaticBody3D" parent="Rack/RollStation" unique_id=136972122 instance=ExtResource("15_c67w7")]
+[node name="Roll" type="StaticBody3D" parent="Rack/RollStation" unique_id=36270387 instance=ExtResource("15_c67w7")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.536, 1.34, -4.28)
 collision_layer = 2
 collision_mask = 0
@@ -1593,9 +1593,9 @@ control_id = &"roll_rack"
 label_text = "ROLL"
 cooldown = 0.22
 
-[node name="Sign" type="Node3D" parent="." unique_id=162165148]
+[node name="Sign" type="Node3D" parent="." unique_id=1699037366]
 
-[node name="Plate" type="MeshInstance3D" parent="Sign" unique_id=1492262485]
+[node name="Plate" type="MeshInstance3D" parent="Sign" unique_id=1916262683]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 3.3, 1.6, -0.62)
 material_override = ExtResource("10_as804")
 gi_mode = 0
@@ -1609,14 +1609,14 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Post" type="MeshInstance3D" parent="Sign" unique_id=2074136080]
+[node name="Post" type="MeshInstance3D" parent="Sign" unique_id=772554688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0.75, -0.76084816)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.26499999999999946
 mesh = SubResource("ArrayMesh_ug5vs")
 
-[node name="Text" type="Label3D" parent="Sign" unique_id=53507697]
+[node name="Text" type="Label3D" parent="Sign" unique_id=1660515866]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 3.3, 1.6062514, -0.5845469)
 pixel_size = 0.0013
 double_sided = false
@@ -1628,44 +1628,44 @@ text = "GUNSMITH BAY
 
 SHOOT A CONTROL, OR WALK UP AND PRESS F.
 
-GRAB TAKES THE GUN ABOVE THAT BUTTON.
-WHAT YOU HELD GOES BACK ON THAT STAND.
+GRAB TAKES THE GUN ABOVE THAT BUTTON, FOR
+WHOEVER PRESSED IT. WHAT THEY HELD GOES ON.
 ROLL RACK REROLLS THE WALL AND NOTHING ELSE.
 THE RACK TRADES WITH THE LEFT STAND.
 THE DECK LEVER STRIPS BOTH STANDS.
 
-F8 FREE CAMERA   ·   F3 DIAGNOSTICS   ·   ESC OUT"
+F3 DIAGNOSTICS   ·   ESC OUT"
 font = ExtResource("11_lx4pa")
 font_size = 30
 outline_size = 8
 
-[node name="Lamps" type="Node3D" parent="." unique_id=1620933625]
+[node name="Lamps" type="Node3D" parent="." unique_id=351393567]
 
-[node name="LampMain" type="Node3D" parent="Lamps" unique_id=725067745]
+[node name="LampMain" type="Node3D" parent="Lamps" unique_id=1193387629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.55, 0, -2.4)
 
-[node name="Stem" type="MeshInstance3D" parent="Lamps/LampMain" unique_id=872972837]
+[node name="Stem" type="MeshInstance3D" parent="Lamps/LampMain" unique_id=982663701]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5819999999999994
 mesh = SubResource("ArrayMesh_1wrol")
 
-[node name="Shade" type="MeshInstance3D" parent="Lamps/LampMain" unique_id=225389661]
+[node name="Shade" type="MeshInstance3D" parent="Lamps/LampMain" unique_id=286014653]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8989999999999994
 mesh = SubResource("ArrayMesh_nfyxl")
 
-[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampMain" unique_id=2083514065]
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampMain" unique_id=856745206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 0)
 material_override = ExtResource("23_bc2dd")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.2159999999999993
 mesh = SubResource("ArrayMesh_y5xtv")
 
-[node name="Light" type="SpotLight3D" parent="Lamps/LampMain/Bulb" unique_id=1427789500]
+[node name="Light" type="SpotLight3D" parent="Lamps/LampMain/Bulb" unique_id=1486543028]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.05, 0)
 light_color = Color(1, 0.855, 0.678, 1)
 light_energy = 5.4
@@ -1678,31 +1678,31 @@ spot_attenuation = 1.35
 spot_angle = 52.0
 spot_angle_attenuation = 1.05
 
-[node name="LampRival" type="Node3D" parent="Lamps" unique_id=2035071819]
+[node name="LampRival" type="Node3D" parent="Lamps" unique_id=958941118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 0, -2.4)
 
-[node name="Stem" type="MeshInstance3D" parent="Lamps/LampRival" unique_id=1627921944]
+[node name="Stem" type="MeshInstance3D" parent="Lamps/LampRival" unique_id=687617217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5329999999999993
 mesh = SubResource("ArrayMesh_xky8k")
 
-[node name="Shade" type="MeshInstance3D" parent="Lamps/LampRival" unique_id=2109238162]
+[node name="Shade" type="MeshInstance3D" parent="Lamps/LampRival" unique_id=960197558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8499999999999992
 mesh = SubResource("ArrayMesh_7kqs0")
 
-[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampRival" unique_id=1806092720]
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampRival" unique_id=631197425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 0)
 material_override = ExtResource("23_bc2dd")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.16699999999999915
 mesh = SubResource("ArrayMesh_nevx1")
 
-[node name="Light" type="SpotLight3D" parent="Lamps/LampRival/Bulb" unique_id=1522065423]
+[node name="Light" type="SpotLight3D" parent="Lamps/LampRival/Bulb" unique_id=862486566]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.05, 0)
 light_color = Color(1, 0.855, 0.678, 1)
 light_energy = 5.4
@@ -1715,31 +1715,31 @@ spot_attenuation = 1.35
 spot_angle = 52.0
 spot_angle_attenuation = 1.05
 
-[node name="LampConsole" type="Node3D" parent="Lamps" unique_id=617118009]
+[node name="LampConsole" type="Node3D" parent="Lamps" unique_id=287685113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.05)
 
-[node name="Stem" type="MeshInstance3D" parent="Lamps/LampConsole" unique_id=1362041000]
+[node name="Stem" type="MeshInstance3D" parent="Lamps/LampConsole" unique_id=1100256538]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.48399999999999915
 mesh = SubResource("ArrayMesh_5bm7m")
 
-[node name="Shade" type="MeshInstance3D" parent="Lamps/LampConsole" unique_id=483345152]
+[node name="Shade" type="MeshInstance3D" parent="Lamps/LampConsole" unique_id=881420980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8009999999999992
 mesh = SubResource("ArrayMesh_rwxke")
 
-[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampConsole" unique_id=1237253036]
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampConsole" unique_id=1626739773]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 0)
 material_override = ExtResource("23_bc2dd")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.11799999999999922
 mesh = SubResource("ArrayMesh_thf4p")
 
-[node name="Light" type="SpotLight3D" parent="Lamps/LampConsole/Bulb" unique_id=755979856]
+[node name="Light" type="SpotLight3D" parent="Lamps/LampConsole/Bulb" unique_id=1079596704]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.05, 0)
 light_color = Color(1, 0.855, 0.678, 1)
 light_energy = 4.2
@@ -1751,31 +1751,31 @@ spot_attenuation = 1.35
 spot_angle = 52.0
 spot_angle_attenuation = 1.05
 
-[node name="LampRackNorth" type="Node3D" parent="Lamps" unique_id=1663054480]
+[node name="LampRackNorth" type="Node3D" parent="Lamps" unique_id=239907294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, -2)
 
-[node name="Stem" type="MeshInstance3D" parent="Lamps/LampRackNorth" unique_id=568506879]
+[node name="Stem" type="MeshInstance3D" parent="Lamps/LampRackNorth" unique_id=780130138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.4349999999999992
 mesh = SubResource("ArrayMesh_gtsb4")
 
-[node name="Shade" type="MeshInstance3D" parent="Lamps/LampRackNorth" unique_id=157773104]
+[node name="Shade" type="MeshInstance3D" parent="Lamps/LampRackNorth" unique_id=1445508804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.7519999999999992
 mesh = SubResource("ArrayMesh_7bbu7")
 
-[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampRackNorth" unique_id=935802314]
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampRackNorth" unique_id=1027372844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 0)
 material_override = ExtResource("23_bc2dd")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.06899999999999928
 mesh = SubResource("ArrayMesh_ysead")
 
-[node name="Light" type="SpotLight3D" parent="Lamps/LampRackNorth/Bulb" unique_id=315508353]
+[node name="Light" type="SpotLight3D" parent="Lamps/LampRackNorth/Bulb" unique_id=332797269]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.05, 0)
 light_color = Color(1, 0.855, 0.678, 1)
 light_energy = 4.6
@@ -1787,31 +1787,31 @@ spot_attenuation = 1.35
 spot_angle = 52.0
 spot_angle_attenuation = 1.05
 
-[node name="LampRackSouth" type="Node3D" parent="Lamps" unique_id=498038069]
+[node name="LampRackSouth" type="Node3D" parent="Lamps" unique_id=525760694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 2)
 
-[node name="Stem" type="MeshInstance3D" parent="Lamps/LampRackSouth" unique_id=1393412995]
+[node name="Stem" type="MeshInstance3D" parent="Lamps/LampRackSouth" unique_id=566568497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.905, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.3859999999999993
 mesh = SubResource("ArrayMesh_ovmfs")
 
-[node name="Shade" type="MeshInstance3D" parent="Lamps/LampRackSouth" unique_id=697163195]
+[node name="Shade" type="MeshInstance3D" parent="Lamps/LampRackSouth" unique_id=232466479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.55, 0)
 material_override = ExtResource("8_d8gu3")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.7029999999999993
 mesh = SubResource("ArrayMesh_pa423")
 
-[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampRackSouth" unique_id=890787986]
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/LampRackSouth" unique_id=141957022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45, 0)
 material_override = ExtResource("23_bc2dd")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.01999999999999935
 mesh = SubResource("ArrayMesh_ysfiv")
 
-[node name="Light" type="SpotLight3D" parent="Lamps/LampRackSouth/Bulb" unique_id=313252427]
+[node name="Light" type="SpotLight3D" parent="Lamps/LampRackSouth/Bulb" unique_id=453112667]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.05, 0)
 light_color = Color(1, 0.855, 0.678, 1)
 light_energy = 4.6
@@ -1823,7 +1823,7 @@ spot_attenuation = 1.35
 spot_angle = 52.0
 spot_angle_attenuation = 1.05
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1931569987 instance=ExtResource("24_5ibco")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=539354987 instance=ExtResource("24_5ibco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.9)
 collision_layer = 4
 collision_mask = 3
@@ -1832,7 +1832,7 @@ safe_margin = 0.008
 script = ExtResource("25_ifgj1")
 slide = SubResource("Resource_58nng")
 
-[node name="ViewmodelKey" type="DirectionalLight3D" parent="." unique_id=389257801]
+[node name="ViewmodelKey" type="DirectionalLight3D" parent="." unique_id=132001732]
 transform = Transform3D(0.66913056, -0.4575257, 0.58560616, 0, 0.7880108, 0.6156615, -0.74314487, -0.41195792, 0.5272821, 0, 0, 0)
 layers = 128
 light_color = Color(1, 0.886, 0.749, 1)
@@ -1840,5 +1840,5 @@ light_energy = 2.6
 light_specular = 0.8
 light_cull_mask = 128
 
-[node name="Weapon" type="Node3D" parent="." unique_id=103231367]
+[node name="Weapon" type="Node3D" parent="." unique_id=1222906155]
 script = ExtResource("27_05gfu")

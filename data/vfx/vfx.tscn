@@ -47,11 +47,11 @@ use_custom_data = true
 instance_count = 32
 mesh = ExtResource("23_kc3da")
 
-[node name="Vfx" type="Node3D" unique_id=1322522026]
+[node name="Vfx" type="Node3D" unique_id=64469703]
 script = ExtResource("1_y1m7h")
 preset_budget_scale = PackedFloat32Array(0.3, 0.5, 0.75, 1, 1)
 
-[node name="Sparks" type="GPUParticles3D" parent="." unique_id=708879281]
+[node name="Sparks" type="GPUParticles3D" parent="." unique_id=968147730]
 material_override = ExtResource("2_78wnm")
 cast_shadow = 0
 amount = 1000
@@ -62,7 +62,7 @@ process_material = ExtResource("3_7m25a")
 draw_pass_1 = ExtResource("4_o77ea")
 script = ExtResource("5_sxe3s")
 
-[node name="Spray" type="GPUParticles3D" parent="." unique_id=700672018]
+[node name="Spray" type="GPUParticles3D" parent="." unique_id=2006808505]
 material_override = ExtResource("6_227wp")
 cast_shadow = 0
 amount = 320
@@ -76,7 +76,7 @@ particle_size = 0.038
 particle_alpha = 0.85
 rng_seed = 1734638
 
-[node name="SmokeFine" type="GPUParticles3D" parent="." unique_id=1371277936]
+[node name="SmokeFine" type="GPUParticles3D" parent="." unique_id=999945815]
 material_override = ExtResource("8_3temf")
 cast_shadow = 0
 amount = 420
@@ -87,7 +87,7 @@ process_material = ExtResource("9_uye2d")
 draw_pass_1 = ExtResource("4_o77ea")
 script = ExtResource("10_ugs60")
 
-[node name="SmokeHeavy" type="GPUParticles3D" parent="." unique_id=814318645]
+[node name="SmokeHeavy" type="GPUParticles3D" parent="." unique_id=2025937869]
 material_override = ExtResource("11_h36op")
 cast_shadow = 0
 amount = 360
@@ -101,7 +101,7 @@ particle_size = 2.1
 near_cull_squared = 150.0
 rng_seed = 3781121
 
-[node name="Ash" type="GPUParticles3D" parent="." unique_id=1609145093]
+[node name="Ash" type="GPUParticles3D" parent="." unique_id=1510804974]
 material_override = ExtResource("13_a4t75")
 cast_shadow = 0
 amount = 1100
@@ -113,7 +113,7 @@ process_material = ExtResource("14_jm44x")
 draw_pass_1 = ExtResource("4_o77ea")
 script = ExtResource("15_uwwcc")
 
-[node name="Motes" type="GPUParticles3D" parent="." unique_id=191868769]
+[node name="Motes" type="GPUParticles3D" parent="." unique_id=1868131126]
 material_override = ExtResource("16_4rbt0")
 cast_shadow = 0
 amount = 220
@@ -129,33 +129,33 @@ wrap_radius = 7.0
 band_bottom = -1.6
 band_top = 3.4
 
-[node name="Decals" type="MultiMeshInstance3D" parent="." unique_id=1049902864]
+[node name="Decals" type="MultiMeshInstance3D" parent="." unique_id=459402709]
 material_override = ExtResource("18_nkyru")
 cast_shadow = 0
 custom_aabb = AABB(-600, -200, -600, 1200, 400, 1200)
 multimesh = SubResource("MultiMesh_83okm")
 script = ExtResource("19_44duf")
 
-[node name="Tracers" type="MultiMeshInstance3D" parent="." unique_id=811713533]
+[node name="Tracers" type="MultiMeshInstance3D" parent="." unique_id=1818261244]
 material_override = ExtResource("20_g4708")
 cast_shadow = 0
 custom_aabb = AABB(-600, -200, -600, 1200, 400, 1200)
 multimesh = SubResource("MultiMesh_8nikt")
 script = ExtResource("21_xokwi")
 
-[node name="Shells" type="MultiMeshInstance3D" parent="." unique_id=184093829]
+[node name="Shells" type="MultiMeshInstance3D" parent="." unique_id=1657174257]
 material_override = ExtResource("22_05aqk")
 cast_shadow = 0
 custom_aabb = AABB(-600, -200, -600, 1200, 400, 1200)
 multimesh = SubResource("MultiMesh_1k0c8")
 script = ExtResource("24_rxbbx")
 
-[node name="Muzzles" type="Node3D" parent="." unique_id=1609878328]
+[node name="Muzzles" type="Node3D" parent="." unique_id=1420046561]
 script = ExtResource("25_30gej")
 flash_mesh = ExtResource("4_o77ea")
 flash_material = ExtResource("26_wekdy")
 
-[node name="Blasts" type="Node3D" parent="." unique_id=1905261988]
+[node name="Blasts" type="Node3D" parent="." unique_id=1660091876]
 script = ExtResource("27_lac58")
 shimmer_mesh = ExtResource("4_o77ea")
 shimmer_material = ExtResource("28_rngem")

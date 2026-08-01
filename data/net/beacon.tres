@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://net/avatar/beacon.gdshader" id="1_mjihy"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mjihy")
+shader_parameter/mark_color = null
+shader_parameter/ink_color = Color(0.035, 0.031, 0.028, 1)
+shader_parameter/aspect = 7.0
+shader_parameter/cap_height = null
+shader_parameter/cap_size = null
+shader_parameter/shaft_half = null
+shader_parameter/ink_width = null
+shader_parameter/edge_softness = null
+shader_parameter/opacity = null
+shader_parameter/shaft_alpha = null
+shader_parameter/pulse_hz = null
+shader_parameter/pulse_depth = null

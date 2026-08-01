@@ -234,6 +234,44 @@ func tin() -> Color:
 	return pick(Palette.WORLD_TIN)
 
 
+# ------------------------------------------------------------------ packaging
+
+
+## Build the accumulated course into one `ArrayMesh`, write it, and hand back the LOADED
+## copy — so the packed scene stores an external reference instead of inlining a few
+## thousand triangles into the .tscn.
+func save_mesh(material: Material, path: String) -> ArrayMesh:
+	var built: ArrayMesh = mesh.build_mesh(material)
+	var err: Error = ResourceSaver.save(built, path)
+	if err != OK:
+		push_error("CourseKit: could not save %s (error %d)." % [path, err])
+		return built
+	return load(path) as ArrayMesh
+
+
+## Claim every descendant for `root`. `PackedScene.pack` keeps only nodes the root owns,
+## and an instanced scene must be owned but never descended into — its children belong to
+## their own file.
+static func claim(node: Node, root: Node) -> void:
+	for child: Node in node.get_children():
+		if child.owner == null:
+			child.owner = root
+		if child.scene_file_path.is_empty():
+			claim(child, root)
+
+
+## Pack a built tree and write it.
+static func pack_scene(root: Node, path: String) -> void:
+	var packed := PackedScene.new()
+	var err: Error = packed.pack(root)
+	if err != OK:
+		push_error("CourseKit: packing %s failed (error %d)." % [path, err])
+		return
+	err = ResourceSaver.save(packed, path)
+	if err != OK:
+		push_error("CourseKit: could not save %s (error %d)." % [path, err])
+
+
 # ------------------------------------------------------------------- readback
 
 

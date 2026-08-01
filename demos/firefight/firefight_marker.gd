@@ -55,7 +55,10 @@ func _physics_process(delta: float) -> void:
 	_recheck -= delta
 	if _recheck <= 0.0:
 		_recheck = hotspot_period
-		_aim = director.hotspot()
+		# On a guest the war is not simulated on this machine, so there is nothing
+		# local to ask: `FirefightWarLink` calls `set_aim` off the state packet.
+		if NetGame.is_authority():
+			_aim = director.hotspot()
 	var to: Vector3 = _aim - global_position
 	to.y = 0.0
 	if to.length_squared() < 1.0:
@@ -66,6 +69,12 @@ func _physics_process(delta: float) -> void:
 
 func caption() -> String:
 	return marker_name
+
+
+## Point the vane at ground somebody else worked out. The vane still SWEEPS to it
+## at `track_rate`, so a replicated hotspot reads exactly like a local one.
+func set_aim(point: Vector3) -> void:
+	_aim = point
 
 
 ## The camera transform this marker sends you to: out along the vane, up above

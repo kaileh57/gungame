@@ -56,6 +56,11 @@ const SHOOTER_SCRIPT: String = "res://demos/range/range_shooter.gd"
 const BENCH_SCRIPT: String = "res://demos/range/weapon_bench.gd"
 const AMBIENCE_SCRIPT: String = "res://demos/range/range_ambience.gd"
 const AMMO_COUNTER_SCRIPT: String = "res://ui/hud/ammo_counter.gd"
+## The demo's whole networking spine, on ONE node at a FIXED path. Godot routes an
+## RPC by node path, so `Range/RangeNet` has to exist, be spelled the same and sit
+## in the same place on every machine — which is exactly what baking it into the
+## scene guarantees and what a node added at runtime would not.
+const NET_SCRIPT: String = "res://demos/range/range_net.gd"
 
 ## Master bake seed. Rocks, casings and clutter are drawn off it, so the level is
 ## byte-identical between runs and a diff of range.tscn means something changed.
@@ -162,6 +167,15 @@ func _build_scene() -> Node3D:
 	_add_instance(root, SCAV_WORLD_SCENE, "ScavWorld", Vector3.ZERO)
 	_add_instance(root, VFX_SCENE, "Vfx", Vector3.ZERO)
 
+	# First of the demo's own nodes, so that anything asking "am I the authority"
+	# from its `_ready` has already had the answer settled — `RangeNet` binds in
+	# `_enter_tree`, and Godot runs every `_enter_tree` in a scene before any
+	# `_ready`, so this is belt as well as braces.
+	var wire := Node.new()
+	wire.name = "RangeNet"
+	wire.set_script(load(NET_SCRIPT))
+	root.add_child(wire)
+
 	_build_ground(root)
 	RangeBayKit.new(_shop).build(root)
 	_build_lane(root)
@@ -196,6 +210,7 @@ func _build_scene() -> Node3D:
 	root.set("shooter_path", NodePath("Shooter"))
 	root.set("player_path", NodePath("Player"))
 	root.set("lane_readout_path", NodePath("Lane/LaneReadout"))
+	root.set("net_path", NodePath("RangeNet"))
 	if bench == null:
 		_shop.fail("bench was not built")
 	return root

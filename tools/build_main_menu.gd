@@ -20,12 +20,17 @@ const OUT_DIR: String = "res://data/ui"
 const OUT_MENU: String = "res://ui/main_menu.tscn"
 const OUT_PAUSE: String = "res://ui/pause_menu.tscn"
 const OUT_SETTINGS: String = "res://ui/settings_panel.tscn"
+const OUT_SIGN: String = "res://data/ui/lobby_sign.tscn"
 const OUT_REPORT: String = "res://data/ui/build_report.txt"
 
 const MAIN_MENU_SCRIPT: String = "res://ui/main_menu.gd"
 const PAUSE_MENU_SCRIPT: String = "res://ui/pause_menu.gd"
 const SETTINGS_SCRIPT: String = "res://ui/settings_panel.gd"
 const CONTROL_SCRIPT: String = "res://ui/diegetic/diegetic_control.gd"
+const LOBBY_SCRIPT: String = "res://ui/lobby/lobby_bench.gd"
+const CONSOLE_SCRIPT: String = "res://ui/lobby/join_console.gd"
+const DOTS_SCRIPT: String = "res://ui/lobby/lobby_dots.gd"
+const SIGN_SCRIPT: String = "res://ui/lobby/lobby_sign.gd"
 const WORLD_SCENE: String = "res://art/scav_world.tscn"
 
 ## Typeface sources. Read at bake time only — the outlines end up inside the
@@ -44,6 +49,11 @@ const MAT_EMBER: String = "res://art/materials/glow_ember.tres"
 ## `MenuShop.BOARD_FACE` and its two row heights, and a number that lived in two
 ## files would drift the first time one of them moved.
 const MenuShop := preload("res://tools/menu_shop.gd")
+
+## The lobby's furniture — the join console, the roster, the dots, the lock bar and
+## the falling toast — and the numbers behind where they sit. A third file for the
+## same reason the second one exists: none of them may carry a thousand lines.
+const MenuLobby := preload("res://tools/menu_lobby.gd")
 
 ## Seats every plate on what carries it. A lean is not free: it swings the plate's
 ## far edge back by half its height times the sine of the lean, and both plate
@@ -81,13 +91,28 @@ const UTIL_Z: float = 0.255
 const EYE_AT: Vector3 = Vector3(0.0, 1.62, 1.50)
 const EYE_PITCH_DEG: float = -6.5
 
+# --- the lobby ---------------------------------------------------------------
+#
+# The lobby's own furniture is cut by `res://tools/menu_lobby.gd`, which holds its
+# numbers and the reasoning behind them. What stays here is the HOST plate, because
+# it is a utility plate like SETTINGS and SHUT DOWN and is built by the same `_build_card`
+# against the same bench-top mount.
+
+## The HOST plate, left of the console, in the 16 cm of bench between it and the
+## SETTINGS plate. Same lean and same mount as the other two utility plates.
+const HOST_X: float = -0.335
+const HOST_PLATE: Vector3 = Vector3(0.16, 0.105, 0.016)
+const HOST_BLOCK: Vector3 = Vector3(0.13, 0.05, 0.045)
+
 ## Loaded at run time rather than named as a type, so that compiling this builder
 ## does not drag `main_menu.gd` in before the autoloads it refers to exist.
 var _menu_script: GDScript = null
 var _menu_consts: Dictionary = {}
 var _shop: RefCounted = null
+var _kit: RefCounted = null
 var _steel: Material = null
 var _polymer: Material = null
+var _ember: Material = null
 var _display: Font = null
 var _report: PackedStringArray = PackedStringArray()
 var _failures: int = 0
@@ -470,14 +495,17 @@ func _settings_instance() -> Control:
 func _build_menu_scene() -> void:
 	_steel = ResourceLoader.load(MAT_STEEL, "Material") as Material
 	_polymer = ResourceLoader.load(MAT_POLYMER, "Material") as Material
+	_ember = ResourceLoader.load(MAT_EMBER, "Material") as Material
 	_display = ResourceLoader.load(UiStyle.FONT_DISPLAY_PATH, "Font") as Font
 	_shop = MenuShop.new(
 		_steel,
 		ResourceLoader.load(MAT_TIMBER, "Material") as Material,
 		_polymer,
 		ResourceLoader.load(MAT_CANVAS, "Material") as Material,
-		ResourceLoader.load(MAT_EMBER, "Material") as Material
+		_ember
 	)
+	_kit = MenuLobby.new(_steel, _polymer, _ember, _display, load(CONTROL_SCRIPT) as GDScript)
+	_pack(_kit.build_sign(load(SIGN_SCRIPT) as GDScript), OUT_SIGN)
 
 	var root := Node3D.new()
 	root.name = "MainMenu"
@@ -512,6 +540,7 @@ func _build_menu_scene() -> void:
 	_shop.build_lamp(root)
 	_shop.build_fill(root)
 	root.add_child(_build_cards())
+	root.add_child(_build_lobby())
 
 	var ui := CanvasLayer.new()
 	ui.name = "Ui"
@@ -520,10 +549,11 @@ func _build_menu_scene() -> void:
 	ui.add_child(_settings_instance())
 
 	_pack(root, OUT_MENU)
-	_shells += int(_shop.shells)
-	_failures += int(_shop.failures)
-	for line: String in _shop.lines as PackedStringArray:
-		_line(line)
+	for kit: RefCounted in [_shop, _kit]:
+		_shells += int(kit.shells)
+		_failures += int(kit.failures)
+		for line: String in kit.lines as PackedStringArray:
+			_line(line)
 
 
 ## The two pieces of standing text. `Board` is the readout `main_menu.gd` writes
@@ -727,6 +757,37 @@ func _util_spec(id: StringName, title: String, x: float, label_color: Color) -> 
 	spec.mount_axis = Vector3.AXIS_Y
 	spec.support = _bench_top_box()
 	spec.support_name = "BenchTop"
+	return spec
+
+
+# --- the lobby ---------------------------------------------------------------
+
+
+## Everything multiplayer, as objects on the same bench: the join console, the host
+## plate, four roster sockets, three laser dots and the bar that locks the board.
+## `res://ui/lobby/lobby_bench.gd` drives all of it and is the only thing on this
+## screen that talks to `NetGame`.
+func _build_lobby() -> Node3D:
+	var lobby := Node3D.new()
+	lobby.name = "Lobby"
+	lobby.set_script(load(LOBBY_SCRIPT))
+	lobby.add_child(_kit.build_console(load(CONSOLE_SCRIPT)))
+	lobby.add_child(_build_card("Host", _host_spec()))
+	lobby.add_child(_kit.build_roster())
+	lobby.add_child(_kit.build_dots(load(DOTS_SCRIPT)))
+	lobby.add_child(_kit.build_lock_bar())
+	return lobby
+
+
+## The HOST plate: a utility plate like SETTINGS and SHUT DOWN, on the same bench, at
+## the same lean, solved against the same support — smaller only because that is what
+## fits between the console and the settings plate.
+func _host_spec() -> PlateSpec:
+	var spec := _util_spec(&"host", "HOST  (H)", HOST_X, UiStyle.GOOD)
+	spec.plate_size = HOST_PLATE
+	spec.bracket_size = HOST_BLOCK
+	spec.bracket_local = Vector3(0.0, 0.010, -0.010)
+	spec.font_size = 15
 	return spec
 
 

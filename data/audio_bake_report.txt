@@ -12,4 +12,4 @@ samples                26
 sample bytes           2144170
 bank save              ok
 bus layout             res://default_bus_layout.tres
-bake time              1054 ms
+bake time              1096 ms

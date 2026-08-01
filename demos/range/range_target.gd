@@ -14,6 +14,14 @@ extends Node3D
 ## scoring spot. `GunDamage.apply` walks up from whichever one the ray found and
 ## lands on `apply_bullet_damage` here. Nothing polls; a target that is standing
 ## still and undamaged is not even processing.
+##
+## WHO DECIDES. `authority` is true in single-player and on the host, and false on
+## a client. A target that is not the authority takes no damage, keeps no clock and
+## scores nothing: the round a client fires still throws its own sparks, because
+## that is the gun's business and it is cosmetic, but whether the plate rang, went
+## over or paid out is the host's answer and arrives through `remote_hit`,
+## `remote_down`, `remote_boom` and `restore`. `remote_sync` is the half-second
+## backstop that puts a target that somehow drifted back where it belongs.
 
 ## Points were earned. `label` is what a readout should print — the damage, or a
 ## word like DOWN when the shot finished the target. `kind` is the damage-pop
@@ -23,6 +31,10 @@ signal scored(points: int, at: Vector3, label: String, kind: StringName)
 signal downed(target: RangeTarget, reset_in: float)
 ## A round landed. `crit` is a head-zone hit, `killed` is the shot that finished it.
 signal registered(crit: bool, killed: bool)
+## A round landed, with what it actually did. Fires only where the target is the
+## authority, and carries the one number `scored` does not: the damage. It is what
+## the demo replicates so a client's plate rings by the same amount.
+signal struck(amount: float, at: Vector3, crit: bool)
 ## The target healed and stood back up.
 signal restored(target: RangeTarget)
 
@@ -81,6 +93,9 @@ const POP_BREAK: StringName = &"break"
 
 var health: float = 60.0
 var alive: bool = true
+## True in single-player and on the host. A client's targets decide nothing; see
+## the class docstring. Written once by the demo before anything can be shot.
+var authority: bool = true
 
 var _swing: Node3D = null
 var _down_timer: float = 0.0
@@ -120,6 +135,12 @@ func is_live() -> bool:
 	return alive
 
 
+## Say whether this machine decides what happens to this target. The demo calls it
+## for every target once, before a round can possibly be in the air.
+func set_authority(on: bool) -> void:
+	authority = on
+
+
 ## A round arrived. This is the contract `GunDamage.apply` calls; the trailing
 ## `crit` is the weapon's own headshot multiplier, which is why the score bonus
 ## is decided by the zone and not by the multiplier's size.
@@ -135,9 +156,14 @@ func take_damage(amount: float) -> void:
 
 
 ## The one place a target loses health. Returns true if this shot finished it.
+##
+## A client never gets past the first line. Its own round has already drawn its
+## spark and its hole by the time it arrives here; what the plate DID about it is
+## the host's to say, and comes back through `remote_hit`.
 func take_hit(amount: float, at: Vector3, crit: bool) -> bool:
-	if not alive or amount <= 0.0:
+	if not authority or not alive or amount <= 0.0:
 		return false
+	struck.emit(amount, at, crit)
 	match kind:
 		Kind.BOTTLE:
 			_break_glass(at)
@@ -204,8 +230,44 @@ func restore() -> void:
 ## Blow the drum. Fixed 200 damage over 9.5 m regardless of what set it off, and
 ## anything it kills that is itself a drum goes up on its own short fuse.
 func detonate() -> void:
-	if not alive or kind != Kind.BARREL:
+	if not authority or not alive or kind != Kind.BARREL:
 		return
+	var centre: Vector3 = remote_boom()
+	scored.emit(points * 3, centre, "BOOM", POP_BOOM)
+	registered.emit(false, true)
+	downed.emit(self, reset_seconds)
+	splash(global_position, BLAST_DAMAGE, BLAST_RADIUS, self)
+
+
+# --- what the host says happened ---------------------------------------------
+
+
+## A round landed, on the host's authority. Cosmetic only: the swing kick and the
+## reason to keep processing. Scoring, the fall and the reset clock all arrive as
+## their own events, because they are separate decisions and one of them can
+## happen without the others.
+func remote_hit(amount: float, at: Vector3, crit: bool) -> void:
+	if authority:
+		return
+	_kick(amount, crit)
+	_note_remote_hit(at)
+
+
+## What a subclass does with a replicated hit beyond ringing. The paper target puts
+## a hole in itself here; everything else has nothing to add.
+func _note_remote_hit(_at: Vector3) -> void:
+	pass
+
+
+## The host put this target down.
+func remote_down() -> void:
+	if not authority:
+		knock_down()
+
+
+## The host blew this drum. Returns the blast centre so `detonate` can reuse it —
+## the two are the same act, and the only difference is who decided.
+func remote_boom() -> Vector3:
 	var centre: Vector3 = global_position + Vector3(0.0, 0.5, 0.0)
 	alive = false
 	health = 0.0
@@ -216,11 +278,22 @@ func detonate() -> void:
 		visual.visible = false
 	VfxService.spawn_explosion(centre, BLAST_RADIUS * 0.45)
 	VfxService.spawn_puff(centre, 24, 1.0, 0.9, 3.0, true)
-	scored.emit(points * 3, centre, "BOOM", POP_BOOM)
-	registered.emit(false, true)
-	downed.emit(self, reset_seconds)
 	set_process(true)
-	splash(global_position, BLAST_DAMAGE, BLAST_RADIUS, self)
+	return centre
+
+
+## The half-second reconcile. Standing or not, and where a mover is along its
+## track — the one piece of continuous state a client cannot derive, and the one
+## that decides whether a shot the player saw connect connected on the host.
+func remote_sync(standing: bool, phase: float) -> void:
+	if authority:
+		return
+	if is_mover() and track_span > 0.0:
+		track_phase = phase
+	if standing and not alive:
+		restore()
+	elif not standing and alive:
+		knock_down()
 
 
 ## Hand a blast out to everything standing inside `radius` of `centre`. Distance
@@ -303,8 +376,11 @@ func _tick_swing(delta: float) -> bool:
 	return absf(_swing_angle) > 0.001 or absf(_swing_velocity) > 0.001
 
 
+## The reset clock is a timer of record, so a client does not run one: it stands
+## its target back up when the host says so and not a frame before, or two machines
+## drift apart by however far their two clocks did.
 func _tick_reset(delta: float) -> bool:
-	if alive or reset_seconds <= 0.0:
+	if alive or reset_seconds <= 0.0 or not authority:
 		return false
 	_down_timer -= delta
 	if _down_timer > 0.0:

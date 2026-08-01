@@ -32,4 +32,4 @@ colliders             422
 manifest              res://data/world/props/props.tres
 
 RESULT: PASS - 20 props, 10936 triangles, all outward
-bake time             37 ms
+bake time             33 ms

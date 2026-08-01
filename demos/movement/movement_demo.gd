@@ -13,6 +13,13 @@ extends Node3D
 ## Watching the last few seconds of your own feet, in world space, from the
 ## freecam, is the fastest way to see what a jump arc actually did — and it is
 ## exactly what the F3 debug channels are for.
+##
+## It also declares the demo's PRESENCE. FULL, because the bench is a room you walk
+## around in with three other people: everyone is a capsule with their name over it,
+## everyone's laser dot lands on whatever they are pointing at, and your own dot is drawn
+## dim so that pointing at a slider — or at somebody else's dot — is something you aim
+## rather than something you guess. The reticle mounted below is what casts that ray, so
+## presence costs this demo no extra cast at all.
 
 const DEMO_ID: String = "movement"
 const DEMO_TITLE: String = "MOVEMENT BENCH"
@@ -58,6 +65,9 @@ func _ready() -> void:
 	DebugHUD.add_channel(CHANNEL_TRAIL, "movement trail", _draw_trail)
 	DebugHUD.add_channel(CHANNEL_PROBE, "movement probe", _draw_probe)
 	CombatReticle.mount(self).watch(get_node_or_null(^"Hands") as DiegeticInteractor)
+	# After the reticle, so the presence system finds it on its first physics frame and
+	# borrows its ray instead of casting a second one from the same pixel.
+	NetPresence.enter(NetPresence.FULL, get_node_or_null(^"Player/Eye"))
 
 
 func _exit_tree() -> void:
@@ -67,6 +77,9 @@ func _exit_tree() -> void:
 	DebugHUD.clear_note(NOTE_KEY)
 	DebugHUD.remove_channel(CHANNEL_TRAIL)
 	DebugHUD.remove_channel(CHANNEL_PROBE)
+	# Presence lives under /root and outlives this scene too, and it holds a pointer to
+	# an eye that is about to be freed. It re-places everybody on the next packet.
+	NetPresence.leave()
 
 
 func _process(delta: float) -> void:

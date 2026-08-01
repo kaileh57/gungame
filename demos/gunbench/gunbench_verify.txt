@@ -9,7 +9,7 @@ control   Console/Panel/Compare                      id compare     label COMPAR
 control   Console/Deck/Strip                         id strip       label STRIP
 control   Rack/RollStation/Roll                      id roll_rack   label ROLL
 
-boot      A Crooked Tantrum            B Pig-Iron Kalash            hands Zip-Tied Kalash
+boot      A The Loudmouth              B The Second Opinion         hands The Kicker
 reach     grab_main   clear from spawn at 4.32 m
 reach     grab_rival  clear from spawn at 4.14 m
 reach     roll        clear from spawn at 3.21 m
@@ -18,15 +18,15 @@ reach     tier        clear from spawn at 3.01 m
 reach     compare     clear from spawn at 3.21 m
 reach     strip       clear from spawn at 3.68 m
 reach     roll_rack   clear from spawn at 8.30 m
-GRAB A    took Crooked Tantrum            left Zip-Tied Kalash           
-cards     IN YOUR HANDS 'CROOKED TANTRUM' over CARTRIDGE '9×19' after GRAB A
-GRAB B    took Pig-Iron Kalash            left Crooked Tantrum           
-cards     IN YOUR HANDS 'PIG-IRON KALASH' over CARTRIDGE '11.1×62 WILDCAT' after GRAB B
+GRAB A    took The Loudmouth              left The Kicker                
+cards     IN YOUR HANDS 'THE LOUDMOUTH' over CARTRIDGE '.357 MAGNUM' after GRAB A
+GRAB B    took The Second Opinion         left The Loudmouth             
+cards     IN YOUR HANDS 'THE SECOND OPINION' over CARTRIDGE '11.1×62 WILDCAT' after GRAB B
 ROLL RACK 6 of 6 hooks changed
-cards     IN YOUR HANDS 'PIG-IRON KALASH' over CARTRIDGE '11.1×62 WILDCAT' after ROLL RACK
-ROLL      A Blackrifle-Sidearm         (was Zip-Tied Kalash)
-COMPARE   B now reads Blackrifle-Sidearm
-PEG 0     traded Tube-Broomstick onto stand A
+cards     IN YOUR HANDS 'THE SECOND OPINION' over CARTRIDGE '11.1×62 WILDCAT' after ROLL RACK
+ROLL      A The Last Word              (was The Kicker)
+COMPARE   B now reads The Last Word
+PEG 0     traded Hexbolt Broomstick onto stand A
 
 shots     NOT MEASURED - re-run without --headless to photograph the stations.
 

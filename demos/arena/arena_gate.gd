@@ -63,6 +63,15 @@ func is_moving() -> bool:
 	return _moving
 
 
+## What the gate was last TOLD to do, whether or not the leaf has arrived. This is
+## the state a networked copy of the arena replicates: sending the ORDER rather than
+## the settled position starts a client's leaf moving on the same frame the host's
+## does, where `is_open` would hold false for the whole 1.35 s throw and let bodies
+## walk out of a doorway that is still visibly shut.
+func wants_open() -> bool:
+	return _open
+
+
 ## Throw the gate. Calling this with the state it is already in and settled does
 ## nothing; calling it mid-throw reverses from wherever the leaf actually is.
 func set_open(value: bool) -> void:

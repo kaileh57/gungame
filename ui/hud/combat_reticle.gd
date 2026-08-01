@@ -51,6 +51,20 @@ enum Kind { NONE = 0, SURFACE = 1, OBJECT = 2, HOSTILE = 3, CONTROL = 4, REFUSED
 
 ## The persisted style key. `GameSettings` owns the default; this is the name.
 const SETTING_KEY: StringName = &"aim_style"
+## Group every live reticle joins.
+##
+## The multiplayer presence system needs exactly one thing from this file — the world
+## point your aim ray landed on, so it can send that point to the other three players
+## and they can draw your laser dot on it. That ray is ALREADY cast here, on every
+## physics frame, against the bullet mask, through the same pixel the click path uses.
+## Casting a second one would be a second ray with a second answer, and the two would
+## disagree the moment a demo pointed the reticle somewhere the click path does not.
+##
+## So the answer is published instead: `aim_point`, `aim_normal`, `aim_valid` and
+## `aim_control` below, and this group so a system that wants them can find the reticle
+## without this file naming that system. Nothing about the group couples the two
+## directions — a reticle in a single-player demo joins it and nobody ever looks.
+const GROUP: StringName = &"aim_indicator"
 ## Layer `mount` puts its canvas on. Below `CombatHud` (10) so a demo that somehow
 ## has both draws them in the sane order, and far below the main menu's own UI (100).
 const MOUNT_LAYER: int = 9
@@ -188,6 +202,8 @@ var _subject_id: int = 0
 var _control: DiegeticControl = null
 var _geometry: Array[GeometryInstance3D] = []
 var _hit_distance: float = 0.0
+var _hit_point: Vector3 = Vector3.ZERO
+var _hit_normal: Vector3 = Vector3.UP
 var _label: String = ""
 var _rect: Rect2 = Rect2()
 var _rect_valid: bool = false
@@ -212,6 +228,7 @@ func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_query.collide_with_areas = false
 	_query.collide_with_bodies = true
+	add_to_group(GROUP)
 	_bind_settings()
 	set_physics_process(true)
 
@@ -302,6 +319,34 @@ func aim_distance() -> float:
 	return _hit_distance
 
 
+## The WORLD POINT under the aim indicator — where the ray actually landed, not the
+## middle of the screen. Meaningless unless `aim_valid` is true; the last good point is
+## kept rather than zeroed, so a reader that forgets the check gets a stale answer
+## instead of the origin of the world.
+func aim_point() -> Vector3:
+	return _hit_point
+
+
+## Surface normal at that point. Up when nothing was hit.
+func aim_normal() -> Vector3:
+	return _hit_normal
+
+
+## Whether the aim ray is on anything at all. False over open sky, and false whenever
+## the indicator is not live — hands switched off, a menu up, the freecam in charge —
+## because an aim point published from a dead click path is a lie in the same way a
+## drawn indicator over one is.
+func aim_valid() -> bool:
+	return _kind != Kind.NONE and _live()
+
+
+## The `DiegeticControl` under the aim point, or null. This is the diegetic-control
+## highlight, published: the selector already brackets it in gold, and this is how a
+## demo acts on the same answer instead of casting its own ray to re-derive it.
+func aim_control() -> DiegeticControl:
+	return _control
+
+
 ## What the selector is naming, or `""`.
 func aim_label() -> String:
 	return _label
@@ -380,7 +425,9 @@ func _press_hit(space: PhysicsDirectSpaceState3D, from: Vector3, direction: Vect
 ## the geometry to bound — only runs when the collider actually changed, which for a
 ## player standing still looking at a wall is once.
 func _adopt(hit: Dictionary, from_press: bool = false) -> void:
-	_hit_distance = _query.from.distance_to(hit["position"])
+	_hit_point = hit["position"]
+	_hit_normal = hit.get("normal", Vector3.UP)
+	_hit_distance = _query.from.distance_to(_hit_point)
 	var collider := hit["collider"] as Node
 	if collider == null:
 		_clear_subject()

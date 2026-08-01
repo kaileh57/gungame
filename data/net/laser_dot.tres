@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://net/avatar/laser_dot.gdshader" id="1_tmjkl"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tmjkl")
+shader_parameter/dot_color = Color(1, 1, 1, 1)
+shader_parameter/core_radius = null
+shader_parameter/ink_width = null
+shader_parameter/edge_softness = null
+shader_parameter/ink_color = Color(0.035, 0.031, 0.028, 1)
+shader_parameter/opacity = null
+shader_parameter/ink_opacity = null
+shader_parameter/core_hotspot = null

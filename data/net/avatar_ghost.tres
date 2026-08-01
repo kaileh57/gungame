@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://net/avatar/ghost_body.gdshader" id="1_57dku"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_57dku")
+shader_parameter/body_alpha = 0.16
+shader_parameter/rim_alpha = 0.78
+shader_parameter/rim_power = 2.6
+shader_parameter/body_shade = 0.55

@@ -43,6 +43,6 @@ LOAD-BACK
   plaza            63 nodes, 4788 verts, 60 shapes, size 33.3 x 5.4 x 29.9 m
   watchtower       68 nodes, 5292 verts, 65 shapes, size 9.7 x 18.7 x 9.5 m
   ruin_cluster     122 nodes, 6072 verts, 119 shapes, size 26.9 x 8.0 x 30.8 m
-bake time             21260 ms
+bake time             15460 ms
 
 RESULT: PASS

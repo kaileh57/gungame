@@ -1,0 +1,60 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://ui/lobby/lobby_sign.gd" id="1_bvyo0"]
+[ext_resource type="Material" path="res://art/materials/scrap_steel.tres" id="2_e7dr5"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="3_5p3w3"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dbyjs"]
+_surfaces = [{
+"aabb": AABB(-0.32, -0.12, -0.011, 0.64, 0.24, 0.022),
+"format": 34359738375,
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("CtejPo/C9b1YOTS8CtejPo/C9T1YOTQ8CtejPo/C9T1YOTS8CtejPo/C9b1YOTS8CtejPo/C9b1YOTQ8CtejPo/C9T1YOTQ8Ctejvo/C9b1YOTS8Ctejvo/C9T1YOTQ8Ctejvo/C9b1YOTQ8Ctejvo/C9b1YOTS8Ctejvo/C9T1YOTS8Ctejvo/C9T1YOTQ8Ctejvo/C9T1YOTS8CtejPo/C9T1YOTQ8Ctejvo/C9T1YOTQ8Ctejvo/C9T1YOTS8CtejPo/C9T1YOTS8CtejPo/C9T1YOTQ8Ctejvo/C9b1YOTS8CtejPo/C9b1YOTQ8CtejPo/C9b1YOTS8Ctejvo/C9b1YOTS8Ctejvo/C9b1YOTQ8CtejPo/C9b1YOTQ8Ctejvo/C9b1YOTQ8CtejPo/C9T1YOTQ8CtejPo/C9b1YOTQ8Ctejvo/C9b1YOTQ8Ctejvo/C9T1YOTQ8CtejPo/C9T1YOTQ8Ctejvo/C9b1YOTS8CtejPo/C9T1YOTS8Ctejvo/C9T1YOTS8Ctejvo/C9b1YOTS8CtejPo/C9b1YOTS8CtejPo/C9T1YOTS8////f/9//7////9//3//v////3//f/+/////f/9//7////9//3//v////3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA//////9/AID//////38AgP//////fwCA")
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggodq"]
+size = Vector3(0.64, 0.24, 0.022)
+
+[node name="LobbySign" type="RigidBody3D" unique_id=466817042]
+collision_layer = 128
+collision_mask = 0
+mass = 2.2
+gravity_scale = 0.3
+can_sleep = false
+script = ExtResource("1_bvyo0")
+
+[node name="Slab" type="MeshInstance3D" parent="." unique_id=831370837]
+material_override = ExtResource("2_e7dr5")
+gi_mode = 0
+instance_shader_parameters/surface_seed = 0.55
+instance_shader_parameters/tint = Color(1.35, 1.28, 1.18, 1)
+mesh = SubResource("ArrayMesh_dbyjs")
+
+[node name="Front" type="Label3D" parent="." unique_id=866935263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.013)
+pixel_size = 0.0026
+double_sided = false
+alpha_cut = 1
+render_priority = 2
+modulate = Color(0.792, 0.749, 0.659, 1)
+font = ExtResource("3_5p3w3")
+font_size = 34
+autowrap_mode = 3
+width = 230.76923
+
+[node name="Back" type="Label3D" parent="." unique_id=786306848]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.013)
+pixel_size = 0.0026
+double_sided = false
+alpha_cut = 1
+render_priority = 2
+modulate = Color(0.792, 0.749, 0.659, 1)
+font = ExtResource("3_5p3w3")
+font_size = 34
+autowrap_mode = 3
+width = 230.76923
+
+[node name="Shape" type="CollisionShape3D" parent="." unique_id=183992486]
+shape = SubResource("BoxShape3D_ggodq")

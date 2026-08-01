@@ -56,6 +56,6 @@ plate_post_203            24 tris  volume      +0.031  conflicts 0
 plate_disc_145           216 tris  volume      +0.417  conflicts 0
 plate_spot_145            88 tris  volume      +0.005  conflicts 0
 placard                   12 tris  volume      +0.175  conflicts 0
-scene                  res://demos/range/range.tscn (663 nodes)
-bake time             708 ms
+scene                  res://demos/range/range.tscn (664 nodes)
+bake time             819 ms
 result                PASS

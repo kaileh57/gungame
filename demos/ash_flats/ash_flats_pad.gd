@@ -102,6 +102,23 @@ func run_seconds() -> float:
 	return _run_clock
 
 
+## Take the pad out of service, or put it back. THE RACE USES THIS: an extraction pad
+## teleports you back to the yard, and a pad you cross at speed halfway down a race would
+## end your run with a lift home you never asked for. Standing on a dead pad does nothing
+## at all rather than charging a gauge that will not fire.
+func set_active(on: bool) -> void:
+	set_physics_process(on and _player != null)
+	held = 0.0
+	occupied = false
+	_armed = true
+	_reset_timer = 0.0
+	# Forced, not asked for: `_paint` refuses a repaint inside `readout_step` of what is
+	# already up, and going out of service is a change of WORDS at an unchanged fraction
+	# of zero — exactly the case that filter would swallow.
+	_drawn = -1.0
+	_paint(0.0, "STAND BY" if on else "OFF LINE")
+
+
 func reset_run() -> void:
 	_run_clock = 0.0
 

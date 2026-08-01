@@ -7,7 +7,8 @@ extends Node
 ## it immediately — this class never merely records a number and hopes something
 ## else notices.
 ##
-## Three things are applied per key:
+## Four things are applied per key:
+##   * the WINDOW itself — mode, size and HUD scale, through DisplayServer
 ##   * global renderer state, through RenderingServer
 ##   * per-viewport state, through the root viewport and any registered SubViewport
 ##     (the gun viewmodel renders in one, and must track the same quality)
@@ -15,6 +16,20 @@ extends Node
 ##
 ## A demo's WorldEnvironment registers itself; anything that owns a SubViewport
 ## should register that too. Both are released automatically when they are freed.
+##
+## THE WINDOW, AND WHY THE GAME SURVIVES ANY SHAPE OF IT. `project.godot` sets
+## `canvas_items` stretch with the `expand` aspect against a 1920x1080 base, and
+## every camera keeps Godot's default `KEEP_HEIGHT`. Those two together are the
+## whole scaling story:
+##   * 3D always renders at the window's real pixel count, times `render_scale`.
+##   * `KEEP_HEIGHT` fixes the VERTICAL fov, so a wider window shows MORE world at
+##     the sides rather than a squashed picture — Hor+, what an ultrawide wants.
+##   * `expand` scales the 2D canvas by `min(w/1920, h/1080)` and hands the slack
+##     back as extra canvas, so the HUD never distorts, never gets letterboxed,
+##     and an anchored corner element stays in its corner at any aspect.
+## `ui_scale` multiplies that canvas scale for players who want a bigger or
+## smaller HUD than the window's own arithmetic gives them. Nothing in this file
+## needs the window to be any particular shape and nothing may start needing it.
 
 ## Emitted after a value has been stored AND applied. `key` is one of the keys in
 ## DEFAULTS; `value` is the new value.
@@ -137,11 +152,75 @@ const PRESETS: Dictionary = {
 	},
 }
 
+# --- the window -------------------------------------------------------------
+#
+# Three modes, cycled in this order by `cycle_window_mode()`. BORDERLESS is
+# Godot's non-exclusive fullscreen: a frameless window covering the screen, which
+# alt-tabs instantly and lets an overlay draw over it. FULLSCREEN is exclusive:
+# lower input latency, and nothing else gets a pixel.
+
+const WINDOW_WINDOWED: int = 0
+const WINDOW_BORDERLESS: int = 1
+const WINDOW_FULLSCREEN: int = 2
+## Indexed by the three constants above. The settings page shows these words and
+## checks its own copy against them at boot.
+const WINDOW_MODE_NAMES: PackedStringArray = ["Windowed", "Borderless", "Fullscreen"]
+
+## Window sizes the settings page offers, before they are filtered to the screen.
+##
+## Godot exposes NO video-mode enumeration — `DisplayServer` will tell you a
+## screen's current size and nothing else — and it never changes a monitor's mode,
+## so both fullscreen modes always run at whatever the desktop is already set to.
+## That makes this list what it says it is: window sizes, offered when they fit.
+## Sorted widest first by `resolution_options()`, not by the order written here.
+const WINDOW_SIZES: Array[Vector2i] = [
+	Vector2i(1024, 768),
+	Vector2i(1280, 720),
+	Vector2i(1280, 800),
+	Vector2i(1366, 768),
+	Vector2i(1440, 900),
+	Vector2i(1600, 900),
+	Vector2i(1680, 1050),
+	Vector2i(1920, 1080),
+	Vector2i(1920, 1200),
+	Vector2i(2048, 1152),
+	Vector2i(2560, 1080),
+	Vector2i(2560, 1440),
+	Vector2i(2560, 1600),
+	Vector2i(3440, 1440),
+	Vector2i(3840, 1080),
+	Vector2i(3840, 1600),
+	Vector2i(3840, 2160),
+	Vector2i(5120, 1440),
+	Vector2i(5120, 2160),
+]
+
+## The smallest window the UI stays usable in, enforced through
+## `window_set_min_size`. The settings page is 820x720 canvas pixels; at 960x540
+## the canvas scale is 0.5, `ui_scale` tops out at 1.4, and 820x720 still fits
+## inside the 1371x771 of canvas that leaves. Go smaller and the page's own footer
+## — the one carrying RESET TO DEFAULTS — goes off the bottom of the screen.
+const MIN_WINDOW: Vector2i = Vector2i(960, 540)
+
+## Bounds on `ui_scale`. The ceiling is not taste: see `MIN_WINDOW`.
+const UI_SCALE_MIN: float = 0.70
+const UI_SCALE_MAX: float = 1.40
+
 ## Everything the store can hold. Quality keys are overwritten by the boot preset;
-## the rest are player preferences a preset never touches.
+## the rest are player preferences a preset never touches — including every window
+## key, because no quality preset may move somebody's window.
 const DEFAULTS: Dictionary = {
 	&"quality_preset": "High",
 	&"adaptive_resolution": true,
+	## One of WINDOW_WINDOWED / WINDOW_BORDERLESS / WINDOW_FULLSCREEN.
+	&"window_mode": WINDOW_WINDOWED,
+	## The WINDOWED size. Both fullscreen modes take the whole screen and ignore
+	## it. Replaced at boot by `_default_resolution()` with something that fits the
+	## desktop actually in front of the player.
+	&"resolution": Vector2i(1920, 1080),
+	## Multiplier on the canvas scale the window's own size already implies. 1.0 is
+	## "whatever `expand` decided", which is right for almost everybody.
+	&"ui_scale": 1.0,
 	## Indexes `CombatReticle.Style`: 0 dot, 1 world selector, 2 both. A preference,
 	## not a quality key — no preset touches it.
 	&"aim_style": 2,
@@ -206,6 +285,21 @@ var quality_preset: String:
 	get:
 		return String(_values[&"quality_preset"])
 
+## One of WINDOW_WINDOWED / WINDOW_BORDERLESS / WINDOW_FULLSCREEN.
+var window_mode: int:
+	get:
+		return clampi(int(_values[&"window_mode"]), 0, WINDOW_MODE_NAMES.size() - 1)
+
+## The size the player ASKED the window to be. `window_size()` is what it became.
+var resolution: Vector2i:
+	get:
+		return _values[&"resolution"]
+
+## Player multiplier on the canvas scale. See the note at the top of the file.
+var ui_scale: float:
+	get:
+		return clampf(float(_values[&"ui_scale"]), UI_SCALE_MIN, UI_SCALE_MAX)
+
 var _values: Dictionary = {}
 var _environments: Array[Environment] = []
 var _viewports: Array[Viewport] = []
@@ -219,6 +313,14 @@ var _adapt_fps_low: int = 45
 var _adapt_fps_high: int = 58
 var _adapt_step_down: float = 0.15
 var _adapt_step_up: float = 0.10
+## The window mode and size this file last PUSHED at the OS, so it can tell its
+## own writes from the player's. A window dragged to a new size by hand leaves
+## `_pushed_size` matching the stored value, so the next unrelated settings write
+## does not snap the frame back out from under the mouse. -1 and ZERO mean
+## "nothing pushed yet", which is also how a mode change forces the geometry to be
+## re-pushed: coming back from fullscreen, the windowed size no longer exists.
+var _pushed_mode: int = -1
+var _pushed_size: Vector2i = Vector2i.ZERO
 
 
 func _ready() -> void:
@@ -228,7 +330,10 @@ func _ready() -> void:
 	load_settings()
 	_viewports.append(get_tree().root)
 	_build_timers()
+	if _has_window():
+		DisplayServer.window_set_min_size(MIN_WINDOW)
 	apply_all()
+	_verify_stretch()
 
 
 ## Names of the shipped presets, in ascending cost order.
@@ -239,6 +344,56 @@ func preset_names() -> PackedStringArray:
 ## True when the quality keys no longer match any shipped preset.
 func is_custom_preset() -> bool:
 	return quality_preset == CUSTOM_PRESET
+
+
+# --- the window -------------------------------------------------------------
+
+
+## Windowed -> borderless -> fullscreen -> windowed. What the settings page's
+## picker steps through, and what Alt+Enter does from anywhere in the game.
+func cycle_window_mode() -> void:
+	set_value(&"window_mode", (window_mode + 1) % WINDOW_MODE_NAMES.size())
+
+
+## The window sizes to offer, widest first.
+##
+## "Supported" means FITS ON THIS SCREEN — see `WINDOW_SIZES` for why that is the
+## strongest claim available. The screen's own size and whatever is stored right
+## now are always in the list, so the picker can never fail to show the size that
+## is actually in force, and so a config carried over from a bigger monitor still
+## has a selected row rather than silently reading as the first one.
+func resolution_options() -> Array[Vector2i]:
+	var out: Array[Vector2i] = []
+	var limit: Vector2i = _screen_size()
+	for size: Vector2i in WINDOW_SIZES:
+		if limit.x <= 0 or (size.x <= limit.x and size.y <= limit.y):
+			out.append(size)
+	if limit.x > 0 and not out.has(limit):
+		out.append(limit)
+	var current: Vector2i = resolution
+	if current.x > 0 and not out.has(current):
+		out.append(current)
+	out.sort_custom(_wider_first)
+	return out
+
+
+## What the window ACTUALLY is, which is not always what `resolution` says: a size
+## bigger than the desktop's free area is shrunk to fit, both fullscreen modes
+## take the whole screen, and the player may drag the frame to anything they like.
+## Zero under `--headless`, where there is no window to measure.
+func window_size() -> Vector2i:
+	if not _has_window():
+		return Vector2i.ZERO
+	return DisplayServer.window_get_size()
+
+
+## The size of the screen the window is currently on, or zero with no display.
+## Multi-monitor falls out of this: drag the window to the other screen and the
+## next call answers for that one.
+static func _screen_size() -> Vector2i:
+	if not _has_window():
+		return Vector2i.ZERO
+	return DisplayServer.screen_get_size(DisplayServer.window_get_current_screen())
 
 
 ## Write every quality key from a preset and apply the lot. Unknown names are an
@@ -406,6 +561,10 @@ func _read_project_defaults() -> void:
 	_values[&"adaptive_resolution"] = bool(
 		ProjectSettings.get_setting("demos/quality/adaptive_resolution", true)
 	)
+	# Not a const, because the honest default depends on the monitor. Re-derived by
+	# `reset_to_defaults`, so RESET on a laptop gives a laptop-sized window rather
+	# than the 1080p one written in DEFAULTS.
+	_values[&"resolution"] = _default_resolution()
 	_adapt_min_ratio = float(ProjectSettings.get_setting("demos/quality/adaptive_scale_min", 0.55))
 	_adapt_fps_low = int(ProjectSettings.get_setting("demos/quality/adaptive_fps_floor", 45))
 	_adapt_fps_high = int(ProjectSettings.get_setting("demos/quality/adaptive_fps_ceiling", 58))
@@ -470,6 +629,164 @@ func _apply_display() -> void:
 	if bool(_values[&"vsync"]):
 		mode = DisplayServer.VSYNC_ENABLED
 	DisplayServer.window_set_vsync_mode(mode)
+	_apply_ui_scale()
+	_apply_window()
+
+
+## The one knob that resizes the HUD without touching the 3D. `canvas_items`
+## stretch already scales the UI with the window; this multiplies that, which is
+## what an ultrawide player wants — their canvas scale is decided by a height that
+## is small next to the width, so the HUD reads large for the space it is in.
+func _apply_ui_scale() -> void:
+	if not is_inside_tree():
+		return
+	var root_window: Window = get_tree().root
+	var want: float = ui_scale
+	# Guarded, because Godot has no guard of its own: every write to this re-runs
+	# the viewport's whole size calculation and re-lays out every Control under it,
+	# and `apply_all()` runs on each tick of each slider drag on the settings page.
+	if not is_equal_approx(root_window.content_scale_factor, want):
+		root_window.content_scale_factor = want
+
+
+## Push the window mode and, in windowed mode, the size.
+##
+## Called from `apply_all()`, so on EVERY settings write — both halves therefore
+## early-out on "already there". The mode half compares against the OS-facing
+## value this file last wrote rather than against `DisplayServer.window_get_mode`,
+## because the two disagree the moment the player alt-tabs or the WM has an
+## opinion, and re-asserting the mode on every FOV tick would fight them for it.
+func _apply_window() -> void:
+	if not _has_window():
+		return
+	var mode: int = window_mode
+	if mode != _pushed_mode:
+		_pushed_mode = mode
+		# A trip through either fullscreen mode destroys the windowed geometry, so
+		# the size must be pushed again on the way back rather than skipped as
+		# unchanged.
+		_pushed_size = Vector2i.ZERO
+		DisplayServer.window_set_mode(_display_window_mode(mode))
+		if mode == WINDOW_WINDOWED:
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+	if mode != WINDOW_WINDOWED:
+		return
+	var want: Vector2i = _fit_to_desktop(resolution)
+	if want == _pushed_size:
+		return
+	_pushed_size = want
+	DisplayServer.window_set_size(want)
+	DisplayServer.window_set_position(_centred_position(want))
+
+
+static func _display_window_mode(mode: int) -> DisplayServer.WindowMode:
+	match mode:
+		WINDOW_BORDERLESS:
+			return DisplayServer.WINDOW_MODE_FULLSCREEN
+		WINDOW_FULLSCREEN:
+			return DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
+	return DisplayServer.WINDOW_MODE_WINDOWED
+
+
+## True when there is a real window to talk to. Every bake tool and every
+## verification harness runs `--headless`, where the window calls are no-ops and
+## the screen is zero by zero — centring a window in a zero rect is at best a
+## wasted call and at worst a division by nothing.
+static func _has_window() -> bool:
+	return DisplayServer.get_name() != "headless" and DisplayServer.window_get_size().x > 0
+
+
+## The window's own frame: title bar and borders, MEASURED rather than assumed.
+## Windows puts 39 px above the client area and 16 px around it, GNOME 37, a
+## borderless window none at all, and guessing wrong is a title bar off the screen.
+## Zero while fullscreen, which is correct — there is no frame then.
+static func _decorations() -> Vector2i:
+	var deco: Vector2i = (
+		DisplayServer.window_get_size_with_decorations() - DisplayServer.window_get_size()
+	)
+	return Vector2i(maxi(deco.x, 0), maxi(deco.y, 0))
+
+
+static func _usable_rect() -> Rect2i:
+	return DisplayServer.screen_get_usable_rect(DisplayServer.window_get_current_screen())
+
+
+## Shrink a wanted window size until the window AND its frame fit inside the
+## desktop's usable area — outside the taskbar, and with the title bar on screen.
+## A window taller than the desktop puts its own title bar out of reach, which on
+## Windows means it can no longer be moved or closed with the mouse.
+static func _fit_to_desktop(size: Vector2i) -> Vector2i:
+	if not _has_window():
+		return size
+	var room: Vector2i = _usable_rect().size - _decorations()
+	return Vector2i(
+		clampi(size.x, MIN_WINDOW.x, maxi(room.x, MIN_WINDOW.x)),
+		clampi(size.y, MIN_WINDOW.y, maxi(room.y, MIN_WINDOW.y))
+	)
+
+
+## Centre a window of `size` in the desktop's usable area.
+##
+## `window_set_position` places the CLIENT area, while the frame hangs above and
+## to the left of it, so the frame's own offset is added back — otherwise a
+## perfectly centred window wears its title bar off the top of the screen.
+static func _centred_position(size: Vector2i) -> Vector2i:
+	var usable: Rect2i = _usable_rect()
+	var frame: Vector2i = (
+		DisplayServer.window_get_position() - DisplayServer.window_get_position_with_decorations()
+	)
+	var free: Vector2i = usable.size - _decorations() - size
+	return usable.position + frame + Vector2i(maxi(free.x, 0) / 2, maxi(free.y, 0) / 2)
+
+
+## The window size a fresh install gets: the project's design resolution, shrunk
+## to whatever the desktop in front of the player can actually hold.
+static func _default_resolution() -> Vector2i:
+	var want := Vector2i(
+		int(ProjectSettings.get_setting("display/window/size/viewport_width", 1920)),
+		int(ProjectSettings.get_setting("display/window/size/viewport_height", 1080))
+	)
+	return _fit_to_desktop(want)
+
+
+static func _wider_first(a: Vector2i, b: Vector2i) -> bool:
+	if a.x != b.x:
+		return a.x > b.x
+	return a.y > b.y
+
+
+## The three project settings the note at the top of this file rests on.
+##
+## Nothing here reads them at runtime — Godot applies them itself before any of
+## this exists — so changing one would not break anything visible on the machine
+## that changed it. It would break every OTHER aspect ratio, quietly, months
+## later, on somebody else's monitor. That is worth six lines and one check at
+## boot. The costs, in order: a mode other than `canvas_items` either renders the
+## 3D at the 1920x1080 base and upscales it or stops scaling the HUD at all; an
+## aspect other than `expand` letterboxes (`keep`), distorts (`ignore`) or shrinks
+## the base along one axis until anchored HUD corners fall off the screen
+## (`keep_width`, `keep_height`); and an `integer` scale mode letterboxes at every
+## window size that is not a whole multiple of the base, which is nearly all of
+## them.
+func _verify_stretch() -> void:
+	var want := {
+		"display/window/stretch/mode": "canvas_items",
+		"display/window/stretch/aspect": "expand",
+		"display/window/stretch/scale_mode": "fractional",
+	}
+	var wrong := PackedStringArray()
+	for path: String in want:
+		var value: String = String(ProjectSettings.get_setting(path, String(want[path])))
+		if value != String(want[path]):
+			wrong.append("%s is '%s', not '%s'" % [path, value, String(want[path])])
+	if wrong.is_empty():
+		return
+	push_error(
+		(
+			"GameSettings: the window scaling contract is broken — %s. " % ", ".join(wrong)
+			+ "See the note at the top of core/game_settings.gd."
+		)
+	)
 
 
 func _apply_renderer() -> void:

@@ -1,6 +1,6 @@
 verify_mounts
 
-main_menu   10 mounted, 3 undeclared
+main_menu   11 mounted, 3 undeclared
     MainMenu/Cards/Card_range/Plate              on Board              gap   +4.0 mm (asked 4.0)  ok
     MainMenu/Cards/Card_bestiary/Plate           on Board              gap   +4.0 mm (asked 4.0)  ok
     MainMenu/Cards/Card_ash_flats/Plate          on Board              gap   +4.0 mm (asked 4.0)  ok
@@ -11,6 +11,7 @@ main_menu   10 mounted, 3 undeclared
     MainMenu/Cards/Card_visuals/Plate            on Board              gap   +4.0 mm (asked 4.0)  ok
     MainMenu/Cards/Card_settings/Plate           on BenchTop           gap   +4.0 mm (asked 4.0)  ok
     MainMenu/Cards/Card_quit/Plate               on BenchTop           gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Lobby/Host/Plate                    on BenchTop           gap   +4.0 mm (asked 4.0)  ok
     undeclared  MainMenu/Bench/SignPlate
     undeclared  MainMenu/Bench/Title
     undeclared  MainMenu/Bench/Board
@@ -81,8 +82,8 @@ visuals     2 mounted, 0 undeclared
     Visuals/Post/Readout                         on PanelMast          gap   +4.0 mm (asked 4.0)  ok
     Visuals/Post/Placard                         on Plinth             gap   +4.0 mm (asked 4.0)  ok
 
-readable faces found   71
-declared mounts        39
+readable faces found   72
+declared mounts        40
 undeclared faces       32
 INTERSECTIONS          0
 RESULT: PASS

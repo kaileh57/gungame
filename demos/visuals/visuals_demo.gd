@@ -5,12 +5,19 @@ extends Node3D
 ##
 ## The demo owns no geometry. `res://tools/build_visuals.gd` bakes the pad, the
 ## post, the rack and every mesh under this node into `visuals.tscn`; this script
-## does four things and nothing else:
+## does five things and nothing else:
 ##
 ##   - actuates the control post when you look at a control and press `interact`,
 ##   - applies what the post says to `GameSettings`, the sun, the lamps and the ash,
 ##   - writes the live frame numbers onto the post's readout four times a second,
-##   - hands the viewport to the camera rig when the RIDE lever is thrown.
+##   - hands the viewport to the camera rig when the RIDE lever is thrown,
+##   - puts the other players on the rise with you.
+##
+## MULTIPLAYER is one line, and deliberately only one. Everybody stands on the
+## same parapet and sees each other and each other's laser dots; the post stays
+## LOCAL, because the thing it mostly changes is `GameSettings`, and a quality
+## preset belongs to the machine rendering it and not to the session. So four
+## people can stand here and each drive their own comparison of the same view.
 ##
 ## There is no screen-space text anywhere in this scene. The quality preset, the
 ## frame time and the draw count are on a physical panel bolted to the post; what
@@ -144,6 +151,7 @@ func _ready() -> void:
 	_collect_controls()
 	_collect_lamps()
 	_paint_creatures()
+	_enter_presence()
 	_rig.riding_changed.connect(_on_riding_changed)
 	GameSettings.preset_applied.connect(_on_preset_applied)
 
@@ -178,6 +186,20 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"interact") or event.is_action_pressed(&"fire"):
 		get_viewport().set_input_as_handled()
 		_set_ride(false)
+
+
+## The other three, as capsules with their name over them and their laser dot on
+## whatever they are pointing at. In single-player it costs nothing: the roster is
+## one player long, no avatar is built, and all you get is your own dim dot.
+##
+## THE EYE IS NAMED, rather than left as "whatever camera is live". The RIDE lever
+## hands the viewport to the camera rig for a pass along the settlement, and a
+## camera on a rail is not where the player is standing — left to resolve the live
+## camera, presence would walk everybody's avatar off the parapet and along the
+## crane shot. The player's own eye is the one thing in this scene that always
+## says where its player is.
+func _enter_presence() -> void:
+	NetPresence.enter(NetPresence.FULL, _player.get_node_or_null(^"Eye") as Camera3D)
 
 
 ## The post's hands. Only the PROP layer, as the old probe had it, so the post

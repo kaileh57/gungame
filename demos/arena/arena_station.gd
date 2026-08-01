@@ -150,6 +150,63 @@ func bullet_hit(collider: Object, at: Vector3, power: float) -> bool:
 	return control.shoot(at, power)
 
 
+## The control a collider belongs to, or null. Public because a networked demo has
+## to be able to NAME what a round just worked before it tells the host about it,
+## and `bullet_hit` only answers whether something moved.
+func control_of(collider: Object) -> DiegeticControl:
+	return _control_of(collider)
+
+
+## The control with this `control_id`. The id is the node's own name, dealt out by
+## `tools/build_arena.gd`, so it is the same string on every machine and is what a
+## client's request to work a knob travels as.
+func control_by_id(id: StringName) -> DiegeticControl:
+	if id.is_empty():
+		return null
+	for child: Node in get_children():
+		var control := child as DiegeticControl
+		if control != null and control.control_id == id:
+			return control
+	return null
+
+
+## Every knob and lever as one row of integers, in the order `apply_state` reads
+## them. This is the desk's whole networked state: the demo reads its settings off
+## the controls rather than off variables, so replicating where the controls are
+## pointing IS replicating the desk.
+func state() -> PackedInt32Array:
+	return PackedInt32Array(
+		[
+			_species_dial.selected_index(),
+			_faction_dial.selected_index(),
+			_mix_dial.selected_index(),
+			_count_dial.selected_index(),
+			_aggression_dial.selected_index(),
+			1 if _spawn_lever.is_on() else 0,
+			1 if _clear_lever.is_on() else 0,
+			1 if _debug_lever.is_on() else 0,
+		]
+	)
+
+
+## Put the desk where the host says it is. SILENT — every control is written with
+## `notify` off, because the signals on this desk are what SPAWN a wave, and a
+## client replaying the host's lever throw would ask its own controller for a
+## second one. The knobs turn, the readout redraws, and nothing fires.
+func apply_state(values: PackedInt32Array) -> void:
+	if values.size() < 8:
+		return
+	_species_dial.set_value(float(values[0]), false)
+	_faction_dial.set_value(float(values[1]), false)
+	_mix_dial.set_value(float(values[2]), false)
+	_count_dial.set_value(float(values[3]), false)
+	_aggression_dial.set_value(float(values[4]), false)
+	_spawn_lever.set_on(values[5] != 0, false)
+	_clear_lever.set_on(values[6] != 0, false)
+	_debug_lever.set_on(values[7] != 0, false)
+	_refresh()
+
+
 ## What the desk currently says it will do. The demo pushes live numbers back in
 ## through `set_roster` and `set_status`; everything else is read off the knobs.
 func selected_species() -> StringName:

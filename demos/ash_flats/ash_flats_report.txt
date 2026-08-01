@@ -25,6 +25,16 @@ THE ASH LINE
   GAP    GAP THREE   10.40 m across, landing 1.20 m below the lip
   built  864 tris, vol +1125.562, conflicts 0, degenerate 0, 72 shapes, 37 piers (11 refused)
 
+THE RACE
+  check  CREST    x   -8.0  z   -89.7  y  11.15   band 2.5 below, 7.0 above
+  check  GAP ONE  x   -8.0  z   -61.7  y   6.31   band 2.5 below, 7.0 above
+  check  MIDWAY   x   -8.0  z   -31.4  y   1.42   band 1.0 below, 7.0 above
+  check  RIVER    x   -8.0  z    -2.5  y  -3.27   band 2.5 below, 7.0 above
+  check  FINISH   x   -8.0  z    10.0  y  -0.47   band 3.0 below, 8.0 above
+  line   z -118.0   4 lanes x -11.3 .. -4.7   gantry 3.4 m down-line
+  board   -15.6 -121.0   4 rows
+  marks  baked
+
 SCATTER
   barrel               150 in 13 cells of   96 m   11.5 per draw
   big_crate             46 in 11 cells of   96 m    4.2 per draw
@@ -40,9 +50,11 @@ SCATTER
 AUTHORED MESHES  (signed volume must be positive, conflicts must be 0)
   signpost       68 tris  vol  +0.0995  conflicts 0  degenerate 0
   gauge_post    120 tris  vol  +0.0944  conflicts 0  degenerate 0
-  yard_frame     84 tris  vol  +0.2338  conflicts 0  degenerate 0
+  yard_frame     84 tris  vol  +0.2933  conflicts 0  degenerate 0
+  gantry        108 tris  vol  +2.8934  conflicts 0  degenerate 0
+  board_frame    84 tris  vol  +0.6824  conflicts 0  degenerate 0
 
 LOAD-BACK
-  ash_flats.tscn   2194 nodes, 98 scripted, 744 scattered instances
-                   1130 collision shapes, 62 ladders, 0 empty meshes (must be 0)
-bake time             1391 ms
+  ash_flats.tscn   2237 nodes, 103 scripted, 744 scattered instances
+                   1133 collision shapes, 62 ladders, 0 empty meshes (must be 0)
+bake time             1725 ms

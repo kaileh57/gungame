@@ -18,6 +18,23 @@ extends Node3D
 ##
 ## Everything in the room is baked by `res://tools/build_bestiary.gd`. This file
 ## builds nothing; it wires, listens and reads out.
+##
+## MULTIPLAYER. A rack is one exhibit that everybody is stood in front of, so the
+## room has ONE state and all four players drive it. Nobody has a privilege here:
+## whoever touches a control changes the room under their own hand immediately,
+## then tells the host, and the host hands the whole six-number state back to
+## everybody. That echo is what keeps four halls identical, and it is also what
+## you SEE — the twin at the far desk moves and flashes under somebody else's hand
+## exactly as it always did under your own, which is the feedback the two-desk
+## design already had and did not need inventing for the network.
+##
+## In single-player none of it runs. `NetGame.is_networked()` is false, no packet
+## is ever sent, and the hall is exactly the room it was.
+
+## The six numbers that ARE the room. Everything a desk can change is one of them
+## and the whole vector is what crosses the wire — six floats, on a human pressing
+## a button, so there was never a reason to send a delta and re-derive the rest.
+enum Field { CLIP = 0, PACE = 1, TURN = 2, TRACK = 3, FOCUS = 4, TAKE = 5 }
 
 ## Control ids the two desks carry. Both desks carry all of them and are kept in
 ## lockstep, so a change made at one end is visible at the other.
@@ -33,6 +50,37 @@ const ID_TAKE: StringName = &"take"
 const CLIP_LABELS: PackedStringArray = ["IDLE", "WALK", "RUN", "AIM", "ATTACK", "STAGGER", "DEATH"]
 ## Species class id -> what the bay sign calls it.
 const CLASS_LABELS: Dictionary = {&"scav": "SCAV", &"machine": "MACHINE", &"mutant": "MUTANT"}
+
+## How many entries `Field` has, and therefore the length of a state packet.
+const FIELD_COUNT: int = 6
+## Which bank of controls carries each field. FOCUS has none: it is driven by two
+## momentary buttons and its readout is the inspection lamp itself.
+const FIELD_BANKS: Dictionary = {
+	Field.CLIP: ID_CLIP,
+	Field.PACE: ID_PACE,
+	Field.TURN: ID_TURN,
+	Field.TRACK: ID_TRACK,
+	Field.TAKE: ID_TAKE,
+}
+## The pace slider's baked travel, from `tools/build_bestiary.gd`. Repeated here
+## rather than read off the control because a number arriving off the wire is
+## clamped before it ever reaches a body, and that has to happen on a machine
+## whose desks failed to build just as much as on one whose desks are fine.
+const PACE_MIN: float = 0.15
+const PACE_MAX: float = 2.00
+## Seeded collapses `ExhibitBody` carries, and therefore the modulus of TAKE.
+const TAKE_COUNT: int = 5
+## How often a client that has walked in re-asks the host what the room is doing,
+## and how many times before it stops asking. This only ever runs in the second
+## after a scene change: the host and its clients swap scenes a round trip apart,
+## so the very first request can land before the host's own hall exists.
+const RESYNC_SECONDS: float = 0.5
+const RESYNC_TRIES: int = 12
+## Fastest a peer's presses are believed, in milliseconds. It is `DiegeticControl`'s
+## own `press_cooldown` — already the fastest anybody clicks — so this never refuses
+## a real press, and a client that has come loose cannot make the host broadcast the
+## room faster than a hand could turn it.
+const PRESS_FLOOR_MS: int = 40
 
 @export_group("Inspection")
 ## Seconds for the inspection lamp to cross from one plinth to the next. It moves
@@ -96,6 +144,19 @@ var _focus_energy: float = 0.0
 ## which is a frame late by construction — look at a knob and click in the same
 ## motion and the click resolved against the empty air you were looking at before.
 var _hands: DiegeticInteractor = null
+## The room in the shape the wire carries it, indexed by `Field`. The single truth
+## on the host; a copy the host keeps corrected everywhere else.
+var _state: PackedFloat32Array = PackedFloat32Array()
+var _awaiting_state: bool = false
+var _resync_clock: float = 0.0
+var _resync_left: int = 0
+## Peer id -> when that peer's last press was believed. At most three entries, and
+## only ever written on the host.
+var _last_press_ms: Dictionary = {}
+## Every player's head, rebuilt once a frame while TRACK is thrown, so the twelve
+## rigs share one gather instead of asking the roster twelve times. One entry in
+## single-player — yours — which is what makes it the same loop in both.
+var _heads: PackedVector3Array = PackedVector3Array()
 
 @onready var _exhibits: Node3D = $Exhibits
 @onready var _consoles: Node3D = $Consoles
@@ -115,6 +176,12 @@ func _ready() -> void:
 	_apply_clip(BeastClips.IDLE)
 	_focus_on(0, true)
 	_bead.visible = false
+	# No eye handed over on purpose. F8 gives the viewport to the freecam, and the
+	# freecam is a child of the player body — so "whatever camera is live" makes the
+	# laser dot follow the eye you are actually looking through, while the avatar
+	# stays on the body it stands for.
+	NetPresence.enter(NetPresence.FULL)
+	_enter_session()
 
 
 func _process(delta: float) -> void:
@@ -123,6 +190,7 @@ func _process(delta: float) -> void:
 	_track(eye)
 	_advance_focus(delta)
 	_update_bead(delta)
+	_tick_resync(delta)
 
 
 ## The desk's hands. World geometry is in the mask so a knob you are looking at
@@ -234,12 +302,14 @@ func _bank(id: StringName) -> Array:
 ## controls ship at their scene defaults; this is the one place that decides what
 ## the rack is doing when you walk in.
 func _apply_initial_state() -> void:
+	var pace: float = clampf(default_pace, PACE_MIN, PACE_MAX)
+	_state = PackedFloat32Array([0.0, pace, 0.0, 0.0, 0.0, 0.0])
 	_set_bank(ID_CLIP, 0.0)
-	_set_bank(ID_PACE, default_pace)
+	_set_bank(ID_PACE, pace)
 	_set_bank(ID_TURN, 0.0)
 	_set_bank(ID_TRACK, 0.0)
 	for body: ExhibitBody in _bodies:
-		body.pace = default_pace
+		body.pace = pace
 
 
 func _set_bank(id: StringName, value: float) -> void:
@@ -247,62 +317,225 @@ func _set_bank(id: StringName, value: float) -> void:
 		control.set_value(value, false)
 
 
-## Copy a control's value onto its twin at the far desk without firing that
-## twin's handler, which would otherwise bounce the change back.
-func _mirror(id: StringName, value: float, source: DiegeticControl) -> void:
-	for control: DiegeticControl in _bank(id):
-		if control == source:
-			continue
-		control.set_value(value, false)
-		control.flash()
-
-
 # --- handlers ---------------------------------------------------------------
 
 
 func _on_clip_selected(index: int, _text: String, source: DiegeticDial) -> void:
-	var clip: StringName = BeastClips.CLIPS[clampi(index, 0, BeastClips.CLIPS.size() - 1)]
-	_apply_clip(clip)
-	_mirror(ID_CLIP, float(index), source)
+	_drive(Field.CLIP, float(index), source)
 
 
 func _on_pace_changed(value: float, source: DiegeticControl) -> void:
-	for body: ExhibitBody in _bodies:
-		body.pace = value
-	_mirror(ID_PACE, value, source)
+	_drive(Field.PACE, value, source)
 
 
 func _on_turn_toggled(on: bool, source: DiegeticLever) -> void:
-	_turning = on
-	_mirror(ID_TURN, 1.0 if on else 0.0, source)
+	_drive(Field.TURN, 1.0 if on else 0.0, source)
 
 
 func _on_track_toggled(on: bool, source: DiegeticLever) -> void:
-	_tracking = on
-	if not on:
-		for body: ExhibitBody in _bodies:
-			body.clear_aim()
-	_mirror(ID_TRACK, 1.0 if on else 0.0, source)
+	_drive(Field.TRACK, 1.0 if on else 0.0, source)
 
 
 func _on_prev() -> void:
-	_focus_on(_step(-1), false)
+	_drive(Field.FOCUS, float(_step(-1)), null)
 
 
 func _on_next() -> void:
-	_focus_on(_step(1), false)
+	_drive(Field.FOCUS, float(_step(1)), null)
 
 
 func _on_take() -> void:
-	_take = (_take + 1) % 5
-	for body: ExhibitBody in _bodies:
-		body.set_take(_take)
-	_write_cards()
+	_drive(Field.TAKE, float(posmod(_take + 1, TAKE_COUNT)), null)
 
 
 func _step(dir: int) -> int:
 	var n: int = _bodies.size()
 	return 0 if n == 0 else posmod(_focus + dir, n)
+
+
+# --- the room's state -------------------------------------------------------
+
+
+## Somebody standing at a desk in THIS hall turned something. It happens here
+## first, so the room answers the hand that moved it with no round trip in the
+## way, and then the host is told. On the host, telling the host is telling
+## everybody. In single-player the second half does not exist.
+func _drive(field: int, value: float, source: DiegeticControl) -> void:
+	if not _set_field(field, value, source, false):
+		return
+	if not _net_live():
+		return
+	if NetGame.is_authority():
+		_rx_state.rpc(_state, false)
+	else:
+		_rq_field.rpc_id(NetPlayer.HOST_ID, field, value)
+
+
+## Write one field and do whatever that field means. Returns false when the room
+## was already like that, which is what stops an echo from flashing every control
+## on every machine that already agreed.
+##
+## `source` is the control the hand was on, if any: it has already moved itself
+## and moving it again would fight its own tween. `instant` skips the inspection
+## lamp's travel, which is only ever right for the copy of the room a player is
+## handed as they walk in.
+func _set_field(field: int, raw: float, source: DiegeticControl, instant: bool) -> bool:
+	if field < 0 or field >= FIELD_COUNT or _state.size() != FIELD_COUNT:
+		return false
+	var value: float = _sanitize_field(field, raw)
+	if is_equal_approx(_state[field], value):
+		return false
+	_state[field] = value
+	match field:
+		Field.CLIP:
+			_apply_clip(BeastClips.CLIPS[int(value)])
+		Field.PACE:
+			for body: ExhibitBody in _bodies:
+				body.pace = value
+		Field.TURN:
+			_turning = value > 0.5
+		Field.TRACK:
+			_set_tracking(value > 0.5)
+		Field.FOCUS:
+			_focus_on(int(value), instant)
+		Field.TAKE:
+			_take = int(value)
+			for body: ExhibitBody in _bodies:
+				body.set_take(_take)
+			_write_cards()
+	_echo_field(field, source)
+	return true
+
+
+## Move every control that carries this field except the one that was touched, and
+## flash them all. This was the two desks staying in lockstep; it is now also how
+## you watch another player operate the far desk from where you are standing.
+func _echo_field(field: int, source: DiegeticControl) -> void:
+	if not FIELD_BANKS.has(field):
+		return
+	for control: DiegeticControl in _bank(FIELD_BANKS[field]):
+		if control == source:
+			continue
+		# TAKE is a momentary button and holds no value; the flash is the whole of
+		# its feedback, and the card readout says which take you landed on.
+		if field != Field.TAKE:
+			control.set_value(_state[field], false)
+		control.flash()
+
+
+## Clamp a candidate into what the field can actually be. Every number that has
+## come off the wire goes through here first, so a client that sends nonsense
+## moves the room to a legal position instead of into an error.
+func _sanitize_field(field: int, raw: float) -> float:
+	if not is_finite(raw):
+		return 0.0
+	var out: float = 0.0
+	match field:
+		Field.CLIP:
+			out = float(clampi(int(round(raw)), 0, BeastClips.CLIPS.size() - 1))
+		Field.PACE:
+			out = clampf(raw, PACE_MIN, PACE_MAX)
+		Field.TURN, Field.TRACK:
+			out = 1.0 if raw > 0.5 else 0.0
+		Field.FOCUS:
+			out = 0.0 if _bodies.is_empty() else float(posmod(int(round(raw)), _bodies.size()))
+		Field.TAKE:
+			out = float(posmod(int(round(raw)), TAKE_COUNT))
+	return out
+
+
+func _set_tracking(on: bool) -> void:
+	_tracking = on
+	if on:
+		return
+	for body: ExhibitBody in _bodies:
+		body.clear_aim()
+
+
+# --- multiplayer ------------------------------------------------------------
+
+
+## True when there is a session and the socket under it is actually up. Single
+## player never gets past this line, and neither does a peer mid-handshake.
+func _net_live() -> bool:
+	return NetGame.is_networked() and NetAvatarLink.transport_ready(get_tree())
+
+
+## Walk in. The host already IS the truth and has nothing to ask; a client asks
+## for it and keeps asking until it arrives, because the two machines change scene
+## a round trip apart and the first request can beat the host's hall into being.
+func _enter_session() -> void:
+	if NetGame.is_authority() or not _net_live():
+		return
+	_awaiting_state = true
+	_resync_left = RESYNC_TRIES
+	# Due immediately: the usual case is that the host is already standing in the
+	# hall and the answer comes back inside a frame.
+	_resync_clock = RESYNC_SECONDS
+
+
+func _tick_resync(delta: float) -> void:
+	if not _awaiting_state:
+		return
+	_resync_clock += delta
+	if _resync_clock < RESYNC_SECONDS:
+		return
+	_resync_clock = 0.0
+	_resync_left -= 1
+	if _resync_left < 0 or not _net_live():
+		_awaiting_state = false
+		return
+	_rq_state.rpc_id(NetPlayer.HOST_ID)
+
+
+## A client asking what the room is doing. Answered privately, so nobody else pays
+## for somebody else arriving.
+@rpc("any_peer", "call_remote", "reliable")
+func _rq_state() -> void:
+	if not NetGame.is_authority():
+		return
+	var who: int = multiplayer.get_remote_sender_id()
+	if who > 0:
+		_rx_state.rpc_id(who, _state, true)
+
+
+## A client turned something. Intent, not fact: the host decides what the room
+## becomes and the echo below is what actually settles it — including on the
+## machine that asked, which is already showing its own optimistic answer.
+##
+## Echoed unconditionally rather than only on a change, so a client that has
+## somehow drifted is corrected by the next thing anybody touches.
+@rpc("any_peer", "call_remote", "reliable")
+func _rq_field(field: int, value: float) -> void:
+	if not NetGame.is_authority() or not _net_live():
+		return
+	if not _believe_press(multiplayer.get_remote_sender_id()):
+		return
+	_set_field(field, value, null, false)
+	_rx_state.rpc(_state, false)
+
+
+## Whether this peer's press arrived slowly enough to have come from a hand.
+func _believe_press(who: int) -> bool:
+	if who <= 0:
+		return false
+	var now: int = Time.get_ticks_msec()
+	if now - int(_last_press_ms.get(who, -100000)) < PRESS_FLOOR_MS:
+		return false
+	_last_press_ms[who] = now
+	return true
+
+
+## The room, from the host. `instant` is true only for the copy a player is handed
+## as they walk in, so the inspection lamp is already on the right plinth instead
+## of sweeping the length of the hall on their first frame.
+@rpc("authority", "call_remote", "reliable")
+func _rx_state(state: PackedFloat32Array, instant: bool) -> void:
+	if NetGame.is_authority() or state.size() != FIELD_COUNT:
+		return
+	_awaiting_state = false
+	for field: int in FIELD_COUNT:
+		_set_field(field, state[field], null, instant)
 
 
 # --- room state -------------------------------------------------------------
@@ -345,15 +578,52 @@ func _spin_turntables(delta: float) -> void:
 		turntable.rotation.y = _spin
 
 
-## Point every rig at the player's head. `aim_at` is a rig-space write, not an IK
-## solve, so twelve of these is a dozen vector subtractions.
+## Point every rig at the nearest head in the room. `aim_at` is a rig-space write,
+## not an IK solve, so twelve of these is a dozen vector subtractions and the
+## nearest-of-four search on top of it is another forty-eight.
+##
+## NEAREST, not "the local player": every machine picks from the same four heads
+## and gets the same answer, so the rack does the same thing on all four screens —
+## and a creature follows whoever actually walked up to it, which is the only
+## reading of "track" that is not a lie in a room with four people in it.
 func _track(eye: Camera3D) -> void:
-	if not _tracking or eye == null:
+	if not _tracking:
 		return
-	var at: Vector3 = eye.global_position
-	at.y *= track_eye_fraction
+	_gather_heads(eye)
+	if _heads.is_empty():
+		return
 	for body: ExhibitBody in _bodies:
-		body.aim_at(at)
+		body.aim_at(_nearest_head(body.global_position))
+
+
+## Every player's head in world space, at the height a creature looks at. Yours
+## comes off whichever camera is live; everyone else's off the avatar the presence
+## system stands them in, which is the node `NetPlayer.avatar` is documented to be.
+func _gather_heads(eye: Camera3D) -> void:
+	_heads.clear()
+	if eye != null:
+		var mine: Vector3 = eye.global_position
+		mine.y *= track_eye_fraction
+		_heads.append(mine)
+	if not NetGame.is_networked():
+		return
+	for who: NetPlayer in NetGame.players():
+		if who.is_local or not is_instance_valid(who.avatar):
+			continue
+		var head: Vector3 = who.avatar.global_position
+		head.y = (head.y + NetPresence.EYE_HEIGHT) * track_eye_fraction
+		_heads.append(head)
+
+
+func _nearest_head(from: Vector3) -> Vector3:
+	var best: Vector3 = _heads[0]
+	var gap: float = from.distance_squared_to(best)
+	for i: int in range(1, _heads.size()):
+		var d: float = from.distance_squared_to(_heads[i])
+		if d < gap:
+			gap = d
+			best = _heads[i]
+	return best
 
 
 func _update_bead(delta: float) -> void:
