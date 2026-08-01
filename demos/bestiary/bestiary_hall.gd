@@ -176,11 +176,12 @@ func _ready() -> void:
 	_apply_clip(BeastClips.IDLE)
 	_focus_on(0, true)
 	_bead.visible = false
-	# No eye handed over on purpose. F8 gives the viewport to the freecam, and the
-	# freecam is a child of the player body — so "whatever camera is live" makes the
-	# laser dot follow the eye you are actually looking through, while the avatar
-	# stays on the body it stands for.
-	NetPresence.enter(NetPresence.FULL)
+	# DEFERRED, AND IT HAS TO BE. `NetPresence.instance()` parents itself to `/root`,
+	# and this `_ready` runs INSIDE the root's own `add_child` of the hall — so a
+	# direct call is refused with "Parent node is busy setting up children" and leaves
+	# the singleton orphaned, which is a hall where nobody can see anybody. One frame
+	# later the tree is idle and the add lands.
+	_enter_presence.call_deferred()
 	_enter_session()
 
 
@@ -459,6 +460,17 @@ func _set_tracking(on: bool) -> void:
 ## player never gets past this line, and neither does a peer mid-handshake.
 func _net_live() -> bool:
 	return NetGame.is_networked() and NetAvatarLink.transport_ready(get_tree())
+
+
+## Everyone in the hall appears to everyone else, as a capsule with a name over it and
+## a laser dot on whatever they are pointing at. Called deferred from `_ready`.
+##
+## No eye handed over on purpose. F8 gives the viewport to the freecam, and the freecam
+## is a child of the player body — so "whatever camera is live" makes the laser dot
+## follow the eye you are actually looking through, while the avatar stays on the body
+## it stands for.
+func _enter_presence() -> void:
+	NetPresence.enter(NetPresence.FULL)
 
 
 ## Walk in. The host already IS the truth and has nothing to ask; a client asks

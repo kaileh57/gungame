@@ -151,7 +151,7 @@ func _ready() -> void:
 	_collect_controls()
 	_collect_lamps()
 	_paint_creatures()
-	_enter_presence()
+	_enter_presence.call_deferred()
 	_rig.riding_changed.connect(_on_riding_changed)
 	GameSettings.preset_applied.connect(_on_preset_applied)
 
@@ -198,6 +198,12 @@ func _unhandled_input(event: InputEvent) -> void:
 ## camera, presence would walk everybody's avatar off the parapet and along the
 ## crane shot. The player's own eye is the one thing in this scene that always
 ## says where its player is.
+##
+## CALLED DEFERRED, AND IT HAS TO BE. `NetPresence.instance()` parents itself to
+## `/root`, and `_ready` runs INSIDE the root's own `add_child` of this demo — so a
+## direct call is refused with "Parent node is busy setting up children" and leaves
+## the singleton orphaned, which is a settlement with nobody visible in it. One
+## frame later the tree is idle and the add lands.
 func _enter_presence() -> void:
 	NetPresence.enter(NetPresence.FULL, _player.get_node_or_null(^"Eye") as Camera3D)
 

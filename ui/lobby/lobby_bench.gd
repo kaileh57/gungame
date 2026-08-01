@@ -162,6 +162,12 @@ func _bind_net() -> void:
 ## on where you already are: open a game, close the one you opened, or walk out of
 ## somebody else's.
 func _take_host_action() -> void:
+	# Mid-connect is neither in nor out. `NetGame.host()` refuses a session that is
+	# already opening, and the only thing this file knows how to say about a refusal
+	# is "the port is in use" — which would be a lie about what just happened, on the
+	# screen of somebody who is three seconds into waiting for a join.
+	if _console != null and _console.mode() == JoinConsole.Mode.WAITING:
+		return
 	if NetGame.is_networked():
 		NetGame.leave()
 		_console.shut()
@@ -251,8 +257,15 @@ func _on_host_pressed() -> void:
 	_take_host_action()
 
 
+## WHILE YOU ARE HOSTING THIS BOX IS YOUR ADDRESS BOARD and nothing else, so it is
+## put straight back up. Shutting it — a stray click on the case, an Escape — used to
+## throw away the one thing a guest needs to reach you, with no way at all to get it
+## back short of stopping hosting and starting again. Reopening is safe: `open_readout`
+## does not emit `shut_down`, so this cannot come back round on itself.
 func _on_console_shut() -> void:
 	_say("")
+	if NetGame.is_host():
+		_show_address()
 
 
 ## The two beats of the join flow. Confirming the address does NOT open a socket: it

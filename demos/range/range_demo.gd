@@ -117,8 +117,13 @@ func _ready() -> void:
 
 	# Everyone appears to everyone as a capsule with sunglasses, a nameplate and a
 	# laser dot. One line, and it costs nothing when nobody else is here.
-	if _player != null:
-		NetPresence.enter(NetPresence.FULL, _player.get_node_or_null(^"Eye"))
+	#
+	# DEFERRED, AND IT HAS TO BE. `NetPresence.instance()` parents itself to `/root`,
+	# and this `_ready` runs INSIDE the root's own `add_child` of the demo — so calling
+	# it straight from here is refused with "Parent node is busy setting up children"
+	# and leaves the singleton orphaned: no avatars, no nameplates, no dots, on any
+	# machine. One frame later the tree is idle and the add lands.
+	_enter_presence.call_deferred()
 	_register_debug()
 	_write_lane()
 
@@ -638,6 +643,12 @@ func _standing() -> int:
 		if target.is_live():
 			n += 1
 	return n
+
+
+## Everyone appears to everyone. Called deferred from `_ready` — see the note there.
+func _enter_presence() -> void:
+	if _player != null:
+		NetPresence.enter(NetPresence.FULL, _player.get_node_or_null(^"Eye") as Camera3D)
 
 
 ## Two lines on F3 that the placards deliberately do not carry: what the shot

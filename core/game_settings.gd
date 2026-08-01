@@ -253,6 +253,15 @@ const SAVE_DEBOUNCE: float = 0.75
 
 ## Vertical field of view in degrees. Cameras read this; three.js and Godot agree
 ## on the axis as long as `keep_aspect` stays at KEEP_HEIGHT.
+## Set when the window mode we asked for is not the mode we ended up in.
+##
+## Godot 4.x runs the game EMBEDDED INSIDE THE EDITOR by default, and an embedded
+## window cannot go exclusive fullscreen — `window_set_mode` returns without
+## error and the window simply stays put. That is indistinguishable from a broken
+## setting unless somebody checks, so this checks, and the settings page says so
+## rather than leaving the user clicking a dead control.
+var window_mode_blocked: bool = false
+
 var fov: float:
 	get:
 		return float(_values[&"fov"])
@@ -656,6 +665,15 @@ func _apply_ui_scale() -> void:
 ## value this file last wrote rather than against `DisplayServer.window_get_mode`,
 ## because the two disagree the moment the player alt-tabs or the WM has an
 ## opinion, and re-asserting the mode on every FOV tick would fight them for it.
+## Re-push every setting from scratch, including ones the incremental path would
+## skip as unchanged. This is what the settings page's APPLY does: it is the
+## answer to "is this actually taking effect?", and it costs nothing to press.
+func force_apply() -> void:
+	_pushed_mode = -1
+	_pushed_size = Vector2i.ZERO
+	apply_all()
+
+
 func _apply_window() -> void:
 	if not _has_window():
 		return
@@ -666,9 +684,26 @@ func _apply_window() -> void:
 		# the size must be pushed again on the way back rather than skipped as
 		# unchanged.
 		_pushed_size = Vector2i.ZERO
-		DisplayServer.window_set_mode(_display_window_mode(mode))
+		var want_mode: DisplayServer.WindowMode = _display_window_mode(mode)
+		DisplayServer.window_set_mode(want_mode)
 		if mode == WINDOW_WINDOWED:
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		# Did it take? An embedded editor window silently refuses fullscreen.
+		var blocked: bool = DisplayServer.window_get_mode() != want_mode
+		if blocked != window_mode_blocked:
+			window_mode_blocked = blocked
+			settings_changed.emit(&"window_mode_blocked", blocked)
+		if blocked:
+			push_warning(
+				(
+					(
+						"GameSettings: asked for %s, window stayed in mode %d. "
+						+ "A game embedded in the editor cannot go fullscreen — "
+						+ "run it in a separate window or from an exported build."
+					)
+					% [WINDOW_MODE_NAMES[mode], int(DisplayServer.window_get_mode())]
+				)
+			)
 	if mode != WINDOW_WINDOWED:
 		return
 	var want: Vector2i = _fit_to_desktop(resolution)

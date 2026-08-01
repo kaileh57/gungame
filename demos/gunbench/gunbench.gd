@@ -193,7 +193,13 @@ func _ready() -> void:
 	_stand_at_slot()
 	# Capsules, sunglasses, names and everybody's laser dot, in one line. Free and inert
 	# in single-player: the roster is a list of one and only your own dim dot is drawn.
-	NetPresence.enter(NetPresence.FULL, $Player/Eye)
+	#
+	# DEFERRED, AND IT HAS TO BE. `NetPresence.instance()` parents itself to `/root`,
+	# and this `_ready` runs INSIDE the root's own `add_child` of the bay — so calling
+	# it straight from here is refused with "Parent node is busy setting up children"
+	# and leaves the singleton orphaned: nobody in the bay can see anybody. One frame
+	# later the tree is idle and the add lands.
+	_enter_presence.call_deferred()
 	if not PartLibrary.is_loaded():
 		push_error("Gunbench: the part library is not loaded. %s" % PartLibrary.load_error)
 		_refuse_controls()
@@ -318,6 +324,12 @@ func _disable_freecam() -> void:
 	var freecam: Node = get_node_or_null(^"Player/Freecam")
 	if freecam != null:
 		freecam.queue_free()
+
+
+## Everyone in the bay appears to everyone else. Called deferred from `_ready` — see
+## the note there.
+func _enter_presence() -> void:
+	NetPresence.enter(NetPresence.FULL, $Player/Eye)
 
 
 ## The wire. Built here rather than baked into the scene so it cannot exist before this

@@ -67,7 +67,19 @@ func _ready() -> void:
 	CombatReticle.mount(self).watch(get_node_or_null(^"Hands") as DiegeticInteractor)
 	# After the reticle, so the presence system finds it on its first physics frame and
 	# borrows its ray instead of casting a second one from the same pixel.
-	NetPresence.enter(NetPresence.FULL, get_node_or_null(^"Player/Eye"))
+	#
+	# DEFERRED, AND IT HAS TO BE. `NetPresence.instance()` parents itself to `/root`,
+	# and this `_ready` runs INSIDE the root's own `add_child` of the course — so
+	# calling it straight from here is refused with "Parent node is busy setting up
+	# children" and leaves the singleton orphaned: no avatars and no dots on any
+	# machine. One frame later the tree is idle and the add lands.
+	_enter_presence.call_deferred()
+
+
+## Everybody on the course, as a capsule with a name over it. Called deferred from
+## `_ready` — see the note there.
+func _enter_presence() -> void:
+	NetPresence.enter(NetPresence.FULL, get_node_or_null(^"Player/Eye") as Camera3D)
 
 
 func _exit_tree() -> void:

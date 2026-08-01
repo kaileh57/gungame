@@ -269,6 +269,14 @@ func _refresh_authority() -> void:
 	if not NetGame.is_networked():
 		_set_host_pick(-1)
 		_picked_id = &""
+	else:
+		# RESTATE the host's pick to the whole room on every roster change. A guest
+		# who arrives while the host's cursor is already resting on a plate would
+		# otherwise never be told which plate that is: `_publish_pick` only sends on
+		# a CHANGE, and the host's hover has not moved since before they existed.
+		# Forgetting what was last announced is what makes the next call re-send it.
+		_picked_id = &""
+		_publish_pick()
 	var locked: bool = NetGame.is_networked() and not NetGame.is_authority()
 	if locked == _locked:
 		return

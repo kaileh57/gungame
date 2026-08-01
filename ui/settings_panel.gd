@@ -224,6 +224,10 @@ var _preset_picker: OptionButton = null
 ## signal does not bounce straight back into the store.
 var _applying: bool = false
 var _fps_timer: float = 0.0
+## Built in code in `_build_apply_button` — the footer scene is hand-authored and
+## adding a node to it by hand is how ext_resource bookkeeping goes wrong.
+var _apply_button: Button = null
+var _apply_note: Label = null
 
 @onready var _rows_box: VBoxContainer = $Frame/Body/Scroll/Rows
 @onready var _fps_label: Label = $Frame/Body/Header/Fps
@@ -236,6 +240,7 @@ func _ready() -> void:
 	_build()
 	_close_button.pressed.connect(_on_close)
 	_reset_button.pressed.connect(_on_reset)
+	_build_apply_button()
 	GameSettings.settings_changed.connect(_on_setting_changed)
 	sync_all()
 	_verify_coverage()
@@ -256,9 +261,59 @@ func _process(delta: float) -> void:
 	_write_window_readout()
 
 
+## APPLY, added in code so the hand-authored footer scene stays untouched.
+##
+## Every row already writes through on change, so this is not how settings take
+## effect — it is how you find out that they did. It force-re-pushes the whole
+## store, including anything the incremental path skipped as unchanged, and then
+## reports whether the window actually ended up in the mode that was asked for.
+func _build_apply_button() -> void:
+	var footer: Node = _reset_button.get_parent()
+	if footer == null:
+		return
+	_apply_button = Button.new()
+	_apply_button.name = "ApplyButton"
+	_apply_button.text = "APPLY"
+	_apply_button.tooltip_text = (
+		"Re-push every setting to the engine. Changes already apply as you make them; "
+		+ "this is here to prove it."
+	)
+	footer.add_child(_apply_button)
+	footer.move_child(_apply_button, _reset_button.get_index() + 1)
+	_apply_button.pressed.connect(_on_apply)
+
+	_apply_note = Label.new()
+	_apply_note.name = "ApplyNote"
+	_apply_note.visible = false
+	_apply_note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_apply_note.add_theme_color_override("font_color", UiStyle.WARN)
+	footer.get_parent().add_child(_apply_note)
+
+
+func _on_apply() -> void:
+	GameSettings.force_apply()
+	_write_window_readout()
+	sync_all()
+	_refresh_apply_note()
+
+
+## Say the quiet part out loud when the window refuses the mode it was given.
+func _refresh_apply_note() -> void:
+	if _apply_note == null:
+		return
+	var blocked: bool = bool(GameSettings.get("window_mode_blocked"))
+	_apply_note.visible = blocked
+	if blocked:
+		_apply_note.text = (
+			"Fullscreen was ignored. A game running EMBEDDED IN THE EDITOR cannot take "
+			+ "the screen — turn off Game Embedding (or run an exported build) and it works."
+		)
+
+
 ## Show the page and pull every widget back into line with the store.
 func open() -> void:
 	sync_all()
+	_refresh_apply_note()
 	visible = true
 	_close_button.grab_focus()
 

@@ -1064,3 +1064,75 @@ So the difference between the five that leak and the three that do not is still
 unaccounted for, and that difference is the thing to find. Next step: log the
 instance id at `add_child` and at `_exit_tree` in a failing demo and a passing
 one, and find who calls `remove_child` on it. Do not tune around it.
+
+---
+
+# PLAYTEST NOTES — two real instances, walked by hand
+
+One integration pass over the four parallel edits, then a full two-window
+playthrough with real windows, real mouse and real keyboard. No code changed:
+nothing that blocks two people playing was found broken.
+
+## How to host
+
+Boot the game, and on the title screen either **press H** or click the
+`HOST (H)` plate on the bench. That opens the game immediately and turns the
+JOIN box into an address board reading your `LAN` address and, if the router
+cooperates, your `NET` address. UPnP forwarded UDP 27015 on this machine and the
+board said `PORT FORWARDED. ANYONE CAN JOIN.` Friends on your LAN use the LAN
+line; friends over the internet use the NET line.
+
+## How to join
+
+Click the **JOIN A GAME** box on the front of the bench. The lid springs up and
+becomes a screen. Type the host's address (`127.0.0.1` for a second window on the
+same PC) and press **Enter**. The screen becomes a NAME box; type your call sign
+and press **Enter** again. That is when the socket actually opens.
+
+**The NAME box is pre-filled with whatever you were called last time, and typing
+appends to it.** Backspace it out first or you will join as `OLDNAMEnewname` —
+that is exactly what happened to me. Your name is saved to `user://net.cfg` and
+sticks between sessions, which is why it is pre-filled.
+
+## What was actually verified
+
+- Host opens, UPnP maps the port, address board reads LAN + NET.
+- A second instance joined over ENet. Roster reached **2/4 on both machines**,
+  host RED, guest BLUE, both names correct.
+- The guest's board is correctly locked: every plate tagged `HOST ONLY`, a
+  `THE HOST PICKS` bar across it, and `LEAVE GAME` where the host has
+  `STOP HOSTING`.
+- Host hovered and pressed `ENEMY TEST ARENA`. **The guest followed** — both
+  ended up in the arena, both with a weapon, reticle and live range readout.
+- **They can see each other.** Host saw `GUESTY` as a pale-blue capsule with
+  sunglasses and a nameplate; guest saw `HOSTY` as a red one. Host also saw the
+  guest's blue laser dot.
+- Mouse look, mouse capture (cursor locks to window centre) and firing all work
+  on both machines. Recoil moves the view during a burst.
+- **Esc pauses on the guest** — scene dims, panel comes up.
+- Single-player is not regressed: the title screen boots clean and
+  `res://demos/range/range.tscn` runs with full geometry, targets, distance
+  markers and a live `54/54` ammo counter. Zero script errors in either.
+
+The only stderr output in any of these runs was the benign
+`Realtime Skies can only use a radiance size of 256` warning.
+
+## What is rough
+
+- **Spawn crowding.** In the arena the two players spawn roughly 1.5 m apart —
+  the other player's capsule fills a third of your screen on arrival. Playable,
+  ugly for a second.
+- **No health or ammo readout in the arena.** The range has an ammo counter; the
+  arena showed neither in any capture. Not confirmed as a bug, just absent.
+- **The guest's view of the host's laser dot was never confirmed.** The host
+  clearly saw the guest's blue dot; I never caught a red one on the guest's
+  screen. One sample, cosmetic either way.
+- The name pre-fill described above.
+- Everything already listed under *Multiplayer — open item* above is unchanged:
+  the shutdown-only leak is still there and still does not touch gameplay.
+
+## Not verified
+
+Three and four players. Everything above was two instances on one machine over
+127.0.0.1, so the internet path (the `NET` address, someone else's router) has
+never been exercised by anything but UPnP reporting success.

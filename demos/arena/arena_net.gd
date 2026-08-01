@@ -523,7 +523,10 @@ func _apply_squad(ids: PackedInt32Array, hp: PackedByteArray) -> void:
 		var alive: bool = hp[k] > 0
 		var was: bool = bool(_squad_alive.get(id, 255) != 0)
 		_squad_alive[id] = hp[k]
-		if id == NetGame.peer_id() or presence == null:
+		if id == NetGame.peer_id():
+			_sync_own_health(hp[k])
+			continue
+		if presence == null:
 			continue
 		# The plate fades through the documented seam; the capsule itself is hidden
 		# outright, because `set_dim` only reaches the translucent shells and a
@@ -538,6 +541,36 @@ func _apply_squad(ids: PackedInt32Array, hp: PackedByteArray) -> void:
 		var name_of: String = "SOMEBODY" if who == null else who.display_name().to_upper()
 		_hud.banner("%s IS %s" % [name_of, "DOWN" if not alive else "UP"], 1.4)
 	_note_squad()
+
+
+## THIS MACHINE'S OWN HEALTH, off the squad packet everybody already gets.
+##
+## `_rx_health` is only sent when a round lands or when the state changes, and the
+## host's ledger regenerates a client between contacts — so without this a client's
+## bar sits at whatever the last hit left it at for the whole lull and the vignette
+## stays dark through health the host has already given back. It then JUMPS on the
+## next hit, which reads as that hit healing you. Four times a second off a packet
+## that is already in flight costs nothing and makes the bar honest.
+##
+## STATE CHANGES ARE NOT TAKEN FROM HERE, and that is the whole care in this
+## function. The squad packet is `unreliable_ordered` and the health packet is
+## `reliable`; the two can cross, so a squad packet that still says "standing"
+## arriving after the death that reliable path already delivered would put the body
+## back on its feet for a quarter of a second and then drop it again. Every
+## transition therefore stays with `_rx_health`, which is ordered against nothing
+## else and carries the bearing a death needs. This only ever moves the number, and
+## only while both machines already agree you are up.
+##
+## Refused on the host and in single player: `sync_health` ignores anything that is
+## not `network_driven`, which only a client's own node ever is.
+func _sync_own_health(byte_value: int) -> void:
+	if _health == null or not _health.network_driven:
+		return
+	if byte_value <= 0 or _health.is_dead():
+		return
+	# The inverse of `_health_byte`: 1 is empty and 255 is a full bar.
+	var now: float = float(byte_value - 1) / 254.0 * _health.max_health
+	_health.sync_health(now, 0.0, Vector3.ZERO, true)
 
 
 ## The overlay line, written four times a second off the packet everybody has,
