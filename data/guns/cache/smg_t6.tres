@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_ihhrq"]
+
+[resource]
+script = ExtResource("1_ihhrq")
+roll_seed = 2237
+cfg = 3345755339
+weapon_name = "Pig-Iron Divorce"
+part_indices = PackedInt32Array(14, 64, 92, 88, 18)
+part_scales = PackedFloat32Array(1, 0.9887542, 0.6561779, 0.36438295, 0.51714385)
+part_z_scales = PackedFloat32Array(1, 0.9273958, 0.84338117, 1.1658688, 0.9273958)
+part_offsets = PackedVector3Array(0, 0, 0, 0.85131, 0.01099, 0, -0.85131, -0.05561, 0, -0.0149938, -0.47237, 0, 0, 0.1872, 0)
+fit_error = 2.2204460492503128e-16
+muzzle_local = Vector3(5.1123466, 0.01099, 0)
+score = 78.34663346855788
+tier_index = 6
+tier_name = &"Relic"
+tier_color = Color(0.9019608, 0.75686276, 0.30980393, 1)
+quirks = PackedStringArray("sidearm")
+caliber = ".38 Special"
+bore = 8.7
+case_length = 32
+muzzle_velocity = 697
+muzzle_energy = 1387
+effective_range = 301
+sim_velocity = 349
+damage = 62.0
+crit_multiplier = 2.34
+headshot_range = 52.0
+impulse = 5.417030764067332
+fire_mode = &"3-round burst"
+archetype = &"Assault rifle"
+rpm = 720
+cyclic = 1060
+magazine = 22
+reload_time = 2.1
+sidearm = true
+mass = 2.7752728704236036
+precision = 70
+reach = 82
+kick = 51
+handling = 82
+reliability = 80
+burst_dps = 747
+sustained_dps = 348
+barrel_length = 383
+overall_length = 581
+spread = 6.7
+spread_rad = 0.0019421129259395453
+spread_text = "6.7'"
+has_optic = true
+zoom = 1.98705408917079
+zoom_levels = PackedFloat32Array(2, 4.3)
+recoil_vertical = 0.006246051921506951
+recoil_horizontal = 0.004372236345054867
+recoil_drift = 0.658
+recoil_period = 10
+recoil_random = 0.39
+recoil_settle = 0.21101091481694415
+tint = 0.9904994949977846
+donor_groups = Array[StringName]([&"Spitter", &"Sturmgewehr", &"Boxgun", &"Longshot", &"Pumper"])

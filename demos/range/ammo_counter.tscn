@@ -1,0 +1,31 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/hud/ammo_counter.gd" id="1_so4yr"]
+[ext_resource type="ArrayMesh" path="res://demos/range/meshes/ammo_plate.res" id="2_j6c5a"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="3_v6ajc"]
+
+[node name="AmmoCounter" type="Node3D" unique_id=381835065]
+transform = Transform3D(-0.04496532, 0.22543478, -0.6823176, 0.041049764, 0.6833415, 0.22306788, 0.7174211, -0.024970358, -0.055528767, -0.062, 0.01, -0.056)
+script = ExtResource("1_so4yr")
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=1797722491]
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("2_j6c5a")
+
+[node name="Count" type="Label3D" parent="." unique_id=1103512872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0, 0.006)
+pixel_size = 0.00062
+double_sided = false
+text = "0"
+font = ExtResource("3_v6ajc")
+font_size = 64
+
+[node name="Capacity" type="Label3D" parent="." unique_id=1961355317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026, -0.008, 0.006)
+pixel_size = 0.00052
+double_sided = false
+modulate = Color(0.51, 0.482, 0.435, 1)
+text = "/0"
+font = ExtResource("3_v6ajc")
+font_size = 40

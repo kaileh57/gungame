@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_q1xbf"]
+
+[resource]
+script = ExtResource("1_q1xbf")
+roll_seed = 8931
+cfg = 3992973792
+weapon_name = "The Apology"
+part_indices = PackedInt32Array(53, 54, 29, 47, 18)
+part_scales = PackedFloat32Array(1, 1.62, 0.8198321, 1.6, 0.661656)
+part_z_scales = PackedFloat32Array(1, 1.9, 1.5107127, 1.9, 1.1546764)
+part_offsets = PackedVector3Array(0, 0, 0, 1.1087699, -0.2223, 0, -1.1087699, -0.22596, 0, -0.65552557, -0.5723, 0, 0, 0.19770001, -0.00772)
+fit_error = 3.7309071092179726
+muzzle_local = Vector3(8.399094, -0.2223, 0)
+score = 59.71152837543464
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("hand cannon", "jam-prone", "crew-served")
+caliber = "14.3×38 shot"
+bore = 14.3
+case_length = 38
+pellets = 6
+muzzle_velocity = 474
+muzzle_energy = 2654
+effective_range = 55
+sim_velocity = 237
+damage = 294.0
+crit_multiplier = 1.69
+headshot_range = 29.0
+impulse = 13.68835970209572
+fire_mode = &"Semi-auto"
+archetype = &"Slug gun"
+rpm = 202
+cyclic = 450
+magazine = 14
+reload_time = 4.2
+mass = 10.383319228257104
+precision = 47
+reach = 58
+kick = 25
+handling = 5
+reliability = 14
+burst_dps = 988
+sustained_dps = 492
+barrel_length = 656
+overall_length = 1208
+spread = 27.0
+spread_rad = 0.007751406192537777
+spread_text = "27'"
+has_optic = true
+zoom = 2.1930186729748806
+zoom_levels = PackedFloat32Array(2.2)
+recoil_vertical = 0.004218569234344809
+recoil_horizontal = 0.005695068466365493
+recoil_drift = 0.28
+recoil_period = 5
+recoil_random = 1.1502937800094284
+recoil_settle = 0.42
+tint = 0.8607710032444447
+donor_groups = Array[StringName]([&"Sidearm", &"Screamer", &"Karabiner", &"Chattergun", &"Pumper"])

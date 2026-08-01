@@ -1,0 +1,87 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_npydk"]
+[ext_resource type="Theme" path="res://data/ui/ui_theme.tres" id="2_6ap7o"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="3_j3kxr"]
+[ext_resource type="PackedScene" path="res://ui/settings_panel.tscn" id="4_vovkw"]
+[ext_resource type="Script" path="res://ui/settings_panel.gd" id="5_jyvtb"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1960805049]
+layer = 110
+script = ExtResource("1_npydk")
+
+[node name="Scrim" type="ColorRect" parent="." unique_id=821758427]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.035, 0.031, 0.028, 0.72)
+
+[node name="Root" type="Control" parent="." unique_id=1919312811]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("2_6ap7o")
+
+[node name="Frame" type="PanelContainer" parent="Root" unique_id=700033114]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Body" type="VBoxContainer" parent="Root/Frame" unique_id=1535870135]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Root/Frame/Body" unique_id=291642030]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_j3kxr")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.847, 0.51, 0.184, 1)
+text = "HELD"
+
+[node name="Subtitle" type="Label" parent="Root/Frame/Body" unique_id=1880934793]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.51, 0.482, 0.435, 1)
+
+[node name="Rule" type="ColorRect" parent="Root/Frame/Body" unique_id=834419735]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.302, 0.29, 0.267, 1)
+
+[node name="Resume" type="Button" parent="Root/Frame/Body" unique_id=1945331324]
+layout_mode = 2
+text = "RESUME"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="Root/Frame/Body" unique_id=1323683950]
+layout_mode = 2
+text = "SETTINGS"
+alignment = 0
+
+[node name="MainMenuButton" type="Button" parent="Root/Frame/Body" unique_id=2145654794]
+layout_mode = 2
+text = "MAIN MENU"
+alignment = 0
+
+[node name="SettingsHost" type="Control" parent="." unique_id=1085634154]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_6ap7o")
+
+[node name="SettingsPanel" type="Control" parent="SettingsHost" unique_id=1896223791 instance=ExtResource("4_vovkw")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_6ap7o")
+script = ExtResource("5_jyvtb")

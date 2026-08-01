@@ -1,0 +1,2031 @@
+[gd_resource type="Resource" script_class="GunPartSet" format=3]
+
+[ext_resource type="Script" path="res://core/gun_part.gd" id="1_yvo8b"]
+[ext_resource type="Script" path="res://core/gun_socket.gd" id="2_3xhxo"]
+[ext_resource type="Script" path="res://core/gun_part_set.gd" id="3_x5dik"]
+
+[sub_resource type="Resource" id="Resource_cxt00"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 0
+ext = Vector3(3.4404, 0.8124, 0.443)
+hull_volume = 0.78096
+fit_height = 0.71031
+fit_width = 0.44305
+muzzle_radius = 0.26867
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+mesh_path = "res://data/guns/meshes/part_00.res"
+signed_volume = 0.4879050145406912
+
+[sub_resource type="Resource" id="Resource_o44rp"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 1
+ext = Vector3(0.2816, 0.8059, 0.4839)
+hull_volume = 0.08684
+fit_height = 0.80017
+fit_width = 0.48392
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+mesh_path = "res://data/guns/meshes/part_01.res"
+signed_volume = 0.08224660463633882
+
+[sub_resource type="Resource" id="Resource_eck4m"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 2
+ext = Vector3(4.4609, 2.0346, 0.2824)
+hull_volume = 1.63098
+fit_height = 3.15709
+fit_width = 0.26729
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+mesh_path = "res://data/guns/meshes/part_02.res"
+signed_volume = 0.6015291575968149
+
+[sub_resource type="Resource" id="Resource_hdm2u"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.59745, -0.62055, 0)
+height = 3.27452
+width = 0.48392
+
+[sub_resource type="Resource" id="Resource_514vc"]
+script = ExtResource("2_3xhxo")
+position = Vector3(2.23471, -0.10263, -2e-05)
+height = 0.71031
+width = 0.44305
+
+[sub_resource type="Resource" id="Resource_17pms"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-2.23471, -0.20048, 0)
+height = 0.80017
+width = 0.48392
+
+[sub_resource type="Resource" id="Resource_qrruu"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.50093, 0.37945, 0.00708)
+height = 2.90714
+width = 0.42923
+
+[sub_resource type="Resource" id="Resource_lryi1"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 3
+ext = Vector3(4.4694, 1, 0.4839)
+hull_volume = 1.97077
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+socket_front = SubResource("Resource_514vc")
+socket_rear = SubResource("Resource_17pms")
+socket_bottom = SubResource("Resource_hdm2u")
+socket_top = SubResource("Resource_qrruu")
+mesh_path = "res://data/guns/meshes/part_03.res"
+signed_volume = 1.80141468998094
+
+[sub_resource type="Resource" id="Resource_p6y5k"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Woodsman"
+weapon_class = &"rifle"
+index = 4
+ext = Vector3(9.4185, 1.202, 0.3214)
+hull_volume = 1.3634
+fit_height = 0.88949
+fit_width = 0.32144
+muzzle_radius = 0.3358
+metal_color = Color(0.34901962, 0.3372549, 0.30588236, 1)
+wood_color = Color(0.47843137, 0.32156864, 0.1882353, 1)
+mesh_path = "res://data/guns/meshes/part_04.res"
+signed_volume = 0.9518911511016389
+
+[sub_resource type="Resource" id="Resource_3b43j"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Woodsman"
+weapon_class = &"rifle"
+index = 5
+ext = Vector3(5.1577, 2.5606, 0.5546)
+hull_volume = 3.87757
+fit_height = 0.28184
+fit_width = 0.30043
+metal_color = Color(0.34901962, 0.3372549, 0.30588236, 1)
+wood_color = Color(0.47843137, 0.32156864, 0.1882353, 1)
+mesh_path = "res://data/guns/meshes/part_05.res"
+signed_volume = 3.4523457469282826
+
+[sub_resource type="Resource" id="Resource_60fjd"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Woodsman"
+weapon_class = &"rifle"
+index = 6
+ext = Vector3(7.8487, 1.765, 0.457)
+hull_volume = 2.65451
+fit_height = 7.84871
+fit_width = 0.42544
+metal_color = Color(0.34901962, 0.3372549, 0.30588236, 1)
+wood_color = Color(0.47843137, 0.32156864, 0.1882353, 1)
+mesh_path = "res://data/guns/meshes/part_06.res"
+signed_volume = 1.357652454745183
+
+[sub_resource type="Resource" id="Resource_uakb6"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, -0.44057, 0.02051)
+height = 7.84871
+width = 0.42544
+
+[sub_resource type="Resource" id="Resource_3jdqs"]
+script = ExtResource("2_3xhxo")
+position = Vector3(3.92436, 0.04309, 0.02051)
+height = 0.96732
+width = 0.32144
+
+[sub_resource type="Resource" id="Resource_mu0at"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-3.92436, -0.22114, 0.01909)
+height = 0.43886
+width = 0.34126
+
+[sub_resource type="Resource" id="Resource_pix1v"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.89741, 0.55943, 0.02176)
+height = 6.0539
+width = 0.02692
+
+[sub_resource type="Resource" id="Resource_0cb8w"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Woodsman"
+weapon_class = &"rifle"
+index = 7
+ext = Vector3(7.8487, 1, 0.531)
+hull_volume = 2.26689
+metal_color = Color(0.34901962, 0.3372549, 0.30588236, 1)
+wood_color = Color(0.47843137, 0.32156864, 0.1882353, 1)
+socket_front = SubResource("Resource_3jdqs")
+socket_rear = SubResource("Resource_mu0at")
+socket_bottom = SubResource("Resource_uakb6")
+socket_top = SubResource("Resource_pix1v")
+mesh_path = "res://data/guns/meshes/part_07.res"
+signed_volume = 1.4731476037028035
+
+[sub_resource type="Resource" id="Resource_0dp7t"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Tube"
+weapon_class = &"launcher"
+index = 8
+ext = Vector3(3.4292, 1.051, 0.401)
+hull_volume = 0.62743
+fit_height = 0.83489
+fit_width = 0.28883
+muzzle_radius = 0.29842
+metal_color = Color(0.37254903, 0.39215687, 0.28235295, 1)
+wood_color = Color(0.24705882, 0.26666668, 0.21176471, 1)
+mesh_path = "res://data/guns/meshes/part_08.res"
+signed_volume = 0.31029325264110713
+
+[sub_resource type="Resource" id="Resource_2tfvb"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Tube"
+weapon_class = &"launcher"
+index = 9
+ext = Vector3(2.7073, 1.163, 0.6362)
+hull_volume = 0.98211
+fit_height = 0.65702
+fit_width = 0.35938
+metal_color = Color(0.37254903, 0.39215687, 0.28235295, 1)
+wood_color = Color(0.24705882, 0.26666668, 0.21176471, 1)
+mesh_path = "res://data/guns/meshes/part_09.res"
+signed_volume = 0.18864656819035494
+
+[sub_resource type="Resource" id="Resource_mi7wv"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.79805, -0.6414, 0.02473)
+height = 1.29168
+width = 0.0572
+
+[sub_resource type="Resource" id="Resource_jssm6"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.44389, -0.19093, 0.00192)
+height = 0.90093
+width = 0.28883
+
+[sub_resource type="Resource" id="Resource_40qy4"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.44389, -0.00448, 0.00153)
+height = 0.65702
+width = 0.35938
+
+[sub_resource type="Resource" id="Resource_1j2s4"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.11575, 0.3586, 0.02269)
+height = 2.65629
+width = 0.16245
+
+[sub_resource type="Resource" id="Resource_f2o5n"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Tube"
+weapon_class = &"launcher"
+index = 10
+ext = Vector3(2.8878, 1, 0.3972)
+hull_volume = 0.69748
+metal_color = Color(0.37254903, 0.39215687, 0.28235295, 1)
+wood_color = Color(0.24705882, 0.26666668, 0.21176471, 1)
+socket_front = SubResource("Resource_jssm6")
+socket_rear = SubResource("Resource_40qy4")
+socket_bottom = SubResource("Resource_mi7wv")
+socket_top = SubResource("Resource_1j2s4")
+mesh_path = "res://data/guns/meshes/part_10.res"
+signed_volume = 0.4040446729765487
+
+[sub_resource type="Resource" id="Resource_2y6pl"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Spitter"
+weapon_class = &"smg"
+index = 11
+ext = Vector3(2.2391, 0.7113, 0.3199)
+hull_volume = 0.28296
+fit_height = 0.6229
+fit_width = 0.31987
+muzzle_radius = 0.16669
+metal_color = Color(0.22745098, 0.23921569, 0.25882354, 1)
+wood_color = Color(0.18039216, 0.1882353, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_11.res"
+signed_volume = 0.20817256492280953
+
+[sub_resource type="Resource" id="Resource_jwmc6"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Spitter"
+weapon_class = &"smg"
+index = 12
+ext = Vector3(1.2495, 1.7445, 0.3292)
+hull_volume = 0.43604
+fit_height = 0.47563
+fit_width = 0.32925
+metal_color = Color(0.22745098, 0.23921569, 0.25882354, 1)
+wood_color = Color(0.18039216, 0.1882353, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_12.res"
+signed_volume = 0.24130822079435651
+
+[sub_resource type="Resource" id="Resource_s2mmy"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Spitter"
+weapon_class = &"smg"
+index = 13
+ext = Vector3(1.5522, 2.3997, 0.36)
+hull_volume = 0.82861
+fit_height = 1.45363
+fit_width = 0.36
+metal_color = Color(0.22745098, 0.23921569, 0.25882354, 1)
+wood_color = Color(0.18039216, 0.1882353, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_13.res"
+signed_volume = 0.7249033106362835
+
+[sub_resource type="Resource" id="Resource_p16ru"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.10351, -0.62237, 0)
+height = 1.47527
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_is0l5"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.92131, 0.01099, 0)
+height = 0.73327
+width = 0.32925
+
+[sub_resource type="Resource" id="Resource_4vr2v"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.92131, -0.05561, 0)
+height = 0.64562
+width = 0.32925
+
+[sub_resource type="Resource" id="Resource_mgnyc"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, 0.2672, 0)
+height = 1.84263
+width = 0.32925
+
+[sub_resource type="Resource" id="Resource_onga0"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Spitter"
+weapon_class = &"smg"
+index = 14
+ext = Vector3(1.8426, 1, 0.36)
+hull_volume = 0.56557
+metal_color = Color(0.22745098, 0.23921569, 0.25882354, 1)
+wood_color = Color(0.18039216, 0.1882353, 0.2, 1)
+socket_front = SubResource("Resource_is0l5")
+socket_rear = SubResource("Resource_4vr2v")
+socket_bottom = SubResource("Resource_p16ru")
+socket_top = SubResource("Resource_mgnyc")
+mesh_path = "res://data/guns/meshes/part_14.res"
+signed_volume = 0.4672316737211493
+
+[sub_resource type="Resource" id="Resource_5dxrn"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Pumper"
+weapon_class = &"shotgun"
+index = 15
+ext = Vector3(5.3946, 0.9499, 0.4581)
+hull_volume = 1.3527
+fit_height = 0.49836
+fit_width = 0.16469
+muzzle_radius = 0.34296
+metal_color = Color(0.3529412, 0.3137255, 0.28627452, 1)
+wood_color = Color(0.41960785, 0.26666668, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_15.res"
+signed_volume = 1.0008387756242882
+
+[sub_resource type="Resource" id="Resource_5sek4"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Pumper"
+weapon_class = &"shotgun"
+index = 16
+ext = Vector3(2.9542, 2.0776, 0.397)
+hull_volume = 1.34261
+fit_height = 0.52121
+fit_width = 0.27739
+metal_color = Color(0.3529412, 0.3137255, 0.28627452, 1)
+wood_color = Color(0.41960785, 0.26666668, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_16.res"
+signed_volume = 1.1842949839968544
+
+[sub_resource type="Resource" id="Resource_fvvcs"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Pumper"
+weapon_class = &"shotgun"
+index = 17
+ext = Vector3(1.9755, 0.4895, 0.2804)
+hull_volume = 0.10776
+fit_height = 1.97549
+fit_width = 0.28036
+metal_color = Color(0.3529412, 0.3137255, 0.28627452, 1)
+wood_color = Color(0.41960785, 0.26666668, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_17.res"
+signed_volume = 0.04768923588330409
+
+[sub_resource type="Resource" id="Resource_1kkvp"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Pumper"
+weapon_class = &"shotgun"
+index = 18
+ext = Vector3(3.5631, 0.4523, 0.3613)
+hull_volume = 0.31601
+fit_height = 3.56309
+fit_width = 0.36
+metal_color = Color(0.3529412, 0.3137255, 0.28627452, 1)
+wood_color = Color(0.41960785, 0.26666668, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_18.res"
+signed_volume = 0.28251699059607444
+
+[sub_resource type="Resource" id="Resource_lpjh4"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.46044, -0.21708, 0.00161)
+height = 3.57466
+width = 0.32425
+
+[sub_resource type="Resource" id="Resource_c4qk1"]
+script = ExtResource("2_3xhxo")
+position = Vector3(2.24777, 0.14574, 0.00161)
+height = 0.50163
+width = 0.16469
+
+[sub_resource type="Resource" id="Resource_2s1pj"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-2.24777, -0.25579, 0.0017)
+height = 0.69531
+width = 0.27739
+
+[sub_resource type="Resource" id="Resource_yr8v2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.43261, 0.39655, 0.00161)
+height = 3.63031
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_dpn21"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Pumper"
+weapon_class = &"shotgun"
+index = 19
+ext = Vector3(4.4955, 1, 0.36)
+hull_volume = 1.01592
+metal_color = Color(0.3529412, 0.3137255, 0.28627452, 1)
+wood_color = Color(0.41960785, 0.26666668, 0.13725491, 1)
+socket_front = SubResource("Resource_c4qk1")
+socket_rear = SubResource("Resource_2s1pj")
+socket_bottom = SubResource("Resource_lpjh4")
+socket_top = SubResource("Resource_yr8v2")
+mesh_path = "res://data/guns/meshes/part_19.res"
+signed_volume = 0.7695182158785201
+
+[sub_resource type="Resource" id="Resource_w0ryb"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 20
+ext = Vector3(3.0717, 0.8376, 0.36)
+hull_volume = 0.49899
+fit_height = 0.83609
+fit_width = 0.36
+muzzle_radius = 0.21777
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+mesh_path = "res://data/guns/meshes/part_20.res"
+signed_volume = 0.3444976895504321
+
+[sub_resource type="Resource" id="Resource_bhx2i"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 21
+ext = Vector3(2.0737, 1.1306, 0.1774)
+hull_volume = 0.24686
+fit_height = 0.45037
+fit_width = 0.17742
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+mesh_path = "res://data/guns/meshes/part_21.res"
+signed_volume = 0.24685376593485367
+
+[sub_resource type="Resource" id="Resource_snigm"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 22
+ext = Vector3(2.74, 1.4356, 0.1774)
+hull_volume = 0.45976
+fit_height = 1.93406
+fit_width = 0.17742
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+mesh_path = "res://data/guns/meshes/part_22.res"
+signed_volume = 0.23777375107900645
+
+[sub_resource type="Resource" id="Resource_s2qpc"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.28547, -0.60345, 0)
+height = 1.93406
+width = 0.17742
+
+[sub_resource type="Resource" id="Resource_r21vt"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.38244, -0.04733, 0)
+height = 0.88776
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_d1hl4"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.38244, -0.15244, 0)
+height = 0.45236
+width = 0.17742
+
+[sub_resource type="Resource" id="Resource_fpsox"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.18434, 0.39655, 0)
+height = 2.39619
+width = 0.17742
+
+[sub_resource type="Resource" id="Resource_ftobs"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Kalash"
+weapon_class = &"rifle"
+index = 23
+ext = Vector3(2.7649, 1, 0.36)
+hull_volume = 0.62069
+metal_color = Color(0.3019608, 0.2901961, 0.26666668, 1)
+wood_color = Color(0.5411765, 0.3529412, 0.16862746, 1)
+socket_front = SubResource("Resource_r21vt")
+socket_rear = SubResource("Resource_d1hl4")
+socket_bottom = SubResource("Resource_s2qpc")
+socket_top = SubResource("Resource_fpsox")
+mesh_path = "res://data/guns/meshes/part_23.res"
+signed_volume = 0.42460330615494973
+
+[sub_resource type="Resource" id="Resource_342mv"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Nineteen"
+weapon_class = &"pistol"
+index = 24
+ext = Vector3(1.7701, 0.7311, 0.2953)
+hull_volume = 0.33052
+fit_height = 0.73108
+fit_width = 0.29527
+muzzle_radius = 0.47022
+metal_color = Color(0.3882353, 0.39607844, 0.41568628, 1)
+wood_color = Color(0.3529412, 0.23921569, 0.14117648, 1)
+mesh_path = "res://data/guns/meshes/part_24.res"
+signed_volume = 0.26163011074550013
+
+[sub_resource type="Resource" id="Resource_r18kr"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Nineteen"
+weapon_class = &"pistol"
+index = 25
+ext = Vector3(0.9693, 2.4285, 0.36)
+hull_volume = 0.67979
+fit_height = 0.93536
+fit_width = 0.36
+metal_color = Color(0.3882353, 0.39607844, 0.41568628, 1)
+wood_color = Color(0.3529412, 0.23921569, 0.14117648, 1)
+mesh_path = "res://data/guns/meshes/part_25.res"
+signed_volume = 0.7713307487585249
+
+[sub_resource type="Resource" id="Resource_1srqn"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Nineteen"
+weapon_class = &"pistol"
+index = 26
+ext = Vector3(1.3819, 1.445, 0.36)
+hull_volume = 0.29672
+fit_height = 1.3819
+fit_width = 0.36
+metal_color = Color(0.3882353, 0.39607844, 0.41568628, 1)
+wood_color = Color(0.3529412, 0.23921569, 0.14117648, 1)
+mesh_path = "res://data/guns/meshes/part_26.res"
+signed_volume = 0.17388232465358064
+
+[sub_resource type="Resource" id="Resource_7o1hx"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.04657, -0.65456, 0)
+height = 1.3819
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_hijau"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.73752, -0.02136, 0)
+height = 0.73281
+width = 0.29527
+
+[sub_resource type="Resource" id="Resource_wa2n3"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.73752, -0.15507, 0)
+height = 0.99899
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_nbptj"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, 0.34544, 0)
+height = 1.47504
+width = 0.29527
+
+[sub_resource type="Resource" id="Resource_5dmu4"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Nineteen"
+weapon_class = &"pistol"
+index = 27
+ext = Vector3(1.475, 1, 0.36)
+hull_volume = 0.46008
+metal_color = Color(0.3882353, 0.39607844, 0.41568628, 1)
+wood_color = Color(0.3529412, 0.23921569, 0.14117648, 1)
+socket_front = SubResource("Resource_hijau")
+socket_rear = SubResource("Resource_wa2n3")
+socket_bottom = SubResource("Resource_7o1hx")
+socket_top = SubResource("Resource_nbptj")
+mesh_path = "res://data/guns/meshes/part_27.res"
+signed_volume = 0.3808411989974611
+
+[sub_resource type="Resource" id="Resource_vh60s"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Karabiner"
+weapon_class = &"sniper"
+index = 28
+ext = Vector3(8.711, 1.0041, 0.2942)
+hull_volume = 1.41485
+fit_height = 0.70563
+fit_width = 0.29422
+muzzle_radius = 0.20705
+metal_color = Color(0.24705882, 0.25882354, 0.2784314, 1)
+wood_color = Color(0.54509807, 0.3764706, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_28.res"
+signed_volume = 1.3051468758688618
+
+[sub_resource type="Resource" id="Resource_2vhix"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Karabiner"
+weapon_class = &"sniper"
+index = 29
+ext = Vector3(4.7703, 2.5615, 0.3745)
+hull_volume = 3.1125
+fit_height = 0.15675
+fit_width = 0.35775
+metal_color = Color(0.24705882, 0.25882354, 0.2784314, 1)
+wood_color = Color(0.54509807, 0.3764706, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_29.res"
+signed_volume = 2.4269883420007923
+
+[sub_resource type="Resource" id="Resource_etlwd"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Karabiner"
+weapon_class = &"sniper"
+index = 30
+ext = Vector3(6.018, 0.964, 0.4062)
+hull_volume = 1.19057
+fit_height = 6.018
+fit_width = 0.40616
+metal_color = Color(0.24705882, 0.25882354, 0.2784314, 1)
+wood_color = Color(0.54509807, 0.3764706, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_30.res"
+signed_volume = 0.4333863604382107
+
+[sub_resource type="Resource" id="Resource_pd8s6"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Karabiner"
+weapon_class = &"sniper"
+index = 31
+ext = Vector3(6.1161, 0.275, 0.4062)
+hull_volume = 0.34079
+fit_height = 6.11606
+fit_width = 0.40616
+metal_color = Color(0.24705882, 0.25882354, 0.2784314, 1)
+wood_color = Color(0.54509807, 0.3764706, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_31.res"
+signed_volume = 0.1806920271089177
+
+[sub_resource type="Resource" id="Resource_qff4w"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, -0.60345, 0.07799)
+height = 7.25914
+width = 0.40616
+
+[sub_resource type="Resource" id="Resource_8b6ku"]
+script = ExtResource("2_3xhxo")
+position = Vector3(3.62957, -0.0821, 0.07799)
+height = 0.95731
+width = 0.29422
+
+[sub_resource type="Resource" id="Resource_nu8ci"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-3.62957, -0.50478, 0.07728)
+height = 0.19733
+width = 0.35918
+
+[sub_resource type="Resource" id="Resource_lcwep"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.57154, 0.39655, 0.07799)
+height = 6.11606
+width = 0.40616
+
+[sub_resource type="Resource" id="Resource_7uhi4"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Karabiner"
+weapon_class = &"sniper"
+index = 32
+ext = Vector3(7.2591, 1, 0.4062)
+hull_volume = 2.40355
+metal_color = Color(0.24705882, 0.25882354, 0.2784314, 1)
+wood_color = Color(0.54509807, 0.3764706, 0.2, 1)
+socket_front = SubResource("Resource_8b6ku")
+socket_rear = SubResource("Resource_nu8ci")
+socket_bottom = SubResource("Resource_qff4w")
+socket_top = SubResource("Resource_lcwep")
+mesh_path = "res://data/guns/meshes/part_32.res"
+signed_volume = 2.2507906807447093
+
+[sub_resource type="Resource" id="Resource_pv0mi"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Blackrifle"
+weapon_class = &"rifle"
+index = 33
+ext = Vector3(3.2016, 0.7525, 0.3294)
+hull_volume = 0.32525
+fit_height = 0.56099
+fit_width = 0.32939
+muzzle_radius = 0.27712
+metal_color = Color(0.18431373, 0.19215687, 0.21176471, 1)
+wood_color = Color(0.14901961, 0.15686275, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_33.res"
+signed_volume = 0.20211388764562344
+
+[sub_resource type="Resource" id="Resource_thf3q"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Blackrifle"
+weapon_class = &"rifle"
+index = 34
+ext = Vector3(1.7866, 0.9713, 0.2358)
+hull_volume = 0.20993
+fit_height = 0.46896
+fit_width = 0.18697
+metal_color = Color(0.18431373, 0.19215687, 0.21176471, 1)
+wood_color = Color(0.14901961, 0.15686275, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_34.res"
+signed_volume = 0.20486483336814368
+
+[sub_resource type="Resource" id="Resource_ghjnu"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Blackrifle"
+weapon_class = &"rifle"
+index = 35
+ext = Vector3(0.9939, 0.0843, 0.1189)
+hull_volume = 0.00532
+fit_height = 0.99391
+fit_width = 0.1189
+metal_color = Color(0.18431373, 0.19215687, 0.21176471, 1)
+wood_color = Color(0.14901961, 0.15686275, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_35.res"
+signed_volume = 0.0024783293439819922
+
+[sub_resource type="Resource" id="Resource_yaopa"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.2764, -0.60345, -0.0015)
+height = 1.23197
+width = 0.12136
+
+[sub_resource type="Resource" id="Resource_arhwh"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.31733, -0.12722, 0)
+height = 0.56099
+width = 0.32939
+
+[sub_resource type="Resource" id="Resource_3jlf5"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.31733, -0.23119, -0.00027)
+height = 0.46896
+width = 0.18697
+
+[sub_resource type="Resource" id="Resource_cdww2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.2597, 0.39655, -0.00032)
+height = 0.99391
+width = 0.1189
+
+[sub_resource type="Resource" id="Resource_dlrja"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Blackrifle"
+weapon_class = &"rifle"
+index = 36
+ext = Vector3(2.6347, 1, 0.36)
+hull_volume = 0.52722
+metal_color = Color(0.18431373, 0.19215687, 0.21176471, 1)
+wood_color = Color(0.14901961, 0.15686275, 0.17254902, 1)
+socket_front = SubResource("Resource_arhwh")
+socket_rear = SubResource("Resource_3jlf5")
+socket_bottom = SubResource("Resource_yaopa")
+socket_top = SubResource("Resource_cdww2")
+mesh_path = "res://data/guns/meshes/part_36.res"
+signed_volume = 0.3140796973045023
+
+[sub_resource type="Resource" id="Resource_7ulh2"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Handcannon"
+weapon_class = &"revolver"
+index = 37
+ext = Vector3(1.4293, 1.0524, 0.2003)
+hull_volume = 0.20869
+fit_height = 0.71818
+fit_width = 0.20026
+muzzle_radius = 0.11805
+metal_color = Color(0.43137255, 0.44313726, 0.4627451, 1)
+wood_color = Color(0.2901961, 0.19215687, 0.13333334, 1)
+mesh_path = "res://data/guns/meshes/part_37.res"
+signed_volume = 0.1601823133826959
+
+[sub_resource type="Resource" id="Resource_l817r"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Handcannon"
+weapon_class = &"revolver"
+index = 38
+ext = Vector3(0.7827, 1.7177, 0.2261)
+hull_volume = 0.20693
+fit_height = 0.44652
+fit_width = 0.22612
+metal_color = Color(0.43137255, 0.44313726, 0.4627451, 1)
+wood_color = Color(0.2901961, 0.19215687, 0.13333334, 1)
+mesh_path = "res://data/guns/meshes/part_38.res"
+signed_volume = 0.1753646733110751
+
+[sub_resource type="Resource" id="Resource_47eeu"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Handcannon"
+weapon_class = &"revolver"
+index = 39
+ext = Vector3(1.1911, 0.8766, 0.2261)
+hull_volume = 0.13429
+fit_height = 1.19109
+fit_width = 0.22612
+metal_color = Color(0.43137255, 0.44313726, 0.4627451, 1)
+wood_color = Color(0.2901961, 0.19215687, 0.13333334, 1)
+mesh_path = "res://data/guns/meshes/part_39.res"
+signed_volume = 0.049790933841753336
+
+[sub_resource type="Resource" id="Resource_elx70"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, -0.63849, -0.00102)
+height = 1.19109
+width = 0.22018
+
+[sub_resource type="Resource" id="Resource_xudar"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.59554, -0.20808, 0)
+height = 0.86082
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_0nrmo"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.59554, -0.27623, -0.00102)
+height = 0.72452
+width = 0.22018
+
+[sub_resource type="Resource" id="Resource_mrj7t"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.13029, 0.36151, -0.00188)
+height = 0.38478
+width = 0.11329
+
+[sub_resource type="Resource" id="Resource_bnarl"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Handcannon"
+weapon_class = &"revolver"
+index = 40
+ext = Vector3(1.1911, 1, 0.36)
+hull_volume = 0.27142
+metal_color = Color(0.43137255, 0.44313726, 0.4627451, 1)
+wood_color = Color(0.2901961, 0.19215687, 0.13333334, 1)
+socket_front = SubResource("Resource_xudar")
+socket_rear = SubResource("Resource_0nrmo")
+socket_bottom = SubResource("Resource_elx70")
+socket_top = SubResource("Resource_mrj7t")
+mesh_path = "res://data/guns/meshes/part_40.res"
+signed_volume = 0.016778745614298412
+
+[sub_resource type="Resource" id="Resource_k07ng"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Broomstick"
+weapon_class = &"pistol"
+index = 41
+ext = Vector3(4.1038, 0.666, 0.3172)
+hull_volume = 0.47089
+fit_height = 0.66596
+fit_width = 0.3172
+muzzle_radius = 0.45135
+metal_color = Color(0.35686275, 0.28235295, 0.21960784, 1)
+wood_color = Color(0.47843137, 0.32941177, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_41.res"
+signed_volume = 0.26870797909517324
+
+[sub_resource type="Resource" id="Resource_xqam0"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Broomstick"
+weapon_class = &"pistol"
+index = 42
+ext = Vector3(2.2473, 4.8154, 0.5423)
+hull_volume = 3.44109
+fit_height = 0.83085
+fit_width = 0.54233
+metal_color = Color(0.35686275, 0.28235295, 0.21960784, 1)
+wood_color = Color(0.47843137, 0.32941177, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_42.res"
+signed_volume = 2.34726393125311
+
+[sub_resource type="Resource" id="Resource_o4toc"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Broomstick"
+weapon_class = &"pistol"
+index = 43
+ext = Vector3(2.9172, 1.8091, 0.4743)
+hull_volume = 2.11227
+fit_height = 2.91721
+fit_width = 0.47427
+metal_color = Color(0.35686275, 0.28235295, 0.21960784, 1)
+wood_color = Color(0.47843137, 0.32941177, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_43.res"
+signed_volume = 1.5054293863757946
+
+[sub_resource type="Resource" id="Resource_5vysb"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.2513, -0.63246, 0)
+height = 2.91721
+width = 0.47427
+
+[sub_resource type="Resource" id="Resource_2jyd0"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.7099, -0.13573, -0.00081)
+height = 0.66596
+width = 0.3172
+
+[sub_resource type="Resource" id="Resource_yhard"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.7099, -0.15648, 0)
+height = 0.95196
+width = 0.54233
+
+[sub_resource type="Resource" id="Resource_npvlo"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.06209, 0.36754, -0.00081)
+height = 1.29563
+width = 0.42206
+
+[sub_resource type="Resource" id="Resource_pdbgw"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Broomstick"
+weapon_class = &"pistol"
+index = 44
+ext = Vector3(3.4198, 1, 0.5588)
+hull_volume = 1.46758
+metal_color = Color(0.35686275, 0.28235295, 0.21960784, 1)
+wood_color = Color(0.47843137, 0.32941177, 0.2, 1)
+socket_front = SubResource("Resource_2jyd0")
+socket_rear = SubResource("Resource_yhard")
+socket_bottom = SubResource("Resource_5vysb")
+socket_top = SubResource("Resource_npvlo")
+mesh_path = "res://data/guns/meshes/part_44.res"
+signed_volume = 1.0365028400531933
+
+[sub_resource type="Resource" id="Resource_e86ms"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Chattergun"
+weapon_class = &"lmg"
+index = 45
+ext = Vector3(2.3933, 0.6535, 0.5725)
+hull_volume = 0.51804
+fit_height = 0.65353
+fit_width = 0.35944
+muzzle_radius = 0.3806
+metal_color = Color(0.2901961, 0.3019608, 0.32156864, 1)
+wood_color = Color(0.22745098, 0.23529412, 0.2509804, 1)
+mesh_path = "res://data/guns/meshes/part_45.res"
+signed_volume = 0.20128245300535733
+
+[sub_resource type="Resource" id="Resource_5lo6l"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Chattergun"
+weapon_class = &"lmg"
+index = 46
+ext = Vector3(1.4068, 1.7029, 0.6788)
+hull_volume = 0.63955
+fit_height = 0.37288
+fit_width = 0.67884
+metal_color = Color(0.2901961, 0.3019608, 0.32156864, 1)
+wood_color = Color(0.22745098, 0.23529412, 0.2509804, 1)
+mesh_path = "res://data/guns/meshes/part_46.res"
+signed_volume = 0.2438269048504272
+
+[sub_resource type="Resource" id="Resource_u7g8g"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Chattergun"
+weapon_class = &"lmg"
+index = 47
+ext = Vector3(0.4772, 1.1886, 0.1665)
+hull_volume = 0.05352
+fit_height = 0.47724
+fit_width = 0.10385
+metal_color = Color(0.2901961, 0.3019608, 0.32156864, 1)
+wood_color = Color(0.22745098, 0.23529412, 0.2509804, 1)
+mesh_path = "res://data/guns/meshes/part_47.res"
+signed_volume = 0.04925070094630731
+
+[sub_resource type="Resource" id="Resource_ouu3t"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Chattergun"
+weapon_class = &"lmg"
+index = 48
+ext = Vector3(0.6864, 0.4253, 0.4839)
+hull_volume = 0.07617
+fit_height = 0.68642
+fit_width = 0.48388
+metal_color = Color(0.2901961, 0.3019608, 0.32156864, 1)
+wood_color = Color(0.22745098, 0.23529412, 0.2509804, 1)
+mesh_path = "res://data/guns/meshes/part_48.res"
+signed_volume = 0.019712564002999734
+
+[sub_resource type="Resource" id="Resource_n15rr"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.69351, -0.60345, -0.16978)
+height = 0.47724
+width = 0.09276
+
+[sub_resource type="Resource" id="Resource_1c1cq"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.94912, -0.038, 0.09181)
+height = 0.65353
+width = 0.35944
+
+[sub_resource type="Resource" id="Resource_qktyj"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.94912, -0.10345, 0.13014)
+height = 1.0
+width = 0.71865
+
+[sub_resource type="Resource" id="Resource_ktud5"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.60591, 0.39655, 0.12924)
+height = 0.68642
+width = 0.52246
+
+[sub_resource type="Resource" id="Resource_gblbr"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Chattergun"
+weapon_class = &"lmg"
+index = 49
+ext = Vector3(1.8982, 1, 0.9789)
+hull_volume = 0.96853
+metal_color = Color(0.2901961, 0.3019608, 0.32156864, 1)
+wood_color = Color(0.22745098, 0.23529412, 0.2509804, 1)
+socket_front = SubResource("Resource_1c1cq")
+socket_rear = SubResource("Resource_qktyj")
+socket_bottom = SubResource("Resource_n15rr")
+socket_top = SubResource("Resource_ktud5")
+mesh_path = "res://data/guns/meshes/part_49.res"
+signed_volume = 0.4197139370622457
+
+[sub_resource type="Resource" id="Resource_ne3l7"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Sidearm"
+weapon_class = &"pistol"
+index = 50
+ext = Vector3(2.8291, 2.3567, 0.5284)
+hull_volume = 2.32588
+fit_height = 0.96795
+fit_width = 0.52835
+muzzle_radius = 0.70129
+metal_color = Color(0.2627451, 0.27450982, 0.2901961, 1)
+wood_color = Color(0.2, 0.20784314, 0.22745098, 1)
+mesh_path = "res://data/guns/meshes/part_50.res"
+signed_volume = 1.7979511634742569
+
+[sub_resource type="Resource" id="Resource_awu2j"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Sidearm"
+weapon_class = &"pistol"
+index = 51
+ext = Vector3(1.5492, 4.6004, 0.5727)
+hull_volume = 3.54192
+fit_height = 0.87296
+fit_width = 0.5727
+metal_color = Color(0.2627451, 0.27450982, 0.2901961, 1)
+wood_color = Color(0.2, 0.20784314, 0.22745098, 1)
+mesh_path = "res://data/guns/meshes/part_51.res"
+signed_volume = 3.4637333364225924
+
+[sub_resource type="Resource" id="Resource_v80v8"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Sidearm"
+weapon_class = &"pistol"
+index = 52
+ext = Vector3(2.3575, 3.6099, 0.5556)
+hull_volume = 3.07345
+fit_height = 2.35754
+fit_width = 0.52835
+metal_color = Color(0.2627451, 0.27450982, 0.2901961, 1)
+wood_color = Color(0.2, 0.20784314, 0.22745098, 1)
+mesh_path = "res://data/guns/meshes/part_52.res"
+signed_volume = 1.9008415979284716
+
+[sub_resource type="Resource" id="Resource_r8x8s"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, -0.7223, 0)
+height = 2.35754
+width = 0.52835
+
+[sub_resource type="Resource" id="Resource_etlmx"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.17877, -0.2223, 0)
+height = 1.0
+width = 0.52835
+
+[sub_resource type="Resource" id="Resource_58l6t"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.17877, -0.22596, 0)
+height = 0.99268
+width = 0.5727
+
+[sub_resource type="Resource" id="Resource_txtl6"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, 0.2777, -0.00772)
+height = 2.35754
+width = 0.42551
+
+[sub_resource type="Resource" id="Resource_q71ui"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Sidearm"
+weapon_class = &"pistol"
+index = 53
+ext = Vector3(2.3575, 1, 0.5727)
+hull_volume = 1.24978
+metal_color = Color(0.2627451, 0.27450982, 0.2901961, 1)
+wood_color = Color(0.2, 0.20784314, 0.22745098, 1)
+socket_front = SubResource("Resource_etlmx")
+socket_rear = SubResource("Resource_58l6t")
+socket_bottom = SubResource("Resource_r8x8s")
+socket_top = SubResource("Resource_txtl6")
+mesh_path = "res://data/guns/meshes/part_53.res"
+signed_volume = 1.1601191945325506
+
+[sub_resource type="Resource" id="Resource_ajbcy"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Screamer"
+weapon_class = &"launcher"
+index = 54
+ext = Vector3(4.5002, 0.6897, 0.3285)
+hull_volume = 0.48397
+fit_height = 0.3529
+fit_width = 0.20408
+muzzle_radius = 0.21338
+metal_color = Color(0.41568628, 0.39607844, 0.26666668, 1)
+wood_color = Color(0.42745098, 0.29411766, 0.15686275, 1)
+mesh_path = "res://data/guns/meshes/part_54.res"
+signed_volume = 0.21485045078975418
+
+[sub_resource type="Resource" id="Resource_gim7d"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Screamer"
+weapon_class = &"launcher"
+index = 55
+ext = Vector3(4.2859, 1.0419, 0.6025)
+hull_volume = 1.25131
+fit_height = 0.63552
+fit_width = 0.36752
+metal_color = Color(0.41568628, 0.39607844, 0.26666668, 1)
+wood_color = Color(0.42745098, 0.29411766, 0.15686275, 1)
+mesh_path = "res://data/guns/meshes/part_55.res"
+signed_volume = 0.4748054326046258
+
+[sub_resource type="Resource" id="Resource_qjtyh"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Screamer"
+weapon_class = &"launcher"
+index = 56
+ext = Vector3(1.5458, 0.714, 0.2353)
+hull_volume = 0.12341
+fit_height = 1.54576
+fit_width = 0.23529
+metal_color = Color(0.41568628, 0.39607844, 0.26666668, 1)
+wood_color = Color(0.42745098, 0.29411766, 0.15686275, 1)
+mesh_path = "res://data/guns/meshes/part_56.res"
+signed_volume = 0.039231037381190006
+
+[sub_resource type="Resource" id="Resource_v2h4y"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Screamer"
+weapon_class = &"launcher"
+index = 57
+ext = Vector3(0.9546, 0.4521, 0.0888)
+hull_volume = 0.0232
+fit_height = 0.95464
+fit_width = 0.08885
+metal_color = Color(0.41568628, 0.39607844, 0.26666668, 1)
+wood_color = Color(0.42745098, 0.29411766, 0.15686275, 1)
+mesh_path = "res://data/guns/meshes/part_57.res"
+signed_volume = 0.0022348210307730674
+
+[sub_resource type="Resource" id="Resource_m6qdn"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.19144, -0.60345, 0.06755)
+height = 1.54576
+width = 0.23529
+
+[sub_resource type="Resource" id="Resource_kwsip"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.96432, -0.19255, 0)
+height = 0.8218
+width = 0.20408
+
+[sub_resource type="Resource" id="Resource_rvdlh"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.96432, 0.05682, 0)
+height = 0.63552
+width = 0.36752
+
+[sub_resource type="Resource" id="Resource_kiy83"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.38126, 0.39655, 0.07418)
+height = 1.16612
+width = 0.14836
+
+[sub_resource type="Resource" id="Resource_u6ure"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Screamer"
+weapon_class = &"launcher"
+index = 58
+ext = Vector3(1.9286, 1, 0.369)
+hull_volume = 0.43618
+metal_color = Color(0.41568628, 0.39607844, 0.26666668, 1)
+wood_color = Color(0.42745098, 0.29411766, 0.15686275, 1)
+socket_front = SubResource("Resource_kwsip")
+socket_rear = SubResource("Resource_rvdlh")
+socket_bottom = SubResource("Resource_m6qdn")
+socket_top = SubResource("Resource_kiy83")
+mesh_path = "res://data/guns/meshes/part_58.res"
+signed_volume = 0.2553543641855261
+
+[sub_resource type="Resource" id="Resource_tnt1m"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 59
+ext = Vector3(3.9087, 1.0814, 0.36)
+hull_volume = 0.74927
+fit_height = 0.87206
+fit_width = 0.36
+muzzle_radius = 0.3825
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_59.res"
+signed_volume = 0.1434792635767419
+
+[sub_resource type="Resource" id="Resource_5p3rd"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 60
+ext = Vector3(2.1405, 1.1794, 0.2871)
+hull_volume = 0.65658
+fit_height = 0.26803
+fit_width = 0.28713
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_60.res"
+signed_volume = 0.17943042211724483
+
+[sub_resource type="Resource" id="Resource_k6tp6"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 61
+ext = Vector3(2.0347, 0.6182, 0.3153)
+hull_volume = 0.16774
+fit_height = 1.86284
+fit_width = 0.31528
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_61.res"
+signed_volume = 0.043195656427845584
+
+[sub_resource type="Resource" id="Resource_pj21o"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 62
+ext = Vector3(3.228, 0.2039, 0.36)
+hull_volume = 0.13641
+fit_height = 3.22804
+fit_width = 0.36
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_62.res"
+signed_volume = 0.036606910417106064
+
+[sub_resource type="Resource" id="Resource_th4sn"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.52535, -0.60345, 0.02415)
+height = 1.86284
+width = 0.31528
+
+[sub_resource type="Resource" id="Resource_tto67"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.62862, -0.04221, 0.02415)
+height = 0.87752
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_s1aeo"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.62862, -0.04395, 0.02415)
+height = 0.88101
+width = 0.2968
+
+[sub_resource type="Resource" id="Resource_yc1hk"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.0146, 0.39655, 0.02415)
+height = 3.22804
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_f46qr"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 63
+ext = Vector3(3.2572, 1, 0.36)
+hull_volume = 0.99244
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+socket_front = SubResource("Resource_tto67")
+socket_rear = SubResource("Resource_s1aeo")
+socket_bottom = SubResource("Resource_th4sn")
+socket_top = SubResource("Resource_yc1hk")
+mesh_path = "res://data/guns/meshes/part_63.res"
+signed_volume = 0.44672822836696474
+
+[sub_resource type="Resource" id="Resource_ttoml"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Sturmgewehr"
+weapon_class = &"rifle"
+index = 64
+ext = Vector3(4.3095, 1.0446, 0.36)
+hull_volume = 1.00268
+fit_height = 0.74161
+fit_width = 0.36
+muzzle_radius = 0.21239
+metal_color = Color(0.3529412, 0.29411766, 0.23529412, 1)
+wood_color = Color(0.43137255, 0.29803923, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_64.res"
+signed_volume = 0.6116923461934979
+
+[sub_resource type="Resource" id="Resource_i5sdb"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Sturmgewehr"
+weapon_class = &"rifle"
+index = 65
+ext = Vector3(5.5237, 2.4295, 0.4898)
+hull_volume = 3.9957
+fit_height = 0.9465
+fit_width = 0.36
+metal_color = Color(0.3529412, 0.29411766, 0.23529412, 1)
+wood_color = Color(0.43137255, 0.29803923, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_65.res"
+signed_volume = 2.3801219242820175
+
+[sub_resource type="Resource" id="Resource_tvtxd"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Sturmgewehr"
+weapon_class = &"rifle"
+index = 66
+ext = Vector3(2.1214, 4.2264, 0.3066)
+hull_volume = 1.42825
+fit_height = 0.95539
+fit_width = 0.3066
+metal_color = Color(0.3529412, 0.29411766, 0.23529412, 1)
+wood_color = Color(0.43137255, 0.29803923, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_66.res"
+signed_volume = 1.2329340353656637
+
+[sub_resource type="Resource" id="Resource_pebu4"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Sturmgewehr"
+weapon_class = &"rifle"
+index = 67
+ext = Vector3(0.7825, 0.2929, 0.2517)
+hull_volume = 0.05768
+fit_height = 0.78252
+fit_width = 0.25171
+metal_color = Color(0.3529412, 0.29411766, 0.23529412, 1)
+wood_color = Color(0.43137255, 0.29803923, 0.17254902, 1)
+mesh_path = "res://data/guns/meshes/part_67.res"
+signed_volume = 0.04807655893576642
+
+[sub_resource type="Resource" id="Resource_pk7l5"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.60155, -0.60345, 0)
+height = 0.95539
+width = 0.3066
+
+[sub_resource type="Resource" id="Resource_w56pq"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.07925, -0.02299, 0)
+height = 0.74161
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_hjw0i"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.07925, -0.12782, 0)
+height = 0.95126
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_24pw2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, 0.39655, 0)
+height = 2.1585
+width = 0.25171
+
+[sub_resource type="Resource" id="Resource_kbeqm"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Sturmgewehr"
+weapon_class = &"rifle"
+index = 68
+ext = Vector3(2.1585, 1, 0.36)
+hull_volume = 0.66626
+metal_color = Color(0.3529412, 0.29411766, 0.23529412, 1)
+wood_color = Color(0.43137255, 0.29803923, 0.17254902, 1)
+socket_front = SubResource("Resource_w56pq")
+socket_rear = SubResource("Resource_hjw0i")
+socket_bottom = SubResource("Resource_pk7l5")
+socket_top = SubResource("Resource_24pw2")
+mesh_path = "res://data/guns/meshes/part_68.res"
+signed_volume = 0.5848820706899763
+
+[sub_resource type="Resource" id="Resource_7x1wo"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Serpent"
+weapon_class = &"revolver"
+index = 69
+ext = Vector3(6.519, 1.7337, 0.5072)
+hull_volume = 4.35035
+fit_height = 0.64742
+fit_width = 0.43704
+muzzle_radius = 0.46813
+metal_color = Color(0.41568628, 0.42745098, 0.4509804, 1)
+wood_color = Color(0.3019608, 0.2, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_69.res"
+signed_volume = 2.7198638158879476
+
+[sub_resource type="Resource" id="Resource_0ji6a"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Serpent"
+weapon_class = &"revolver"
+index = 70
+ext = Vector3(3.5699, 5.5403, 0.6263)
+hull_volume = 7.75638
+fit_width = 0.50719
+metal_color = Color(0.41568628, 0.42745098, 0.4509804, 1)
+wood_color = Color(0.3019608, 0.2, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_70.res"
+signed_volume = 7.3726639560093945
+
+[sub_resource type="Resource" id="Resource_y5vwr"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Serpent"
+weapon_class = &"revolver"
+index = 71
+ext = Vector3(4.8275, 3.0005, 1.0334)
+hull_volume = 8.79208
+fit_height = 4.82753
+fit_width = 1.03339
+metal_color = Color(0.41568628, 0.42745098, 0.4509804, 1)
+wood_color = Color(0.3019608, 0.2, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_71.res"
+signed_volume = 5.001422312653934
+
+[sub_resource type="Resource" id="Resource_ep3g7"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Serpent"
+weapon_class = &"revolver"
+index = 72
+ext = Vector3(4.4472, 0.6944, 0.5072)
+hull_volume = 1.29468
+fit_height = 4.44725
+fit_width = 0.50719
+metal_color = Color(0.41568628, 0.42745098, 0.4509804, 1)
+wood_color = Color(0.3019608, 0.2, 0.13725491, 1)
+mesh_path = "res://data/guns/meshes/part_72.res"
+signed_volume = 1.0836281960819225
+
+[sub_resource type="Resource" id="Resource_f2ic8"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.3025, -0.60345, 0)
+height = 4.82753
+width = 1.0522
+
+[sub_resource type="Resource" id="Resource_mdcy2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(2.71626, -0.00041, 0)
+height = 0.79392
+width = 0.43704
+
+[sub_resource type="Resource" id="Resource_hfnky"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-2.71626, -0.578, 0)
+height = 0.05089
+width = 0.50719
+
+[sub_resource type="Resource" id="Resource_dmov2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.49264, 0.39655, 0)
+height = 4.44725
+width = 0.50719
+
+[sub_resource type="Resource" id="Resource_g5f6t"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Serpent"
+weapon_class = &"revolver"
+index = 73
+ext = Vector3(5.4325, 1, 1.0522)
+hull_volume = 3.59214
+metal_color = Color(0.41568628, 0.42745098, 0.4509804, 1)
+wood_color = Color(0.3019608, 0.2, 0.13725491, 1)
+socket_front = SubResource("Resource_mdcy2")
+socket_rear = SubResource("Resource_hfnky")
+socket_bottom = SubResource("Resource_f2ic8")
+socket_top = SubResource("Resource_dmov2")
+mesh_path = "res://data/guns/meshes/part_73.res"
+signed_volume = 2.763498457159244
+
+[sub_resource type="Resource" id="Resource_egypx"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Breacher"
+weapon_class = &"shotgun"
+index = 74
+ext = Vector3(3.0985, 0.7814, 0.2454)
+hull_volume = 0.37133
+fit_height = 0.78144
+fit_width = 0.24535
+muzzle_radius = 0.27203
+metal_color = Color(0.2901961, 0.29803923, 0.3137255, 1)
+wood_color = Color(0.36078432, 0.24705882, 0.14901961, 1)
+mesh_path = "res://data/guns/meshes/part_74.res"
+signed_volume = 0.1570670101015518
+
+[sub_resource type="Resource" id="Resource_nhtv3"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Breacher"
+weapon_class = &"shotgun"
+index = 75
+ext = Vector3(0.4841, 0.9149, 0.36)
+hull_volume = 0.09789
+fit_height = 0.84747
+fit_width = 0.36
+metal_color = Color(0.2901961, 0.29803923, 0.3137255, 1)
+wood_color = Color(0.36078432, 0.24705882, 0.14901961, 1)
+mesh_path = "res://data/guns/meshes/part_75.res"
+signed_volume = 0.09800198578007743
+
+[sub_resource type="Resource" id="Resource_ji8ic"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Breacher"
+weapon_class = &"shotgun"
+index = 76
+ext = Vector3(1.903, 1.1382, 0.3184)
+hull_volume = 0.36332
+fit_height = 1.90302
+fit_width = 0.3184
+metal_color = Color(0.2901961, 0.29803923, 0.3137255, 1)
+wood_color = Color(0.36078432, 0.24705882, 0.14901961, 1)
+mesh_path = "res://data/guns/meshes/part_76.res"
+signed_volume = 0.23917154638669066
+
+[sub_resource type="Resource" id="Resource_l0cor"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.34579, -0.60345, 0)
+height = 1.10312
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_sef0n"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.89735, -0.02154, 0)
+height = 0.73274
+width = 0.24535
+
+[sub_resource type="Resource" id="Resource_joc6v"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.89735, -0.17788, 0)
+height = 0.85113
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_ckhi4"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.50025, 0.39655, 0)
+height = 2.79421
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_dtvqe"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Breacher"
+weapon_class = &"shotgun"
+index = 77
+ext = Vector3(3.7947, 1, 0.36)
+hull_volume = 1.10722
+metal_color = Color(0.2901961, 0.29803923, 0.3137255, 1)
+wood_color = Color(0.36078432, 0.24705882, 0.14901961, 1)
+socket_front = SubResource("Resource_sef0n")
+socket_rear = SubResource("Resource_joc6v")
+socket_bottom = SubResource("Resource_l0cor")
+socket_top = SubResource("Resource_ckhi4")
+mesh_path = "res://data/guns/meshes/part_77.res"
+signed_volume = 0.9198486336208588
+
+[sub_resource type="Resource" id="Resource_8e34g"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Roomsweeper"
+weapon_class = &"smg"
+index = 78
+ext = Vector3(1.6854, 0.9095, 0.36)
+hull_volume = 0.3317
+fit_height = 0.53632
+fit_width = 0.36
+muzzle_radius = 0.15671
+metal_color = Color(0.20784314, 0.21568628, 0.23137255, 1)
+wood_color = Color(0.16862746, 0.1764706, 0.1882353, 1)
+mesh_path = "res://data/guns/meshes/part_78.res"
+signed_volume = 0.2195401939219058
+
+[sub_resource type="Resource" id="Resource_02gcm"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Roomsweeper"
+weapon_class = &"smg"
+index = 79
+ext = Vector3(0.9075, 0.9574, 0.3243)
+hull_volume = 0.15128
+fit_height = 0.57094
+fit_width = 0.32433
+metal_color = Color(0.20784314, 0.21568628, 0.23137255, 1)
+wood_color = Color(0.16862746, 0.1764706, 0.1882353, 1)
+mesh_path = "res://data/guns/meshes/part_79.res"
+signed_volume = 0.06638525291782571
+
+[sub_resource type="Resource" id="Resource_xgg4j"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Roomsweeper"
+weapon_class = &"smg"
+index = 80
+ext = Vector3(2.0053, 0.8465, 0.1868)
+hull_volume = 0.16976
+fit_height = 1.5076
+fit_width = 0.18682
+metal_color = Color(0.20784314, 0.21568628, 0.23137255, 1)
+wood_color = Color(0.16862746, 0.1764706, 0.1882353, 1)
+mesh_path = "res://data/guns/meshes/part_80.res"
+signed_volume = 0.0592198083210557
+
+[sub_resource type="Resource" id="Resource_6ftkp"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.05974, -0.7958, 0)
+height = 1.5076
+width = 0.18682
+
+[sub_resource type="Resource" id="Resource_o76mr"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.00833, -0.08994, 0)
+height = 0.53632
+width = 0.36
+
+[sub_resource type="Resource" id="Resource_v1qd5"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.00833, -0.08127, 0)
+height = 0.57094
+width = 0.32433
+
+[sub_resource type="Resource" id="Resource_4e6ir"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, 0.19994, 0)
+height = 2.01667
+width = 0.22645
+
+[sub_resource type="Resource" id="Resource_51u7u"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Roomsweeper"
+weapon_class = &"smg"
+index = 81
+ext = Vector3(2.0167, 1, 0.36)
+hull_volume = 0.54125
+metal_color = Color(0.20784314, 0.21568628, 0.23137255, 1)
+wood_color = Color(0.16862746, 0.1764706, 0.1882353, 1)
+socket_front = SubResource("Resource_o76mr")
+socket_rear = SubResource("Resource_v1qd5")
+socket_bottom = SubResource("Resource_6ftkp")
+socket_top = SubResource("Resource_4e6ir")
+mesh_path = "res://data/guns/meshes/part_81.res"
+signed_volume = 0.40672199159204564
+
+[sub_resource type="Resource" id="Resource_o7fhj"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Stubby"
+weapon_class = &"smg"
+index = 82
+ext = Vector3(2.6039, 0.6219, 0.3496)
+hull_volume = 0.36503
+fit_height = 0.59647
+fit_width = 0.34961
+muzzle_radius = 0.1488
+metal_color = Color(0.36078432, 0.34509805, 0.30980393, 1)
+wood_color = Color(0.18431373, 0.19215687, 0.20392157, 1)
+mesh_path = "res://data/guns/meshes/part_82.res"
+signed_volume = 0.2677662279747892
+
+[sub_resource type="Resource" id="Resource_0nebc"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Stubby"
+weapon_class = &"smg"
+index = 83
+ext = Vector3(2.035, 1.2874, 0.3328)
+hull_volume = 0.38841
+fit_height = 0.68342
+fit_width = 0.33279
+metal_color = Color(0.36078432, 0.34509805, 0.30980393, 1)
+wood_color = Color(0.18431373, 0.19215687, 0.20392157, 1)
+mesh_path = "res://data/guns/meshes/part_83.res"
+signed_volume = 0.11819341204439601
+
+[sub_resource type="Resource" id="Resource_8knel"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Stubby"
+weapon_class = &"smg"
+index = 84
+ext = Vector3(2.3476, 1.1855, 0.1917)
+hull_volume = 0.29545
+fit_height = 1.5749
+fit_width = 0.19172
+metal_color = Color(0.36078432, 0.34509805, 0.30980393, 1)
+wood_color = Color(0.18431373, 0.19215687, 0.20392157, 1)
+mesh_path = "res://data/guns/meshes/part_84.res"
+signed_volume = 0.10852625573897969
+
+[sub_resource type="Resource" id="Resource_ovkrd"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.00424, -0.8046, 0)
+height = 1.5735
+width = 0.19172
+
+[sub_resource type="Resource" id="Resource_q7lg3"]
+script = ExtResource("2_3xhxo")
+position = Vector3(1.18161, -0.16153, 0)
+height = 0.59647
+width = 0.34961
+
+[sub_resource type="Resource" id="Resource_wbtf4"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-1.18161, -0.17328, 0)
+height = 0.68212
+width = 0.33279
+
+[sub_resource type="Resource" id="Resource_gyb5v"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, 0.16209, 0.00657)
+height = 2.36321
+width = 0.20486
+
+[sub_resource type="Resource" id="Resource_w4snw"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Stubby"
+weapon_class = &"smg"
+index = 85
+ext = Vector3(2.3632, 0.9724, 0.36)
+hull_volume = 0.63277
+metal_color = Color(0.36078432, 0.34509805, 0.30980393, 1)
+wood_color = Color(0.18431373, 0.19215687, 0.20392157, 1)
+socket_front = SubResource("Resource_q7lg3")
+socket_rear = SubResource("Resource_wbtf4")
+socket_bottom = SubResource("Resource_ovkrd")
+socket_top = SubResource("Resource_gyb5v")
+mesh_path = "res://data/guns/meshes/part_85.res"
+signed_volume = 0.5429627531766528
+
+[sub_resource type="Resource" id="Resource_42yo3"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 86
+ext = Vector3(7.179, 0.6748, 0.3711)
+hull_volume = 0.86021
+fit_height = 0.6748
+fit_width = 0.37114
+muzzle_radius = 0.6748
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_86.res"
+signed_volume = 0.021582060047270108
+
+[sub_resource type="Resource" id="Resource_8y7u8"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 87
+ext = Vector3(3.9314, 2.9596, 0.3602)
+hull_volume = 2.33122
+fit_height = 0.94039
+fit_width = 0.36021
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_87.res"
+signed_volume = 1.7283803307218477
+
+[sub_resource type="Resource" id="Resource_t6afp"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 88
+ext = Vector3(4.5024, 2.6688, 0.3012)
+hull_volume = 2.01247
+fit_height = 4.04868
+fit_width = 0.30122
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_88.res"
+signed_volume = 0.9816193828204025
+
+[sub_resource type="Resource" id="Resource_av68f"]
+script = ExtResource("1_yvo8b")
+kind = &"sight"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 89
+ext = Vector3(4.3789, 1.3936, 0.6745)
+hull_volume = 1.84828
+fit_height = 3.94024
+fit_width = 0.26353
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+mesh_path = "res://data/guns/meshes/part_89.res"
+signed_volume = 1.0074377610192944
+
+[sub_resource type="Resource" id="Resource_rcuhg"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.74005, -0.59045, 0)
+height = 4.50239
+width = 0.30122
+
+[sub_resource type="Resource" id="Resource_y1o52"]
+script = ExtResource("2_3xhxo")
+position = Vector3(2.99125, 0, 0)
+height = 0.6748
+width = 0.37114
+
+[sub_resource type="Resource" id="Resource_521q2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-2.99125, -0.09045, 0)
+height = 1.0
+width = 0.36021
+
+[sub_resource type="Resource" id="Resource_obp4p"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.58546, 0.40955, 0)
+height = 4.81158
+width = 0.26353
+
+[sub_resource type="Resource" id="Resource_f7ebw"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Longshot"
+weapon_class = &"sniper"
+index = 90
+ext = Vector3(5.9825, 1, 0.497)
+hull_volume = 2.04093
+metal_color = Color(0.23529412, 0.24705882, 0.26666668, 1)
+wood_color = Color(0.37254903, 0.29411766, 0.2, 1)
+socket_front = SubResource("Resource_y1o52")
+socket_rear = SubResource("Resource_521q2")
+socket_bottom = SubResource("Resource_rcuhg")
+socket_top = SubResource("Resource_obp4p")
+mesh_path = "res://data/guns/meshes/part_90.res"
+signed_volume = 1.127404397691862
+
+[sub_resource type="Resource" id="Resource_3bm8u"]
+script = ExtResource("1_yvo8b")
+kind = &"barrel"
+donor_group = &"Boxgun"
+weapon_class = &"smg"
+index = 91
+ext = Vector3(1.1636, 1.0658, 0.4036)
+hull_volume = 0.25397
+fit_height = 0.81887
+fit_width = 0.40362
+muzzle_radius = 0.12887
+metal_color = Color(0.2509804, 0.2627451, 0.2901961, 1)
+wood_color = Color(0.1882353, 0.19607843, 0.21176471, 1)
+mesh_path = "res://data/guns/meshes/part_91.res"
+signed_volume = 0.15498886278783178
+
+[sub_resource type="Resource" id="Resource_xvm46"]
+script = ExtResource("1_yvo8b")
+kind = &"stock"
+donor_group = &"Boxgun"
+weapon_class = &"smg"
+index = 92
+ext = Vector3(0.7532, 1.5674, 0.4036)
+hull_volume = 0.29966
+fit_height = 0.98391
+fit_width = 0.40362
+metal_color = Color(0.2509804, 0.2627451, 0.2901961, 1)
+wood_color = Color(0.1882353, 0.19607843, 0.21176471, 1)
+mesh_path = "res://data/guns/meshes/part_92.res"
+signed_volume = 0.1568419022212879
+
+[sub_resource type="Resource" id="Resource_8l7pf"]
+script = ExtResource("1_yvo8b")
+kind = &"grip"
+donor_group = &"Boxgun"
+weapon_class = &"smg"
+index = 93
+ext = Vector3(0.8537, 1.1788, 0.1551)
+hull_volume = 0.10653
+fit_height = 0.85367
+fit_width = 0.15507
+metal_color = Color(0.2509804, 0.2627451, 0.2901961, 1)
+wood_color = Color(0.1882353, 0.19607843, 0.21176471, 1)
+mesh_path = "res://data/guns/meshes/part_93.res"
+signed_volume = 0.06262561097344133
+
+[sub_resource type="Resource" id="Resource_f6bl7"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0, -0.66113, -0.0001)
+height = 0.85367
+width = 0.15527
+
+[sub_resource type="Resource" id="Resource_nt1nk"]
+script = ExtResource("2_3xhxo")
+position = Vector3(0.42683, -0.23143, 0)
+height = 0.85942
+width = 0.40362
+
+[sub_resource type="Resource" id="Resource_0wsi2"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.42683, -0.16113, 0)
+height = 1.0
+width = 0.40362
+
+[sub_resource type="Resource" id="Resource_fkob5"]
+script = ExtResource("2_3xhxo")
+position = Vector3(-0.0795, 0.33887, 0)
+height = 0.69467
+width = 0.14544
+
+[sub_resource type="Resource" id="Resource_g57a2"]
+script = ExtResource("1_yvo8b")
+kind = &"receiver"
+donor_group = &"Boxgun"
+weapon_class = &"smg"
+index = 94
+ext = Vector3(0.8537, 1, 0.4036)
+hull_volume = 0.27247
+metal_color = Color(0.2509804, 0.2627451, 0.2901961, 1)
+wood_color = Color(0.1882353, 0.19607843, 0.21176471, 1)
+socket_front = SubResource("Resource_nt1nk")
+socket_rear = SubResource("Resource_0wsi2")
+socket_bottom = SubResource("Resource_f6bl7")
+socket_top = SubResource("Resource_fkob5")
+mesh_path = "res://data/guns/meshes/part_94.res"
+signed_volume = 0.20199213471451097
+
+[resource]
+script = ExtResource("3_x5dik")
+parts = Array[ExtResource("1_yvo8b")]([SubResource("Resource_cxt00"), SubResource("Resource_o44rp"), SubResource("Resource_eck4m"), SubResource("Resource_lryi1"), SubResource("Resource_p6y5k"), SubResource("Resource_3b43j"), SubResource("Resource_60fjd"), SubResource("Resource_0cb8w"), SubResource("Resource_0dp7t"), SubResource("Resource_2tfvb"), SubResource("Resource_f2o5n"), SubResource("Resource_2y6pl"), SubResource("Resource_jwmc6"), SubResource("Resource_s2mmy"), SubResource("Resource_onga0"), SubResource("Resource_5dxrn"), SubResource("Resource_5sek4"), SubResource("Resource_fvvcs"), SubResource("Resource_1kkvp"), SubResource("Resource_dpn21"), SubResource("Resource_w0ryb"), SubResource("Resource_bhx2i"), SubResource("Resource_snigm"), SubResource("Resource_ftobs"), SubResource("Resource_342mv"), SubResource("Resource_r18kr"), SubResource("Resource_1srqn"), SubResource("Resource_5dmu4"), SubResource("Resource_vh60s"), SubResource("Resource_2vhix"), SubResource("Resource_etlwd"), SubResource("Resource_pd8s6"), SubResource("Resource_7uhi4"), SubResource("Resource_pv0mi"), SubResource("Resource_thf3q"), SubResource("Resource_ghjnu"), SubResource("Resource_dlrja"), SubResource("Resource_7ulh2"), SubResource("Resource_l817r"), SubResource("Resource_47eeu"), SubResource("Resource_bnarl"), SubResource("Resource_k07ng"), SubResource("Resource_xqam0"), SubResource("Resource_o4toc"), SubResource("Resource_pdbgw"), SubResource("Resource_e86ms"), SubResource("Resource_5lo6l"), SubResource("Resource_u7g8g"), SubResource("Resource_ouu3t"), SubResource("Resource_gblbr"), SubResource("Resource_ne3l7"), SubResource("Resource_awu2j"), SubResource("Resource_v80v8"), SubResource("Resource_q71ui"), SubResource("Resource_ajbcy"), SubResource("Resource_gim7d"), SubResource("Resource_qjtyh"), SubResource("Resource_v2h4y"), SubResource("Resource_u6ure"), SubResource("Resource_tnt1m"), SubResource("Resource_5p3rd"), SubResource("Resource_k6tp6"), SubResource("Resource_pj21o"), SubResource("Resource_f46qr"), SubResource("Resource_ttoml"), SubResource("Resource_i5sdb"), SubResource("Resource_tvtxd"), SubResource("Resource_pebu4"), SubResource("Resource_kbeqm"), SubResource("Resource_7x1wo"), SubResource("Resource_0ji6a"), SubResource("Resource_y5vwr"), SubResource("Resource_ep3g7"), SubResource("Resource_g5f6t"), SubResource("Resource_egypx"), SubResource("Resource_nhtv3"), SubResource("Resource_ji8ic"), SubResource("Resource_dtvqe"), SubResource("Resource_8e34g"), SubResource("Resource_02gcm"), SubResource("Resource_xgg4j"), SubResource("Resource_51u7u"), SubResource("Resource_o7fhj"), SubResource("Resource_0nebc"), SubResource("Resource_8knel"), SubResource("Resource_w4snw"), SubResource("Resource_42yo3"), SubResource("Resource_8y7u8"), SubResource("Resource_t6afp"), SubResource("Resource_av68f"), SubResource("Resource_f7ebw"), SubResource("Resource_3bm8u"), SubResource("Resource_xvm46"), SubResource("Resource_8l7pf"), SubResource("Resource_g57a2")])
+source_blob_bytes = 232134
+source_hash = "1fe2177a47f6e8a384b200414d256dbf32ff5cec3c9e7e975c5b4b662b6ffbad"
+baked_at = "2026-07-29T04:45:46"
+unrepaired = PackedInt32Array()

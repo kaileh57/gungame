@@ -1,0 +1,57 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/hud/combat_hud.gd" id="1_dv60m"]
+[ext_resource type="Shader" path="res://ui/hud/vignette.gdshader" id="2_ddlrp"]
+[ext_resource type="Script" path="res://ui/hud/combat_reticle.gd" id="3_2c1qa"]
+[ext_resource type="Script" path="res://ui/hud/damage_pops.gd" id="4_33x7l"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="5_n3axk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2sc1f"]
+shader = ExtResource("2_ddlrp")
+shader_parameter/harm = 0.0
+shader_parameter/pulse = 0.0
+shader_parameter/hit_direction = Vector2(0, 0)
+shader_parameter/harm_color = Color(0.44, 0.09, 0.07, 1)
+shader_parameter/pulse_color = Color(0.72, 0.16, 0.11, 1)
+shader_parameter/harm_reach = 0.86
+shader_parameter/lobe_focus = 3.4
+
+[node name="CombatHud" type="CanvasLayer" unique_id=1147256423]
+layer = 10
+script = ExtResource("1_dv60m")
+
+[node name="Vignette" type="ColorRect" parent="." unique_id=403509089]
+material = SubResource("ShaderMaterial_2sc1f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Reticle" type="Control" parent="." unique_id=1535810641]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("3_2c1qa")
+
+[node name="Pops" type="Control" parent="." unique_id=1334648135]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("4_33x7l")
+
+[node name="Banner" type="Label" parent="." unique_id=558943211]
+visible = false
+anchors_preset = -1
+anchor_top = 0.62
+anchor_right = 1.0
+anchor_bottom = 0.62
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("5_n3axk")
+theme_override_font_sizes/font_size = 19
+theme_override_colors/font_color = Color(0.627, 0.212, 0.212, 1)
+theme_override_colors/font_outline_color = Color(0.035, 0.031, 0.028, 1)
+theme_override_constants/outline_size = 6
+horizontal_alignment = 1
+vertical_alignment = 1

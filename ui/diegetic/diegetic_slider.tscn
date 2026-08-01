@@ -1,0 +1,75 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/diegetic/diegetic_slider.gd" id="1_nwat2"]
+[ext_resource type="Material" path="res://art/materials/scrap_steel.tres" id="2_uuebr"]
+[ext_resource type="Material" path="res://art/materials/gun_steel.tres" id="3_ysa7k"]
+[ext_resource type="Material" path="res://art/materials/scrap_polymer.tres" id="4_qyl8u"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="5_muyuc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_or45m"]
+size = Vector3(0.4, 0.06, 0.046)
+
+[sub_resource type="BoxMesh" id="BoxMesh_llhr8"]
+size = Vector3(0.36, 0.018, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_r7vyf"]
+size = Vector3(0.036, 0.056, 0.036)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ck70c"]
+size = Vector3(0.42, 0.075, 0.07)
+
+[node name="DiegeticSlider" type="StaticBody3D" unique_id=126114993]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_nwat2")
+control_id = &"slider"
+label_text = "SLIDER"
+
+[node name="Rail" type="MeshInstance3D" parent="." unique_id=847829974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.023)
+mesh = SubResource("BoxMesh_or45m")
+surface_material_override/0 = ExtResource("2_uuebr")
+
+[node name="Groove" type="MeshInstance3D" parent="." unique_id=542881214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.006)
+mesh = SubResource("BoxMesh_llhr8")
+surface_material_override/0 = ExtResource("3_ysa7k")
+
+[node name="Knob" type="Node3D" parent="." unique_id=74167110]
+
+[node name="KnobBody" type="MeshInstance3D" parent="Knob" unique_id=1101891141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008)
+mesh = SubResource("BoxMesh_r7vyf")
+surface_material_override/0 = ExtResource("4_qyl8u")
+
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=705377071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.012)
+shape = SubResource("BoxShape3D_ck70c")
+
+[node name="Label" type="Label3D" parent="." unique_id=1428010441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0.002)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.792, 0.749, 0.659, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "SLIDER"
+font = ExtResource("5_muyuc")
+font_size = 48
+outline_size = 10
+
+[node name="Readout" type="Label3D" parent="." unique_id=1692725714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.062, 0.002)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.847, 0.51, 0.184, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "0.00"
+font = ExtResource("5_muyuc")
+font_size = 48
+outline_size = 10
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=755835536]
+unit_size = 3.0
+max_distance = 40.0

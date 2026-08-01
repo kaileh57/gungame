@@ -1,0 +1,63 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://systems/guns/gun_visual.gd" id="1_hiyu8"]
+[ext_resource type="Resource" path="res://data/guns/cache/rifle_t4.tres" id="2_1qqiq"]
+[ext_resource type="Material" path="res://art/materials/gun_steel.tres" id="3_r62ct"]
+[ext_resource type="ArrayMesh" path="res://data/guns/meshes/part_03.res" id="4_yckvu"]
+[ext_resource type="ArrayMesh" path="res://data/guns/meshes/part_04.res" id="5_cu3jf"]
+[ext_resource type="Material" path="res://art/materials/gun_timber.tres" id="6_3sthn"]
+[ext_resource type="ArrayMesh" path="res://data/guns/meshes/part_21.res" id="7_0xil1"]
+[ext_resource type="ArrayMesh" path="res://data/guns/meshes/part_06.res" id="8_02e35"]
+[ext_resource type="ArrayMesh" path="res://data/guns/meshes/part_72.res" id="9_5y4a2"]
+
+[node name="GunVisual" type="Node3D" unique_id=104088721]
+script = ExtResource("1_hiyu8")
+spec = ExtResource("2_1qqiq")
+cast_shadows = true
+
+[node name="Gun" type="Node3D" parent="." unique_id=106889376]
+
+[node name="Receiver" type="MeshInstance3D" parent="Gun" unique_id=945578152]
+material_override = ExtResource("3_r62ct")
+gi_mode = 0
+instance_shader_parameters/surface_seed = 1.4055767301905717
+instance_shader_parameters/tint = Color(0.9534505, 0.9534505, 0.9534505, 1)
+mesh = ExtResource("4_yckvu")
+
+[node name="Barrel" type="MeshInstance3D" parent="Gun" unique_id=1928939291]
+transform = Transform3D(0.7985587, 0, 0, 0, 0.7985587, 0, 0, 0, 1.0553588, 2.16471, -0.10263, -2e-05)
+material_override = ExtResource("3_r62ct")
+gi_mode = 0
+instance_shader_parameters/surface_seed = 1.0752457372116349
+instance_shader_parameters/tint = Color(1.0863965, 1.0909274, 1.0763947, 1)
+mesh = ExtResource("5_cu3jf")
+
+[node name="Stock" type="MeshInstance3D" parent="Gun" unique_id=500504467]
+transform = Transform3D(1.7766948, 0, 0, 0, 1.7766948, 0, 0, 0, 3.37572, -2.16471, -0.20048, 0)
+material_override = ExtResource("6_3sthn")
+gi_mode = 0
+instance_shader_parameters/surface_seed = 0.8840020060180542
+instance_shader_parameters/tint = Color(0.8944214, 0.90257573, 0.9416188, 1)
+mesh = ExtResource("7_0xil1")
+
+[node name="Grip" type="MeshInstance3D" parent="Gun" unique_id=440428117]
+transform = Transform3D(0.41720486, 0, 0, 0, 0.41720486, 0, 0, 0, 0.46595067, -0.4009788, -0.47054997, 0)
+material_override = ExtResource("6_3sthn")
+gi_mode = 0
+instance_shader_parameters/surface_seed = 0.9936609829488465
+instance_shader_parameters/tint = Color(0.7964014, 0.8318559, 1.0185717, 1)
+mesh = ExtResource("8_02e35")
+
+[node name="Sight" type="MeshInstance3D" parent="Gun" unique_id=335581110]
+transform = Transform3D(0.65369385, 0, 0, 0, 0.65369385, 0, 0, 0, 0.56828666, -0.50093, 0.29944998, 0.00708)
+material_override = ExtResource("3_r62ct")
+gi_mode = 0
+instance_shader_parameters/surface_seed = 1.37246740220662
+instance_shader_parameters/tint = Color(1.2747365, 1.3544248, 1.5312884, 1)
+mesh = ExtResource("9_5y4a2")
+
+[node name="Muzzle" type="Marker3D" parent="Gun" unique_id=617448800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.685936, -0.10263, -2e-05)
+
+[node name="Eject" type="Marker3D" parent="Gun" unique_id=1453703536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50093, 0.189725, 0.30195)

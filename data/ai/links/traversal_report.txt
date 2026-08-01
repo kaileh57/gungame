@@ -1,0 +1,36 @@
+AI TRAVERSAL
+
+arena      268 links installed, 40 bodies (20 with hands)
+           with hands  93 goals, 79 had a route, 52 reached (66% of routable)
+           no hands    45 goals, 8 had a route, 7 reached (88% of routable)
+           time to arrive: mean 6.5 s, median 2.1 s, worst 45.6 s over 59 arrivals
+           crossings started 34, completed 2 mantle, 31 jump
+           ai cost 40 bodies: mean 0.308 ms, p95 0.767 ms, max 13.031 ms
+             corridor had no link                  2 (  3%)
+             never reached the mouth              16 ( 21%)
+             crossed, did not arrive               9 ( 12%)
+             arrived                              50 ( 65%)
+           closest approach on those: min 1.57 m, median 3.92 m, worst 17.20 m
+           timed out on 7 goals: started 10 m out, closed to 8 m (7 m in plan), walked 39 m
+           body-frames: 0% steering nowhere, 0% agent says finished, 0% target unreachable, 156 detours
+           climber speed 1.95 m/s of 3.60 top: turn penalty x0.96, avoidance x0.89
+           entries refused: 34 on the cooldown, 1316 out of reach, 0 no owner
+           off the mesh: 0 frames under it (0 bodies), 0 stranded above it (0 bodies)
+           reached without a route: 2 with hands, 0 without
+
+town       868 links installed, 40 bodies (20 with hands)
+           with hands  54 goals, 28 had a route, 21 reached (75% of routable)
+           no hands    43 goals, 4 had a route, 4 reached (100% of routable)
+           time to arrive: mean 23.3 s, median 20.7 s, worst 41.0 s over 25 arrivals
+           crossings started 55, completed 43 ladder, 7 drop, 2 jump
+           ai cost 40 bodies: mean 0.311 ms, p95 2.817 ms, max 60.489 ms
+             never reached the mouth               2 ( 12%)
+             crossed, did not arrive               5 ( 29%)
+             arrived                              10 ( 59%)
+           body-frames: 23% steering nowhere, 23% agent says finished, 54% target unreachable, 45 detours
+           climber speed 2.88 m/s of 3.60 top: turn penalty x0.89, avoidance x1.01
+           entries refused: 65 on the cooldown, 548 out of reach, 0 no owner
+           off the mesh: 0 frames under it (0 bodies), 0 stranded above it (0 bodies)
+           reached without a route: 11 with hands, 0 without
+
+RESULT: PASS

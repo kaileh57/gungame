@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_fm01n"]
+
+[resource]
+script = ExtResource("1_fm01n")
+roll_seed = 2176
+cfg = 1900762756
+weapon_name = "The Rumour"
+part_indices = PackedInt32Array(14, 20, 75, 61, 57)
+part_scales = PackedFloat32Array(1, 0.8770228, 0.7618205, 0.7919467, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.9273958, 0.9273958, 1.1205659, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 0.85131, 0.01099, 0, -0.85131, -0.05561, 0, -0.0149938, -0.47237, 0, 0, 0.1872, 0)
+fit_error = 0.18761122767557764
+muzzle_local = Vector3(3.5452611, 0.01099, 0)
+score = 70.09021664088499
+tier_index = 3
+tier_name = &"Field-Grade"
+tier_color = Color(0.34117648, 0.627451, 0.73333335, 1)
+quirks = PackedStringArray("sidearm")
+caliber = "7.9×32 wildcat"
+bore = 7.9
+case_length = 32
+muzzle_velocity = 759
+muzzle_energy = 1253
+effective_range = 179
+sim_velocity = 379
+damage = 51.0
+crit_multiplier = 2.37
+headshot_range = 58.0
+impulse = 4.786122561045614
+fire_mode = &"3-round burst"
+feed = &"internal"
+archetype = &"Chopped auto"
+rpm = 1040
+cyclic = 1130
+magazine = 12
+reload_time = 4.3
+sidearm = true
+mass = 2.0577256043625503
+precision = 53
+reach = 74
+kick = 60
+handling = 95
+reliability = 72
+burst_dps = 884
+sustained_dps = 123
+barrel_length = 242
+overall_length = 429
+spread = 19.0
+spread_rad = 0.005517208052823364
+spread_text = "19'"
+has_optic = true
+zoom = 1.8609439940891264
+zoom_levels = PackedFloat32Array(1.9)
+recoil_vertical = 0.007442971095308156
+recoil_horizontal = 0.00597809148632524
+recoil_drift = 0.254
+recoil_period = 12
+recoil_random = 0.4848903494192296
+recoil_settle = 0.182309024174502
+tint = 0.8642735163401812
+donor_groups = Array[StringName]([&"Spitter", &"Kalash", &"Breacher", &"Longshot", &"Screamer"])

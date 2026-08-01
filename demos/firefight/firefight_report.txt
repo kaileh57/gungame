@@ -1,0 +1,30 @@
+firefight bake
+posts                 6 decks (~890 m2 of roof), 3 shack ramps to 3.70 m
+clutter               92 props over 6 types
+wrote                 res://demos/firefight/firefight_arena.res
+fixture solidity      7 parts, 0 not watertight
+wrote                 res://demos/firefight/firefight_fixtures.res
+roster                12 species profiles
+wrote                 res://demos/firefight/firefight_profiles.tres
+wrote                 res://demos/firefight/firefight_nav.res
+navmesh               3869 polys from 7788 source tris
+nav map               0.250/0.250, iteration 2, region 298 x 298 m, snap y 0.50
+cover sample time     6253 ms
+vantage               56 kept, 233 scored, 342 routable of 375 candidates, 225 ground samples, datum y 0.50
+vantage height        31 of 56 points above 2 m, highest 5.75 m
+wrote                 res://demos/firefight/firefight_cover.tres
+cover                 3998 points, 689 cells at 5.0 m
+wrote                 res://demos/firefight/firefight.tscn
+arena mesh            1656 tris, 0 degenerate, 0 normal conflicts
+post spacing          closest keep-out pair 0.3 m apart
+arena solidity        volume +762883.1 m3, 0 boundary edges
+arena surfaces        138 colliders, 1 mesh surfaces
+fixtures              7 surfaces
+scene                 542 nodes
+
+POSTS CLEAR      : PASS
+OUTWARD WINDING  : PASS
+NO OPEN SHELLS   : PASS (0 boundary edges)
+NO DEGENERATES   : PASS (0)
+VERDICT          : PASS
+bake time             7741 ms

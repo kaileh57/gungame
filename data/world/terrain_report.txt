@@ -1,0 +1,22 @@
+TERRAIN BAKE  seed 4471
+
+grid                  201 x 201 verts, axis [-880.0, 880.0] m
+cell size             3.70 m centre -> 28.71 m rim
+height range          -5.60 .. 75.53 m
+rock quads            7497 of 40000
+road paint            45 roads, 2019 of 40401 verts painted
+
+chunks                10 x 10 of 20 quads
+lod0  stride 1        80000 tris   240000 verts  (800 per chunk)
+lod1  stride 2        31200 tris    93600 verts  (312 per chunk)
+lod2  stride 4        14200 tris    42600 verts  (142 per chunk)
+collision             80000 tris across 100 shapes
+
+degenerate tris       0  (must be 0)
+downward faces        0  (must be 0)
+seam faults           0  (must be 0)
+lod0 open edges       800  (must be 800 - the map rim)
+lod1 open edges       800  (must be 800 - the map rim)
+lod2 open edges       800  (must be 800 - the map rim)
+normal agreement      worst 0.7402 rad between terrain_n and ground_normal
+bake time             5675 ms

@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://art/shaders/scrap_surface.gdshader" id="1_bjc5g"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_bjc5g")
+shader_parameter/surface_type = 3
+shader_parameter/albedo = Color(0.41960785, 0.38039216, 0.32156864, 1)
+shader_parameter/metallic_base = 0.02
+shader_parameter/roughness_base = 0.95
+shader_parameter/detail_scale = 3.2
+shader_parameter/detail_gain = 1.0
+shader_parameter/bump_scale = 34.0
+shader_parameter/bump_amount = 0.012
+shader_parameter/emission_color = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/flat_shaded = false

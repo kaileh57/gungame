@@ -1,0 +1,48 @@
+ASH FLATS BAKE  seed 19920   (no enemies: world and traversal only)
+
+spawn                 -8.0 2.2 -118.5  yaw 3.14
+ladders               62 climb volumes
+signs                 13 landmark posts
+extraction pads       3
+timing gates          4
+
+THE ASH LINE
+  ramp   z  -110.7 ->   -92.7  x   -8.0  w  7.0  y   1.40 ->  11.15  -28.4 deg
+  deck   z   -92.7 ->   -86.7  x   -8.0  w  8.0  y  11.15 ->  11.15    0.0 deg
+  pitch  z   -86.7 ->   -74.7  x   -8.0  w  6.5  y  11.15 ->   8.16   14.0 deg
+  deck   z   -64.7 ->   -58.7  x   -8.0  w  8.5  y   6.31 ->   6.31    0.0 deg
+  pitch  z   -58.7 ->   -44.7  x   -8.0  w  6.5  y   6.31 ->   2.82   14.0 deg
+  deck   z   -33.9 ->   -28.9  x   -8.0  w  9.0  y   1.42 ->   1.42    0.0 deg
+  pitch  z   -28.9 ->   -14.9  x   -8.0  w  6.5  y   1.42 ->  -2.07   14.0 deg
+  deck   z    -4.5 ->    -0.6  x   -8.0  w  8.0  y  -3.27 ->  -3.27    0.0 deg
+  plank  z   -64.7 ->   -58.7  x   -3.0  w  1.4  y   5.41 ->   5.41    0.0 deg
+  plank  z   -64.7 ->   -58.7  x  -12.9  w  1.4  y   5.41 ->   5.41    0.0 deg
+  plank  z   -33.9 ->   -28.9  x   -2.8  w  1.2  y   0.52 ->   0.52    0.0 deg
+  plank  z   -33.9 ->   -28.9  x  -13.2  w  1.2  y   0.52 ->   0.52    0.0 deg
+  ramp   z   -39.5 ->   -34.1  x  -12.2  w  2.6  y  -0.30 ->   1.42  -17.7 deg
+  GAP    GAP ONE     10.00 m across, landing 1.85 m below the lip
+  GAP    GAP TWO     10.80 m across, landing 1.40 m below the lip
+  GAP    GAP THREE   10.40 m across, landing 1.20 m below the lip
+  built  864 tris, vol +1125.562, conflicts 0, degenerate 0, 72 shapes, 37 piers (11 refused)
+
+SCATTER
+  barrel               150 in 13 cells of   96 m   11.5 per draw
+  big_crate             46 in 11 cells of   96 m    4.2 per draw
+  containers            22 in  4 cells of  192 m    5.5 per draw
+  crate                110 in 12 cells of   96 m    9.2 per draw
+  dead_tree            120 in 31 cells of  192 m    3.9 per draw
+  rock_cluster         130 in 13 cells of  384 m   10.0 per draw
+  roof_clutter          48 in 13 cells of   96 m    3.7 per draw
+  sandbags              89 in 12 cells of   96 m    7.4 per draw
+  wreck                 29 in  4 cells of  192 m    7.3 per draw
+  total               744 instances, 113 multimeshes, 744 colliders
+
+AUTHORED MESHES  (signed volume must be positive, conflicts must be 0)
+  signpost       68 tris  vol  +0.0995  conflicts 0  degenerate 0
+  gauge_post    120 tris  vol  +0.0944  conflicts 0  degenerate 0
+  yard_frame     84 tris  vol  +0.2338  conflicts 0  degenerate 0
+
+LOAD-BACK
+  ash_flats.tscn   2194 nodes, 98 scripted, 744 scattered instances
+                   1130 collision shapes, 62 ladders, 0 empty meshes (must be 0)
+bake time             1391 ms

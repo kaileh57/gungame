@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="GunAudioBank" format=3]
+
+[ext_resource type="AudioStream" path="res://data/audio/action.res" id="1_xdo85"]
+[ext_resource type="AudioStream" path="res://data/audio/clack.res" id="2_jiuvi"]
+[ext_resource type="AudioStream" path="res://data/audio/dry.res" id="3_u7swy"]
+[ext_resource type="AudioStream" path="res://data/audio/impact_default.res" id="4_msxoc"]
+[ext_resource type="AudioStream" path="res://data/audio/impact_steel.res" id="5_ditdr"]
+[ext_resource type="AudioStream" path="res://data/audio/impact_glass.res" id="6_5wn5v"]
+[ext_resource type="AudioStream" path="res://data/audio/impact_boom.res" id="7_tqum8"]
+[ext_resource type="AudioStream" path="res://data/audio/jam.res" id="8_oltak"]
+[ext_resource type="Script" path="res://systems/guns/audio/gun_audio_bank.gd" id="9_nnwyk"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b0.res" id="10_f174p"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b0_payload.res" id="11_pi6l4"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b1.res" id="12_aeijm"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b1_payload.res" id="13_dlis6"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b2.res" id="14_q8eux"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b2_payload.res" id="15_7itse"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b3.res" id="16_wk4j6"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b3_payload.res" id="17_sxn7n"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b4.res" id="18_8pmop"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b4_payload.res" id="19_4idpg"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b5.res" id="20_w654n"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b5_payload.res" id="21_uh70c"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b6.res" id="22_or7bl"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b6_payload.res" id="23_121v0"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b7.res" id="24_q1eyj"]
+[ext_resource type="AudioStream" path="res://data/audio/shot_b7_payload.res" id="25_16gho"]
+[ext_resource type="AudioStream" path="res://data/audio/step.res" id="26_81cxn"]
+[ext_resource type="AudioStream" path="res://data/audio/ui.res" id="27_kxbk2"]
+
+[resource]
+script = ExtResource("9_nnwyk")
+shots = Array[AudioStreamWAV]([ExtResource("10_f174p"), ExtResource("11_pi6l4"), ExtResource("12_aeijm"), ExtResource("13_dlis6"), ExtResource("14_q8eux"), ExtResource("15_7itse"), ExtResource("16_wk4j6"), ExtResource("17_sxn7n"), ExtResource("18_8pmop"), ExtResource("19_4idpg"), ExtResource("20_w654n"), ExtResource("21_uh70c"), ExtResource("22_or7bl"), ExtResource("23_121v0"), ExtResource("24_q1eyj"), ExtResource("25_16gho")])
+band_energies = PackedFloat32Array(0.12, 0.19803199, 0.3268056, 0.5393163, 0.8900157, 1.4687632, 2.4238508, 4)
+dry = ExtResource("3_u7swy")
+jam = ExtResource("8_oltak")
+ui = ExtResource("27_kxbk2")
+step = ExtResource("26_81cxn")
+clack = ExtResource("2_jiuvi")
+action = ExtResource("1_xdo85")
+impacts = Array[AudioStreamWAV]([ExtResource("4_msxoc"), ExtResource("5_ditdr"), ExtResource("6_5wn5v"), ExtResource("7_tqum8")])

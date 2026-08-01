@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_ab3vo"]
+
+[resource]
+script = ExtResource("1_ab3vo")
+roll_seed = 6656
+cfg = 839250477
+weapon_name = "Crooked Grudge"
+part_indices = PackedInt32Array(40, 74, 25, 61, 18)
+part_scales = PackedFloat32Array(1, 1.1015817, 0.7745895, 0.6393947, 0.34)
+part_z_scales = PackedFloat32Array(1, 1.3971978, 0.7, 0.74360883, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 0.52554, -0.20808, 0, -0.52554, -0.27623, -0.00102, 0.0714654, -0.48849002, -0.00102, -0.13029, 0.28151, -0.00188)
+fit_error = 1.1469020316572136
+muzzle_local = Vector3(3.9387908, -0.20808, 0)
+score = 56.640710715357535
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray("sidearm")
+caliber = ".45 ACP"
+bore = 12.4
+case_length = 24
+muzzle_velocity = 386
+muzzle_energy = 1169
+effective_range = 102
+sim_velocity = 193
+damage = 53.0
+crit_multiplier = 2.15
+headshot_range = 21.0
+impulse = 7.3499704200328235
+fire_mode = &"Double-action"
+feed = &"cylinder"
+archetype = &"Sidearm"
+rpm = 94
+cyclic = 1310
+magazine = 8
+reload_time = 4.2
+sidearm = true
+mass = 2.0070480862641222
+precision = 44
+reach = 66
+kick = 95
+handling = 93
+reliability = 50
+burst_dps = 83
+sustained_dps = 46
+barrel_length = 307
+overall_length = 469
+spread = 33.0
+spread_rad = 0.009692849458266258
+spread_text = "33'"
+has_optic = true
+zoom = 1.734581618637705
+zoom_levels = PackedFloat32Array(1.7)
+recoil_vertical = 0.011718655624183127
+recoil_horizontal = 0.015595141405944963
+recoil_drift = 0.596
+recoil_period = 6
+recoil_random = 0.7403430556187139
+recoil_settle = 0.1802819234505649
+tint = 0.9817036028113216
+donor_groups = Array[StringName]([&"Handcannon", &"Breacher", &"Nineteen", &"Longshot", &"Pumper"])

@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_e5mrv"]
+
+[resource]
+script = ExtResource("1_e5mrv")
+roll_seed = 4352
+cfg = 3657540134
+weapon_name = "Cracked Sermon"
+part_indices = PackedInt32Array(27, 45, 51, 76, 62)
+part_scales = PackedFloat32Array(1, 1.1213105, 0.45648205, 0.7261616, 0.45694602)
+part_z_scales = PackedFloat32Array(1, 0.84825146, 0.7, 1.1110553, 0.8471653)
+part_offsets = PackedVector3Array(0, 0, 0, 0.66752, -0.02136, 0, -0.66752, -0.15507, 0, 0.036344, -0.50456005, 0, 0, 0.26544, 0)
+fit_error = 0.9190609380183719
+muzzle_local = Vector3(3.3511524, -0.02136, 0)
+score = 61.099268786207105
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray("sidearm")
+caliber = "11.8×27 wildcat"
+bore = 11.8
+case_length = 27
+muzzle_velocity = 369
+muzzle_energy = 922
+effective_range = 86
+sim_velocity = 185
+damage = 41.0
+crit_multiplier = 2.13
+headshot_range = 19.0
+impulse = 6.093115201110551
+fire_mode = &"Semi-auto"
+feed = &"internal"
+archetype = &"Snubnose"
+rpm = 278
+cyclic = 1110
+magazine = 12
+reload_time = 4.3
+sidearm = true
+mass = 2.275805645567098
+precision = 41
+reach = 64
+kick = 70
+handling = 94
+reliability = 69
+burst_dps = 189
+sustained_dps = 71
+barrel_length = 242
+overall_length = 425
+spread = 40.0
+spread_rad = 0.011496629770858505
+spread_text = "40'"
+has_optic = true
+zoom = 1.8400086752675673
+zoom_levels = PackedFloat32Array(1.8)
+recoil_vertical = 0.008567501658822517
+recoil_horizontal = 0.010327982022243021
+recoil_drift = 0.864
+recoil_period = 7
+recoil_random = 0.5202770317099228
+recoil_settle = 0.19103222582268392
+tint = 0.9451788656413556
+donor_groups = Array[StringName]([&"Nineteen", &"Chattergun", &"Sidearm", &"Breacher", &"Longshot"])

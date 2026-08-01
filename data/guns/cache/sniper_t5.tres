@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_rv82d"]
+
+[resource]
+script = ExtResource("1_rv82d")
+roll_seed = 5459
+cfg = 865086507
+weapon_name = "Cinder Karabiner"
+part_indices = PackedInt32Array(32, 82, 42, 30, 62)
+part_scales = PackedFloat32Array(1, 1.6049591, 0.45, 1.2062379, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.86533135, 0.7129469, 1, 1.1089889)
+part_offsets = PackedVector3Array(0, 0, 0, 3.55957, -0.0821, 0.07799, -3.55957, -0.50478, 0.07728, 0.4355484, -0.45345, 0.07799, 0.57154, 0.31655, 0.07799)
+fit_error = 0.8081034085578553
+muzzle_local = Vector3(7.738723, -0.0821, 0.07799)
+score = 76.56985672873846
+tier_index = 5
+tier_name = &"Warlord-Grade"
+tier_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+quirks = PackedStringArray("flat-shooting", "overbore", "hand cannon")
+caliber = "9.9×95 wildcat"
+bore = 9.9
+case_length = 95
+muzzle_velocity = 1281
+muzzle_energy = 6749
+effective_range = 507
+sim_velocity = 641
+damage = 192.0
+crit_multiplier = 2.78
+headshot_range = 110.0
+impulse = 17.580581663406267
+fire_mode = &"Semi-auto"
+archetype = &"Battle rifle"
+rpm = 198
+cyclic = 320
+magazine = 13
+reload_time = 2.6
+mass = 8.494992556527402
+precision = 70
+reach = 89
+kick = 39
+handling = 21
+reliability = 68
+burst_dps = 633
+sustained_dps = 382
+barrel_length = 376
+overall_length = 1108
+spread = 6.7
+spread_rad = 0.0019509441927399655
+spread_text = "6.7'"
+has_optic = true
+scoped = true
+zoom = 3.1
+zoom_levels = PackedFloat32Array(3.1, 5.8, 8.5)
+recoil_vertical = 0.006622473292183466
+recoil_horizontal = 0.004797696304084623
+recoil_drift = -0.525
+recoil_period = 5
+recoil_random = 0.5329417207812118
+recoil_settle = 0.42
+tint = 1.034689150629565
+donor_groups = Array[StringName]([&"Karabiner", &"Stubby", &"Broomstick", &"Longshot"])

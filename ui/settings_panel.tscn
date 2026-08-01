@@ -1,0 +1,83 @@
+[gd_scene format=3]
+
+[ext_resource type="Theme" path="res://data/ui/ui_theme.tres" id="1_of5of"]
+[ext_resource type="Script" path="res://ui/settings_panel.gd" id="2_my727"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="3_2s3gc"]
+
+[node name="SettingsPanel" type="Control" unique_id=1896223791]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1_of5of")
+script = ExtResource("2_my727")
+
+[node name="Scrim" type="ColorRect" parent="." unique_id=1652371379]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.035, 0.031, 0.028, 0.72)
+
+[node name="Frame" type="PanelContainer" parent="." unique_id=711313724]
+custom_minimum_size = Vector2(820, 720)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Body" type="VBoxContainer" parent="Frame" unique_id=1397057660]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="Frame/Body" unique_id=989378457]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Frame/Body/Header" unique_id=7796061]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_2s3gc")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.847, 0.51, 0.184, 1)
+text = "SETTINGS"
+
+[node name="Fps" type="Label" parent="Frame/Body/Header" unique_id=1234773375]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "-- fps"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Rule" type="ColorRect" parent="Frame/Body" unique_id=1347593665]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.302, 0.29, 0.267, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="Frame/Body" unique_id=21121736]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Rows" type="VBoxContainer" parent="Frame/Body/Scroll" unique_id=241482478]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="Footer" type="HBoxContainer" parent="Frame/Body" unique_id=1451372579]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ResetButton" type="Button" parent="Frame/Body/Footer" unique_id=215933847]
+layout_mode = 2
+text = "RESET TO DEFAULTS"
+
+[node name="Gap" type="Control" parent="Frame/Body/Footer" unique_id=820165292]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseButton" type="Button" parent="Frame/Body/Footer" unique_id=264460301]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "CLOSE"

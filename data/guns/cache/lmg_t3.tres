@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_3keox"]
+
+[resource]
+script = ExtResource("1_3keox")
+roll_seed = 8197
+cfg = 3924128961
+weapon_name = "Chattergun-Woodsman"
+part_indices = PackedInt32Array(49, 4, 70, 61)
+part_scales = PackedFloat32Array(1, 0.7347244, 0.45, 0.25618947)
+part_z_scales = PackedFloat32Array(1, 1.1004853, 1.354386, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 0.87912, -0.038, 0.09181, -0.87912, -0.10345, 0.13014, -0.66487557, -0.45345, -0.16978)
+fit_error = 0.028067631066297165
+muzzle_local = Vector3(7.7991214, -0.038, 0.09181)
+score = 71.82090896979031
+tier_index = 3
+tier_name = &"Field-Grade"
+tier_color = Color(0.34117648, 0.627451, 0.73333335, 1)
+quirks = PackedStringArray()
+caliber = ".44 Magnum"
+bore = 10.2
+case_length = 32
+muzzle_velocity = 507
+muzzle_energy = 1161
+effective_range = 324
+sim_velocity = 254
+damage = 55.0
+crit_multiplier = 2.21
+headshot_range = 33.0
+impulse = 5.676573134567979
+fire_mode = &"Full-auto"
+feed = &"internal"
+archetype = &"Assault rifle"
+rpm = 538
+cyclic = 790
+magazine = 4
+reload_time = 2.3
+automatic = true
+mass = 3.373109028037025
+precision = 63
+reach = 83
+kick = 32
+handling = 58
+reliability = 80
+burst_dps = 496
+sustained_dps = 81
+barrel_length = 623
+overall_length = 926
+spread = 10.0
+spread_rad = 0.003053169438744149
+spread_text = "10'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.005385249596034743
+recoil_horizontal = 0.0015910030462635144
+recoil_drift = -0.245
+recoil_period = 12
+recoil_random = 0.393873333087149
+recoil_settle = 0.234924361121481
+tint = 1.0742172826547176
+donor_groups = Array[StringName]([&"Chattergun", &"Woodsman", &"Serpent", &"Longshot"])

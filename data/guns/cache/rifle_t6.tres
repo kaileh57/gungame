@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_fs5dm"]
+
+[resource]
+script = ExtResource("1_fs5dm")
+roll_seed = 25
+cfg = 1088580933
+weapon_name = "Kalash-Blackrifle"
+part_indices = PackedInt32Array(3, 33, 1, 71, 62)
+part_scales = PackedFloat32Array(1, 1.2661723, 1, 0.6498917, 0.9005898)
+part_z_scales = PackedFloat32Array(1, 1.2933028, 1, 0.7, 1.1634598)
+part_offsets = PackedVector3Array(0, 0, 0, 2.16471, -0.10263, -2e-05, -2.16471, -0.20048, 0, -0.469553, -0.47054997, 0, -0.50093, 0.29944998, 0.00708)
+fit_error = 0.04278590055604111
+muzzle_local = Vector3(6.2184873, -0.10263, -2e-05)
+score = 77.29518954365678
+tier_index = 6
+tier_name = &"Relic"
+tier_color = Color(0.9019608, 0.75686276, 0.30980393, 1)
+quirks = PackedStringArray()
+caliber = "11.4×62 wildcat"
+bore = 11.4
+case_length = 62
+muzzle_velocity = 605
+muzzle_energy = 2269
+effective_range = 445
+sim_velocity = 303
+damage = 78.0
+crit_multiplier = 2.3
+headshot_range = 43.0
+impulse = 9.886376248257086
+fire_mode = &"Full-auto"
+archetype = &"Machine gun"
+rpm = 336
+cyclic = 420
+magazine = 49
+reload_time = 4.6
+automatic = true
+mass = 6.017064573058876
+precision = 68
+reach = 87
+kick = 43
+handling = 54
+reliability = 85
+burst_dps = 436
+sustained_dps = 286
+barrel_length = 365
+overall_length = 780
+spread = 7.2
+spread_rad = 0.0021029908120730424
+spread_text = "7.2'"
+has_optic = true
+zoom = 2.4128415637659693
+zoom_levels = PackedFloat32Array(2.4, 4.8, 7.1)
+recoil_vertical = 0.005257780369529885
+recoil_horizontal = 0.0038041736360908355
+recoil_drift = -0.153
+recoil_period = 11
+recoil_random = 0.3275913033423534
+recoil_settle = 0.3406825829223551
+tint = 1.086522586159408
+donor_groups = Array[StringName]([&"Kalash", &"Blackrifle", &"Serpent", &"Longshot"])

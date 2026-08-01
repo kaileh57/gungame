@@ -1,0 +1,88 @@
+verify_mounts
+
+main_menu   10 mounted, 3 undeclared
+    MainMenu/Cards/Card_range/Plate              on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_bestiary/Plate           on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_ash_flats/Plate          on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_firefight/Plate          on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_arena/Plate              on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_gunbench/Plate           on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_movement/Plate           on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_visuals/Plate            on Board              gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_settings/Plate           on BenchTop           gap   +4.0 mm (asked 4.0)  ok
+    MainMenu/Cards/Card_quit/Plate               on BenchTop           gap   +4.0 mm (asked 4.0)  ok
+    undeclared  MainMenu/Bench/SignPlate
+    undeclared  MainMenu/Bench/Title
+    undeclared  MainMenu/Bench/Board
+range       1 mounted, 2 undeclared
+    Range/Lane/LaneReadout                       on LaneReadoutMount   gap   +4.0 mm (asked 4.0)  ok
+    undeclared  Range/Bench/CardReadout
+    undeclared  Range/Bench/PartsReadout
+bestiary    14 mounted, 5 undeclared
+    Bestiary/Exhibits/Exhibit_rat/Placard        on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_picker/Placard     on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_gasman/Placard     on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_marksman/Placard   on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_latchdog/Placard   on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_sentinel/Placard   on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_wasp/Placard       on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_foreman/Placard    on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_husk/Placard       on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_stilt/Placard      on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_skitter/Placard    on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Exhibits/Exhibit_gorger/Placard     on PlacardStand       gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Consoles/Console_entry/Card         on Panel              gap   +4.0 mm (asked 4.0)  ok
+    Bestiary/Consoles/Console_far/Card           on Panel              gap   +4.0 mm (asked 4.0)  ok
+    undeclared  Bestiary/Structure/BaySign_scav/Plate
+    undeclared  Bestiary/Structure/BaySign_machine/Plate
+    undeclared  Bestiary/Structure/BaySign_mutant/Plate
+    undeclared  Bestiary/Structure/Gate/Plate
+    undeclared  Bestiary/Structure/Gate/Title
+ash_flats   0 mounted, 4 undeclared
+    undeclared  AshFlats/Pads/pad_culvert/Stand/Gauge
+    undeclared  AshFlats/Pads/pad_north_gate/Stand/Gauge
+    undeclared  AshFlats/Pads/pad_rooftop_lz/Stand/Gauge
+    undeclared  AshFlats/YardBoard/Readout
+arena       0 mounted, 2 undeclared
+    undeclared  Arena/Compound/Station/Readout
+    undeclared  Arena/Compound/StationSign
+firefight   0 mounted, 10 undeclared
+    undeclared  Firefight/Fixtures/Marker_scav_yard/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_foundry_gate/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_choir_house/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_tank_farm/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_cut_bank/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_slag_road/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_the_pan/Head/Plate
+    undeclared  Firefight/Fixtures/Marker_gantry/Head/Plate
+    undeclared  Firefight/Fixtures/Dial/Head/Plate
+    undeclared  Firefight/Fixtures/Sign/Plate
+gunbench    11 mounted, 1 undeclared
+    Gunbench/Cards/Stat                          on Board              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Cards/Hands                         on Board              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Cards/Rival                         on Board              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Cards/Cartridge                     on Board              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Cards/Delta                         on Board              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Cards/HandsPlate                    on Board              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Stands/MainStand/Column/Station/Plate on StationArm         gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Stands/RivalStand/Column/Station/Plate on StationArm         gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Console/Face                        on Shelf              gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Rack/RollStation/Plate              on WallWest           gap   +4.0 mm (asked 4.0)  ok
+    Gunbench/Sign/Plate                          on SignPost           gap   +4.0 mm (asked 4.0)  ok
+    undeclared  Gunbench/Bench/NamePlate
+movement    1 mounted, 5 undeclared
+    Movement/Console/Readout                     on GantryHangers      gap  -71.1 mm (asked 0.0)  ok
+    undeclared  Movement/SpeedLoop/Gate0/Board
+    undeclared  Movement/SpeedLoop/Gate1/Board
+    undeclared  Movement/SpeedLoop/Gate2/Board
+    undeclared  Movement/SpeedLoop/Gate3/Board
+    undeclared  Movement/SpeedLoop/Gate4/Board
+visuals     2 mounted, 0 undeclared
+    Visuals/Post/Readout                         on PanelMast          gap   +4.0 mm (asked 4.0)  ok
+    Visuals/Post/Placard                         on Plinth             gap   +4.0 mm (asked 4.0)  ok
+
+readable faces found   71
+declared mounts        39
+undeclared faces       32
+INTERSECTIONS          0
+RESULT: PASS

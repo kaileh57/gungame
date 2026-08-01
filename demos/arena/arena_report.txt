@@ -1,0 +1,12 @@
+triangles             3076
+degenerates dropped   0
+signed volume         29611.41 m3 (positive is outward)
+normal conflicts      0
+ok    compound mesh (3076 tris) res://demos/arena/arena_shell.res
+ok    compound collider      res://demos/arena/arena_shape.res
+ok    species profiles (12)  res://demos/arena/arena_species.tres
+ok    navmesh (563 polys)    res://demos/arena/arena_nav.res
+nav map probe         (0, 1, 0) -> (0.00, 0.40, 0.00)  cell 0.250  regions 1
+ok    cover set (1603 points) res://demos/arena/arena_cover.tres
+ok    scene (154 nodes)      res://demos/arena/arena.tscn
+build time            1183 ms

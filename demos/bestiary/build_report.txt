@@ -1,0 +1,8 @@
+build_bestiary
+  wrote res://demos/bestiary/bestiary.tscn (469 nodes)
+  bodies 12 (12 facing the walkway), bones 207, controls 14, nodes 469
+
+unique shells checked  22
+collision shapes       39
+failures               0
+RESULT: PASS

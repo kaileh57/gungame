@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_1xkws"]
+
+[resource]
+script = ExtResource("1_1xkws")
+roll_seed = 6732
+cfg = 229829239
+weapon_name = "Handcannon Mk.II"
+part_indices = PackedInt32Array(40, 82, 46, 80, 48)
+part_scales = PackedFloat32Array(1, 1.4431908, 1.2331904, 0.79005706, 0.5605606)
+part_z_scales = PackedFloat32Array(1, 1.025261, 0.7, 1.1517825, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 0.52554, -0.20808, 0, -0.52554, -0.27623, -0.00102, 0.0714654, -0.48849002, -0.00102, -0.13029, 0.28151, -0.00188)
+fit_error = 0.4546480804588878
+muzzle_local = Vector3(4.2834644, -0.20808, 0)
+score = 73.18146082839371
+tier_index = 4
+tier_name = &"Gunsmithed"
+tier_color = Color(0.6039216, 0.4745098, 0.78431374, 1)
+quirks = PackedStringArray("sidearm")
+caliber = "8.9×24 wildcat"
+bore = 8.9
+case_length = 24
+muzzle_velocity = 677
+muzzle_energy = 1393
+effective_range = 307
+sim_velocity = 339
+damage = 68.0
+crit_multiplier = 2.32
+headshot_range = 50.0
+impulse = 5.6079004777574335
+fire_mode = &"Double-action"
+feed = &"cylinder"
+archetype = &"Marksman carbine"
+rpm = 110
+cyclic = 1500
+magazine = 8
+reload_time = 4.7
+sidearm = true
+mass = 3.1161975114958538
+precision = 75
+reach = 82
+kick = 34
+handling = 80
+reliability = 71
+burst_dps = 124
+sustained_dps = 60
+barrel_length = 338
+overall_length = 589
+spread = 4.7
+spread_rad = 0.001358111395124762
+spread_text = "4.7'"
+has_optic = true
+scoped = true
+zoom = 2.6
+zoom_levels = PackedFloat32Array(2.6, 4.6, 6.6)
+recoil_vertical = 0.00575871120576359
+recoil_horizontal = 0.003052441985203432
+recoil_drift = 0.055
+recoil_period = 8
+recoil_random = 0.4883122075020704
+recoil_settle = 0.22464790045983415
+tint = 0.8998574958276003
+donor_groups = Array[StringName]([&"Handcannon", &"Stubby", &"Chattergun", &"Roomsweeper"])

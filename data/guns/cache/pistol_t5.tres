@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_cgkfe"]
+
+[resource]
+script = ExtResource("1_cgkfe")
+roll_seed = 4383
+cfg = 754707884
+weapon_name = "The Sermon"
+part_indices = PackedInt32Array(27, 91, 87, 84, 62)
+part_scales = PackedFloat32Array(1, 0.89490396, 0.7095553, 0.87745255, 0.45694602)
+part_z_scales = PackedFloat32Array(1, 0.77182126, 0.99950445, 1.7460777, 0.8471653)
+part_offsets = PackedVector3Array(0, 0, 0, 0.66752, -0.02136, 0, -0.66752, -0.15507, 0, 0.036344, -0.50456005, 0, 0, 0.26544, 0)
+fit_error = 0.4035668555537797
+muzzle_local = Vector3(1.7088301, -0.02136, 0)
+score = 75.83305515535375
+tier_index = 5
+tier_name = &"Warlord-Grade"
+tier_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+quirks = PackedStringArray("flat-shooting", "overbore", "sidearm")
+caliber = "4.8×27 wildcat"
+bore = 4.8
+case_length = 27
+muzzle_velocity = 1305
+muzzle_energy = 880
+effective_range = 152
+sim_velocity = 653
+damage = 36.0
+crit_multiplier = 2.74
+headshot_range = 113.0
+impulse = 2.779785333345272
+fire_mode = &"Machine pistol"
+archetype = &"Submachine gun"
+rpm = 1100
+cyclic = 1640
+magazine = 45
+reload_time = 2.2
+automatic = true
+sidearm = true
+mass = 2.0610737121141938
+precision = 59
+reach = 72
+kick = 25
+handling = 93
+reliability = 81
+burst_dps = 660
+sustained_dps = 348
+barrel_length = 94
+overall_length = 465
+spread = 13.0
+spread_rad = 0.0037732845214552913
+spread_text = "13'"
+has_optic = true
+zoom = 1.8400086752675673
+zoom_levels = PackedFloat32Array(1.8, 3.7)
+recoil_vertical = 0.0043158636270123
+recoil_horizontal = 0.002166398547687201
+recoil_drift = 0.382
+recoil_period = 8
+recoil_random = 0.3766922260664215
+recoil_settle = 0.18244294848456777
+tint = 0.8813896959368139
+donor_groups = Array[StringName]([&"Nineteen", &"Boxgun", &"Longshot", &"Stubby"])

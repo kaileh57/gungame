@@ -1,0 +1,125 @@
+gun part mesh bake
+source    res://reference/scav_range.html
+manifest  res://data/guns/part_library.tres
+meshes    res://data/guns/meshes/part_00.res .. part_94.res
+weld 1e-05  degenerate 1e-11  t-junction 0.0001  crease 15 deg  planar 0.05
+
+idx kind     group          class      v_in   t_in  v_wld degen  tjnc  t_out patch  wflip  cflip  conf  edge0  rims  edge1      volume tight
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+0   barrel   Kalash         rifle       224    434    224     6    16    452     1     26    444     0      8     2      0    0.487905   yes
+1   stock    Kalash         rifle        35     66     35     0     0     66     1     23     66     0      0     0      0    0.082247   yes
+2   grip     Kalash         rifle       358    708    358     0     0    708     2     54    708     0      0     0      0    0.601529   yes
+3   receiver Kalash         rifle       153    293    153     4     9    298     6    119    188     0      0     0      0    1.801415   yes
+4   barrel   Woodsman       rifle        58    108     58     0     0    108     2     24    108     0      0     0      0    0.951891   yes
+5   stock    Woodsman       rifle        85    166     85     0     0    166     1     14    166     0      0     0      0    3.452346   yes
+6   grip     Woodsman       rifle       160    320    160     0     0    320     1     63    320     0      0     0      0    1.357652   yes
+7   receiver Woodsman       rifle       194    380    194     1     1    380     2    290      0     0      0     0      0    1.473148   yes
+8   barrel   Tube           launcher    336    668    336     0     0    668     2    310    402     0      0     0      0    0.310293   yes
+9   stock    Tube           launcher    255    510    255     0     0    510     1     60    510     0      0     0      0    0.188647   yes
+10  receiver Tube           launcher    417    830    417     0     0    830     2    652      0     0      0     0      0    0.404045   yes
+11  barrel   Spitter        smg         173    342    173     0     0    342     1     28    342     0      0     0      0    0.208173   yes
+12  stock    Spitter        smg         136    268    136     0     0    268     2     21    268     0      0     0      0    0.241308   yes
+13  grip     Spitter        smg         255    515    255     5    23    546     5     67    467     0     13     0      0    0.724903   yes
+14  receiver Spitter        smg         284    551    284    16    34    580     4    117    533     0     11     1      0    0.467232   yes
+15  barrel   Pumper         shotgun     352    680    352     0     0    690     4     14    548     0     10     1      0    1.000839   yes
+16  stock    Pumper         shotgun      40     76     40     0     0     76     1     14     76     0      0     0      0    1.184295   yes
+17  grip     Pumper         shotgun      90    172     90     0     0    172     2     58    172     0      0     0      0    0.047689   yes
+18  sight    Pumper         shotgun      81    147     81     0     0    152     3     15     86     0      5     1      0    0.282517   yes
+19  receiver Pumper         shotgun     150    265    150     0     0    292     4     51    156     0     27     4      0    0.769518   yes
+20  barrel   Kalash         rifle       117    226    117     0     0    226     2    134     94     0      0     0      0    0.344498   yes
+21  stock    Kalash         rifle        24     44     24     1     1     44     1     10     44     0      0     0      0    0.246854   yes
+22  grip     Kalash         rifle       117    210    117     0     0    222     4     43    210     0     12     2      0    0.237774   yes
+23  receiver Kalash         rifle       150    272    150     1     1    290     4     90    210     0     18     3      0    0.424603   yes
+24  barrel   Nineteen       pistol      205    368    205     2     2    400     4    115    368     0     32     3      0    0.261630   yes
+25  stock    Nineteen       pistol      188    350    188     3     3    364     4     84    248     0     14     2      0    0.771331   yes
+26  grip     Nineteen       pistol      114    216    114     1     1    216     3    111    216     0      0     0      0    0.173882   yes
+27  receiver Nineteen       pistol      259    488    259     3     3    506     5    260    268     0     18     2      0    0.380841   yes
+28  barrel   Karabiner      sniper       44     68     44     0     0     80     3      6     36     0     12     2      0    1.305147   yes
+29  stock    Karabiner      sniper       20     36     20     0     0     36     1      6     36     0      0     0      0    2.426988   yes
+30  grip     Karabiner      sniper      150    282    150     0     0    296     2     36    282     0     14     2      0    0.433386   yes
+31  sight    Karabiner      sniper       65    118     65     2     2    118     3     45     86     0      0     0      0    0.180692   yes
+32  receiver Karabiner      sniper       96    179     96     2     2    186     2     65      0     0      7     1      0    2.250791   yes
+33  barrel   Blackrifle     rifle       120    232    120     0     0    232     2     10    232     0      0     0      0    0.202114   yes
+34  stock    Blackrifle     rifle        18     32     18     0     0     32     1     10     32     0      0     0      0    0.204865   yes
+35  sight    Blackrifle     rifle        29     52     29     0     2     54     1     17     54     0      0     0      0    0.002478   yes
+36  receiver Blackrifle     rifle       111    208    111     0     2    210     3     43    210     0      0     0      0    0.314080   yes
+37  barrel   Handcannon     revolver    108    198    108     0     0    208     3     58     74     0     10     2      0    0.160182   yes
+38  stock    Handcannon     revolver     79    154     79     0     0    154     1     39    154     0      0     0      0    0.175365   yes
+39  grip     Handcannon     revolver    119    234    119     0     0    234     1    125    234     0      0     0      0    0.049791   yes
+40  receiver Handcannon     revolver    217    426    217     0     0    426     3    225    106     0      0     0      0    0.016779   yes
+41  barrel   Broomstick     pistol       48     92     48     0     0     92     1     70      0     0      0     0      0    0.268708   yes
+42  stock    Broomstick     pistol      224    430    224     0     0    438     3     48    430     0      8     1      0    2.347264   yes
+43  grip     Broomstick     pistol      157    296    157     0     0    308     3     53    296     0     12     1      0    1.505429   yes
+44  receiver Broomstick     pistol      121    226    121     0     0    232     3     89    162     0      6     1      0    1.036503   yes
+45  barrel   Chattergun     lmg          92    180     92     0     0    180     1      0      0     0      0     0      0    0.201282   yes
+46  stock    Chattergun     lmg         105    198    105     0     0    198     3     41     58     0      0     0      0    0.243827   yes
+47  grip     Chattergun     lmg         499    954    499     1     1    954    11      0      0     0      0     0      0    0.049251   yes
+48  sight    Chattergun     lmg         410    775    410     4     3    782    10     16     80     0      8     1      0    0.019713   yes
+49  receiver Chattergun     lmg         903   1725    903     2     0   1744    17    295    389     0     21     3      0    0.419714   yes
+50  barrel   Sidearm        pistol      128    240    128     0     0    246     3    124     84     0      6     1      0    1.797951   yes
+51  stock    Sidearm        pistol      121    234    121     0     0    234     2    133     58     0      0     0      0    3.463733   yes
+52  grip     Sidearm        pistol      177    338    177     9     9    344     3    151     76     0      6     1      0    1.900842   yes
+53  receiver Sidearm        pistol      148    292    148     9     9    292     1    116    292     0      0     0      0    1.160119   yes
+54  barrel   Screamer       launcher    109    214    109     1     1    214     1     38    214     0      0     0      0    0.214850   yes
+55  stock    Screamer       launcher     55    106     55     0     0    106     1      8    106     0      0     0      0    0.474805   yes
+56  grip     Screamer       launcher     57    106     57     0     0    106     2     35    106     0      0     0      0    0.039231   yes
+57  sight    Screamer       launcher     36     72     36     0     0     72     1     58     72     0      0     0      0    0.002235   yes
+58  receiver Screamer       launcher    156    296    156     0     0    302     3    130    220     0      6     1      0    0.255354   yes
+59  barrel   Longshot       sniper      206    393    206     0     0    398     5    124    253     0      5     1      0    0.143479   yes
+60  stock    Longshot       sniper       94    170     94     1     1    186     1     23    170     0     16     1      0    0.179430   yes
+61  grip     Longshot       sniper      117    226    117     0     0    226     2     57    170     0      0     0      0    0.043196   yes
+62  sight    Longshot       sniper      158    312    158     0     0    312     1    104    312     0      0     0      0    0.036607   yes
+63  receiver Longshot       sniper      481    912    481     1     1    940     7    512    456     0     28     3      0    0.446728   yes
+64  barrel   Sturmgewehr    rifle       101    178    101     0     0    190     4     14    178     0     12     2      0    0.611692   yes
+65  stock    Sturmgewehr    rifle       241    466    241     0     0    466     4    128    340     0      0     0      0    2.380122   yes
+66  grip     Sturmgewehr    rifle        52    100     52     0     0    100     1     30    100     0      0     0      0    1.232934   yes
+67  sight    Sturmgewehr    rifle        24     44     24     0     0     44     1     14     44     0      0     0      0    0.048077   yes
+68  receiver Sturmgewehr    rifle        92    172     92     0     0    172     3     76    172     0      0     0      0    0.584882   yes
+69  barrel   Serpent        revolver     47     78     47     0     0     86     3      0      0     0      8     1      0    2.719864   yes
+70  stock    Serpent        revolver     38     68     38     0     0     68     2      0      0     0      0     0      0    7.372664   yes
+71  grip     Serpent        revolver     97    178     97     0     0    178     4      0      0     0      0     0      0    5.001422   yes
+72  sight    Serpent        revolver     46     84     46     0     0     84     2      0      0     0      0     0      0    1.083628   yes
+73  receiver Serpent        revolver     95    171     95     1     1    176     4      0      0     0      5     1      0    2.763498   yes
+74  barrel   Breacher       shotgun      59    103     59     0     0    110     4      3      8     0      7     0      0    0.157067   yes
+75  stock    Breacher       shotgun      36     64     36     0     0     64     2      0      0     0      0     0      0    0.098002   yes
+76  grip     Breacher       shotgun      76    134     76     0     3    148     2     40      0     0     11     2      0    0.239172   yes
+77  receiver Breacher       shotgun     111    191    111     0     3    206     5      8      0     0     12     2      0    0.919849   yes
+78  barrel   Roomsweeper    smg         115    208    115     0     0    208     6      0      0     0      0     0      0    0.219540   yes
+79  stock    Roomsweeper    smg          50     92     50     0     0     92     2      0      0     0      0     0      0    0.066385   yes
+80  grip     Roomsweeper    smg          50     88     50     0     0     88     3      0      0     0      0     0      0    0.059220   yes
+81  receiver Roomsweeper    smg         136    248    136     0     0    248     6      0      0     0      0     0      0    0.406722   yes
+82  barrel   Stubby         smg          61    106     61     0     0    106     4      0      0     0      0     0      0    0.267766   yes
+83  stock    Stubby         smg          80    156     80     0     0    156     2      0      0     0      0     0      0    0.118193   yes
+84  grip     Stubby         smg          57    102     57     0     0    102     3      0      0     0      0     0      0    0.108526   yes
+85  receiver Stubby         smg         108    196    108     0     0    196     5      0      0     0      0     0      0    0.542963   yes
+86  barrel   Longshot       sniper       40     74     40     1     1     78     1     30      0     0      4     1      0    0.021582   yes
+87  stock    Longshot       sniper       52     92     52     0     0     98     2      0      0     0      6     1      0    1.728380   yes
+88  grip     Longshot       sniper       57    102     57     0     0    102     3      0      0     0      0     0      0    0.981619   yes
+89  sight    Longshot       sniper       70    128     70     0     0    128     3      0      0     0      0     0      0    1.007438   yes
+90  receiver Longshot       sniper      132    252    132     0     4    256     3     30     72     0      0     0      0    1.127404   yes
+91  barrel   Boxgun         smg         106    174    106     0    23    200     4      0      0     0      3     1      0    0.154989   yes
+92  stock    Boxgun         smg         130    218    130     0     7    254     3      0      0     0     29     1      0    0.156842   yes
+93  grip     Boxgun         smg          62    112     61     2     0    110     3      0      0     0      0     0      0    0.062626   yes
+94  receiver Boxgun         smg         166    256    165     3    33    320     5      0      0     0     34     2      0    0.201992   yes
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+parts                 95
+bbox error vs ext     8.10016632080135e-05  (quantisation noise)
+vertices  in / welded 13375 / 13373
+triangles in / out    25314 / 25898
+degenerates dropped   82
+t-junctions split     202
+winding flips         6150
+patches reoriented    13672 triangles across 65 parts
+patches oriented by   enclosed volume 278, normal vote 6
+branch edges          55  (70 face-pair disagreements across them)
+inside-out seams      0  (two-face edges disagreeing; must be 0)
+boundary edges        879 raw -> 464 after t-junctions -> 0 after caps
+rims capped           57  (7 domed, worst bend 0.230 of diameter)
+slit fins added       22
+shipped vertices      35764
+bake time             726 ms
+
+watertight            all 95 parts
+
+RESULT: PASS - 95 parts, 0 inverted, 0 open boundary edges

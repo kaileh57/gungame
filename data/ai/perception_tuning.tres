@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AIPerceptionTuning" format=3]
+
+[ext_resource type="Script" path="res://systems/ai/perception/ai_perception_tuning.gd" id="1_vtyll"]
+
+[resource]
+resource_name = "AIPerceptionTuning"
+script = ExtResource("1_vtyll")

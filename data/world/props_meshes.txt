@@ -1,0 +1,24 @@
+mesh validation
+roots     res://data/world/props
+open      terrain
+weld 0.0001  area 0.0000000001  volume 0.000000001
+
+mesh                                                 surf    tris   verts  shell    bnd  nonmf  degen   dupe   flip       volume
+------------------------------------------------------------------------------------------------------------------------------------
+
+meshes                20
+surfaces              20
+triangles             11032
+shells                839
+flat shells           0
+inverted shells       0
+boundary edges        0
+non-manifold edges    0
+degenerate triangles  0
+duplicate faces       0
+winding/normal flips  0
+empty surfaces        0
+unreadable files      0
+scan time             96 ms
+
+RESULT: PASS - 20 meshes, 839 shells, all closed and outward

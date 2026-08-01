@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_aagjw"]
+
+[resource]
+script = ExtResource("1_aagjw")
+roll_seed = 1475
+cfg = 3990807850
+weapon_name = "Cinder Divorce"
+part_indices = PackedInt32Array(10, 8, 55, 52)
+part_scales = PackedFloat32Array(1, 1.0791003, 0.93329287, 0.54018116)
+part_z_scales = PackedFloat32Array(1, 1, 0.9811738, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 1.3738899, -0.19093, 0.00192, -1.3738899, -0.00448, 0.00153, 0.86646014, -0.49139997, 0.02473)
+fit_error = 0.11648282102123617
+muzzle_local = Vector3(5.0743403, -0.19093, 0.00192)
+score = 60.15882213285147
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray("hand cannon")
+caliber = "13.3×44 shot"
+bore = 13.3
+case_length = 44
+pellets = 5
+muzzle_velocity = 488
+muzzle_energy = 2297
+effective_range = 55
+sim_velocity = 244
+damage = 216.0
+crit_multiplier = 1.69
+headshot_range = 31.0
+impulse = 11.885856375034518
+fire_mode = &"Break-action"
+archetype = &"Shotgun"
+rpm = 24
+cyclic = 640
+magazine = 15
+reload_time = 2.4
+mass = 3.502075258650286
+precision = 27
+reach = 58
+kick = 64
+handling = 56
+reliability = 91
+burst_dps = 86
+sustained_dps = 81
+barrel_length = 333
+overall_length = 940
+spread = 86.0
+spread_rad = 0.024948064400929462
+spread_text = "1.4°"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.01086062908161751
+recoil_horizontal = 0.00373676833527355
+recoil_drift = 0.676
+recoil_period = 5
+recoil_random = 0.2680746293009306
+recoil_settle = 0.24008301034601146
+tint = 0.9879880117345601
+donor_groups = Array[StringName]([&"Tube", &"Screamer", &"Sidearm"])

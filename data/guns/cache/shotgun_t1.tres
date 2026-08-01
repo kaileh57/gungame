@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_7mh6w"]
+
+[resource]
+script = ExtResource("1_7mh6w")
+roll_seed = 2947
+cfg = 2576906967
+weapon_name = "Pumper Mk.XI"
+part_indices = PackedInt32Array(19, 24, 87, 66, 72)
+part_scales = PackedFloat32Array(1, 0.68614924, 0.7095553, 0.46138558, 0.81630445)
+part_z_scales = PackedFloat32Array(1, 0.7, 0.8045668, 1.0489318, 0.7533242)
+part_offsets = PackedVector3Array(0, 0, 0, 2.1777701, 0.14574, 0.00161, -2.1777701, -0.25579, 0.0017, -1.8128889, -0.06708, 0.00161, 0.43261, 0.31655, 0.00161)
+fit_error = 2.134206758160733
+muzzle_local = Vector3(3.392323, 0.14574, 0.00161)
+score = 59.5098067380277
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray()
+caliber = "7.92×57"
+bore = 8.1
+case_length = 63
+muzzle_velocity = 620
+muzzle_energy = 885
+effective_range = 76
+sim_velocity = 310
+damage = 40.0
+crit_multiplier = 2.27
+headshot_range = 44.0
+impulse = 4.223205288481443
+fire_mode = &"Semi-auto"
+archetype = &"Snubnose"
+rpm = 290
+cyclic = 890
+magazine = 26
+reload_time = 2.5
+mass = 3.3680205394376674
+precision = 39
+reach = 62
+kick = 23
+handling = 69
+reliability = 48
+burst_dps = 192
+sustained_dps = 131
+barrel_length = 109
+overall_length = 752
+spread = 45.0
+spread_rad = 0.013048497134990664
+spread_text = "45'"
+has_optic = true
+zoom = 2.702107615617618
+zoom_levels = PackedFloat32Array(2.7, 4.2)
+recoil_vertical = 0.004012522122384975
+recoil_horizontal = 0.005416904865219716
+recoil_drift = 0.054
+recoil_period = 10
+recoil_random = 0.7535205326261811
+recoil_settle = 0.2347208215775067
+tint = 0.9011519788019359
+donor_groups = Array[StringName]([&"Pumper", &"Nineteen", &"Longshot", &"Sturmgewehr", &"Serpent"])

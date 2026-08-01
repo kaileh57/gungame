@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_p6ayx"]
+
+[resource]
+script = ExtResource("1_p6ayx")
+roll_seed = 2182
+cfg = 501335641
+weapon_name = "The Migraine"
+part_indices = PackedInt32Array(14, 28, 65, 22, 31)
+part_scales = PackedFloat32Array(1, 1.0391706, 0.68211305, 0.762784, 0.34)
+part_z_scales = PackedFloat32Array(1, 1.1012015, 0.9273958, 1.874721, 0.8390449)
+part_offsets = PackedVector3Array(0, 0, 0, 0.85131, 0.01099, 0, -0.85131, -0.05561, 0, -0.0149938, -0.47237, 0, 0, 0.1872, 0)
+fit_error = 0.12091454859704527
+muzzle_local = Vector3(9.903526, 0.01099, 0)
+score = 73.89179509803601
+tier_index = 4
+tier_name = &"Gunsmithed"
+tier_color = Color(0.6039216, 0.4745098, 0.78431374, 1)
+quirks = PackedStringArray()
+caliber = ".38 Special"
+bore = 8.9
+case_length = 32
+muzzle_velocity = 713
+muzzle_energy = 1552
+effective_range = 320
+sim_velocity = 356
+damage = 61.0
+crit_multiplier = 2.35
+headshot_range = 53.0
+impulse = 5.783497231087392
+fire_mode = &"Semi-auto"
+archetype = &"Carbine"
+rpm = 224
+cyclic = 1020
+magazine = 37
+reload_time = 2.8
+mass = 4.932234119503683
+precision = 71
+reach = 83
+kick = 22
+handling = 26
+reliability = 85
+burst_dps = 226
+sustained_dps = 176
+barrel_length = 815
+overall_length = 1307
+spread = 6.2
+spread_rad = 0.0018062987921552353
+spread_text = "6.2'"
+has_optic = true
+zoom = 2.081789586233282
+zoom_levels = PackedFloat32Array(2.1)
+recoil_vertical = 0.0037522937255342584
+recoil_horizontal = 0.0013001810392641675
+recoil_drift = -0.437
+recoil_period = 13
+recoil_random = 0.3376862077063921
+recoil_settle = 0.29728936478014734
+tint = 1.1175647751241922
+donor_groups = Array[StringName]([&"Spitter", &"Karabiner", &"Sturmgewehr", &"Kalash"])

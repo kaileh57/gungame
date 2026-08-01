@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_363p2"]
+
+[resource]
+script = ExtResource("1_363p2")
+roll_seed = 5
+cfg = 713893293
+weapon_name = "Kalash Mk.XI"
+part_indices = PackedInt32Array(3, 4, 21, 6, 72)
+part_scales = PackedFloat32Array(1, 0.7985587, 1.7766948, 0.41720486, 0.65369385)
+part_z_scales = PackedFloat32Array(1, 1.3215795, 1.9, 1.116839, 0.8693468)
+part_offsets = PackedVector3Array(0, 0, 0, 2.16471, -0.10263, -2e-05, -2.16471, -0.20048, 0, -0.4009788, -0.47054997, 0, -0.50093, 0.29944998, 0.00708)
+muzzle_local = Vector3(9.685936, -0.10263, -2e-05)
+score = 74.74669725011066
+tier_index = 4
+tier_name = &"Gunsmithed"
+tier_color = Color(0.6039216, 0.4745098, 0.78431374, 1)
+quirks = PackedStringArray()
+caliber = "11.1×62 wildcat"
+bore = 11.1
+case_length = 62
+muzzle_velocity = 672
+muzzle_energy = 2582
+effective_range = 452
+sim_velocity = 336
+damage = 105.0
+crit_multiplier = 2.35
+headshot_range = 49.0
+impulse = 10.106530713095674
+fire_mode = &"Full-auto"
+feed = &"internal"
+archetype = &"Auto battle rifle"
+rpm = 254
+cyclic = 410
+magazine = 12
+reload_time = 6.7
+automatic = true
+mass = 7.120204002797931
+precision = 70
+reach = 88
+kick = 27
+handling = 10
+reliability = 88
+burst_dps = 446
+sustained_dps = 133
+barrel_length = 677
+overall_length = 1398
+spread = 6.5
+spread_rad = 0.0018875722319999996
+spread_text = "6.5'"
+has_optic = true
+scoped = true
+zoom = 2.4128428794418664
+zoom_levels = PackedFloat32Array(2.4, 4.5)
+recoil_vertical = 0.00454213085316061
+recoil_horizontal = 0.001271796638884971
+recoil_drift = 0.011
+recoil_period = 9
+recoil_random = 0.29708821111261674
+recoil_settle = 0.3848081601119172
+tint = 0.8973566922824829
+donor_groups = Array[StringName]([&"Kalash", &"Woodsman", &"Serpent"])

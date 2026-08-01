@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_6imqv"]
+
+[resource]
+script = ExtResource("1_6imqv")
+roll_seed = 6668
+cfg = 2346216143
+weapon_name = "Handcannon Mk.VII"
+part_indices = PackedInt32Array(40, 82, 70, 88)
+part_scales = PackedFloat32Array(1, 1.4431908, 0.45, 0.2941922)
+part_z_scales = PackedFloat32Array(1, 1.025261, 0.7, 0.77131665)
+part_offsets = PackedVector3Array(0, 0, 0, 0.52554, -0.20808, 0, -0.52554, -0.27623, -0.00102, 0.0714654, -0.48849002, -0.00102)
+fit_error = 0.2941782812911243
+muzzle_local = Vector3(4.2834644, -0.20808, 0)
+score = 70.8656087957829
+tier_index = 3
+tier_name = &"Field-Grade"
+tier_color = Color(0.34117648, 0.627451, 0.73333335, 1)
+quirks = PackedStringArray("sidearm")
+caliber = "8.9×24 wildcat"
+bore = 8.9
+case_length = 24
+muzzle_velocity = 677
+muzzle_energy = 1393
+effective_range = 307
+sim_velocity = 339
+damage = 68.0
+crit_multiplier = 2.32
+headshot_range = 50.0
+impulse = 5.6079004777574335
+fire_mode = &"Double-action"
+feed = &"cylinder"
+archetype = &"Marksman carbine"
+rpm = 110
+cyclic = 1500
+magazine = 8
+reload_time = 4.7
+sidearm = true
+mass = 2.8382502740629025
+precision = 64
+reach = 82
+kick = 37
+handling = 82
+reliability = 73
+burst_dps = 124
+sustained_dps = 60
+barrel_length = 338
+overall_length = 577
+spread = 9.5
+spread_rad = 0.0027620096811352586
+spread_text = "9.5'"
+zoom = 2.6
+zoom_levels = PackedFloat32Array(2.6)
+recoil_vertical = 0.0063226564946774234
+recoil_horizontal = 0.0027933373399487817
+recoil_drift = 0.24
+recoil_period = 11
+recoil_random = 0.466167375216919
+recoil_settle = 0.21353001096251611
+tint = 0.9275388827640563
+donor_groups = Array[StringName]([&"Handcannon", &"Stubby", &"Serpent", &"Longshot"])

@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_47q6p"]
+
+[resource]
+script = ExtResource("1_47q6p")
+roll_seed = 5120
+cfg = 3428697344
+weapon_name = "Crooked Karabiner"
+part_indices = PackedInt32Array(32, 54, 5, 71, 89)
+part_scales = PackedFloat32Array(1, 1.62, 0.700149, 0.6498917, 0.6816877)
+part_z_scales = PackedFloat32Array(1, 1.3754361, 1.1662201, 0.7, 1.4600444)
+part_offsets = PackedVector3Array(0, 0, 0, 3.55957, -0.0821, 0.07799, -3.55957, -0.50478, 0.07728, -1.6253358, -0.45345, 0.07799, 0.57154, 0.31655, 0.07799)
+fit_error = 2.1772524320796025
+muzzle_local = Vector3(10.849894, -0.0821, 0.07799)
+score = 63.09071618804238
+tier_index = 2
+tier_name = &"Cobbled"
+tier_color = Color(0.5411765, 0.6039216, 0.41960785, 1)
+quirks = PackedStringArray("hand cannon", "crew-served")
+caliber = "14.3×95 shot"
+bore = 14.3
+case_length = 95
+pellets = 6
+muzzle_velocity = 722
+muzzle_energy = 6145
+effective_range = 55
+sim_velocity = 361
+damage = 511.0
+crit_multiplier = 1.87
+headshot_range = 54.0
+impulse = 22.806777912384273
+fire_mode = &"Semi-auto"
+archetype = &"Slug gun"
+rpm = 144
+cyclic = 320
+magazine = 11
+reload_time = 4.5
+mass = 11.797585372072296
+precision = 48
+reach = 58
+kick = 36
+handling = 1
+reliability = 34
+burst_dps = 1226
+sustained_dps = 619
+barrel_length = 656
+overall_length = 1622
+spread = 25.0
+spread_rad = 0.007357866515999999
+spread_text = "25'"
+has_optic = true
+zoom = 2.4440169596087857
+zoom_levels = PackedFloat32Array(2.4, 4.2)
+recoil_vertical = 0.006186154795064656
+recoil_horizontal = 0.008351308973337286
+recoil_drift = -0.725
+recoil_period = 11
+recoil_random = 0.9238136468528951
+recoil_settle = 0.42
+tint = 1.000318797584623
+donor_groups = Array[StringName]([&"Karabiner", &"Screamer", &"Woodsman", &"Serpent", &"Longshot"])

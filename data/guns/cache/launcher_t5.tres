@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_ebhx8"]
+
+[resource]
+script = ExtResource("1_ebhx8")
+roll_seed = 1473
+cfg = 1957115045
+weapon_name = "Scabbed Tube"
+part_indices = PackedInt32Array(10, 11, 65, 88, 62)
+part_scales = PackedFloat32Array(1, 1.4463477, 0.6941574, 0.31903732, 0.82288015)
+part_z_scales = PackedFloat32Array(1, 0.91751647, 0.9985361, 0.7, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 1.3738899, -0.19093, 0.00192, -1.3738899, -0.00448, 0.00153, 0.8755508, -0.49139997, 0.02473, -0.11575, 0.27859998, 0.02269)
+fit_error = 2.2204460492503128e-16
+muzzle_local = Vector3(4.612407, -0.19093, 0.00192)
+score = 75.91081646622771
+tier_index = 5
+tier_name = &"Warlord-Grade"
+tier_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+quirks = PackedStringArray()
+caliber = "10.0×44 wildcat"
+bore = 10.0
+case_length = 44
+muzzle_velocity = 779
+muzzle_energy = 2561
+effective_range = 412
+sim_velocity = 389
+damage = 108.0
+crit_multiplier = 2.41
+headshot_range = 60.0
+impulse = 9.445516450416905
+fire_mode = &"Semi-auto"
+archetype = &"Hand cannon"
+rpm = 228
+cyclic = 720
+magazine = 6
+reload_time = 1.6
+mass = 3.6073795387476637
+precision = 67
+reach = 86
+kick = 49
+handling = 59
+reliability = 79
+burst_dps = 412
+sustained_dps = 205
+barrel_length = 291
+overall_length = 884
+spread = 8.1
+spread_rad = 0.002345720832
+spread_text = "8.1'"
+has_optic = true
+zoom = 2.312502809433294
+zoom_levels = PackedFloat32Array(2.3, 4.7)
+recoil_vertical = 0.008378839076031135
+recoil_horizontal = 0.002346074941288719
+recoil_drift = -0.78
+recoil_period = 6
+recoil_random = 0.3975193778164898
+recoil_settle = 0.24429518154990656
+tint = 1.0692455001920462
+donor_groups = Array[StringName]([&"Tube", &"Spitter", &"Sturmgewehr", &"Longshot"])

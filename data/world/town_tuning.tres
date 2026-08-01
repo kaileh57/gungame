@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TownTuning" format=3]
+
+[ext_resource type="Script" path="res://systems/world/town/town_tuning.gd" id="1_hpvk8"]
+
+[resource]
+script = ExtResource("1_hpvk8")
+road_widths = PackedFloat32Array(8.5, 6.5, 5, 4, 3.4)

@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_u4t35"]
+
+[resource]
+script = ExtResource("1_u4t35")
+roll_seed = 2946
+cfg = 3316677264
+weapon_name = "The Widow"
+part_indices = PackedInt32Array(19, 28, 55, 47)
+part_scales = PackedFloat32Array(1, 0.7108967, 0.93329287, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.7, 0.7915474, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 2.1777701, 0.14574, 0.00161, -2.1777701, -0.25579, 0.0017, -1.6514984, -0.06708, 0.00161)
+fit_error = 1.7025526513607439
+muzzle_local = Vector3(8.370392, 0.14574, 0.00161)
+score = 65.91273083378684
+tier_index = 2
+tier_name = &"Cobbled"
+tier_color = Color(0.5411765, 0.6039216, 0.41960785, 1)
+quirks = PackedStringArray("overbore")
+caliber = "6.1×63 wildcat"
+bore = 6.1
+case_length = 63
+muzzle_velocity = 1216
+muzzle_energy = 1530
+effective_range = 137
+sim_velocity = 608
+damage = 72.0
+crit_multiplier = 2.69
+headshot_range = 104.0
+impulse = 3.9887445153537526
+fire_mode = &"Semi-auto"
+archetype = &"Battle rifle"
+rpm = 292
+cyclic = 920
+magazine = 39
+reload_time = 3.6
+mass = 3.2515503650823905
+precision = 49
+reach = 71
+kick = 23
+handling = 35
+reliability = 60
+burst_dps = 351
+sustained_dps = 242
+barrel_length = 557
+overall_length = 1309
+spread = 25.0
+spread_rad = 0.007204937207399573
+spread_text = "25'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.003925506609462771
+recoil_horizontal = 0.004775001777880807
+recoil_drift = -0.259
+recoil_period = 7
+recoil_random = 0.6249522658877826
+recoil_settle = 0.23006201460329562
+tint = 1.1374319602828473
+donor_groups = Array[StringName]([&"Pumper", &"Karabiner", &"Screamer", &"Chattergun"])

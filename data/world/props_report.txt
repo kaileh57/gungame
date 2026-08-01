@@ -1,0 +1,35 @@
+world prop bake
+seed      4471
+output    res://data/world/props
+material  res://art/materials/world_surface.tres
+
+prop               tris    degen conflict    boxes     volume         bounds (w x h x d)
+------------------------------------------------------------------------------------------------
+crate                36        0        0        3     2.2256         1.17 x 2.65 x 1.29
+big_crate            12        0        0        1     4.1130         2.25 x 1.04 x 1.75
+barrel               80        0        0        1     0.2614         0.61 x 0.92 x 0.64
+sandbags             84        0        0        7     0.2970         1.89 x 0.51 x 0.40
+wreck               368        0        0        7     6.5386         5.02 x 2.01 x 2.48
+dead_tree            48        0        0        1     0.1620         1.08 x 2.77 x 1.03
+rock_cluster         36        0        0        3    85.1043         5.61 x 3.66 x 9.24
+power_line          444        0        0        3     1.6384        71.00 x 8.29 x 0.32
+roof_clutter        236        0        0       15     2.3471         5.42 x 4.40 x 4.09
+ladder              204        0        0        0     0.0886         0.60 x 4.20 x 0.26
+stairs              156        0        0       13     8.6504         3.61 x 3.35 x 1.20
+wall_holed          156        0        0        6     9.2147         8.00 x 3.20 x 0.59
+containers           36        0        0        3   116.0952         6.70 x 7.72 x 2.77
+adobe_1f            912        0        0       48   202.5267         8.59 x 6.88 x 7.59
+adobe_2f           1928        0        0       95   326.3544        9.59 x 13.45 x 8.59
+ruin                288        0        0       20   110.3951         9.40 x 5.30 x 7.79
+market              804        0        0       39     8.6958        11.23 x 2.61 x 7.38
+compound           1340        0        0       65   258.3459       16.34 x 9.73 x 14.40
+warehouse          2436        0        0       70   870.6611      16.60 x 13.11 x 22.70
+tower              1332        0        0       22    38.7758        6.20 x 20.57 x 6.20
+
+props                 20
+triangles             10936
+colliders             422
+manifest              res://data/world/props/props.tres
+
+RESULT: PASS - 20 props, 10936 triangles, all outward
+bake time             37 ms

@@ -1,0 +1,48 @@
+[gd_resource type="Environment" format=3]
+
+[ext_resource type="Material" path="res://art/materials/sky_material.tres" id="1_b84mw"]
+
+[sub_resource type="Sky" id="Sky_nw6fx"]
+sky_material = ExtResource("1_b84mw")
+process_mode = 3
+radiance_size = 2
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_nw6fx")
+ambient_light_source = 3
+ambient_light_energy = 0.78
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 1.22
+tonemap_white = 7.0
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 1.6
+ssao_light_affect = 0.1
+glow_enabled = true
+glow_levels/1 = 0.28
+glow_levels/2 = 0.6
+glow_levels/3 = 0.42
+glow_levels/4 = 0.14
+glow_levels/5 = 0.05
+glow_intensity = 0.45
+glow_hdr_threshold = 1.6
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.7058824, 0.6039216, 0.47058824, 1)
+fog_light_energy = 0.72
+fog_sun_scatter = 0.12
+fog_density = 1.0
+fog_aerial_perspective = 0.55
+fog_sky_affect = 0.08
+fog_depth_curve = 1.35
+fog_depth_begin = 120.0
+fog_depth_end = 900.0
+volumetric_fog_density = 0.0006
+volumetric_fog_albedo = Color(0.7058824, 0.6039216, 0.47058824, 1)
+volumetric_fog_length = 240.0
+volumetric_fog_ambient_inject = 0.1
+volumetric_fog_sky_affect = 0.1
+adjustment_enabled = true
+adjustment_saturation = 1.05

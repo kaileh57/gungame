@@ -1,0 +1,50 @@
+CLICK REGISTRATION
+50 clicks per pass, 200 fps cap, physics 60 Hz, burst 10 Hz
+
+demo       control        action       tap   hold  burst  flick
+gunbench   grab_main      fire        100%   100%   100%   100%
+bestiary   prev           fire        100%   100%   100%   100%
+movement   reset          fire        100%   100%   100%   100%
+ash_flats  clock          interact    100%   100%   100%   100%
+visuals    lamps          interact    100%   100%   100%   100%
+arena      DebugLever     interact    100%   100%   100%   100%
+main_menu  range          fire        100%   100%   100%   100%
+
+TRIGGER TAPS  (a press and a release inside one drawn frame)
+range      30 taps -> 30 rounds (100%)
+arena      30 taps -> 30 rounds (100%)
+gunbench   30 taps -> 30 rounds (100%)
+
+CLICKS PER ROUND, SHOULDERED  (cold / ready / rated, ADS then hip)
+SWEEP  8 mechanisms + 200 rolled
+
+SWEEP — weapon layer, 208 weapons
+action      n  cold ads/hip  ready ads/hip rated ads/hip early ads/hip
+semi       42   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+auto      113   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+burst      33   1.00 / 1.00   1.00 / 1.00   1.59 / 1.59   1.51 / 1.51
+bolt        1   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+pump        1   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+double      1   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+break      15   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+single      2   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+
+range — real input path, 14 weapons
+action      n  cold ads/hip  ready ads/hip rated ads/hip early ads/hip
+burst       3   1.00 / 1.00   1.00 / 1.00   1.30 / 1.40   1.07 / 1.07
+auto        1   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+pump        2   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+semi        8   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+
+arena — real input path, 14 weapons
+action      n  cold ads/hip  ready ads/hip rated ads/hip early ads/hip
+burst       3   1.00 / 1.00   1.00 / 1.00   1.40 / 1.40   1.17 / 1.07
+auto        1   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+pump        2   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+semi        8   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00   1.00 / 1.00
+
+OVERALL  tap 100%  hold 100%  burst 100%  flick 100%   over 7 demos
+TRIGGER  100% of sub-frame taps became a round (90/90)
+ADS      1.00 clicks to the first round, 1.08 clicks per round at the rated rate, over 28 weapons
+         worst weapon 1.50 clicks per round — Pig-Iron Kettle (burst)
+RESULT: PASS

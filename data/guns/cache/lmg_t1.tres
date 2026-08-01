@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_k6eij"]
+
+[resource]
+script = ExtResource("1_k6eij")
+roll_seed = 8202
+cfg = 4255102871
+weapon_name = "Chattergun Mk.I"
+part_indices = PackedInt32Array(49, 11, 5, 43)
+part_scales = PackedFloat32Array(1, 1.0491732, 0.77553946, 0.24)
+part_z_scales = PackedFloat32Array(1, 1.1051506, 1.9, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 0.87912, -0.038, 0.09181, -0.87912, -0.10345, 0.13014, -0.5534304, -0.45345, -0.16978)
+fit_error = 1.9038592115496484
+muzzle_local = Vector3(3.228324, -0.038, 0.09181)
+score = 59.17672235396581
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray()
+caliber = "7.2×32 wildcat"
+bore = 7.2
+case_length = 32
+muzzle_velocity = 767
+muzzle_energy = 996
+effective_range = 55
+sim_velocity = 384
+damage = 39.0
+crit_multiplier = 2.37
+headshot_range = 59.0
+impulse = 3.8298297391557767
+fire_mode = &"Full-auto"
+feed = &"internal"
+archetype = &"Submachine gun"
+rpm = 826
+cyclic = 960
+magazine = 12
+reload_time = 4.7
+automatic = true
+mass = 4.653750813744752
+precision = 33
+reach = 58
+kick = 15
+handling = 63
+reliability = 57
+burst_dps = 538
+sustained_dps = 84
+barrel_length = 211
+overall_length = 730
+spread = 61.0
+spread_rad = 0.01786624363497171
+spread_text = "1.0°"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.0026334575390461958
+recoil_horizontal = 0.0034949209275988175
+recoil_drift = 0.365
+recoil_period = 7
+recoil_random = 0.6527325711938514
+recoil_settle = 0.2861500325497901
+tint = 0.8751057417970151
+donor_groups = Array[StringName]([&"Chattergun", &"Spitter", &"Woodsman", &"Broomstick"])

@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_ohlot"]
+
+[resource]
+script = ExtResource("1_ohlot")
+roll_seed = 2178
+cfg = 3833874153
+weapon_name = "Coffin Spitter"
+part_indices = PackedInt32Array(14, 24, 83, 93)
+part_scales = PackedFloat32Array(1, 1.0029956, 0.9446899, 1.6)
+part_z_scales = PackedFloat32Array(1, 1.097819, 0.9909583, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 0.85131, 0.01099, 0, -0.85131, -0.05561, 0, -0.06969279, -0.47237, 0)
+fit_error = 0.07704795647421003
+muzzle_local = Vector3(2.6267123, 0.01099, 0)
+score = 67.76643438290125
+tier_index = 2
+tier_name = &"Cobbled"
+tier_color = Color(0.5411765, 0.6039216, 0.41960785, 1)
+quirks = PackedStringArray("sidearm")
+caliber = ".44 Magnum"
+bore = 11.8
+case_length = 32
+muzzle_velocity = 370
+muzzle_energy = 931
+effective_range = 101
+sim_velocity = 185
+damage = 41.0
+crit_multiplier = 2.13
+headshot_range = 19.0
+impulse = 6.294711662050604
+fire_mode = &"Semi-auto"
+archetype = &"Snubnose"
+rpm = 276
+cyclic = 980
+magazine = 48
+reload_time = 2.5
+sidearm = true
+mass = 2.5331764828128214
+precision = 43
+reach = 66
+kick = 47
+handling = 89
+reliability = 91
+burst_dps = 189
+sustained_dps = 152
+barrel_length = 160
+overall_length = 486
+spread = 34.0
+spread_rad = 0.009749841045613529
+spread_text = "34'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.0079517070584025
+recoil_horizontal = 0.0025634425049850056
+recoil_drift = -0.633
+recoil_random = 0.262632617993441
+recoil_settle = 0.20132705931251288
+tint = 1.0136538036819547
+donor_groups = Array[StringName]([&"Spitter", &"Nineteen", &"Stubby", &"Boxgun"])

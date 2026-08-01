@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_88pfx"]
+
+[resource]
+script = ExtResource("1_88pfx")
+roll_seed = 2944
+cfg = 2518999118
+weapon_name = "Pumper Mk.IX"
+part_indices = PackedInt32Array(19, 28, 65, 13, 62)
+part_scales = PackedFloat32Array(1, 0.7108967, 0.72415227, 0.8126016, 1.1246175)
+part_z_scales = PackedFloat32Array(1, 0.7, 0.8049486, 0.9155903, 1)
+part_offsets = PackedVector3Array(0, 0, 0, 2.1777701, 0.14574, 0.00161, -2.1777701, -0.25579, 0.0017, -1.4426794, -0.06708, 0.00161, 0.43261, 0.31655, 0.00161)
+fit_error = 1.1216609427801507
+muzzle_local = Vector3(8.370392, 0.14574, 0.00161)
+score = 73.18095777368161
+tier_index = 4
+tier_name = &"Gunsmithed"
+tier_color = Color(0.6039216, 0.4745098, 0.78431374, 1)
+quirks = PackedStringArray("overbore")
+caliber = "6.1×63 wildcat"
+bore = 6.1
+case_length = 63
+muzzle_velocity = 1216
+muzzle_energy = 1530
+effective_range = 230
+sim_velocity = 608
+damage = 72.0
+crit_multiplier = 2.69
+headshot_range = 104.0
+impulse = 3.9887445153537526
+fire_mode = &"Semi-auto"
+archetype = &"Battle rifle"
+rpm = 292
+cyclic = 920
+magazine = 39
+reload_time = 3.5
+mass = 3.815463714641231
+precision = 71
+reach = 78
+kick = 20
+handling = 32
+reliability = 67
+burst_dps = 351
+sustained_dps = 244
+barrel_length = 557
+overall_length = 1309
+spread = 6.2
+spread_rad = 0.0017909938616603753
+spread_text = "6.2'"
+has_optic = true
+scoped = true
+zoom = 2.702105972658777
+zoom_levels = PackedFloat32Array(2.7, 5)
+recoil_vertical = 0.003345329271551521
+recoil_horizontal = 0.003000471047585609
+recoil_drift = 0.062
+recoil_period = 13
+recoil_random = 0.5447892101036608
+recoil_settle = 0.25261854858564925
+tint = 0.8999261983111501
+donor_groups = Array[StringName]([&"Pumper", &"Karabiner", &"Sturmgewehr", &"Spitter", &"Longshot"])

@@ -1,0 +1,80 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/diegetic/diegetic_dial.gd" id="1_dm78f"]
+[ext_resource type="Material" path="res://art/materials/scrap_steel.tres" id="2_1gvh3"]
+[ext_resource type="Material" path="res://art/materials/scrap_polymer.tres" id="3_2e0ms"]
+[ext_resource type="Material" path="res://art/materials/gun_steel.tres" id="4_jme1c"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="5_7rmhl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7gat7"]
+size = Vector3(0.17, 0.17, 0.04)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mocpa"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.034
+radial_segments = 20
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_j53u0"]
+size = Vector3(0.011, 0.05, 0.014)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p35j3"]
+size = Vector3(0.18, 0.18, 0.09)
+
+[node name="DiegeticDial" type="StaticBody3D" unique_id=1769277182]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_dm78f")
+options = PackedStringArray("I", "II", "III", "IV")
+control_id = &"dial"
+label_text = "DIAL"
+
+[node name="Plate" type="MeshInstance3D" parent="." unique_id=612828433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.02)
+mesh = SubResource("BoxMesh_7gat7")
+surface_material_override/0 = ExtResource("2_1gvh3")
+
+[node name="Knob" type="Node3D" parent="." unique_id=972433130]
+
+[node name="KnobBody" type="MeshInstance3D" parent="Knob" unique_id=2077215273]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.012)
+mesh = SubResource("CylinderMesh_mocpa")
+surface_material_override/0 = ExtResource("3_2e0ms")
+
+[node name="Pointer" type="MeshInstance3D" parent="Knob" unique_id=1371259063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0.024)
+mesh = SubResource("BoxMesh_j53u0")
+surface_material_override/0 = ExtResource("4_jme1c")
+
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=1161899625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+shape = SubResource("BoxShape3D_p35j3")
+
+[node name="Label" type="Label3D" parent="." unique_id=866378178]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115, 0.002)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.792, 0.749, 0.659, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "DIAL"
+font = ExtResource("5_7rmhl")
+font_size = 48
+outline_size = 10
+
+[node name="Readout" type="Label3D" parent="." unique_id=1241109747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.108, 0.002)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.847, 0.51, 0.184, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "I"
+font = ExtResource("5_7rmhl")
+font_size = 48
+outline_size = 10
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1614179623]
+unit_size = 3.0
+max_distance = 40.0

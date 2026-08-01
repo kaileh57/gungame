@@ -1,0 +1,12 @@
+build_main_menu
+  wrote       res://data/ui/font_mono.tres
+  wrote       res://data/ui/font_display.tres
+  wrote       res://data/ui/slider_grabber.tres
+  wrote       res://data/ui/ui_theme.tres
+  wrote       res://ui/settings_panel.tscn
+  wrote       res://ui/pause_menu.tscn
+  wrote       res://ui/main_menu.tscn
+
+shells checked        100
+failures              0
+RESULT: PASS

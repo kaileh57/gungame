@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AILinkBaker" format=3]
+
+[ext_resource type="Script" path="res://systems/ai/ai_link_baker.gd" id="1_lebmq"]
+
+[resource]
+resource_name = "AILinkRules"
+script = ExtResource("1_lebmq")
+start_positions = PackedVector3Array()
+end_positions = PackedVector3Array()
+kinds = PackedByteArray()
+flags = PackedByteArray()
+layers = PackedInt32Array()
+enter_costs = PackedFloat32Array()
+travel_costs = PackedFloat32Array()

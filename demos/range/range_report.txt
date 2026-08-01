@@ -1,0 +1,61 @@
+ammo_plate                24 tris  volume      +0.000  conflicts 0
+ammo counter           res://demos/range/ammo_counter.tscn
+ground                  3858 tris  volume +946370.873  conflicts 0
+bay                     1884 tris  volume    +120.823  conflicts 0
+tarp_near                 36 tris  volume      +0.709  conflicts 0
+tarp_side                 36 tris  volume      +0.578  conflicts 0
+tarp_back                 36 tris  volume      +0.371  conflicts 0
+lane_near                252 tris  volume    +112.182  conflicts 0
+lane_far                 216 tris  volume +115824.522  conflicts 0
+lane_readout_mount        24 tris  volume      +0.271  conflicts 0
+yard_near               5560 tris  volume     +30.296  conflicts 0
+yard_far                4920 tris  volume     +13.861  conflicts 0
+tarp_canopy               36 tris  volume      +0.549  conflicts 0
+tarp_fence_l              36 tris  volume      +0.235  conflicts 0
+tarp_fence_r              36 tris  volume      +0.307  conflicts 0
+yard_floods               96 tris  volume      +0.027  conflicts 0
+prop set               res://data/world/props/props.tres (20 props)
+rock                   dropped 14 degenerate triangles
+rock                      14 tris  volume      +1.095  conflicts 0
+casing                    32 tris  volume      +0.000  conflicts 0
+hull                      48 tris  volume      +0.000  conflicts 0
+tyre                     128 tris  volume      +0.086  conflicts 0
+wind_flag                 36 tris  volume      +0.011  conflicts 0
+props                  133 instances over 9 kinds
+work_lights              588 tris  volume      +0.007  conflicts 0
+plate_post_70             24 tris  volume      +0.015  conflicts 0
+plate_disc_30            216 tris  volume      +0.018  conflicts 0
+plate_spot_30             88 tris  volume      +0.000  conflicts 0
+plate_disc_24            216 tris  volume      +0.011  conflicts 0
+plate_spot_24             88 tris  volume      +0.000  conflicts 0
+popper_body               36 tris  volume      +0.028  conflicts 0
+popper_head               84 tris  volume      +0.004  conflicts 0
+bottle_rail               72 tris  volume      +0.382  conflicts 0
+bottle_body               40 tris  volume      +0.004  conflicts 0
+bottle_neck               64 tris  volume      +0.000  conflicts 0
+paper_frame               72 tris  volume      +0.071  conflicts 0
+plate_disc_42            216 tris  volume      +0.035  conflicts 0
+plate_spot_42             88 tris  volume      +0.000  conflicts 0
+barrel_drum_a            224 tris  volume      +0.283  conflicts 0
+barrel_cap                48 tris  volume      +0.003  conflicts 0
+barrel_drum_b            224 tris  volume      +0.283  conflicts 0
+mover_rail_750            72 tris  volume      +0.621  conflicts 0
+plate_disc_50            216 tris  volume      +0.050  conflicts 0
+plate_spot_50             88 tris  volume      +0.001  conflicts 0
+mover_hanger              24 tris  volume      +0.005  conflicts 0
+plate_post_77             24 tris  volume      +0.015  conflicts 0
+plate_disc_55            216 tris  volume      +0.060  conflicts 0
+plate_spot_55             88 tris  volume      +0.001  conflicts 0
+plate_post_105            24 tris  volume      +0.019  conflicts 0
+plate_disc_75            216 tris  volume      +0.112  conflicts 0
+plate_spot_75             88 tris  volume      +0.001  conflicts 0
+plate_post_147            24 tris  volume      +0.024  conflicts 0
+plate_disc_105           216 tris  volume      +0.219  conflicts 0
+plate_spot_105            88 tris  volume      +0.002  conflicts 0
+plate_post_203            24 tris  volume      +0.031  conflicts 0
+plate_disc_145           216 tris  volume      +0.417  conflicts 0
+plate_spot_145            88 tris  volume      +0.005  conflicts 0
+placard                   12 tris  volume      +0.175  conflicts 0
+scene                  res://demos/range/range.tscn (663 nodes)
+bake time             708 ms
+result                PASS

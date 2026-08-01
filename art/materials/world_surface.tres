@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://art/world_material.gdshader" id="1_68aa2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_68aa2")
+shader_parameter/u_seed = 0.37
+shader_parameter/metallic_base = 0.0
+shader_parameter/roughness_base = 0.9

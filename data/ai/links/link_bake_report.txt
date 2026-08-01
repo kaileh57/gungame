@@ -1,0 +1,49 @@
+NAV LINK BAKE
+
+town       29942 polys, 10358 border edges, 62287 probes, 799 ms
+           33 ladders from layout, 0 ends unusable, 3671 discovered
+           1792 links -> 28% pathable; trying 896 (good 0, bad 1792)
+           896 links -> 11% pathable; trying 448 (good 0, bad 896)
+           448 links -> 100% pathable; trying 672 (good 448, bad 896)
+           672 links -> 100% pathable; trying 784 (good 672, bad 896)
+           784 links -> 98% pathable; trying 840 (good 784, bad 896)
+           840 links -> 100% pathable; trying 868 (good 840, bad 896)
+           shipped: 274 ladder, 65 mantle, 6 vault, 385 drop, 138 jump  (868 links, budget 868)
+           map valid true, 1 regions, 868 links, iteration 7
+           navmesh y -5.0 .. 17.0, 240 roof goals, mean rise 4.4 m
+           reach a roof: walk-only 9/240 (4%) -> with links 50/240 (21%)
+           get off a roof: walk-only 9/240 (4%) -> with links 122/240 (51%)
+           ladder   274 baked,  274 pathable (100%),  274 join new ground, 0 orphan ends
+           mantle    65 baked,   65 pathable (100%),   63 join new ground, 0 orphan ends
+           vault      6 baked,    6 pathable (100%),    0 join new ground, 0 orphan ends
+           drop     385 baked,  375 pathable ( 97%),  375 join new ground, 0 orphan ends
+           jump     138 baked,  137 pathable ( 99%),   92 join new ground, 0 orphan ends
+           1995 faces too tall to climb, 3.4 m to 14.3 m (climb_max 3.4 m)
+
+arena      563 polys, 501 border edges, 9100 probes, 55 ms
+           0 ladders from layout, 0 ends unusable, 268 discovered
+           shipped: 74 ladder, 27 mantle, 105 drop, 62 jump  (268 links, budget 1792)
+           map valid true, 1 regions, 268 links, iteration 12
+           navmesh y -0.3 .. 6.4, 240 roof goals, mean rise 4.0 m
+           reach a roof: walk-only 0/240 (0%) -> with links 240/240 (100%)
+           get off a roof: walk-only 0/240 (0%) -> with links 240/240 (100%)
+           ladder    74 baked,   74 pathable (100%),   74 join new ground, 0 orphan ends
+           mantle    27 baked,   27 pathable (100%),   20 join new ground, 0 orphan ends
+           drop     105 baked,  105 pathable (100%),  102 join new ground, 0 orphan ends
+           jump      62 baked,   62 pathable (100%),    8 join new ground, 0 orphan ends
+           85 faces too tall to climb, 3.5 m to 6.8 m (climb_max 3.4 m)
+
+firefight  3869 polys, 3541 border edges, 34346 probes, 515 ms
+           1 ladders from layout, 0 ends unusable, 1800 discovered
+           shipped: 274 ladder, 271 mantle, 592 drop, 655 jump  (1792 links, budget 1792)
+           map valid true, 1 regions, 1792 links, iteration 16
+           navmesh y 0.5 .. 8.0, 240 roof goals, mean rise 5.6 m
+           reach a roof: walk-only 117/240 (49%) -> with links 126/240 (53%)
+           get off a roof: walk-only 117/240 (49%) -> with links 133/240 (55%)
+           ladder   274 baked,  274 pathable (100%),  249 join new ground, 0 orphan ends
+           mantle   271 baked,  271 pathable (100%),  230 join new ground, 0 orphan ends
+           drop     592 baked,  592 pathable (100%),  543 join new ground, 0 orphan ends
+           jump     655 baked,  655 pathable (100%),  571 join new ground, 0 orphan ends
+           738 faces too tall to climb, 3.4 m to 7.5 m (climb_max 3.4 m)
+
+RESULT: PASS

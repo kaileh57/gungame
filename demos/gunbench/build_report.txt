@@ -1,0 +1,6 @@
+build_gunbench
+  wrote       res://demos/gunbench/gunbench.tscn (293 nodes)
+
+shells checked        50
+failures              0
+RESULT: PASS

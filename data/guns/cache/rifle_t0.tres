@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_0uf1s"]
+
+[resource]
+script = ExtResource("1_0uf1s")
+roll_seed = 746
+cfg = 718628192
+weapon_name = "Woodsman Mk.VIII"
+part_indices = PackedInt32Array(7, 69, 9, 66, 48)
+part_scales = PackedFloat32Array(1, 1.0670819, 0.66795534, 0.46138558, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.7751693, 0.95714283, 1.3294652, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 3.85436, 0.04309, 0.02051, -3.85436, -0.22114, 0.01909, -3.2330308, -0.29057, 0.02051, 0.89741, 0.47943, 0.02176)
+fit_error = 4.923077006809452
+muzzle_local = Vector3(10.810667, 0.04309, 0.02051)
+score = 57.49420940564758
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("hand cannon", "jam-prone", "crew-served")
+caliber = "15.5×102 shot"
+bore = 15.5
+case_length = 102
+pellets = 7
+muzzle_velocity = 648
+muzzle_energy = 6279
+effective_range = 55
+sim_velocity = 324
+damage = 546.0
+crit_multiplier = 1.83
+headshot_range = 47.0
+impulse = 25.314626098294067
+fire_mode = &"Semi-auto"
+archetype = &"Slug gun"
+rpm = 128
+cyclic = 320
+magazine = 4
+reload_time = 4.3
+mass = 10.733677168674646
+precision = 45
+reach = 58
+kick = 44
+handling = 1
+reliability = 4
+burst_dps = 1165
+sustained_dps = 354
+barrel_length = 626
+overall_length = 1483
+spread = 30.0
+spread_rad = 0.008870184119369615
+spread_text = "30'"
+has_optic = true
+zoom = 1.6892960041656493
+zoom_levels = PackedFloat32Array(1.7)
+recoil_vertical = 0.007546975956287628
+recoil_horizontal = 0.0101884175409883
+recoil_drift = 0.009
+recoil_period = 11
+recoil_random = 1.2599151329788587
+recoil_settle = 0.42
+tint = 0.8975757687538862
+donor_groups = Array[StringName]([&"Woodsman", &"Serpent", &"Tube", &"Sturmgewehr", &"Chattergun"])

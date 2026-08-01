@@ -1,0 +1,34 @@
+GUNBENCH GRAB ACCEPTANCE
+
+control   Stands/MainStand/Column/Station/Grab       id grab_main   label GRAB A
+control   Stands/RivalStand/Column/Station/Grab      id grab_rival  label GRAB B
+control   Console/Panel/Roll                         id roll        label ROLL
+control   Console/Panel/Class                        id class       label CLASS
+control   Console/Panel/Tier                         id tier        label TIER
+control   Console/Panel/Compare                      id compare     label COMPARE
+control   Console/Deck/Strip                         id strip       label STRIP
+control   Rack/RollStation/Roll                      id roll_rack   label ROLL
+
+boot      A Crooked Tantrum            B Pig-Iron Kalash            hands Zip-Tied Kalash
+reach     grab_main   clear from spawn at 4.32 m
+reach     grab_rival  clear from spawn at 4.14 m
+reach     roll        clear from spawn at 3.21 m
+reach     class       clear from spawn at 3.01 m
+reach     tier        clear from spawn at 3.01 m
+reach     compare     clear from spawn at 3.21 m
+reach     strip       clear from spawn at 3.68 m
+reach     roll_rack   clear from spawn at 8.30 m
+GRAB A    took Crooked Tantrum            left Zip-Tied Kalash           
+cards     IN YOUR HANDS 'CROOKED TANTRUM' over CARTRIDGE '9×19' after GRAB A
+GRAB B    took Pig-Iron Kalash            left Crooked Tantrum           
+cards     IN YOUR HANDS 'PIG-IRON KALASH' over CARTRIDGE '11.1×62 WILDCAT' after GRAB B
+ROLL RACK 6 of 6 hooks changed
+cards     IN YOUR HANDS 'PIG-IRON KALASH' over CARTRIDGE '11.1×62 WILDCAT' after ROLL RACK
+ROLL      A Blackrifle-Sidearm         (was Zip-Tied Kalash)
+COMPARE   B now reads Blackrifle-Sidearm
+PEG 0     traded Tube-Broomstick onto stand A
+
+shots     NOT MEASURED - re-run without --headless to photograph the stations.
+
+shots written          0
+RESULT: PASS

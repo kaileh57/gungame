@@ -1,0 +1,278 @@
+ADS occlusion probe
+
+sample       111 weapons, one per (receiver class, optic, tier) cell
+lens         44 deg vertical at 1.78:1, near 0.006 m
+sight window +/- 5.5 deg, 65 x 65 rays
+frame        161 x 91 rays
+
+BEFORE — the solve that put the sight datum itself on the view axis
+
+class | optic | tier       centre   sight   frame   crest    drop  scale     hip
+launcher|irons|1            BLIND   23.6%    2.7%    0.71   -0.00   1.50    1.1%  <-
+launcher|irons|2                -   23.4%    5.0%   -0.01    0.00   1.50    1.5%  <-
+launcher|irons|3                -   16.6%    2.7%   -0.51    0.00   1.50    1.9%  <-
+launcher|irons|4                -   23.2%    4.8%   -0.14    0.00   1.50    1.9%  <-
+launcher|optic|1            BLIND   19.5%    1.4%    0.69    0.00   1.50    1.7%  <-
+launcher|optic|2                -    8.8%    2.4%    1.29   -0.00   1.50    1.0%  <-
+launcher|optic|3            BLIND   31.7%    3.7%    6.12   -0.00   1.50    1.3%  <-
+launcher|optic|4            BLIND   14.1%    2.0%    1.04    0.00   1.50    1.3%  <-
+launcher|optic|5            BLIND   12.7%    2.6%    0.25    0.00   1.50    1.3%  <-
+launcher|optic|6                -   18.1%    6.6%    1.48    0.00   1.50    1.2%  <-
+launcher|scope|2            BLIND   11.8%    1.1%    0.77    0.00   1.50    1.2%  <-
+launcher|scope|3            BLIND   16.3%    2.7%    4.04    0.00   1.50    1.4%  <-
+launcher|scope|4            BLIND   24.6%    4.6%    2.08    0.00   1.50    1.6%  <-
+lmg|irons|1                     -   22.2%    4.8%   -0.68    0.00   1.50    1.7%  <-
+lmg|irons|2                 BLIND   73.3%    6.5%    9.44    0.00   1.50    1.3%  <-
+lmg|irons|3                     -   26.9%    3.6%   -0.87    0.00   1.50    1.4%
+lmg|irons|4                     -   26.9%    3.7%   -0.87    0.00   1.50    1.4%
+lmg|irons|5                     -   24.7%    5.6%    0.27    0.00   1.50    1.9%  <-
+lmg|optic|1                 BLIND   75.7%   10.4%    3.45    0.00   1.50    1.9%  <-
+lmg|optic|2                 BLIND   38.9%    4.6%    0.20    0.00   1.50    1.9%  <-
+lmg|optic|3                 BLIND   69.6%   21.4%    1.40    0.00   1.50    2.0%  <-
+lmg|optic|4                     -   26.2%    7.5%    1.11    0.00   1.50    1.8%  <-
+lmg|optic|5                 BLIND   35.6%    5.2%    0.02   -0.00   1.50    1.8%  <-
+pistol|irons|1              BLIND   35.4%    4.9%    0.10    0.00   1.50    1.8%  <-
+pistol|irons|2                  -   24.8%    4.6%   -0.92    0.00   1.50    1.7%
+pistol|irons|3              BLIND   26.2%    6.4%    0.99    0.00   1.50    1.6%  <-
+pistol|irons|4              BLIND   87.8%   12.3%    5.42   -0.00   1.50    1.7%  <-
+pistol|irons|5              BLIND   16.7%    3.0%    0.41    0.00   1.50    1.3%  <-
+pistol|optic|0              BLIND   14.6%    3.0%    0.48   -0.00   1.50    1.5%  <-
+pistol|optic|1              BLIND   26.5%    3.5%    0.31    0.00   1.50    1.6%  <-
+pistol|optic|2              BLIND   14.9%    4.3%    1.74    0.00   1.50    1.4%  <-
+pistol|optic|3              BLIND   16.1%    2.0%    0.51   -0.00   1.50    1.5%  <-
+pistol|optic|4              BLIND   17.6%    2.7%    0.63    0.00   1.50    1.4%  <-
+pistol|optic|5              BLIND   15.3%    2.4%    1.39    0.00   1.50    1.4%  <-
+pistol|optic|6              BLIND   30.1%    4.8%    1.00    0.00   1.50    1.3%  <-
+revolver|irons|0                -    8.3%    1.8%   -1.06    0.00   1.50    1.3%
+revolver|irons|1            BLIND   13.3%    2.1%    1.27   -0.00   1.50    1.1%  <-
+revolver|irons|2                -   16.7%    2.9%   -1.07    0.00   1.50    1.8%
+revolver|irons|3                -   12.7%    2.4%   -1.30    0.00   1.50    1.4%
+revolver|optic|0                -    8.3%    1.0%    0.35    0.00   1.50    1.0%  <-
+revolver|optic|1            BLIND   12.8%    2.3%    0.70    0.00   1.50    1.4%  <-
+revolver|optic|2            BLIND   16.8%    3.3%    1.82    0.00   1.50    1.4%  <-
+revolver|optic|3            BLIND    8.5%    2.0%    0.30   -0.00   1.50    1.2%  <-
+revolver|scope|1            BLIND   22.8%    2.3%    0.66    0.00   1.50    1.2%  <-
+revolver|scope|2            BLIND   13.3%    3.0%    1.02    0.00   1.50    1.0%  <-
+revolver|scope|3            BLIND   21.0%    2.6%    0.69   -0.00   1.50    1.6%  <-
+revolver|scope|4            BLIND   43.3%    4.2%    8.40    0.00   1.50    1.3%  <-
+rifle|irons|1                   -   11.7%    2.4%   -0.47    0.00   1.50    1.4%  <-
+rifle|irons|2                   -   21.6%    4.9%   -0.66    0.00   1.50    2.0%  <-
+rifle|irons|3                   -   23.4%    4.5%   -0.71    0.00   1.50    2.3%  <-
+rifle|irons|4               BLIND   13.4%    2.7%    0.21   -0.00   1.50    1.6%  <-
+rifle|irons|5               BLIND   19.1%    4.3%    0.22    0.00   1.50    1.6%  <-
+rifle|irons|6                   -    9.0%    1.3%   -0.76   -0.00   1.50    1.2%  <-
+rifle|optic|0               BLIND    7.9%    1.4%    1.06    0.00   1.50    1.0%  <-
+rifle|optic|1                   -   21.9%    3.3%    0.24   -0.00   1.50    1.6%  <-
+rifle|optic|2               BLIND   14.3%    3.1%    0.81    0.00   1.50    1.2%  <-
+rifle|optic|3                   -   19.9%    3.7%    0.20   -0.00   1.50    1.5%  <-
+rifle|optic|4               BLIND   27.0%    4.3%    0.37    0.00   1.50    2.3%  <-
+rifle|optic|5               BLIND   19.6%    3.6%    2.02    0.00   1.50    1.6%  <-
+rifle|optic|6               BLIND   31.9%    4.9%    0.42    0.00   1.50    2.1%  <-
+rifle|scope|2               BLIND   14.3%    1.3%    1.78   -0.00   1.50    1.3%  <-
+rifle|scope|3               BLIND   13.0%    0.8%    1.55   -0.00   1.50    1.1%  <-
+rifle|scope|4               BLIND   19.3%    3.6%    1.42    0.00   1.50    1.2%  <-
+rifle|scope|5               BLIND   16.9%    1.9%    1.63    0.00   1.50    1.2%  <-
+shotgun|irons|1                 -   10.8%    2.1%   -0.47   -0.00   1.50    1.1%  <-
+shotgun|irons|2             BLIND    8.8%    1.3%    0.49    0.00   1.50    0.9%  <-
+shotgun|irons|3                 -   12.7%    2.6%   -0.38    0.00   1.50    1.6%  <-
+shotgun|irons|4                 -   13.1%    2.3%   -0.40    0.00   1.50    1.4%  <-
+shotgun|irons|5             BLIND   13.8%    2.2%    0.69    0.00   1.50    1.2%  <-
+shotgun|optic|1             BLIND   15.4%    1.6%    1.25   -0.00   1.50    1.1%  <-
+shotgun|optic|2             BLIND   14.7%    3.1%    1.05    0.00   1.50    1.5%  <-
+shotgun|optic|3             BLIND   20.8%    4.7%    0.82    0.00   1.50    1.7%  <-
+shotgun|optic|4                 -    9.6%    2.5%    1.13   -0.00   1.50    1.2%  <-
+shotgun|optic|5             BLIND   13.9%    3.9%    0.25    0.00   1.50    1.4%  <-
+shotgun|scope|1             BLIND   12.6%    2.0%    1.27   -0.00   1.50    1.0%  <-
+shotgun|scope|2                 -   14.7%    4.6%    2.24    0.00   1.50    1.1%  <-
+shotgun|scope|3             BLIND   16.3%    1.8%    0.53    0.00   1.50    1.2%  <-
+shotgun|scope|4             BLIND    9.2%    1.3%    0.77    0.00   1.50    0.9%  <-
+shotgun|scope|5             BLIND   10.6%    1.5%    1.29    0.00   1.50    1.1%  <-
+shotgun|scope|6             BLIND   21.0%    3.3%    2.44    0.00   1.50    1.7%  <-
+smg|irons|1                 BLIND   10.0%    2.0%    0.06    0.00   1.50    1.1%  <-
+smg|irons|2                 BLIND   19.6%    3.4%    0.10    0.00   1.50    1.6%  <-
+smg|irons|3                 BLIND   76.9%    7.7%    1.50   -0.00   1.50    2.2%  <-
+smg|irons|4                 BLIND   27.2%    5.4%    0.32    0.00   1.50    1.9%  <-
+smg|irons|5                 BLIND   18.0%    2.7%    0.91    0.00   1.50    1.4%  <-
+smg|irons|6                 BLIND   26.8%    4.5%    1.83    0.00   1.50    1.5%  <-
+smg|optic|1                 BLIND   47.3%    4.7%    0.00    0.00   1.50    1.8%  <-
+smg|optic|2                     -   13.6%    2.1%    1.80    0.00   1.50    1.3%  <-
+smg|optic|3                     -   21.5%    4.1%    3.01    0.00   1.50    1.1%  <-
+smg|optic|4                 BLIND   14.8%    1.3%    2.39    0.00   1.50    1.2%  <-
+smg|optic|5                 BLIND   37.4%    4.4%    4.73    0.00   1.50    1.3%  <-
+smg|optic|6                 BLIND   26.3%    3.3%    2.10    0.00   1.50    1.4%  <-
+smg|scope|1                 BLIND   26.2%    2.3%    2.43    0.00   1.50    1.7%  <-
+smg|scope|2                 BLIND   18.8%    5.4%    0.41    0.00   1.50    1.8%  <-
+smg|scope|3                 BLIND   46.9%    7.3%    2.92    0.00   1.50    1.6%  <-
+sniper|irons|1                  -    8.3%    1.7%    0.46    0.00   1.50    1.1%  <-
+sniper|irons|2              BLIND   13.6%    2.3%    0.96    0.00   1.50    1.3%  <-
+sniper|irons|3              BLIND   12.3%    1.8%    0.94    0.00   1.50    1.2%  <-
+sniper|irons|4                  -   14.7%    2.8%   -0.25   -0.00   1.50    1.6%  <-
+sniper|irons|5                  -   14.2%    1.9%   -0.33    0.00   1.50    1.7%  <-
+sniper|irons|6                  -   12.1%    2.0%   -0.23   -0.00   1.50    1.4%  <-
+sniper|optic|0                  -   10.0%    1.1%    0.17    0.00   1.50    0.9%  <-
+sniper|optic|1              BLIND   14.3%    2.7%    0.39    0.00   1.50    1.3%  <-
+sniper|optic|2              BLIND    8.6%    1.5%    0.91    0.00   1.50    0.9%  <-
+sniper|optic|3              BLIND   18.6%    2.0%    1.32    0.00   1.50    1.5%  <-
+sniper|optic|4              BLIND   15.8%    1.9%    1.58   -0.00   1.50    1.5%  <-
+sniper|optic|5              BLIND   29.8%    4.8%    0.22    0.00   1.50    1.9%  <-
+sniper|optic|6              BLIND   23.4%    3.6%    2.46    0.00   1.50    1.6%  <-
+sniper|scope|4              BLIND   42.2%    3.3%    0.82    0.00   1.50    1.7%  <-
+sniper|scope|5              BLIND   15.5%    2.5%    0.79    0.00   1.50    1.4%  <-
+sniper|scope|6              BLIND   29.6%    4.0%    0.80    0.00   1.50    1.7%  <-
+
+weapons                          111
+view axis inside the gun         78 of 111  (70.3%)
+gun crest above the bar          105 of 111  (bar 0.80 deg below axis)
+sight window occluded, mean      21.8%
+sight window occluded, worst     87.8%  (bar 34%)
+ADS frame occluded, mean         3.5%
+ADS frame occluded, worst        21.4%  (bar 40%)
+worst crest                      9.44 deg
+sight picture below the axis     -0.00 deg at worst
+shrunk into the pose             0 of 111  (below 1.50 x)
+hip frame occluded, mean         1.5%
+sight offset at full ADS, worst  9.200965322975208e-09 m
+eye relief, closest              0.2055 m
+
+RESULT: FAIL
+
+AFTER — the eye line cleared off the part boxes
+
+class | optic | tier       centre   sight   frame   crest    drop  scale     hip
+launcher|irons|1                -    6.2%    2.8%   -1.73   -2.00   1.50    1.1%
+launcher|irons|2                -    5.9%    4.0%   -1.72   -2.45   1.50    1.5%
+launcher|irons|3                -    6.6%    2.6%   -1.89   -2.33   1.50    1.9%
+launcher|irons|4                -    6.5%    4.0%   -1.63   -2.39   1.50    1.9%
+launcher|optic|1                -    8.4%    1.6%   -1.60   -3.90   1.50    1.7%
+launcher|optic|2                -    2.3%    1.8%   -1.63   -2.91   1.50    1.0%
+launcher|optic|3                -    3.2%    2.9%   -1.60   -5.83   1.50    1.3%
+launcher|optic|4                -    5.9%    1.7%   -2.32   -2.77   1.50    1.3%
+launcher|optic|5                -    6.0%    2.3%   -1.80   -2.39   1.50    1.3%
+launcher|optic|6                -    3.0%    4.4%   -1.78   -3.20   1.50    1.2%
+launcher|scope|2                -    3.6%    1.3%   -2.13   -4.33   1.50    1.2%
+launcher|scope|3                -    4.6%    2.2%   -1.84   -5.69   1.50    1.4%
+launcher|scope|4                -    7.6%    3.6%   -1.60   -3.63   1.50    1.6%
+lmg|irons|1                     -   14.7%    4.1%   -1.77   -1.53   1.50    1.7%
+lmg|irons|2                     -    2.7%    3.5%   -1.60   -8.69   1.00    1.3%
+lmg|irons|3                     -   14.2%    3.4%   -1.60   -1.89   1.50    1.4%
+lmg|irons|4                     -   14.2%    3.4%   -1.60   -1.89   1.50    1.4%
+lmg|irons|5                     -    7.4%    4.4%   -1.64   -3.24   1.50    1.9%
+lmg|optic|1                     -   14.5%    9.7%   -1.60   -3.69   1.50    1.9%
+lmg|optic|2                     -   16.7%    4.1%   -1.85   -2.82   1.50    1.9%
+lmg|optic|3                     -   11.1%   14.9%   -1.63   -2.57   1.50    2.0%
+lmg|optic|4                     -    5.5%    5.8%   -1.65   -3.47   1.50    1.8%
+lmg|optic|5                     -   13.3%    4.4%   -1.89   -3.53   1.50    1.8%
+pistol|irons|1                  -    8.1%    4.0%   -1.83   -3.23   1.50    1.8%
+pistol|irons|2                  -   15.9%    4.4%   -1.85   -1.52   1.50    1.7%
+pistol|irons|3                  -    3.3%    4.0%   -1.64   -4.39   1.50    1.6%
+pistol|irons|4                  -    7.9%    8.0%   -2.67   -3.47   1.50    1.7%
+pistol|irons|5                  -    7.3%    2.6%   -1.63   -2.93   1.50    1.3%
+pistol|optic|0                  -    9.6%    2.6%   -1.87   -2.25   1.50    1.5%
+pistol|optic|1                  -   14.2%    3.3%   -1.88   -3.23   1.50    1.6%
+pistol|optic|2                  -    7.0%    3.4%   -1.60   -3.95   1.50    1.4%
+pistol|optic|3                  -    9.4%    1.9%   -1.88   -4.47   1.50    1.5%
+pistol|optic|4                  -    9.7%    2.5%   -1.97   -2.56   1.50    1.4%
+pistol|optic|5                  -    6.5%    2.1%   -1.70   -3.76   1.50    1.4%
+pistol|optic|6                  -    7.4%    4.2%   -1.72   -3.50   1.50    1.3%
+revolver|irons|0                -    5.4%    1.7%   -1.78   -2.04   1.50    1.3%
+revolver|irons|1                -    3.8%    1.5%   -1.73   -4.04   1.50    1.1%
+revolver|irons|2                -   12.3%    2.8%   -1.94   -2.26   1.50    1.8%
+revolver|irons|3                -   10.9%    2.4%   -1.85   -0.58   1.50    1.4%
+revolver|optic|0                -    5.2%    1.0%   -1.75   -2.20   1.50    1.0%
+revolver|optic|1                -    6.1%    2.2%   -1.98   -2.52   1.50    1.4%
+revolver|optic|2                -    3.5%    2.7%   -1.79   -5.66   1.50    1.4%
+revolver|optic|3                -    4.7%    1.7%   -1.60   -1.93   1.50    1.2%
+revolver|scope|1                -    9.8%    2.3%   -1.60   -2.93   1.50    1.2%
+revolver|scope|2                -    6.6%    2.6%   -1.95   -2.69   1.50    1.0%
+revolver|scope|3                -   11.4%    2.5%   -1.81   -2.56   1.50    1.6%
+revolver|scope|4                -    1.6%    2.3%   -1.60   -7.72   1.00    1.3%
+rifle|irons|1                   -    7.3%    2.2%   -1.60   -1.90   1.50    1.4%
+rifle|irons|2                   -   12.4%    4.2%   -1.83   -2.02   1.50    2.0%
+rifle|irons|3                   -   13.3%    4.1%   -1.85   -2.07   1.50    2.3%
+rifle|irons|4                   -    6.0%    2.3%   -1.63   -3.05   1.50    1.6%
+rifle|irons|5                   -    6.4%    3.5%   -1.63   -3.12   1.50    1.6%
+rifle|irons|6                   -    4.7%    1.4%   -2.10   -2.74   1.50    1.2%
+rifle|optic|0                   -    4.4%    1.4%   -1.60   -4.23   1.50    1.0%
+rifle|optic|1                   -   11.1%    3.0%   -1.72   -2.80   1.50    1.6%
+rifle|optic|2                   -    6.7%    2.3%   -2.15   -2.54   1.50    1.2%
+rifle|optic|3                   -    9.2%    3.2%   -1.60   -2.34   1.50    1.5%
+rifle|optic|4                   -   14.4%    4.0%   -1.60   -2.48   1.50    2.3%
+rifle|optic|5                   -   10.5%    2.9%   -1.60   -4.39   1.50    1.6%
+rifle|optic|6                   -    7.8%    4.1%   -1.86   -4.50   1.50    2.1%
+rifle|scope|2                   -    6.0%    1.0%   -2.19   -5.51   1.50    1.3%
+rifle|scope|3                   -    5.4%    1.0%   -2.13   -5.23   1.50    1.1%
+rifle|scope|4                   -    6.3%    2.9%   -2.09   -3.05   1.50    1.2%
+rifle|scope|5                   -    6.8%    1.6%   -2.16   -3.24   1.50    1.2%
+shotgun|irons|1                 -    6.3%    1.8%   -1.90   -1.79   1.50    1.1%
+shotgun|irons|2                 -    3.7%    1.5%   -1.95   -3.27   1.50    0.9%
+shotgun|irons|3                 -    7.1%    2.3%   -1.60   -2.31   1.50    1.6%
+shotgun|irons|4                 -    7.5%    2.2%   -1.60   -2.36   1.50    1.4%
+shotgun|irons|5                 -    4.1%    1.8%   -2.03   -4.11   1.50    1.2%
+shotgun|optic|1                 -    6.6%    1.4%   -2.46   -2.94   1.50    1.1%
+shotgun|optic|2                 -    6.1%    2.6%   -2.15   -2.91   1.50    1.5%
+shotgun|optic|3                 -    5.4%    3.3%   -1.80   -4.21   1.50    1.7%
+shotgun|optic|4                 -    4.3%    2.0%   -1.74   -2.83   1.50    1.2%
+shotgun|optic|5                 -    8.1%    3.0%   -1.60   -2.15   1.50    1.4%
+shotgun|scope|1                 -    7.9%    1.7%   -1.60   -2.89   1.50    1.0%
+shotgun|scope|2                 -    3.7%    3.1%   -1.63   -3.80   1.50    1.1%
+shotgun|scope|3                 -    7.2%    1.7%   -1.82   -3.90   1.50    1.2%
+shotgun|scope|4                 -    4.1%    1.3%   -1.95   -3.59   1.50    0.9%
+shotgun|scope|5                 -    5.1%    1.8%   -1.66   -3.04   1.50    1.1%
+shotgun|scope|6                 -    7.1%    2.5%   -1.68   -4.11   1.50    1.7%
+smg|irons|1                     -    4.3%    1.7%   -1.60   -3.16   1.50    1.1%
+smg|irons|2                     -   11.8%    3.1%   -1.63   -2.54   1.50    1.6%
+smg|irons|3                     -   26.3%    6.2%   -1.64   -2.52   1.50    2.2%
+smg|irons|4                     -    8.4%    4.2%   -1.91   -3.11   1.50    1.9%
+smg|irons|5                     -    6.9%    2.3%   -1.85   -3.93   1.50    1.4%
+smg|irons|6                     -    3.3%    2.5%   -1.65   -6.03   1.00    1.5%
+smg|optic|1                     -   23.0%    4.3%   -3.13   -3.65   1.50    1.8%
+smg|optic|2                     -    3.7%    1.8%   -1.64   -3.38   1.50    1.3%
+smg|optic|3                     -    6.1%    3.0%   -1.97   -4.91   1.50    1.1%
+smg|optic|4                     -    4.7%    1.5%   -2.11   -5.86   1.50    1.2%
+smg|optic|5                     -    3.4%    2.5%   -1.76   -8.75   1.00    1.3%
+smg|optic|6                     -    3.2%    2.2%   -1.65   -7.14   1.00    1.4%
+smg|scope|1                     -    8.9%    2.1%   -2.32   -5.79   1.50    1.7%
+smg|scope|2                     -   10.0%    4.3%   -1.64   -2.35   1.50    1.8%
+smg|scope|3                     -   10.2%    5.8%   -1.60   -4.36   1.50    1.6%
+sniper|irons|1                  -    4.3%    1.3%   -2.00   -3.05   1.50    1.1%
+sniper|irons|2                  -    3.3%    2.0%   -1.64   -4.89   1.50    1.3%
+sniper|irons|3                  -    3.4%    1.5%   -1.64   -4.78   1.50    1.2%
+sniper|irons|4                  -    8.3%    2.4%   -1.85   -2.56   1.50    1.6%
+sniper|irons|5                  -    8.1%    1.8%   -1.89   -2.28   1.50    1.7%
+sniper|irons|6                  -    7.2%    1.9%   -1.83   -2.41   1.50    1.4%
+sniper|optic|0                  -    5.0%    1.1%   -1.71   -3.25   1.50    0.9%
+sniper|optic|1                  -    7.0%    2.2%   -2.12   -3.25   1.50    1.3%
+sniper|optic|2                  -    5.3%    1.2%   -1.60   -2.75   1.50    0.9%
+sniper|optic|3                  -    7.2%    1.8%   -2.26   -3.18   1.50    1.5%
+sniper|optic|4                  -    3.6%    1.5%   -1.64   -5.94   1.00    1.5%
+sniper|optic|5                  -    8.5%    4.1%   -1.87   -2.71   1.50    1.9%
+sniper|optic|6                  -    9.2%    2.4%   -1.60   -5.15   1.50    1.6%
+sniper|scope|4                  -   10.7%    2.4%   -3.06   -5.20   1.50    1.7%
+sniper|scope|5                  -    9.3%    2.2%   -1.60   -3.06   1.50    1.4%
+sniper|scope|6                  -    4.0%    3.3%   -1.80   -4.78   1.50    1.7%
+
+weapons                          111
+view axis inside the gun         0 of 111  (0.0%)
+gun crest above the bar          0 of 111  (bar 0.80 deg below axis)
+sight window occluded, mean      7.6%
+sight window occluded, worst     26.3%  (bar 34%)
+ADS frame occluded, mean         2.9%
+ADS frame occluded, worst        14.9%  (bar 40%)
+worst crest                      -1.60 deg
+sight picture below the axis     -8.75 deg at worst
+shrunk into the pose             6 of 111  (below 1.50 x)
+hip frame occluded, mean         1.5%
+sight offset at full ADS, worst  1.1389679421824894e-08 m
+eye relief, closest              0.2055 m
+
+RESULT: PASS
+
+BEFORE -> AFTER over 111 weapons
+view axis inside the gun         78  ->  0  of 111
+sight window occluded, mean      21.8%  ->  7.6%
+sight window occluded, worst     87.8%  ->  26.3%
+ADS frame occluded, mean         3.5%  ->  2.9%
+hip frame occluded, mean         1.5%  ->  1.5%   (must not move)
+hip poses that moved             0 of 111
+
+configure cost, us per weapon    48.1  ->  49.5   (2220 calls each)

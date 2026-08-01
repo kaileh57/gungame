@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_3ur6w"]
+
+[resource]
+script = ExtResource("1_3ur6w")
+roll_seed = 4356
+cfg = 4292108482
+weapon_name = "Foundry Verdict"
+part_indices = PackedInt32Array(27, 54, 70, 2, 18)
+part_scales = PackedFloat32Array(1, 1.62, 0.45, 0.4377132, 0.41397774)
+part_z_scales = PackedFloat32Array(1, 1.3798094, 0.7533242, 1.294824, 0.8471653)
+part_offsets = PackedVector3Array(0, 0, 0, 0.66752, -0.02136, 0, -0.66752, -0.15507, 0, 0.036344, -0.50456005, 0, 0, 0.26544, 0)
+fit_error = 0.27533269735866694
+muzzle_local = Vector3(7.957844, -0.02136, 0)
+score = 71.54767527843873
+tier_index = 3
+tier_name = &"Field-Grade"
+tier_color = Color(0.34117648, 0.627451, 0.73333335, 1)
+quirks = PackedStringArray()
+caliber = "11.8×27 wildcat"
+bore = 11.8
+case_length = 27
+muzzle_velocity = 414
+muzzle_energy = 1163
+effective_range = 366
+sim_velocity = 207
+damage = 50.0
+crit_multiplier = 2.16
+headshot_range = 23.0
+impulse = 6.708743284670794
+fire_mode = &"Semi-auto"
+archetype = &"Carbine"
+rpm = 218
+cyclic = 1050
+magazine = 30
+reload_time = 2.4
+mass = 5.895348546124003
+precision = 69
+reach = 85
+kick = 21
+handling = 45
+reliability = 69
+burst_dps = 182
+sustained_dps = 141
+barrel_length = 656
+overall_length = 921
+spread = 7.0
+spread_rad = 0.0020369678452373348
+spread_text = "7'"
+has_optic = true
+zoom = 1.8400176723978672
+zoom_levels = PackedFloat32Array(1.8)
+recoil_vertical = 0.0036415113276145527
+recoil_horizontal = 0.0015710680966939154
+recoil_drift = 0.517
+recoil_period = 5
+recoil_random = 0.5186843643984768
+recoil_settle = 0.3358139418449601
+tint = 0.9664000476896762
+donor_groups = Array[StringName]([&"Nineteen", &"Screamer", &"Serpent", &"Kalash", &"Pumper"])

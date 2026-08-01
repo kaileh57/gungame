@@ -1,0 +1,70 @@
+gun firing verification — 2026-08-01T11:56:26
+  ok   rolled 400 specs of 400 wanted
+
+-- mechanisms --
+action           mode                rpm   cap   held   fired    want    err%
+semi             Semi-auto           150    13   2.0s       1     1.0     0.0
+auto             Full-auto           292    46   2.0s      10    10.0     0.0
+burst            3-round burst       218    16   2.0s       3     3.0     0.0
+bolt             Bolt-action          42    19   2.0s       1     1.0     0.0
+pump             Pump-action          62    10   2.0s       1     1.0     0.0
+double           Double-action       110     8   2.0s       4     4.0     0.0
+break            Break-action         20     2   2.0s       1     1.0     0.0
+single           Single-shot          12     1   2.0s       1     1.0     0.0
+  ok   every mechanism appeared and behaved (8 of 8, missing [])
+
+-- volume: 10000 rounds --
+weapons driven      297
+rounds fired        10028
+rounds that jammed  81
+surfaces resolved   26463
+cone seen, MOA      5.80 .. 774.24
+  ok   magazine accounting balanced on every weapon
+  ok   no non-finite value reached a signal (0 seen)
+  ok   10028 rounds fired, wanted 10000
+  ok   26463 surfaces resolved — nothing was being hit
+in-string intervals 8032 timed, 1996 skipped (reload, jam or burst pause)
+worst rate error    0.008333 s = 1.000 of a 120 Hz tick, on Kalash Mk.XII (Break-action, 20 rpm)
+  ok   every timed interval lands within one 120 Hz tick of the rated rate
+
+-- jams --
+rel  40  predicted 0.01994  measured 0.01977  (121 in 6121, 0.1 sigma)
+  ok   reliability 40 jams at the rate the curve predicts
+rel  70  predicted 0.00573  measured 0.00794  (48 in 6048, 2.3 sigma)
+  ok   reliability 70 jams at the rate the curve predicts
+rel  95  predicted 0.00023  measured 0.00000  (0 in 6000, 1.2 sigma)
+  ok   reliability 95 jams at the rate the curve predicts
+  ok   a reliability-1 gun bound up
+  ok   a jammed gun reports `jammed`
+  ok   clearing reports partial progress (0.21)
+  ok   letting the key go leaves the gun jammed
+  ok   an abandoned clear loses its progress
+clear took          1.2083 s (stated 1.20 s)
+  ok   the clear took its stated time
+
+-- projectiles --
+weapon              Coffin Divorce (11.1×62 wildcat)
+instant window      44.0 m, sim velocity 309 m/s
+trigger pulls       24, rounds fired 24
+shots that flew     24 of 24, of which landed 24
+peak rounds in air  1
+  ok   the projectile probe actually fired
+  ok   every shot past the window became a projectile
+  ok   every projectile resolved against something solid
+  ok   the projectile pool drained
+
+-- blast --
+open target damage  200.0
+occluded damage     50.0
+  ok   an unobstructed blast damaged the target
+  ok   an occluded blast did less damage than an open one
+  ok   occlusion scaled the blast by exactly `blast_occluded_scale`
+
+-- penetration --
+  ok   with penetration off a round stops at the first surface
+3200 J, 3 allowed    2 surfaces resolved
+40 J, 3 allowed      1 surfaces resolved
+  ok   a high-energy round went through the near wall
+  ok   a low-energy round stopped in the near wall
+
+26 checks, 0 failures

@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_20b77"]
+
+[resource]
+script = ExtResource("1_20b77")
+roll_seed = 25548
+cfg = 144148521
+weapon_name = "Bastard Chattergun"
+part_indices = PackedInt32Array(49, 15, 29, 6, 89)
+part_scales = PackedFloat32Array(1, 1.3113613, 0.8198321, 0.24, 0.34)
+part_z_scales = PackedFloat32Array(1, 1.9, 1.8574842, 0.7, 1.835163)
+part_offsets = PackedVector3Array(0, 0, 0, 0.87912, -0.038, 0.09181, -0.87912, -0.10345, 0.13014, 0.038349584, -0.45345, -0.16978, -0.60591, 0.31655, 0.12924)
+fit_error = 4.093424964505934
+muzzle_local = Vector3(7.953389, -0.038, 0.09181)
+score = 52.60471122066345
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("jam-prone", "crew-served")
+caliber = ".44 Magnum"
+bore = 10.5
+case_length = 32
+muzzle_velocity = 485
+muzzle_energy = 1150
+effective_range = 114
+sim_velocity = 243
+damage = 55.0
+crit_multiplier = 2.2
+headshot_range = 31.0
+impulse = 5.828430679424066
+fire_mode = &"Full-auto"
+feed = &"internal"
+archetype = &"Assault rifle"
+rpm = 530
+cyclic = 780
+magazine = 12
+reload_time = 8.9
+automatic = true
+mass = 12.0
+precision = 45
+reach = 68
+kick = 9
+handling = 1
+reliability = 10
+burst_dps = 486
+sustained_dps = 64
+barrel_length = 637
+overall_length = 1147
+spread = 30.0
+spread_rad = 0.008653333587280985
+spread_text = "30'"
+has_optic = true
+zoom = 1.845530413215971
+zoom_levels = PackedFloat32Array(1.8)
+recoil_vertical = 0.0016
+recoil_horizontal = 0.0021600000000000005
+recoil_drift = -0.971
+recoil_period = 5
+recoil_random = 1.1963926451018188
+recoil_settle = 0.42
+tint = 1.035885562710464
+donor_groups = Array[StringName]([&"Chattergun", &"Pumper", &"Karabiner", &"Woodsman", &"Longshot"])

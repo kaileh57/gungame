@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Renders written by res://tools/capture.tscn. A working artifact for looking at
+# the game, not source — regenerate them, do not commit them.
+/_shots/

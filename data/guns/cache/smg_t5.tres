@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_egfag"]
+
+[resource]
+script = ExtResource("1_egfag")
+roll_seed = 2203
+cfg = 1107391823
+weapon_name = "Tetanus Spitter"
+part_indices = PackedInt32Array(14, 11, 83, 26)
+part_scales = PackedFloat32Array(1, 1.1771873, 0.9446899, 1.0675664)
+part_z_scales = PackedFloat32Array(1, 1.0249257, 0.9909583, 1)
+part_offsets = PackedVector3Array(0, 0, 0, 0.85131, 0.01099, 0, -0.85131, -0.05561, 0, -0.0149938, -0.47237, 0)
+muzzle_local = Vector3(3.4871502, 0.01099, 0)
+score = 75.94214007488952
+tier_index = 5
+tier_name = &"Warlord-Grade"
+tier_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+quirks = PackedStringArray("sidearm")
+caliber = "8.1×32 wildcat"
+bore = 8.1
+case_length = 32
+muzzle_velocity = 725
+muzzle_energy = 1234
+effective_range = 178
+sim_velocity = 362
+damage = 50.0
+crit_multiplier = 2.35
+headshot_range = 54.0
+impulse = 4.877814403896913
+fire_mode = &"3-round burst"
+archetype = &"Chopped auto"
+rpm = 1022
+cyclic = 1110
+magazine = 38
+reload_time = 2.2
+sidearm = true
+mass = 2.3898712918822533
+precision = 53
+reach = 74
+kick = 38
+handling = 85
+reliability = 92
+burst_dps = 860
+sustained_dps = 433
+barrel_length = 237
+overall_length = 563
+spread = 19.0
+spread_rad = 0.005569902209226793
+spread_text = "19'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.006531316621731763
+recoil_horizontal = 0.0018287686540848938
+recoil_drift = -0.611
+recoil_period = 5
+recoil_random = 0.252
+recoil_settle = 0.19559485167529012
+tint = 1.0204578311089427
+donor_groups = Array[StringName]([&"Spitter", &"Stubby", &"Nineteen"])

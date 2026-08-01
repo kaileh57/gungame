@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_xru6h"]
+
+[resource]
+script = ExtResource("1_xru6h")
+roll_seed = 5121
+cfg = 3104195877
+weapon_name = "Karabiner Mk.V"
+part_indices = PackedInt32Array(32, 59, 42, 39, 62)
+part_scales = PackedFloat32Array(1, 1.097757, 0.45, 1.6, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.8446861, 0.7129469, 1.6767823, 1.1089889)
+part_offsets = PackedVector3Array(0, 0, 0, 3.55957, -0.0821, 0.07799, -3.55957, -0.50478, 0.07728, -2.2411497, -0.45345, 0.07799, 0.57154, 0.31655, 0.07799)
+fit_error = 2.1454922746619984
+muzzle_local = Vector3(7.8503733, -0.0821, 0.07799)
+score = 60.91000126048808
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray("hand cannon")
+caliber = "15.4×95 shot"
+bore = 15.4
+case_length = 95
+pellets = 7
+muzzle_velocity = 603
+muzzle_energy = 5275
+effective_range = 55
+sim_velocity = 301
+damage = 419.0
+crit_multiplier = 1.79
+headshot_range = 42.0
+impulse = 22.965980311283175
+fire_mode = &"Semi-auto"
+archetype = &"Shotgun"
+rpm = 160
+cyclic = 320
+magazine = 9
+reload_time = 2.8
+mass = 7.011735040076977
+precision = 24
+reach = 58
+kick = 61
+handling = 28
+reliability = 57
+burst_dps = 1118
+sustained_dps = 611
+barrel_length = 386
+overall_length = 1118
+spread = 103.0
+spread_rad = 0.030100363019999993
+spread_text = "1.7°"
+has_optic = true
+zoom = 3.1
+zoom_levels = PackedFloat32Array(3.1, 4.8)
+recoil_vertical = 0.010481162875672403
+recoil_horizontal = 0.014149569882157745
+recoil_drift = 0.106
+recoil_period = 5
+recoil_random = 0.6578002692664541
+recoil_settle = 0.38046940160307907
+tint = 0.9113461372256279
+donor_groups = Array[StringName]([&"Karabiner", &"Longshot", &"Broomstick", &"Handcannon"])

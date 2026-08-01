@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_5wivc"]
+
+[resource]
+script = ExtResource("1_5wivc")
+roll_seed = 10130
+cfg = 3274673846
+weapon_name = "The Sermon"
+part_indices = PackedInt32Array(58, 37, 9, 2, 57)
+part_scales = PackedFloat32Array(1, 1.1442814, 0.9672765, 0.48961544, 1.2215285)
+part_z_scales = PackedFloat32Array(1, 1.0162139, 1.0192527, 0.8982379, 1.5693134)
+part_offsets = PackedVector3Array(0, 0, 0, 0.89432, -0.19255, 0, -0.89432, 0.05682, 0, 0.2841856, -0.45345, 0.06755, -0.38126, 0.31655, 0.07418)
+muzzle_local = Vector3(2.5298414, -0.19255, 0)
+score = 77.22497081100305
+tier_index = 6
+tier_name = &"Relic"
+tier_color = Color(0.9019608, 0.75686276, 0.30980393, 1)
+quirks = PackedStringArray("flat-shooting", "overbore", "sidearm")
+caliber = "5.6×33 wildcat"
+bore = 5.6
+case_length = 33
+muzzle_velocity = 1357
+muzzle_energy = 1493
+effective_range = 211
+sim_velocity = 679
+damage = 57.0
+crit_multiplier = 2.79
+headshot_range = 118.0
+impulse = 4.2917469327819955
+fire_mode = &"3-round burst"
+archetype = &"Chopped auto"
+rpm = 1100
+cyclic = 1350
+magazine = 20
+reload_time = 1.7
+sidearm = true
+mass = 2.3129789498232705
+precision = 56
+reach = 77
+kick = 35
+handling = 87
+reliability = 86
+burst_dps = 1049
+sustained_dps = 410
+barrel_length = 147
+overall_length = 544
+spread = 16.0
+spread_rad = 0.004691441664
+spread_text = "16'"
+has_optic = true
+zoom = 1.7164284440804374
+zoom_levels = PackedFloat32Array(1.7, 3.7)
+recoil_vertical = 0.005937620048791079
+recoil_horizontal = 0.0016625336136615024
+recoil_drift = 0.294
+recoil_period = 7
+recoil_random = 0.321
+recoil_settle = 0.19251915799293082
+tint = 0.8674987675435841
+donor_groups = Array[StringName]([&"Screamer", &"Handcannon", &"Tube", &"Kalash"])

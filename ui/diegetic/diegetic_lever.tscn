@@ -1,0 +1,90 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/diegetic/diegetic_lever.gd" id="1_87p0w"]
+[ext_resource type="Material" path="res://art/materials/scrap_steel.tres" id="2_f1ubv"]
+[ext_resource type="Material" path="res://art/materials/gun_steel.tres" id="3_2dqq3"]
+[ext_resource type="Material" path="res://art/materials/scrap_polymer.tres" id="4_4cso7"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="5_82ikr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wbqmq"]
+size = Vector3(0.14, 0.06, 0.16)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_v746a"]
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.09
+radial_segments = 20
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_e8jlf"]
+size = Vector3(0.03, 0.2, 0.034)
+
+[sub_resource type="SphereMesh" id="SphereMesh_4v0n0"]
+radius = 0.032
+height = 0.064
+radial_segments = 20
+rings = 10
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ekj5"]
+size = Vector3(0.17, 0.3, 0.26)
+
+[node name="DiegeticLever" type="StaticBody3D" unique_id=541544192]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_87p0w")
+control_id = &"lever"
+label_text = "LEVER"
+
+[node name="Base" type="MeshInstance3D" parent="." unique_id=1629332494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03, 0)
+mesh = SubResource("BoxMesh_wbqmq")
+surface_material_override/0 = ExtResource("2_f1ubv")
+
+[node name="Boss" type="MeshInstance3D" parent="." unique_id=1624345290]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_v746a")
+surface_material_override/0 = ExtResource("2_f1ubv")
+
+[node name="Arm" type="Node3D" parent="." unique_id=1990205921]
+
+[node name="Shaft" type="MeshInstance3D" parent="Arm" unique_id=67084407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.085, 0)
+mesh = SubResource("BoxMesh_e8jlf")
+surface_material_override/0 = ExtResource("3_2dqq3")
+
+[node name="Grip" type="MeshInstance3D" parent="Arm" unique_id=1681147227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, 0)
+mesh = SubResource("SphereMesh_4v0n0")
+surface_material_override/0 = ExtResource("4_4cso7")
+
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=1739515000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0)
+shape = SubResource("BoxShape3D_2ekj5")
+
+[node name="Label" type="Label3D" parent="." unique_id=754840638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.265, 0)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.792, 0.749, 0.659, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "LEVER"
+font = ExtResource("5_82ikr")
+font_size = 48
+outline_size = 10
+
+[node name="State" type="Label3D" parent="." unique_id=699226472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0.082)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.847, 0.51, 0.184, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "OFF"
+font = ExtResource("5_82ikr")
+font_size = 48
+outline_size = 10
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=1841245041]
+unit_size = 3.0
+max_distance = 40.0

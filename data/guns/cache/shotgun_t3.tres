@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_xqr18"]
+
+[resource]
+script = ExtResource("1_xqr18")
+roll_seed = 2959
+cfg = 4273396753
+weapon_name = "The Cough"
+part_indices = PackedInt32Array(19, 33, 1, 84, 31)
+part_scales = PackedFloat32Array(1, 0.89418703, 0.8689529, 1.6, 0.59357005)
+part_z_scales = PackedFloat32Array(1, 0.7, 0.7, 1.5875783, 0.9033977)
+part_offsets = PackedVector3Array(0, 0, 0, 2.1777701, 0.14574, 0.00161, -2.1777701, -0.25579, 0.0017, -0.7733704, -0.06708, 0.00161, 0.43261, 0.31655, 0.00161)
+fit_error = 0.34967464438281437
+muzzle_local = Vector3(5.0406, 0.14574, 0.00161)
+score = 72.46398950982235
+tier_index = 3
+tier_name = &"Field-Grade"
+tier_color = Color(0.34117648, 0.627451, 0.73333335, 1)
+quirks = PackedStringArray("drum-fed", "sidearm")
+caliber = "7.92×57"
+bore = 8.1
+case_length = 63
+muzzle_velocity = 716
+muzzle_energy = 1179
+effective_range = 266
+sim_velocity = 358
+damage = 53.0
+crit_multiplier = 2.34
+headshot_range = 54.0
+impulse = 4.66280127827163
+fire_mode = &"Semi-auto"
+archetype = &"Sidearm"
+rpm = 244
+cyclic = 850
+magazine = 60
+reload_time = 2.9
+sidearm = true
+mass = 3.5397244444268425
+precision = 62
+reach = 80
+kick = 34
+handling = 71
+reliability = 76
+burst_dps = 216
+sustained_dps = 181
+barrel_length = 258
+overall_length = 692
+spread = 11.0
+spread_rad = 0.0032095621571158876
+spread_text = "11'"
+has_optic = true
+zoom = 2.7021334578126206
+zoom_levels = PackedFloat32Array(2.7, 4.6)
+recoil_vertical = 0.004215289727979162
+recoil_horizontal = 0.003761391774716318
+recoil_drift = -0.407
+recoil_period = 8
+recoil_random = 0.43825510092482844
+recoil_settle = 0.2415889777770737
+tint = 1.1144408493582159
+donor_groups = Array[StringName]([&"Pumper", &"Blackrifle", &"Kalash", &"Stubby", &"Karabiner"])

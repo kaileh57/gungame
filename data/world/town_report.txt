@@ -1,0 +1,48 @@
+TOWN BAKE  seed 4471
+
+roads                 45 segments
+blocks                47
+buildings             114 total - 88 house, 4 warehouse, 14 ruin, 2 tower, 4 market, 2 compound
+ladders               62 climb volumes
+points of interest    16  (3 extraction pads)
+
+geometry              323672 tris in 211 chunks of 48 m
+                      1533 tris per chunk mean, 56 chunks cast shadows
+collision             13455 boxes -> 161460 tris in 203 shapes
+occluders             94 building hulls
+
+navmesh               29942 polys from 154856 source tris
+navmesh connectivity  208 components; largest 25608 of 29942 polys, 74699 of 104119 m2
+navmesh bare ground   2 components, largest 114574 of 114578 m2 (100.00%)
+navmesh main island   spans 305 x 305 m, y -5.0 .. 14.0
+
+shells                24346
+flat shells           0
+inverted shells       0  (must be 0 - you see through it)
+boundary edges        0  (must be 0 - an open shell is an air gap)
+non-manifold edges    0  (must be 0 - a butted joint, not overlapped)
+degenerate tris       0  (must be 0 - a dropped face opens a shell)
+duplicate faces       0  (must be 0 - coplanar, they z-fight)
+winding/normal flips  0  (must be 0 - lit one way, drawn the other)
+outward volume        +85646.3 m3 summed over shells
+
+KITS
+  compound        1296 tris    61 boxes   24.4 x   6.8 x  24.3 m   108 shells  clean
+  street_block    7516 tris   318 boxes   34.0 x  13.9 x  17.3 m   585 shells  clean
+  range_bay        264 tris    22 boxes   20.0 x   3.8 x  40.0 m    22 shells  clean
+  plaza           1596 tris    60 boxes   33.3 x   5.4 x  29.9 m    82 shells  clean
+  watchtower      1764 tris    65 boxes    9.7 x  18.7 x   9.5 m   141 shells  clean
+  ruin_cluster    2024 tris   119 boxes   26.9 x   8.0 x  30.8 m   146 shells  clean
+
+LOAD-BACK
+  town.tscn        418 nodes, 211 mesh instances (0 empty), 971016 verts
+                   nav 29942 polys, occluder 752 verts, 203 collision shapes
+  compound         64 nodes, 3888 verts, 61 shapes, size 24.4 x 6.8 x 24.3 m
+  street_block     321 nodes, 22548 verts, 318 shapes, size 34.0 x 13.9 x 17.3 m
+  range_bay        25 nodes, 792 verts, 22 shapes, size 20.0 x 3.8 x 40.0 m
+  plaza            63 nodes, 4788 verts, 60 shapes, size 33.3 x 5.4 x 29.9 m
+  watchtower       68 nodes, 5292 verts, 65 shapes, size 9.7 x 18.7 x 9.5 m
+  ruin_cluster     122 nodes, 6072 verts, 119 shapes, size 26.9 x 8.0 x 30.8 m
+bake time             21260 ms
+
+RESULT: PASS

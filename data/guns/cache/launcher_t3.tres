@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_1gdfk"]
+
+[resource]
+script = ExtResource("1_1gdfk")
+roll_seed = 1472
+cfg = 2237620659
+weapon_name = "Tube Mk.VI"
+part_indices = PackedInt32Array(10, 11, 79, 22)
+part_scales = PackedFloat32Array(1, 1.4463477, 1.1507689, 0.6678593)
+part_z_scales = PackedFloat32Array(1, 0.91751647, 1.0918586, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 1.3738899, -0.19093, 0.00192, -1.3738899, -0.00448, 0.00153, 0.8755508, -0.49139997, 0.02473)
+fit_error = 2.2204460492503128e-16
+muzzle_local = Vector3(4.612407, -0.19093, 0.00192)
+score = 72.4521890943926
+tier_index = 3
+tier_name = &"Field-Grade"
+tier_color = Color(0.34117648, 0.627451, 0.73333335, 1)
+quirks = PackedStringArray("sidearm")
+caliber = "10.0×44 wildcat"
+bore = 10.0
+case_length = 44
+muzzle_velocity = 779
+muzzle_energy = 2561
+effective_range = 200
+sim_velocity = 389
+damage = 89.0
+crit_multiplier = 2.41
+headshot_range = 60.0
+impulse = 9.445516450416905
+fire_mode = &"Semi-auto"
+archetype = &"Sidearm"
+rpm = 216
+cyclic = 720
+magazine = 8
+reload_time = 1.4
+sidearm = true
+mass = 2.8483761748446192
+precision = 55
+reach = 76
+kick = 62
+handling = 79
+reliability = 85
+burst_dps = 320
+sustained_dps = 196
+barrel_length = 291
+overall_length = 633
+spread = 17.0
+spread_rad = 0.004944935839716894
+spread_text = "17'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.01061153821895836
+recoil_horizontal = 0.002971230701308342
+recoil_drift = 0.096
+recoil_period = 5
+recoil_random = 0.3285193778164899
+recoil_settle = 0.21393504699378477
+tint = 0.9117100069392472
+donor_groups = Array[StringName]([&"Tube", &"Spitter", &"Roomsweeper", &"Kalash"])

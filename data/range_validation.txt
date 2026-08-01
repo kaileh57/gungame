@@ -1,0 +1,33 @@
+mesh validation
+roots     res://demos/range
+open      terrain
+weld 0.0001  area 0.0000000001  volume 0.000000001
+
+mesh                                                 surf     tris   verts  shell    bnd  nonmf  degen   dupe   flip       volume
+------------------------------------------------------------------------------------------------------------------------------------
+
+meshes                187
+surfaces              187
+triangles             26460
+shells                575
+flat shells           8
+inverted shells       0
+boundary edges        368
+non-manifold edges    0
+degenerate triangles  40
+duplicate faces       0
+winding/normal flips  0
+empty surfaces        0
+unreadable files      0
+scan time             965 ms
+
+RESULT: FAIL - 9 surfaces with findings
+  res://demos/range/meshes/ground.res surface 0: 172 boundary edge(s)
+  res://demos/range/range.tscn:Range/Vfx/Decals surface 0: 4 boundary edge(s)
+  res://demos/range/range.tscn:Range/Vfx/Tracers surface 0: 4 boundary edge(s)
+  res://demos/range/range.tscn:Range/Ground/GroundMesh surface 0: 172 boundary edge(s)
+  res://demos/range/range.tscn:Range/Lane/LaneReadout/Screen surface 0: 4 boundary edge(s)
+  res://demos/range/range.tscn:Range/Targets/PaperTarget/Face surface 0: 4 boundary edge(s)
+  res://demos/range/range.tscn:Range/Bench/scavenge_lever/Arm/Grip surface 0: 40 degenerate tri(s)
+  res://demos/range/range.tscn:Range/Bench/CardReadout/Screen surface 0: 4 boundary edge(s)
+  res://demos/range/range.tscn:Range/Bench/PartsReadout/Screen surface 0: 4 boundary edge(s)

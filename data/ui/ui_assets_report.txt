@@ -1,0 +1,14 @@
+kept  font mono              res://data/ui/font_mono.tres
+kept  font display           res://data/ui/font_display.tres
+ok    debug line material    res://data/ui/debug_lines.tres
+ok    grime 256x256          res://data/ui/readout_grime.res
+ok    lamp lamp_off.tres     res://data/ui/lamp_off.tres
+ok    lamp lamp_on.tres      res://data/ui/lamp_on.tres
+ok    sound control click    res://data/ui/control_click.res
+ok    sound control deny     res://data/ui/control_deny.res
+ok    scene button           res://ui/diegetic/diegetic_button.tscn
+ok    scene lever            res://ui/diegetic/diegetic_lever.tscn
+ok    scene dial             res://ui/diegetic/diegetic_dial.tscn
+ok    scene slider           res://ui/diegetic/diegetic_slider.tscn
+ok    scene readout          res://ui/diegetic/diegetic_readout.tscn
+ok    scene combat hud       res://ui/hud/combat_hud.tscn

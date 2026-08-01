@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_koj3p"]
+
+[resource]
+script = ExtResource("1_koj3p")
+roll_seed = 25070
+cfg = 1961873879
+weapon_name = "Chattergun Mk.XI"
+part_indices = PackedInt32Array(49, 64, 65, 47, 35)
+part_scales = PackedFloat32Array(1, 0.88123137, 0.72415227, 1, 0.6906259)
+part_z_scales = PackedFloat32Array(1, 0.9986778, 1.8468125, 0.90922964, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 0.87912, -0.038, 0.09181, -0.87912, -0.10345, 0.13014, -0.66487557, -0.45345, -0.16978, -0.60591, 0.31655, 0.12924)
+fit_error = 0.37773791576869187
+muzzle_local = Vector3(4.676787, -0.038, 0.09181)
+score = 77.89324951183931
+tier_index = 6
+tier_name = &"Relic"
+tier_color = Color(0.9019608, 0.75686276, 0.30980393, 1)
+quirks = PackedStringArray()
+caliber = "7.7×32 wildcat"
+bore = 7.7
+case_length = 32
+muzzle_velocity = 742
+muzzle_energy = 1131
+effective_range = 254
+sim_velocity = 371
+damage = 54.0
+crit_multiplier = 2.36
+headshot_range = 56.0
+impulse = 4.258900606502864
+fire_mode = &"Full-auto"
+archetype = &"Assault rifle"
+rpm = 618
+cyclic = 910
+magazine = 20
+reload_time = 2.1
+automatic = true
+mass = 4.757366618444918
+precision = 70
+reach = 79
+kick = 17
+handling = 55
+reliability = 87
+burst_dps = 560
+sustained_dps = 269
+barrel_length = 342
+overall_length = 860
+spread = 6.3
+spread_rad = 0.001833076297505636
+spread_text = "6.3'"
+has_optic = true
+zoom = 1.524565237786151
+zoom_levels = PackedFloat32Array(1.5, 3.3)
+recoil_vertical = 0.0028647113064546675
+recoil_horizontal = 0.001397279708805863
+recoil_drift = 0.219
+recoil_period = 9
+recoil_random = 0.3041278323760795
+recoil_settle = 0.2902946647377967
+tint = 0.9294389104750007
+donor_groups = Array[StringName]([&"Chattergun", &"Sturmgewehr", &"Blackrifle"])

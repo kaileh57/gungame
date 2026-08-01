@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_4p2dr"]
+
+[resource]
+script = ExtResource("1_4p2dr")
+roll_seed = 8192
+cfg = 4121241446
+weapon_name = "The Rumour"
+part_indices = PackedInt32Array(49, 0, 46, 52)
+part_scales = PackedFloat32Array(1, 0.9200631, 1.2331904, 0.24)
+part_z_scales = PackedFloat32Array(1, 0.8395926, 1.0498475, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 0.87912, -0.038, 0.09181, -0.87912, -0.10345, 0.13014, -0.6205908, -0.45345, -0.16978)
+fit_error = 0.9471320873066873
+muzzle_local = Vector3(4.0445046, -0.038, 0.09181)
+score = 67.49452345952491
+tier_index = 2
+tier_name = &"Cobbled"
+tier_color = Color(0.5411765, 0.6039216, 0.41960785, 1)
+quirks = PackedStringArray("sidearm")
+caliber = ".44 Magnum"
+bore = 10.2
+case_length = 32
+muzzle_velocity = 463
+muzzle_energy = 974
+effective_range = 105
+sim_velocity = 232
+damage = 38.0
+crit_multiplier = 2.18
+headshot_range = 28.0
+impulse = 5.303293526158164
+fire_mode = &"Full-auto"
+archetype = &"Submachine gun"
+rpm = 706
+cyclic = 820
+magazine = 17
+reload_time = 1.6
+automatic = true
+sidearm = true
+mass = 3.4601925015741553
+precision = 44
+reach = 67
+kick = 29
+handling = 78
+reliability = 75
+burst_dps = 453
+sustained_dps = 215
+barrel_length = 285
+overall_length = 599
+spread = 32.0
+spread_rad = 0.009397833488098153
+spread_text = "32'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.0049045072711953654
+recoil_horizontal = 0.003928130950872653
+recoil_drift = 0.375
+recoil_period = 12
+recoil_random = 0.4517042280483228
+recoil_settle = 0.2384077000629662
+tint = 0.881297063473612
+donor_groups = Array[StringName]([&"Chattergun", &"Kalash", &"Sidearm"])

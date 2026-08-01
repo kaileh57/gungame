@@ -1,0 +1,103 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/diegetic/diegetic_button.gd" id="1_t0wwd"]
+[ext_resource type="Shader" path="res://art/shaders/scrap_surface.gdshader" id="2_5o4ma"]
+[ext_resource type="Material" path="res://art/materials/scrap_steel.tres" id="3_rl86w"]
+[ext_resource type="Material" path="res://art/materials/scrap_polymer.tres" id="4_rgvvd"]
+[ext_resource type="FontFile" path="res://data/ui/font_display.tres" id="5_gpwkt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gsks"]
+render_priority = 0
+shader = ExtResource("2_5o4ma")
+shader_parameter/surface_type = 2
+shader_parameter/albedo = Color(0.196, 0.075, 0.055, 1)
+shader_parameter/metallic_base = 0.0
+shader_parameter/roughness_base = 0.32
+shader_parameter/detail_scale = 3.2
+shader_parameter/detail_gain = null
+shader_parameter/bump_scale = 14.0
+shader_parameter/bump_amount = 0.006
+shader_parameter/emission_color = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/flat_shaded = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j20o7"]
+render_priority = 0
+shader = ExtResource("2_5o4ma")
+shader_parameter/surface_type = 2
+shader_parameter/albedo = Color(0.851, 0.451, 0.157, 1)
+shader_parameter/metallic_base = 0.0
+shader_parameter/roughness_base = 0.32
+shader_parameter/detail_scale = 3.2
+shader_parameter/detail_gain = null
+shader_parameter/bump_scale = 14.0
+shader_parameter/bump_amount = 0.006
+shader_parameter/emission_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+shader_parameter/emission_energy = 4.2
+shader_parameter/flat_shaded = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_174rx"]
+size = Vector3(0.14, 0.14, 0.05)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qbp2q"]
+top_radius = 0.045
+bottom_radius = 0.045
+height = 0.03
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_jms35"]
+top_radius = 0.017
+bottom_radius = 0.017
+height = 0.008
+radial_segments = 20
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k58m3"]
+size = Vector3(0.15, 0.15, 0.09)
+
+[node name="DiegeticButton" type="StaticBody3D" unique_id=1664760757]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_t0wwd")
+lamp_off_material = SubResource("ShaderMaterial_6gsks")
+lamp_on_material = SubResource("ShaderMaterial_j20o7")
+control_id = &"button"
+label_text = "BUTTON"
+
+[node name="Housing" type="MeshInstance3D" parent="." unique_id=1790660605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.025)
+mesh = SubResource("BoxMesh_174rx")
+surface_material_override/0 = ExtResource("3_rl86w")
+
+[node name="Cap" type="Node3D" parent="." unique_id=189344332]
+
+[node name="CapBody" type="MeshInstance3D" parent="Cap" unique_id=1634419118]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.01)
+mesh = SubResource("CylinderMesh_qbp2q")
+surface_material_override/0 = ExtResource("4_rgvvd")
+
+[node name="Lamp" type="MeshInstance3D" parent="Cap" unique_id=1313341690]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.026)
+mesh = SubResource("CylinderMesh_jms35")
+surface_material_override/0 = SubResource("ShaderMaterial_6gsks")
+
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=616281704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.012)
+shape = SubResource("BoxShape3D_k58m3")
+
+[node name="Label" type="Label3D" parent="." unique_id=536927266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098, 0.002)
+pixel_size = 0.0014
+double_sided = false
+texture_filter = 5
+modulate = Color(0.792, 0.749, 0.659, 1)
+outline_modulate = Color(0.035, 0.031, 0.028, 1)
+text = "BUTTON"
+font = ExtResource("5_gpwkt")
+font_size = 48
+outline_size = 10
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=619474585]
+unit_size = 3.0
+max_distance = 40.0

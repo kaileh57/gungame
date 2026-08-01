@@ -1,0 +1,38 @@
+[gd_scene format=3]
+
+[ext_resource type="Environment" path="res://art/environment.tres" id="1_qqori"]
+[ext_resource type="Script" path="res://art/world_environment.gd" id="2_8rgoo"]
+
+[node name="ScavWorld" type="WorldEnvironment" unique_id=1721437316]
+environment = ExtResource("1_qqori")
+script = ExtResource("2_8rgoo")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1814423660]
+transform = Transform3D(-0.7609981, 0.1788187, -0.6236231, 0, 0.96126264, 0.27563402, 0.6487541, 0.20975696, -0.73151904, -24.944923, 11.025361, -29.260761)
+light_color = Color(1, 0.8901961, 0.7372549, 1)
+light_energy = 2.3
+light_angular_distance = 0.55
+light_specular = 0.9
+shadow_enabled = true
+shadow_bias = 0.06
+shadow_normal_bias = 1.6
+shadow_blur = 0.8
+directional_shadow_mode = 1
+directional_shadow_split_1 = 0.12
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.85
+directional_shadow_max_distance = 140.0
+
+[node name="Bounce" type="DirectionalLight3D" parent="." unique_id=2020686166]
+transform = Transform3D(0.55470014, 0.7827271, 0.28221613, 0, 0.33918157, -0.9407209, -0.8320503, 0.52181804, 0.18814406, 11.2886505, -37.628834, 7.5257664)
+light_color = Color(0.78039217, 0.6039216, 0.40784314, 1)
+light_energy = 0.24
+light_specular = 0.0
+sky_mode = 1
+
+[node name="SkyFill" type="DirectionalLight3D" parent="." unique_id=249096001]
+transform = Transform3D(0.8, -0.2683282, 0.5366563, 0, 0.8944272, 0.44721365, -0.6, -0.35777092, 0.7155418, 21.466253, 17.888544, 28.621672)
+light_color = Color(0.5764706, 0.627451, 0.6901961, 1)
+light_energy = 0.3
+light_specular = 0.0
+sky_mode = 1

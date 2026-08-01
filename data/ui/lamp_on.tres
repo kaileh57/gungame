@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://art/shaders/scrap_surface.gdshader" id="1_rb5ax"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rb5ax")
+shader_parameter/surface_type = 2
+shader_parameter/albedo = Color(0.851, 0.451, 0.157, 1)
+shader_parameter/metallic_base = 0.0
+shader_parameter/roughness_base = 0.32
+shader_parameter/detail_scale = 3.2
+shader_parameter/detail_gain = null
+shader_parameter/bump_scale = 14.0
+shader_parameter/bump_amount = 0.006
+shader_parameter/emission_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+shader_parameter/emission_energy = 4.2
+shader_parameter/flat_shaded = false

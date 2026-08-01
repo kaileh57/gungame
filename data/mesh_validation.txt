@@ -1,0 +1,166 @@
+mesh validation
+roots     res://data
+open      terrain
+weld 0.0001  area 0.0000000001  volume 0.000000001
+
+mesh                                                 surf     tris   verts  shell    bnd  nonmf  degen   dupe   flip       volume
+------------------------------------------------------------------------------------------------------------------------------------
+enemies/husk.res:Husk/Body/Skeleton/Shell            2        1748    5244     37      0      4      0      0      0      0.00398
+enemies/stilt.res:Stilt/Body/Skeleton/Shell          1        1772    5316     39      0      4      0      0      0      0.00868
+guns/cache/launcher_t2.tscn:GunVisual/Gun/Sight      0         782    1089     10      0      0      2      0      0      0.01971
+guns/cache/launcher_t4.tscn:GunVisual/Gun/Grip       0         296     354      2      0      0      0      0      1      0.43339
+guns/cache/lmg_t0.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/lmg_t0.tscn:GunVisual/Gun/Grip            0         320     412      1      0      0      0      0      1      1.35765
+guns/cache/lmg_t1.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/lmg_t2.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/lmg_t2.tscn:GunVisual/Gun/Barrel          0         452     731      1      0      2      0      0      0      0.48791
+guns/cache/lmg_t3.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/lmg_t4.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/lmg_t5.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/lmg_t6.tscn:GunVisual/Gun/Receiver        0        1744    2455     17      3      0      5      0      0      0.41971
+guns/cache/pistol_t2.tscn:GunVisual/Gun/Stock        0         254     323      3      0      1      0      0      0      0.15684
+guns/cache/pistol_t2.tscn:GunVisual/Gun/Grip         0         320     412      1      0      0      0      0      1      1.35765
+guns/cache/pistol_t4.tscn:GunVisual/Gun/Grip         0         546     630      3      0     54      0     13      0      0.72490
+guns/cache/revolver_t0.tscn:GunVisual/Gun/Receiver   0         426     560      3      0      0      4      0      0      0.01678
+guns/cache/revolver_t1.tscn:GunVisual/Gun/Receiver   0         426     560      3      0      0      4      0      0      0.01678
+guns/cache/revolver_t1.tscn:GunVisual/Gun/Barrel     0         110     184      3      0     13      0      7      0      0.15707
+guns/cache/revolver_t2.tscn:GunVisual/Gun/Receiver   0         426     560      3      0      0      4      0      0      0.01678
+guns/cache/revolver_t2.tscn:GunVisual/Gun/Stock      0         268     361      1      0      1      0      0      3      0.24131
+guns/cache/revolver_t2.tscn:GunVisual/Gun/Sight      0         782    1089     10      0      0      2      0      0      0.01971
+guns/cache/revolver_t3.tscn:GunVisual/Gun/Receiver   0         426     560      3      0      0      4      0      0      0.01678
+guns/cache/revolver_t4.tscn:GunVisual/Gun/Receiver   0         426     560      3      0      0      4      0      0      0.01678
+guns/cache/revolver_t4.tscn:GunVisual/Gun/Sight      0         782    1089     10      0      0      2      0      0      0.01971
+guns/cache/rifle_t0.tscn:GunVisual/Gun/Sight         0         782    1089     10      0      0      2      0      0      0.01971
+guns/cache/rifle_t1.tscn:GunVisual/Gun/Receiver      0         298     415      2      0      4      0      2      0      1.80141
+guns/cache/rifle_t2.tscn:GunVisual/Gun/Receiver      0         298     415      2      0      4      0      2      0      1.80141
+guns/cache/rifle_t2.tscn:GunVisual/Gun/Barrel        0         452     731      1      0      2      0      0      0      0.48791
+guns/cache/rifle_t2.tscn:GunVisual/Gun/Stock         0         268     361      1      0      1      0      0      3      0.24131
+guns/cache/rifle_t2.tscn:GunVisual/Gun/Grip          0         234     302      1      0      0      4      0      0      0.04979
+guns/cache/rifle_t3.tscn:GunVisual/Gun/Receiver      0         298     415      2      0      4      0      2      0      1.80141
+guns/cache/rifle_t3.tscn:GunVisual/Gun/Barrel        0         452     731      1      0      2      0      0      0      0.48791
+guns/cache/rifle_t4.tscn:GunVisual/Gun/Receiver      0         298     415      2      0      4      0      2      0      1.80141
+guns/cache/rifle_t4.tscn:GunVisual/Gun/Grip          0         320     412      1      0      0      0      0      1      1.35765
+guns/cache/rifle_t5.tscn:GunVisual/Gun/Receiver      0         298     415      2      0      4      0      2      0      1.80141
+guns/cache/rifle_t5.tscn:GunVisual/Gun/Grip          0         320     412      1      0      0      0      0      1      1.35765
+guns/cache/rifle_t6.tscn:GunVisual/Gun/Receiver      0         298     415      2      0      4      0      2      0      1.80141
+guns/cache/shotgun_t4.tscn:GunVisual/Gun/Grip        0         546     630      3      0     54      0     13      0      0.72490
+guns/cache/smg_t1.tscn:GunVisual/Gun/Receiver        0         580     676      3      0     12      0      2      0      0.46723
+guns/cache/smg_t2.tscn:GunVisual/Gun/Receiver        0         580     676      3      0     12      0      2      0      0.46723
+guns/cache/smg_t2.tscn:GunVisual/Gun/Grip            0         110     162      3      0      0      2      0      0      0.06262
+guns/cache/smg_t3.tscn:GunVisual/Gun/Receiver        0         580     676      3      0     12      0      2      0      0.46723
+guns/cache/smg_t4.tscn:GunVisual/Gun/Receiver        0         580     676      3      0     12      0      2      0      0.46723
+guns/cache/smg_t5.tscn:GunVisual/Gun/Receiver        0         580     676      3      0     12      0      2      0      0.46723
+guns/cache/smg_t6.tscn:GunVisual/Gun/Receiver        0         580     676      3      0     12      0      2      0      0.46723
+guns/cache/smg_t6.tscn:GunVisual/Gun/Stock           0         254     323      3      0      1      0      0      0      0.15684
+guns/cache/sniper_t1.tscn:GunVisual/Gun/Grip         0         234     302      1      0      0      4      0      0      0.04979
+guns/cache/sniper_t3.tscn:GunVisual/Gun/Grip         0         320     412      1      0      0      0      0      1      1.35765
+guns/cache/sniper_t4.tscn:GunVisual/Gun/Grip         0         296     354      2      0      0      0      0      1      0.43339
+guns/cache/sniper_t5.tscn:GunVisual/Gun/Grip         0         296     354      2      0      0      0      0      1      0.43339
+guns/cache/sniper_t6.tscn:GunVisual/Gun/Grip         0         296     354      2      0      0      0      0      1      0.43339
+guns/meshes/part_00.res                              0         452     731      1      0      2      0      0      0      0.48791
+guns/meshes/part_03.res                              0         298     415      2      0      4      0      2      0      1.80141
+guns/meshes/part_06.res                              0         320     412      1      0      0      0      0      1      1.35765
+guns/meshes/part_12.res                              0         268     361      1      0      1      0      0      3      0.24131
+guns/meshes/part_13.res                              0         546     630      3      0     54      0     13      0      0.72490
+guns/meshes/part_14.res                              0         580     676      3      0     12      0      2      0      0.46723
+guns/meshes/part_30.res                              0         296     354      2      0      0      0      0      1      0.43339
+guns/meshes/part_39.res                              0         234     302      1      0      0      4      0      0      0.04979
+guns/meshes/part_40.res                              0         426     560      3      0      0      4      0      0      0.01678
+guns/meshes/part_48.res                              0         782    1089     10      0      0      2      0      0      0.01971
+guns/meshes/part_49.res                              0        1744    2455     17      3      0      5      0      0      0.41971
+guns/meshes/part_63.res                              0         940    1368      7      0      0      0      0      2      0.44673
+guns/meshes/part_74.res                              0         110     184      3      0     13      0      7      0      0.15707
+guns/meshes/part_92.res                              0         254     323      3      0      1      0      0      0      0.15684
+guns/meshes/part_93.res                              0         110     162      3      0      0      2      0      0      0.06262
+guns/meshes/part_94.res                              0         320     417      5      0      0      2      0      0      0.20199
+vfx/mesh_quad.res                                    0           2       4      1      4      0      0      0      0      0.00000
+vfx/vfx.tscn:Vfx/Decals                              0           2       4      1      4      0      0      0      0      0.00000
+vfx/vfx.tscn:Vfx/Tracers                             0           2       4      1      4      0      0      0      0      0.00000
+
+meshes                1408
+surfaces              1048
+triangles             1069246
+shells                54032
+flat shells           3
+inverted shells       254
+boundary edges        36
+non-manifold edges    322
+degenerate triangles  92
+duplicate faces       81
+winding/normal flips  22
+empty surfaces        0
+unreadable files      0
+scan time             8968 ms
+
+RESULT: FAIL - 71 surfaces with findings
+  res://data/enemies/husk.res:Husk/Body/Skeleton/Shell surface 2: 4 non-manifold edge(s)
+  res://data/enemies/stilt.res:Stilt/Body/Skeleton/Shell surface 1: 4 non-manifold edge(s)
+  res://data/guns/cache/launcher_t2.tscn:GunVisual/Gun/Sight surface 0: 2 degenerate tri(s)
+  res://data/guns/cache/launcher_t4.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/lmg_t0.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/lmg_t0.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/lmg_t1.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/lmg_t2.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/lmg_t2.tscn:GunVisual/Gun/Barrel surface 0: 2 non-manifold edge(s)
+  res://data/guns/cache/lmg_t3.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/lmg_t4.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/lmg_t5.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/lmg_t6.tscn:GunVisual/Gun/Receiver surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/cache/pistol_t2.tscn:GunVisual/Gun/Stock surface 0: 1 non-manifold edge(s)
+  res://data/guns/cache/pistol_t2.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/pistol_t4.tscn:GunVisual/Gun/Grip surface 0: 54 non-manifold edge(s), 13 duplicate face(s)
+  res://data/guns/cache/revolver_t0.tscn:GunVisual/Gun/Receiver surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/revolver_t1.tscn:GunVisual/Gun/Receiver surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/revolver_t1.tscn:GunVisual/Gun/Barrel surface 0: 13 non-manifold edge(s), 7 duplicate face(s)
+  res://data/guns/cache/revolver_t2.tscn:GunVisual/Gun/Receiver surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/revolver_t2.tscn:GunVisual/Gun/Stock surface 0: 1 non-manifold edge(s), 3 normal/winding conflict(s)
+  res://data/guns/cache/revolver_t2.tscn:GunVisual/Gun/Sight surface 0: 2 degenerate tri(s)
+  res://data/guns/cache/revolver_t3.tscn:GunVisual/Gun/Receiver surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/revolver_t4.tscn:GunVisual/Gun/Receiver surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/revolver_t4.tscn:GunVisual/Gun/Sight surface 0: 2 degenerate tri(s)
+  res://data/guns/cache/rifle_t0.tscn:GunVisual/Gun/Sight surface 0: 2 degenerate tri(s)
+  res://data/guns/cache/rifle_t1.tscn:GunVisual/Gun/Receiver surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/rifle_t2.tscn:GunVisual/Gun/Receiver surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/rifle_t2.tscn:GunVisual/Gun/Barrel surface 0: 2 non-manifold edge(s)
+  res://data/guns/cache/rifle_t2.tscn:GunVisual/Gun/Stock surface 0: 1 non-manifold edge(s), 3 normal/winding conflict(s)
+  res://data/guns/cache/rifle_t2.tscn:GunVisual/Gun/Grip surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/rifle_t3.tscn:GunVisual/Gun/Receiver surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/rifle_t3.tscn:GunVisual/Gun/Barrel surface 0: 2 non-manifold edge(s)
+  res://data/guns/cache/rifle_t4.tscn:GunVisual/Gun/Receiver surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/rifle_t4.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/rifle_t5.tscn:GunVisual/Gun/Receiver surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/rifle_t5.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/rifle_t6.tscn:GunVisual/Gun/Receiver surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/shotgun_t4.tscn:GunVisual/Gun/Grip surface 0: 54 non-manifold edge(s), 13 duplicate face(s)
+  res://data/guns/cache/smg_t1.tscn:GunVisual/Gun/Receiver surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/smg_t2.tscn:GunVisual/Gun/Receiver surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/smg_t2.tscn:GunVisual/Gun/Grip surface 0: 2 degenerate tri(s)
+  res://data/guns/cache/smg_t3.tscn:GunVisual/Gun/Receiver surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/smg_t4.tscn:GunVisual/Gun/Receiver surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/smg_t5.tscn:GunVisual/Gun/Receiver surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/smg_t6.tscn:GunVisual/Gun/Receiver surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/cache/smg_t6.tscn:GunVisual/Gun/Stock surface 0: 1 non-manifold edge(s)
+  res://data/guns/cache/sniper_t1.tscn:GunVisual/Gun/Grip surface 0: 4 degenerate tri(s)
+  res://data/guns/cache/sniper_t3.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/sniper_t4.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/sniper_t5.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/cache/sniper_t6.tscn:GunVisual/Gun/Grip surface 0: 1 normal/winding conflict(s)
+  res://data/guns/meshes/part_00.res surface 0: 2 non-manifold edge(s)
+  res://data/guns/meshes/part_03.res surface 0: 4 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/meshes/part_06.res surface 0: 1 normal/winding conflict(s)
+  res://data/guns/meshes/part_12.res surface 0: 1 non-manifold edge(s), 3 normal/winding conflict(s)
+  res://data/guns/meshes/part_13.res surface 0: 54 non-manifold edge(s), 13 duplicate face(s)
+  res://data/guns/meshes/part_14.res surface 0: 12 non-manifold edge(s), 2 duplicate face(s)
+  res://data/guns/meshes/part_30.res surface 0: 1 normal/winding conflict(s)
+  res://data/guns/meshes/part_39.res surface 0: 4 degenerate tri(s)
+  res://data/guns/meshes/part_40.res surface 0: 4 degenerate tri(s)
+  res://data/guns/meshes/part_48.res surface 0: 2 degenerate tri(s)
+  res://data/guns/meshes/part_49.res surface 0: 3 boundary edge(s), 5 degenerate tri(s)
+  res://data/guns/meshes/part_63.res surface 0: 2 normal/winding conflict(s)
+  res://data/guns/meshes/part_74.res surface 0: 13 non-manifold edge(s), 7 duplicate face(s)
+  res://data/guns/meshes/part_92.res surface 0: 1 non-manifold edge(s)
+  res://data/guns/meshes/part_93.res surface 0: 2 degenerate tri(s)
+  res://data/guns/meshes/part_94.res surface 0: 2 degenerate tri(s)
+  res://data/vfx/mesh_quad.res surface 0: 4 boundary edge(s)
+  res://data/vfx/vfx.tscn:Vfx/Decals surface 0: 4 boundary edge(s)
+  res://data/vfx/vfx.tscn:Vfx/Tracers surface 0: 4 boundary edge(s)

@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://art/shaders/scrap_surface.gdshader" id="1_l4jvk"]
+
+[resource]
+resource_name = "glow"
+render_priority = 0
+shader = ExtResource("1_l4jvk")
+shader_parameter/surface_type = 2
+shader_parameter/albedo = Color(0.07058824, 0.078431375, 0.05882353, 1)
+shader_parameter/metallic_base = 0.0
+shader_parameter/roughness_base = 0.4
+shader_parameter/detail_scale = 3.2
+shader_parameter/detail_gain = null
+shader_parameter/bump_scale = 9.0
+shader_parameter/bump_amount = 0.011
+shader_parameter/emission_color = Color(0.78431374, 0.27058825, 0.12156863, 1)
+shader_parameter/emission_energy = 2.6
+shader_parameter/flat_shaded = true

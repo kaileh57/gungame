@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_m8r42"]
+
+[resource]
+script = ExtResource("1_m8r42")
+roll_seed = 2
+cfg = 3903221991
+weapon_name = "Coffin Kalash"
+part_indices = PackedInt32Array(3, 0, 12, 39)
+part_scales = PackedFloat32Array(1, 1, 1.2037833, 1.6)
+part_z_scales = PackedFloat32Array(1, 1, 1.3993, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 2.16471, -0.10263, -2e-05, -2.16471, -0.20048, 0, -1.0853668, -0.47054997, 0)
+fit_error = 0.8760134195154357
+muzzle_local = Vector3(5.60511, -0.10263, -2e-05)
+score = 69.17002870646847
+tier_index = 2
+tier_name = &"Cobbled"
+tier_color = Color(0.5411765, 0.6039216, 0.41960785, 1)
+quirks = PackedStringArray()
+caliber = "11.1×62 wildcat"
+bore = 11.1
+case_length = 62
+muzzle_velocity = 618
+muzzle_energy = 2198
+effective_range = 130
+sim_velocity = 309
+damage = 84.0
+crit_multiplier = 2.31
+headshot_range = 44.0
+impulse = 9.528200168419708
+fire_mode = &"Full-auto"
+archetype = &"Assault rifle"
+rpm = 292
+cyclic = 430
+magazine = 30
+reload_time = 2.7
+automatic = true
+mass = 5.946628801728595
+precision = 48
+reach = 70
+kick = 30
+handling = 51
+reliability = 75
+burst_dps = 410
+sustained_dps = 285
+barrel_length = 310
+overall_length = 835
+spread = 26.0
+spread_rad = 0.007591175142786818
+spread_text = "26'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.0051273152496217715
+recoil_horizontal = 0.003906026600509241
+recoil_drift = -0.55
+recoil_random = 0.4418898518931301
+recoil_settle = 0.3378651520691438
+tint = 1.029405106920749
+donor_groups = Array[StringName]([&"Kalash", &"Spitter", &"Handcannon"])

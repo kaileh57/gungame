@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_472ug"]
+
+[resource]
+script = ExtResource("1_472ug")
+roll_seed = 5204
+cfg = 4241786074
+weapon_name = "Widowed Karabiner"
+part_indices = PackedInt32Array(32, 86, 70, 66, 35)
+part_scales = PackedFloat32Array(1, 1.4186574, 0.45, 0.46138558, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.82383466, 0.75194997, 1.2760143, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 3.55957, -0.0821, 0.07799, -3.55957, -0.50478, 0.07728, -2.97362, -0.45345, 0.07799, 0.57154, 0.31655, 0.07799)
+fit_error = 5.743251447328783
+muzzle_local = Vector3(13.744111, -0.0821, 0.07799)
+score = 29.42025356075405
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("blunderbuss", "explosive", "jam-prone")
+caliber = "39.6×95 wildcat"
+bore = 39.6
+case_length = 95
+explosive = true
+blast_radius = 5.3
+muzzle_velocity = 311
+muzzle_energy = 20862
+effective_range = 25
+sim_velocity = 156
+damage = 118.0
+impulse = 153.02018670522529
+fire_mode = &"Single-shot"
+feed = &"breech"
+archetype = &"Launcher"
+rpm = 12
+cyclic = 320
+magazine = 1
+reload_time = 13.2
+mass = 7.6567121190508765
+precision = 14
+reach = 47
+kick = 99
+handling = 1
+reliability = 11
+burst_dps = 24
+sustained_dps = 6
+barrel_length = 917
+overall_length = 1702
+spread = 186.0
+spread_rad = 0.05422976051187066
+spread_text = "3.1°"
+has_optic = true
+zoom = 1.8860960101499558
+zoom_levels = PackedFloat32Array(1.9)
+recoil_vertical = 0.052
+recoil_horizontal = 0.0702
+recoil_drift = -0.642
+recoil_period = 9
+recoil_random = 1.1802513625231699
+recoil_settle = 0.40626848476203503
+tint = 1.016103439917788
+donor_groups = Array[StringName]([&"Karabiner", &"Longshot", &"Serpent", &"Sturmgewehr", &"Blackrifle"])

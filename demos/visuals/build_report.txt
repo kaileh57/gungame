@@ -1,0 +1,50 @@
+build_visuals
+
+site                  (-220, -40)
+terrain samples       3828 at 2.0 m
+pad top / bottom      10.265 / 0.276 m  (9.99 m fill)
+
+hero eye              pad (24.8, 30.1) yaw 0.845
+element                  bearing   range screen x
+sun disc               -38.6 deg   999.7      356
+kit plaza                0.7 deg    38.9      807
+kit compound            -6.5 deg    76.7      737
+kit watchtower         -29.0 deg    69.4      492
+kit street_block        24.4 deg    65.8     1052
+kit ruin_cluster        62.4 deg    56.8      off
+prop wreck             -37.7 deg    10.9      370
+prop dead_tree          50.4 deg    12.5     1472
+prop wreck              23.1 deg    20.1     1038
+prop rock_cluster      -44.1 deg    59.9      261
+prop dead_tree         -38.8 deg    43.8      353
+prop market            -46.8 deg    33.5      207
+prop wall_holed        -47.4 deg    38.0      195
+prop rock_cluster      -43.8 deg    73.8      267
+prop power_line         33.2 deg    78.9     1163
+prop containers         41.0 deg    27.5     1282
+prop dead_tree          -1.7 deg   100.0      783
+prop big_crate         180.0 deg    14.7      off
+prop crate             180.0 deg    13.1      off
+prop barrel            180.0 deg    15.2      off
+prop sandbags          180.0 deg     8.3      off
+prop barrel            180.0 deg     8.6      off
+prop crate             180.0 deg     6.6      off
+post                   180.0 deg     6.7      off
+rack                   180.0 deg     3.5      off
+
+shell pad      228 tris  vol +346713.22  bad 0/0/0  OK
+clutter barrel        30 x 1 boxes
+clutter crate         24 x 3 boxes
+clutter sandbags      20 x 7 boxes
+clutter big_crate     10 x 1 boxes
+shell lamp     132 tris  vol     +0.40  bad 0/0/0  OK
+shell bulb      48 tris  vol     +0.01  bad 0/0/0  OK
+shell rack     132 tris  vol     +0.56  bad 0/0/0  OK
+shell post      72 tris  vol     +4.45  bad 0/0/0  OK
+
+scene nodes           410 declared, 25 instanced, 36 meshes, 6 lights
+diegetic controls     5
+
+shells checked        5
+failures              0
+RESULT: PASS

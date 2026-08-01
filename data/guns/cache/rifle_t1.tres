@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_osuak"]
+
+[resource]
+script = ExtResource("1_osuak")
+roll_seed = 4
+cfg = 398189007
+weapon_name = "Zip-Tied Whistle"
+part_indices = PackedInt32Array(3, 4, 29, 76)
+part_scales = PackedFloat32Array(1, 0.7985587, 0.8198321, 1.6)
+part_z_scales = PackedFloat32Array(1, 1.3215795, 1.299775, 1.4418719)
+part_offsets = PackedVector3Array(0, 0, 0, 2.16471, -0.10263, -2e-05, -2.16471, -0.20048, 0, -0.51582277, -0.47054997, 0)
+fit_error = 1.9015532848762011
+muzzle_local = Vector3(9.685936, -0.10263, -2e-05)
+score = 61.39410163471969
+tier_color = Color(0.43529412, 0.41568628, 0.3882353, 1)
+quirks = PackedStringArray()
+caliber = "11.1×62 wildcat"
+bore = 11.1
+case_length = 62
+muzzle_velocity = 672
+muzzle_energy = 2582
+effective_range = 85
+sim_velocity = 336
+damage = 85.0
+crit_multiplier = 2.35
+headshot_range = 49.0
+impulse = 10.106530713095674
+fire_mode = &"Full-auto"
+archetype = &"Machine gun"
+rpm = 328
+cyclic = 410
+magazine = 53
+reload_time = 6.4
+automatic = true
+mass = 7.642158418239468
+precision = 40
+reach = 64
+kick = 25
+handling = 6
+reliability = 57
+burst_dps = 464
+sustained_dps = 279
+barrel_length = 677
+overall_length = 1419
+spread = 40.0
+spread_rad = 0.011657108301044048
+spread_text = "40'"
+zoom = 1.15
+zoom_levels = PackedFloat32Array(1.1)
+recoil_vertical = 0.004231906290337876
+recoil_horizontal = 0.00561089118051874
+recoil_drift = 0.654
+recoil_period = 8
+recoil_random = 0.6495112296470543
+recoil_settle = 0.40568633672957877
+tint = 0.9833725266717375
+donor_groups = Array[StringName]([&"Kalash", &"Woodsman", &"Karabiner", &"Breacher"])

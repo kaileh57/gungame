@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_ybsdk"]
+
+[resource]
+script = ExtResource("1_ybsdk")
+roll_seed = 1474
+cfg = 2697871267
+weapon_name = "The Bad News"
+part_indices = PackedInt32Array(10, 11, 87, 30, 72)
+part_scales = PackedFloat32Array(1, 1.4463477, 0.6986676, 0.24, 0.5972882)
+part_z_scales = PackedFloat32Array(1, 0.91751647, 0.9980414, 0.7, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 1.3738899, -0.19093, 0.00192, -1.3738899, -0.00448, 0.00153, 0.9518708, -0.49139997, 0.02473, -0.11575, 0.27859998, 0.02269)
+fit_error = 0.11169490355139758
+muzzle_local = Vector3(4.612407, -0.19093, 0.00192)
+score = 74.28459839525226
+tier_index = 4
+tier_name = &"Gunsmithed"
+tier_color = Color(0.6039216, 0.4745098, 0.78431374, 1)
+quirks = PackedStringArray()
+caliber = "10.0×44 wildcat"
+bore = 10.0
+case_length = 44
+muzzle_velocity = 779
+muzzle_energy = 2561
+effective_range = 382
+sim_velocity = 389
+damage = 108.0
+crit_multiplier = 2.41
+headshot_range = 60.0
+impulse = 9.445516450416905
+fire_mode = &"Semi-auto"
+feed = &"internal"
+archetype = &"Hand cannon"
+rpm = 228
+cyclic = 720
+magazine = 3
+reload_time = 2.0
+mass = 3.4441316812772373
+precision = 65
+reach = 85
+kick = 51
+handling = 66
+reliability = 78
+burst_dps = 412
+sustained_dps = 117
+barrel_length = 291
+overall_length = 786
+spread = 8.9
+spread_rad = 0.002592114696059789
+spread_text = "8.9'"
+has_optic = true
+zoom = 2.3125040115827358
+zoom_levels = PackedFloat32Array(2.3)
+recoil_vertical = 0.008775986355470904
+recoil_horizontal = 0.0029964043017803406
+recoil_drift = -0.437
+recoil_period = 9
+recoil_random = 0.4129332745065827
+recoil_settle = 0.23776526725108948
+tint = 1.1175755659304558
+donor_groups = Array[StringName]([&"Tube", &"Spitter", &"Longshot", &"Karabiner", &"Serpent"])

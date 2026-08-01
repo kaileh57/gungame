@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://art/shaders/scrap_surface.gdshader" id="1_iiges"]
+
+[resource]
+resource_name = "steel"
+render_priority = 0
+shader = ExtResource("1_iiges")
+shader_parameter/surface_type = 0
+shader_parameter/albedo = Color(0.3019608, 0.2901961, 0.26666668, 1)
+shader_parameter/metallic_base = 0.74
+shader_parameter/roughness_base = 0.5
+shader_parameter/detail_scale = 3.2
+shader_parameter/detail_gain = null
+shader_parameter/bump_scale = 9.0
+shader_parameter/bump_amount = 0.011
+shader_parameter/emission_color = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.0
+shader_parameter/flat_shaded = true

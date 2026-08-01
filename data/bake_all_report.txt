@@ -1,0 +1,31 @@
+bake_all — 2026-08-01T07:20:14
+engine 4.7.1-stable (steam)
+
+OK    art               0.4s
+SKIP  gun_parts      outputs already on disk
+OK    gun_tuning        0.3s
+OK    gun_audio         1.5s
+OK    vfx               0.5s
+OK    ui_assets         0.8s
+OK    ai_tuning         0.3s
+OK    ai_roles          0.4s
+OK    terrain           6.1s
+OK    town             21.9s
+OK    terrain_roads     9.1s
+OK    props             0.6s
+OK    enemies          42.8s
+OK    player            0.6s
+OK    gun_cache         4.1s
+OK    range             1.2s
+OK    bestiary          1.3s
+OK    gunbench          0.8s
+OK    movement          0.7s
+OK    arena             1.7s
+OK    firefight         8.4s
+OK    nav_links        25.3s
+OK    visuals           1.3s
+OK    ash_flats         1.8s
+OK    main_menu         0.5s
+OK    verify_multimesh    9.7s
+
+25 ok, 0 failed, 1 skipped, 142.4s total

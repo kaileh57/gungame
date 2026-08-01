@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_6vqlr"]
+
+[resource]
+script = ExtResource("1_6vqlr")
+roll_seed = 8218
+cfg = 1529803724
+weapon_name = "Orphan Debt"
+part_indices = PackedInt32Array(49, 33, 70, 52, 67)
+part_scales = PackedFloat32Array(1, 1.1649584, 0.45, 0.24, 0.87719166)
+part_z_scales = PackedFloat32Array(1, 1.0775448, 1.354386, 0.7, 1.9)
+part_offsets = PackedVector3Array(0, 0, 0, 0.87912, -0.038, 0.09181, -0.87912, -0.10345, 0.13014, -0.6205908, -0.45345, -0.16978, -0.60591, 0.31655, 0.12924)
+fit_error = 0.19830572555667522
+muzzle_local = Vector3(4.608851, -0.038, 0.09181)
+score = 76.17522523392101
+tier_index = 5
+tier_name = &"Warlord-Grade"
+tier_color = Color(0.84705883, 0.50980395, 0.18431373, 1)
+quirks = PackedStringArray("sidearm")
+caliber = ".44 Magnum"
+bore = 10.5
+case_length = 32
+muzzle_velocity = 455
+muzzle_energy = 1010
+effective_range = 314
+sim_velocity = 227
+damage = 50.0
+crit_multiplier = 2.18
+headshot_range = 27.0
+impulse = 5.529330409592028
+fire_mode = &"Full-auto"
+archetype = &"Assault rifle"
+rpm = 544
+cyclic = 800
+magazine = 16
+reload_time = 1.9
+automatic = true
+sidearm = true
+mass = 3.441812989581531
+precision = 68
+reach = 82
+kick = 30
+handling = 75
+reliability = 78
+burst_dps = 458
+sustained_dps = 220
+barrel_length = 336
+overall_length = 638
+spread = 7.2
+spread_rad = 0.0020919847899268894
+spread_text = "7.2'"
+has_optic = true
+zoom = 1.5245609925055634
+zoom_levels = PackedFloat32Array(1.5, 3.1)
+recoil_vertical = 0.005140853778010112
+recoil_horizontal = 0.00200014246397882
+recoil_drift = 0.811
+recoil_period = 6
+recoil_random = 0.4173661901268212
+recoil_settle = 0.23767251958326124
+tint = 0.935152868675068
+donor_groups = Array[StringName]([&"Chattergun", &"Blackrifle", &"Serpent", &"Sidearm", &"Sturmgewehr"])
