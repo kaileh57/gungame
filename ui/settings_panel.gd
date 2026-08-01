@@ -7,7 +7,7 @@ extends Control
 ## this page honest: if `GameSettings.DEFAULTS` grows a key and this table does not,
 ## the missing-key check at boot says so out loud.
 ##
-## Every change applies immediately — `GameSettings.set_value` is the only writer
+## Changes are STAGED and take effect on APPLY — `GameSettings.set_value` is the only writer
 ## and it re-applies the renderer state itself. This page never caches a pending
 ## value and never has an Apply button, because a settings page with an Apply
 ## button is a settings page you cannot feel.
@@ -228,6 +228,16 @@ var _fps_timer: float = 0.0
 ## adding a node to it by hand is how ext_resource bookkeeping goes wrong.
 var _apply_button: Button = null
 var _apply_note: Label = null
+## Edits made since the page was opened or last applied, key -> value.
+##
+## The page used to write straight through on every widget change. It does not any
+## more: nothing reaches `GameSettings` until APPLY, so a half-made decision — a
+## slider dragged past where you wanted it, a window mode picked to see the name —
+## never becomes the live setting. CLOSE throws this away.
+var _pending: Dictionary = {}
+## Preset chosen but not yet applied. Separate because applying a preset rewrites
+## a whole group of keys rather than one.
+var _pending_preset: String = ""
 
 @onready var _rows_box: VBoxContainer = $Frame/Body/Scroll/Rows
 @onready var _fps_label: Label = $Frame/Body/Header/Fps
@@ -290,11 +300,57 @@ func _build_apply_button() -> void:
 	footer.get_parent().add_child(_apply_note)
 
 
+## Hold an edit until APPLY. Staging the value the widget already shows means the
+## page reads as changed while the game has not changed, which is the point.
+func _stage(key: StringName, value: Variant) -> void:
+	_pending[key] = value
+	_refresh_apply_state()
+
+
+func _stage_preset(preset_name: String) -> void:
+	_pending_preset = preset_name
+	# A preset supersedes individual quality edits staged before it.
+	for key: StringName in GameSettings.QUALITY_KEYS:
+		_pending.erase(key)
+	_refresh_apply_state()
+
+
+## True when the page is showing something the game is not doing yet.
+func has_pending() -> bool:
+	return not _pending.is_empty() or not _pending_preset.is_empty()
+
+
+## Throw the staged edits away and put every widget back to what the game is
+## actually running. What CLOSE does, so leaving the page never commits anything.
+func discard_pending() -> void:
+	_pending.clear()
+	_pending_preset = ""
+	sync_all()
+	_refresh_apply_state()
+
+
+func _refresh_apply_state() -> void:
+	if _apply_button == null:
+		return
+	var dirty: bool = has_pending()
+	_apply_button.disabled = not dirty
+	_apply_button.text = "APPLY *" if dirty else "APPLY"
+
+
 func _on_apply() -> void:
+	# Preset first: it rewrites a group of keys, and an individual edit staged
+	# after it must win over what the preset would have set.
+	if not _pending_preset.is_empty():
+		GameSettings.apply_preset(_pending_preset)
+		_pending_preset = ""
+	for key: StringName in _pending:
+		GameSettings.set_value(key, _pending[key])
+	_pending.clear()
 	GameSettings.force_apply()
 	_write_window_readout()
 	sync_all()
 	_refresh_apply_note()
+	_refresh_apply_state()
 
 
 ## Say the quiet part out loud when the window refuses the mode it was given.
@@ -312,6 +368,8 @@ func _refresh_apply_note() -> void:
 
 ## Show the page and pull every widget back into line with the store.
 func open() -> void:
+	_pending.clear()
+	_pending_preset = ""
 	sync_all()
 	_refresh_apply_note()
 	visible = true
@@ -324,12 +382,24 @@ func close() -> void:
 
 
 ## Re-read every value from `GameSettings`. Cheap; called on open and after a reset.
+## Pull every widget back into line with what the page is CURRENTLY SHOWING —
+## which is the staged value where there is one, and the live setting otherwise.
+## Reading straight from `GameSettings` here would wipe a staged edit the moment
+## anything called this, which is exactly what RESET does.
 func sync_all() -> void:
 	_applying = true
 	_sync_preset()
 	for key: StringName in _widgets:
-		_write_widget(key, GameSettings.get_value(key))
+		_write_widget(key, shown_value(key))
 	_applying = false
+
+
+## The value the page is showing for a key: staged if the user has touched it,
+## otherwise whatever the game is actually running.
+func shown_value(key: StringName) -> Variant:
+	if _pending.has(key):
+		return _pending[key]
+	return GameSettings.get_value(key)
 
 
 func _build() -> void:
@@ -505,7 +575,7 @@ func _on_resolution_selected(index: int) -> void:
 	var sizes: Array[Vector2i] = _widgets[&"resolution"]["sizes"]
 	if index < 0 or index >= sizes.size():
 		return
-	GameSettings.set_value(&"resolution", sizes[index])
+	_stage(&"resolution", sizes[index])
 
 
 func _on_preset_selected(index: int) -> void:
@@ -514,13 +584,13 @@ func _on_preset_selected(index: int) -> void:
 	var names: PackedStringArray = GameSettings.preset_names()
 	if index < 0 or index >= names.size():
 		return
-	GameSettings.apply_preset(names[index])
+	_stage_preset(names[index])
 
 
 func _on_check_toggled(pressed: bool, key: StringName) -> void:
 	if _applying:
 		return
-	GameSettings.set_value(key, pressed)
+	_stage(key, pressed)
 
 
 func _on_slider_changed(value: float, key: StringName) -> void:
@@ -528,9 +598,9 @@ func _on_slider_changed(value: float, key: StringName) -> void:
 		return
 	var def: Dictionary = _widgets[key]["def"]
 	if bool(def.get("int", false)):
-		GameSettings.set_value(key, int(round(value)))
+		_stage(key, int(round(value)))
 		return
-	GameSettings.set_value(key, value)
+	_stage(key, value)
 
 
 func _on_option_selected(index: int, key: StringName) -> void:
@@ -539,7 +609,7 @@ func _on_option_selected(index: int, key: StringName) -> void:
 	var values: Array = _widgets[key]["def"]["values"]
 	if index < 0 or index >= values.size():
 		return
-	GameSettings.set_value(key, values[index])
+	_stage(key, values[index])
 
 
 func _on_setting_changed(key: StringName, value: Variant) -> void:
@@ -591,8 +661,12 @@ func _sync_preset() -> void:
 	_preset_picker.clear()
 	for i: int in names.size():
 		_preset_picker.add_item(names[i], i)
+	# A staged preset is what the picker should read, not the live one.
+	if not _pending_preset.is_empty():
+		_preset_picker.selected = maxi(0, Array(names).find(_pending_preset))
+		return
 	var current: String = GameSettings.quality_preset
-	if GameSettings.is_custom_preset():
+	if GameSettings.is_custom_preset() or not _pending.is_empty():
 		_preset_picker.add_item(GameSettings.CUSTOM_PRESET, names.size())
 		_preset_picker.selected = names.size()
 		return
@@ -600,12 +674,19 @@ func _sync_preset() -> void:
 
 
 func _on_close() -> void:
+	discard_pending()
 	close()
 
 
+## RESET stages the defaults rather than writing them, so it obeys the same rule
+## as every other control on the page: nothing changes until APPLY.
 func _on_reset() -> void:
-	GameSettings.reset_to_defaults()
+	_pending_preset = ""
+	_pending.clear()
+	for key: StringName in GameSettings.DEFAULTS:
+		_pending[key] = GameSettings.DEFAULTS[key]
 	sync_all()
+	_refresh_apply_state()
 
 
 ## "1920 x 1080   16:9". The aspect is dropped when the size is not close to any
