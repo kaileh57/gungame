@@ -53,7 +53,7 @@ Set-StrictMode -Version Latest
 
 # Repo root is the parent of scripts/.
 $Root = Split-Path -Parent $PSScriptRoot
-$Repo = "silk-kellen/gungame"
+$Repo = "kaileh57/gungame"
 
 function Write-Step { param([string]$Message) Write-Host "`n==> $Message" -ForegroundColor Cyan }
 function Write-Note { param([string]$Message) Write-Host "    $Message" -ForegroundColor DarkGray }

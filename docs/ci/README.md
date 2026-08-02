@@ -1,3 +1,9 @@
+> **PARKED.** These files are no longer under `.github/workflows/`, so GitHub does
+> not run them. They were moved here because the repo is private (Actions minutes
+> are billed) and releases are cut locally with `scripts/release.ps1`. To turn CI
+> back on, move `release.yml` back to `.github/workflows/` with a token carrying
+> the `workflow` scope — nothing else needs changing.
+
 # Release pipeline
 
 `release.yml` builds gungame and publishes a GitHub Release on every push to

@@ -1,7 +1,7 @@
 # gungame launcher
 
 A small desktop app that talks to the GitHub Releases API for
-`silk-kellen/gungame`, shows you what is installed against what is published,
+`kaileh57/gungame`, shows you what is installed against what is published,
 downloads and installs the newest build, and starts the game.
 
 ```
@@ -65,7 +65,7 @@ needs a code-signing certificate; that is a purchase, not a code change.
 
 ## How authentication works
 
-**`silk-kellen/gungame` is a private repository, so every request the launcher
+**`kaileh57/gungame` is a private repository, so every request the launcher
 makes is authenticated with a token you supply.** There is no token in this
 source and there must never be one. A token committed to a repository is a token
 that has been leaked, and embedding one in a distributed binary is worse — it is
@@ -83,7 +83,7 @@ token with exactly one permission:
 
 > GitHub → Settings → Developer settings → Personal access tokens →
 > Fine-grained tokens → Generate new token
-> - Repository access: **Only select repositories** → `silk-kellen/gungame`
+> - Repository access: **Only select repositories** → `kaileh57/gungame`
 > - Permissions → Repository permissions → **Contents: Read-only**
 
 That is the minimum that can list releases and download assets, and it can do
@@ -103,7 +103,7 @@ radius than downloading a zip warrants.
 ### The two API details that actually matter
 
 1. **Release metadata** comes from
-   `GET https://api.github.com/repos/silk-kellen/gungame/releases/latest` with an
+   `GET https://api.github.com/repos/kaileh57/gungame/releases/latest` with an
    `Authorization: Bearer <token>` header. For a private repo, a missing or
    under-scoped token returns **404, not 403** — GitHub refuses to confirm the
    repo exists. The launcher says so in its error message, because otherwise

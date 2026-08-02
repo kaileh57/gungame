@@ -37,7 +37,7 @@ from pathlib import Path
 from tkinter import messagebox, scrolledtext, ttk
 
 APP_NAME = "GunGame Launcher"
-REPO = "silk-kellen/gungame"
+REPO = "kaileh57/gungame"
 API_ROOT = "https://api.github.com"
 API_VERSION = "2022-11-28"
 USER_AGENT = "gungame-launcher/1.0"
