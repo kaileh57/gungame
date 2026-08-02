@@ -6,20 +6,21 @@ extends SceneTree
 ## Two passes. The first runs `GunTuning.reference_exact()` and compares every
 ## published field of the golden builds in docs/spec/range.md §10 — a mismatch
 ## there means the derivation drifted and every downstream number is void. The
-## second rolls `SAMPLES` weapons through the shipped tuning and reports the
-## class and tier census, the range of every stat, and anything non-finite or
-## plainly absurd.
+## second rolls `SAMPLES` weapons through the shipped tuning and reports the class
+## and tier census, the range of every stat, and anything non-finite or absurd.
 ##
 ## Run headless:
 ##   godot --headless --path <project> --script res://tools/verify_guns.gd
 
+## Joint-distribution counting; see that file for why it is not a flag census.
+const GunOdds := preload("res://tools/gun_odds.gd")
 const MANIFEST_PATH := "res://data/guns/part_library.tres"
 ## Must match `GunFactory.TUNING_PATH`. Naming the autoload here instead would
 ## compile its whole dependency tree, which a `--script` run has no autoloads for.
 const TUNING_PATH := "res://data/guns/gun_tuning.tres"
 const REPORT_PATH := "res://data/gun_balance_report.txt"
 const SAMPLES := 2000
-## Class-targeted rolls sampled on top of the raw pass, to exercise `roll_typed`.
+## Class-targeted rolls on top of the raw pass, to exercise `roll_typed`.
 const TYPED_SAMPLES := 400
 ## Raw builds used to measure how often each archetype occurs at all.
 const DEEP_SAMPLES := 40000
@@ -158,7 +159,7 @@ const GOLD_SEEDS := {
 	},
 }
 
-## Every scalar field the census tracks, and whether it is an integer field.
+## Every scalar field the census tracks.
 const STAT_FIELDS := [
 	"score",
 	"damage",
@@ -586,12 +587,7 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 			flags["optic"] += 1
 		if w.scoped:
 			flags["scoped"] += 1
-		# Scope rate for the class that is DEFINED by carrying one. docs/GUN_DESIGN.md
-		# asks for about 75%; the whole-population figure cannot answer that.
-		if w.archetype == &"Sniper" or w.archetype == &"Marksman carbine":
-			flags["marksman"] = int(flags.get("marksman", 0)) + 1
-			if w.scoped:
-				flags["marksman_scoped"] = int(flags.get("marksman_scoped", 0)) + 1
+		GunOdds.count(flags, w)
 		for field: String in STAT_FIELDS:
 			var v := float(w.get(field))
 			if not is_finite(v):

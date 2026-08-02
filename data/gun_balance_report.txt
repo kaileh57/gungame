@@ -123,8 +123,14 @@ flags
   runaway          7    0.3%
   optic         1254   62.7%
   scoped         228   11.4%
+  odd:belt-fed hose    41    2.0%
+  odd:runaway      7    0.3%
+  odd:pocket cannon    22    1.1%
   marksman        61    3.0%
   marksman_scoped    50    2.5%
+  marksman_irons    11    0.6%
+  odd:relic       15    0.8%
+  odd:scoped bullet hose    25    1.3%
 
 stat ranges                   min         mean          max
   score                   22.4851      63.0601      78.6924
@@ -259,8 +265,15 @@ flags
   runaway          7    0.3%
   optic         1254   62.7%
   scoped         235   11.8%
+  odd:belt-fed hose    41    2.0%
+  odd:relic       48    2.4%
+  odd:runaway      7    0.3%
+  odd:pocket cannon    22    1.1%
   marksman        62    3.1%
   marksman_scoped    51    2.5%
+  odd:scoped bullet hose    48    2.4%
+  odd:automatic shot    26    1.3%
+  marksman_irons    11    0.6%
 
 stat ranges                   min         mean          max
   score                   30.9348      63.5962      79.9208
@@ -495,5 +508,5 @@ non-finite / absurd values: none
   built 4 weapons, 18 mesh instances
   holstered Boxgun-Spitter (2.55 kg, 418 mm), rerolled barrel 11 -> 69, name Boxgun Mk.VIII
 
-elapsed              13978 ms
+elapsed              14325 ms
 FAILURES             0
