@@ -157,8 +157,18 @@ func _draw_others(delta: float) -> void:
 	var eye_at: Vector3 = Vector3.ZERO if _eye == null else _eye.global_position
 	var k: float = 1.0 - exp(-delta / FOLLOW_SECONDS)
 	var used: int = 0
+	# YOUR OWN LASER IS NOT FOR YOU. These dots exist so you can see where the other
+	# three are pointing; your own aim is the crosshair in the middle of your screen, and
+	# a second marker riding it is noise.
+	#
+	# FILTERED BY PEER ID, NOT ONLY BY `is_local`. The roster rebuilds `NetPlayer`
+	# objects from network entries, so the player who is you can come back as a DIFFERENT
+	# object carrying the same `peer_id` and a default `is_local` of false — and that
+	# copy sailed straight through an `is_local` test and drew your own dot back at you.
+	# The id is the identity; the flag is only a hint about which object you are holding.
+	var me: int = NetGame.peer_id()
 	for who: NetPlayer in NetGame.players():
-		if who.is_local or not who.aim_valid or used >= _dots.size():
+		if who.is_local or who.peer_id == me or not who.aim_valid or used >= _dots.size():
 			continue
 		_place(used, who, eye_at, k)
 		used += 1

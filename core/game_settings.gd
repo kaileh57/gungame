@@ -154,10 +154,16 @@ const PRESETS: Dictionary = {
 
 # --- the window -------------------------------------------------------------
 #
-# Three modes, cycled in this order by `cycle_window_mode()`. BORDERLESS is
-# Godot's non-exclusive fullscreen: a frameless window covering the screen, which
-# alt-tabs instantly and lets an overlay draw over it. FULLSCREEN is exclusive:
-# lower input latency, and nothing else gets a pixel.
+# Three modes, cycled in this order by `cycle_window_mode()`. Both BORDERLESS and
+# FULLSCREEN are Godot's NON-exclusive fullscreen: a frameless window covering the
+# screen, which alt-tabs instantly and lets an overlay draw over it.
+#
+# EXCLUSIVE FULLSCREEN IS GONE, AND IT IS NOT COMING BACK. FULLSCREEN used to map to
+# `WINDOW_MODE_EXCLUSIVE_FULLSCREEN` for the lower input latency. On Windows that hands
+# the display over to the swapchain, and alt-tabbing away from it black-screened the
+# whole desktop and froze the machine hard enough to need a power cycle — reproduced
+# repeatedly on an RX 6700 XT. A few milliseconds of latency is not worth a hang, and
+# every shipping game that offers "fullscreen" on Windows means the borderless kind.
 
 const WINDOW_WINDOWED: int = 0
 const WINDOW_BORDERLESS: int = 1
@@ -309,6 +315,8 @@ var ui_scale: float:
 	get:
 		return clampf(float(_values[&"ui_scale"]), UI_SCALE_MIN, UI_SCALE_MAX)
 
+## Pointer mode at the moment the window lost focus, so it can be handed back exactly.
+var _mouse_before_blur: Input.MouseMode = Input.MOUSE_MODE_VISIBLE
 var _values: Dictionary = {}
 var _environments: Array[Environment] = []
 var _viewports: Array[Viewport] = []
@@ -330,6 +338,28 @@ var _adapt_step_up: float = 0.10
 ## re-pushed: coming back from fullscreen, the windowed size no longer exists.
 var _pushed_mode: int = -1
 var _pushed_size: Vector2i = Vector2i.ZERO
+
+
+## Hand the mouse back when the window loses focus, and take it again when it returns.
+##
+## NOTHING IN THE PROJECT HANDLED FOCUS AT ALL. Every demo captures the pointer to look
+## around, and a captured pointer belongs to the game whether or not the game is the
+## window you are looking at — so alt-tabbing left the cursor swallowed, clicks landing
+## in a window behind the one on screen, and the whole machine reading as frozen even
+## when it was still rendering. That is the second half of the alt-tab hang, the first
+## being exclusive fullscreen; this half made a recoverable situation look terminal.
+##
+## The previous mode is remembered rather than assumed, so returning to a menu that
+## deliberately shows the cursor does not silently recapture it.
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			_mouse_before_blur = Input.mouse_mode
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	elif what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		if _mouse_before_blur == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		_mouse_before_blur = Input.MOUSE_MODE_VISIBLE
 
 
 func _ready() -> void:
@@ -719,7 +749,9 @@ static func _display_window_mode(mode: int) -> DisplayServer.WindowMode:
 		WINDOW_BORDERLESS:
 			return DisplayServer.WINDOW_MODE_FULLSCREEN
 		WINDOW_FULLSCREEN:
-			return DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
+			# NOT `WINDOW_MODE_EXCLUSIVE_FULLSCREEN`. See the note at the top of the file:
+			# alt-tabbing out of exclusive fullscreen froze the machine.
+			return DisplayServer.WINDOW_MODE_FULLSCREEN
 	return DisplayServer.WINDOW_MODE_WINDOWED
 
 
