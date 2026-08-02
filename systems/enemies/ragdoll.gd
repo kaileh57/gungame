@@ -50,6 +50,20 @@ const START_TRIES: int = 3
 ## fly when shot. 60 Ns is a launcher genuinely throwing a body (20 m/s on a limb,
 ## 3 m/s on a torso) and is the most any weapon may do.
 @export_range(0.0, 400.0, 5.0) var max_impulse: float = 60.0
+## Ceiling on the velocity a corpse inherits from the creature, in m/s.
+##
+## THE KILLING SHOT WAS CAPPED AND THIS WAS NOT, WHICH IS WHY BODIES STILL FLEW. The
+## momentum is handed to EVERY body as `velocity * mass`, so it moves the whole corpse
+## rather than spinning one limb, and it arrives straight off the creature's
+## `CharacterBody3D.velocity` — a number that is honest while walking and absurd the
+## moment anything has gone wrong with it: a launch pad, a depenetration shove, a fall
+## that accumulated, a knockback landing on the same frame as the kill. Any one of those
+## turned a death into a rocket, and capping `max_impulse` alone could not touch it
+## because the shot was never the part doing the throwing.
+##
+## 14 m/s is faster than anything in the game runs, so a body killed at a sprint still
+## carries its speed into the fall and nothing carries more than that.
+@export_range(0.0, 60.0, 0.5) var max_momentum: float = 14.0
 ## Put every body to sleep the moment the corpse is declared down, instead of
 ## waiting for the engine's own sleep threshold to catch up. A sleeping body is
 ## skipped by the solver entirely, which is the whole point of measuring the
@@ -100,7 +114,7 @@ func begin(momentum: Vector3, point: Vector3, dir: Vector3, newtons: float) -> v
 	_age = 0.0
 	_still = 0.0
 	_check = 0.0
-	_pending_momentum = momentum
+	_pending_momentum = momentum.limit_length(max_momentum)
 	_pending_point = point
 	_pending_dir = dir
 	_pending_impulse = clampf(newtons, 0.0, max_impulse)

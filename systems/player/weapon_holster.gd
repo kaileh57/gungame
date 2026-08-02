@@ -260,6 +260,12 @@ func active_node() -> Node3D:
 	return node_at(active_slot)
 
 
+## The live `Weapon` this holster has adopted, or null. Read by anything that needs the
+## mechanism rather than the geometry — the HUD wants its spread and its reload clock.
+func weapon() -> Weapon:
+	return _weapon
+
+
 func is_swapping() -> bool:
 	return _phase != 0
 

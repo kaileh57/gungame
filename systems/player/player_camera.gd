@@ -24,6 +24,9 @@ extends Camera3D
 ## the zooming or a scope tube is.
 signal zoom_changed(level: float, index: int, scoped: bool)
 
+## The reticle, hit markers and reload clock. See `_mount_hud`.
+const HUD_SCENE: String = "res://ui/hud/combat_hud.tscn"
+
 ## Bob amplitudes are the reference's, scaled by this. Motion sickness is a real
 ## failure mode and the reference was tuned on a small window; 0.8 keeps the weight of
 ## the walk cycle without the horizon swimming on a 27-inch monitor.
@@ -80,6 +83,9 @@ signal zoom_changed(level: float, index: int, scoped: bool)
 ## Draw the sniper-scope picture when a scoped weapon is shouldered. Off is for a
 ## display stand or a cutscene, which has a camera but no shooter.
 @export var scope_overlay: bool = true
+## Build a `CombatHud` when the level has not got one, so every armed level has a
+## crosshair and a reload clock. Off for a level that deliberately shows no HUD.
+@export var auto_hud: bool = true
 ## Shoulder blend past which a scope tube replaces the hands entirely.
 @export_range(0.5, 1.0, 0.01) var scope_hides_hands: float = 0.90
 ## How far into the shoulder the magnification wheel takes over from weapon switching.
@@ -110,6 +116,8 @@ var _zoom_levels: PackedFloat32Array = PackedFloat32Array([1.15])
 var _scoped: bool = false
 var _scope: ScopeOverlay = null
 var _viewmodel: ViewmodelPass = null
+## Only set when THIS node built the HUD, so a demo that ships its own keeps ownership.
+var _hud: CombatHud = null
 var _roll: float = 0.0
 var _fov: float = 78.0
 ## The movement-driven field of view before the ADS blend, rate-limited on its own so a
@@ -140,6 +148,55 @@ func _ready() -> void:
 	process_priority = 100
 
 
+## Give the level a reticle if it has not got one.
+##
+## `CombatHud` was mounted by exactly two demos, so four armed levels had no crosshair,
+## no hit markers and no reload clock at all — you aimed by pointing the screen and
+## hoping. Mounted here for the same reason the ammunition plate hangs off the holster:
+## the eye is the one node every armed level has, so putting it here is what makes the
+## coverage complete rather than a list somebody has to remember to extend.
+##
+## A demo that already builds its own HUD keeps it. `_hud` stays null in that case, and
+## nothing here touches the one it made.
+func _mount_hud() -> void:
+	if not auto_hud or _find_hud(get_tree().root) != null:
+		return
+	var packed := ResourceLoader.load(HUD_SCENE, "PackedScene") as PackedScene
+	if packed == null:
+		return
+	var hud := packed.instantiate() as CombatHud
+	if hud == null:
+		return
+	add_child(hud)
+	hud.set_camera(self)
+	_hud = hud
+
+
+func _find_hud(node: Node) -> CombatHud:
+	var found := node as CombatHud
+	if found != null:
+		return found
+	for child: Node in node.get_children():
+		var hit: CombatHud = _find_hud(child)
+		if hit != null:
+			return hit
+	return null
+
+
+## Push the sight picture at a HUD this node owns. A demo with its own HUD pushes its
+## own, and two writers to one reticle would fight over the cone every frame.
+func _drive_hud() -> void:
+	if _hud == null or _holster == null:
+		return
+	var w: Weapon = _holster.weapon()
+	if w == null:
+		return
+	var cyc: float = 1.0
+	if w.reload_action != null and w.reload_action.is_busy():
+		cyc = w.reload_action.progress()
+	_hud.set_picture(w.effective_spread(), cyc, fov)
+
+
 ## Build the scope picture and hang it on its own layer.
 ##
 ## THE CAMERA OWNS IT because the camera is what knows the weapon is scoped and which
@@ -158,6 +215,7 @@ func _mount_scope() -> void:
 	layer.layer = 64
 	add_child(layer)
 	_viewmodel = get_node_or_null(^"../Viewmodel") as ViewmodelPass
+	_mount_hud()
 	_scope = ScopeOverlay.new()
 	_scope.name = "ScopeOverlay"
 	layer.add_child(_scope)
@@ -290,6 +348,7 @@ func _aim(dt: float) -> void:
 		if o != Vector3.ZERO:
 			global_position += global_basis * o
 
+	_drive_hud()
 	if _scope != null:
 		_scope.set_state(_player.ads, _scoped, current_zoom())
 		# The hands go away once the tube has actually closed, not the instant the

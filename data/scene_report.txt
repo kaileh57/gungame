@@ -1,15 +1,15 @@
-verify_scenes — 2026-08-02T14:28:05
+verify_scenes — 2026-08-02T14:53:22
 120 frames per demo
 
-OK    main_menu       1.6s
-OK    range           3.1s
-OK    bestiary        2.2s
-OK    ash_flats       7.1s
-OK    arena           2.7s
-OK    firefight       2.7s
-OK    gunbench        2.1s
-OK    movement        2.0s
-OK    visuals         2.7s
-OK    prefabs         2.1s
+OK    main_menu       1.5s
+OK    range           2.3s
+OK    bestiary        2.0s
+OK    ash_flats       2.4s
+OK    arena           2.4s
+OK    firefight       2.6s
+OK    gunbench        2.0s
+OK    movement        1.9s
+OK    visuals         2.6s
+OK    prefabs         1.7s
 
 10 checked, 0 failed

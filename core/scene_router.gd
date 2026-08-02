@@ -31,49 +31,49 @@ const DEMOS: Dictionary = {
 	{
 		"title": "SCAV RANGE",
 		"scene": "res://demos/range/range.tscn",
-		"blurb": "Bench, rack and four hundred metres of dirt. Find out what a gun is worth.",
+		"blurb": "A shooting range with targets out to 400 metres. Roll new guns at the bench.",
 	},
 	"bestiary":
 	{
 		"title": "BESTIARY",
 		"scene": "res://demos/bestiary/bestiary.tscn",
-		"blurb": "Every species, rigged and walking. Nothing here is friendly.",
+		"blurb": "One of every enemy in the game, walking around so you can look at them.",
 	},
 	"ash_flats":
 	{
 		"title": "ASH FLATS",
 		"scene": "res://demos/ash_flats/ash_flats.tscn",
-		"blurb": "One dead town on one dry river. Walk out or do not.",
+		"blurb": "An abandoned town on a dry riverbed. Enemies patrol it. There is a race course.",
 	},
 	"firefight":
 	{
 		"title": "FIREFIGHT",
 		"scene": "res://demos/firefight/firefight.tscn",
-		"blurb": "Three factions, seven pieces of ground, nobody's thumb on it.",
+		"blurb": "Three AI factions fight each other over seven control points. You watch.",
 	},
 	"arena":
 	{
 		"title": "ENEMY TEST ARENA",
 		"scene": "res://demos/arena/arena.tscn",
-		"blurb": "Walls, cover and a lever. Put every animal in front of every gun.",
+		"blurb": "A walled arena with cover. Pull the lever to spawn enemies and fight them.",
 	},
 	"gunbench":
 	{
 		"title": "GUN BENCH",
 		"scene": "res://demos/gunbench/gunbench.tscn",
-		"blurb": "Two turntables and a wall of scrap. Find out what a gun is made of.",
+		"blurb": "Two gun stands and a rack of weapons. Swap parts and compare the results.",
 	},
 	"movement":
 	{
 		"title": "MOVEMENT BENCH",
 		"scene": "res://demos/movement/movement.tscn",
-		"blurb": "Ledges, gaps, slopes, a stopwatch. Turn the dials until it feels right.",
+		"blurb": "An obstacle course with a timer. Dials let you retune how the player moves.",
 	},
 	"visuals":
 	{
 		"title": "THE FLATS AT DUSK",
 		"scene": "res://demos/visuals/visuals.tscn",
-		"blurb": "Nothing to shoot. Stand on the rise and look at it.",
+		"blurb": "The full map at sunset with no enemies. Somewhere to look at the scenery.",
 	},
 }
 ## Display order for the menu. Every shipped demo is listed: a demo that is not on
