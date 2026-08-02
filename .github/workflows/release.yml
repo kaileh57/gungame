@@ -1,0 +1,222 @@
+name: Release
+
+# Every push to main produces a GitHub Release with Windows and Linux builds.
+#
+# TAG SCHEME: v<YYYY.MM.DD>-<short sha>, e.g. v2026.08.01-853adf4
+#   Date first so releases sort chronologically in every UI that sorts by name;
+#   sha last so two pushes on the same day cannot collide and so any release can
+#   be traced back to an exact commit with `git show <sha>`. No manual version
+#   bumping, nothing to forget.
+#
+# COST: this repo is PRIVATE, so these minutes are billed against the account's
+# Actions allowance (ubuntu runners bill at 1x). A run is roughly 10-15 minutes.
+# See .github/workflows/README.md for the arithmetic.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        description: "Mark the release as a prerelease"
+        type: boolean
+        default: false
+
+# Releases are not worth racing. A newer push supersedes an in-flight build.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  GODOT_VERSION: 4.7.1
+  GODOT_RELEASE: stable
+
+jobs:
+  build:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Derive version tag
+        id: version
+        run: |
+          set -euo pipefail
+          SHA_SHORT="$(git rev-parse --short=7 HEAD)"
+          TAG="v$(date -u +%Y.%m.%d)-${SHA_SHORT}"
+          echo "tag=${TAG}"           >> "$GITHUB_OUTPUT"
+          echo "sha_short=${SHA_SHORT}" >> "$GITHUB_OUTPUT"
+          echo "Building ${TAG}"
+
+      - name: Install runtime libraries
+        run: |
+          set -euo pipefail
+          # The official Linux editor build links X11, GL and audio libraries at
+          # load time even when it is going to run --headless, so they have to be
+          # present or the binary will not start at all.
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            libxcursor1 libxinerama1 libxi6 libxrandr2 libxkbcommon0 \
+            libgl1 libglx0 libegl1 libpulse0 libfontconfig1 \
+            unzip zip
+          # ALSA was renamed libasound2 -> libasound2t64 in Ubuntu 24.04. Try both
+          # so this step does not break when the runner image rolls forward.
+          sudo apt-get install -y --no-install-recommends libasound2t64 \
+            || sudo apt-get install -y --no-install-recommends libasound2
+
+      - name: Install Godot ${{ env.GODOT_VERSION }} and export templates
+        run: |
+          set -euo pipefail
+          VER="${GODOT_VERSION}-${GODOT_RELEASE}"
+          BASE="https://github.com/godotengine/godot-builds/releases/download/${VER}"
+
+          # Editor build. The headless flag makes it usable on a runner with no
+          # display; the export-template-only builds cannot drive --export.
+          curl -fsSL -o /tmp/godot.zip "${BASE}/Godot_v${VER}_linux.x86_64.zip"
+          unzip -q /tmp/godot.zip -d /tmp/godot
+          sudo install -m 0755 "/tmp/godot/Godot_v${VER}_linux.x86_64" /usr/local/bin/godot
+
+          # Export templates. Godot looks for these under the XDG data dir in a
+          # folder named for the exact version string it reports.
+          TPL_DIR="${HOME}/.local/share/godot/export_templates/${GODOT_VERSION}.${GODOT_RELEASE}"
+          mkdir -p "${TPL_DIR}"
+          curl -fsSL -o /tmp/templates.tpz "${BASE}/Godot_v${VER}_export_templates.tpz"
+          # The .tpz is a zip with everything under templates/. Extract the whole
+          # thing rather than cherry-picking: the Windows D3D12 Agility SDK ships
+          # as loose files whose names are an engine implementation detail, and
+          # this project renders through D3D12 on Windows.
+          unzip -q /tmp/templates.tpz -d /tmp/templates
+          mv /tmp/templates/templates/* "${TPL_DIR}/"
+          rm -rf /tmp/godot.zip /tmp/templates.tpz /tmp/templates
+
+          godot --headless --version
+          echo "Templates installed:"
+          ls "${TPL_DIR}" | head -20
+
+      - name: Disable editor-only plugins for the build
+        run: |
+          set -euo pipefail
+          # godot_mcp opens a TCP bridge and gut installs editor UI. Neither is
+          # part of the shipped game, and both get instantiated by the headless
+          # editor during --import, where a plugin that blocks or errors would
+          # take the build with it. This edits the throwaway CI checkout only --
+          # the committed project.godot is untouched.
+          if grep -q '^\[editor_plugins\]' project.godot; then
+            python3 - <<'PY'
+          import re
+          src = open("project.godot", encoding="utf-8").read()
+          out = re.sub(r"\n\[editor_plugins\]\n(.*?\n)?enabled=[^\n]*\n", "\n", src, count=1, flags=re.S)
+          open("project.godot", "w", encoding="utf-8", newline="\n").write(out)
+          print("editor_plugins section stripped" if out != src else "nothing to strip")
+          PY
+          fi
+
+      - name: Import project resources
+        run: |
+          set -euo pipefail
+          # A fresh checkout has no .godot/ cache (it is gitignored), so every
+          # texture, mesh and scene has to be imported before anything can be
+          # exported. Godot exits non-zero on import warnings often enough that
+          # its exit code is not a useful signal here; the export step below is
+          # the real gate. Two passes because resources that depend on a
+          # generated .import file resolve on the second sweep.
+          godot --headless --import --path . || true
+          godot --headless --import --path . || true
+          test -d .godot/imported || echo "WARNING: no .godot/imported directory after import"
+
+      - name: Export Windows Desktop
+        run: |
+          set -euo pipefail
+          mkdir -p build/windows
+          godot --headless --path . --export-release "Windows Desktop" build/windows/gungame.exe || true
+          # Trust the artifact, not the exit code: Godot returns non-zero for
+          # benign export warnings but always writes the binary on success.
+          test -s build/windows/gungame.exe || { echo "::error::Windows export produced no binary"; exit 1; }
+          ls -la build/windows
+
+      - name: Export Linux
+        run: |
+          set -euo pipefail
+          mkdir -p build/linux
+          godot --headless --path . --export-release "Linux" build/linux/gungame.x86_64 || true
+          test -s build/linux/gungame.x86_64 || { echo "::error::Linux export produced no binary"; exit 1; }
+          chmod +x build/linux/gungame.x86_64
+          ls -la build/linux
+
+      - name: Package
+        id: package
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.version.outputs.tag }}"
+          mkdir -p dist
+
+          WIN_ZIP="gungame-windows-x86_64-${TAG}.zip"
+          LIN_ZIP="gungame-linux-x86_64-${TAG}.zip"
+
+          # -j would flatten away the D3D12 sidecar layout, so zip from inside.
+          (cd build/windows && zip -qr "../../dist/${WIN_ZIP}" .)
+          (cd build/linux   && zip -qr "../../dist/${LIN_ZIP}" .)
+
+          (cd dist && sha256sum *.zip > SHA256SUMS.txt)
+
+          echo "win_zip=${WIN_ZIP}" >> "$GITHUB_OUTPUT"
+          echo "lin_zip=${LIN_ZIP}" >> "$GITHUB_OUTPUT"
+          ls -la dist
+          cat dist/SHA256SUMS.txt
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gungame-${{ steps.version.outputs.tag }}
+          path: dist/
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${{ steps.version.outputs.tag }}"
+          PRERELEASE=""
+          if [ "${{ github.event.inputs.prerelease }}" = "true" ]; then
+            PRERELEASE="--prerelease"
+          fi
+
+          {
+            echo "Automated build of \`${GITHUB_SHA}\` on \`${GITHUB_REF_NAME}\`."
+            echo
+            echo "| Platform | Asset |"
+            echo "| --- | --- |"
+            echo "| Windows x86_64 | \`${{ steps.package.outputs.win_zip }}\` |"
+            echo "| Linux x86_64 | \`${{ steps.package.outputs.lin_zip }}\` |"
+            echo
+            echo "Built with Godot ${GODOT_VERSION}-${GODOT_RELEASE}. Checksums in \`SHA256SUMS.txt\`."
+            echo
+            echo "### Commit"
+            echo
+            git log -1 --pretty=format:'%s%n%n%b'
+          } > /tmp/notes.md
+
+          # Idempotent: re-running a workflow for the same commit replaces the
+          # assets instead of exploding on an existing tag.
+          if gh release view "${TAG}" >/dev/null 2>&1; then
+            gh release upload "${TAG}" dist/* --clobber
+            gh release edit "${TAG}" --notes-file /tmp/notes.md
+          else
+            gh release create "${TAG}" dist/* \
+              --title "gungame ${TAG}" \
+              --notes-file /tmp/notes.md \
+              --target "${GITHUB_SHA}" \
+              ${PRERELEASE}
+          fi
+
+          echo "Published ${TAG}"

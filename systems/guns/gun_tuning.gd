@@ -92,6 +92,19 @@ extends Resource
 ## 0.30: enough for an archetype to read as a family, not enough to squeeze the
 ## 390-1540 rpm mechanical band back into the middle.
 @export_range(0.0, 1.0, 0.01) var archetype_rate_on_cyclic: float = 0.3
+
+## Score points between the slow end of a class's expected rate band and the fast end,
+## centred so a mid-band weapon scores exactly what it always did.
+##
+## This is the class-relative grading axis: rate used to be judged absolutely, so fast
+## was good everywhere and a pump shotgun was marked down for being a pump shotgun.
+## Zero on `reference_exact`, because the reference had no such notion and the golden
+## vectors pin the port to it.
+@export_range(0.0, 20.0, 0.5) var cadence_swing: float = 4.0
+## Cycle time below which a shot-loaded weapon runs away into full auto. Zero disables
+## the auto shotgun entirely, which is what the reference did — not by choice, but
+## because the archetype was unreachable there.
+@export_range(0.0, 3.0, 0.05) var auto_shotgun_cycle: float = 0.9
 ## Rounds per minute. Ceiling on a semi-auto, and the switch for the whole semi
 ## rate model. Zero restores the reference's `320 - impulse * 7`, whose ceiling is
 ## the cyclic floor. Non-zero prices a semi by RECOVERY instead: what paces aimed
@@ -173,6 +186,8 @@ static func reference_exact() -> GunTuning:
 	t.capacity_internal = 0
 	t.capacity_machine_gun = 0
 	t.capacity_auto_shotgun = 0
+	t.cadence_swing = 0.0
+	t.auto_shotgun_cycle = 0.0
 	t.reload_uses_final_capacity = false
 	return t
 

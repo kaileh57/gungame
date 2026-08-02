@@ -17,6 +17,7 @@ extends RefCounted
 ## so `GunTuning.reference_exact()` reproduces the golden vectors bit for bit.
 
 ## Below this the recorded mating-face height is a data defect, not a thin cut.
+
 const ZERO_FIT_HEIGHT: float = 1.0e-4
 ## The reference's guard against dividing by a zero-height cut face. Keep it:
 ## with it, part 70 lands on `err = 13.59`; without it, on `inf`.
@@ -297,7 +298,9 @@ static func assemble(
 	elif mag_h > 0.85:
 		feed = &"box"
 
-	var mode: StringName = _fire_mode(cap, rec_class, explosive, cyc)
+	var mode: StringName = _fire_mode(
+		cap, rec_class, explosive, cyc, pellets, tuning.auto_shotgun_cycle
+	)
 	var auto_fire: bool = mode == &"Full-auto" or mode == &"Machine pistol"
 	var cyclic: int = _cyclic_rpm(bolt_kg, impulse, case_len, err, tuning)
 	# Free recoil velocity, m/s: what the shooter has to arrest between aimed shots.
@@ -471,6 +474,9 @@ static func assemble(
 		1.0,
 		99.0
 	)
+	# --- 4.12b cadence, judged against the class's own band -------------------
+	# Fast FOR ITS CLASS, centred on mid-band. See docs/GUN_DESIGN.md.
+	var cadence: float = clampf(GunTables.rate_position(arch, float(rpm)), 0.0, 1.0) - 0.5
 	var score: float = (
 		0.14 * lethal
 		+ 0.09 * burst_rating
@@ -480,6 +486,7 @@ static func assemble(
 		+ 0.05 * (100.0 - kick)
 		+ 0.07 * hand
 		+ 0.14 * rel
+		+ tuning.cadence_swing * cadence
 	)
 
 	# --- 4.13 optics ---------------------------------------------------------
@@ -647,7 +654,14 @@ static func _narrow(values: PackedFloat64Array) -> PackedFloat32Array:
 
 
 ## The fire-mode ladder: top to bottom, first hit wins.
-static func _fire_mode(cap: int, rec_class: StringName, explosive: bool, cyc: float) -> StringName:
+static func _fire_mode(
+	cap: int,
+	rec_class: StringName,
+	explosive: bool,
+	cyc: float,
+	pellets: int,
+	auto_shotgun_cycle: float
+) -> StringName:
 	var shotgun: bool = rec_class == &"shotgun"
 	var mode: StringName = &"Break-action"
 	if cap <= 1:
@@ -656,6 +670,10 @@ static func _fire_mode(cap: int, rec_class: StringName, explosive: bool, cyc: fl
 		mode = &"Double-action"
 	elif explosive:
 		mode = &"Break-action"
+	elif pellets > 1 and cyc < auto_shotgun_cycle:
+		# THE AUTO SHOTGUN, previously UNREACHABLE (0 of 40,000). Gated on PELLETS,
+		# not `rec_class` — `_archetype` reads pellets, and that is the difference.
+		mode = &"Full-auto"
 	elif cyc < 0.55:
 		if shotgun:
 			mode = &"Semi-auto"

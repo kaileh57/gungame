@@ -162,8 +162,8 @@ non-finite / absurd values: none
 == 2000 raw builds, shipped tuning ==
 
 archetype census
-  Shotgun                304   15.2%
   Chopped auto           289   14.4%
+  Shotgun                278   13.9%
   Submachine gun         229   11.4%
   Assault rifle          209   10.4%
   Snubnose               194    9.7%
@@ -175,23 +175,24 @@ archetype census
   Battle rifle            70    3.5%
   Marksman carbine        47    2.4%
   Machine gun             37    1.9%
+  Auto shotgun            26    1.3%
   Auto battle rifle       26    1.3%
   Hand cannon             18    0.9%
   Sniper                  15    0.8%
 
 tier census
-  Scrap                  741   37.0%
-  Cobbled                732   36.6%
-  Field-Grade            304   15.2%
-  Gunsmithed             136    6.8%
-  Warlord-Grade           59    3.0%
+  Scrap                  774   38.7%
+  Cobbled                745   37.3%
+  Field-Grade            214   10.7%
+  Gunsmithed             107    5.3%
+  Warlord-Grade           97    4.8%
+  Relic                   48    2.4%
   Hazard                  15    0.8%
-  Relic                   13    0.7%
 
 fire mode census
-  Semi-auto              631   31.6%
-  Full-auto              381   19.1%
-  3-round burst          318   15.9%
+  Semi-auto              613   30.6%
+  Full-auto              407   20.4%
+  3-round burst          310   15.5%
   Break-action           267   13.4%
   Double-action          171    8.6%
   Machine pistol          99    5.0%
@@ -207,10 +208,10 @@ feed census
   tube                    78    3.9%
 
   by fire mode            n  rpmLo rpmMean  rpmHi     cyclic   vertical horizontal     settle     period       kick   handling
-  3-round burst         318    326     837   1200       885    0.0058    0.0062     0.364     10.73        37        57
-  Full-auto             381    318     728   1200       769    0.0043    0.0044     0.438     10.22        27        57
+  3-round burst         310    326     849   1200       898    0.0056    0.0060     0.358     10.83        36        58
+  Full-auto             407    318     707   1200       745    0.0047    0.0048     0.454     10.04        30        55
   Machine pistol         99    398     573   1200       606    0.0039    0.0034     0.563      8.61        25        48
-  Semi-auto             631     82     128    186       641    0.0065    0.0044     0.626      8.45        42        45
+  Semi-auto             613     82     129    186       648    0.0064    0.0043     0.622      8.46        41        46
   Double-action         171     88     106    110       732    0.0077    0.0073     0.673      8.51        42        46
   Pump-action            65     62      70     72       535    0.0067    0.0031     0.622      9.00        43        45
   Bolt-action            46     38      41     42       677    0.0089    0.0040     0.594      8.28        59        48
@@ -222,6 +223,7 @@ feed census
   Chopped auto          289    352     723   1200       741    0.0057    0.0058     0.399     10.13        35        61
   Assault rifle         209    326     702   1076       776    0.0043    0.0043     0.530      9.38        29        38
   Machine gun            37    338     479    574       510    0.0031    0.0021     0.750      8.22        21        27
+  Auto shotgun           26    366     398    578       391    0.0105    0.0107     0.687      7.42        64        27
   Auto battle rifle      26    318     345    408       390    0.0037    0.0028     0.807      8.62        25        21
   Battle rifle           70    118     153    176       470    0.0044    0.0036     0.712      8.57        29        27
   Snubnose              194     24     130    186       722    0.0054    0.0036     0.558      8.59        34        61
@@ -229,51 +231,51 @@ feed census
   Carbine                86     20     111    146       955    0.0046    0.0021     0.630      8.33        33        45
   Hand cannon            18     22     101    130       708    0.0080    0.0041     0.566      9.56        52        50
   Sidearm               100     20      89    138       979    0.0084    0.0044     0.396      8.53        55        76
-  Shotgun               304     24      87    360       674    0.0093    0.0062     0.593      8.25        60        52
   Slug gun              149     22      78    144       643    0.0052    0.0038     0.813      8.43        36        22
+  Shotgun               278     24      78    154       701    0.0092    0.0059     0.580      8.31        59        54
   Sniper                 15     62      66     94       495    0.0045    0.0024     0.795      8.73        30        21
   Marksman carbine       47     24      62    110       873    0.0051    0.0029     0.607      8.55        36        41
   Launcher              115     12      26     88       418    0.0335    0.0332     0.681      8.52        98        29
 
 quirk census
   sidearm                568   28.4%
-  hand cannon            345   17.3%
+  hand cannon            342   17.1%
   crew-served            273   13.7%
   overbore               230   11.5%
   flat-shooting          172    8.6%
   explosive              115    5.8%
   jam-prone               89    4.5%
   drum-fed                86    4.3%
-  blunderbuss             60    3.0%
+  blunderbuss             62    3.1%
   runaway                  7    0.3%
 
 flags
   explosive      115    5.8%
   shot           453   22.6%
   sidearm        568   28.4%
-  auto           480   24.0%
+  auto           506   25.3%
   runaway          7    0.3%
   optic         1254   62.7%
-  scoped          60    3.0%
+  scoped          55    2.8%
 
 stat ranges                   min         mean          max
-  score                   32.8360      64.0143      78.9006
-  damage                  26.0000     111.6195     555.0000
-  spread                   1.9000      43.9805     318.0000
-  rpm                     12.0000     355.8290    1200.0000
+  score                   30.9348      63.5962      79.9208
+  damage                  26.0000     110.7370     555.0000
+  spread                   1.9000      44.3795     318.0000
+  rpm                     12.0000     358.5170    1200.0000
   cyclic                 360.0000     725.5400    1540.0000
-  magazine                 1.0000      20.2230      79.0000
-  reload_time              1.5000       3.8053      13.4000
+  magazine                 1.0000      20.2640      79.0000
+  reload_time              1.5000       3.8093      13.4000
   muzzle_velocity        150.0000     678.7890    1500.0000
   muzzle_energy          534.0000    2376.4260   22861.0000
   effective_range         25.0000     149.5350     523.0000
-  burst_dps               16.0000     402.2615    2453.0000
-  sustained_dps            7.0000     186.7645     950.0000
-  precision                5.0000      45.7880      87.0000
+  burst_dps               16.0000     412.3855    2167.0000
+  sustained_dps            7.0000     189.1740     994.0000
+  precision                5.0000      45.7355      87.0000
   reach                   47.0000      68.3395      90.0000
   kick                     8.0000      41.6225      99.0000
   handling                 7.0000      49.7140      97.0000
-  reliability              1.0000      66.4685      97.0000
+  reliability              1.0000      66.4645      97.0000
   mass                     1.3446       5.1558      12.0000
   impulse                  1.9192      11.7854     163.2018
   barrel_length           64.0000     388.1205    1111.0000
@@ -297,10 +299,10 @@ non-finite / absurd values: none
   mean effective_range          142.984      149.535     +6.551
   max effective_range           525.000      523.000     -2.000
   min spread                      1.900        1.900     +0.000
-  mean spread                    83.220       43.981    -39.240
+  mean spread                    83.220       44.380    -38.841
   max spread                   1600.000      318.000  -1282.000
   min precision                   1.000        5.000     +4.000
-  mean precision                 42.645       45.788     +3.143
+  mean precision                 42.645       45.736     +3.091
   max mass                       25.649       12.000    -13.649
   mean mass                       5.309        5.156     -0.153
   min handling                    1.000        7.000     +6.000
@@ -310,24 +312,24 @@ non-finite / absurd values: none
   max recoil_vertical             0.052        0.075     +0.023
   mean recoil_vertical            0.007        0.007     +0.000
   max rpm                      1566.000     1200.000   -366.000
-  mean rpm                      389.962      355.829    -34.133
-  max burst_dps                2181.000     2453.000   +272.000
-  mean burst_dps                454.679      402.262    -52.417
-  max sustained_dps             906.000      950.000    +44.000
-  mean sustained_dps            209.831      186.765    -23.066
+  mean rpm                      389.962      358.517    -31.445
+  max burst_dps                2181.000     2167.000    -14.000
+  mean burst_dps                454.679      412.385    -42.293
+  max sustained_dps             906.000      994.000    +88.000
+  mean sustained_dps            209.831      189.174    -20.656
   max magazine                   87.000       79.000     -8.000
-  mean magazine                  21.727       20.223     -1.504
+  mean magazine                  21.727       20.264     -1.463
   max reload_time                14.000       13.400     -0.600
-  mean reload_time                4.302        3.805     -0.497
+  mean reload_time                4.302        3.809     -0.492
   min reliability                 1.000        1.000     +0.000
-  mean reliability               62.754       66.469     +3.715
-  mean score                     63.060       64.014     +0.954
+  mean reliability               62.754       66.465     +3.711
+  mean score                     63.060       63.596     +0.536
   max fit_error                  16.631        5.722    -10.909
   tier Hazard                   115.000       15.000   -100.000
-  tier Scrap                    665.000      741.000    +76.000
-  tier Relic                     15.000       13.000     -2.000
+  tier Scrap                    665.000      774.000   +109.000
+  tier Relic                     15.000       48.000    +33.000
   quirk crew-served             273.000      273.000     +0.000
-  quirk blunderbuss             278.000       60.000   -218.000
+  quirk blunderbuss             278.000       62.000   -216.000
   quirk jam-prone               195.000       89.000   -106.000
   quirk drum-fed                 86.000       86.000     +0.000
 
@@ -457,9 +459,9 @@ non-finite / absurd values: none
       quirk blunderbuss             278.000 ->      274.000  -4.000
 
 -- 400 class-targeted rolls --
-  wanted class hit     394 / 400  (98.5%)
-  mean attempts        37.1
-  worst attempts       420
+  wanted class hit     400 / 400  (100.0%)
+  mean attempts        31.9
+  worst attempts       323
   holster filter kept  400 / 400
 
   archetype reachability: raw incidence over 40000 builds, then 5 targeted budgets
@@ -471,8 +473,8 @@ non-finite / absurd values: none
     Battle rifle       raw  1237 ( 3.092%)  targeted ok in   22 attempts  mag   7  9.9×95 wildcat
     Sniper             raw   358 ( 0.895%)  targeted ok in    8 attempts  mag   6  9.6×74 wildcat
     Marksman carbine   raw   958 ( 2.395%)  targeted ok in  104 attempts  mag  12  10.4×20 wildcat
-    Shotgun            raw  6207 (15.518%)  targeted ok in    8 attempts  mag  10  14.5×44 shot
-    Auto shotgun       raw     0 ( 0.000%)  UNREACHABLE in 2100 attempts  mag   6  15.5×102 shot
+    Shotgun            raw  5697 (14.243%)  targeted ok in    8 attempts  mag  10  14.5×44 shot
+    Auto shotgun       raw   510 ( 1.275%)  targeted ok in   15 attempts  mag   8  15.5×102 shot
     Slug gun           raw  3247 ( 8.117%)  targeted ok in   43 attempts  mag   9  13.7×48 shot
     Hand cannon        raw   389 ( 0.973%)  targeted ok in   78 attempts  mag   7  10.9×44 wildcat
     Sidearm            raw  1993 ( 4.982%)  targeted ok in   34 attempts  mag  32  .44 Magnum
@@ -482,12 +484,12 @@ non-finite / absurd values: none
     Hybrid             raw  2178 ( 5.445%)  targeted ok in   10 attempts  mag   9  11.4×74 wildcat
 
 -- GunFactory autoload --
-  1          Pig-Iron Last Word     Assault rifle      Gunsmithed     oal 1084 mm  aabb (12.04, 3.5, 0.58)
-  4242       Blackrifle Mk.I        Submachine gun     Field-Grade    oal  442 mm  aabb (4.915, 2.138, 0.36)
+  1          Pig-Iron Last Word     Assault rifle      Warlord-Grade  oal 1084 mm  aabb (12.04, 3.5, 0.58)
+  4242       Blackrifle Mk.I        Submachine gun     Gunsmithed     oal  442 mm  aabb (4.915, 2.138, 0.36)
   991733     Breacher-Screamer      Sniper             Cobbled        oal 1076 mm  aabb (11.956, 3.127, 0.624)
-  3735928559 Roomsweeper-Kalash     Submachine gun     Gunsmithed     oal  538 mm  aabb (5.974, 2.094, 0.39)
+  3735928559 Roomsweeper-Kalash     Submachine gun     Warlord-Grade  oal  538 mm  aabb (5.974, 2.094, 0.39)
   built 4 weapons, 18 mesh instances
   holstered Boxgun-Spitter (2.55 kg, 418 mm), rerolled barrel 11 -> 69, name Boxgun Mk.VIII
 
-elapsed              8468 ms
+elapsed              8389 ms
 FAILURES             0

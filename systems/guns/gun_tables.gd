@@ -137,6 +137,41 @@ const FLOOR_DEFAULT: float = 8.0
 
 ## Minimum score for each tier. Index 0 is the `-1` sentinel: Hazard is skipped
 ## by the score loop and is only reachable through the reliability clamp.
+## Rounds per minute a class is EXPECTED to run at, as [slow end, fast end].
+##
+## THE POINT OF THIS TABLE. Rate was graded on an absolute scale, so "fast" was
+## simply good everywhere and a pump shotgun was marked down for being a pump
+## shotgun. It is judged against its OWN class now: a weapon at the slow end of its
+## band is unremarkable there and a weapon at the fast end is a find. That is why a
+## slow shotgun is fine and a fast one is a prize, while a slow rifle is just a bad
+## rifle.
+##
+## The bands are the cadence a class is RECOGNISED by, not a clamp — nothing here
+## limits what the geometry produces, it only decides how the result is read.
+const CLASS_RATE: Dictionary = {
+	# Slow is normal. These are worked by hand or by a heavy action.
+	"Launcher": [18.0, 40.0],
+	"Slug gun": [55.0, 110.0],
+	"Shotgun": [60.0, 140.0],
+	"Snubnose": [90.0, 170.0],
+	"Hand cannon": [80.0, 160.0],
+	"Sniper": [35.0, 90.0],
+	# Middling. A shooter's cadence, trigger-limited more often than not.
+	"Marksman carbine": [90.0, 220.0],
+	"Battle rifle": [120.0, 320.0],
+	"Carbine": [150.0, 420.0],
+	"Sidearm": [140.0, 380.0],
+	"Assault rifle": [400.0, 750.0],
+	# Fast is normal. A cyclic action is the whole point of these.
+	"Auto battle rifle": [450.0, 780.0],
+	"Machine gun": [500.0, 900.0],
+	"Chopped auto": [550.0, 1000.0],
+	"Submachine gun": [600.0, 1150.0],
+	"Auto shotgun": [180.0, 330.0],
+}
+## Used when an archetype is missing from the table above.
+const CLASS_RATE_DEFAULT: Array = [120.0, 600.0]
+
 const TIER_MIN: PackedFloat32Array = [-1.0, 0.0, 62.4, 69.9, 73.1, 75.1, 77.2]
 ## Optics rank per tier index, used by the magnification ladder.
 const TIER_RANK: PackedInt32Array = [0, 0, 1, 1, 2, 3, 4]
@@ -251,6 +286,16 @@ const ACTION: Dictionary = {
 
 
 ## `Math.log2`. GDScript's `log()` is natural, like JavaScript's.
+## Where `rpm` sits inside its class's expected band, 0 at the slow end and 1 at the
+## fast end. Outside the band it keeps going, so a genuinely freakish rate still
+## reads as freakish rather than saturating.
+static func rate_position(archetype: String, rpm: float) -> float:
+	var band: Array = CLASS_RATE.get(archetype, CLASS_RATE_DEFAULT)
+	var lo: float = float(band[0])
+	var hi: float = maxf(float(band[1]), lo + 1.0)
+	return clampf((rpm - lo) / (hi - lo), -0.6, 1.6)
+
+
 static func log2(x: float) -> float:
 	return log(x) / LN2
 
