@@ -5,3 +5,8 @@
 # Renders written by res://tools/capture.tscn. A working artifact for looking at
 # the game, not source — regenerate them, do not commit them.
 /_shots/
+
+# Export output. Anchored to the repo root on purpose: demos/*/build/ holds real
+# source and must stay tracked.
+/build/
+/dist/

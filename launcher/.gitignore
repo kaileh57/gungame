@@ -1,0 +1,7 @@
+# PyInstaller output and the throwaway venv build.ps1 creates.
+.venv-build/
+build/
+dist/
+*.spec
+__pycache__/
+*.pyc

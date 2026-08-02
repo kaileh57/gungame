@@ -99,7 +99,9 @@ jobs:
 
           godot --headless --version
           echo "Templates installed:"
-          ls "${TPL_DIR}" | head -20
+          # `|| true` because `head` closing the pipe early would SIGPIPE `ls`,
+          # and `pipefail` would turn that into a failed step over a log line.
+          ls "${TPL_DIR}" | head -20 || true
 
       - name: Disable editor-only plugins for the build
         run: |
@@ -172,13 +174,11 @@ jobs:
           ls -la dist
           cat dist/SHA256SUMS.txt
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: gungame-${{ steps.version.outputs.tag }}
-          path: dist/
-          retention-days: 14
-          if-no-files-found: error
+      # Deliberately no actions/upload-artifact step. Release assets are free
+      # storage; workflow artifacts are billed by the GB-day on private repos, so
+      # uploading both would roughly double the cost of a run to keep a copy of
+      # something already published two steps later. If a run ever fails at the
+      # publish step, re-run the job.
 
       - name: Publish GitHub Release
         env:
