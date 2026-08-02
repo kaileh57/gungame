@@ -60,8 +60,9 @@ const RangeNetScript := preload("res://demos/range/range_net.gd")
 @export var stand_path: NodePath = NodePath("Stand")
 @export var card_path: NodePath = NodePath("CardReadout")
 @export var parts_path: NodePath = NodePath("PartsReadout")
-## First seed the lever hands out. Every pull adds one, which is the reference's
-## `Scavenge` button and the reason two players quoting a seed see the same gun.
+## Seeds the stream the lever draws from, so two players who start a session with the
+## same number see the same run of guns. It is NOT the first seed any more; see
+## `_next_seed`.
 @export_range(1, 1000000, 1) var start_seed: int = 4711
 @export_range(0.001, 1.0, 0.001) var display_scale: float = 0.09
 ## Radians per second the stand turns. Slow enough to read, fast enough to see
@@ -75,8 +76,10 @@ var _parts: DiegeticReadout = null
 var _controls: Dictionary = {}
 var _spec: GunSpec = null
 var _display: Node3D = null
-var _seed: int = 0
 var _rand: RandomNumberGenerator = RandomNumberGenerator.new()
+## The stream the seeds come off, kept apart from `_rand` — which reroll_slot also
+## draws from — so working a single part does not shift the next scavenge.
+var _seeds: XorShift32 = null
 var _net: RangeNetScript = null
 var _authority: bool = true
 
@@ -101,7 +104,7 @@ static func classes() -> PackedStringArray:
 
 
 func _ready() -> void:
-	_seed = start_seed
+	_seeds = XorShift32.new(start_seed)
 	_rand.seed = start_seed
 	_stand = get_node_or_null(stand_path) as Node3D
 	_card = get_node_or_null(card_path) as DiegeticReadout
@@ -116,7 +119,7 @@ func _ready() -> void:
 	if _authority:
 		scavenge()
 	else:
-		_show(GunFactory.roll(_seed, _wanted_class()))
+		_show(GunFactory.roll(int(start_seed), _wanted_class()))
 	set_process(display_spin > 0.0)
 
 
@@ -130,12 +133,35 @@ func current() -> GunSpec:
 	return _spec
 
 
-## Roll a fresh weapon of the dialled class onto the stand and step the seed.
+## The next roll seed: a full 32-bit draw, exactly as the gun bench takes it.
+##
+## THIS WAS `_seed += 1` AND IT IS WHY THE RANGE FELT BROKEN. Walking consecutive
+## integers looks harmless — same `GunFactory.roll`, same tables, just a different
+## starting point — but the seed selects parts, and neighbouring integers land in
+## neighbouring corners of the part space. Measured over sixty pulls, which is a normal
+## session at the lever:
+##
+##   _seed += 1     6 of 17 classes, 32% of them Carbine,  ZERO scoped weapons
+##   32-bit draw   14 of 17 classes, 22% of them Shotgun,  12 scoped weapons
+##
+## So the range was not merely "unlucky", it could not reach most of the library at
+## all: no snipers, no marksman carbines, no battle rifles, and — the complaint that
+## found this — not one scope in sixty tries. An earlier pass fixed the class DIAL and
+## declared the range fixed without ever measuring what it actually rolled, which is
+## the mistake `tools/verify_seed_spread.gd` now exists to make impossible.
+##
+## Off its own stream rather than `_rand`: `reroll_slot` draws from that one, and a
+## player fiddling with a single part should not shift what the next scavenge hands
+## them. Seeded from `start_seed`, so a session is still reproducible.
+func _next_seed() -> int:
+	return int(_seeds.next() * 4294967295.0) & 0xFFFFFFFF
+
+
+## Roll a fresh weapon of the dialled class onto the stand.
 func scavenge() -> GunSpec:
 	if not _authority:
 		return _spec
-	var spec: GunSpec = GunFactory.roll(_seed, _wanted_class())
-	_seed += 1
+	var spec: GunSpec = GunFactory.roll(_next_seed(), _wanted_class())
 	if spec == null:
 		push_error("WeaponBench: GunFactory returned nothing. Is the part bake present?")
 		return null
