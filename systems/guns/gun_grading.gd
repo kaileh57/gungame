@@ -269,7 +269,26 @@ static func tier_of(spec: GunSpec) -> int:
 		return base
 	if float(spec.reliability) >= HAZARD_RELIABILITY:
 		return base
-	return 0 if condition(spec) < HAZARD_CONDITION else base
+	if condition(spec) >= HAZARD_CONDITION:
+		return base
+	return 0 if is_dangerous(spec) else base
+
+
+## Whether this weapon can hurt the person holding it, as opposed to merely shooting
+## badly. The gate on the Hazard push-down.
+##
+## HAZARD IS NOT "VERY BAD" — Scrap already covers that, and there are 663 of those.
+## The push-down used to take any weapon that failed the Cobbled bar with poor
+## reliability and poor condition, which made the tier 95-of-126 guns that were simply
+## awful, and left the name saying something the weapon did not do. It now needs a
+## mechanism that can turn on you: a charge that goes off where the gun is rather than
+## where you aimed, or an action that keeps cycling after you let go — every Hazard
+## automatic runs away, see `runs_away`.
+##
+## Reads only fields the assembler has already published, so it is safe to call from
+## `tier_of` before any grading exists.
+static func is_dangerous(spec: GunSpec) -> bool:
+	return spec.explosive or spec.automatic
 
 
 ## This weapon's drawn traits — the named faults and virtues from `GunQuirks`.
@@ -361,6 +380,13 @@ static func runs_away(spec: GunSpec) -> bool:
 	if not spec.automatic:
 		return false
 	if spec.runaway:
+		return true
+	# A HAZARD AUTOMATIC ALWAYS RUNS AWAY. Hazard is the one tier defined by what the
+	# weapon does to the person holding it rather than by how well it shoots, and a
+	# sear that cannot be trusted is the plainest version of that. Without this the
+	# tier was mostly just bad guns — 9 of 15 were neither runaway nor explosive,
+	# which is Scrap's job. Reads `tier_index`, which `grade()` sets before it asks.
+	if spec.tier_index == 0:
 		return true
 	return rate_stress(spec) > RUNAWAY_STRESS and quality(spec) < Q_GRITTY
 

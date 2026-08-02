@@ -48,11 +48,11 @@ archetype census
   Sniper                  15    0.8%
 
 tier census
-  Scrap                  665   33.3%
+  Scrap                  644   32.2%
   Cobbled                619   30.9%
   Field-Grade            350   17.5%
   Gunsmithed             145    7.3%
-  Hazard                 115    5.8%
+  Hazard                 136    6.8%
   Warlord-Grade           91    4.5%
   Relic                   15    0.8%
 
@@ -104,30 +104,76 @@ feed census
   Launcher              115     12      26     88       345    0.0339    0.0380     0.337      8.52        98        29
 
 quirk census
+  gritty                 804   40.2%
   sidearm                568   28.4%
+  double-feeding         487   24.4%
   hand cannon            345   17.3%
-  blunderbuss            278   13.9%
+  over-revved            322   16.1%
+  worn mag               300   15.0%
+  heavy trigger          287   14.4%
+  fumbly                 284   14.2%
+  wandering zero         282   14.1%
+  blunderbuss            273   13.7%
   crew-served            273   13.7%
+  loose optic            243   12.2%
   overbore               230   11.5%
-  jam-prone              195    9.8%
+  burred chamber         224   11.2%
+  whippy barrel          220   11.0%
+  tired spring           217   10.9%
+  slick                  216   10.8%
+  slow to load           200   10.0%
+  greasy grip            198    9.9%
+  binds hot              192    9.6%
+  jam-prone              192    9.6%
+  sluggish action        188    9.4%
+  cracked stock          187    9.3%
+  bent feed lips         176    8.8%
+  grit in the works      176    8.8%
+  stiff spring           175    8.8%
+  crisp                  174    8.7%
   flat-shooting          172    8.6%
+  broken-in              158    7.9%
+  overrun action         129    6.5%
+  sticky bolt            116    5.8%
   explosive              115    5.8%
+  muzzle-heavy           112    5.6%
+  crisp trigger          112    5.6%
+  canted sights           95    4.8%
+  runaway                 92    4.6%
   drum-fed                86    4.3%
-  runaway                  7    0.3%
+  speed mag               81    4.0%
+  loose choke             79    4.0%
+  match barrel            77    3.9%
+  quick-feeding           74    3.7%
+  polished feed           69    3.5%
+  hard-jamming            62    3.1%
+  hand-fitted             61    3.0%
+  cheek weld              43    2.1%
+  heat-warped             40    2.0%
+  bent sights             35    1.8%
+  worn sear               28    1.4%
+  tuned sear              28    1.4%
+  bent gate               19    0.9%
+  quick bolt               4    0.2%
+  slick gate               3    0.1%
 
 flags
   explosive      115    5.8%
   shot           453   22.6%
   sidearm        568   28.4%
   auto           480   24.0%
-  runaway          7    0.3%
+  runaway         92    4.6%
   optic         1254   62.7%
   scoped         228   11.4%
   odd:belt-fed hose    41    2.0%
-  odd:runaway      7    0.3%
+  odd:runaway     92    4.6%
+  hazard         136    6.8%
+  hazard:runaway    35    1.8%
+  hazard:tame     76    3.8%
   odd:pocket cannon    22    1.1%
   marksman        61    3.0%
   marksman_scoped    50    2.5%
+  hazard:explosive    25    1.3%
   marksman_irons    11    0.6%
   odd:relic       15    0.8%
   odd:scoped bullet hose    25    1.3%
@@ -189,13 +235,13 @@ archetype census
   Sniper                  15    0.8%
 
 tier census
-  Scrap                  774   38.7%
+  Scrap                  749   37.5%
   Cobbled                745   37.3%
   Field-Grade            214   10.7%
   Gunsmithed             107    5.3%
   Warlord-Grade           97    4.8%
   Relic                   48    2.4%
-  Hazard                  15    0.8%
+  Hazard                  40    2.0%
 
 fire mode census
   Semi-auto              613   30.6%
@@ -246,34 +292,80 @@ feed census
   Launcher              115     12      26     88       418    0.0335    0.0332     0.681      8.52        98        29
 
 quirk census
+  gritty                 780   39.0%
   sidearm                568   28.4%
+  double-feeding         517   25.9%
+  fumbly                 373   18.6%
   hand cannon            342   17.1%
+  wandering zero         310   15.5%
+  heavy trigger          302   15.1%
+  worn mag               283   14.2%
   crew-served            273   13.7%
+  over-revved            272   13.6%
+  loose optic            240   12.0%
+  slow to load           234   11.7%
   overbore               230   11.5%
+  tired spring           228   11.4%
+  whippy barrel          218   10.9%
+  slick                  218   10.9%
+  burred chamber         212   10.6%
+  binds hot              201   10.1%
+  greasy grip            192    9.6%
+  sluggish action        185    9.3%
+  cracked stock          181    9.1%
+  bent feed lips         180    9.0%
   flat-shooting          172    8.6%
+  grit in the works      172    8.6%
+  stiff spring           171    8.6%
+  crisp                  165    8.3%
+  broken-in              156    7.8%
+  crisp trigger          118    5.9%
   explosive              115    5.8%
-  jam-prone               89    4.5%
+  sticky bolt            115    5.8%
+  quick-feeding          109    5.5%
+  muzzle-heavy           102    5.1%
+  overrun action          94    4.7%
+  canted sights           88    4.4%
   drum-fed                86    4.3%
+  jam-prone               86    4.3%
+  loose choke             82    4.1%
+  hard-jamming            78    3.9%
+  runaway                 77    3.9%
+  match barrel            72    3.6%
+  speed mag               69    3.5%
+  polished feed           68    3.4%
+  hand-fitted             63    3.1%
   blunderbuss             62    3.1%
-  runaway                  7    0.3%
+  cheek weld              46    2.3%
+  bent sights             40    2.0%
+  heat-warped             39    2.0%
+  tuned sear              29    1.5%
+  worn sear               24    1.2%
+  bent gate               22    1.1%
+  quick bolt               3    0.1%
+  slick gate               2    0.1%
 
 flags
   explosive      115    5.8%
   shot           453   22.6%
   sidearm        568   28.4%
   auto           506   25.3%
-  runaway          7    0.3%
+  runaway         77    3.9%
   optic         1254   62.7%
   scoped         235   11.8%
   odd:belt-fed hose    41    2.0%
+  odd:runaway     77    3.9%
   odd:relic       48    2.4%
-  odd:runaway      7    0.3%
+  hazard          40    2.0%
+  hazard:tame      9    0.5%
   odd:pocket cannon    22    1.1%
   marksman        62    3.1%
   marksman_scoped    51    2.5%
   odd:scoped bullet hose    48    2.4%
   odd:automatic shot    26    1.3%
+  hazard:explosive    20    1.0%
   marksman_irons    11    0.6%
+  hazard:runaway    11    0.6%
 
 stat ranges                   min         mean          max
   score                   30.9348      63.5962      79.9208
@@ -342,12 +434,12 @@ non-finite / absurd values: none
   mean reliability               62.754       66.465     +3.711
   mean score                     63.060       63.596     +0.536
   max fit_error                  16.631        5.722    -10.909
-  tier Hazard                   115.000       15.000   -100.000
-  tier Scrap                    665.000      774.000   +109.000
+  tier Hazard                   136.000       40.000    -96.000
+  tier Scrap                    644.000      749.000   +105.000
   tier Relic                     15.000       48.000    +33.000
   quirk crew-served             273.000      273.000     +0.000
-  quirk blunderbuss             278.000       62.000   -216.000
-  quirk jam-prone               195.000       89.000   -106.000
+  quirk blunderbuss             273.000       62.000   -211.000
+  quirk jam-prone               192.000       86.000   -106.000
   quirk drum-fed                 86.000       86.000     +0.000
 
 == one departure at a time, vs reference_exact, 2000 samples ==
@@ -359,10 +451,10 @@ non-finite / absurd values: none
       mean precision                 42.645 ->       44.644  +1.999
       mean reliability               62.754 ->       63.282  +0.528
       mean score                     63.060 ->       63.846  +0.786
-      tier Hazard                   115.000 ->      114.000  -1.000
-      tier Scrap                    665.000 ->      614.000  -51.000
-      quirk blunderbuss             278.000 ->      116.000  -162.000
-      quirk jam-prone               195.000 ->      188.000  -7.000
+      tier Hazard                   136.000 ->      135.000  -1.000
+      tier Scrap                    644.000 ->      593.000  -51.000
+      quirk blunderbuss             273.000 ->      112.000  -161.000
+      quirk jam-prone               192.000 ->      186.000  -6.000
 
   shot choke cap 0.72 -> 0.62
       mean effective_range          142.984 ->      141.768  -1.216
@@ -370,14 +462,13 @@ non-finite / absurd values: none
       mean precision                 42.645 ->       42.333  -0.312
       mean reliability               62.754 ->       62.749  -0.004
       mean score                     63.060 ->       62.950  -0.111
-      tier Scrap                    665.000 ->      683.000  +18.000
-      quirk blunderbuss             278.000 ->      285.000  +7.000
+      tier Scrap                    644.000 ->      662.000  +18.000
+      quirk blunderbuss             273.000 ->      280.000  +7.000
 
   shot range cap none -> 55 m
       mean effective_range          142.984 ->      145.889  +2.905
       mean score                     63.060 ->       63.361  +0.300
-      tier Hazard                   115.000 ->      116.000  +1.000
-      tier Scrap                    665.000 ->      671.000  +6.000
+      tier Scrap                    644.000 ->      651.000  +7.000
 
   zero fit height 0 -> 0.39
       mean effective_range          142.984 ->      149.158  +6.174
@@ -391,10 +482,10 @@ non-finite / absurd values: none
       mean reliability               62.754 ->       65.448  +2.694
       mean score                     63.060 ->       63.967  +0.907
       max fit_error                  16.631 ->        5.722  -10.909
-      tier Hazard                   115.000 ->       29.000  -86.000
-      tier Scrap                    665.000 ->      694.000  +29.000
-      quirk blunderbuss             278.000 ->      220.000  -58.000
-      quirk jam-prone               195.000 ->      119.000  -76.000
+      tier Hazard                   136.000 ->       50.000  -86.000
+      tier Scrap                    644.000 ->      673.000  +29.000
+      quirk blunderbuss             273.000 ->      216.000  -57.000
+      quirk jam-prone               192.000 ->      116.000  -76.000
 
   mass ceiling 26 -> 12 kg
       mean effective_range          142.984 ->      142.934  -0.050
@@ -410,9 +501,9 @@ non-finite / absurd values: none
       mean reload_time                4.302 ->        4.270  -0.032
       mean reliability               62.754 ->       63.214  +0.460
       mean score                     63.060 ->       63.120  +0.060
-      tier Hazard                   115.000 ->      103.000  -12.000
-      tier Scrap                    665.000 ->      673.000  +8.000
-      quirk jam-prone               195.000 ->      175.000  -20.000
+      tier Hazard                   136.000 ->      123.000  -13.000
+      tier Scrap                    644.000 ->      653.000  +9.000
+      quirk jam-prone               192.000 ->      171.000  -21.000
 
   auto rate ceiling -> 1100
       mean effective_range          142.984 ->      142.979  -0.005
@@ -429,7 +520,7 @@ non-finite / absurd values: none
       min effective_range             4.000 ->       25.000  +21.000
       mean effective_range          142.984 ->      144.707  +1.722
       mean score                     63.060 ->       63.254  +0.193
-      tier Scrap                    665.000 ->      664.000  -1.000
+      tier Scrap                    644.000 ->      643.000  -1.000
 
   box cap none -> 60
       mean effective_range          142.984 ->      142.982  -0.002
@@ -447,7 +538,7 @@ non-finite / absurd values: none
       mean sustained_dps            209.831 ->      209.351  -0.480
       mean magazine                  21.727 ->       21.507  -0.220
       mean score                     63.060 ->       63.033  -0.027
-      tier Scrap                    665.000 ->      670.000  +5.000
+      tier Scrap                    644.000 ->      649.000  +5.000
 
   internal cap none -> 12
       mean effective_range          142.984 ->      142.268  -0.716
@@ -456,7 +547,8 @@ non-finite / absurd values: none
       mean sustained_dps            209.831 ->      206.124  -3.707
       mean magazine                  21.727 ->       20.766  -0.961
       mean score                     63.060 ->       62.927  -0.133
-      tier Scrap                    665.000 ->      672.000  +7.000
+      tier Scrap                    644.000 ->      651.000  +7.000
+      quirk blunderbuss             273.000 ->      274.000  +1.000
 
   MG cap none -> 150
       no measured effect on any tracked metric
@@ -472,8 +564,8 @@ non-finite / absurd values: none
       mean reload_time                4.302 ->        4.243  -0.059
       mean reliability               62.754 ->       62.758  +0.004
       mean score                     63.060 ->       63.061  +0.001
-      tier Scrap                    665.000 ->      662.000  -3.000
-      quirk blunderbuss             278.000 ->      274.000  -4.000
+      tier Scrap                    644.000 ->      641.000  -3.000
+      quirk blunderbuss             273.000 ->      271.000  -2.000
 
 -- 400 class-targeted rolls --
   wanted class hit     400 / 400  (100.0%)
@@ -508,5 +600,5 @@ non-finite / absurd values: none
   built 4 weapons, 18 mesh instances
   holstered Boxgun-Spitter (2.55 kg, 418 mm), rerolled barrel 11 -> 69, name Boxgun Mk.VIII
 
-elapsed              14325 ms
+elapsed              10816 ms
 FAILURES             0

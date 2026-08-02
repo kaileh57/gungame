@@ -14,6 +14,8 @@ extends SceneTree
 
 ## Joint-distribution counting; see that file for why it is not a flag census.
 const GunOdds := preload("res://tools/gun_odds.gd")
+## The reference's published builds. Data only; see that file before editing one.
+const GOLD_SEEDS := preload("res://tools/gun_golden.gd").GOLD_SEEDS
 const MANIFEST_PATH := "res://data/guns/part_library.tres"
 ## Must match `GunFactory.TUNING_PATH`. Naming the autoload here instead would
 ## compile its whole dependency tree, which a `--script` run has no autoloads for.
@@ -30,134 +32,12 @@ const TARGET_BUDGETS := 5
 const GOLD_EPS := 1.0e-6
 ## Relative tolerance for the RAW floats — mass, impulse, the recoil constants.
 ##
-## `GunPart.ext` is a `Vector3`, so the part extents carry single-precision. The
-## fit caps divide by `ext.y` (`k = 2.10 / 1.7177…` for the seed-1 stock), which
-## puts ~1e-7 of relative error into `k` before the derivation has done anything,
-## and mass, energy, impulse and the recoil constants inherit it. Every rounded
-## field the reference publishes still lands on the golden integer, which is the
-## bar that matters; this tolerance says how much slack the storage width buys.
+## `GunPart.ext` is a `Vector3`, so part extents carry single-precision. The fit caps
+## divide by `ext.y`, which puts ~1e-7 of relative error into `k` before the derivation
+## has done anything, and mass, energy, impulse and the recoil constants inherit it.
+## Every rounded field still lands on the golden integer, which is the bar that
+## matters; this tolerance says how much slack the storage width buys.
 const GOLD_REL := 4.0e-7
-
-## `seed -> {field: expected}`, transcribed from docs/spec/range.md §10.2.
-const GOLD_SEEDS := {
-	1:
-	{
-		"weapon_name": "Coffin Divorce",
-		"archetype": "Assault rifle",
-		"tier_name": "Field-Grade",
-		"caliber": "11.1×62 wildcat",
-		"rpm": 292,
-		"magazine": 34,
-		"damage": 84.0,
-		"spread": 22.0,
-		"reliability": 78,
-		"overall_length": 785,
-	},
-	2:
-	{
-		"weapon_name": "Coffin Kalash",
-		"archetype": "Assault rifle",
-		"tier_name": "Cobbled",
-		"caliber": "11.1×62 wildcat",
-		"rpm": 292,
-		"magazine": 30,
-		"damage": 84.0,
-		"spread": 26.0,
-		"reliability": 75,
-		"overall_length": 835,
-	},
-	3:
-	{
-		"weapon_name": "The Fair Warning",
-		"archetype": "Machine gun",
-		"tier_name": "Gunsmithed",
-		"caliber": "11.1×62 wildcat",
-		"rpm": 328,
-		"magazine": 49,
-		"damage": 85.0,
-		"spread": 9.0,
-		"reliability": 78,
-		"overall_length": 1398,
-	},
-	7:
-	{
-		"weapon_name": "Scabbed Kalash",
-		"archetype": "Chopped auto",
-		"tier_name": "Cobbled",
-		"caliber": "10.5×62 wildcat",
-		"rpm": 404,
-		"magazine": 23,
-		"damage": 73.0,
-		"spread": 30.0,
-		"reliability": 44,
-		"overall_length": 1012,
-	},
-	42:
-	{
-		"weapon_name": "Cracked Nailfile",
-		"archetype": "Chopped auto",
-		"tier_name": "Field-Grade",
-		"caliber": "11.4×62 wildcat",
-		"rpm": 386,
-		"magazine": 35,
-		"damage": 72.0,
-		"spread": 21.0,
-		"reliability": 89,
-		"overall_length": 927,
-	},
-	99:
-	{
-		"weapon_name": "Kalash-Sidearm",
-		"archetype": "Chopped auto",
-		"tier_name": "Scrap",
-		"caliber": "11.4×62 wildcat",
-		"rpm": 404,
-		"magazine": 23,
-		"damage": 66.0,
-		"spread": 42.0,
-		"reliability": 48,
-		"overall_length": 936,
-	},
-	1234:
-	{
-		"weapon_name": "Reclaimed Woodsman",
-		"archetype": "Chopped auto",
-		"tier_name": "Cobbled",
-		"caliber": "6.6×102 wildcat",
-		"rpm": 322,
-		"magazine": 15,
-		"damage": 153.0,
-		"spread": 44.0,
-		"reliability": 43,
-		"overall_length": 1032,
-	},
-	5000:
-	{
-		"weapon_name": "The Cough",
-		"archetype": "Carbine",
-		"tier_name": "Cobbled",
-		"caliber": "11.8×27 wildcat",
-		"rpm": 218,
-		"magazine": 16,
-		"damage": 50.0,
-		"spread": 7.8,
-		"reliability": 67,
-		"overall_length": 997,
-	},
-	77777:
-	{
-		"weapon_name": "Coffin Migraine",
-		"archetype": "Sidearm",
-		"tier_name": "Field-Grade",
-		"caliber": ".38 Special",
-		"rpm": 234,
-		"magazine": 23,
-		"damage": 66.0,
-		"spread": 12.0,
-		"reliability": 65,
-		"overall_length": 524,
-	},
-}
 
 ## Every scalar field the census tracks.
 const STAT_FIELDS := [
@@ -194,9 +74,9 @@ const STAT_FIELDS := [
 	"fit_error",
 ]
 
-## Per-bucket character columns, as `GunSpec field:decimals`. `rpm` is reported
-## separately as a min/mean/max band, because how WIDE that band is inside one
-## bucket is the whole question the rate work has to answer.
+## Per-bucket character columns, as `GunSpec field:decimals`. `rpm` is reported as a
+## min/mean/max band, because how WIDE that band is inside one bucket is the whole
+## question the rate work has to answer.
 const CHAR_COLS := (
 	"cyclic:0 recoil_vertical:4 recoil_horizontal:4 recoil_settle:3"
 	+ " recoil_period:2 kick:0 handling:0"
@@ -249,8 +129,8 @@ var _failures := 0
 var _done := false
 
 
-## Everything runs on the first frame rather than in `_init`, because the
-## autoload nodes this verifies do not exist until the main loop has started.
+## Runs on the first frame rather than in `_init`: the autoload nodes this verifies
+## do not exist until the main loop has started.
 func _process(_delta: float) -> bool:
 	if _done:
 		return true
@@ -565,6 +445,11 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 		if w == null:
 			bad.append("seed %d produced no spec at all" % seed_value)
 			continue
+		# GRADE IT. Every mechanism calls `ensure` as it configures, so the gun a player
+		# holds is graded: tier pushed down into Hazard, sear condemned. This census read
+		# the raw record, describing a weapon that never reaches a hand. The golden
+		# vectors run before this, ungraded, so they are unaffected.
+		GunGrading.ensure(w)
 		_tally(arch_count, String(w.archetype))
 		_tally(tier_count, String(w.tier_name))
 		_tally(mode_count, String(w.fire_mode))

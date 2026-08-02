@@ -46,6 +46,18 @@ static func count(flags: Dictionary, w: GunSpec) -> void:
 		_bump(flags, "odd:runaway")
 	if String(w.tier_name) == "Relic":
 		_bump(flags, "odd:relic")
+	# WHAT A HAZARD ACTUALLY IS. The tier means "this may hurt the person holding it",
+	# so most of them should be a weapon that cannot stop firing or one that throws a
+	# charge — not merely a bad gun, which is what Scrap is for. Broken out because the
+	# composition of the tier is the design target, not how many land in it.
+	if String(w.tier_name) == "Hazard":
+		_bump(flags, "hazard")
+		if w.runaway:
+			_bump(flags, "hazard:runaway")
+		if w.explosive:
+			_bump(flags, "hazard:explosive")
+		if not w.runaway and not w.explosive:
+			_bump(flags, "hazard:tame")
 
 
 static func _bump(d: Dictionary, key: String) -> void:
