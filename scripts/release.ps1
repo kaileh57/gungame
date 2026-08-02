@@ -59,6 +59,51 @@ function Write-Step { param([string]$Message) Write-Host "`n==> $Message" -Foreg
 function Write-Note { param([string]$Message) Write-Host "    $Message" -ForegroundColor DarkGray }
 function Fail      { param([string]$Message) Write-Host "`nFAILED: $Message" -ForegroundColor Red; exit 1 }
 
+# Run the engine and ACTUALLY WAIT FOR IT.
+#
+# Two separate Windows problems, both of which made a successful build look broken.
+#
+# 1. IT DOES NOT WAIT. Godot ships one Windows binary and it is built for the GUI
+#    subsystem, so when it is started from a console it relaunches itself attached to
+#    one and the process you started exits immediately. `& $Godot ...` therefore
+#    returned while the export had not written a single byte, the very next line
+#    tested for the .exe, found nothing, and failed the build -- and then Godot went
+#    on to finish the export perfectly and drop a 336 MB binary on disk after the
+#    script had already given up. There is no `.console.exe` in the Steam install to
+#    use instead, so the wait is done by hand: start it, wait on that process, then
+#    wait for the whole engine to be gone. The preflight refuses to run at all while
+#    another Godot is alive, so anything still running here is ours.
+#
+# 2. ITS CHATTER IS FATAL. Godot writes to stderr on every run -- "N ObjectDB
+#    instances were leaked at exit", "N resources still in use at exit" -- and none of
+#    it means the run failed. Windows PowerShell 5.1 wraps a native command's stderr
+#    in an ErrorRecord, which under $ErrorActionPreference = "Stop" terminates the
+#    script. The preference is relaxed for exactly the duration of the engine call.
+#
+# Callers still gate on whether a binary actually appeared, which is the real signal.
+function Invoke-Godot {
+    param([string[]]$GodotArgs)
+    $prev = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    try {
+        # QUOTE ANYTHING WITH A SPACE. Start-Process joins -ArgumentList with spaces and
+        # quotes nothing, so the preset name "Windows Desktop" arrived as two separate
+        # arguments: Godot could not match a preset, printed the list of the ones it has,
+        # and exported nothing. The exe path is quoted for the same reason -- it does not
+        # contain a space today, but a checkout under "Program Files" would.
+        $quoted = $GodotArgs | ForEach-Object {
+            if ($_ -match '\s') { '"' + $_ + '"' } else { $_ }
+        }
+        $proc = Start-Process -FilePath $Godot -ArgumentList $quoted -NoNewWindow -Wait -PassThru
+        $engine = [System.IO.Path]::GetFileNameWithoutExtension($Godot)
+        while (@(Get-Process -Name $engine -ErrorAction SilentlyContinue).Count -gt 0) {
+            Start-Sleep -Milliseconds 500
+        }
+        $script:GodotExit = $proc.ExitCode
+    }
+    finally { $ErrorActionPreference = $prev }
+}
+
 # --------------------------------------------------------------------------
 # 1. Preflight
 # --------------------------------------------------------------------------
@@ -93,15 +138,41 @@ if ($versionLine -notmatch '^4\.7\.') {
     Write-Host "    WARNING: expected Godot 4.7.x, got '$versionLine'. Templates must match exactly." -ForegroundColor Yellow
 }
 
-# Export templates live in %APPDATA%\Godot\export_templates\<VERSION_FULL_CONFIG>.
+# Export templates live in <editor data>\export_templates\<VERSION_FULL_CONFIG>.
 # For an official stable build that is "<major>.<minor>.<patch>.stable"; the
 # trailing build name a Steam or distro build appends is not part of the folder.
-$tplRoot = Join-Path $env:APPDATA "Godot/export_templates"
+#
+# WHERE "<editor data>" IS DEPENDS ON THE INSTALL, and this checked only one of the
+# two. A Godot that finds a `._sc_` file beside its binary is SELF-CONTAINED: it
+# keeps everything in `editor_data/` next to the executable and never reads
+# %APPDATA% at all, which is exactly what the Steam build does. So this failed with
+# "templates are not installed" and a 1.3 GB download instruction on a machine that
+# had them installed and could export fine — the templates were simply in the other
+# directory. Both roots are searched now, self-contained first, because when the
+# marker is present that is the only one the engine itself will look in.
 $tplName = ($versionLine -split '\.' | Select-Object -First 3) -join '.'
 $tplName = "$tplName.stable"
-$tplDir  = Join-Path $tplRoot $tplName
 
-if (-not (Test-Path $tplDir)) {
+$tplRoots = @()
+$godotDir = Split-Path -Parent (Resolve-Path $Godot)
+if (Test-Path (Join-Path $godotDir "._sc_")) {
+    $tplRoots += (Join-Path $godotDir "editor_data/export_templates")
+}
+$tplRoots += (Join-Path $env:APPDATA "Godot/export_templates")
+
+# NOT `foreach ($root in ...)`. PowerShell variable names are CASE-INSENSITIVE, so
+# `$root` and `$Root` are one variable, and that loop quietly overwrote the repo root
+# with a templates directory. Everything downstream then ran `git` from inside the
+# Godot install and reported "not a git repository", which reads as a broken checkout.
+$tplRoot = $tplRoots[0]
+$tplDir  = $null
+foreach ($tplCandidateRoot in $tplRoots) {
+    $candidate = Join-Path $tplCandidateRoot $tplName
+    if (Test-Path $candidate) { $tplRoot = $tplCandidateRoot; $tplDir = $candidate; break }
+}
+
+if (-not $tplDir) {
+    $tplDir = Join-Path $tplRoot $tplName
     $have = if (Test-Path $tplRoot) { (Get-ChildItem $tplRoot -Directory | ForEach-Object Name) -join ", " } else { "<none>" }
     Fail @"
 Export templates for '$tplName' are not installed.
@@ -115,8 +186,7 @@ Templates are a ~1.3 GB download. Install them one of these ways:
     (it is a zip), and extract the contents of its templates/ folder into
       $tplDir
 
-Or skip local building entirely and let .github/workflows/release.yml do it --
-CI downloads the templates itself on every run.
+Searched: $($tplRoots -join "; ")
 "@
 }
 Write-Note "Templates: $tplDir"
@@ -131,6 +201,11 @@ foreach ($tool in @("git", "gh")) {
 Push-Location $Root
 try {
     $sha = (& git rev-parse --short=7 HEAD).Trim()
+    # The FULL sha as well, for --target. GitHub's release API rejects an abbreviated
+    # commitish with "Release.target_commitish is invalid" -- it takes a branch name or
+    # a complete 40-character sha and nothing in between. The short one still names the
+    # tag, which is where a human reads it.
+    $shaFull = (& git rev-parse HEAD).Trim()
     $tag = "v{0}-{1}" -f (Get-Date).ToUniversalTime().ToString("yyyy.MM.dd"), $sha
     $dirty = (& git status --porcelain) -ne $null
 
@@ -150,8 +225,8 @@ try {
     if (-not (Test-Path (Join-Path $Root ".godot/imported"))) {
         # Exit code is not a reliable signal -- Godot returns non-zero for import
         # warnings. The export step is the real gate.
-        & $Godot --headless --import --path $Root
-        & $Godot --headless --import --path $Root
+        Invoke-Godot @("--headless", "--import", "--path", $Root)
+        Invoke-Godot @("--headless", "--import", "--path", $Root)
     }
 
     # ----------------------------------------------------------------------
@@ -173,7 +248,7 @@ try {
         if (Test-Path $outDir) { Remove-Item $outDir -Recurse -Force }
         New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
-        & $Godot --headless --path $Root --export-release $p.Preset $outPath
+        Invoke-Godot @("--headless", "--path", $Root, "--export-release", $p.Preset, $outPath)
 
         if (-not (Test-Path $outPath) -or (Get-Item $outPath).Length -eq 0) {
             Fail "Export of '$($p.Preset)' produced no binary at $outPath. Scroll up for Godot's error."
@@ -224,7 +299,7 @@ try {
         Write-Step "Done (not published)"
         Write-Host "Artifacts in $dist" -ForegroundColor Green
         Write-Host "To publish these later:" -ForegroundColor DarkGray
-        Write-Host "  gh release create $tag $dist/* --repo $Repo --title ""gungame $tag"" --target $sha" -ForegroundColor DarkGray
+        Write-Host "  gh release create $tag $dist/* --repo $Repo --title ""gungame $tag"" --target $shaFull" -ForegroundColor DarkGray
         exit 0
     }
 
@@ -269,7 +344,7 @@ $subject
             "--repo", $Repo,
             "--title", "gungame $tag",
             "--notes-file", $notesFile,
-            "--target", $sha
+            "--target", $shaFull
         )
         if ($Prerelease) { $ghArgs += "--prerelease" }
         & gh @ghArgs
