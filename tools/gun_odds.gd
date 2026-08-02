@@ -44,6 +44,9 @@ static func count(flags: Dictionary, w: GunSpec) -> void:
 		_bump(flags, "odd:belt-fed hose")
 	if w.runaway:
 		_bump(flags, "odd:runaway")
+	# What kind of sight the weapon actually carries, by the magnification the camera
+	# will use. This is the ladder the player looks through, not the part's name.
+	_bump(flags, "optic:" + sight_class(w))
 	if String(w.tier_name) == "Relic":
 		_bump(flags, "odd:relic")
 	# WHAT A HAZARD ACTUALLY IS. The tier means "this may hurt the person holding it",
@@ -58,6 +61,27 @@ static func count(flags: Dictionary, w: GunSpec) -> void:
 			_bump(flags, "hazard:explosive")
 		if not w.runaway and not w.explosive:
 			_bump(flags, "hazard:tame")
+
+
+## The sight bands, named for what looking through one is like. Boundaries are the
+## ones the rest of the system already uses: `GunAssembler.SCOPE_ZOOM` (4.2) is where a
+## weapon counts as scoped, and `ScopeOverlay.RETICLE_MIL_MIN` (6.0) is where the
+## reticle gains ranging dots. 4.8 rather than a round 6.0 because the ladder TOPS OUT
+## at 5.38x — a 6.0 gate made the mil-dot reticle unreachable, which the optic census
+## caught as "sniper scope 0".
+static func sight_class(w: GunSpec) -> String:
+	if not w.has_optic:
+		return "iron sights"
+	var z: float = w.zoom
+	if w.scoped and z >= 4.8:
+		return "sniper scope"
+	if w.scoped:
+		return "marksman scope"
+	if z >= 2.6:
+		return "magnified optic"
+	if z >= 1.6:
+		return "prism sight"
+	return "reflex sight"
 
 
 static func _bump(d: Dictionary, key: String) -> void:

@@ -24,7 +24,7 @@ enum Reticle { CROSS, MIL_DOT }
 
 ## Above this magnification the reticle gains ranging dots. Below it the tube gets a
 ## plain cross, because dots you cannot use are just clutter.
-const RETICLE_MIL_MIN: float = 6.0
+const RETICLE_MIL_MIN: float = 4.8
 ## Tube diameter as a fraction of the SHORTER screen axis. Under 1.0 so the mask always
 ## has something to cover on a square window.
 @export_range(0.3, 1.0, 0.01) var tube_fraction: float = 0.86
