@@ -82,6 +82,18 @@ const PICK_BLEND: float = 0.85
 @export_range(0.0, 6.0, 0.1) var sway_degrees: float = 1.6
 ## Seconds for the camera to reach the cursor's lean.
 @export_range(0.02, 1.00, 0.01) var sway_seconds: float = 0.22
+## Hold the right mouse button to lean in. The menu is read at whatever FOV the player
+## set for PLAYING, which for a wide setting puts the board and the weapon cards far
+## enough away to be guesswork — so there has to be a way to look closer without making
+## everyone who likes 100 degrees squint.
+@export_range(1.0, 4.0, 0.05) var zoom_factor: float = 2.2
+@export_range(0.02, 1.00, 0.01) var zoom_seconds: float = 0.12
+## How much of the sway survives while zoomed. NOT much less than 1: the sway follows
+## where the mouse IS rather than how it moves, so it is the aim, not noise — cutting it
+## hard steadied the picture and simultaneously took away the ability to bring anything
+## else into view, which is the whole reason for leaning in. A shade under one takes the
+## edge off the magnified travel while leaving the board pannable.
+@export_range(0.0, 1.0, 0.01) var zoom_sway_scale: float = 0.85
 
 @export_group("Lamp")
 ## Peak fraction the work-lamp dips by. Zero switches the flicker off entirely.
@@ -117,6 +129,8 @@ var _picked_id: StringName = &""
 var _locked: bool = false
 var _eye_rest: Vector3 = Vector3.ZERO
 var _sway: Vector2 = Vector2.ZERO
+## 0 at rest, 1 fully leaned in. Eased rather than latched so the lean has weight.
+var _zoom: float = 0.0
 var _lamp_energy: float = 1.0
 var _flicker_phase: float = 0.0
 ## The hands. Owns the ray, the latch and the queue.
@@ -419,7 +433,17 @@ func _animate_camera(delta: float) -> void:
 		clampf(mouse.y / maxf(rect.y, 1.0) * 2.0 - 1.0, -1.0, 1.0)
 	)
 	_sway = _sway.lerp(want, 1.0 - exp(-delta / maxf(sway_seconds, 0.001)))
-	var amount: float = deg_to_rad(sway_degrees)
+
+	# POLLED, NOT LATCHED ON AN EVENT. The menu's controls are worked by clicking, and a
+	# button that swallows its own press would leave the zoom stuck down the first time
+	# somebody right-clicked a control. Reading the button each frame cannot desync.
+	var held: bool = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
+	_zoom = lerpf(_zoom, 1.0 if held else 0.0, 1.0 - exp(-delta / maxf(zoom_seconds, 0.001)))
+	var base: float = GameSettings.fov
+	var mag: float = lerpf(1.0, zoom_factor, _zoom)
+	_eye.fov = rad_to_deg(2.0 * atan(tan(deg_to_rad(base) * 0.5) / mag))
+
+	var amount: float = deg_to_rad(sway_degrees) * lerpf(1.0, zoom_sway_scale, _zoom)
 	_eye.rotation = Vector3(
 		_eye_rest.x - _sway.y * amount, _eye_rest.y - _sway.x * amount, _eye_rest.z
 	)
