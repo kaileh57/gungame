@@ -25,10 +25,23 @@
 [CmdletBinding()]
 param(
     [string] $Python,
+    # Folder holding upx.exe. Optional: without it the build still succeeds, it is just
+    # ~1.3 MB bigger, which is the difference between fitting in a Discord attachment
+    # and not. Grab it from https://github.com/upx/upx/releases and unzip anywhere.
+    [string] $UpxDir,
     [switch] $Clean
 )
 
 $ErrorActionPreference = "Stop"
+
+# Stdlib packages the launcher provably never imports. `email` is deliberately absent
+# from this list -- urllib.request needs it to parse response headers.
+$ExcludeModules = @(
+    "unittest", "pydoc", "doctest", "pdb", "difflib", "lib2to3", "distutils",
+    "setuptools", "pip", "sqlite3", "multiprocessing", "asyncio", "xml", "xmlrpc",
+    "test", "tkinter.test", "curses", "decimal", "bz2", "lzma", "ftplib",
+    "argparse", "pickletools", "tarfile"
+)
 Set-StrictMode -Version Latest
 
 $Here   = $PSScriptRoot
@@ -47,22 +60,40 @@ if ($Clean) {
     }
 }
 
+# PREFER A CONCRETE python.exe OVER THE `py` SHIM. Going through the launcher and
+# splatting its arguments from an array dropped them on this machine: python opened an
+# interactive REPL, read EOF, exited 0, and the venv was silently never created --
+# which then surfaced two checks later as "could not find the venv interpreter", a
+# message that points nowhere near the cause. Resolving a real interpreter path first
+# and calling it with literal arguments removes both the shim and the splatting.
 if (-not $Python) {
-    if (Get-Command py -ErrorAction SilentlyContinue) { $Python = "py" }
-    elseif (Get-Command python -ErrorAction SilentlyContinue) { $Python = "python" }
-    else { throw "No Python on PATH. Install Python 3.8+ (with tcl/tk) and re-run." }
+    $found = Get-Command python -ErrorAction SilentlyContinue
+    if ($found) {
+        $Python = $found.Source
+    }
+    elseif (Get-Command py -ErrorAction SilentlyContinue) {
+        # Ask the launcher where its interpreter lives, then forget the launcher.
+        $Python = (& py -3 -c "import sys; print(sys.executable)" | Select-Object -First 1)
+        if ($Python) { $Python = $Python.Trim() }
+    }
+    if (-not $Python) {
+        throw "No Python on PATH. Install Python 3.8+ (with tcl/tk) and re-run."
+    }
 }
-$pyArgs = if ($Python -eq "py") { @("-3") } else { @() }
+if (-not (Test-Path $Python)) {
+    throw "Not a usable interpreter path: '$Python'. Pass -Python <full path to python.exe>."
+}
 
 Write-Step "Interpreter"
-& $Python @pyArgs -c "import sys, tkinter; print(sys.version); print('tk', tkinter.TkVersion)"
-if ($LASTEXITCODE -ne 0) {
+$probeOut = & $Python -c "import sys, tkinter; print(sys.executable); print(sys.version); print('tk', tkinter.TkVersion)"
+if ($LASTEXITCODE -ne 0 -or -not $probeOut) {
     throw "That interpreter cannot import tkinter. Reinstall Python with the tcl/tk option enabled."
 }
+$probeOut | ForEach-Object { Write-Host "    $_" -ForegroundColor DarkGray }
 
 if (-not (Test-Path $Venv)) {
     Write-Step "Creating build virtualenv"
-    & $Python @pyArgs -m venv $Venv
+    & $Python -m venv $Venv
     if ($LASTEXITCODE -ne 0) { throw "venv creation failed." }
 }
 
@@ -79,15 +110,40 @@ Push-Location $Here
 try {
     # --windowed: no console window behind the GUI.
     # --onefile:  one artifact to hand over; it self-extracts to %TEMP% at start.
-    & $VenvPy -m PyInstaller `
-        --noconfirm `
-        --onefile `
-        --windowed `
-        --name GunGameLauncher `
-        --distpath $OutDir `
-        --workpath (Join-Path $Here "build") `
-        --specpath $Here `
-        $Entry
+    #
+    # IT HAS TO FIT IN A DISCORD MESSAGE. Handing someone the launcher is the whole
+    # distribution story, and an attachment over 10 MB cannot be sent on a free
+    # account. A default freeze of this file is 10.43 MB -- over the line by a
+    # rounding error -- so two things bring it down and both are load-bearing:
+    #
+    #   EXCLUDES strip stdlib packages the launcher never touches. Everything listed
+    #   is verified absent from its imports. Note what is NOT excluded: `email` looks
+    #   unused but urllib.request parses response headers with it, and dropping it
+    #   breaks every download. That takes it to 9.97 MB, which fits only if Discord
+    #   means 10 MiB, and is 34 KB of headroom either way.
+    #
+    #   UPX compresses the Python DLL and the tcl/tk binaries, which are most of what
+    #   is left. That takes it to 8.63 MB and is what makes the margin real. UPX is
+    #   optional -- if it is not on PATH and -UpxDir was not given, this still builds,
+    #   just bigger, and warns.
+    $frozenArgs = @(
+        "-m", "PyInstaller",
+        "--noconfirm", "--onefile", "--windowed",
+        "--name", "GunGameLauncher",
+        "--distpath", $OutDir,
+        "--workpath", (Join-Path $Here "build"),
+        "--specpath", $Here
+    )
+    if ($UpxDir) {
+        $frozenArgs += @("--upx-dir", $UpxDir)
+    }
+    elseif (-not (Get-Command upx -ErrorAction SilentlyContinue)) {
+        Write-Host "    No UPX found. The build will be ~1.3 MB larger and may not fit" -ForegroundColor Yellow
+        Write-Host "    in a 10 MB Discord attachment. Pass -UpxDir <folder with upx.exe>." -ForegroundColor Yellow
+    }
+    foreach ($m in $ExcludeModules) { $frozenArgs += @("--exclude-module", $m) }
+    $frozenArgs += $Entry
+    & $VenvPy @frozenArgs
     if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed." }
 }
 finally {
