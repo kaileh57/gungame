@@ -193,6 +193,19 @@ const STAT_FIELDS := [
 	"fit_error",
 ]
 
+## Columns of the per-mode / per-archetype character table: heading, `GunSpec`
+## field, decimals. `rpm` is reported separately as a min/mean/max band, because
+## the whole point of the rate work is how wide that band is inside one bucket.
+const CHAR_COLS := [
+	["cyclic", "cyclic", 0],
+	["recV", "recoil_vertical", 4],
+	["recH", "recoil_horizontal", 4],
+	["settle", "recoil_settle", 3],
+	["period", "recoil_period", 2],
+	["kick", "kick", 0],
+	["hand", "handling", 0],
+]
+
 ## The rows the before/after and ablation tables report. Deliberately only the
 ## metrics the shipped departures are meant to move, so a surprise is visible.
 const COMPARE_ROWS := [
@@ -546,6 +559,8 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 	var flags := {
 		"explosive": 0, "shot": 0, "sidearm": 0, "auto": 0, "runaway": 0, "optic": 0, "scoped": 0
 	}
+	var mode_char: Dictionary = {}
+	var arch_char: Dictionary = {}
 	var bad := PackedStringArray()
 
 	for i: int in SAMPLES:
@@ -558,6 +573,8 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 		_tally(tier_count, String(w.tier_name))
 		_tally(mode_count, String(w.fire_mode))
 		_tally(feed_count, String(w.feed))
+		_char_tally(mode_char, String(w.fire_mode), w)
+		_char_tally(arch_char, String(w.archetype), w)
 		for q: String in w.quirks:
 			_tally(quirk_count, q)
 		if w.explosive:
@@ -608,6 +625,12 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 	_say("")
 	_say("feed census")
 	_dump_counts(feed_count)
+	_say("")
+	_say("rate and recoil character by fire mode")
+	_char_dump(mode_char)
+	_say("")
+	_say("rate and recoil character by archetype")
+	_char_dump(arch_char)
 	_say("")
 	_say("quirk census")
 	_dump_counts(quirk_count)
@@ -915,6 +938,47 @@ func _roll_typed(
 
 func _tally(d: Dictionary, key: String) -> void:
 	d[key] = int(d.get(key, 0)) + 1
+
+
+## Accumulate one bucket of the rate-and-recoil character table. Two guns of
+## different classes are supposed to land on visibly different ROWS here; a table
+## whose rows all read alike is a census of one gun wearing nine hats.
+func _char_tally(d: Dictionary, key: String, w: GunSpec) -> void:
+	var row: Dictionary = d.get(key, {})
+	if row.is_empty():
+		row = {"n": 0, "lo": INF, "hi": -INF, "rpm": 0.0}
+		for c: Array in CHAR_COLS:
+			row[c[0]] = 0.0
+		d[key] = row
+	row["n"] = int(row["n"]) + 1
+	row["lo"] = minf(float(row["lo"]), float(w.rpm))
+	row["hi"] = maxf(float(row["hi"]), float(w.rpm))
+	row["rpm"] = float(row["rpm"]) + float(w.rpm)
+	for c: Array in CHAR_COLS:
+		row[c[0]] = float(row[c[0]]) + float(w.get(c[1]))
+
+
+## Print a character table, fastest mean rate first.
+func _char_dump(d: Dictionary) -> void:
+	var keys: Array = d.keys()
+	keys.sort_custom(
+		func(a: String, b: String) -> bool:
+			return float(d[a]["rpm"]) / float(d[a]["n"]) > float(d[b]["rpm"]) / float(d[b]["n"])
+	)
+	var head: String = "  %-19s %5s %6s %7s %6s" % ["bucket", "n", "rpmLo", "rpmMean", "rpmHi"]
+	for c: Array in CHAR_COLS:
+		head += " %8s" % c[0]
+	_say(head)
+	for k: String in keys:
+		var r: Dictionary = d[k]
+		var n: float = float(r["n"])
+		var line: String = (
+			"  %-19s %5d %6.0f %7.0f %6.0f"
+			% [k, int(n), float(r["lo"]), float(r["rpm"]) / n, float(r["hi"])]
+		)
+		for c: Array in CHAR_COLS:
+			line += ("%%8.%df" % int(c[2])) % (float(r[c[0]]) / n)
+		_say(line)
 
 
 func _dump_counts(d: Dictionary) -> void:

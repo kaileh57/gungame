@@ -756,9 +756,9 @@ func _peg(index: int, z: float) -> Node3D:
 	var shape := CollisionShape3D.new()
 	shape.name = "Hit"
 	var box := BoxShape3D.new()
-	box.size = Vector3(0.32, 0.36, 1.0)
+	box.size = Vector3(0.44, 0.62, 1.14)  # the GUN's box, not the hook's
 	shape.shape = box
-	shape.position = Vector3(0.06, 0.0, 0.0)
+	shape.position = Vector3(0.13, 0.0, 0.0)
 	peg.add_child(shape)
 	return peg
 
