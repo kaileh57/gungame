@@ -121,6 +121,7 @@ const SHADE_WALL: float = 0.012
 ## `.godot/global_script_class_cache.cfg`, so naming one here would break the
 ## headless bake on a clean checkout. Preloading by path needs no cache.
 const YardKit := preload("res://demos/range/build/range_yard_kit.gd")
+const AmmoKit := preload("res://demos/range/build/range_ammo_kit.gd")
 
 var _shop: RangeShop = null
 var _rand: XorShift32 = null
@@ -889,87 +890,14 @@ func _readout(parent: Node3D, node_name: String, at: Vector3, yaw: float, painte
 
 
 ## The magazine count, on the gun rather than on the screen. A scratched plate
-## welded to the left of the receiver, with the count stencilled into it — which
-## is what `AmmoCounter` was written to drive and what the project's diegetic rule
-## wants instead of a 44 px number in the corner.
+## welded to the left of the receiver with the count stencilled into it, and a ring
+## around that count for the stoppage-clearing timer — which is what `AmmoCounter`
+## was written to drive and what the project's diegetic rule wants instead of a
+## 44 px number in the corner.
 ##
-## Baked as its own scene because `RangeShooter` parents it to the holster's hand
-## at play time, and a demo does not author geometry while it is running.
+## Baked as its own scene because `WeaponHolster` parents it to its own hand at play
+## time, in EVERY armed level rather than only here, and a demo does not author
+## geometry while it is running. The geometry itself is `AmmoKit`'s; this only says
+## when it is built and where it is written.
 func _build_ammo_counter() -> void:
-	var root := Node3D.new()
-	root.name = "AmmoCounter"
-	root.set_script(load(AMMO_COUNTER_SCRIPT))
-
-	var m := WorldMesher.new()
-	m.box(Vector3.ZERO, Vector3(0.052, 0.030, 0.004), 0.0, RangeShop.C_LAMP, RangeShop.SURF_METAL)
-	# The surround. Darkened hard off `C_STEEL_DARK`: the world material gives steel
-	# 0.66 metallic, so on the viewmodel pass — where the only thing there is to
-	# reflect is an open desert sky — a mid-grey bezel comes back as a bright
-	# chrome frame around the numbers and reads as screen furniture rather than as
-	# a plate someone welded on.
-	m.box(
-		Vector3(0.0, 0.0, -0.003),
-		Vector3(0.056, 0.034, 0.004),
-		0.0,
-		RangeShop.C_STEEL_DARK.darkened(0.55),
-		RangeShop.SURF_METAL
-	)
-	var plate := MeshInstance3D.new()
-	plate.name = "Plate"
-	plate.mesh = _shop.commit(m, "ammo_plate")
-	plate.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-	plate.gi_mode = GeometryInstance3D.GI_MODE_DISABLED
-	root.add_child(plate)
-
-	var font: Font = ResourceLoader.load(RangeShop.FONT_DISPLAY, "Font") as Font
-	var count := Label3D.new()
-	count.name = "Count"
-	count.text = "0"
-	count.font = font
-	count.font_size = 64
-	count.pixel_size = 0.00062
-	count.position = Vector3(-0.012, 0.0, 0.006)
-	count.shaded = false
-	count.double_sided = false
-	count.no_depth_test = false
-	root.add_child(count)
-
-	var capacity := Label3D.new()
-	capacity.name = "Capacity"
-	capacity.text = "/0"
-	capacity.font = font
-	capacity.font_size = 40
-	capacity.pixel_size = 0.00052
-	capacity.position = Vector3(0.026, -0.008, 0.006)
-	capacity.modulate = Color(0.51, 0.482, 0.435)
-	capacity.shaded = false
-	capacity.double_sided = false
-	root.add_child(capacity)
-
-	# Where a receiver plate sits relative to the holster hand: left of the breech,
-	# canted toward the eye so it is legible without breaking the sight line.
-	#
-	# THE AIM IS SOLVED, NOT GUESSED. In the hand's own frame the bore runs along
-	# +X and the eye sits at (-0.466, 0.142, -0.089) — that is, almost directly
-	# BEHIND the breech and only nine centimetres off to the side. A plate lying
-	# along the receiver flank therefore presents its edge to the shooter, and a
-	# plate at the old 0.40 rad presented its BACK: `Count` and `Capacity` are
-	# `double_sided = false`, so the numbers vanished and what the viewmodel put in
-	# front of the eye was the blank rear face of the mount — a 10 cm sheet of
-	# sky-reflecting steel, the brightest and flattest thing on screen, sitting
-	# over the gun. These two angles point the plate's +Z at that eye position.
-	# The counter is also stood down to three quarters: aimed square on, the full
-	# plate is a billboard rather than something welded to a gun.
-	root.position = Vector3(-0.062, 0.010, -0.056)
-	root.rotation = Vector3(-0.315, -1.652, 0.06)
-	root.scale = Vector3.ONE * 0.72
-
-	_shop.own_all(root, root)
-	var packed := PackedScene.new()
-	if packed.pack(root) != OK:
-		_shop.fail("could not pack the ammo counter")
-	elif ResourceSaver.save(packed, AMMO_SCENE_PATH) != OK:
-		_shop.fail("could not save %s" % AMMO_SCENE_PATH)
-	else:
-		_shop.note("ammo counter", AMMO_SCENE_PATH)
-	root.free()
+	AmmoKit.build(_shop, AMMO_COUNTER_SCRIPT, AMMO_SCENE_PATH)

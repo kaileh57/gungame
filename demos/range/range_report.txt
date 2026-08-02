@@ -1,4 +1,7 @@
 ammo_plate                24 tris  volume      +0.000  conflicts 0
+ammo_ring_track           48 tris  volume      +0.000  conflicts 0
+ammo_ring_h               12 tris  volume      +0.000  conflicts 0
+ammo_ring_v               12 tris  volume      +0.000  conflicts 0
 ammo counter           res://demos/range/ammo_counter.tscn
 ground                  3858 tris  volume +946370.873  conflicts 0
 bay                     1884 tris  volume    +120.823  conflicts 0
@@ -57,5 +60,5 @@ plate_disc_145           216 tris  volume      +0.417  conflicts 0
 plate_spot_145            88 tris  volume      +0.005  conflicts 0
 placard                   12 tris  volume      +0.175  conflicts 0
 scene                  res://demos/range/range.tscn (664 nodes)
-bake time             868 ms
+bake time             977 ms
 result                PASS

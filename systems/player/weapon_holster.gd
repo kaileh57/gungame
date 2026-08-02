@@ -94,6 +94,15 @@ const LIFT_NAME: StringName = &"Lift"
 ## front of you from a mesh the world camera cannot see. Off is the only correct value
 ## in play; it is a knob because a display stand wants the opposite.
 @export var cast_shadows: bool = false
+## Hang the magazine count on the gun.
+##
+## THE READOUT BELONGS TO THE HOLSTER, NOT TO A DEMO. It used to be mounted by each
+## level that wanted one, which meant exactly two of them had it — the range and the
+## arena — and everywhere else the only way to know you were dry was the click. The
+## holster is the one node that knows what weapon is up, when it is swapping and where
+## the hands are, so mounting it here is what gives every armed level the same readout
+## with the same wiring. Off is for a display stand, which has a gun but no shooter.
+@export var show_ammo_counter: bool = true
 
 @export_group("Wiring")
 ## Optional. When set, freecam and suspended input silence the hotkeys, and the walk
@@ -117,6 +126,7 @@ var _slot_actions: Array[StringName] = []
 var _hand: Node3D = null
 var _lift: Node3D = null
 var _weapon: Weapon = null
+var _ammo: AmmoCounter = null
 var _rescan: bool = true
 ## 0 fully up, 1 fully stowed.
 var _down: float = 0.0
@@ -145,6 +155,7 @@ func _ready() -> void:
 	# bake never checked.
 	_hand.rotation_order = EULER_ORDER_XYZ
 	_lift = _child(_hand, LIFT_NAME)
+	_mount_ammo_counter()
 	# The gun is posed from where the player ended up this frame, so it has to run after
 	# the body and the camera rig have.
 	process_priority = 100
@@ -177,6 +188,7 @@ func _process(delta: float) -> void:
 	var dt: float = hand_pose.advance(delta)
 	_advance_swap(dt)
 	_apply_pose(_ads_amount())
+	_tick_clear_ring()
 
 
 ## Build `spec` into `slot` and keep it. Equipping the slot that is currently up plays a
@@ -303,12 +315,18 @@ func bind_weapon(weapon: Weapon) -> void:
 		return
 	_weapon.fired.connect(_on_weapon_fired)
 	_weapon.state_changed.connect(_on_weapon_state)
+	_weapon.ammo_changed.connect(_on_weapon_ammo)
 	_weapon.tree_exiting.connect(_on_weapon_leaving)
 	if _weapon.jam != null:
 		_weapon.jam.jammed.connect(_on_weapon_jammed)
 		_weapon.jam.cleared.connect(_on_weapon_unjammed)
 	if _weapon.recoil != null:
 		hand_pose.bind_recoil(_weapon.recoil)
+	# The magazine was filled by `Weapon.setup`, which every demo calls BEFORE the
+	# holster has found the weapon to bind — so the first `ammo_changed` of a gun's
+	# life is always emitted into nothing. Read the count once here or the plate shows
+	# 0/0 until the player happens to fire.
+	_push_ammo()
 
 
 func _begin_swap(slot: int, same_slot: bool) -> void:
@@ -362,6 +380,11 @@ func _exchange() -> void:
 	# The demo re-rigs its weapon on this signal, so the muzzle it points at only
 	# exists now. Look for it again on the next frame rather than never.
 	_rescan = true
+	# A SWAP DOES NOT RAISE `ammo_changed` — the magazine did not move, the gun did.
+	# The demo has already re-adopted on the emit above, so the weapon is carrying the
+	# new gun's magazine by now and the plate can simply be re-read. Without this the
+	# counter shows the count of the gun you just put away.
+	_push_ammo()
 
 
 func _build(slot: int) -> void:
@@ -407,6 +430,59 @@ func _claim_geometry(root: Node3D) -> void:
 				gi.cast_shadow = shadow as GeometryInstance3D.ShadowCastingSetting
 		for child: Node in n.get_children():
 			stack.push_back(child)
+
+
+## Hang the ammunition plate off `Hand`.
+##
+## `Hand` is posed in METRES — position and rotation only, with the whole model-unit
+## scale living one node down on `Lift` — which is exactly why a world-scale prop goes
+## here: the counter rides the ready pose, the swap arc and the recoil without knowing
+## that any of them exist. Silent when the bake is missing, because a level with no
+## ammo plate is worse than a level that crashes on load only in theory.
+func _mount_ammo_counter() -> void:
+	if not show_ammo_counter or _hand == null:
+		return
+	# A demo that baked its own counter into the scene keeps it rather than growing a
+	# second one on top.
+	if _hand.get_node_or_null(^"AmmoCounter") != null:
+		return
+	var plate: AmmoCounter = AmmoCounter.spawn()
+	if plate == null:
+		return
+	plate.name = "AmmoCounter"
+	_hand.add_child(plate)
+	_claim_geometry(plate)
+	_ammo = plate
+
+
+## Read the whole ammunition state off the weapon and publish it. Used where a signal
+## cannot reach: on bind, and when the weapon goes away.
+func _push_ammo() -> void:
+	if _ammo == null:
+		return
+	if _weapon == null:
+		_ammo.set_ammo(0, 0)
+		_ammo.set_jammed(false)
+		_ammo.set_clear_progress(0.0)
+		return
+	var ammo: GunAmmo = _weapon.ammo()
+	_ammo.set_ammo(ammo.loaded(), ammo.capacity())
+	_ammo.set_jammed(_weapon.jam != null and _weapon.jam.is_jammed())
+
+
+## Drive the stoppage ring, read straight off the weapon rather than mirrored.
+##
+## `GunJam` owns how long THIS jam takes — workmanship grading and severity both scale
+## it, so the same stoppage runs anywhere from 0.4 s to 4.2 s — and a copy of that
+## number kept here would drift from the gun the moment either side was tuned. Costs
+## one branch a frame on a gun that is not jammed.
+func _tick_clear_ring() -> void:
+	if _ammo == null or _weapon == null or _weapon.jam == null:
+		return
+	if _weapon.jam.is_jammed() or _weapon.jam.is_clearing():
+		_ammo.set_clear_progress(_weapon.jam.clear_progress())
+	elif _ammo.clear_progress() > 0.0:
+		_ammo.set_clear_progress(0.0)
 
 
 func _show_only(slot: int) -> void:
@@ -475,12 +551,21 @@ func _on_weapon_state(state: StringName) -> void:
 		hand_pose.cancel_reload()
 
 
+func _on_weapon_ammo(loaded: int, _reserve: int) -> void:
+	if _ammo != null and _weapon != null:
+		_ammo.set_ammo(loaded, _weapon.ammo().capacity())
+
+
 func _on_weapon_jammed() -> void:
 	hand_pose.set_jammed(true)
+	if _ammo != null:
+		_ammo.set_jammed(true)
 
 
 func _on_weapon_unjammed() -> void:
 	hand_pose.set_jammed(false)
+	if _ammo != null:
+		_ammo.set_jammed(false)
 
 
 func _on_weapon_leaving() -> void:
@@ -495,6 +580,8 @@ func _disconnect_weapon() -> void:
 		_weapon.fired.disconnect(_on_weapon_fired)
 	if _weapon.state_changed.is_connected(_on_weapon_state):
 		_weapon.state_changed.disconnect(_on_weapon_state)
+	if _weapon.ammo_changed.is_connected(_on_weapon_ammo):
+		_weapon.ammo_changed.disconnect(_on_weapon_ammo)
 	if _weapon.tree_exiting.is_connected(_on_weapon_leaving):
 		_weapon.tree_exiting.disconnect(_on_weapon_leaving)
 	if _weapon.jam != null:

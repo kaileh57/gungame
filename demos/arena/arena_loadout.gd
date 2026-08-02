@@ -22,12 +22,6 @@ signal weapon_rolled(slot: int, spec: GunSpec)
 ## it at the control station without knowing the weapon exists.
 signal round_landed(collider: Object, at: Vector3, normal: Vector3, damage: float)
 
-## The receiver plate the magazine count is scratched on. Baked ONCE, by
-## `tools/build_range.gd`, and shared rather than duplicated: it is a piece of the
-## `ui/hud` module that happens to need a mesh, its script is `ui/hud/ammo_counter.gd`,
-## and baking a second identical plate into `demos/arena` would be two things to keep
-## in step for no gain.
-const AMMO_SCENE: String = "res://demos/range/ammo_counter.tscn"
 
 ## Seeds the three starting weapons are rolled from. Changing these changes the
 ## guns and nothing else, which is exactly what a tuning pass wants.
@@ -40,11 +34,6 @@ const AMMO_SCENE: String = "res://demos/range/ammo_counter.tscn"
 @export_range(0.0, 1.0, 0.01) var control_power: float = 1.0
 ## Reroll the primary with a fresh seed each time, rather than cycling the list.
 @export var reroll_uses_clock: bool = true
-## Hang the magazine count on the gun. The arena shipped with NO ammunition readout
-## of any kind — not on the weapon and not on the HUD — so the only way to know you
-## were dry was the click. This is the project's diegetic answer and the range demo
-## already bakes the plate; see `AMMO_SCENE`.
-@export var show_ammo_plate: bool = true
 
 @export_group("Wiring")
 @export var player_path: NodePath = NodePath("../Player")
@@ -56,7 +45,6 @@ var _eye: Camera3D = null
 var _rig: PlayerCameraRig = null
 var _weapon: Weapon = null
 var _hud: CombatHud = null
-var _ammo_plate: AmmoCounter = null
 var _reroll_serial: int = 0
 var _spec: GunSpec = null
 ## The trigger, read as EVENTS rather than polled. `Input.is_action_pressed` in a
@@ -88,7 +76,6 @@ func _ready() -> void:
 	# press `2`. `slot_equipped` is the signal that fires when the geometry is built.
 	_holster.weapon_changed.connect(_on_weapon_changed)
 	_holster.slot_equipped.connect(_on_slot_equipped)
-	_mount_ammo_plate()
 	if _hud != null:
 		_hud.set_camera(_eye)
 	for i: int in mini(start_seeds.size(), _holster.slot_count):
@@ -176,56 +163,20 @@ func _build_weapon() -> void:
 	_weapon.hit.connect(_on_hit)
 	_weapon.recoiled.connect(_on_recoiled)
 	_weapon.fired.connect(_on_fired)
-	_weapon.ammo_changed.connect(_on_ammo_changed)
 	_weapon.jam.jammed.connect(_on_jammed)
 	_weapon.jam.cleared.connect(_on_jam_cleared)
 
 
-## The count goes on the receiver, not on the screen. `Hand` is the node
-## `WeaponHolster` parents every built weapon to, so a plate hung off it rides the
-## swap pose and the ready pose without knowing about either — and it is on the
-## VIEWMODEL layer, so the world camera never sees it.
-func _mount_ammo_plate() -> void:
-	if not show_ammo_plate:
-		return
-	var packed := ResourceLoader.load(AMMO_SCENE, "PackedScene") as PackedScene
-	if packed == null:
-		push_error("ArenaLoadout: the ammunition plate is not baked. Re-run build_range.")
-		return
-	var plate := packed.instantiate() as AmmoCounter
-	var hand: Node3D = _holster.get_node_or_null(^"Hand") as Node3D
-	if plate == null or hand == null:
-		if plate != null:
-			plate.free()
-		return
-	hand.add_child(plate)
-	_ammo_plate = plate
-	_set_layers(plate, GameLayers.VIEWMODEL)
-
-
-static func _set_layers(node: Node, layers: int) -> void:
-	var visual := node as VisualInstance3D
-	if visual != null:
-		visual.layers = layers
-	for child: Node in node.get_children():
-		_set_layers(child, layers)
-
-
-func _on_ammo_changed(loaded: int, _reserve: int) -> void:
-	if _ammo_plate != null:
-		_ammo_plate.set_ammo(loaded, _weapon.ammo().capacity())
-
-
+## The plate itself is driven by `WeaponHolster`, which owns the counter and reads the
+## clearing ring straight off `GunJam`. These two only say it out loud.
 func _on_jammed() -> void:
-	if _ammo_plate != null:
-		_ammo_plate.set_jammed(true)
 	if _hud != null:
 		_hud.banner("JAM — HOLD R", 2.2)
 
 
 func _on_jam_cleared() -> void:
-	if _ammo_plate != null:
-		_ammo_plate.set_jammed(false)
+	if _hud != null:
+		_hud.banner("CLEARED", 0.9)
 
 
 ## The geometry for a slot was built. The muzzle marker exists from this moment, and
@@ -253,10 +204,6 @@ func _adopt(spec: GunSpec) -> void:
 	var node: Node3D = _holster.active_node()
 	var muzzle: Node3D = null if node == null else node.get_node_or_null(^"Muzzle") as Node3D
 	_weapon.set_rig(_eye, muzzle if muzzle != null else _eye, _player)
-	if _ammo_plate != null:
-		# A swap does not raise `ammo_changed` — the magazine did not move, the gun
-		# did — so the plate has to be re-read here or it shows the last gun's count.
-		_ammo_plate.set_ammo(_weapon.ammo().loaded(), _weapon.ammo().capacity())
 
 
 func _on_hit(collider: Object, at: Vector3, normal: Vector3, damage: float) -> void:

@@ -39,9 +39,7 @@ bestiary    14 mounted, 5 undeclared
     undeclared  Bestiary/Structure/BaySign_mutant/Plate
     undeclared  Bestiary/Structure/Gate/Plate
     undeclared  Bestiary/Structure/Gate/Title
-ash_flats   0 mounted, 4 undeclared
-    undeclared  AshFlats/Pads/pad_culvert/Stand/Gauge
-    undeclared  AshFlats/Pads/pad_north_gate/Stand/Gauge
+ash_flats   0 mounted, 2 undeclared
     undeclared  AshFlats/Pads/pad_rooftop_lz/Stand/Gauge
     undeclared  AshFlats/YardBoard/Readout
 arena       0 mounted, 2 undeclared
@@ -82,8 +80,8 @@ visuals     2 mounted, 0 undeclared
     Visuals/Post/Readout                         on PanelMast          gap   +4.0 mm (asked 4.0)  ok
     Visuals/Post/Placard                         on Plinth             gap   +4.0 mm (asked 4.0)  ok
 
-readable faces found   72
+readable faces found   70
 declared mounts        40
-undeclared faces       32
+undeclared faces       30
 INTERSECTIONS          0
 RESULT: PASS

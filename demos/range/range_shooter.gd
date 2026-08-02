@@ -42,7 +42,6 @@ signal missed(at: Vector3)
 signal control_shot(control: DiegeticControl)
 
 const HUD_SCENE: String = "res://ui/hud/combat_hud.tscn"
-const AMMO_SCENE: String = "res://demos/range/ammo_counter.tscn"
 const RangeNetScript := preload("res://demos/range/range_net.gd")
 
 ## Damage that counts as a full-strength press on a diegetic control.
@@ -74,7 +73,6 @@ var _eye: Camera3D = null
 var _camera_rig: PlayerCameraRig = null
 var _weapon: Weapon = null
 var _hud: CombatHud = null
-var _ammo_counter: AmmoCounter = null
 var _spec: GunSpec = null
 var _triggered: bool = false
 var _net: RangeNetScript = null
@@ -115,14 +113,12 @@ func _ready() -> void:
 	_weapon.fired.connect(_on_fired)
 	_weapon.hit.connect(_on_hit)
 	_weapon.recoiled.connect(_on_recoiled)
-	_weapon.ammo_changed.connect(_on_ammo_changed)
 	_weapon.jam.jammed.connect(_on_jammed)
 	_weapon.jam.cleared.connect(_on_jam_cleared)
 
 	_holster.weapon_changed.connect(_on_holster_changed)
 	_holster.slot_equipped.connect(_on_slot_equipped)
 
-	_mount_ammo_counter()
 	if show_sight_picture:
 		_mount_hud()
 	# The world's floor height, so spent brass and blast debris settle on the pad
@@ -256,33 +252,6 @@ func _mount_hud() -> void:
 	_hud.set_health(1.0)
 
 
-## The magazine count lives on the gun, per the diegetic rule. `Hand` is the node
-## `WeaponHolster` parents every built weapon to, so a counter hung off it rides
-## the swap pose and the ready pose without knowing anything about either.
-func _mount_ammo_counter() -> void:
-	var packed := ResourceLoader.load(AMMO_SCENE, "PackedScene") as PackedScene
-	if packed == null:
-		return
-	_ammo_counter = packed.instantiate() as AmmoCounter
-	if _ammo_counter == null:
-		return
-	var hand: Node3D = _holster.get_node_or_null(^"Hand") as Node3D
-	if hand == null:
-		_ammo_counter.free()
-		_ammo_counter = null
-		return
-	hand.add_child(_ammo_counter)
-	_set_layers(_ammo_counter, GameLayers.VIEWMODEL)
-
-
-func _set_layers(node: Node, layers: int) -> void:
-	var visual := node as VisualInstance3D
-	if visual != null:
-		visual.layers = layers
-	for child: Node in node.get_children():
-		_set_layers(child, layers)
-
-
 func _on_slot_equipped(slot: int, spec: GunSpec) -> void:
 	if slot == _holster.active_slot:
 		_adopt(spec)
@@ -305,8 +274,6 @@ func _adopt(spec: GunSpec) -> void:
 		_weapon.setup(spec)
 		_triggered = false
 	_weapon.set_rig(_eye, _muzzle_of(), _player)
-	if _ammo_counter != null:
-		_ammo_counter.set_ammo(_weapon.ammo().loaded(), _weapon.ammo().capacity())
 	if fresh:
 		weapon_changed.emit(spec)
 
@@ -466,18 +433,9 @@ func _draw_picture() -> void:
 	_hud.set_picture(_weapon.effective_spread(), cycle, _eye.fov)
 
 
-func _on_ammo_changed(loaded: int, _reserve: int) -> void:
-	if _ammo_counter != null:
-		_ammo_counter.set_ammo(loaded, _weapon.ammo().capacity())
-
-
 func _on_jammed() -> void:
-	if _ammo_counter != null:
-		_ammo_counter.set_jammed(true)
 	banner("JAM — HOLD R", 2.2)
 
 
 func _on_jam_cleared() -> void:
-	if _ammo_counter != null:
-		_ammo_counter.set_jammed(false)
 	banner("CLEARED", 0.9)

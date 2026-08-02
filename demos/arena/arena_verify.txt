@@ -8,10 +8,10 @@ pass  the loadout built a Weapon
 pass  the gun has a spec from spawn
 pass  the gun is ready to fire from spawn
 primary               Reclaimed Kicker  21 rnd  62 rpm  semi
-muzzle                Muzzle:<Marker3D#150793621518>
+muzzle                Muzzle:<Marker3D#159987536130>
 cover points          1603
 station selection     ANY
-empty compound cpu    24.173 ms physics  198.787 ms idle
+empty compound cpu    0.872 ms physics  95.690 ms idle
 count detents         11, stop reads 96
 arena capacity        96
 pass  the COUNT dial's stop asks for a wave
@@ -19,39 +19,34 @@ pass  the COUNT dial's stop IS the arena's capacity
 wave requested        96 over 3 factions
 peak alive            96 of 96 asked
 still queued          0
-bodies by faction     SCAV 4, FOUNDRY 1, CHOIR 16
-peak engaged          63
-peak knowing you      16  (alert to you 13)
-peak coming for you   12
-ever came for you     26
-peak fighting rivals  65
-rounds on the player  57 for 1726.0 damage
-director summary      20 engaged  0 hunting  5 on you  14 brawling  640 rounds  57 hits on you
-  targets 22  player id 1 live  space bound  due 8
-  CHR  foreman   ENGAGED    at (-11, 0, -6)  aware 1.35  seen 3  focus 17 rival  pri 3.08  los y
-  CHR  latchdog  ENGAGED    at (-12, 0, -4)  aware 1.35  seen 3  focus 17 rival  pri 3.35  los y
-  RAG  sentinel  ENGAGED    at (-17, 0, -2)  aware 1.35  seen 3  focus 43 rival  pri 1.87  los y
-  CHR  foreman   ENGAGED    at (-6, 0, -7)  aware 0.96  seen 3  focus 17 rival  pri 1.67  los y
-  CHR  latchdog  ENGAGED    at (-0, 1, 16)  aware 1.15  seen 1  focus 1 PLAYER pri 18.88  los y
-  RAG  sentinel  ENGAGED    at (-18, 0, 0)  aware 1.35  seen 3  focus 43 rival  pri 1.80  los y
-  CHR  foreman   ENGAGED    at (-12, 0, -6)  aware 1.35  seen 3  focus 17 rival  pri 3.27  los y
-  CHR  foreman   ENGAGED    at (-1, 0, -12)  aware 1.35  seen 3  focus 1 PLAYER pri 3.44  los y
-  CHR  skitter   ENGAGED    at (-17, 0, -3)  aware 1.35  seen 3  focus 17 rival  pri 4.06  los y
-  CHR  latchdog  ENGAGED    at (-15, 0, -4)  aware 1.01  seen 0  focus 17 rival  pri 2.29  los n
-  CHR  foreman   ENGAGED    at (6, 0, -13)  aware 1.35  seen 3  focus 17 rival  pri 1.68  los y
-  CHR  latchdog  LOSING     at (-5, 0, 11)  aware 0.00  seen 0  focus -1 rival  pri 0.00  los n
-  RAG  sentinel  ENGAGED    at (-19, 0, -2)  aware 1.35  seen 3  focus 1 PLAYER pri 7.10  los y
-  CHR  foreman   ENGAGED    at (3, 0, -14)  aware 1.35  seen 3  focus 17 rival  pri 1.72  los y
-  CHR  skitter   ENGAGED    at (-17, 0, -4)  aware 1.35  seen 2  focus 77 rival  pri 3.90  los y
-  CHR  latchdog  ENGAGED    at (2, 1, 16)  aware 1.35  seen 1  focus 1 PLAYER pri 25.73  los y
-  RAG  sentinel  ENGAGED    at (-19, 0, -1)  aware 1.35  seen 3  focus 43 rival  pri 1.80  los y
-  CHR  foreman   IDLE       at (13, 0, -31)  aware 0.00  seen 0  focus -1 rival  pri 0.00  los n
-  CHR  latchdog  ENGAGED    at (-15, 0, -4)  aware 1.35  seen 1  focus 17 rival  pri 3.85  los y
-  FDY  wasp      ENGAGED    at (-5, 1, 6)  aware 1.35  seen 2  focus 1 PLAYER pri 12.58  los y
-  CHR  foreman   ENGAGED    at (-8, 0, -8)  aware 1.35  seen 3  focus 17 rival  pri 2.47  los y
-mean physics cpu      5.189 ms
-worst physics frame   30.414 ms
-mean idle cpu         3.568 ms
+bodies by faction     SCAV 2, FOUNDRY 1, CHOIR 13
+peak engaged          64
+peak knowing you      14  (alert to you 11)
+peak coming for you   11
+ever came for you     25
+peak fighting rivals  63
+rounds on the player  49 for 1699.0 damage
+director summary      15 engaged  0 hunting  5 on you  10 brawling  699 rounds  49 hits on you
+  targets 18  player id 1 live  space bound  due 7
+  CHR  foreman   ENGAGED    at (-7, 0, 2)  aware 1.35  seen 2  focus 1 PLAYER pri 10.26  los y
+  CHR  latchdog  ENGAGED    at (-1, 1, 16)  aware 1.35  seen 1  focus 1 PLAYER pri 26.34  los y
+  RAG  sentinel  ENGAGED    at (-19, 0, 1)  aware 1.35  seen 3  focus 64 rival  pri 4.02  los y
+  CHR  foreman   ENGAGED    at (-10, 0, -5)  aware 1.35  seen 2  focus 65 rival  pri 2.60  los y
+  CHR  foreman   ENGAGED    at (-12, 0, -4)  aware 1.35  seen 2  focus 65 rival  pri 2.99  los y
+  CHR  latchdog  ENGAGED    at (-11, 0, -8)  aware 1.35  seen 2  focus 65 rival  pri 2.41  los y
+  FDY  wasp      ENGAGED    at (-5, 1, 6)  aware 1.35  seen 2  focus 1 PLAYER pri 12.86  los y
+  CHR  foreman   ENGAGED    at (-11, 0, -5)  aware 1.35  seen 2  focus 65 rival  pri 2.77  los y
+  CHR  foreman   ENGAGED    at (-3, 0, -12)  aware 1.35  seen 2  focus 65 rival  pri 1.82  los y
+  CHR  latchdog  ENGAGED    at (-17, 0, 3)  aware 1.35  seen 2  focus 65 rival  pri 4.07  los y
+  RAG  sentinel  ENGAGED    at (-18, 0, 1)  aware 1.35  seen 3  focus 1 PLAYER pri 7.79  los y
+  CHR  foreman   ENGAGED    at (-6, 0, -9)  aware 1.35  seen 2  focus 65 rival  pri 2.07  los y
+  CHR  latchdog  ENGAGED    at (-5, 0, 12)  aware 1.35  seen 2  focus 65 rival  pri 2.00  los y
+  CHR  foreman   IDLE       at (12, 0, -31)  aware 0.00  seen 0  focus -1 rival  pri 0.00  los n
+  CHR  latchdog  ENGAGED    at (-1, 1, 16)  aware 1.35  seen 1  focus 1 PLAYER pri 26.16  los y
+  CHR  foreman   ENGAGED    at (-8, 0, -6)  aware 1.35  seen 2  focus 65 rival  pri 2.29  los y
+mean physics cpu      9.456 ms
+worst physics frame   63.868 ms
+mean idle cpu         13.727 ms
 cpu budget at 120 fps 8.333 ms
 pass  the wave walked in through the gates
 pass  at least one gate opened
@@ -64,9 +59,9 @@ pass  the wave opened fire
 pass  their rounds reached the player
 pass  the clear lever emptied the compound
 live fire target      stilt at 46.8 m
-player shots          12 in 656 frames
+player shots          12 in 652 frames
 magazine              21 -> 9
-rounds on the body    2 for 136.0 damage
+rounds on the body    2 for 135.5 damage
 tracers drawn         12
 target health         52.0 -> 0.0
 pass  the player's gun put rounds downrange
@@ -76,8 +71,8 @@ pass  the player's rounds landed on the body
 pass  those rounds carried damage
 pass  the body lost health
 pass  the body went down under the player's gun
-rerolled              Reclaimed Kicker -> Foundry Tube
+rerolled              Reclaimed Kicker -> Zip-Tied Breacher
 pass  the rerolled gun reached the weapon
 pass  the rerolled gun is ready to fire
-shots after reroll    2
+shots after reroll    4
 pass  the rerolled gun fires

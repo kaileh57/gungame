@@ -586,6 +586,12 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 			flags["optic"] += 1
 		if w.scoped:
 			flags["scoped"] += 1
+		# Scope rate for the class that is DEFINED by carrying one. docs/GUN_DESIGN.md
+		# asks for about 75%; the whole-population figure cannot answer that.
+		if w.archetype == &"Sniper" or w.archetype == &"Marksman carbine":
+			flags["marksman"] = int(flags.get("marksman", 0)) + 1
+			if w.scoped:
+				flags["marksman_scoped"] = int(flags.get("marksman_scoped", 0)) + 1
 		for field: String in STAT_FIELDS:
 			var v := float(w.get(field))
 			if not is_finite(v):
