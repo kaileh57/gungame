@@ -45,6 +45,15 @@ const MANUAL_ACTIONS: Array[int] = [Action.BOLT, Action.PUMP, Action.BREAK, Acti
 ## Require the trigger to be released between shots on a semi-auto. The reference
 ## has no such gate and lets a 320 rpm semi run like an auto; off reproduces that.
 @export var semi_requires_release: bool = true
+## Tier index at and above which a SEMI-AUTO repeats while the trigger is HELD
+## instead of demanding a click per round.
+##
+## A well-made gun should be pleasant to shoot, and pumping a trigger is the least
+## pleasant thing a good gun can ask of you. Field-Grade is index 3 — Hazard,
+## Scrap and Cobbled still make you work for every round, which is most of what
+## makes them feel like junk. Manually-cycled actions are excluded on purpose; see
+## the MANUAL branch in `_fire`.
+@export_range(0, 6, 1) var hold_to_fire_tier: int = 3
 ## Require a release between bursts.
 @export var burst_requires_release: bool = true
 ## Require a release before a hand-worked action fires again.
@@ -72,6 +81,8 @@ var _cooldown: float = 0.0
 var _burst_left: int = 0
 var _trigger: bool = false
 var _blocked_until_release: bool = false
+## Set from the tier in `configure`; see `hold_to_fire_tier`.
+var _holds: bool = false
 ## Seconds of life left in a pull that has not reached a mechanism yet.
 var _buffer: float = 0.0
 
@@ -84,7 +95,13 @@ func configure(spec: GunSpec) -> void:
 	var id: StringName = GunTables.action_for(spec.fire_mode)
 	_action = int(ACTION_IDS.get(id, Action.SEMI))
 	_interval = 60.0 / maxf(float(spec.rpm) * rate_scale, 1.0)
+	_holds = spec.tier_index >= hold_to_fire_tier
 	reset()
+
+
+## Does this weapon keep firing while the trigger is held, whatever its action is.
+func holds_to_fire() -> bool:
+	return _holds
 
 
 func action() -> int:
@@ -238,8 +255,13 @@ func _pull() -> bool:
 	if _action == Action.BURST:
 		_burst_left = maxi(burst_count - 1, 0)
 	elif _action == Action.SEMI:
-		_blocked_until_release = semi_requires_release
+		_blocked_until_release = semi_requires_release and not _holds
 	elif MANUAL_ACTIONS.has(_action):
+		# NOT relaxed by `_holds`. A bolt, a pump and a break-action are worked by
+		# hand, and a break-action that repeats on a held trigger is a gun opening,
+		# ejecting, reloading and closing itself. It also breaks the rate model: a
+		# 20 rpm break-action measured 1.225 s off its own 3 s interval once it was
+		# allowed to repeat. Hold-to-fire is for the trigger, not for the action.
 		_blocked_until_release = manual_requires_release
 	return true
 

@@ -122,7 +122,7 @@ flags
   auto           480   24.0%
   runaway          7    0.3%
   optic         1254   62.7%
-  scoped          60    3.0%
+  scoped         228   11.4%
 
 stat ranges                   min         mean          max
   score                   22.4851      63.0601      78.6924
@@ -256,7 +256,7 @@ flags
   auto           506   25.3%
   runaway          7    0.3%
   optic         1254   62.7%
-  scoped          55    2.8%
+  scoped         235   11.8%
 
 stat ranges                   min         mean          max
   score                   30.9348      63.5962      79.9208
@@ -491,5 +491,5 @@ non-finite / absurd values: none
   built 4 weapons, 18 mesh instances
   holstered Boxgun-Spitter (2.55 kg, 418 mm), rerolled barrel 11 -> 69, name Boxgun Mk.VIII
 
-elapsed              8389 ms
+elapsed              9432 ms
 FAILURES             0

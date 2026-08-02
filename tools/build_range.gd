@@ -778,22 +778,12 @@ func _build_bench(root: Node3D) -> Node3D:
 		dial.rotation.y = PI
 		dial.set("control_id", &"class_dial")
 		dial.set("label_text", "CLASS")
-		dial.set(
-			"options",
-			PackedStringArray(
-				[
-					"ANY",
-					"RIFLE",
-					"SMG",
-					"SHOTGUN",
-					"PISTOL",
-					"SNIPER",
-					"REVOLVER",
-					"LMG",
-					"LAUNCHER"
-				]
-			)
-		)
+		# Labels come off `GunTables.CLASS_MIX`, the same source the demo reads, so a
+		# detent can never point at a class name the roller does not recognise.
+		var class_labels := PackedStringArray(["ANY"])
+		for row: Array in GunTables.CLASS_MIX:
+			class_labels.append(String(row[0]).to_upper())
+		dial.set("options", class_labels)
 		dial.set("wraps", true)
 
 	var lever: Node3D = _control(bench, LEVER_SCENE, "scavenge_lever")

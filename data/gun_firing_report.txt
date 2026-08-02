@@ -1,11 +1,11 @@
-gun firing verification — 2026-08-01T11:56:26
+gun firing verification — 2026-08-01T21:56:14
   ok   rolled 400 specs of 400 wanted
 
 -- mechanisms --
 action           mode                rpm   cap   held   fired    want    err%
-semi             Semi-auto           150    13   2.0s       1     1.0     0.0
-auto             Full-auto           292    46   2.0s      10    10.0     0.0
-burst            3-round burst       218    16   2.0s       3     3.0     0.0
+semi             Semi-auto           118    13   2.0s       1     1.0     0.0
+auto             Full-auto           398    46   2.0s      14    14.0     0.0
+burst            3-round burst       326    16   2.0s       3     3.0     0.0
 bolt             Bolt-action          42    19   2.0s       1     1.0     0.0
 pump             Pump-action          62    10   2.0s       1     1.0     0.0
 double           Double-action       110     8   2.0s       4     4.0     0.0
@@ -14,33 +14,89 @@ single           Single-shot          12     1   2.0s       1     1.0     0.0
   ok   every mechanism appeared and behaved (8 of 8, missing [])
 
 -- volume: 10000 rounds --
-weapons driven      297
+  BOOKS Coffin Divorce: start 34 + reloaded 34 - consumed 40 != loaded 27
+  BOOKS The Last Word: start 43 + reloaded 0 - consumed 40 != loaded 2
+  BOOKS Kalash-Breacher: start 23 + reloaded 0 - consumed 21 != loaded 0
+  BOOKS Coffin Kalash: start 53 + reloaded 0 - consumed 40 != loaded 12
+  BOOKS Scabbed Kalash: start 46 + reloaded 0 - consumed 40 != loaded 4
+  BOOKS Kalash-Karabiner: start 25 + reloaded 25 - consumed 40 != loaded 8
+  BOOKS Coffin Kalash: start 12 + reloaded 36 - consumed 40 != loaded 7
+  BOOKS Kalash-Serpent: start 49 + reloaded 0 - consumed 33 != loaded 14
+  BOOKS Orphan Debt: start 40 + reloaded 40 - consumed 40 != loaded 39
+  BOOKS Kalash-Pumper: start 46 + reloaded 0 - consumed 40 != loaded 5
+  BOOKS Kalash-Broomstick: start 23 + reloaded 23 - consumed 40 != loaded 5
+  BOOKS Kalash-Serpent: start 21 + reloaded 0 - consumed 10 != loaded 10
+  BOOKS Tetanus Kalash: start 55 + reloaded 0 - consumed 40 != loaded 14
+  BOOKS Twice-Stolen Kettle: start 49 + reloaded 0 - consumed 40 != loaded 8
+  BOOKS Grave-Dug Apology: start 32 + reloaded 0 - consumed 23 != loaded 8
+  BOOKS Rusted Kalash: start 57 + reloaded 0 - consumed 40 != loaded 16
+  BOOKS Kalash Mk.V: start 29 + reloaded 27 - consumed 29 != loaded 26
+  BOOKS Bootleg Rumour: start 49 + reloaded 0 - consumed 36 != loaded 12
+  BOOKS Slagged Whistle: start 48 + reloaded 0 - consumed 40 != loaded 7
+  BOOKS Kalash Mk.II: start 19 + reloaded 38 - consumed 40 != loaded 15
+  BOOKS Kalash-Breacher: start 44 + reloaded 0 - consumed 40 != loaded 2
+  BOOKS The Tantrum: start 46 + reloaded 0 - consumed 40 != loaded 4
+  BOOKS Cinder Kalash: start 19 + reloaded 0 - consumed 5 != loaded 13
+  BOOKS Kalash Mk.V: start 53 + reloaded 0 - consumed 40 != loaded 12
+  BOOKS The Sermon: start 15 + reloaded 30 - consumed 40 != loaded 4
+  BOOKS Woodsman-Kalash: start 15 + reloaded 30 - consumed 40 != loaded 4
+  BOOKS Woodsman-Nineteen: start 2 + reloaded 24 - consumed 25 != loaded 0
+  BOOKS Woodsman-Tube: start 15 + reloaded 0 - consumed 12 != loaded 2
+  BOOKS Cinder Second Opinion: start 9 + reloaded 36 - consumed 40 != loaded 4
+  BOOKS Woodsman Mk.VIII: start 7 + reloaded 35 - consumed 40 != loaded 1
+  BOOKS Crooked Divorce: start 17 + reloaded 34 - consumed 40 != loaded 10
+  BOOKS Bootleg Woodsman: start 14 + reloaded 28 - consumed 40 != loaded 1
+  BOOKS The Second Opinion: start 10 + reloaded 0 - consumed 6 != loaded 3
+  BOOKS Bootleg Woodsman: start 15 + reloaded 29 - consumed 40 != loaded 3
+  BOOKS Welded Sermon: start 11 + reloaded 31 - consumed 40 != loaded 1
+  BOOKS Secondhand Tube: start 6 + reloaded 36 - consumed 40 != loaded 1
+  BOOKS Grave-Dug Tube: start 5 + reloaded 40 - consumed 40 != loaded 4
+  BOOKS Crooked Tube: start 11 + reloaded 33 - consumed 40 != loaded 3
+  BOOKS Tube Mk.VIII: start 15 + reloaded 30 - consumed 40 != loaded 4
+  BOOKS Tube Mk.II: start 9 + reloaded 0 - consumed 5 != loaded 3
+  BOOKS The Verdict: start 9 + reloaded 36 - consumed 40 != loaded 4
+  BOOKS The Verdict: start 6 + reloaded 36 - consumed 40 != loaded 1
+  BOOKS Tube Mk.VII: start 16 + reloaded 32 - consumed 36 != loaded 11
+  BOOKS Grave-Dug Bad News: start 9 + reloaded 36 - consumed 40 != loaded 4
+  BOOKS Bastard Argument: start 8 + reloaded 40 - consumed 40 != loaded 7
+  BOOKS The Change of Heart: start 13 + reloaded 0 - consumed 12 != loaded 0
+  BOOKS Rusted Tube: start 12 + reloaded 36 - consumed 40 != loaded 7
+  BOOKS The Debt: start 14 + reloaded 28 - consumed 40 != loaded 1
+  BOOKS Coffin Spitter: start 48 + reloaded 0 - consumed 40 != loaded 7
+  BOOKS Spitter-Tube: start 28 + reloaded 28 - consumed 40 != loaded 15
+  BOOKS Welded Nailfile: start 8 + reloaded 32 - consumed 36 != loaded 2
+  BOOKS Tube-Sidearm: start 14 + reloaded 28 - consumed 40 != loaded 1
+  BOOKS Undersprung Loudmouth: start 43 + reloaded 0 - consumed 40 != loaded 2
+  BOOKS Spitter Mk.III: start 40 + reloaded 40 - consumed 40 != loaded 39
+  BOOKS Coffin Kicker: start 56 + reloaded 0 - consumed 40 != loaded 14
+  BOOKS Slagged Cough: start 31 + reloaded 30 - consumed 40 != loaded 20
+weapons driven      365
 rounds fired        10028
-rounds that jammed  81
-surfaces resolved   26463
-cone seen, MOA      5.80 .. 774.24
-  ok   magazine accounting balanced on every weapon
+rounds that jammed  181
+surfaces resolved   23063
+cone seen, MOA      5.81 .. 2348.70
+  FAIL magazine accounting balanced on every weapon
   ok   no non-finite value reached a signal (0 seen)
   ok   10028 rounds fired, wanted 10000
-  ok   26463 surfaces resolved — nothing was being hit
-in-string intervals 8032 timed, 1996 skipped (reload, jam or burst pause)
-worst rate error    0.008333 s = 1.000 of a 120 Hz tick, on Kalash Mk.XII (Break-action, 20 rpm)
-  ok   every timed interval lands within one 120 Hz tick of the rated rate
+  ok   23063 surfaces resolved — nothing was being hit
+in-string intervals 7946 timed, 2082 skipped (reload, jam or burst pause)
+worst rate error    1.225000 s = 147.000 of a 120 Hz tick, on Kalash-Longshot (Break-action, 20 rpm)
+  FAIL every timed interval lands within one 120 Hz tick of the rated rate
 
 -- jams --
-rel  40  predicted 0.01994  measured 0.01977  (121 in 6121, 0.1 sigma)
-  ok   reliability 40 jams at the rate the curve predicts
-rel  70  predicted 0.00573  measured 0.00794  (48 in 6048, 2.3 sigma)
+rel  40  predicted 0.02908  measured 0.03769  (235 in 6235, 4.0 sigma)
+  FAIL reliability 40 jams at the rate the curve predicts
+rel  70  predicted 0.00668  measured 0.00990  (60 in 6060, 3.1 sigma)
   ok   reliability 70 jams at the rate the curve predicts
-rel  95  predicted 0.00023  measured 0.00000  (0 in 6000, 1.2 sigma)
+rel  95  predicted 0.00023  measured 0.00033  (2 in 6002, 0.5 sigma)
   ok   reliability 95 jams at the rate the curve predicts
   ok   a reliability-1 gun bound up
   ok   a jammed gun reports `jammed`
-  ok   clearing reports partial progress (0.21)
+  FAIL clearing reports partial progress (0.06)
   ok   letting the key go leaves the gun jammed
   ok   an abandoned clear loses its progress
-clear took          1.2083 s (stated 1.20 s)
-  ok   the clear took its stated time
+clear took          4.2250 s (stated 1.20 s)
+  FAIL the clear took its stated time
 
 -- projectiles --
 weapon              Coffin Divorce (11.1×62 wildcat)
@@ -67,4 +123,4 @@ occluded damage     50.0
   ok   a high-energy round went through the near wall
   ok   a low-energy round stopped in the near wall
 
-26 checks, 0 failures
+26 checks, 5 failures

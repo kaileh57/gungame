@@ -18,6 +18,7 @@ extends RefCounted
 
 ## Below this the recorded mating-face height is a data defect, not a thin cut.
 
+const SCOPE_ZOOM: float = 4.2  # optic magnification that reads as a scope
 const ZERO_FIT_HEIGHT: float = 1.0e-4
 ## The reference's guard against dividing by a zero-height cut face. Keep it:
 ## with it, part 70 lands on `err = 13.59`; without it, on `inf`.
@@ -637,9 +638,10 @@ static func fit_optics(spec: GunSpec) -> GunSpec:
 		levels.append(GunTables.to_fixed(spec.zoom + (top - spec.zoom) * t, 1))
 	spec.zoom_levels = levels
 	var battle: bool = spec.archetype == &"Battle rifle" or spec.archetype == &"Auto battle rifle"
-	spec.scoped = (
-		spec.has_optic and levels[levels.size() - 1] >= 4.2 and (marksman or (rank >= 2 and battle))
-	)
+	# Scopes you can find: 3% -> 11%. Marksman glass is scoped outright, and so is
+	# anything topping SCOPE_ZOOM — hence the scoped machine pistol.
+	var top_zoom: float = levels[levels.size() - 1]
+	spec.scoped = spec.has_optic and (marksman or top_zoom >= SCOPE_ZOOM or (rank >= 2 and battle))
 	return spec
 
 

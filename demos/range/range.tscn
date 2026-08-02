@@ -682,7 +682,7 @@ shader_parameter/flat_shaded = false
 resource_local_to_scene = true
 script = ExtResource("78_1uo1i")
 
-[node name="Range" type="Node3D" unique_id=1420062401]
+[node name="Range" type="Node3D" unique_id=2053448076]
 script = ExtResource("1_b2ftm")
 
 [node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=349678082 instance=ExtResource("2_u7j5p")]
@@ -693,89 +693,89 @@ script = ExtResource("4_ny3uu")
 script = ExtResource("6_2jig1")
 preset_budget_scale = PackedFloat32Array(0.3, 0.5, 0.75, 1, 1)
 
-[node name="RangeNet" type="Node" parent="." unique_id=912550770]
+[node name="RangeNet" type="Node" parent="." unique_id=1683683195]
 script = ExtResource("7_xtl2b")
 
-[node name="Ground" type="StaticBody3D" parent="." unique_id=1171141864]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=918898251]
 collision_mask = 0
 metadata/surface = &"sand"
 
-[node name="GroundMesh" type="MeshInstance3D" parent="Ground" unique_id=1150057409]
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground" unique_id=1003224936]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("8_5we2t")
 
-[node name="@CollisionShape3D@2" type="CollisionShape3D" parent="Ground" unique_id=1703704384]
+[node name="@CollisionShape3D@2" type="CollisionShape3D" parent="Ground" unique_id=858366818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, -190)
 shape = SubResource("BoxShape3D_35mk6")
 
-[node name="Bay" type="Node3D" parent="." unique_id=498092304]
+[node name="Bay" type="Node3D" parent="." unique_id=1635281187]
 
-[node name="BayMesh" type="MeshInstance3D" parent="Bay" unique_id=1983565880]
+[node name="BayMesh" type="MeshInstance3D" parent="Bay" unique_id=931351848]
 gi_mode = 0
 mesh = ExtResource("9_byt4k")
 
-[node name="BaySlab" type="StaticBody3D" parent="Bay" unique_id=1069764449]
+[node name="BaySlab" type="StaticBody3D" parent="Bay" unique_id=188965456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -0.05, 12.7)
 collision_mask = 0
 metadata/surface = &"concrete"
 
-[node name="@CollisionShape3D@3" type="CollisionShape3D" parent="Bay/BaySlab" unique_id=1768924842]
+[node name="@CollisionShape3D@3" type="CollisionShape3D" parent="Bay/BaySlab" unique_id=363290645]
 shape = SubResource("BoxShape3D_pvh3m")
 
-[node name="BackWall" type="StaticBody3D" parent="Bay" unique_id=1797118410]
+[node name="BackWall" type="StaticBody3D" parent="Bay" unique_id=657307015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.63, 17.24)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@4" type="CollisionShape3D" parent="Bay/BackWall" unique_id=468923787]
+[node name="@CollisionShape3D@4" type="CollisionShape3D" parent="Bay/BackWall" unique_id=269488462]
 shape = SubResource("BoxShape3D_8plud")
 
-[node name="SideWall" type="StaticBody3D" parent="Bay" unique_id=536256999]
+[node name="SideWall" type="StaticBody3D" parent="Bay" unique_id=504354028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.54, 1.675, 12.7)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@5" type="CollisionShape3D" parent="Bay/SideWall" unique_id=2134697418]
+[node name="@CollisionShape3D@5" type="CollisionShape3D" parent="Bay/SideWall" unique_id=702711720]
 shape = SubResource("BoxShape3D_ipi2u")
 
-[node name="Console" type="StaticBody3D" parent="Bay" unique_id=364247913]
+[node name="Console" type="StaticBody3D" parent="Bay" unique_id=1694516901]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.2, 15.95)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@6" type="CollisionShape3D" parent="Bay/Console" unique_id=1747174303]
+[node name="@CollisionShape3D@6" type="CollisionShape3D" parent="Bay/Console" unique_id=733674548]
 shape = SubResource("BoxShape3D_f5vok")
 
-[node name="Tarps" type="Node3D" parent="Bay" unique_id=1856207074]
+[node name="Tarps" type="Node3D" parent="Bay" unique_id=765181235]
 
-[node name="TarpNear" type="Node3D" parent="Bay/Tarps" unique_id=1568572605]
+[node name="TarpNear" type="Node3D" parent="Bay/Tarps" unique_id=30269702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 2.35, 8.15)
 
-[node name="Cloth" type="MeshInstance3D" parent="Bay/Tarps/TarpNear" unique_id=46362413]
+[node name="Cloth" type="MeshInstance3D" parent="Bay/Tarps/TarpNear" unique_id=731665737]
 gi_mode = 0
 mesh = ExtResource("10_7cs80")
 
-[node name="TarpSide" type="Node3D" parent="Bay/Tarps" unique_id=1582711305]
+[node name="TarpSide" type="Node3D" parent="Bay/Tarps" unique_id=29749642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4, 2.25, 12.2)
 
-[node name="Cloth" type="MeshInstance3D" parent="Bay/Tarps/TarpSide" unique_id=199745220]
+[node name="Cloth" type="MeshInstance3D" parent="Bay/Tarps/TarpSide" unique_id=1494462943]
 gi_mode = 0
 mesh = ExtResource("11_pu68p")
 
-[node name="TarpBack" type="Node3D" parent="Bay/Tarps" unique_id=2090349185]
+[node name="TarpBack" type="Node3D" parent="Bay/Tarps" unique_id=1026172626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 2.45, 8.1)
 
-[node name="Cloth" type="MeshInstance3D" parent="Bay/Tarps/TarpBack" unique_id=1176143487]
+[node name="Cloth" type="MeshInstance3D" parent="Bay/Tarps/TarpBack" unique_id=589045219]
 gi_mode = 0
 mesh = ExtResource("12_qq0ka")
 
-[node name="Lane" type="Node3D" parent="." unique_id=1781945175]
+[node name="Lane" type="Node3D" parent="." unique_id=327472919]
 
-[node name="Marker15" type="Node3D" parent="Lane" unique_id=51807735]
+[node name="Marker15" type="Node3D" parent="Lane" unique_id=1372073865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.62, -15)
 
-[node name="Front" type="Label3D" parent="Lane/Marker15" unique_id=2121515758]
+[node name="Front" type="Label3D" parent="Lane/Marker15" unique_id=4622666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.042)
 pixel_size = 0.0088
 shaded = true
@@ -786,7 +786,7 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Back" type="Label3D" parent="Lane/Marker15" unique_id=1693054260]
+[node name="Back" type="Label3D" parent="Lane/Marker15" unique_id=709957023]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.042)
 pixel_size = 0.0088
 shaded = true
@@ -797,10 +797,10 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Marker35" type="Node3D" parent="Lane" unique_id=1232345592]
+[node name="Marker35" type="Node3D" parent="Lane" unique_id=1610120270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.62, -35)
 
-[node name="Front" type="Label3D" parent="Lane/Marker35" unique_id=1484576739]
+[node name="Front" type="Label3D" parent="Lane/Marker35" unique_id=2106692315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.042)
 pixel_size = 0.0088
 shaded = true
@@ -811,7 +811,7 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Back" type="Label3D" parent="Lane/Marker35" unique_id=1207412225]
+[node name="Back" type="Label3D" parent="Lane/Marker35" unique_id=2034437225]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.042)
 pixel_size = 0.0088
 shaded = true
@@ -822,10 +822,10 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Marker70" type="Node3D" parent="Lane" unique_id=1942773580]
+[node name="Marker70" type="Node3D" parent="Lane" unique_id=956817141]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.62, -70)
 
-[node name="Front" type="Label3D" parent="Lane/Marker70" unique_id=319345102]
+[node name="Front" type="Label3D" parent="Lane/Marker70" unique_id=1906704564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.042)
 pixel_size = 0.0088
 shaded = true
@@ -836,7 +836,7 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Back" type="Label3D" parent="Lane/Marker70" unique_id=378917888]
+[node name="Back" type="Label3D" parent="Lane/Marker70" unique_id=1497830910]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.042)
 pixel_size = 0.0088
 shaded = true
@@ -847,10 +847,10 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Marker140" type="Node3D" parent="Lane" unique_id=447453]
+[node name="Marker140" type="Node3D" parent="Lane" unique_id=750224872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.62, -140)
 
-[node name="Front" type="Label3D" parent="Lane/Marker140" unique_id=1917696680]
+[node name="Front" type="Label3D" parent="Lane/Marker140" unique_id=828407689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.042)
 pixel_size = 0.0088
 shaded = true
@@ -861,7 +861,7 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Back" type="Label3D" parent="Lane/Marker140" unique_id=1658645831]
+[node name="Back" type="Label3D" parent="Lane/Marker140" unique_id=180735683]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.042)
 pixel_size = 0.0088
 shaded = true
@@ -872,10 +872,10 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Marker250" type="Node3D" parent="Lane" unique_id=868344834]
+[node name="Marker250" type="Node3D" parent="Lane" unique_id=1549185922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.62, -250)
 
-[node name="Front" type="Label3D" parent="Lane/Marker250" unique_id=2089456481]
+[node name="Front" type="Label3D" parent="Lane/Marker250" unique_id=505588644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.042)
 pixel_size = 0.0088
 shaded = true
@@ -886,7 +886,7 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Back" type="Label3D" parent="Lane/Marker250" unique_id=1938974195]
+[node name="Back" type="Label3D" parent="Lane/Marker250" unique_id=1814372512]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.042)
 pixel_size = 0.0088
 shaded = true
@@ -897,10 +897,10 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Marker400" type="Node3D" parent="Lane" unique_id=1179696164]
+[node name="Marker400" type="Node3D" parent="Lane" unique_id=566031945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 2.62, -400)
 
-[node name="Front" type="Label3D" parent="Lane/Marker400" unique_id=1719927430]
+[node name="Front" type="Label3D" parent="Lane/Marker400" unique_id=652777468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.042)
 pixel_size = 0.0088
 shaded = true
@@ -911,7 +911,7 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="Back" type="Label3D" parent="Lane/Marker400" unique_id=67968900]
+[node name="Back" type="Label3D" parent="Lane/Marker400" unique_id=512652169]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.042)
 pixel_size = 0.0088
 shaded = true
@@ -922,48 +922,48 @@ font = ExtResource("13_whvw5")
 font_size = 64
 outline_size = 0
 
-[node name="LaneNear" type="MeshInstance3D" parent="Lane" unique_id=149598492]
+[node name="LaneNear" type="MeshInstance3D" parent="Lane" unique_id=1661105053]
 gi_mode = 0
 mesh = ExtResource("14_g71yf")
 
-[node name="LaneFar" type="MeshInstance3D" parent="Lane" unique_id=1225441860]
+[node name="LaneFar" type="MeshInstance3D" parent="Lane" unique_id=482300518]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("15_2v8qc")
 
-[node name="Pad" type="StaticBody3D" parent="Lane" unique_id=814390977]
+[node name="Pad" type="StaticBody3D" parent="Lane" unique_id=845048602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050000004, 3)
 collision_mask = 0
 metadata/surface = &"concrete"
 
-[node name="@CollisionShape3D@7" type="CollisionShape3D" parent="Lane/Pad" unique_id=988588241]
+[node name="@CollisionShape3D@7" type="CollisionShape3D" parent="Lane/Pad" unique_id=2054189746]
 shape = SubResource("BoxShape3D_8wklf")
 
-[node name="BermLeft" type="StaticBody3D" parent="Lane" unique_id=53993334]
+[node name="BermLeft" type="StaticBody3D" parent="Lane" unique_id=45511902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 3.3, -170)
 collision_mask = 0
 metadata/surface = &"sand"
 
-[node name="@CollisionShape3D@8" type="CollisionShape3D" parent="Lane/BermLeft" unique_id=177176866]
+[node name="@CollisionShape3D@8" type="CollisionShape3D" parent="Lane/BermLeft" unique_id=1376085936]
 shape = SubResource("BoxShape3D_bfgxq")
 
-[node name="BermRight" type="StaticBody3D" parent="Lane" unique_id=1089908679]
+[node name="BermRight" type="StaticBody3D" parent="Lane" unique_id=2008267978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 3.3, -170)
 collision_mask = 0
 metadata/surface = &"sand"
 
-[node name="@CollisionShape3D@9" type="CollisionShape3D" parent="Lane/BermRight" unique_id=952901167]
+[node name="@CollisionShape3D@9" type="CollisionShape3D" parent="Lane/BermRight" unique_id=2065634036]
 shape = SubResource("BoxShape3D_wop5q")
 
-[node name="Backstop" type="StaticBody3D" parent="Lane" unique_id=809809143]
+[node name="Backstop" type="StaticBody3D" parent="Lane" unique_id=1439588767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3, -392)
 collision_mask = 0
 metadata/surface = &"sand"
 
-[node name="@CollisionShape3D@10" type="CollisionShape3D" parent="Lane/Backstop" unique_id=1752559962]
+[node name="@CollisionShape3D@10" type="CollisionShape3D" parent="Lane/Backstop" unique_id=748434364]
 shape = SubResource("BoxShape3D_55mmb")
 
-[node name="LaneReadoutMount" type="MeshInstance3D" parent="Lane" unique_id=2069471848]
+[node name="LaneReadoutMount" type="MeshInstance3D" parent="Lane" unique_id=1971040391]
 gi_mode = 0
 mesh = ExtResource("16_1rren")
 
@@ -978,179 +978,179 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Yard" type="Node3D" parent="." unique_id=1051944421]
+[node name="Yard" type="Node3D" parent="." unique_id=895280785]
 
-[node name="YardNear" type="MeshInstance3D" parent="Yard" unique_id=1908914594]
+[node name="YardNear" type="MeshInstance3D" parent="Yard" unique_id=158868944]
 gi_mode = 0
 mesh = ExtResource("19_bkq32")
 
-[node name="YardFar" type="MeshInstance3D" parent="Yard" unique_id=1447654003]
+[node name="YardFar" type="MeshInstance3D" parent="Yard" unique_id=442978148]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("20_b3x2k")
 
-[node name="CanopyPost_-130_-25" type="StaticBody3D" parent="Yard" unique_id=459703569]
+[node name="CanopyPost_-130_-25" type="StaticBody3D" parent="Yard" unique_id=1919139240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, -2.6)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@11" type="CollisionShape3D" parent="Yard/CanopyPost_-130_-25" unique_id=139650141]
+[node name="@CollisionShape3D@11" type="CollisionShape3D" parent="Yard/CanopyPost_-130_-25" unique_id=1270435713]
 shape = SubResource("BoxShape3D_2cp3a")
 
-[node name="CanopyPost_-130_66" type="StaticBody3D" parent="Yard" unique_id=201570355]
+[node name="CanopyPost_-130_66" type="StaticBody3D" parent="Yard" unique_id=2061749643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1.5, 6.7)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@12" type="CollisionShape3D" parent="Yard/CanopyPost_-130_66" unique_id=1317897084]
+[node name="@CollisionShape3D@12" type="CollisionShape3D" parent="Yard/CanopyPost_-130_66" unique_id=1635458990]
 shape = SubResource("BoxShape3D_gywgm")
 
-[node name="CanopyPost_-73_-25" type="StaticBody3D" parent="Yard" unique_id=2012278863]
+[node name="CanopyPost_-73_-25" type="StaticBody3D" parent="Yard" unique_id=1419641236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 1.5, -2.6)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@13" type="CollisionShape3D" parent="Yard/CanopyPost_-73_-25" unique_id=2000802578]
+[node name="@CollisionShape3D@13" type="CollisionShape3D" parent="Yard/CanopyPost_-73_-25" unique_id=920219122]
 shape = SubResource("BoxShape3D_j5ad0")
 
-[node name="CanopyPost_-73_66" type="StaticBody3D" parent="Yard" unique_id=159338639]
+[node name="CanopyPost_-73_66" type="StaticBody3D" parent="Yard" unique_id=2020869703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 1.5, 6.7)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@14" type="CollisionShape3D" parent="Yard/CanopyPost_-73_66" unique_id=1096922270]
+[node name="@CollisionShape3D@14" type="CollisionShape3D" parent="Yard/CanopyPost_-73_66" unique_id=1108198543]
 shape = SubResource("BoxShape3D_vxwrj")
 
-[node name="CanopyPost_-16_-25" type="StaticBody3D" parent="Yard" unique_id=243989435]
+[node name="CanopyPost_-16_-25" type="StaticBody3D" parent="Yard" unique_id=1500367067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 1.5, -2.6)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@15" type="CollisionShape3D" parent="Yard/CanopyPost_-16_-25" unique_id=1955796435]
+[node name="@CollisionShape3D@15" type="CollisionShape3D" parent="Yard/CanopyPost_-16_-25" unique_id=446419114]
 shape = SubResource("BoxShape3D_vxo0g")
 
-[node name="CanopyPost_-16_66" type="StaticBody3D" parent="Yard" unique_id=1479900283]
+[node name="CanopyPost_-16_66" type="StaticBody3D" parent="Yard" unique_id=662485735]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 1.5, 6.7)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@16" type="CollisionShape3D" parent="Yard/CanopyPost_-16_66" unique_id=637833528]
+[node name="@CollisionShape3D@16" type="CollisionShape3D" parent="Yard/CanopyPost_-16_66" unique_id=1510576022]
 shape = SubResource("BoxShape3D_2hmf3")
 
-[node name="Bench_-83" type="StaticBody3D" parent="Yard" unique_id=34882525]
+[node name="Bench_-83" type="StaticBody3D" parent="Yard" unique_id=1535105347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0.66, -1)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@17" type="CollisionShape3D" parent="Yard/Bench_-83" unique_id=1498955115]
+[node name="@CollisionShape3D@17" type="CollisionShape3D" parent="Yard/Bench_-83" unique_id=383908674]
 shape = SubResource("BoxShape3D_nf3ju")
 
-[node name="Bench_-41" type="StaticBody3D" parent="Yard" unique_id=1796572585]
+[node name="Bench_-41" type="StaticBody3D" parent="Yard" unique_id=1421095798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0.66, -1)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@18" type="CollisionShape3D" parent="Yard/Bench_-41" unique_id=1067768076]
+[node name="@CollisionShape3D@18" type="CollisionShape3D" parent="Yard/Bench_-41" unique_id=312756116]
 shape = SubResource("BoxShape3D_w2s8y")
 
-[node name="Bench_0" type="StaticBody3D" parent="Yard" unique_id=347606746]
+[node name="Bench_0" type="StaticBody3D" parent="Yard" unique_id=1931272281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, -1)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@19" type="CollisionShape3D" parent="Yard/Bench_0" unique_id=1606779987]
+[node name="@CollisionShape3D@19" type="CollisionShape3D" parent="Yard/Bench_0" unique_id=740165965]
 shape = SubResource("BoxShape3D_mhhbd")
 
-[node name="Bench_41" type="StaticBody3D" parent="Yard" unique_id=1840021043]
+[node name="Bench_41" type="StaticBody3D" parent="Yard" unique_id=2120216117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0.66, -1)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@20" type="CollisionShape3D" parent="Yard/Bench_41" unique_id=432300821]
+[node name="@CollisionShape3D@20" type="CollisionShape3D" parent="Yard/Bench_41" unique_id=1624562497]
 shape = SubResource("BoxShape3D_y4atc")
 
-[node name="Bench_83" type="StaticBody3D" parent="Yard" unique_id=699357692]
+[node name="Bench_83" type="StaticBody3D" parent="Yard" unique_id=726971312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4, 0.66, -1)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@21" type="CollisionShape3D" parent="Yard/Bench_83" unique_id=2142715757]
+[node name="@CollisionShape3D@21" type="CollisionShape3D" parent="Yard/Bench_83" unique_id=1176042281]
 shape = SubResource("BoxShape3D_cl2yi")
 
-[node name="BackWallLeft" type="StaticBody3D" parent="Yard" unique_id=1162894051]
+[node name="BackWallLeft" type="StaticBody3D" parent="Yard" unique_id=908444549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.85, 1.275, 9.4)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@22" type="CollisionShape3D" parent="Yard/BackWallLeft" unique_id=1991595549]
+[node name="@CollisionShape3D@22" type="CollisionShape3D" parent="Yard/BackWallLeft" unique_id=1952260057]
 shape = SubResource("BoxShape3D_8b8rn")
 
-[node name="BackWallRight" type="StaticBody3D" parent="Yard" unique_id=1124402097]
+[node name="BackWallRight" type="StaticBody3D" parent="Yard" unique_id=362753229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.45, 1.275, 9.4)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@23" type="CollisionShape3D" parent="Yard/BackWallRight" unique_id=438361913]
+[node name="@CollisionShape3D@23" type="CollisionShape3D" parent="Yard/BackWallRight" unique_id=1295564986]
 shape = SubResource("BoxShape3D_byitd")
 
-[node name="WaterTank" type="StaticBody3D" parent="Yard" unique_id=977767994]
+[node name="WaterTank" type="StaticBody3D" parent="Yard" unique_id=1441885561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8, 1.6, -11.5)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@24" type="CollisionShape3D" parent="Yard/WaterTank" unique_id=2115195457]
+[node name="@CollisionShape3D@24" type="CollisionShape3D" parent="Yard/WaterTank" unique_id=213564039]
 shape = SubResource("BoxShape3D_tvawc")
 
-[node name="DeckCrate" type="StaticBody3D" parent="Yard" unique_id=525126081]
+[node name="DeckCrate" type="StaticBody3D" parent="Yard" unique_id=458412066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55, 0.51, 2.65)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@25" type="CollisionShape3D" parent="Yard/DeckCrate" unique_id=312962524]
+[node name="@CollisionShape3D@25" type="CollisionShape3D" parent="Yard/DeckCrate" unique_id=1240184432]
 shape = SubResource("BoxShape3D_3g1lm")
 
-[node name="LaneEdgeL" type="StaticBody3D" parent="Yard" unique_id=803597322]
+[node name="LaneEdgeL" type="StaticBody3D" parent="Yard" unique_id=1476756966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 1.05, -24.3)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@26" type="CollisionShape3D" parent="Yard/LaneEdgeL" unique_id=1791723940]
+[node name="@CollisionShape3D@26" type="CollisionShape3D" parent="Yard/LaneEdgeL" unique_id=2815754]
 shape = SubResource("BoxShape3D_kdbti")
 
-[node name="LaneEdgeR" type="StaticBody3D" parent="Yard" unique_id=2072995084]
+[node name="LaneEdgeR" type="StaticBody3D" parent="Yard" unique_id=1203601332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7, 1.05, -24.3)
 collision_mask = 0
 metadata/surface = &"metal"
 
-[node name="@CollisionShape3D@27" type="CollisionShape3D" parent="Yard/LaneEdgeR" unique_id=979342245]
+[node name="@CollisionShape3D@27" type="CollisionShape3D" parent="Yard/LaneEdgeR" unique_id=1505941357]
 shape = SubResource("BoxShape3D_to2hq")
 
-[node name="YardTarps" type="Node3D" parent="Yard" unique_id=247019400]
+[node name="YardTarps" type="Node3D" parent="Yard" unique_id=2110491731]
 
-[node name="TarpCanopy" type="Node3D" parent="Yard/YardTarps" unique_id=1489862086]
+[node name="TarpCanopy" type="Node3D" parent="Yard/YardTarps" unique_id=1902523671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 3.51, -2.3999999)
 
-[node name="Cloth" type="MeshInstance3D" parent="Yard/YardTarps/TarpCanopy" unique_id=236468384]
+[node name="Cloth" type="MeshInstance3D" parent="Yard/YardTarps/TarpCanopy" unique_id=22793173]
 gi_mode = 0
 mesh = ExtResource("21_x6wfi")
 
-[node name="TarpFenceL" type="Node3D" parent="Yard/YardTarps" unique_id=182618148]
+[node name="TarpFenceL" type="Node3D" parent="Yard/YardTarps" unique_id=49486544]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.52, 1.95, -9.4)
 
-[node name="Cloth" type="MeshInstance3D" parent="Yard/YardTarps/TarpFenceL" unique_id=1754816449]
+[node name="Cloth" type="MeshInstance3D" parent="Yard/YardTarps/TarpFenceL" unique_id=1787924197]
 gi_mode = 0
 mesh = ExtResource("22_3h6he")
 
-[node name="TarpFenceR" type="Node3D" parent="Yard/YardTarps" unique_id=2066588385]
+[node name="TarpFenceR" type="Node3D" parent="Yard/YardTarps" unique_id=741323285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 2.1, -7.2)
 
-[node name="Cloth" type="MeshInstance3D" parent="Yard/YardTarps/TarpFenceR" unique_id=1630814405]
+[node name="Cloth" type="MeshInstance3D" parent="Yard/YardTarps/TarpFenceR" unique_id=1894918144]
 gi_mode = 0
 mesh = ExtResource("23_3qqg1")
 
-[node name="YardLights" type="Node3D" parent="Yard" unique_id=1053144186]
+[node name="YardLights" type="Node3D" parent="Yard" unique_id=1253974554]
 
-[node name="Flood0" type="OmniLight3D" parent="Yard/YardLights" unique_id=1721649156]
+[node name="Flood0" type="OmniLight3D" parent="Yard/YardLights" unique_id=200282296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 3.35, 1.4)
 light_color = Color(1, 0.86, 0.63, 1)
 light_energy = 2.3
@@ -1159,7 +1159,7 @@ distance_fade_begin = 30.0
 distance_fade_length = 12.0
 omni_range = 7.5
 
-[node name="Flood1" type="OmniLight3D" parent="Yard/YardLights" unique_id=1575857211]
+[node name="Flood1" type="OmniLight3D" parent="Yard/YardLights" unique_id=137944115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 3.35, 4.6)
 light_color = Color(1, 0.86, 0.63, 1)
 light_energy = 1.9
@@ -1168,20 +1168,20 @@ distance_fade_begin = 30.0
 distance_fade_length = 12.0
 omni_range = 6.5
 
-[node name="Housings" type="MeshInstance3D" parent="Yard/YardLights" unique_id=999980518]
+[node name="Housings" type="MeshInstance3D" parent="Yard/YardLights" unique_id=742721612]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("24_t0lw3")
 
-[node name="Scatter" type="Node3D" parent="." unique_id=1576118778]
+[node name="Scatter" type="Node3D" parent="." unique_id=866051857]
 
-[node name="Rocks" type="MultiMeshInstance3D" parent="Scatter" unique_id=1424088495]
+[node name="Rocks" type="MultiMeshInstance3D" parent="Scatter" unique_id=1103921712]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_r3lun")
 
-[node name="Brass" type="MultiMeshInstance3D" parent="Scatter" unique_id=1229746787]
+[node name="Brass" type="MultiMeshInstance3D" parent="Scatter" unique_id=1275905997]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
@@ -1189,7 +1189,7 @@ visibility_range_end = 42.0
 visibility_range_end_margin = 6.0
 multimesh = SubResource("MultiMesh_dvxg0")
 
-[node name="Hulls" type="MultiMeshInstance3D" parent="Scatter" unique_id=257510532]
+[node name="Hulls" type="MultiMeshInstance3D" parent="Scatter" unique_id=1662558452]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
@@ -1197,12 +1197,12 @@ visibility_range_end = 42.0
 visibility_range_end_margin = 6.0
 multimesh = SubResource("MultiMesh_1lgjn")
 
-[node name="Tyres" type="MultiMeshInstance3D" parent="Scatter" unique_id=79873858]
+[node name="Tyres" type="MultiMeshInstance3D" parent="Scatter" unique_id=286019018]
 material_override = ExtResource("25_hni2n")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_s3pyt")
 
-[node name="WindFlags" type="MultiMeshInstance3D" parent="Scatter" unique_id=506733061]
+[node name="WindFlags" type="MultiMeshInstance3D" parent="Scatter" unique_id=1838145814]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
@@ -1210,657 +1210,657 @@ visibility_range_end = 190.0
 visibility_range_end_margin = 30.0
 multimesh = SubResource("MultiMesh_hvllw")
 
-[node name="sandbags_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=945493091]
+[node name="sandbags_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=437568064]
 material_override = ExtResource("25_hni2n")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_c1p2k")
 
-[node name="sandbags_body" type="StaticBody3D" parent="Scatter" unique_id=1561574107]
+[node name="sandbags_body" type="StaticBody3D" parent="Scatter" unique_id=1382736575]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="sandbags_00" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=30693165]
+[node name="sandbags_00" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=875152074]
 transform = Transform3D(0.9863423, 0, -0.16470835, 0, 1, 0, 0.16470835, 0, 0.9863423, -17.868843, 0, -24.808844)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_01" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=386481224]
+[node name="sandbags_01" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1726850557]
 transform = Transform3D(0.07393903, 0, -0.9972628, 0, 1, 0, 0.9972628, 0, 0.07393903, 15.549723, 0, -25.634968)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_02" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1247126596]
+[node name="sandbags_02" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2114481871]
 transform = Transform3D(-0.9556674, 0, 0.29444847, 0, 1, 0, -0.29444847, 0, -0.9556674, -17.354448, 0, -28.968542)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_03" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1048181650]
+[node name="sandbags_03" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=657629591]
 transform = Transform3D(0.6665374, 0, 0.7454716, 0, 1, 0, -0.7454716, 0, 0.6665374, 14.295129, 0, -15.060224)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_04" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=211159452]
+[node name="sandbags_04" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1443995146]
 transform = Transform3D(-0.99478245, 0, 0.10201928, 0, 1, 0, -0.10201928, 0, -0.99478245, 15.950036, 0, -48.345345)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_05" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1083781410]
+[node name="sandbags_05" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1136655220]
 transform = Transform3D(-0.18250407, 0, -0.9832051, 0, 1, 0, 0.9832051, 0, -0.18250407, -20.589443, 0, -31.983526)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_06" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=256635154]
+[node name="sandbags_06" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1360950208]
 transform = Transform3D(-0.72521883, 0, 0.68851846, 0, 1, 0, -0.68851846, 0, -0.72521883, 18.553947, 0, -39.412704)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_07" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=539387856]
+[node name="sandbags_07" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=434260090]
 transform = Transform3D(-0.87039053, 0, -0.49236196, 0, 1, 0, 0.49236196, 0, -0.87039053, 15.9491205, 0, -18.103155)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_08" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2061326872]
+[node name="sandbags_08" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=454292732]
 transform = Transform3D(0.28845152, 0, -0.9574945, 0, 1, 0, 0.9574945, 0, 0.28845152, -17.244112, 0, -48.311485)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_09" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=465582967]
+[node name="sandbags_09" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2123966015]
 transform = Transform3D(0.9607293, 0, 0.2774873, 0, 1, 0, -0.2774873, 0, 0.9607293, 15.100835, 0, -5.034718)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_10" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1126483426]
+[node name="sandbags_10" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=91434632]
 transform = Transform3D(0.06596393, 0, 0.997822, 0, 1, 0, -0.997822, 0, 0.06596393, 19.872551, 0, -6.979337)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_11" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=900846611]
+[node name="sandbags_11" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1720748131]
 transform = Transform3D(-0.07112707, 0, 0.9974673, 0, 1, 0, -0.9974673, 0, -0.07112707, -18.282145, 0, -41.95752)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_12" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=994483013]
+[node name="sandbags_12" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1504161173]
 transform = Transform3D(0.4219958, 0, -0.9065978, 0, 1, 0, 0.9065978, 0, 0.4219958, -19.507278, 0, -3.2378025)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_13" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=930275602]
+[node name="sandbags_13" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2142135991]
 transform = Transform3D(-0.24289343, 0, -0.97005296, 0, 1, 0, 0.97005296, 0, -0.24289343, 19.817593, 0, -44.093746)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_14" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1580388314]
+[node name="sandbags_14" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=660116449]
 transform = Transform3D(0.33682337, 0, 0.94156784, 0, 1, 0, -0.94156784, 0, 0.33682337, -19.342688, 0, -12.252724)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_15" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=609227524]
+[node name="sandbags_15" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2048525961]
 transform = Transform3D(-0.20922562, 0, -0.97786736, 0, 1, 0, 0.97786736, 0, -0.20922562, 19.415731, 0, -12.5671)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_16" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1172152983]
+[node name="sandbags_16" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=754916956]
 transform = Transform3D(-0.6557975, 0, 0.7549369, 0, 1, 0, -0.7549369, 0, -0.6557975, 15.909145, 0, -43.887848)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_17" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2098241491]
+[node name="sandbags_17" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1550708454]
 transform = Transform3D(-0.620606, 0, 0.7841226, 0, 1, 0, -0.7841226, 0, -0.620606, -14.730305, 0, -31.702507)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_18" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1796099125]
+[node name="sandbags_18" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1479595453]
 transform = Transform3D(0.3304414, 0, 0.9438265, 0, 1, 0, -0.9438265, 0, 0.3304414, -17.477339, 0, -36.42986)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_19" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2089084334]
+[node name="sandbags_19" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1494565831]
 transform = Transform3D(-0.061199114, 0, 0.99812555, 0, 1, 0, -0.99812555, 0, -0.061199114, -20.687883, 0, -7.599797)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_20" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1412804957]
+[node name="sandbags_20" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=38717129]
 transform = Transform3D(0.041548222, 0, -0.9991365, 0, 1, 0, 0.9991365, 0, 0.041548222, -15.610524, 0, -5.85258)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_21" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1244752809]
+[node name="sandbags_21" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=950720909]
 transform = Transform3D(0.9116643, 0, 0.4109357, 0, 1, 0, -0.4109357, 0, 0.9116643, -19.5661, 0, -45.587696)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_22" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1652534593]
+[node name="sandbags_22" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=29679397]
 transform = Transform3D(0.9338066, 0, -0.35777816, 0, 1, 0, 0.35777816, 0, 0.9338066, 18.738438, 0, -32.84086)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_23" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1798611752]
+[node name="sandbags_23" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=512774759]
 transform = Transform3D(-0.88662255, 0, 0.46249375, 0, 1, 0, -0.46249375, 0, -0.88662255, 17.776875, 0, -21.265545)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_24" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1837814630]
+[node name="sandbags_24" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=894420004]
 transform = Transform3D(0.57512724, 0, 0.818064, 0, 1, 0, -0.818064, 0, 0.57512724, 14.631228, 0, -9.689542)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_25" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1630118637]
+[node name="sandbags_25" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1272210664]
 transform = Transform3D(0.26617852, 0, -0.96392375, 0, 1, 0, 0.96392375, 0, 0.26617852, -14.852782, 0, -40.766342)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_26" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=526329366]
+[node name="sandbags_26" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1945577313]
 transform = Transform3D(0.95313734, 0, -0.30253795, 0, 1, 0, 0.30253795, 0, 0.95313734, -15.161937, 0, -18.951593)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_27" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1505302208]
+[node name="sandbags_27" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1413445743]
 transform = Transform3D(0.562686, 0, 0.8266707, 0, 1, 0, -0.8266707, 0, 0.562686, -15.872379, 0, -51.670044)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_28" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=161381494]
+[node name="sandbags_28" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=842962803]
 transform = Transform3D(0.72727597, 0, 0.68634516, 0, 1, 0, -0.68634516, 0, 0.72727597, 20.730206, 0, -28.977156)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_29" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=766443730]
+[node name="sandbags_29" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2145552005]
 transform = Transform3D(-0.43943354, 0, -0.8982751, 0, 1, 0, 0.8982751, 0, -0.43943354, 15.479832, 0, -35.434696)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_30" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2017098748]
+[node name="sandbags_30" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1973341002]
 transform = Transform3D(-0.60646874, 0, -0.7951073, 0, 1, 0, 0.7951073, 0, -0.60646874, 16.415249, 0, -30.136383)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_31" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=606719862]
+[node name="sandbags_31" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=2107785382]
 transform = Transform3D(-0.14249201, 0, -0.989796, 0, 1, 0, 0.989796, 0, -0.14249201, 18.502726, 0, -51.99814)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_32" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=126744094]
+[node name="sandbags_32" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1904768437]
 transform = Transform3D(-0.94647765, 0, -0.32276925, 0, 1, 0, 0.32276925, 0, -0.94647765, -20.870123, 0, -15.335527)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_33" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1605242750]
+[node name="sandbags_33" type="CollisionShape3D" parent="Scatter/sandbags_body" unique_id=1269656458]
 transform = Transform3D(-0.85994756, 0, 0.5103824, 0, 1, 0, -0.5103824, 0, -0.85994756, -14.271852, 0, -45.37335)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="barrel_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=172844758]
+[node name="barrel_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1374686684]
 material_override = ExtResource("25_hni2n")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_u4tr4")
 
-[node name="barrel_body" type="StaticBody3D" parent="Scatter" unique_id=780783569]
+[node name="barrel_body" type="StaticBody3D" parent="Scatter" unique_id=1637033863]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="barrel_00" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=659629759]
+[node name="barrel_00" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=736575826]
 transform = Transform3D(0.65822226, 0, -0.75282365, 0, 1, 0, 0.75282365, 0, 0.65822226, 23.90655, 0, -66.484276)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_01" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1263236390]
+[node name="barrel_01" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=588540200]
 transform = Transform3D(0.32103604, 0, -0.94706696, 0, 1, 0, 0.94706696, 0, 0.32103604, -23.582682, 0, -71.17256)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_02" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=794497440]
+[node name="barrel_02" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1650165220]
 transform = Transform3D(-0.2925301, 0, 0.95625633, 0, 1, 0, -0.95625633, 0, -0.2925301, 25.485441, 0, -85.577675)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_03" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=873202681]
+[node name="barrel_03" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1064031377]
 transform = Transform3D(-0.9752816, 0, 0.22096562, 0, 1, 0, -0.22096562, 0, -0.9752816, 16.623692, 0, -96.062225)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_04" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1644450914]
+[node name="barrel_04" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=401141331]
 transform = Transform3D(-0.83964795, 0, -0.54313105, 0, 1, 0, 0.54313105, 0, -0.83964795, -25.971012, 0, -94.651764)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_05" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=466191546]
+[node name="barrel_05" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=245210103]
 transform = Transform3D(0.74007535, 0, 0.672524, 0, 1, 0, -0.672524, 0, 0.74007535, 24.077545, 0, -72.63894)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_06" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=769436060]
+[node name="barrel_06" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=500461760]
 transform = Transform3D(-0.13609433, 0, -0.9906959, 0, 1, 0, 0.9906959, 0, -0.13609433, 24.454119, 0, -47.710228)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_07" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1065913380]
+[node name="barrel_07" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1749626946]
 transform = Transform3D(0.2718857, 0, -0.96232957, 0, 1, 0, 0.96232957, 0, 0.2718857, -22.707441, 0, -62.782)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_08" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=758508394]
+[node name="barrel_08" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=906111005]
 transform = Transform3D(-0.8391076, 0, -0.5439656, 0, 1, 0, 0.5439656, 0, -0.8391076, -22.447355, 0, -75.44433)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_09" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=329343883]
+[node name="barrel_09" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=495931777]
 transform = Transform3D(-0.6884376, 0, -0.7252956, 0, 1, 0, 0.7252956, 0, -0.6884376, 21.06851, 0, -84.57795)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_10" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1919829682]
+[node name="barrel_10" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1705810991]
 transform = Transform3D(0.9590519, 0, -0.28323033, 0, 1, 0, 0.28323033, 0, 0.9590519, -14.741334, 0, -62.491688)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_11" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1543787108]
+[node name="barrel_11" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1833551717]
 transform = Transform3D(0.8789183, 0, 0.47697234, 0, 1, 0, -0.47697234, 0, 0.8789183, -24.452177, 0, -18.153734)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_12" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=484608322]
+[node name="barrel_12" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=549164285]
 transform = Transform3D(-0.35776138, 0, -0.93381304, 0, 1, 0, 0.93381304, 0, -0.35776138, 25.021307, 0, -101.14854)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_13" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1873643487]
+[node name="barrel_13" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=830055275]
 transform = Transform3D(0.68200713, 0, -0.73134553, 0, 1, 0, 0.73134553, 0, 0.68200713, -23.346182, 0, -80.15072)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_14" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1267233701]
+[node name="barrel_14" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=2032233366]
 transform = Transform3D(-0.9928885, 0, 0.11904802, 0, 1, 0, -0.11904802, 0, -0.9928885, 22.220078, 0, -22.53881)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_15" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=510844942]
+[node name="barrel_15" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=395541077]
 transform = Transform3D(-0.62876594, 0, 0.7775946, 0, 1, 0, -0.7775946, 0, -0.62876594, -16.225496, 0, -9.687605)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_16" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1207817604]
+[node name="barrel_16" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=399442285]
 transform = Transform3D(0.86631364, 0, 0.49950045, 0, 1, 0, -0.49950045, 0, 0.86631364, -25.894575, 0, -68.35062)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_17" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=2123287043]
+[node name="barrel_17" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=251012878]
 transform = Transform3D(0.8981928, 0, 0.43960175, 0, 1, 0, -0.43960175, 0, 0.8981928, 15.359848, 0, -54.426685)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_18" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=256332321]
+[node name="barrel_18" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1220696453]
 transform = Transform3D(-0.7318063, 0, -0.6815127, 0, 1, 0, 0.6815127, 0, -0.7318063, 16.347755, 0, -67.81184)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_19" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1322045025]
+[node name="barrel_19" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=282145795]
 transform = Transform3D(-0.98417884, 0, 0.1771778, 0, 1, 0, -0.1771778, 0, -0.98417884, 21.201185, 0, -107.823296)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_20" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=141712128]
+[node name="barrel_20" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1710253056]
 transform = Transform3D(-0.9901326, 0, 0.1401338, 0, 1, 0, -0.1401338, 0, -0.9901326, -19.073225, 0, -53.110176)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_21" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=369296998]
+[node name="barrel_21" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=18684182]
 transform = Transform3D(0.6124643, 0, 0.79049826, 0, 1, 0, -0.79049826, 0, 0.6124643, -18.649628, 0, -95.09798)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_22" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=632733603]
+[node name="barrel_22" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1432151316]
 transform = Transform3D(-0.79132193, 0, -0.6113997, 0, 1, 0, 0.6113997, 0, -0.79132193, -23.810736, 0, -90.05872)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_23" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=135901099]
+[node name="barrel_23" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=868766681]
 transform = Transform3D(0.87194604, 0, -0.48960197, 0, 1, 0, 0.48960197, 0, 0.87194604, 25.705822, 0, -21.495667)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_24" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=911145364]
+[node name="barrel_24" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=911265851]
 transform = Transform3D(-0.980331, 0, -0.19736052, 0, 1, 0, 0.19736052, 0, -0.980331, 23.424572, 0, -54.693478)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_25" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=854624145]
+[node name="barrel_25" type="CollisionShape3D" parent="Scatter/barrel_body" unique_id=1258496171]
 transform = Transform3D(-0.423617, 0, 0.9058414, 0, 1, 0, -0.9058414, 0, -0.423617, -15.5280075, 0, -67.70258)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="crate_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=727040074]
+[node name="crate_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=467775953]
 material_override = ExtResource("25_hni2n")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_bcwtk")
 
-[node name="crate_body" type="StaticBody3D" parent="Scatter" unique_id=421018854]
+[node name="crate_body" type="StaticBody3D" parent="Scatter" unique_id=433642840]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="crate_00" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1618830568]
+[node name="crate_00" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=968706219]
 transform = Transform3D(-0.7963034, 0, -0.60489744, 0, 1, 0, 0.60489744, 0, -0.7963034, -21.303562, 0, -39.03599)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_01" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=56073729]
+[node name="crate_01" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=174515577]
 transform = Transform3D(0.7432782, 0, -0.66898245, 0, 1, 0, 0.66898245, 0, 0.7432782, -21.3952, 0, -58.99998)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_02" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=79557748]
+[node name="crate_02" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1632295914]
 transform = Transform3D(-0.4309116, 0, -0.9023941, 0, 1, 0, 0.9023941, 0, -0.4309116, -17.183111, 0, -58.24589)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_03" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=2134740247]
+[node name="crate_03" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=755444746]
 transform = Transform3D(0.8737226, 0, 0.48642454, 0, 1, 0, -0.48642454, 0, 0.8737226, 17.04112, 0, -59.011326)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_04" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=566883228]
+[node name="crate_04" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=541885499]
 transform = Transform3D(-0.8596338, 0, 0.5109107, 0, 1, 0, -0.5109107, 0, -0.8596338, 21.278103, 0, -16.10723)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_05" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1794565575]
+[node name="crate_05" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1151484670]
 transform = Transform3D(0.873402, 0, -0.48699996, 0, 1, 0, 0.48699996, 0, 0.873402, 19.586891, 0, -56.44573)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_06" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1129737672]
+[node name="crate_06" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=8597371]
 transform = Transform3D(-0.70973957, 0, 0.70446414, 0, 1, 0, -0.70446414, 0, -0.70973957, -21.820225, 0, -20.434305)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_07" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1553659846]
+[node name="crate_07" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1884168016]
 transform = Transform3D(-0.65596217, 0, 0.75479376, 0, 1, 0, -0.75479376, 0, -0.65596217, -15.284906, 0, -14.658776)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="crate_08" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=1434290905]
+[node name="crate_08" type="CollisionShape3D" parent="Scatter/crate_body" unique_id=501674557]
 transform = Transform3D(0.31430483, 0, 0.9493221, 0, 1, 0, -0.9493221, 0, 0.31430483, 21.837965, 0, -34.534096)
 shape = SubResource("ConcavePolygonShape3D_wmwpe")
 
-[node name="big_crate_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1772706570]
+[node name="big_crate_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1331863558]
 material_override = ExtResource("25_hni2n")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_r0cyl")
 
-[node name="big_crate_body" type="StaticBody3D" parent="Scatter" unique_id=2030608839]
+[node name="big_crate_body" type="StaticBody3D" parent="Scatter" unique_id=1802327013]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="big_crate_00" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1295737400]
+[node name="big_crate_00" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1637478638]
 transform = Transform3D(-0.6396898, 0, -0.7686332, 0, 1, 0, 0.7686332, 0, -0.6396898, -17.437107, 0, -76.07272)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_01" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1708425378]
+[node name="big_crate_01" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1517055491]
 transform = Transform3D(0.80551606, 0, -0.59257394, 0, 1, 0, 0.59257394, 0, 0.80551606, -23.620117, 0, -53.72126)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_02" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=273625678]
+[node name="big_crate_02" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=292198022]
 transform = Transform3D(0.58336043, 0, -0.81221336, 0, 1, 0, 0.81221336, 0, 0.58336043, -22.056492, 0, -50.46292)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_03" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=499986985]
+[node name="big_crate_03" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1445068400]
 transform = Transform3D(-0.953901, 0, -0.3001214, 0, 1, 0, 0.3001214, 0, -0.953901, -23.678978, 0, -43.889427)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_04" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=237709419]
+[node name="big_crate_04" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=555264438]
 transform = Transform3D(-0.9476569, 0, 0.31929046, 0, 1, 0, -0.31929046, 0, -0.9476569, -23.106356, 0, -29.652456)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_05" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=2099448944]
+[node name="big_crate_05" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1519916863]
 transform = Transform3D(-0.6680164, 0, -0.7441466, 0, 1, 0, 0.7441466, 0, -0.6680164, 20.271568, 0, -79.2034)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_06" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1862559206]
+[node name="big_crate_06" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1664209895]
 transform = Transform3D(-0.9813813, 0, 0.19206962, 0, 1, 0, -0.19206962, 0, -0.9813813, -22.319784, 0, -24.984518)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_07" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=760228280]
+[node name="big_crate_07" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1943740598]
 transform = Transform3D(0.45274368, 0, -0.8916407, 0, 1, 0, 0.8916407, 0, 0.45274368, -20.006153, 0, -72.07885)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_08" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1976877451]
+[node name="big_crate_08" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1516714560]
 transform = Transform3D(-0.68308353, 0, 0.73034024, 0, 1, 0, -0.73034024, 0, -0.68308353, -20.760696, 0, -66.7729)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_09" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=734708091]
+[node name="big_crate_09" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1454262958]
 transform = Transform3D(0.22899374, 0, -0.9734279, 0, 1, 0, 0.9734279, 0, 0.22899374, 15.041546, 0, -74.502396)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_10" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=977511706]
+[node name="big_crate_10" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1490706066]
 transform = Transform3D(0.8217755, 0, -0.5698114, 0, 1, 0, 0.5698114, 0, 0.8217755, -19.333578, 0, -79.018875)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_11" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=545314448]
+[node name="big_crate_11" type="CollisionShape3D" parent="Scatter/big_crate_body" unique_id=1686373544]
 transform = Transform3D(-0.9963791, 0, -0.085022286, 0, 1, 0, 0.085022286, 0, -0.9963791, 20.332958, 0, -60.937527)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="wall_holed_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1212107834]
+[node name="wall_holed_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=497804903]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_yj2gb")
 
-[node name="wall_holed_body" type="StaticBody3D" parent="Scatter" unique_id=1059228770]
+[node name="wall_holed_body" type="StaticBody3D" parent="Scatter" unique_id=1551614436]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="wall_holed_00" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=416285586]
+[node name="wall_holed_00" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1112300682]
 transform = Transform3D(-0.5063923, 0, -0.8623032, 0, 1, 0, 0.8623032, 0, -0.5063923, -28.440504, 0, -134.76445)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_01" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1661278564]
+[node name="wall_holed_01" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=849117806]
 transform = Transform3D(0.67514014, 0, 0.7376895, 0, 1, 0, -0.7376895, 0, 0.67514014, -26.237057, 0, -120.981155)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_02" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=380669493]
+[node name="wall_holed_02" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=656023902]
 transform = Transform3D(-0.87154835, 0, 0.49030954, 0, 1, 0, -0.49030954, 0, -0.87154835, 29.723877, 0, -148.20909)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_03" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=945970500]
+[node name="wall_holed_03" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=736486919]
 transform = Transform3D(-0.60204667, 0, -0.7984609, 0, 1, 0, 0.7984609, 0, -0.60204667, -29.165838, 0, -123.6727)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_04" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=715621231]
+[node name="wall_holed_04" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=879020413]
 transform = Transform3D(0.2909822, 0, -0.95672846, 0, 1, 0, 0.95672846, 0, 0.2909822, -28.852041, 0, -60.85417)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_05" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1066034870]
+[node name="wall_holed_05" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=183189133]
 transform = Transform3D(-0.4024178, 0, -0.9154561, 0, 1, 0, 0.9154561, 0, -0.4024178, -27.807861, 0, -51.533756)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_06" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1193704906]
+[node name="wall_holed_06" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=162983161]
 transform = Transform3D(-0.1293045, 0, 0.9916049, 0, 1, 0, -0.9916049, 0, -0.1293045, -28.890467, 0, -40.56081)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_07" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1129821282]
+[node name="wall_holed_07" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1087714626]
 transform = Transform3D(0.25598112, 0, -0.9666818, 0, 1, 0, 0.9666818, 0, 0.25598112, 19.59206, 0, -147.38391)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_08" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=366039499]
+[node name="wall_holed_08" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=983717344]
 transform = Transform3D(-0.9346173, 0, 0.35565513, 0, 1, 0, -0.35565513, 0, -0.9346173, -19.941975, 0, -147.3504)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_09" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1669192977]
+[node name="wall_holed_09" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1678857910]
 transform = Transform3D(0.9320285, 0, 0.36238503, 0, 1, 0, -0.36238503, 0, 0.9320285, 27.61257, 0, -57.99919)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_10" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=642271250]
+[node name="wall_holed_10" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1430940972]
 transform = Transform3D(0.5280311, 0, 0.84922504, 0, 1, 0, -0.84922504, 0, 0.5280311, 29.218792, 0, -70.125984)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wall_holed_11" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=1246991135]
+[node name="wall_holed_11" type="CollisionShape3D" parent="Scatter/wall_holed_body" unique_id=573758855]
 transform = Transform3D(0.9609345, 0, -0.2767759, 0, 1, 0, 0.2767759, 0, 0.9609345, -24.77766, 0, -39.76719)
 shape = SubResource("ConcavePolygonShape3D_0q7k1")
 
-[node name="wreck_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1268418288]
+[node name="wreck_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=163064270]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_ilf2u")
 
-[node name="wreck_body" type="StaticBody3D" parent="Scatter" unique_id=1406861807]
+[node name="wreck_body" type="StaticBody3D" parent="Scatter" unique_id=2046096507]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="wreck_00" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1242623621]
+[node name="wreck_00" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=790515697]
 transform = Transform3D(0.7282814, 0, -0.6852782, 0, 1, 0, 0.6852782, 0, 0.7282814, -26.62529, 0, -103.71335)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_01" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1523958259]
+[node name="wreck_01" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1078741459]
 transform = Transform3D(-0.98469627, 0, -0.1742791, 0, 1, 0, 0.1742791, 0, -0.98469627, 30.016607, 0, -165.89844)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_02" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=340229448]
+[node name="wreck_02" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=167938579]
 transform = Transform3D(-0.24856475, 0, 0.9686153, 0, 1, 0, -0.9686153, 0, -0.24856475, -25.81722, 0, -150.62787)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_03" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=346852092]
+[node name="wreck_03" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=781638377]
 transform = Transform3D(0.91221094, 0, 0.4097208, 0, 1, 0, -0.4097208, 0, 0.91221094, -31.21317, 0, -209.97795)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_04" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=100936067]
+[node name="wreck_04" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1682986846]
 transform = Transform3D(-0.99903005, 0, 0.04403374, 0, 1, 0, -0.04403374, 0, -0.99903005, 33.36629, 0, -144.88391)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_05" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1654054323]
+[node name="wreck_05" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1843193160]
 transform = Transform3D(0.3659544, 0, -0.93063277, 0, 1, 0, 0.93063277, 0, 0.3659544, -25.324762, 0, -48.252716)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_06" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=120618156]
+[node name="wreck_06" type="CollisionShape3D" parent="Scatter/wreck_body" unique_id=1157254191]
 transform = Transform3D(-0.56527936, 0, -0.82489955, 0, 1, 0, 0.82489955, 0, -0.56527936, -20.114977, 0, -100.26608)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="containers_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=2084098665]
+[node name="containers_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1005711388]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_c3doo")
 
-[node name="containers_body" type="StaticBody3D" parent="Scatter" unique_id=147635545]
+[node name="containers_body" type="StaticBody3D" parent="Scatter" unique_id=854657462]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"metal"
 metadata/zone = &"body"
 
-[node name="containers_00" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=278098350]
+[node name="containers_00" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=1748994592]
 transform = Transform3D(0.17152596, 0, 0.9851796, 0, 1, 0, -0.9851796, 0, 0.17152596, -20.28299, 0, -241.81525)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_01" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=186414008]
+[node name="containers_01" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=48703282]
 transform = Transform3D(0.7532703, 0, 0.6577111, 0, 1, 0, -0.6577111, 0, 0.7532703, 22.278624, 0, -229.728)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_02" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=1712471637]
+[node name="containers_02" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=479001807]
 transform = Transform3D(0.9472848, 0, 0.3203927, 0, 1, 0, -0.3203927, 0, 0.9472848, -33.692997, 0, -200.42676)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_03" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=1913635556]
+[node name="containers_03" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=1118459578]
 transform = Transform3D(-0.25000742, 0, -0.9682439, 0, 1, 0, 0.9682439, 0, -0.25000742, 30.319849, 0, -237.58807)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_04" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=992498082]
+[node name="containers_04" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=1901054011]
 transform = Transform3D(-0.60809016, 0, -0.79386795, 0, 1, 0, 0.79386795, 0, -0.60809016, -35.968746, 0, -230.71658)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_05" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=515509705]
+[node name="containers_05" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=2134138815]
 transform = Transform3D(0.036418978, 0, -0.9993366, 0, 1, 0, 0.9993366, 0, 0.036418978, -26.716425, 0, -183.76074)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_06" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=14558754]
+[node name="containers_06" type="CollisionShape3D" parent="Scatter/containers_body" unique_id=1158842928]
 transform = Transform3D(0.25775212, 0, -0.9662111, 0, 1, 0, 0.9662111, 0, 0.25775212, 25.486883, 0, -131.93794)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="dead_tree_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1077858814]
+[node name="dead_tree_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=229142866]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_4depl")
 
-[node name="dead_tree_body" type="StaticBody3D" parent="Scatter" unique_id=1617920581]
+[node name="dead_tree_body" type="StaticBody3D" parent="Scatter" unique_id=332890079]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="dead_tree_00" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1823686856]
+[node name="dead_tree_00" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1730852265]
 transform = Transform3D(-0.7097979, 0, -0.70440537, 0, 1, 0, 0.70440537, 0, -0.7097979, 36.235855, 0, -289.18982)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_01" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1604300700]
+[node name="dead_tree_01" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=525890593]
 transform = Transform3D(-0.37442064, 0, -0.92725897, 0, 1, 0, 0.92725897, 0, -0.37442064, -31.87638, 0, -151.76202)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_02" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1565664547]
+[node name="dead_tree_02" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=2043248731]
 transform = Transform3D(0.85330665, 0, 0.52140945, 0, 1, 0, -0.52140945, 0, 0.85330665, 25.535872, 0, -290.12238)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_03" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1936647158]
+[node name="dead_tree_03" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1578523496]
 transform = Transform3D(-0.13290115, 0, -0.9911293, 0, 1, 0, 0.9911293, 0, -0.13290115, 30.796898, 0, -97.25208)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_04" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1133668273]
+[node name="dead_tree_04" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=69770003]
 transform = Transform3D(-0.97747874, 0, -0.21103385, 0, 1, 0, 0.21103385, 0, -0.97747874, 37.725613, 0, -171.7428)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_05" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=717527852]
+[node name="dead_tree_05" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1795394102]
 transform = Transform3D(-0.7578261, 0, 0.6524566, 0, 1, 0, -0.6524566, 0, -0.7578261, 37.982265, 0, -301.97028)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_06" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1730392291]
+[node name="dead_tree_06" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=225428480]
 transform = Transform3D(0.84694505, 0, -0.5316804, 0, 1, 0, 0.5316804, 0, 0.84694505, -22.414263, 0, -262.21127)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_07" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1488762362]
+[node name="dead_tree_07" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1441030896]
 transform = Transform3D(-0.7201927, 0, -0.6937741, 0, 1, 0, 0.6937741, 0, -0.7201927, 17.209187, 0, -142.46767)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_08" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=614150989]
+[node name="dead_tree_08" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=161487849]
 transform = Transform3D(-0.9842596, 0, -0.1767286, 0, 1, 0, 0.1767286, 0, -0.9842596, -22.609684, 0, -166.0008)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_09" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1826558479]
+[node name="dead_tree_09" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=194094108]
 transform = Transform3D(-0.9393446, 0, -0.34297484, 0, 1, 0, 0.34297484, 0, -0.9393446, 28.696156, 0, -107.79652)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_10" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=282992970]
+[node name="dead_tree_10" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1459564955]
 transform = Transform3D(-0.8265026, 0, -0.56293285, 0, 1, 0, 0.56293285, 0, -0.8265026, 34.82456, 0, -51.50536)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_11" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1889015095]
+[node name="dead_tree_11" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1000886291]
 transform = Transform3D(-0.96879786, 0, -0.24785218, 0, 1, 0, 0.24785218, 0, -0.96879786, 28.114208, 0, -319.58832)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_12" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1627029030]
+[node name="dead_tree_12" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=242612642]
 transform = Transform3D(0.47838622, 0, 0.87814957, 0, 1, 0, -0.87814957, 0, 0.47838622, -36.309933, 0, -50.611073)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_13" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1996709182]
+[node name="dead_tree_13" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1298484790]
 transform = Transform3D(-0.8662411, 0, -0.49962622, 0, 1, 0, 0.49962622, 0, -0.8662411, -23.617083, 0, -287.6372)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_14" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1381825430]
+[node name="dead_tree_14" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=347407989]
 transform = Transform3D(-0.95431805, 0, 0.29879275, 0, 1, 0, -0.29879275, 0, -0.95431805, -37.093414, 0, -140.63893)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_15" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=509990384]
+[node name="dead_tree_15" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1417060922]
 transform = Transform3D(-0.026989087, 0, 0.99963576, 0, 1, 0, -0.99963576, 0, -0.026989087, -36.498608, 0, -180.54568)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_16" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1050243156]
+[node name="dead_tree_16" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=182711599]
 transform = Transform3D(-0.9588444, 0, -0.28393203, 0, 1, 0, 0.28393203, 0, -0.9588444, -26.520502, 0, -204.57396)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_17" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=91558071]
+[node name="dead_tree_17" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1618786115]
 transform = Transform3D(0.97011435, 0, 0.24264811, 0, 1, 0, -0.24264811, 0, 0.97011435, 35.982807, 0, -296.00043)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_18" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=378959090]
+[node name="dead_tree_18" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1070852391]
 transform = Transform3D(-0.6044112, 0, 0.7966725, 0, 1, 0, -0.7966725, 0, -0.6044112, 17.04374, 0, -219.68564)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_19" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=202532207]
+[node name="dead_tree_19" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1542699271]
 transform = Transform3D(-0.9888281, 0, 0.14906023, 0, 1, 0, -0.14906023, 0, -0.9888281, 21.455225, 0, -194.35226)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_20" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=325376354]
+[node name="dead_tree_20" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1471234902]
 transform = Transform3D(0.37091526, 0, -0.9286667, 0, 1, 0, 0.9286667, 0, 0.37091526, 17.388178, 0, -135.53638)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="dead_tree_21" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1673593173]
+[node name="dead_tree_21" type="CollisionShape3D" parent="Scatter/dead_tree_body" unique_id=1705751622]
 transform = Transform3D(-0.7814059, 0, -0.6240231, 0, 1, 0, 0.6240231, 0, -0.7814059, 32.219563, 0, -114.91582)
 shape = SubResource("ConcavePolygonShape3D_i0qio")
 
-[node name="tower_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1410198406]
+[node name="tower_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1648839704]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_togn6")
 
-[node name="tower_body" type="StaticBody3D" parent="Scatter" unique_id=270113557]
+[node name="tower_body" type="StaticBody3D" parent="Scatter" unique_id=842159643]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="tower_00" type="CollisionShape3D" parent="Scatter/tower_body" unique_id=1448587489]
+[node name="tower_00" type="CollisionShape3D" parent="Scatter/tower_body" unique_id=1376314242]
 transform = Transform3D(0.95197123, 0, -0.30618757, 0, 1, 0, 0.30618757, 0, 0.95197123, 33.779728, 0, -159.89484)
 shape = SubResource("ConcavePolygonShape3D_45v0v")
 
-[node name="tower_01" type="CollisionShape3D" parent="Scatter/tower_body" unique_id=82525831]
+[node name="tower_01" type="CollisionShape3D" parent="Scatter/tower_body" unique_id=1777340977]
 transform = Transform3D(0.6610549, 0, -0.75033754, 0, 1, 0, 0.75033754, 0, 0.6610549, 26.762846, 0, -137.35359)
 shape = SubResource("ConcavePolygonShape3D_45v0v")
 
-[node name="power_line_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1219345230]
+[node name="power_line_mm" type="MultiMeshInstance3D" parent="Scatter" unique_id=1862438607]
 material_override = ExtResource("25_hni2n")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_wrvq3")
 
-[node name="power_line_body" type="StaticBody3D" parent="Scatter" unique_id=157473728]
+[node name="power_line_body" type="StaticBody3D" parent="Scatter" unique_id=1089417662]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"wood"
 metadata/zone = &"body"
 
-[node name="power_line_00" type="CollisionShape3D" parent="Scatter/power_line_body" unique_id=540012998]
+[node name="power_line_00" type="CollisionShape3D" parent="Scatter/power_line_body" unique_id=957642699]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33, 0, -104)
 shape = SubResource("ConcavePolygonShape3D_kd3yr")
 
-[node name="power_line_01" type="CollisionShape3D" parent="Scatter/power_line_body" unique_id=694685606]
+[node name="power_line_01" type="CollisionShape3D" parent="Scatter/power_line_body" unique_id=1993485102]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -33, 0, -196)
 shape = SubResource("ConcavePolygonShape3D_kd3yr")
 
-[node name="WorkLights" type="Node3D" parent="." unique_id=884139997]
+[node name="WorkLights" type="Node3D" parent="." unique_id=401008988]
 
-[node name="Lamp0" type="OmniLight3D" parent="WorkLights" unique_id=67031326]
+[node name="Lamp0" type="OmniLight3D" parent="WorkLights" unique_id=208914523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1, 2.98, 11.4)
 light_color = Color(1, 0.85, 0.62, 1)
 light_energy = 2.6
@@ -1868,7 +1868,7 @@ distance_fade_enabled = true
 distance_fade_begin = 34.0
 omni_range = 6.5
 
-[node name="Lamp1" type="OmniLight3D" parent="WorkLights" unique_id=2037726183]
+[node name="Lamp1" type="OmniLight3D" parent="WorkLights" unique_id=1467282893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 2.98, 14.6)
 light_color = Color(1, 0.84, 0.6, 1)
 light_energy = 2.2
@@ -1876,7 +1876,7 @@ distance_fade_enabled = true
 distance_fade_begin = 34.0
 omni_range = 6.0
 
-[node name="Lamp2" type="OmniLight3D" parent="WorkLights" unique_id=1780342778]
+[node name="Lamp2" type="OmniLight3D" parent="WorkLights" unique_id=1716504825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.43, 12.9)
 light_color = Color(1, 0.93, 0.78, 1)
 light_energy = 3.4
@@ -1884,139 +1884,139 @@ distance_fade_enabled = true
 distance_fade_begin = 34.0
 omni_range = 4.2
 
-[node name="Fittings" type="MeshInstance3D" parent="WorkLights" unique_id=176168543]
+[node name="Fittings" type="MeshInstance3D" parent="WorkLights" unique_id=499123432]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("31_2mbho")
 
-[node name="Targets" type="Node3D" parent="." unique_id=813932851]
+[node name="Targets" type="Node3D" parent="." unique_id=304734327]
 
-[node name="Plate_15_55" type="Node3D" parent="Targets" unique_id=1576004172]
+[node name="Plate_15_55" type="Node3D" parent="Targets" unique_id=620518913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -15)
 script = ExtResource("32_0fx3c")
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_15_55" unique_id=1874085371]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_15_55" unique_id=1691140939]
 gi_mode = 0
 mesh = ExtResource("33_yf255")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_15_55" unique_id=2100203801]
+[node name="Swing" type="Node3D" parent="Targets/Plate_15_55" unique_id=1188832389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_15_55/Swing" unique_id=887936868]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_15_55/Swing" unique_id=1622657558]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_15_55/Swing/Face" unique_id=2084917233]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_15_55/Swing/Face" unique_id=1976365725]
 gi_mode = 0
 mesh = ExtResource("34_jyxwg")
 
-[node name="@CollisionShape3D@28" type="CollisionShape3D" parent="Targets/Plate_15_55/Swing/Face" unique_id=1362649469]
+[node name="@CollisionShape3D@28" type="CollisionShape3D" parent="Targets/Plate_15_55/Swing/Face" unique_id=951323143]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.276, -0.026)
 shape = SubResource("CylinderShape3D_jt1f8")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_15_55/Swing" unique_id=1388535410]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_15_55/Swing" unique_id=1906130363]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_15_55/Swing/Spot" unique_id=1018411274]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_15_55/Swing/Spot" unique_id=1744200429]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("35_xqn5b")
 
-[node name="@CollisionShape3D@29" type="CollisionShape3D" parent="Targets/Plate_15_55/Swing/Spot" unique_id=879621789]
+[node name="@CollisionShape3D@29" type="CollisionShape3D" parent="Targets/Plate_15_55/Swing/Spot" unique_id=1528834254]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.276, 0.03)
 shape = SubResource("CylinderShape3D_g1lrc")
 
-[node name="Plate_15_0" type="Node3D" parent="Targets" unique_id=1457844605]
+[node name="Plate_15_0" type="Node3D" parent="Targets" unique_id=853265105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 script = ExtResource("32_0fx3c")
 max_health = 45.0
 target_radius = 0.24
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_15_0" unique_id=202896770]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_15_0" unique_id=1628319393]
 gi_mode = 0
 mesh = ExtResource("33_yf255")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_15_0" unique_id=1564413052]
+[node name="Swing" type="Node3D" parent="Targets/Plate_15_0" unique_id=1819110514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_15_0/Swing" unique_id=1769805763]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_15_0/Swing" unique_id=437482983]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_15_0/Swing/Face" unique_id=117086749]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_15_0/Swing/Face" unique_id=1998166413]
 gi_mode = 0
 mesh = ExtResource("36_6phgu")
 
-[node name="@CollisionShape3D@30" type="CollisionShape3D" parent="Targets/Plate_15_0/Swing/Face" unique_id=358136716]
+[node name="@CollisionShape3D@30" type="CollisionShape3D" parent="Targets/Plate_15_0/Swing/Face" unique_id=555975761]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.2208, -0.026)
 shape = SubResource("CylinderShape3D_5drf7")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_15_0/Swing" unique_id=666922443]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_15_0/Swing" unique_id=460001039]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_15_0/Swing/Spot" unique_id=600569470]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_15_0/Swing/Spot" unique_id=892735458]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("37_jth78")
 
-[node name="@CollisionShape3D@31" type="CollisionShape3D" parent="Targets/Plate_15_0/Swing/Spot" unique_id=288942775]
+[node name="@CollisionShape3D@31" type="CollisionShape3D" parent="Targets/Plate_15_0/Swing/Spot" unique_id=94246990]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.2208, 0.03)
 shape = SubResource("CylinderShape3D_acjpi")
 
-[node name="@Node3D@34" type="Node3D" parent="Targets" unique_id=926491465]
+[node name="@Node3D@34" type="Node3D" parent="Targets" unique_id=1092485033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -15)
 script = ExtResource("32_0fx3c")
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@34" unique_id=622252052]
+[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@34" unique_id=1517315906]
 gi_mode = 0
 mesh = ExtResource("33_yf255")
 
-[node name="Swing" type="Node3D" parent="Targets/@Node3D@34" unique_id=384689445]
+[node name="Swing" type="Node3D" parent="Targets/@Node3D@34" unique_id=1570900331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@34/Swing" unique_id=1932677787]
+[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@34/Swing" unique_id=1771722709]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@34/Swing/Face" unique_id=1817314495]
+[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@34/Swing/Face" unique_id=257833442]
 gi_mode = 0
 mesh = ExtResource("34_jyxwg")
 
-[node name="@CollisionShape3D@32" type="CollisionShape3D" parent="Targets/@Node3D@34/Swing/Face" unique_id=1266838891]
+[node name="@CollisionShape3D@32" type="CollisionShape3D" parent="Targets/@Node3D@34/Swing/Face" unique_id=1668003555]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.276, -0.026)
 shape = SubResource("CylinderShape3D_er3ud")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@34/Swing" unique_id=1188771915]
+[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@34/Swing" unique_id=2039129619]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@34/Swing/Spot" unique_id=1694492578]
+[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@34/Swing/Spot" unique_id=1206044762]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("35_xqn5b")
 
-[node name="@CollisionShape3D@33" type="CollisionShape3D" parent="Targets/@Node3D@34/Swing/Spot" unique_id=1813070581]
+[node name="@CollisionShape3D@33" type="CollisionShape3D" parent="Targets/@Node3D@34/Swing/Spot" unique_id=564830035]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.276, 0.03)
 shape = SubResource("CylinderShape3D_wu44a")
 
-[node name="Popper_22_90" type="Node3D" parent="Targets" unique_id=594785638]
+[node name="Popper_22_90" type="Node3D" parent="Targets" unique_id=743618136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -22)
 script = ExtResource("32_0fx3c")
 kind = 1
@@ -2027,41 +2027,41 @@ reset_seconds = 6.0
 distance_hint = 22.0
 swing_path = NodePath("Swing")
 
-[node name="Swing" type="Node3D" parent="Targets/Popper_22_90" unique_id=1018565229]
+[node name="Swing" type="Node3D" parent="Targets/Popper_22_90" unique_id=1384492431]
 
-[node name="Body" type="StaticBody3D" parent="Targets/Popper_22_90/Swing" unique_id=524386027]
+[node name="Body" type="StaticBody3D" parent="Targets/Popper_22_90/Swing" unique_id=1492083687]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"popper"
 metadata/zone = &"body"
 
-[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_22_90/Swing/Body" unique_id=1292826577]
+[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_22_90/Swing/Body" unique_id=1491080396]
 gi_mode = 0
 mesh = ExtResource("38_6687t")
 
-[node name="@CollisionShape3D@35" type="CollisionShape3D" parent="Targets/Popper_22_90/Swing/Body" unique_id=551614393]
+[node name="@CollisionShape3D@35" type="CollisionShape3D" parent="Targets/Popper_22_90/Swing/Body" unique_id=275635583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, -0.015)
 shape = SubResource("BoxShape3D_cde5h")
 
-[node name="@CollisionShape3D@36" type="CollisionShape3D" parent="Targets/Popper_22_90/Swing/Body" unique_id=1838712914]
+[node name="@CollisionShape3D@36" type="CollisionShape3D" parent="Targets/Popper_22_90/Swing/Body" unique_id=862104241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0)
 shape = SubResource("BoxShape3D_mssjy")
 
-[node name="Head" type="StaticBody3D" parent="Targets/Popper_22_90/Swing" unique_id=1541778641]
+[node name="Head" type="StaticBody3D" parent="Targets/Popper_22_90/Swing" unique_id=1159566111]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"popper"
 metadata/zone = &"head"
 
-[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_22_90/Swing/Head" unique_id=481231606]
+[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_22_90/Swing/Head" unique_id=899371657]
 gi_mode = 0
 mesh = ExtResource("39_6a0tw")
 
-[node name="@CollisionShape3D@37" type="CollisionShape3D" parent="Targets/Popper_22_90/Swing/Head" unique_id=1976257892]
+[node name="@CollisionShape3D@37" type="CollisionShape3D" parent="Targets/Popper_22_90/Swing/Head" unique_id=1254568276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0.004)
 shape = SubResource("BoxShape3D_4tsbr")
 
-[node name="@Node3D@41" type="Node3D" parent="Targets" unique_id=1263788233]
+[node name="@Node3D@41" type="Node3D" parent="Targets" unique_id=1904425289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -22)
 script = ExtResource("32_0fx3c")
 kind = 1
@@ -2072,56 +2072,56 @@ reset_seconds = 6.0
 distance_hint = 22.0
 swing_path = NodePath("Swing")
 
-[node name="Swing" type="Node3D" parent="Targets/@Node3D@41" unique_id=198547091]
+[node name="Swing" type="Node3D" parent="Targets/@Node3D@41" unique_id=907880563]
 
-[node name="Body" type="StaticBody3D" parent="Targets/@Node3D@41/Swing" unique_id=1032763294]
+[node name="Body" type="StaticBody3D" parent="Targets/@Node3D@41/Swing" unique_id=986181558]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"popper"
 metadata/zone = &"body"
 
-[node name="Steel" type="MeshInstance3D" parent="Targets/@Node3D@41/Swing/Body" unique_id=966862084]
+[node name="Steel" type="MeshInstance3D" parent="Targets/@Node3D@41/Swing/Body" unique_id=562559165]
 gi_mode = 0
 mesh = ExtResource("38_6687t")
 
-[node name="@CollisionShape3D@38" type="CollisionShape3D" parent="Targets/@Node3D@41/Swing/Body" unique_id=249983085]
+[node name="@CollisionShape3D@38" type="CollisionShape3D" parent="Targets/@Node3D@41/Swing/Body" unique_id=1278688283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, -0.015)
 shape = SubResource("BoxShape3D_pvg3q")
 
-[node name="@CollisionShape3D@39" type="CollisionShape3D" parent="Targets/@Node3D@41/Swing/Body" unique_id=1789223470]
+[node name="@CollisionShape3D@39" type="CollisionShape3D" parent="Targets/@Node3D@41/Swing/Body" unique_id=967700619]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0)
 shape = SubResource("BoxShape3D_x00ue")
 
-[node name="Head" type="StaticBody3D" parent="Targets/@Node3D@41/Swing" unique_id=954881922]
+[node name="Head" type="StaticBody3D" parent="Targets/@Node3D@41/Swing" unique_id=814978820]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"popper"
 metadata/zone = &"head"
 
-[node name="Steel" type="MeshInstance3D" parent="Targets/@Node3D@41/Swing/Head" unique_id=1851050265]
+[node name="Steel" type="MeshInstance3D" parent="Targets/@Node3D@41/Swing/Head" unique_id=896815264]
 gi_mode = 0
 mesh = ExtResource("39_6a0tw")
 
-[node name="@CollisionShape3D@40" type="CollisionShape3D" parent="Targets/@Node3D@41/Swing/Head" unique_id=1416654639]
+[node name="@CollisionShape3D@40" type="CollisionShape3D" parent="Targets/@Node3D@41/Swing/Head" unique_id=790888776]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0.004)
 shape = SubResource("BoxShape3D_qgj2x")
 
-[node name="BottleRack" type="Node3D" parent="Targets" unique_id=1155114878]
+[node name="BottleRack" type="Node3D" parent="Targets" unique_id=1390519782]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 
-[node name="Rail" type="MeshInstance3D" parent="Targets/BottleRack" unique_id=208980986]
+[node name="Rail" type="MeshInstance3D" parent="Targets/BottleRack" unique_id=179248185]
 gi_mode = 0
 mesh = ExtResource("40_axduw")
 
-[node name="Collision" type="StaticBody3D" parent="Targets/BottleRack" unique_id=492435444]
+[node name="Collision" type="StaticBody3D" parent="Targets/BottleRack" unique_id=1856928644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_mask = 0
 metadata/surface = &"wood"
 
-[node name="@CollisionShape3D@42" type="CollisionShape3D" parent="Targets/BottleRack/Collision" unique_id=2035161843]
+[node name="@CollisionShape3D@42" type="CollisionShape3D" parent="Targets/BottleRack/Collision" unique_id=1632524608]
 shape = SubResource("BoxShape3D_06kcc")
 
-[node name="Bottle0" type="Node3D" parent="Targets" unique_id=1613974754]
+[node name="Bottle0" type="Node3D" parent="Targets" unique_id=1906063759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2131,37 +2131,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle0" unique_id=1161437407]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle0" unique_id=1603017037]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle0/Glass" unique_id=1753463829]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle0/Glass" unique_id=213322091]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@43" type="CollisionShape3D" parent="Targets/Bottle0/Glass" unique_id=1212832850]
+[node name="@CollisionShape3D@43" type="CollisionShape3D" parent="Targets/Bottle0/Glass" unique_id=165971066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_1b4xd")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle0" unique_id=430746178]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle0" unique_id=492199464]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle0/Neck" unique_id=1392309177]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle0/Neck" unique_id=672528144]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@44" type="CollisionShape3D" parent="Targets/Bottle0/Neck" unique_id=1627466717]
+[node name="@CollisionShape3D@44" type="CollisionShape3D" parent="Targets/Bottle0/Neck" unique_id=1133153915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_i0ap5")
 
-[node name="Bottle1" type="Node3D" parent="Targets" unique_id=24472024]
+[node name="Bottle1" type="Node3D" parent="Targets" unique_id=698889291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2171,37 +2171,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle1" unique_id=873539018]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle1" unique_id=148806283]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle1/Glass" unique_id=1215175035]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle1/Glass" unique_id=601235667]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@45" type="CollisionShape3D" parent="Targets/Bottle1/Glass" unique_id=425410570]
+[node name="@CollisionShape3D@45" type="CollisionShape3D" parent="Targets/Bottle1/Glass" unique_id=2118996470]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_kk7pw")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle1" unique_id=306716658]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle1" unique_id=2045188651]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle1/Neck" unique_id=733208277]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle1/Neck" unique_id=1293409114]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@46" type="CollisionShape3D" parent="Targets/Bottle1/Neck" unique_id=2060270821]
+[node name="@CollisionShape3D@46" type="CollisionShape3D" parent="Targets/Bottle1/Neck" unique_id=1512077715]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_imgt8")
 
-[node name="Bottle2" type="Node3D" parent="Targets" unique_id=1202516626]
+[node name="Bottle2" type="Node3D" parent="Targets" unique_id=434804300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2211,37 +2211,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle2" unique_id=231219479]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle2" unique_id=1572647697]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle2/Glass" unique_id=555462240]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle2/Glass" unique_id=1844142627]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@47" type="CollisionShape3D" parent="Targets/Bottle2/Glass" unique_id=927561308]
+[node name="@CollisionShape3D@47" type="CollisionShape3D" parent="Targets/Bottle2/Glass" unique_id=2130434024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_qdred")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle2" unique_id=2078297041]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle2" unique_id=1357918171]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle2/Neck" unique_id=1768979672]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle2/Neck" unique_id=962678495]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@48" type="CollisionShape3D" parent="Targets/Bottle2/Neck" unique_id=891740914]
+[node name="@CollisionShape3D@48" type="CollisionShape3D" parent="Targets/Bottle2/Neck" unique_id=1281569269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_s8i2e")
 
-[node name="Bottle3" type="Node3D" parent="Targets" unique_id=1591911146]
+[node name="Bottle3" type="Node3D" parent="Targets" unique_id=1147116003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2251,37 +2251,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle3" unique_id=634406858]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle3" unique_id=1327295176]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle3/Glass" unique_id=325316629]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle3/Glass" unique_id=2081987114]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@49" type="CollisionShape3D" parent="Targets/Bottle3/Glass" unique_id=498618337]
+[node name="@CollisionShape3D@49" type="CollisionShape3D" parent="Targets/Bottle3/Glass" unique_id=318641027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_ahwyl")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle3" unique_id=981089268]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle3" unique_id=712672997]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle3/Neck" unique_id=535625919]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle3/Neck" unique_id=1273744630]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@50" type="CollisionShape3D" parent="Targets/Bottle3/Neck" unique_id=790007858]
+[node name="@CollisionShape3D@50" type="CollisionShape3D" parent="Targets/Bottle3/Neck" unique_id=2134000466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_tei5r")
 
-[node name="Bottle4" type="Node3D" parent="Targets" unique_id=877048112]
+[node name="Bottle4" type="Node3D" parent="Targets" unique_id=1857791603]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2291,37 +2291,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle4" unique_id=1797989011]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle4" unique_id=539754244]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle4/Glass" unique_id=142973625]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle4/Glass" unique_id=1618266284]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@51" type="CollisionShape3D" parent="Targets/Bottle4/Glass" unique_id=617622977]
+[node name="@CollisionShape3D@51" type="CollisionShape3D" parent="Targets/Bottle4/Glass" unique_id=1540569384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_1wk6t")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle4" unique_id=1629969799]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle4" unique_id=2005830092]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle4/Neck" unique_id=300519145]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle4/Neck" unique_id=596147921]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@52" type="CollisionShape3D" parent="Targets/Bottle4/Neck" unique_id=193223686]
+[node name="@CollisionShape3D@52" type="CollisionShape3D" parent="Targets/Bottle4/Neck" unique_id=1442240373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_4af4e")
 
-[node name="Bottle5" type="Node3D" parent="Targets" unique_id=1097153136]
+[node name="Bottle5" type="Node3D" parent="Targets" unique_id=710437061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2331,37 +2331,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle5" unique_id=2095382987]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle5" unique_id=631877620]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle5/Glass" unique_id=615327133]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle5/Glass" unique_id=964179384]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@53" type="CollisionShape3D" parent="Targets/Bottle5/Glass" unique_id=630916794]
+[node name="@CollisionShape3D@53" type="CollisionShape3D" parent="Targets/Bottle5/Glass" unique_id=676241034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_pgsn2")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle5" unique_id=895741605]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle5" unique_id=34018523]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle5/Neck" unique_id=593582033]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle5/Neck" unique_id=1214021438]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@54" type="CollisionShape3D" parent="Targets/Bottle5/Neck" unique_id=496108873]
+[node name="@CollisionShape3D@54" type="CollisionShape3D" parent="Targets/Bottle5/Neck" unique_id=68625980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_i5v01")
 
-[node name="Bottle6" type="Node3D" parent="Targets" unique_id=240980421]
+[node name="Bottle6" type="Node3D" parent="Targets" unique_id=907072860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2371,37 +2371,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle6" unique_id=356028753]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle6" unique_id=1310968940]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle6/Glass" unique_id=1871301608]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle6/Glass" unique_id=358092510]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@55" type="CollisionShape3D" parent="Targets/Bottle6/Glass" unique_id=1478965933]
+[node name="@CollisionShape3D@55" type="CollisionShape3D" parent="Targets/Bottle6/Glass" unique_id=441939408]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_7s7qd")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle6" unique_id=1163775927]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle6" unique_id=1291824251]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle6/Neck" unique_id=902890019]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle6/Neck" unique_id=1867020073]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@56" type="CollisionShape3D" parent="Targets/Bottle6/Neck" unique_id=2014759715]
+[node name="@CollisionShape3D@56" type="CollisionShape3D" parent="Targets/Bottle6/Neck" unique_id=873648770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_aqu0u")
 
-[node name="Bottle7" type="Node3D" parent="Targets" unique_id=2054869811]
+[node name="Bottle7" type="Node3D" parent="Targets" unique_id=1330773674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2411,37 +2411,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle7" unique_id=691561763]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle7" unique_id=881478396]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle7/Glass" unique_id=1205060590]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle7/Glass" unique_id=890285879]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@57" type="CollisionShape3D" parent="Targets/Bottle7/Glass" unique_id=10295177]
+[node name="@CollisionShape3D@57" type="CollisionShape3D" parent="Targets/Bottle7/Glass" unique_id=1867112191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_anp2l")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle7" unique_id=765115458]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle7" unique_id=1447662995]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle7/Neck" unique_id=1720522420]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle7/Neck" unique_id=1764422565]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@58" type="CollisionShape3D" parent="Targets/Bottle7/Neck" unique_id=2077726922]
+[node name="@CollisionShape3D@58" type="CollisionShape3D" parent="Targets/Bottle7/Neck" unique_id=1161395561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_lugpk")
 
-[node name="Bottle8" type="Node3D" parent="Targets" unique_id=917118583]
+[node name="Bottle8" type="Node3D" parent="Targets" unique_id=1971367376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, 1.04, -12)
 script = ExtResource("32_0fx3c")
 kind = 2
@@ -2451,37 +2451,37 @@ target_radius = 0.09
 reset_seconds = 9.0
 distance_hint = 12.0
 
-[node name="Glass" type="StaticBody3D" parent="Targets/Bottle8" unique_id=1625535173]
+[node name="Glass" type="StaticBody3D" parent="Targets/Bottle8" unique_id=991872246]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Bottle8/Glass" unique_id=950540573]
+[node name="Body" type="MeshInstance3D" parent="Targets/Bottle8/Glass" unique_id=1393629477]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_m3nrh")
 
-[node name="@CollisionShape3D@59" type="CollisionShape3D" parent="Targets/Bottle8/Glass" unique_id=1299247260]
+[node name="@CollisionShape3D@59" type="CollisionShape3D" parent="Targets/Bottle8/Glass" unique_id=943975939]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 shape = SubResource("CylinderShape3D_hw5it")
 
-[node name="Neck" type="StaticBody3D" parent="Targets/Bottle8" unique_id=1564760611]
+[node name="Neck" type="StaticBody3D" parent="Targets/Bottle8" unique_id=1385244921]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"glass"
 metadata/zone = &"head"
 
-[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle8/Neck" unique_id=1958010527]
+[node name="Neck" type="MeshInstance3D" parent="Targets/Bottle8/Neck" unique_id=913183112]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_xuguc")
 
-[node name="@CollisionShape3D@60" type="CollisionShape3D" parent="Targets/Bottle8/Neck" unique_id=175379770]
+[node name="@CollisionShape3D@60" type="CollisionShape3D" parent="Targets/Bottle8/Neck" unique_id=1860097500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 shape = SubResource("CylinderShape3D_vbfv1")
 
-[node name="PaperTarget" type="Node3D" parent="Targets" unique_id=341261978]
+[node name="PaperTarget" type="Node3D" parent="Targets" unique_id=1495931386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
 script = ExtResource("43_f4c1m")
 face_path = NodePath("Face")
@@ -2492,28 +2492,28 @@ target_radius = 0.58
 reset_seconds = 0.0
 distance_hint = 25.0
 
-[node name="Frame" type="MeshInstance3D" parent="Targets/PaperTarget" unique_id=1052463561]
+[node name="Frame" type="MeshInstance3D" parent="Targets/PaperTarget" unique_id=1663082795]
 gi_mode = 0
 mesh = ExtResource("44_3k0ru")
 
-[node name="Face" type="MeshInstance3D" parent="Targets/PaperTarget" unique_id=2023148822]
+[node name="Face" type="MeshInstance3D" parent="Targets/PaperTarget" unique_id=6718049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0.015)
 material_override = ExtResource("45_qxs3u")
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_vpd00")
 
-[node name="Board" type="StaticBody3D" parent="Targets/PaperTarget" unique_id=345692245]
+[node name="Board" type="StaticBody3D" parent="Targets/PaperTarget" unique_id=1871758483]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"paper"
 metadata/zone = &"body"
 
-[node name="@CollisionShape3D@61" type="CollisionShape3D" parent="Targets/PaperTarget/Board" unique_id=264064637]
+[node name="@CollisionShape3D@61" type="CollisionShape3D" parent="Targets/PaperTarget/Board" unique_id=1478109877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0.008)
 shape = SubResource("BoxShape3D_35caw")
 
-[node name="Plate_35_70" type="Node3D" parent="Targets" unique_id=1969400191]
+[node name="Plate_35_70" type="Node3D" parent="Targets" unique_id=1701052704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -35)
 script = ExtResource("32_0fx3c")
 max_health = 160.0
@@ -2522,43 +2522,43 @@ target_radius = 0.42
 distance_hint = 35.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_35_70" unique_id=646011321]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_35_70" unique_id=1613462050]
 gi_mode = 0
 mesh = ExtResource("33_yf255")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_35_70" unique_id=1801595009]
+[node name="Swing" type="Node3D" parent="Targets/Plate_35_70" unique_id=1202324729]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_35_70/Swing" unique_id=718798366]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_35_70/Swing" unique_id=968403481]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_35_70/Swing/Face" unique_id=1953788696]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_35_70/Swing/Face" unique_id=1918942447]
 gi_mode = 0
 mesh = ExtResource("46_bet3r")
 
-[node name="@CollisionShape3D@62" type="CollisionShape3D" parent="Targets/Plate_35_70/Swing/Face" unique_id=1315812793]
+[node name="@CollisionShape3D@62" type="CollisionShape3D" parent="Targets/Plate_35_70/Swing/Face" unique_id=508212841]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.3864, -0.026)
 shape = SubResource("CylinderShape3D_1tvbi")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_35_70/Swing" unique_id=1660110091]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_35_70/Swing" unique_id=515087976]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_35_70/Swing/Spot" unique_id=1937459702]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_35_70/Swing/Spot" unique_id=2012613232]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("47_dtmmp")
 
-[node name="@CollisionShape3D@63" type="CollisionShape3D" parent="Targets/Plate_35_70/Swing/Spot" unique_id=1737030389]
+[node name="@CollisionShape3D@63" type="CollisionShape3D" parent="Targets/Plate_35_70/Swing/Spot" unique_id=361136122]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.3864, 0.03)
 shape = SubResource("CylinderShape3D_821sd")
 
-[node name="@Node3D@66" type="Node3D" parent="Targets" unique_id=702323941]
+[node name="@Node3D@66" type="Node3D" parent="Targets" unique_id=1624663436]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -35)
 script = ExtResource("32_0fx3c")
 max_health = 160.0
@@ -2567,43 +2567,43 @@ target_radius = 0.42
 distance_hint = 35.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@66" unique_id=1442407043]
+[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@66" unique_id=1755888310]
 gi_mode = 0
 mesh = ExtResource("33_yf255")
 
-[node name="Swing" type="Node3D" parent="Targets/@Node3D@66" unique_id=237085413]
+[node name="Swing" type="Node3D" parent="Targets/@Node3D@66" unique_id=1521873783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@66/Swing" unique_id=1164174610]
+[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@66/Swing" unique_id=279679112]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@66/Swing/Face" unique_id=1957598354]
+[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@66/Swing/Face" unique_id=83074864]
 gi_mode = 0
 mesh = ExtResource("46_bet3r")
 
-[node name="@CollisionShape3D@64" type="CollisionShape3D" parent="Targets/@Node3D@66/Swing/Face" unique_id=1865110296]
+[node name="@CollisionShape3D@64" type="CollisionShape3D" parent="Targets/@Node3D@66/Swing/Face" unique_id=1565224965]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.3864, -0.026)
 shape = SubResource("CylinderShape3D_y8ke0")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@66/Swing" unique_id=1619115370]
+[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@66/Swing" unique_id=277027148]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@66/Swing/Spot" unique_id=1190016434]
+[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@66/Swing/Spot" unique_id=1613277150]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("47_dtmmp")
 
-[node name="@CollisionShape3D@65" type="CollisionShape3D" parent="Targets/@Node3D@66/Swing/Spot" unique_id=926978131]
+[node name="@CollisionShape3D@65" type="CollisionShape3D" parent="Targets/@Node3D@66/Swing/Spot" unique_id=812178972]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.3864, 0.03)
 shape = SubResource("CylinderShape3D_6d6gj")
 
-[node name="Barrel_30_130" type="Node3D" parent="Targets" unique_id=1599059553]
+[node name="Barrel_30_130" type="Node3D" parent="Targets" unique_id=527075910]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -0.02, -30)
 script = ExtResource("32_0fx3c")
 kind = 3
@@ -2613,35 +2613,35 @@ target_radius = 0.32
 reset_seconds = 13.0
 distance_hint = 30.0
 
-[node name="Drum" type="StaticBody3D" parent="Targets/Barrel_30_130" unique_id=32138688]
+[node name="Drum" type="StaticBody3D" parent="Targets/Barrel_30_130" unique_id=2054047281]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Barrel_30_130/Drum" unique_id=1298031065]
+[node name="Body" type="MeshInstance3D" parent="Targets/Barrel_30_130/Drum" unique_id=357495167]
 gi_mode = 0
 mesh = ExtResource("48_63ytp")
 
-[node name="@CollisionShape3D@67" type="CollisionShape3D" parent="Targets/Barrel_30_130/Drum" unique_id=1652531118]
+[node name="@CollisionShape3D@67" type="CollisionShape3D" parent="Targets/Barrel_30_130/Drum" unique_id=1116584805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("CylinderShape3D_2f0ac")
 
-[node name="Cap" type="StaticBody3D" parent="Targets/Barrel_30_130" unique_id=1833532294]
+[node name="Cap" type="StaticBody3D" parent="Targets/Barrel_30_130" unique_id=884647513]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"head"
 
-[node name="Cap" type="MeshInstance3D" parent="Targets/Barrel_30_130/Cap" unique_id=1186805780]
+[node name="Cap" type="MeshInstance3D" parent="Targets/Barrel_30_130/Cap" unique_id=1391209872]
 gi_mode = 0
 mesh = ExtResource("49_vefqt")
 
-[node name="@CollisionShape3D@68" type="CollisionShape3D" parent="Targets/Barrel_30_130/Cap" unique_id=1165524673]
+[node name="@CollisionShape3D@68" type="CollisionShape3D" parent="Targets/Barrel_30_130/Cap" unique_id=1783832864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
 shape = SubResource("CylinderShape3D_ststp")
 
-[node name="@Node3D@71" type="Node3D" parent="Targets" unique_id=768943989]
+[node name="@Node3D@71" type="Node3D" parent="Targets" unique_id=1925077741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -0.02, -30)
 script = ExtResource("32_0fx3c")
 kind = 3
@@ -2651,35 +2651,35 @@ target_radius = 0.32
 reset_seconds = 13.0
 distance_hint = 30.0
 
-[node name="Drum" type="StaticBody3D" parent="Targets/@Node3D@71" unique_id=561106365]
+[node name="Drum" type="StaticBody3D" parent="Targets/@Node3D@71" unique_id=1725327242]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/@Node3D@71/Drum" unique_id=397534218]
+[node name="Body" type="MeshInstance3D" parent="Targets/@Node3D@71/Drum" unique_id=335600848]
 gi_mode = 0
 mesh = ExtResource("48_63ytp")
 
-[node name="@CollisionShape3D@69" type="CollisionShape3D" parent="Targets/@Node3D@71/Drum" unique_id=1054263029]
+[node name="@CollisionShape3D@69" type="CollisionShape3D" parent="Targets/@Node3D@71/Drum" unique_id=1060199634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("CylinderShape3D_73jkw")
 
-[node name="Cap" type="StaticBody3D" parent="Targets/@Node3D@71" unique_id=1383736370]
+[node name="Cap" type="StaticBody3D" parent="Targets/@Node3D@71" unique_id=1067233544]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"head"
 
-[node name="Cap" type="MeshInstance3D" parent="Targets/@Node3D@71/Cap" unique_id=348175826]
+[node name="Cap" type="MeshInstance3D" parent="Targets/@Node3D@71/Cap" unique_id=2006210370]
 gi_mode = 0
 mesh = ExtResource("49_vefqt")
 
-[node name="@CollisionShape3D@70" type="CollisionShape3D" parent="Targets/@Node3D@71/Cap" unique_id=654992208]
+[node name="@CollisionShape3D@70" type="CollisionShape3D" parent="Targets/@Node3D@71/Cap" unique_id=71435990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
 shape = SubResource("CylinderShape3D_0uyb6")
 
-[node name="Barrel_52_0" type="Node3D" parent="Targets" unique_id=1790128624]
+[node name="Barrel_52_0" type="Node3D" parent="Targets" unique_id=5045213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, -52)
 script = ExtResource("32_0fx3c")
 kind = 3
@@ -2689,42 +2689,42 @@ target_radius = 0.32
 reset_seconds = 13.0
 distance_hint = 52.0
 
-[node name="Drum" type="StaticBody3D" parent="Targets/Barrel_52_0" unique_id=1492846306]
+[node name="Drum" type="StaticBody3D" parent="Targets/Barrel_52_0" unique_id=505373848]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Barrel_52_0/Drum" unique_id=1251484797]
+[node name="Body" type="MeshInstance3D" parent="Targets/Barrel_52_0/Drum" unique_id=1292435974]
 gi_mode = 0
 mesh = ExtResource("50_io470")
 
-[node name="@CollisionShape3D@72" type="CollisionShape3D" parent="Targets/Barrel_52_0/Drum" unique_id=1278385949]
+[node name="@CollisionShape3D@72" type="CollisionShape3D" parent="Targets/Barrel_52_0/Drum" unique_id=818977466]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("CylinderShape3D_mp6f7")
 
-[node name="Cap" type="StaticBody3D" parent="Targets/Barrel_52_0" unique_id=612760180]
+[node name="Cap" type="StaticBody3D" parent="Targets/Barrel_52_0" unique_id=2093978674]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"head"
 
-[node name="Cap" type="MeshInstance3D" parent="Targets/Barrel_52_0/Cap" unique_id=1042791686]
+[node name="Cap" type="MeshInstance3D" parent="Targets/Barrel_52_0/Cap" unique_id=609835067]
 gi_mode = 0
 mesh = ExtResource("49_vefqt")
 
-[node name="@CollisionShape3D@73" type="CollisionShape3D" parent="Targets/Barrel_52_0/Cap" unique_id=231947729]
+[node name="@CollisionShape3D@73" type="CollisionShape3D" parent="Targets/Barrel_52_0/Cap" unique_id=1398422519]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
 shape = SubResource("CylinderShape3D_avdbl")
 
-[node name="MoverRig" type="Node3D" parent="Targets" unique_id=873429040]
+[node name="MoverRig" type="Node3D" parent="Targets" unique_id=1230938370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
 
-[node name="Rail" type="MeshInstance3D" parent="Targets/MoverRig" unique_id=1953110723]
+[node name="Rail" type="MeshInstance3D" parent="Targets/MoverRig" unique_id=1107934245]
 gi_mode = 0
 mesh = ExtResource("51_eoxln")
 
-[node name="Mover" type="Node3D" parent="Targets/MoverRig" unique_id=1676636880]
+[node name="Mover" type="Node3D" parent="Targets/MoverRig" unique_id=1542519858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 script = ExtResource("32_0fx3c")
 kind = 5
@@ -2736,42 +2736,42 @@ swing_path = NodePath("Swing")
 track_span = 7.5
 track_phase = 3.656703030873183
 
-[node name="Swing" type="Node3D" parent="Targets/MoverRig/Mover" unique_id=140372409]
+[node name="Swing" type="Node3D" parent="Targets/MoverRig/Mover" unique_id=1743015247]
 
-[node name="Face" type="StaticBody3D" parent="Targets/MoverRig/Mover/Swing" unique_id=1367804336]
+[node name="Face" type="StaticBody3D" parent="Targets/MoverRig/Mover/Swing" unique_id=1541714772]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"mover"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/MoverRig/Mover/Swing/Face" unique_id=2140204165]
+[node name="Disc" type="MeshInstance3D" parent="Targets/MoverRig/Mover/Swing/Face" unique_id=734543371]
 gi_mode = 0
 mesh = ExtResource("52_rqsn2")
 
-[node name="@CollisionShape3D@74" type="CollisionShape3D" parent="Targets/MoverRig/Mover/Swing/Face" unique_id=1065081811]
+[node name="@CollisionShape3D@74" type="CollisionShape3D" parent="Targets/MoverRig/Mover/Swing/Face" unique_id=117034845]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.46, -0.026)
 shape = SubResource("CylinderShape3D_kk8ko")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/MoverRig/Mover/Swing" unique_id=1760294472]
+[node name="Spot" type="StaticBody3D" parent="Targets/MoverRig/Mover/Swing" unique_id=257412369]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"mover"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/MoverRig/Mover/Swing/Spot" unique_id=182651260]
+[node name="Dot" type="MeshInstance3D" parent="Targets/MoverRig/Mover/Swing/Spot" unique_id=2001418351]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("53_guo7q")
 
-[node name="@CollisionShape3D@75" type="CollisionShape3D" parent="Targets/MoverRig/Mover/Swing/Spot" unique_id=180974701]
+[node name="@CollisionShape3D@75" type="CollisionShape3D" parent="Targets/MoverRig/Mover/Swing/Spot" unique_id=684698497]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.46, 0.03)
 shape = SubResource("CylinderShape3D_b724o")
 
-[node name="Hanger" type="MeshInstance3D" parent="Targets/MoverRig/Mover" unique_id=312536642]
+[node name="Hanger" type="MeshInstance3D" parent="Targets/MoverRig/Mover" unique_id=1150452965]
 gi_mode = 0
 mesh = ExtResource("54_gl8sj")
 
-[node name="Plate_70_110" type="Node3D" parent="Targets" unique_id=424418072]
+[node name="Plate_70_110" type="Node3D" parent="Targets" unique_id=653444156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -70)
 script = ExtResource("32_0fx3c")
 max_health = 260.0
@@ -2780,43 +2780,43 @@ target_radius = 0.55
 distance_hint = 70.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_70_110" unique_id=355106922]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_70_110" unique_id=1040227181]
 gi_mode = 0
 mesh = ExtResource("55_wk4c8")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_70_110" unique_id=1001437095]
+[node name="Swing" type="Node3D" parent="Targets/Plate_70_110" unique_id=884304912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_70_110/Swing" unique_id=137865203]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_70_110/Swing" unique_id=620574114]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_70_110/Swing/Face" unique_id=1572137154]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_70_110/Swing/Face" unique_id=783247113]
 gi_mode = 0
 mesh = ExtResource("56_vdd8e")
 
-[node name="@CollisionShape3D@76" type="CollisionShape3D" parent="Targets/Plate_70_110/Swing/Face" unique_id=1140993575]
+[node name="@CollisionShape3D@76" type="CollisionShape3D" parent="Targets/Plate_70_110/Swing/Face" unique_id=862021709]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.506, -0.026)
 shape = SubResource("CylinderShape3D_sq3et")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_70_110/Swing" unique_id=950432536]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_70_110/Swing" unique_id=893274405]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_70_110/Swing/Spot" unique_id=597856673]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_70_110/Swing/Spot" unique_id=1823672172]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("57_yvq5s")
 
-[node name="@CollisionShape3D@77" type="CollisionShape3D" parent="Targets/Plate_70_110/Swing/Spot" unique_id=115602112]
+[node name="@CollisionShape3D@77" type="CollisionShape3D" parent="Targets/Plate_70_110/Swing/Spot" unique_id=1213762895]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.506, 0.03)
 shape = SubResource("CylinderShape3D_lkfgx")
 
-[node name="@Node3D@80" type="Node3D" parent="Targets" unique_id=214054720]
+[node name="@Node3D@80" type="Node3D" parent="Targets" unique_id=1526089532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -70)
 script = ExtResource("32_0fx3c")
 max_health = 260.0
@@ -2825,43 +2825,43 @@ target_radius = 0.55
 distance_hint = 70.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@80" unique_id=1771443920]
+[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@80" unique_id=2107194094]
 gi_mode = 0
 mesh = ExtResource("55_wk4c8")
 
-[node name="Swing" type="Node3D" parent="Targets/@Node3D@80" unique_id=1456812592]
+[node name="Swing" type="Node3D" parent="Targets/@Node3D@80" unique_id=344036159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@80/Swing" unique_id=190029408]
+[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@80/Swing" unique_id=1048900986]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@80/Swing/Face" unique_id=2020461683]
+[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@80/Swing/Face" unique_id=729171774]
 gi_mode = 0
 mesh = ExtResource("56_vdd8e")
 
-[node name="@CollisionShape3D@78" type="CollisionShape3D" parent="Targets/@Node3D@80/Swing/Face" unique_id=52820792]
+[node name="@CollisionShape3D@78" type="CollisionShape3D" parent="Targets/@Node3D@80/Swing/Face" unique_id=933995242]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.506, -0.026)
 shape = SubResource("CylinderShape3D_42w32")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@80/Swing" unique_id=2146714493]
+[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@80/Swing" unique_id=288846028]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@80/Swing/Spot" unique_id=144842059]
+[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@80/Swing/Spot" unique_id=197021323]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("57_yvq5s")
 
-[node name="@CollisionShape3D@79" type="CollisionShape3D" parent="Targets/@Node3D@80/Swing/Spot" unique_id=1554940770]
+[node name="@CollisionShape3D@79" type="CollisionShape3D" parent="Targets/@Node3D@80/Swing/Spot" unique_id=1930456153]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.506, 0.03)
 shape = SubResource("CylinderShape3D_pso0h")
 
-[node name="Popper_70_0" type="Node3D" parent="Targets" unique_id=631895834]
+[node name="Popper_70_0" type="Node3D" parent="Targets" unique_id=40089724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -70)
 script = ExtResource("32_0fx3c")
 kind = 1
@@ -2872,41 +2872,41 @@ reset_seconds = 6.0
 distance_hint = 70.0
 swing_path = NodePath("Swing")
 
-[node name="Swing" type="Node3D" parent="Targets/Popper_70_0" unique_id=133491198]
+[node name="Swing" type="Node3D" parent="Targets/Popper_70_0" unique_id=1927234694]
 
-[node name="Body" type="StaticBody3D" parent="Targets/Popper_70_0/Swing" unique_id=1267884983]
+[node name="Body" type="StaticBody3D" parent="Targets/Popper_70_0/Swing" unique_id=313583311]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"popper"
 metadata/zone = &"body"
 
-[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_70_0/Swing/Body" unique_id=1264285872]
+[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_70_0/Swing/Body" unique_id=1404192719]
 gi_mode = 0
 mesh = ExtResource("38_6687t")
 
-[node name="@CollisionShape3D@81" type="CollisionShape3D" parent="Targets/Popper_70_0/Swing/Body" unique_id=1006149324]
+[node name="@CollisionShape3D@81" type="CollisionShape3D" parent="Targets/Popper_70_0/Swing/Body" unique_id=371323018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98, -0.015)
 shape = SubResource("BoxShape3D_3j1y4")
 
-[node name="@CollisionShape3D@82" type="CollisionShape3D" parent="Targets/Popper_70_0/Swing/Body" unique_id=442719861]
+[node name="@CollisionShape3D@82" type="CollisionShape3D" parent="Targets/Popper_70_0/Swing/Body" unique_id=190728913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27, 0)
 shape = SubResource("BoxShape3D_1x56y")
 
-[node name="Head" type="StaticBody3D" parent="Targets/Popper_70_0/Swing" unique_id=367978091]
+[node name="Head" type="StaticBody3D" parent="Targets/Popper_70_0/Swing" unique_id=713791310]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"popper"
 metadata/zone = &"head"
 
-[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_70_0/Swing/Head" unique_id=1306912279]
+[node name="Steel" type="MeshInstance3D" parent="Targets/Popper_70_0/Swing/Head" unique_id=1594368317]
 gi_mode = 0
 mesh = ExtResource("39_6a0tw")
 
-[node name="@CollisionShape3D@83" type="CollisionShape3D" parent="Targets/Popper_70_0/Swing/Head" unique_id=690559077]
+[node name="@CollisionShape3D@83" type="CollisionShape3D" parent="Targets/Popper_70_0/Swing/Head" unique_id=1453875501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 0.004)
 shape = SubResource("BoxShape3D_oib1v")
 
-[node name="Plate_140_60" type="Node3D" parent="Targets" unique_id=1794991624]
+[node name="Plate_140_60" type="Node3D" parent="Targets" unique_id=853836134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -140)
 script = ExtResource("32_0fx3c")
 max_health = 440.0
@@ -2915,43 +2915,43 @@ target_radius = 0.75
 distance_hint = 140.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_140_60" unique_id=1018558379]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_140_60" unique_id=2079870324]
 gi_mode = 0
 mesh = ExtResource("58_y5txt")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_140_60" unique_id=1676842547]
+[node name="Swing" type="Node3D" parent="Targets/Plate_140_60" unique_id=917278600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_140_60/Swing" unique_id=1377586567]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_140_60/Swing" unique_id=34512838]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_140_60/Swing/Face" unique_id=1373362719]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_140_60/Swing/Face" unique_id=1688079129]
 gi_mode = 0
 mesh = ExtResource("59_ei813")
 
-[node name="@CollisionShape3D@84" type="CollisionShape3D" parent="Targets/Plate_140_60/Swing/Face" unique_id=407044909]
+[node name="@CollisionShape3D@84" type="CollisionShape3D" parent="Targets/Plate_140_60/Swing/Face" unique_id=1815751071]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.69, -0.026)
 shape = SubResource("CylinderShape3D_cry3e")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_140_60/Swing" unique_id=1103181231]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_140_60/Swing" unique_id=1052625422]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_140_60/Swing/Spot" unique_id=1443012612]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_140_60/Swing/Spot" unique_id=1419385743]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("60_5wllc")
 
-[node name="@CollisionShape3D@85" type="CollisionShape3D" parent="Targets/Plate_140_60/Swing/Spot" unique_id=1379055087]
+[node name="@CollisionShape3D@85" type="CollisionShape3D" parent="Targets/Plate_140_60/Swing/Spot" unique_id=947721069]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.69, 0.03)
 shape = SubResource("CylinderShape3D_peott")
 
-[node name="@Node3D@88" type="Node3D" parent="Targets" unique_id=571997116]
+[node name="@Node3D@88" type="Node3D" parent="Targets" unique_id=1178444441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -140)
 script = ExtResource("32_0fx3c")
 max_health = 440.0
@@ -2960,43 +2960,43 @@ target_radius = 0.75
 distance_hint = 140.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@88" unique_id=1087028053]
+[node name="Post" type="MeshInstance3D" parent="Targets/@Node3D@88" unique_id=524778016]
 gi_mode = 0
 mesh = ExtResource("58_y5txt")
 
-[node name="Swing" type="Node3D" parent="Targets/@Node3D@88" unique_id=1603635406]
+[node name="Swing" type="Node3D" parent="Targets/@Node3D@88" unique_id=1514486652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@88/Swing" unique_id=746801786]
+[node name="Face" type="StaticBody3D" parent="Targets/@Node3D@88/Swing" unique_id=549726539]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@88/Swing/Face" unique_id=546683494]
+[node name="Disc" type="MeshInstance3D" parent="Targets/@Node3D@88/Swing/Face" unique_id=998064509]
 gi_mode = 0
 mesh = ExtResource("59_ei813")
 
-[node name="@CollisionShape3D@86" type="CollisionShape3D" parent="Targets/@Node3D@88/Swing/Face" unique_id=1128474011]
+[node name="@CollisionShape3D@86" type="CollisionShape3D" parent="Targets/@Node3D@88/Swing/Face" unique_id=1838561897]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.69, -0.026)
 shape = SubResource("CylinderShape3D_u6qt0")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@88/Swing" unique_id=752180526]
+[node name="Spot" type="StaticBody3D" parent="Targets/@Node3D@88/Swing" unique_id=546290962]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@88/Swing/Spot" unique_id=282451242]
+[node name="Dot" type="MeshInstance3D" parent="Targets/@Node3D@88/Swing/Spot" unique_id=719007994]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("60_5wllc")
 
-[node name="@CollisionShape3D@87" type="CollisionShape3D" parent="Targets/@Node3D@88/Swing/Spot" unique_id=65400804]
+[node name="@CollisionShape3D@87" type="CollisionShape3D" parent="Targets/@Node3D@88/Swing/Spot" unique_id=3699601]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.69, 0.03)
 shape = SubResource("CylinderShape3D_mxudn")
 
-[node name="Barrel_140_200" type="Node3D" parent="Targets" unique_id=1456610594]
+[node name="Barrel_140_200" type="Node3D" parent="Targets" unique_id=1987066327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -0.02, -140)
 script = ExtResource("32_0fx3c")
 kind = 3
@@ -3006,35 +3006,35 @@ target_radius = 0.32
 reset_seconds = 13.0
 distance_hint = 140.0
 
-[node name="Drum" type="StaticBody3D" parent="Targets/Barrel_140_200" unique_id=1736539040]
+[node name="Drum" type="StaticBody3D" parent="Targets/Barrel_140_200" unique_id=96481057]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/Barrel_140_200/Drum" unique_id=147114288]
+[node name="Body" type="MeshInstance3D" parent="Targets/Barrel_140_200/Drum" unique_id=695924201]
 gi_mode = 0
 mesh = ExtResource("48_63ytp")
 
-[node name="@CollisionShape3D@89" type="CollisionShape3D" parent="Targets/Barrel_140_200/Drum" unique_id=1490773272]
+[node name="@CollisionShape3D@89" type="CollisionShape3D" parent="Targets/Barrel_140_200/Drum" unique_id=1901069605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("CylinderShape3D_82h73")
 
-[node name="Cap" type="StaticBody3D" parent="Targets/Barrel_140_200" unique_id=1292755627]
+[node name="Cap" type="StaticBody3D" parent="Targets/Barrel_140_200" unique_id=422922221]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"head"
 
-[node name="Cap" type="MeshInstance3D" parent="Targets/Barrel_140_200/Cap" unique_id=637866727]
+[node name="Cap" type="MeshInstance3D" parent="Targets/Barrel_140_200/Cap" unique_id=1596838399]
 gi_mode = 0
 mesh = ExtResource("49_vefqt")
 
-[node name="@CollisionShape3D@90" type="CollisionShape3D" parent="Targets/Barrel_140_200/Cap" unique_id=481290986]
+[node name="@CollisionShape3D@90" type="CollisionShape3D" parent="Targets/Barrel_140_200/Cap" unique_id=1747329630]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
 shape = SubResource("CylinderShape3D_imtlo")
 
-[node name="@Node3D@93" type="Node3D" parent="Targets" unique_id=1700627890]
+[node name="@Node3D@93" type="Node3D" parent="Targets" unique_id=327245419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -0.02, -140)
 script = ExtResource("32_0fx3c")
 kind = 3
@@ -3044,35 +3044,35 @@ target_radius = 0.32
 reset_seconds = 13.0
 distance_hint = 140.0
 
-[node name="Drum" type="StaticBody3D" parent="Targets/@Node3D@93" unique_id=1834651320]
+[node name="Drum" type="StaticBody3D" parent="Targets/@Node3D@93" unique_id=1951528446]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"body"
 
-[node name="Body" type="MeshInstance3D" parent="Targets/@Node3D@93/Drum" unique_id=1253522002]
+[node name="Body" type="MeshInstance3D" parent="Targets/@Node3D@93/Drum" unique_id=740971481]
 gi_mode = 0
 mesh = ExtResource("48_63ytp")
 
-[node name="@CollisionShape3D@91" type="CollisionShape3D" parent="Targets/@Node3D@93/Drum" unique_id=2123297088]
+[node name="@CollisionShape3D@91" type="CollisionShape3D" parent="Targets/@Node3D@93/Drum" unique_id=1920459734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("CylinderShape3D_sbah3")
 
-[node name="Cap" type="StaticBody3D" parent="Targets/@Node3D@93" unique_id=1031980845]
+[node name="Cap" type="StaticBody3D" parent="Targets/@Node3D@93" unique_id=1645136765]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"barrel"
 metadata/zone = &"head"
 
-[node name="Cap" type="MeshInstance3D" parent="Targets/@Node3D@93/Cap" unique_id=1502995895]
+[node name="Cap" type="MeshInstance3D" parent="Targets/@Node3D@93/Cap" unique_id=225242325]
 gi_mode = 0
 mesh = ExtResource("49_vefqt")
 
-[node name="@CollisionShape3D@92" type="CollisionShape3D" parent="Targets/@Node3D@93/Cap" unique_id=1857226991]
+[node name="@CollisionShape3D@92" type="CollisionShape3D" parent="Targets/@Node3D@93/Cap" unique_id=820987546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925, 0)
 shape = SubResource("CylinderShape3D_wmeah")
 
-[node name="Plate_250_0" type="Node3D" parent="Targets" unique_id=1423432861]
+[node name="Plate_250_0" type="Node3D" parent="Targets" unique_id=334762201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -250)
 script = ExtResource("32_0fx3c")
 max_health = 700.0
@@ -3081,43 +3081,43 @@ target_radius = 1.05
 distance_hint = 250.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_250_0" unique_id=1461960404]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_250_0" unique_id=1832482584]
 gi_mode = 0
 mesh = ExtResource("61_houso")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_250_0" unique_id=190045708]
+[node name="Swing" type="Node3D" parent="Targets/Plate_250_0" unique_id=1262208534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_250_0/Swing" unique_id=1754391182]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_250_0/Swing" unique_id=515062032]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_250_0/Swing/Face" unique_id=994752077]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_250_0/Swing/Face" unique_id=1834843202]
 gi_mode = 0
 mesh = ExtResource("62_x3vlm")
 
-[node name="@CollisionShape3D@94" type="CollisionShape3D" parent="Targets/Plate_250_0/Swing/Face" unique_id=800465987]
+[node name="@CollisionShape3D@94" type="CollisionShape3D" parent="Targets/Plate_250_0/Swing/Face" unique_id=295713040]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.966, -0.026)
 shape = SubResource("CylinderShape3D_beltr")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_250_0/Swing" unique_id=819686509]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_250_0/Swing" unique_id=1125538924]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_250_0/Swing/Spot" unique_id=1629123397]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_250_0/Swing/Spot" unique_id=200742278]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("63_cfbtw")
 
-[node name="@CollisionShape3D@95" type="CollisionShape3D" parent="Targets/Plate_250_0/Swing/Spot" unique_id=1326003367]
+[node name="@CollisionShape3D@95" type="CollisionShape3D" parent="Targets/Plate_250_0/Swing/Spot" unique_id=339386103]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.966, 0.03)
 shape = SubResource("CylinderShape3D_nwbp5")
 
-[node name="Plate_400_0" type="Node3D" parent="Targets" unique_id=2106615708]
+[node name="Plate_400_0" type="Node3D" parent="Targets" unique_id=2040365552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -400)
 script = ExtResource("32_0fx3c")
 max_health = 1000.0
@@ -3126,43 +3126,43 @@ target_radius = 1.45
 distance_hint = 400.0
 swing_path = NodePath("Swing")
 
-[node name="Post" type="MeshInstance3D" parent="Targets/Plate_400_0" unique_id=2071885803]
+[node name="Post" type="MeshInstance3D" parent="Targets/Plate_400_0" unique_id=1057954291]
 gi_mode = 0
 mesh = ExtResource("64_ycarh")
 
-[node name="Swing" type="Node3D" parent="Targets/Plate_400_0" unique_id=1610866503]
+[node name="Swing" type="Node3D" parent="Targets/Plate_400_0" unique_id=453830186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03, 0)
 
-[node name="Face" type="StaticBody3D" parent="Targets/Plate_400_0/Swing" unique_id=1622815394]
+[node name="Face" type="StaticBody3D" parent="Targets/Plate_400_0/Swing" unique_id=23404984]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"body"
 
-[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_400_0/Swing/Face" unique_id=952625122]
+[node name="Disc" type="MeshInstance3D" parent="Targets/Plate_400_0/Swing/Face" unique_id=1028441079]
 gi_mode = 0
 mesh = ExtResource("65_6rlnj")
 
-[node name="@CollisionShape3D@96" type="CollisionShape3D" parent="Targets/Plate_400_0/Swing/Face" unique_id=442525522]
+[node name="@CollisionShape3D@96" type="CollisionShape3D" parent="Targets/Plate_400_0/Swing/Face" unique_id=740392854]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.334, -0.026)
 shape = SubResource("CylinderShape3D_pg58v")
 
-[node name="Spot" type="StaticBody3D" parent="Targets/Plate_400_0/Swing" unique_id=1331961000]
+[node name="Spot" type="StaticBody3D" parent="Targets/Plate_400_0/Swing" unique_id=1203789502]
 collision_layer = 2
 collision_mask = 0
 metadata/surface = &"plate"
 metadata/zone = &"head"
 
-[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_400_0/Swing/Spot" unique_id=1204027361]
+[node name="Dot" type="MeshInstance3D" parent="Targets/Plate_400_0/Swing/Spot" unique_id=308682476]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("66_ekhk8")
 
-[node name="@CollisionShape3D@97" type="CollisionShape3D" parent="Targets/Plate_400_0/Swing/Spot" unique_id=580732202]
+[node name="@CollisionShape3D@97" type="CollisionShape3D" parent="Targets/Plate_400_0/Swing/Spot" unique_id=563537484]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.334, 0.03)
 shape = SubResource("CylinderShape3D_5yixp")
 
-[node name="Bench" type="Node3D" parent="." unique_id=1913491805]
+[node name="Bench" type="Node3D" parent="." unique_id=1163201162]
 script = ExtResource("67_i7vvb")
 
 [node name="reroll_receiver" type="StaticBody3D" parent="Bench" unique_id=552549059 instance=ExtResource("68_v3mvn")]
@@ -3175,7 +3175,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reroll_receiver"
 label_text = "RECEIVER"
 
-[node name="reroll_barrel" type="StaticBody3D" parent="Bench" unique_id=1322785316 instance=ExtResource("68_v3mvn")]
+[node name="reroll_barrel" type="StaticBody3D" parent="Bench" unique_id=893293863 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.45, 1.92, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3185,7 +3185,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reroll_barrel"
 label_text = "BARREL"
 
-[node name="reroll_grip" type="StaticBody3D" parent="Bench" unique_id=1991200326 instance=ExtResource("68_v3mvn")]
+[node name="reroll_grip" type="StaticBody3D" parent="Bench" unique_id=517571607 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.55, 1.92, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3195,7 +3195,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reroll_grip"
 label_text = "GRIP"
 
-[node name="reroll_stock" type="StaticBody3D" parent="Bench" unique_id=2002404266 instance=ExtResource("68_v3mvn")]
+[node name="reroll_stock" type="StaticBody3D" parent="Bench" unique_id=1031751831 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.65, 1.92, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3205,7 +3205,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reroll_stock"
 label_text = "STOCK"
 
-[node name="reroll_sight" type="StaticBody3D" parent="Bench" unique_id=260067004 instance=ExtResource("68_v3mvn")]
+[node name="reroll_sight" type="StaticBody3D" parent="Bench" unique_id=887429819 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.75, 1.92, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3215,7 +3215,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reroll_sight"
 label_text = "SIGHT"
 
-[node name="equip_primary" type="StaticBody3D" parent="Bench" unique_id=550609697 instance=ExtResource("68_v3mvn")]
+[node name="equip_primary" type="StaticBody3D" parent="Bench" unique_id=982259564 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.55, 1.92, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3225,7 +3225,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"equip_primary"
 label_text = "EQUIP"
 
-[node name="equip_sidearm" type="StaticBody3D" parent="Bench" unique_id=1543888834 instance=ExtResource("68_v3mvn")]
+[node name="equip_sidearm" type="StaticBody3D" parent="Bench" unique_id=1415612447 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.65, 1.92, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3235,7 +3235,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"equip_sidearm"
 label_text = "SIDEARM"
 
-[node name="reset_range" type="StaticBody3D" parent="Bench" unique_id=64222466 instance=ExtResource("68_v3mvn")]
+[node name="reset_range" type="StaticBody3D" parent="Bench" unique_id=756735538 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.65, 1.32, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3245,7 +3245,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reset_range"
 label_text = "RESET"
 
-[node name="clear_paper" type="StaticBody3D" parent="Bench" unique_id=508848627 instance=ExtResource("68_v3mvn")]
+[node name="clear_paper" type="StaticBody3D" parent="Bench" unique_id=1949840107 instance=ExtResource("68_v3mvn")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.55, 1.32, 15.74)
 collision_layer = 2
 collision_mask = 0
@@ -3260,7 +3260,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.3
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("72_yihc4")
-options = PackedStringArray("ANY", "RIFLE", "SMG", "SHOTGUN", "PISTOL", "SNIPER", "REVOLVER", "LMG", "LAUNCHER")
+options = PackedStringArray("ANY", "ASSAULT RIFLE", "SHOTGUN", "SUBMACHINE GUN", "SNIPER", "MACHINE GUN", "BATTLE RIFLE", "MARKSMAN CARBINE", "LAUNCHER", "SIDEARM", "CARBINE", "HAND CANNON", "SLUG GUN", "CHOPPED AUTO", "AUTO BATTLE RIFLE", "SNUBNOSE", "AUTO SHOTGUN")
 control_id = &"class_dial"
 label_text = "CLASS"
 
@@ -3275,24 +3275,24 @@ on_text = "PULLED"
 control_id = &"scavenge_lever"
 label_text = "SCAVENGE"
 
-[node name="CardReadout" type="Node3D" parent="Bench" unique_id=1787827710 instance=ExtResource("17_juqng")]
+[node name="CardReadout" type="Node3D" parent="Bench" unique_id=510711973 instance=ExtResource("17_juqng")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, -6.8, 2.42, 17.2)
 script = ExtResource("18_c0n3h")
 
-[node name="PartsReadout" type="Node3D" parent="Bench" unique_id=1653427864 instance=ExtResource("17_juqng")]
+[node name="PartsReadout" type="Node3D" parent="Bench" unique_id=1932340772 instance=ExtResource("17_juqng")]
 transform = Transform3D(-1.4, 0, -1.2239188e-07, 0, 1.4, 0, 1.2239188e-07, 0, -1.4, -0.2, 2.42, 17.2)
 script = ExtResource("18_c0n3h")
 painted = true
 
-[node name="Placard" type="Node3D" parent="Bench" unique_id=703076954]
+[node name="Placard" type="Node3D" parent="Bench" unique_id=201450577]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.5, 3.02, 17.2)
 
-[node name="Board" type="MeshInstance3D" parent="Bench/Placard" unique_id=1071734309]
+[node name="Board" type="MeshInstance3D" parent="Bench/Placard" unique_id=77307312]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("75_2yxqi")
 
-[node name="Text" type="Label3D" parent="Bench/Placard" unique_id=1424376877]
+[node name="Text" type="Label3D" parent="Bench/Placard" unique_id=1292396801]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.04)
 pixel_size = 0.0052
 shaded = true
@@ -3302,7 +3302,7 @@ text = "SHOOT THE BENCH TO WORK IT"
 font = ExtResource("13_whvw5")
 font_size = 64
 
-[node name="Stand" type="Node3D" parent="Bench" unique_id=2119898561]
+[node name="Stand" type="Node3D" parent="Bench" unique_id=956791277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1.3, 12.9)
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=198506092 instance=ExtResource("76_ug6ei")]
@@ -3314,8 +3314,8 @@ safe_margin = 0.008
 script = ExtResource("77_kv8id")
 slide = SubResource("Resource_kfr7f")
 
-[node name="Shooter" type="Node3D" parent="." unique_id=1517516697]
+[node name="Shooter" type="Node3D" parent="." unique_id=1103432864]
 script = ExtResource("79_mmnkh")
 
-[node name="Ambience" type="Node3D" parent="." unique_id=1736405455]
+[node name="Ambience" type="Node3D" parent="." unique_id=800845138]
 script = ExtResource("80_15sse")

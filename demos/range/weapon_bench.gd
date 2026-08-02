@@ -36,11 +36,6 @@ signal reset_requested
 ## Fresh paper on the board at 25 m.
 signal paper_clear_requested
 
-## Class names the dial offers. Index 0 means "whatever the world hands out",
-## which is `GunTables.wanted_class` and not a uniform draw.
-const CLASSES: PackedStringArray = [
-	"", "Rifle", "SMG", "Shotgun", "Pistol", "Sniper", "Revolver", "LMG", "Launcher"
-]
 ## The five slots the caps swap, keyed by control id.
 const SLOTS: Dictionary = {
 	&"reroll_receiver": &"receiver",
@@ -84,6 +79,25 @@ var _seed: int = 0
 var _rand: RandomNumberGenerator = RandomNumberGenerator.new()
 var _net: RangeNetScript = null
 var _authority: bool = true
+
+
+## Class names the dial offers, DERIVED FROM `GunTables.CLASS_MIX` rather than
+## written out here. Index 0 means "whatever the world hands out", which is
+## `GunTables.wanted_class` and not a uniform draw.
+##
+## THIS LIST USED TO BE WRONG AND IT MADE EVERY GUN ON THE RANGE A MACHINE GUN.
+## It read "Rifle", "SMG", "Pistol", "Revolver", "LMG" — those are RECEIVER classes
+## (the `c` field on a part), not ARCHETYPES, and `GunFactory.roll` matches on the
+## archetype. Nothing ever matched, so `roll_typed` ran out its 420 attempts and
+## returned its fallback: the FIRST raw build, an unweighted geometry draw that
+## skews hard to fast autos. The gun bench passed real archetype names and so got
+## the `CLASS_MIX`-weighted roll, which is why its guns felt right and these did
+## not. Deriving the list means the two benches can never drift apart again.
+static func classes() -> PackedStringArray:
+	var out := PackedStringArray([""])
+	for row: Array in GunTables.CLASS_MIX:
+		out.append(String(row[0]))
+	return out
 
 
 func _ready() -> void:
@@ -430,7 +444,8 @@ func _wanted_class() -> String:
 	var dial := _controls.get(&"class_dial") as DiegeticDial
 	if dial == null:
 		return ""
-	return CLASSES[clampi(dial.selected_index(), 0, CLASSES.size() - 1)]
+	var names := classes()
+	return names[clampi(dial.selected_index(), 0, names.size() - 1)]
 
 
 func _set_enabled(id: StringName, on: bool) -> void:

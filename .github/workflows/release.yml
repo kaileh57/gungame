@@ -8,13 +8,23 @@ name: Release
 #   be traced back to an exact commit with `git show <sha>`. No manual version
 #   bumping, nothing to forget.
 #
-# COST: this repo is PRIVATE, so these minutes are billed against the account's
-# Actions allowance (ubuntu runners bill at 1x). A run is roughly 10-15 minutes.
-# See .github/workflows/README.md for the arithmetic.
+# AUTOMATIC RUNS ARE OFF, ON PURPOSE. This repo is PRIVATE, so every minute is
+# billed against the account's Actions allowance (~$0.008/min on ubuntu, ~10-20
+# min a run). Firing on every push to main would spend that on commits that are
+# not releases, so the `push:` trigger is deliberately absent and this workflow
+# only runs when you ask for it:
+#
+#   gh workflow run release.yml            # cut a release now
+#   ...or the "Run workflow" button on the Actions tab.
+#
+# TO TURN IT BACK ON, add:
+#   push:
+#     branches: [main]
+# under `on:`. Everything else already works. `scripts/release.ps1` builds and
+# publishes locally and costs nothing at all, which is the cheaper habit while
+# the repo stays private.
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
     inputs:
       prerelease:
