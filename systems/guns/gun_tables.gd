@@ -309,8 +309,14 @@ const CLOSE_QUARTERS: Array = [
 ## rates: a close-quarters weapon almost never keeps one, which is what makes a scoped
 ## machine pistol a story rather than a Tuesday, and everything else keeps one
 ## sometimes.
-const SCOPE_STRAY: float = 0.20
-const SCOPE_STRAY_CLOSE: float = 0.06
+## FIRST PASS AT THESE WAS 0.20/0.06 AND IT MADE SCOPES UNFINDABLE. Concentrating
+## scopes onto marksman weapons is right, but it also dropped the population rate from
+## 11.8% to 3.5% — about one scoped weapon every twenty-nine pulls — so a player
+## scavenging the range went fourteen pulls without seeing one and reasonably concluded
+## the tube was broken rather than absent. Raised until scopes are findable again while
+## the majority still sit on weapons built to carry them.
+const SCOPE_STRAY: float = 0.72
+const SCOPE_STRAY_CLOSE: float = 0.20
 
 
 ## A deterministic 0..1 draw for a weapon, off its own config word.

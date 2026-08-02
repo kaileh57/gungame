@@ -366,7 +366,12 @@ func _terminal(spec: GunSpec) -> String:
 	var ladder: PackedFloat32Array = spec.zoom_ladder()
 	var optic: String = "iron sights"
 	if spec.has_optic and not ladder.is_empty():
-		optic = "%.1fx optic" % ladder[ladder.size() - 1]
+		# SCOPE, not "optic", when the weapon is genuinely scoped. The card used to call
+		# every piece of glass an optic, so a player holding a 2.7x prism read "2.7x
+		# optic" and reasonably reported having a scope and getting no sight picture.
+		# Only `scoped` raises the tube, so only `scoped` may say so.
+		var kind: String = "SCOPE" if spec.scoped else "optic"
+		optic = "%.1fx %s" % [ladder[ladder.size() - 1], kind]
 	return (
 		"x%.2f head  ·  instant to %d m  ·  %s"
 		% [spec.crit_multiplier, int(spec.headshot_range), optic]
