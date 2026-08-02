@@ -63,6 +63,21 @@ const RUN_HYSTERESIS: float = 0.12
 ## Loudness this body radiates at full sprint, for enemy hearing.
 @export_range(0.0, 2.0, 0.01) var sprint_loudness: float = 1.0
 
+@export_group("Death impulse")
+## Newton-seconds of ragdoll push per unit of `GunSpec.impulse` in the killing
+## round. This is the number that makes a launcher throw a body and a pistol drop
+## it, so it is deliberately generous: a pistol's impulse is around 4 Ns and a
+## launcher's around 40.
+@export_range(0.0, 200.0, 0.5) var death_impulse_scale: float = 20.0
+## Fallback push per point of damage the killing hit did, used when the round's
+## own impulse never reached this body. `GunDamage` hands a receiver the amount,
+## the point and the direction but not the impulse — see `apply_bullet_damage` —
+## and blast damage carries no impulse at all, so this keeps a rocket kill heavy
+## and a rifle kill light on the evidence that does arrive.
+@export_range(0.0, 40.0, 0.1) var death_impulse_per_damage: float = 2.2
+## Ceiling on the whole thing, newton-seconds.
+@export_range(0.0, 4000.0, 10.0) var death_impulse_max: float = 1200.0
+
 ## The weapon. Created on `configure()` and driven by `engage()`.
 var weapon: AICombat = null
 ## Set by whoever owns the decisions. The actor never calls into it.
@@ -92,6 +107,15 @@ var _hover_query: PhysicsRayQueryParameters3D = null
 ## the aim cone; 0.7 to 1.4, so the best shot in a squad fires inside about half
 ## the cone of the worst one holding the same gun.
 var _aim_quality: float = 1.0
+## The killing shot, recorded by `apply_bullet_damage` and read by `_die`. The
+## stamp is the physics frame it landed on: damage routed through `apply_damage`
+## instead — scripted removals, blast — leaves a stale record behind, and a corpse
+## must never be thrown by the bullet that hit it two seconds earlier.
+var _hit_point: Vector3 = Vector3.ZERO
+var _hit_dir: Vector3 = Vector3.ZERO
+var _hit_impulse: float = -1.0
+var _hit_stamp: int = -1
+var _last_damage: float = 0.0
 
 
 func _ready() -> void:
@@ -222,6 +246,7 @@ func apply_damage(amount: float, from_position: Vector3, _attacker: Node) -> voi
 	var armour: float = 0.0 if profile == null else profile.armour
 	var taken: float = amount * (1.0 - clampf(armour, 0.0, 95.0) * 0.01)
 	health -= taken
+	_last_damage = taken
 	if health <= 0.0:
 		health = 0.0
 		_die(from_position)
@@ -254,9 +279,27 @@ func apply_damage_at(
 ## `dir` is the round's unit direction, so a metre back along it is a point on the
 ## shot line. Every consumer of `from_position` wants the bearing and not the range,
 ## so one metre is as good as the true muzzle and costs nothing to know.
+##
+## `impulse` is the round's `GunSpec.impulse` in newton-seconds and is what throws
+## the corpse. It is OPTIONAL because `GunDamage.apply` — which owns the call and
+## is not this system's to change — passes six arguments and stops at `crit`; the
+## impulse it does know is spent on `GunDamage.push`, which only moves a
+## `RigidBody3D` and a creature is a `CharacterBody3D`. Until that call site
+## forwards it, the ragdoll falls back to a push derived from the damage. Anything
+## that DOES know the round — a projectile, a net-replicated hit — should pass it.
 func apply_bullet_damage(
-	amount: float, at: Vector3, _normal: Vector3, dir: Vector3, _zone: StringName, crit: float
+	amount: float,
+	at: Vector3,
+	_normal: Vector3,
+	dir: Vector3,
+	_zone: StringName,
+	crit: float,
+	impulse: float = -1.0
 ) -> void:
+	_hit_point = at
+	_hit_dir = dir
+	_hit_impulse = impulse
+	_hit_stamp = int(Engine.get_physics_frames())
 	apply_damage_at(amount, at, at - dir, null, crit)
 
 
@@ -289,6 +332,10 @@ func revive(where: Transform3D, seed_value: int, take: int) -> void:
 	_recycled = false
 	alive = true
 	health = max_health
+	# The previous life's killing shot must not follow the body into this one.
+	_hit_stamp = -1
+	_hit_impulse = -1.0
+	_last_damage = 0.0
 	if weapon != null:
 		weapon.reset()
 	if _shape != null:
@@ -401,18 +448,63 @@ func _die(from_position: Vector3) -> void:
 	_corpse_timer = 0.0
 	_want_speed = 0.0
 	_want_dir = Vector3.ZERO
+	# Read before it is cleared: a body killed at a sprint should carry that speed
+	# into the fall, and every other line here wants the velocity gone.
+	var momentum: Vector3 = velocity
 	velocity = Vector3.ZERO
 	if _target != null:
 		_target.mark_dead()
 		_target.motion_loudness = 0.0
 	if _shape != null:
 		_shape.disabled = true
+	var ragdolling: bool = false
 	if _body != null:
 		_body.clear_aim()
-		_body.collapse()
+		var shot: Dictionary = _killing_shot(from_position)
+		_body.collapse_from(shot["dir"], shot["newtons"], shot["point"], momentum)
+		ragdolling = _body.is_ragdolling()
 	died.emit(self)
-	if from_position != Vector3.ZERO:
+	# A physics corpse hangs off this node's transform. Yawing the actor after the
+	# fall has started would swing the whole ragdoll round its feet, so the
+	# face-the-shooter turn is for the posed collapse only — which is the only tier
+	# that ever needed it, since a solved fall already points where it was hit.
+	if from_position != Vector3.ZERO and not ragdolling:
 		look_at_point(from_position)
+
+
+## The round that ended this body, as `{point, dir, newtons}`.
+##
+## Only a hit recorded on THIS physics frame counts. Damage that arrived through
+## `apply_damage` — a blast, a scripted removal, a net-replicated kill — leaves the
+## last bullet's record sitting in the fields, and a corpse thrown by a shot it
+## already survived is worse than a corpse that simply drops. With no fresh record
+## the direction falls back to the bearing from the attacker, which is what the
+## posed collapse has always used.
+##
+## `newtons` prefers the round's own `GunSpec.impulse`, scaled by
+## `death_impulse_scale`. When the call site did not forward one — `GunDamage.apply`
+## currently does not; see `apply_bullet_damage` — it falls back to the damage the
+## killing hit did, so a launcher still throws a body and a pistol still drops it.
+## Either way it is clamped by `death_impulse_max`.
+func _killing_shot(from_position: Vector3) -> Dictionary:
+	var fresh: bool = _hit_stamp == int(Engine.get_physics_frames())
+	var height: float = 1.7 if profile == null else profile.height
+	var point: Vector3 = global_position + Vector3(0.0, height * 0.55, 0.0)
+	var dir: Vector3 = Vector3.ZERO
+	if fresh:
+		point = _hit_point
+		dir = _hit_dir
+	elif from_position != Vector3.ZERO:
+		dir = global_position - from_position
+		dir.y = 0.0
+	if dir.length_squared() < 1e-6:
+		return {"point": point, "dir": Vector3.ZERO, "newtons": 0.0}
+	var newtons: float = _last_damage * death_impulse_per_damage
+	if fresh and _hit_impulse > 0.0:
+		newtons = _hit_impulse * death_impulse_scale
+	return {
+		"point": point, "dir": dir.normalized(), "newtons": clampf(newtons, 0.0, death_impulse_max)
+	}
 
 
 func _tick_corpse(delta: float) -> void:

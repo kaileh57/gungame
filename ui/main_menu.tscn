@@ -1298,22 +1298,22 @@ _surfaces = [{
 "vertex_data": PackedByteArray("H4VrPq5HYb1vEgO8H4VrPq5HYT1vEgM8H4VrPq5HYT1vEgO8H4VrPq5HYb1vEgO8H4VrPq5HYb1vEgM8H4VrPq5HYT1vEgM8H4Vrvq5HYb1vEgO8H4Vrvq5HYT1vEgM8H4Vrvq5HYb1vEgM8H4Vrvq5HYb1vEgO8H4Vrvq5HYT1vEgO8H4Vrvq5HYT1vEgM8H4Vrvq5HYT1vEgO8H4VrPq5HYT1vEgM8H4Vrvq5HYT1vEgM8H4Vrvq5HYT1vEgO8H4VrPq5HYT1vEgO8H4VrPq5HYT1vEgM8H4Vrvq5HYb1vEgO8H4VrPq5HYb1vEgM8H4VrPq5HYb1vEgO8H4Vrvq5HYb1vEgO8H4Vrvq5HYb1vEgM8H4VrPq5HYb1vEgM8H4Vrvq5HYb1vEgM8H4VrPq5HYT1vEgM8H4VrPq5HYb1vEgM8H4Vrvq5HYb1vEgM8H4Vrvq5HYT1vEgM8H4VrPq5HYT1vEgM8H4Vrvq5HYb1vEgO8H4VrPq5HYT1vEgO8H4Vrvq5HYT1vEgO8H4Vrvq5HYb1vEgO8H4VrPq5HYb1vEgO8H4VrPq5HYT1vEgO8////f/9//7////9//3//v////3//f/+/////f/9//7////9//3//v////3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+//3///wAA/7//f///AAD/v/9///8AAP+//3///wAA/7//f///AAD/v/9///8AAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//38AAAAA/7//fwAAAAD/v/9/AAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA//////9/AID//////38AgP//////fwCA")
 }]
 
-[node name="MainMenu" type="Node3D" unique_id=347741143]
+[node name="MainMenu" type="Node3D" unique_id=548774110]
 script = ExtResource("1_8jgmr")
 
-[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=2108736239 instance=ExtResource("2_q75kt")]
+[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=349678082 instance=ExtResource("2_q75kt")]
 environment = ExtResource("3_0i0gl")
 script = ExtResource("4_jqly5")
 
-[node name="Eye" type="Camera3D" parent="." unique_id=769970963]
+[node name="Eye" type="Camera3D" parent="." unique_id=1455748623]
 transform = Transform3D(1, 0, 0, 0, 0.9935719, 0.11320321, 0, -0.11320321, 0.9935719, 0, 1.62, 1.5)
 current = true
 fov = 78.0
 far = 900.0
 
-[node name="Room" type="Node3D" parent="." unique_id=1801159907]
+[node name="Room" type="Node3D" parent="." unique_id=1546840329]
 
-[node name="Ground" type="MeshInstance3D" parent="Room" unique_id=40331179]
+[node name="Ground" type="MeshInstance3D" parent="Room" unique_id=1766431909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.56, 0)
 material_override = ExtResource("5_pbm0j")
 cast_shadow = 0
@@ -1322,7 +1322,7 @@ instance_shader_parameters/surface_seed = 0.11
 instance_shader_parameters/tint = Color(1.46, 1.42, 1.33, 1)
 mesh = SubResource("ArrayMesh_7mcg4")
 
-[node name="Slab" type="MeshInstance3D" parent="Room" unique_id=261310370]
+[node name="Slab" type="MeshInstance3D" parent="Room" unique_id=985578929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13, 0.7)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -1330,7 +1330,7 @@ instance_shader_parameters/surface_seed = 0.24
 instance_shader_parameters/tint = Color(2.28, 2.22, 2.1, 1)
 mesh = SubResource("ArrayMesh_10sdn")
 
-[node name="Threshold" type="MeshInstance3D" parent="Room" unique_id=1991873775]
+[node name="Threshold" type="MeshInstance3D" parent="Room" unique_id=1676984171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, -0.03, -1.58)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -1338,9 +1338,9 @@ instance_shader_parameters/surface_seed = 0.31
 instance_shader_parameters/tint = Color(2.1, 2.06, 1.96, 1)
 mesh = SubResource("ArrayMesh_yaf6j")
 
-[node name="BackWall" type="Node3D" parent="Room" unique_id=129230694]
+[node name="BackWall" type="Node3D" parent="Room" unique_id=793175450]
 
-[node name="Board01" type="MeshInstance3D" parent="Room/BackWall" unique_id=648735140]
+[node name="Board01" type="MeshInstance3D" parent="Room/BackWall" unique_id=1116704968]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 0.03, -1.1797506)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1348,7 +1348,7 @@ instance_shader_parameters/surface_seed = 0.099
 instance_shader_parameters/tint = Color(0.37317196, 0.51894224, 0.97957635, 1)
 mesh = SubResource("ArrayMesh_wj15g")
 
-[node name="Board02" type="MeshInstance3D" parent="Room/BackWall" unique_id=1640639228]
+[node name="Board02" type="MeshInstance3D" parent="Room/BackWall" unique_id=790373811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 0.33, -1.1749443)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1356,7 +1356,7 @@ instance_shader_parameters/surface_seed = 0.128
 instance_shader_parameters/tint = Color(0.6081413, 0.8456965, 1.5963709, 1)
 mesh = SubResource("ArrayMesh_e8e8i")
 
-[node name="Board03" type="MeshInstance3D" parent="Room/BackWall" unique_id=1598160197]
+[node name="Board03" type="MeshInstance3D" parent="Room/BackWall" unique_id=1427665449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 0.63, -1.1711591)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1364,7 +1364,7 @@ instance_shader_parameters/surface_seed = 0.15700000000000003
 instance_shader_parameters/tint = Color(0.5120201, 0.71202797, 1.3440528, 1)
 mesh = SubResource("ArrayMesh_cqdjn")
 
-[node name="Board04" type="MeshInstance3D" parent="Room/BackWall" unique_id=1150251677]
+[node name="Board04" type="MeshInstance3D" parent="Room/BackWall" unique_id=1678264474]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 0.93, -1.1702063)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1372,7 +1372,7 @@ instance_shader_parameters/surface_seed = 0.186
 instance_shader_parameters/tint = Color(0.42659992, 0.5932405, 1.1198248, 1)
 mesh = SubResource("ArrayMesh_xn8ny")
 
-[node name="Board05" type="MeshInstance3D" parent="Room/BackWall" unique_id=442489294]
+[node name="Board05" type="MeshInstance3D" parent="Room/BackWall" unique_id=1893752119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 1.23, -1.1645308)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1380,7 +1380,7 @@ instance_shader_parameters/surface_seed = 0.21500000000000002
 instance_shader_parameters/tint = Color(0.37991324, 0.52831686, 0.99727225, 1)
 mesh = SubResource("ArrayMesh_7uao1")
 
-[node name="Board06" type="MeshInstance3D" parent="Room/BackWall" unique_id=1765720635]
+[node name="Board06" type="MeshInstance3D" parent="Room/BackWall" unique_id=439782968]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 1.53, -1.1624602)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1388,7 +1388,7 @@ instance_shader_parameters/surface_seed = 0.24400000000000002
 instance_shader_parameters/tint = Color(0.3742807, 0.5204841, 0.98248684, 1)
 mesh = SubResource("ArrayMesh_wnksh")
 
-[node name="Board07" type="MeshInstance3D" parent="Room/BackWall" unique_id=1853048499]
+[node name="Board07" type="MeshInstance3D" parent="Room/BackWall" unique_id=1648252005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 1.83, -1.1691995)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1396,7 +1396,7 @@ instance_shader_parameters/surface_seed = 0.273
 instance_shader_parameters/tint = Color(0.43593785, 0.6062261, 1.1443368, 1)
 mesh = SubResource("ArrayMesh_aklg3")
 
-[node name="Board08" type="MeshInstance3D" parent="Room/BackWall" unique_id=912522350]
+[node name="Board08" type="MeshInstance3D" parent="Room/BackWall" unique_id=1964345369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 2.13, -1.1758963)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1404,7 +1404,7 @@ instance_shader_parameters/surface_seed = 0.30200000000000005
 instance_shader_parameters/tint = Color(0.7002122, 0.7002122, 0.73522276, 1)
 mesh = SubResource("ArrayMesh_mvkdo")
 
-[node name="Board09" type="MeshInstance3D" parent="Room/BackWall" unique_id=1516030329]
+[node name="Board09" type="MeshInstance3D" parent="Room/BackWall" unique_id=1187810659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 2.43, -1.1761072)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1412,7 +1412,7 @@ instance_shader_parameters/surface_seed = 0.331
 instance_shader_parameters/tint = Color(0.60993207, 0.60993207, 0.64042866, 1)
 mesh = SubResource("ArrayMesh_8qegi")
 
-[node name="Board10" type="MeshInstance3D" parent="Room/BackWall" unique_id=145888253]
+[node name="Board10" type="MeshInstance3D" parent="Room/BackWall" unique_id=345870456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 2.73, -1.1655803)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1420,7 +1420,7 @@ instance_shader_parameters/surface_seed = 0.36000000000000004
 instance_shader_parameters/tint = Color(0.6098328, 0.84804875, 1.6008111, 1)
 mesh = SubResource("ArrayMesh_fv4oi")
 
-[node name="Board11" type="MeshInstance3D" parent="Room/BackWall" unique_id=150659727]
+[node name="Board11" type="MeshInstance3D" parent="Room/BackWall" unique_id=948122099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 3.03, -1.1675884)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1428,7 +1428,7 @@ instance_shader_parameters/surface_seed = 0.389
 instance_shader_parameters/tint = Color(0.55456996, 0.77119887, 1.4557462, 1)
 mesh = SubResource("ArrayMesh_ekvbc")
 
-[node name="Board12" type="MeshInstance3D" parent="Room/BackWall" unique_id=1498020194]
+[node name="Board12" type="MeshInstance3D" parent="Room/BackWall" unique_id=1428629598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 3.33, -1.1659563)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1436,7 +1436,7 @@ instance_shader_parameters/surface_seed = 0.41800000000000004
 instance_shader_parameters/tint = Color(0.7693432, 0.7693432, 0.80781037, 1)
 mesh = SubResource("ArrayMesh_r51iq")
 
-[node name="Board13" type="MeshInstance3D" parent="Room/BackWall" unique_id=325466981]
+[node name="Board13" type="MeshInstance3D" parent="Room/BackWall" unique_id=1206137742]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08, 3.63, -1.1709481)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1444,7 +1444,7 @@ instance_shader_parameters/surface_seed = 0.447
 instance_shader_parameters/tint = Color(0.63254213, 0.63254213, 0.66416925, 1)
 mesh = SubResource("ArrayMesh_mrpjb")
 
-[node name="Board14" type="MeshInstance3D" parent="Room/BackWall" unique_id=1681436194]
+[node name="Board14" type="MeshInstance3D" parent="Room/BackWall" unique_id=42716554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 0.03, -1.174678)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1452,7 +1452,7 @@ instance_shader_parameters/surface_seed = 0.47600000000000003
 instance_shader_parameters/tint = Color(0.7802953, 0.7802953, 0.81931007, 1)
 mesh = SubResource("ArrayMesh_b0j0c")
 
-[node name="Board15" type="MeshInstance3D" parent="Room/BackWall" unique_id=825691928]
+[node name="Board15" type="MeshInstance3D" parent="Room/BackWall" unique_id=412666154]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 0.33, -1.1711363)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1460,7 +1460,7 @@ instance_shader_parameters/surface_seed = 0.505
 instance_shader_parameters/tint = Color(0.5018017, 0.69781804, 1.3172295, 1)
 mesh = SubResource("ArrayMesh_02cp7")
 
-[node name="Board16" type="MeshInstance3D" parent="Room/BackWall" unique_id=473091897]
+[node name="Board16" type="MeshInstance3D" parent="Room/BackWall" unique_id=540893823]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 0.63, -1.1602907)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1468,7 +1468,7 @@ instance_shader_parameters/surface_seed = 0.534
 instance_shader_parameters/tint = Color(0.54878706, 0.76315707, 1.4405661, 1)
 mesh = SubResource("ArrayMesh_1o4u6")
 
-[node name="Board17" type="MeshInstance3D" parent="Room/BackWall" unique_id=1146923806]
+[node name="Board17" type="MeshInstance3D" parent="Room/BackWall" unique_id=1398557052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 0.93, -1.1672655)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1476,7 +1476,7 @@ instance_shader_parameters/surface_seed = 0.5630000000000001
 instance_shader_parameters/tint = Color(0.76675236, 0.76675236, 0.80509, 1)
 mesh = SubResource("ArrayMesh_loryx")
 
-[node name="Board18" type="MeshInstance3D" parent="Room/BackWall" unique_id=316337167]
+[node name="Board18" type="MeshInstance3D" parent="Room/BackWall" unique_id=127088838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 1.23, -1.17929)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1484,7 +1484,7 @@ instance_shader_parameters/surface_seed = 0.5920000000000001
 instance_shader_parameters/tint = Color(0.4957967, 0.6894673, 1.3014663, 1)
 mesh = SubResource("ArrayMesh_excpx")
 
-[node name="Board19" type="MeshInstance3D" parent="Room/BackWall" unique_id=1996634943]
+[node name="Board19" type="MeshInstance3D" parent="Room/BackWall" unique_id=620888725]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 1.53, -1.166461)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1492,7 +1492,7 @@ instance_shader_parameters/surface_seed = 0.621
 instance_shader_parameters/tint = Color(0.5491323, 0.76363707, 1.4414722, 1)
 mesh = SubResource("ArrayMesh_bm5m8")
 
-[node name="Board20" type="MeshInstance3D" parent="Room/BackWall" unique_id=1625913684]
+[node name="Board20" type="MeshInstance3D" parent="Room/BackWall" unique_id=681835816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 1.83, -1.1643405)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1500,7 +1500,7 @@ instance_shader_parameters/surface_seed = 0.6500000000000001
 instance_shader_parameters/tint = Color(0.4802414, 0.6678357, 1.2606337, 1)
 mesh = SubResource("ArrayMesh_gwstt")
 
-[node name="Board21" type="MeshInstance3D" parent="Room/BackWall" unique_id=941974785]
+[node name="Board21" type="MeshInstance3D" parent="Room/BackWall" unique_id=1380603075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 2.13, -1.1616397)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1508,7 +1508,7 @@ instance_shader_parameters/surface_seed = 0.679
 instance_shader_parameters/tint = Color(0.7362691, 0.7362691, 0.77308255, 1)
 mesh = SubResource("ArrayMesh_1odgi")
 
-[node name="Board22" type="MeshInstance3D" parent="Room/BackWall" unique_id=835244844]
+[node name="Board22" type="MeshInstance3D" parent="Room/BackWall" unique_id=527149161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 2.43, -1.1644205)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1516,7 +1516,7 @@ instance_shader_parameters/surface_seed = 0.708
 instance_shader_parameters/tint = Color(0.45608854, 0.63424814, 1.1972325, 1)
 mesh = SubResource("ArrayMesh_kmlgm")
 
-[node name="Board23" type="MeshInstance3D" parent="Room/BackWall" unique_id=1361746753]
+[node name="Board23" type="MeshInstance3D" parent="Room/BackWall" unique_id=571844767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 2.73, -1.1627954)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1524,7 +1524,7 @@ instance_shader_parameters/surface_seed = 0.7370000000000001
 instance_shader_parameters/tint = Color(0.3768523, 0.52406025, 0.9892373, 1)
 mesh = SubResource("ArrayMesh_0lyj3")
 
-[node name="Board24" type="MeshInstance3D" parent="Room/BackWall" unique_id=32165283]
+[node name="Board24" type="MeshInstance3D" parent="Room/BackWall" unique_id=1511880844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 3.03, -1.179691)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1532,7 +1532,7 @@ instance_shader_parameters/surface_seed = 0.766
 instance_shader_parameters/tint = Color(0.42281944, 0.58798325, 1.1099011, 1)
 mesh = SubResource("ArrayMesh_alj5u")
 
-[node name="Board25" type="MeshInstance3D" parent="Room/BackWall" unique_id=1328828230]
+[node name="Board25" type="MeshInstance3D" parent="Room/BackWall" unique_id=1510549111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 3.33, -1.1749027)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1540,7 +1540,7 @@ instance_shader_parameters/surface_seed = 0.7950000000000002
 instance_shader_parameters/tint = Color(0.57711214, 0.80254656, 1.5149194, 1)
 mesh = SubResource("ArrayMesh_4s6de")
 
-[node name="Board26" type="MeshInstance3D" parent="Room/BackWall" unique_id=550205086]
+[node name="Board26" type="MeshInstance3D" parent="Room/BackWall" unique_id=487650737]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33, 3.63, -1.1615222)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1548,7 +1548,7 @@ instance_shader_parameters/surface_seed = 0.8240000000000001
 instance_shader_parameters/tint = Color(0.51314235, 0.7135886, 1.3469987, 1)
 mesh = SubResource("ArrayMesh_880g6")
 
-[node name="Board27" type="MeshInstance3D" parent="Room/BackWall" unique_id=676650618]
+[node name="Board27" type="MeshInstance3D" parent="Room/BackWall" unique_id=1143998311]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 2.37, -1.1686804)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1556,7 +1556,7 @@ instance_shader_parameters/surface_seed = 0.853
 instance_shader_parameters/tint = Color(0.5497998, 0.76456535, 1.4432245, 1)
 mesh = SubResource("ArrayMesh_bulys")
 
-[node name="Board28" type="MeshInstance3D" parent="Room/BackWall" unique_id=1996576971]
+[node name="Board28" type="MeshInstance3D" parent="Room/BackWall" unique_id=1379730695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 2.67, -1.1610684)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1564,7 +1564,7 @@ instance_shader_parameters/surface_seed = 0.8820000000000001
 instance_shader_parameters/tint = Color(0.7274838, 0.7274838, 0.763858, 1)
 mesh = SubResource("ArrayMesh_k3fjj")
 
-[node name="Board29" type="MeshInstance3D" parent="Room/BackWall" unique_id=36674632]
+[node name="Board29" type="MeshInstance3D" parent="Room/BackWall" unique_id=1044926669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 2.97, -1.1743704)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1572,7 +1572,7 @@ instance_shader_parameters/surface_seed = 0.911
 instance_shader_parameters/tint = Color(0.5169086, 0.718826, 1.356885, 1)
 mesh = SubResource("ArrayMesh_ehr10")
 
-[node name="Board30" type="MeshInstance3D" parent="Room/BackWall" unique_id=2140860748]
+[node name="Board30" type="MeshInstance3D" parent="Room/BackWall" unique_id=716883037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 3.27, -1.1797155)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1580,7 +1580,7 @@ instance_shader_parameters/surface_seed = 0.94
 instance_shader_parameters/tint = Color(0.42329165, 0.5886399, 1.1111406, 1)
 mesh = SubResource("ArrayMesh_oxfya")
 
-[node name="Board31" type="MeshInstance3D" parent="Room/BackWall" unique_id=1833323837]
+[node name="Board31" type="MeshInstance3D" parent="Room/BackWall" unique_id=73222421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 3.57, -1.1640697)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1588,7 +1588,7 @@ instance_shader_parameters/surface_seed = 0.9690000000000001
 instance_shader_parameters/tint = Color(0.8072658, 0.8072658, 0.8476291, 1)
 mesh = SubResource("ArrayMesh_4sh8n")
 
-[node name="Board32" type="MeshInstance3D" parent="Room/BackWall" unique_id=17235378]
+[node name="Board32" type="MeshInstance3D" parent="Room/BackWall" unique_id=1964472182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 3.87, -1.1637207)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -1596,7 +1596,7 @@ instance_shader_parameters/surface_seed = 0.998
 instance_shader_parameters/tint = Color(0.6187664, 0.6187664, 0.64970475, 1)
 mesh = SubResource("ArrayMesh_biyil")
 
-[node name="Stud1A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1852898122]
+[node name="Stud1A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1766514150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16, 0.83, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1604,7 +1604,7 @@ instance_shader_parameters/surface_seed = 0.5900000000000001
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud1B" type="MeshInstance3D" parent="Room/BackWall" unique_id=2060607917]
+[node name="Stud1B" type="MeshInstance3D" parent="Room/BackWall" unique_id=1852642062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16, 2.49, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1612,7 +1612,7 @@ instance_shader_parameters/surface_seed = 0.6200000000000001
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud2A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1670799991]
+[node name="Stud2A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1871877043]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.83, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1620,7 +1620,7 @@ instance_shader_parameters/surface_seed = 0.66
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud2B" type="MeshInstance3D" parent="Room/BackWall" unique_id=1977294353]
+[node name="Stud2B" type="MeshInstance3D" parent="Room/BackWall" unique_id=1940546173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.49, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1628,7 +1628,7 @@ instance_shader_parameters/surface_seed = 0.6900000000000001
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud3A" type="MeshInstance3D" parent="Room/BackWall" unique_id=2138226992]
+[node name="Stud3A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1204686704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52, 0.83, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1636,7 +1636,7 @@ instance_shader_parameters/surface_seed = 0.73
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud3B" type="MeshInstance3D" parent="Room/BackWall" unique_id=1109254315]
+[node name="Stud3B" type="MeshInstance3D" parent="Room/BackWall" unique_id=2092003334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52, 2.49, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1644,7 +1644,7 @@ instance_shader_parameters/surface_seed = 0.76
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud4A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1432509011]
+[node name="Stud4A" type="MeshInstance3D" parent="Room/BackWall" unique_id=1055067392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66, 0.83, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1652,7 +1652,7 @@ instance_shader_parameters/surface_seed = 0.8
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="Stud4B" type="MeshInstance3D" parent="Room/BackWall" unique_id=177147346]
+[node name="Stud4B" type="MeshInstance3D" parent="Room/BackWall" unique_id=22990347]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.66, 2.49, -1.1025)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1660,7 +1660,7 @@ instance_shader_parameters/surface_seed = 0.8300000000000001
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_47tgq")
 
-[node name="JambL" type="MeshInstance3D" parent="Room/BackWall" unique_id=610598489]
+[node name="JambL" type="MeshInstance3D" parent="Room/BackWall" unique_id=955245256]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63, 1.14, -1.16)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1668,7 +1668,7 @@ instance_shader_parameters/surface_seed = 0.61
 instance_shader_parameters/tint = Color(0.5248, 0.7298, 1.3776, 1)
 mesh = SubResource("ArrayMesh_kqhjm")
 
-[node name="JambR" type="MeshInstance3D" parent="Room/BackWall" unique_id=238065508]
+[node name="JambR" type="MeshInstance3D" parent="Room/BackWall" unique_id=626539200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87, 1.14, -1.16)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1676,7 +1676,7 @@ instance_shader_parameters/surface_seed = 0.67
 instance_shader_parameters/tint = Color(0.5248, 0.7298, 1.3776, 1)
 mesh = SubResource("ArrayMesh_kqhjm")
 
-[node name="Lintel" type="MeshInstance3D" parent="Room/BackWall" unique_id=1246331024]
+[node name="Lintel" type="MeshInstance3D" parent="Room/BackWall" unique_id=1501758911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 2.37, -1.16)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1684,9 +1684,9 @@ instance_shader_parameters/surface_seed = 0.73
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_g0slb")
 
-[node name="Roof" type="Node3D" parent="Room" unique_id=1542018415]
+[node name="Roof" type="Node3D" parent="Room" unique_id=1191705553]
 
-[node name="Rafter1" type="MeshInstance3D" parent="Room/Roof" unique_id=168208194]
+[node name="Rafter1" type="MeshInstance3D" parent="Room/Roof" unique_id=1076885713]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1694,7 +1694,7 @@ instance_shader_parameters/surface_seed = 0.13
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter2" type="MeshInstance3D" parent="Room/Roof" unique_id=1829140176]
+[node name="Rafter2" type="MeshInstance3D" parent="Room/Roof" unique_id=941800748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1702,7 +1702,7 @@ instance_shader_parameters/surface_seed = 0.26
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter3" type="MeshInstance3D" parent="Room/Roof" unique_id=359680491]
+[node name="Rafter3" type="MeshInstance3D" parent="Room/Roof" unique_id=1113665119]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1710,7 +1710,7 @@ instance_shader_parameters/surface_seed = 0.39
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter4" type="MeshInstance3D" parent="Room/Roof" unique_id=1911432984]
+[node name="Rafter4" type="MeshInstance3D" parent="Room/Roof" unique_id=835333245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1718,7 +1718,7 @@ instance_shader_parameters/surface_seed = 0.52
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter5" type="MeshInstance3D" parent="Room/Roof" unique_id=1249400157]
+[node name="Rafter5" type="MeshInstance3D" parent="Room/Roof" unique_id=821207093]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1726,7 +1726,7 @@ instance_shader_parameters/surface_seed = 0.65
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter6" type="MeshInstance3D" parent="Room/Roof" unique_id=1475756146]
+[node name="Rafter6" type="MeshInstance3D" parent="Room/Roof" unique_id=1840026086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1734,7 +1734,7 @@ instance_shader_parameters/surface_seed = 0.78
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter7" type="MeshInstance3D" parent="Room/Roof" unique_id=1025924746]
+[node name="Rafter7" type="MeshInstance3D" parent="Room/Roof" unique_id=2071405073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1742,7 +1742,7 @@ instance_shader_parameters/surface_seed = 0.91
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Rafter8" type="MeshInstance3D" parent="Room/Roof" unique_id=1610679010]
+[node name="Rafter8" type="MeshInstance3D" parent="Room/Roof" unique_id=1704684654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85, 3.16, 0.75)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1750,7 +1750,7 @@ instance_shader_parameters/surface_seed = 1.04
 instance_shader_parameters/tint = Color(0.4992, 0.6942, 1.3104, 1)
 mesh = SubResource("ArrayMesh_8gloo")
 
-[node name="Deck1" type="MeshInstance3D" parent="Room/Roof" unique_id=1324249344]
+[node name="Deck1" type="MeshInstance3D" parent="Room/Roof" unique_id=996270843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32, -0.56)
 material_override = ExtResource("8_i5ydv")
 cast_shadow = 0
@@ -1759,7 +1759,7 @@ instance_shader_parameters/surface_seed = 0.29
 instance_shader_parameters/tint = Color(0.72, 0.73, 0.78, 1)
 mesh = SubResource("ArrayMesh_jtvsd")
 
-[node name="Deck2" type="MeshInstance3D" parent="Room/Roof" unique_id=2140471031]
+[node name="Deck2" type="MeshInstance3D" parent="Room/Roof" unique_id=2133729211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32, 0.73)
 material_override = ExtResource("8_i5ydv")
 cast_shadow = 0
@@ -1768,7 +1768,7 @@ instance_shader_parameters/surface_seed = 0.48
 instance_shader_parameters/tint = Color(0.72, 0.73, 0.78, 1)
 mesh = SubResource("ArrayMesh_jtvsd")
 
-[node name="Deck3" type="MeshInstance3D" parent="Room/Roof" unique_id=982956794]
+[node name="Deck3" type="MeshInstance3D" parent="Room/Roof" unique_id=1736947229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32, 2.02)
 material_override = ExtResource("8_i5ydv")
 cast_shadow = 0
@@ -1777,9 +1777,9 @@ instance_shader_parameters/surface_seed = 0.6699999999999999
 instance_shader_parameters/tint = Color(0.72, 0.73, 0.78, 1)
 mesh = SubResource("ArrayMesh_jtvsd")
 
-[node name="Outside" type="Node3D" parent="Room" unique_id=1323737143]
+[node name="Outside" type="Node3D" parent="Room" unique_id=2127549369]
 
-[node name="Ruin" type="MeshInstance3D" parent="Room/Outside" unique_id=1030329041]
+[node name="Ruin" type="MeshInstance3D" parent="Room/Outside" unique_id=2138789034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 1.02, -12.5)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -1787,7 +1787,7 @@ instance_shader_parameters/surface_seed = 0.36
 instance_shader_parameters/tint = Color(2.2, 2.05, 1.8, 1)
 mesh = SubResource("ArrayMesh_eaq23")
 
-[node name="RuinLow" type="MeshInstance3D" parent="Room/Outside" unique_id=211001290]
+[node name="RuinLow" type="MeshInstance3D" parent="Room/Outside" unique_id=1952291593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4, 0.54, -8.4)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -1795,7 +1795,7 @@ instance_shader_parameters/surface_seed = 0.44
 instance_shader_parameters/tint = Color(2, 1.88, 1.66, 1)
 mesh = SubResource("ArrayMesh_bpwxb")
 
-[node name="Pole" type="MeshInstance3D" parent="Room/Outside" unique_id=241110012]
+[node name="Pole" type="MeshInstance3D" parent="Room/Outside" unique_id=1579903081]
 transform = Transform3D(0.99026805, -0.1391731, 0, 0.1384107, 0.98484325, 0.104528464, -0.014547551, -0.1035112, 0.9945219, -6.6, 2.5, -5.8)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1803,7 +1803,7 @@ instance_shader_parameters/surface_seed = 0.58
 instance_shader_parameters/tint = Color(0.576, 0.801, 1.512, 1)
 mesh = SubResource("ArrayMesh_fffe6")
 
-[node name="Crossarm" type="MeshInstance3D" parent="Room/Outside" unique_id=506764107]
+[node name="Crossarm" type="MeshInstance3D" parent="Room/Outside" unique_id=732289034]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85, 4.62, -5.77)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1811,7 +1811,7 @@ instance_shader_parameters/surface_seed = 0.62
 instance_shader_parameters/tint = Color(0.5632, 0.7832, 1.4784, 1)
 mesh = SubResource("ArrayMesh_2y017")
 
-[node name="Ridge" type="MeshInstance3D" parent="Room/Outside" unique_id=1818669653]
+[node name="Ridge" type="MeshInstance3D" parent="Room/Outside" unique_id=822699932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -35)
 material_override = ExtResource("5_pbm0j")
 gi_mode = 0
@@ -1819,9 +1819,9 @@ instance_shader_parameters/surface_seed = 0.66
 instance_shader_parameters/tint = Color(1.36, 1.3, 1.22, 1)
 mesh = SubResource("ArrayMesh_un0cu")
 
-[node name="Bench" type="Node3D" parent="." unique_id=2040262988]
+[node name="Bench" type="Node3D" parent="." unique_id=682577681]
 
-[node name="Top1" type="MeshInstance3D" parent="Bench" unique_id=592492349]
+[node name="Top1" type="MeshInstance3D" parent="Bench" unique_id=1423138513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895, -0.294)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1829,7 +1829,7 @@ instance_shader_parameters/surface_seed = 0.21
 instance_shader_parameters/tint = Color(0.5248, 0.7298, 1.3776, 1)
 mesh = SubResource("ArrayMesh_wt6kv")
 
-[node name="Top2" type="MeshInstance3D" parent="Bench" unique_id=1234330437]
+[node name="Top2" type="MeshInstance3D" parent="Bench" unique_id=1336850659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, -0.147)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1837,7 +1837,7 @@ instance_shader_parameters/surface_seed = 0.33999999999999997
 instance_shader_parameters/tint = Color(0.608, 0.8455, 1.596, 1)
 mesh = SubResource("ArrayMesh_wt6kv")
 
-[node name="Top3" type="MeshInstance3D" parent="Bench" unique_id=1568962599]
+[node name="Top3" type="MeshInstance3D" parent="Bench" unique_id=1318171484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895, 0)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1845,7 +1845,7 @@ instance_shader_parameters/surface_seed = 0.47
 instance_shader_parameters/tint = Color(0.6912, 0.9612, 1.8144, 1)
 mesh = SubResource("ArrayMesh_wt6kv")
 
-[node name="Top4" type="MeshInstance3D" parent="Bench" unique_id=645356156]
+[node name="Top4" type="MeshInstance3D" parent="Bench" unique_id=1979278687]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.147)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1853,7 +1853,7 @@ instance_shader_parameters/surface_seed = 0.6
 instance_shader_parameters/tint = Color(0.5248, 0.7298, 1.3776, 1)
 mesh = SubResource("ArrayMesh_wt6kv")
 
-[node name="Top5" type="MeshInstance3D" parent="Bench" unique_id=1015799813]
+[node name="Top5" type="MeshInstance3D" parent="Bench" unique_id=97731182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895, 0.294)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1861,7 +1861,7 @@ instance_shader_parameters/surface_seed = 0.73
 instance_shader_parameters/tint = Color(0.608, 0.8455, 1.596, 1)
 mesh = SubResource("ArrayMesh_wt6kv")
 
-[node name="ApronB" type="MeshInstance3D" parent="Bench" unique_id=1650371068]
+[node name="ApronB" type="MeshInstance3D" parent="Bench" unique_id=166647864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8075, -0.35)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1869,7 +1869,7 @@ instance_shader_parameters/surface_seed = 0.66
 instance_shader_parameters/tint = Color(0.576, 0.801, 1.512, 1)
 mesh = SubResource("ArrayMesh_xsd5q")
 
-[node name="ApronF" type="MeshInstance3D" parent="Bench" unique_id=300442838]
+[node name="ApronF" type="MeshInstance3D" parent="Bench" unique_id=2139216804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8075, 0.35)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1877,7 +1877,7 @@ instance_shader_parameters/surface_seed = 0.72
 instance_shader_parameters/tint = Color(0.576, 0.801, 1.512, 1)
 mesh = SubResource("ArrayMesh_xsd5q")
 
-[node name="Leg1" type="MeshInstance3D" parent="Bench" unique_id=864401280]
+[node name="Leg1" type="MeshInstance3D" parent="Bench" unique_id=2098711993]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96, 0.45, -0.27)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1885,7 +1885,7 @@ instance_shader_parameters/surface_seed = 0.41
 instance_shader_parameters/tint = Color(0.5504, 0.7654, 1.4448, 1)
 mesh = SubResource("ArrayMesh_3gcmh")
 
-[node name="Leg2" type="MeshInstance3D" parent="Bench" unique_id=787206646]
+[node name="Leg2" type="MeshInstance3D" parent="Bench" unique_id=1889009716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.96, 0.45, 0.27)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1893,7 +1893,7 @@ instance_shader_parameters/surface_seed = 0.52
 instance_shader_parameters/tint = Color(0.5504, 0.7654, 1.4448, 1)
 mesh = SubResource("ArrayMesh_3gcmh")
 
-[node name="Leg3" type="MeshInstance3D" parent="Bench" unique_id=369622635]
+[node name="Leg3" type="MeshInstance3D" parent="Bench" unique_id=722676740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, 0.45, -0.27)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1901,7 +1901,7 @@ instance_shader_parameters/surface_seed = 0.63
 instance_shader_parameters/tint = Color(0.5504, 0.7654, 1.4448, 1)
 mesh = SubResource("ArrayMesh_3gcmh")
 
-[node name="Leg4" type="MeshInstance3D" parent="Bench" unique_id=319522918]
+[node name="Leg4" type="MeshInstance3D" parent="Bench" unique_id=1105449186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.96, 0.45, 0.27)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1909,21 +1909,21 @@ instance_shader_parameters/surface_seed = 0.74
 instance_shader_parameters/tint = Color(0.5504, 0.7654, 1.4448, 1)
 mesh = SubResource("ArrayMesh_3gcmh")
 
-[node name="RailFront" type="MeshInstance3D" parent="Bench" unique_id=1712710090]
+[node name="RailFront" type="MeshInstance3D" parent="Bench" unique_id=1912674156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.27)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.55
 mesh = SubResource("ArrayMesh_ydddw")
 
-[node name="RailBack" type="MeshInstance3D" parent="Bench" unique_id=619639456]
+[node name="RailBack" type="MeshInstance3D" parent="Bench" unique_id=1000800549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.27)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.63
 mesh = SubResource("ArrayMesh_ydddw")
 
-[node name="Shelf" type="MeshInstance3D" parent="Bench" unique_id=1685772155]
+[node name="Shelf" type="MeshInstance3D" parent="Bench" unique_id=1889040496]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36, 0)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1931,49 +1931,49 @@ instance_shader_parameters/surface_seed = 0.77
 instance_shader_parameters/tint = Color(0.5376, 0.7476, 1.4112, 1)
 mesh = SubResource("ArrayMesh_my1vv")
 
-[node name="ViceBase" type="MeshInstance3D" parent="Bench" unique_id=685239311]
+[node name="ViceBase" type="MeshInstance3D" parent="Bench" unique_id=252082064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.9575, -0.14)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.19
 mesh = SubResource("ArrayMesh_m56bf")
 
-[node name="ViceBody" type="MeshInstance3D" parent="Bench" unique_id=830669485]
+[node name="ViceBody" type="MeshInstance3D" parent="Bench" unique_id=858115958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.0175, -0.1)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.27
 mesh = SubResource("ArrayMesh_6nb1q")
 
-[node name="ViceJaw" type="MeshInstance3D" parent="Bench" unique_id=28302703]
+[node name="ViceJaw" type="MeshInstance3D" parent="Bench" unique_id=1147326366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 1.0575, 0.01)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.33
 mesh = SubResource("ArrayMesh_yo7v7")
 
-[node name="ViceHandle" type="MeshInstance3D" parent="Bench" unique_id=1161672291]
+[node name="ViceHandle" type="MeshInstance3D" parent="Bench" unique_id=449943795]
 transform = Transform3D(0.9702957, -0.2419219, 0, -1.0574742e-08, -4.2412974e-08, -1, 0.2419219, 0.9702957, -4.371139e-08, 0.8, 1.0675, -0.24)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.39
 mesh = SubResource("ArrayMesh_cv23j")
 
-[node name="Tin" type="MeshInstance3D" parent="Bench" unique_id=940041887]
+[node name="Tin" type="MeshInstance3D" parent="Bench" unique_id=1173360377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86, 0.9775, -0.16)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.45
 mesh = SubResource("ArrayMesh_mmb8x")
 
-[node name="Rag" type="MeshInstance3D" parent="Bench" unique_id=226561783]
+[node name="Rag" type="MeshInstance3D" parent="Bench" unique_id=305302058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.9405, 0.05)
 material_override = ExtResource("5_pbm0j")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.51
 mesh = SubResource("ArrayMesh_you5t")
 
-[node name="BoardPostL" type="MeshInstance3D" parent="Bench" unique_id=1997593611]
+[node name="BoardPostL" type="MeshInstance3D" parent="Bench" unique_id=2005069219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16, 1.12, -0.49)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1981,7 +1981,7 @@ instance_shader_parameters/surface_seed = 0.81
 instance_shader_parameters/tint = Color(0.5376, 0.7476, 1.4112, 1)
 mesh = SubResource("ArrayMesh_m2ux4")
 
-[node name="BoardPostR" type="MeshInstance3D" parent="Bench" unique_id=1712195953]
+[node name="BoardPostR" type="MeshInstance3D" parent="Bench" unique_id=1173487604]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16, 1.12, -0.49)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1989,7 +1989,7 @@ instance_shader_parameters/surface_seed = 0.87
 instance_shader_parameters/tint = Color(0.5376, 0.7476, 1.4112, 1)
 mesh = SubResource("ArrayMesh_m2ux4")
 
-[node name="BoardSlat1" type="MeshInstance3D" parent="Bench" unique_id=513164205]
+[node name="BoardSlat1" type="MeshInstance3D" parent="Bench" unique_id=1985167291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0625, -0.44)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -1997,7 +1997,7 @@ instance_shader_parameters/surface_seed = 0.09
 instance_shader_parameters/tint = Color(0.6445826, 0.8963727, 1.6920294, 1)
 mesh = SubResource("ArrayMesh_bn8oa")
 
-[node name="BoardSlat2" type="MeshInstance3D" parent="Bench" unique_id=55090955]
+[node name="BoardSlat2" type="MeshInstance3D" parent="Bench" unique_id=110541262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2875, -0.448)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2005,7 +2005,7 @@ instance_shader_parameters/surface_seed = 0.23
 instance_shader_parameters/tint = Color(0.5911294, 0.8220393, 1.5517147, 1)
 mesh = SubResource("ArrayMesh_bn8oa")
 
-[node name="BoardSlat3" type="MeshInstance3D" parent="Bench" unique_id=1004920139]
+[node name="BoardSlat3" type="MeshInstance3D" parent="Bench" unique_id=523568123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5125, -0.44)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2013,7 +2013,7 @@ instance_shader_parameters/surface_seed = 0.37
 instance_shader_parameters/tint = Color(0.6305939, 0.8769196, 1.655309, 1)
 mesh = SubResource("ArrayMesh_bn8oa")
 
-[node name="BoardSlat4" type="MeshInstance3D" parent="Bench" unique_id=797833147]
+[node name="BoardSlat4" type="MeshInstance3D" parent="Bench" unique_id=1404686071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7375, -0.448)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2021,7 +2021,7 @@ instance_shader_parameters/surface_seed = 0.51
 instance_shader_parameters/tint = Color(0.62233114, 0.8654293, 1.6336193, 1)
 mesh = SubResource("ArrayMesh_bn8oa")
 
-[node name="BoardSlat5" type="MeshInstance3D" parent="Bench" unique_id=1009572561]
+[node name="BoardSlat5" type="MeshInstance3D" parent="Bench" unique_id=160742405]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9625, -0.44)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2029,7 +2029,7 @@ instance_shader_parameters/surface_seed = 0.65
 instance_shader_parameters/tint = Color(0.6043432, 0.8404147, 1.5864007, 1)
 mesh = SubResource("ArrayMesh_bn8oa")
 
-[node name="BoardSlat6" type="MeshInstance3D" parent="Bench" unique_id=1637636923]
+[node name="BoardSlat6" type="MeshInstance3D" parent="Bench" unique_id=1590375356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1875, -0.448)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2037,7 +2037,7 @@ instance_shader_parameters/surface_seed = 0.79
 instance_shader_parameters/tint = Color(0.6146639, 0.854767, 1.6134928, 1)
 mesh = SubResource("ArrayMesh_bn8oa")
 
-[node name="BoardCap" type="MeshInstance3D" parent="Bench" unique_id=1493506994]
+[node name="BoardCap" type="MeshInstance3D" parent="Bench" unique_id=1124240909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32, -0.42)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2045,49 +2045,49 @@ instance_shader_parameters/surface_seed = 0.93
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_l17vh")
 
-[node name="SignPlate" type="MeshInstance3D" parent="Bench" unique_id=1672323766]
+[node name="SignPlate" type="MeshInstance3D" parent="Bench" unique_id=432773703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.155, -0.409)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.17
 mesh = SubResource("ArrayMesh_y403r")
 
-[node name="ReadoutPanel" type="MeshInstance3D" parent="Bench" unique_id=171433553]
+[node name="ReadoutPanel" type="MeshInstance3D" parent="Bench" unique_id=1036256404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17, -0.411)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.23
 mesh = SubResource("ArrayMesh_iwhbb")
 
-[node name="ReadoutLipB" type="MeshInstance3D" parent="Bench" unique_id=886720237]
+[node name="ReadoutLipB" type="MeshInstance3D" parent="Bench" unique_id=763778595]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.049, -0.415)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.35
 mesh = SubResource("ArrayMesh_wlrea")
 
-[node name="ReadoutLipT" type="MeshInstance3D" parent="Bench" unique_id=1701998943]
+[node name="ReadoutLipT" type="MeshInstance3D" parent="Bench" unique_id=659902730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.291, -0.415)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.43
 mesh = SubResource("ArrayMesh_wlrea")
 
-[node name="ReadoutStudL" type="MeshInstance3D" parent="Bench" unique_id=895975140]
+[node name="ReadoutStudL" type="MeshInstance3D" parent="Bench" unique_id=1163229159]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.0250001, 1.17, -0.399)
 material_override = ExtResource("9_racxt")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.53
 mesh = SubResource("ArrayMesh_luvqj")
 
-[node name="ReadoutStudR" type="MeshInstance3D" parent="Bench" unique_id=937919362]
+[node name="ReadoutStudR" type="MeshInstance3D" parent="Bench" unique_id=849208573]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 1.0250001, 1.17, -0.399)
 material_override = ExtResource("9_racxt")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.53
 mesh = SubResource("ArrayMesh_luvqj")
 
-[node name="Title" type="Label3D" parent="Bench" unique_id=618574043]
+[node name="Title" type="Label3D" parent="Bench" unique_id=2017925113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.155, -0.391)
 pixel_size = 0.0022
 double_sided = false
@@ -2098,7 +2098,7 @@ text = "SCAV WORKS"
 font = ExtResource("10_dooca")
 font_size = 54
 
-[node name="Board" type="Label3D" parent="Bench" unique_id=1004976927]
+[node name="Board" type="Label3D" parent="Bench" unique_id=1724032129]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17, -0.394)
 pixel_size = 0.0018
 double_sided = false
@@ -2110,9 +2110,9 @@ font = ExtResource("10_dooca")
 autowrap_mode = 3
 width = 1122.2223
 
-[node name="Clutter" type="Node3D" parent="." unique_id=805098560]
+[node name="Clutter" type="Node3D" parent="." unique_id=1366931877]
 
-[node name="Crate1" type="MeshInstance3D" parent="Clutter" unique_id=1558201729]
+[node name="Crate1" type="MeshInstance3D" parent="Clutter" unique_id=1390281482]
 transform = Transform3D(0.98162717, 0, 0.190809, 0, 1, 0, -0.190809, 0, 0.98162717, 1.74, 0.3, -0.72)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2120,7 +2120,7 @@ instance_shader_parameters/surface_seed = 0.15
 instance_shader_parameters/tint = Color(0.512, 0.712, 1.344, 1)
 mesh = SubResource("ArrayMesh_3eaj8")
 
-[node name="Crate2" type="MeshInstance3D" parent="Clutter" unique_id=2117140360]
+[node name="Crate2" type="MeshInstance3D" parent="Clutter" unique_id=308202934]
 transform = Transform3D(0.99254614, 0, -0.12186935, 0, 1, 0, 0.12186935, 0, 0.99254614, 1.68, 0.89, -0.66)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2128,7 +2128,7 @@ instance_shader_parameters/surface_seed = 0.3
 instance_shader_parameters/tint = Color(0.6016, 0.8366, 1.5792, 1)
 mesh = SubResource("ArrayMesh_3eaj8")
 
-[node name="Crate3" type="MeshInstance3D" parent="Clutter" unique_id=304839267]
+[node name="Crate3" type="MeshInstance3D" parent="Clutter" unique_id=1971730993]
 transform = Transform3D(0.9135454, 0, 0.40673664, 0, 1, 0, -0.40673664, 0, 0.9135454, 3.3, 0.3, 0.34)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2136,14 +2136,14 @@ instance_shader_parameters/surface_seed = 0.44999999999999996
 instance_shader_parameters/tint = Color(0.4608, 0.6408, 1.2096, 1)
 mesh = SubResource("ArrayMesh_3eaj8")
 
-[node name="JerryCan" type="MeshInstance3D" parent="Clutter" unique_id=1536203852]
+[node name="JerryCan" type="MeshInstance3D" parent="Clutter" unique_id=1416120406]
 transform = Transform3D(0.9945219, 0, -0.104528464, 0, 1, 0, 0.104528464, 0, 0.9945219, 1.62, 1.39, -0.64)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.57
 mesh = SubResource("ArrayMesh_r7as1")
 
-[node name="Drum1" type="MeshInstance3D" parent="Clutter" unique_id=1828389771]
+[node name="Drum1" type="MeshInstance3D" parent="Clutter" unique_id=433140999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62, 0.43, 0.22)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2151,7 +2151,7 @@ instance_shader_parameters/surface_seed = 0.38
 instance_shader_parameters/tint = Color(1.32, 1.3, 1.26, 1)
 mesh = SubResource("ArrayMesh_3uyu6")
 
-[node name="DrumBand1L" type="MeshInstance3D" parent="Clutter" unique_id=2109563737]
+[node name="DrumBand1L" type="MeshInstance3D" parent="Clutter" unique_id=762853539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62, 0.21000001, 0.22)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2159,7 +2159,7 @@ instance_shader_parameters/surface_seed = 0.47
 instance_shader_parameters/tint = Color(1.32, 1.3, 1.26, 1)
 mesh = SubResource("ArrayMesh_ul2ji")
 
-[node name="DrumBand1U" type="MeshInstance3D" parent="Clutter" unique_id=2114573447]
+[node name="DrumBand1U" type="MeshInstance3D" parent="Clutter" unique_id=155633155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62, 0.65, 0.22)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2167,7 +2167,7 @@ instance_shader_parameters/surface_seed = 0.47
 instance_shader_parameters/tint = Color(1.32, 1.3, 1.26, 1)
 mesh = SubResource("ArrayMesh_ul2ji")
 
-[node name="Drum2" type="MeshInstance3D" parent="Clutter" unique_id=326493970]
+[node name="Drum2" type="MeshInstance3D" parent="Clutter" unique_id=1702681780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.43, -0.68)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2175,7 +2175,7 @@ instance_shader_parameters/surface_seed = 0.72
 instance_shader_parameters/tint = Color(1.32, 1.3, 1.26, 1)
 mesh = SubResource("ArrayMesh_3uyu6")
 
-[node name="DrumBand2L" type="MeshInstance3D" parent="Clutter" unique_id=621165436]
+[node name="DrumBand2L" type="MeshInstance3D" parent="Clutter" unique_id=717884061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.21000001, -0.68)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2183,7 +2183,7 @@ instance_shader_parameters/surface_seed = 0.8099999999999999
 instance_shader_parameters/tint = Color(1.32, 1.3, 1.26, 1)
 mesh = SubResource("ArrayMesh_ul2ji")
 
-[node name="DrumBand2U" type="MeshInstance3D" parent="Clutter" unique_id=2039140770]
+[node name="DrumBand2U" type="MeshInstance3D" parent="Clutter" unique_id=1323882314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72, 0.65, -0.68)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2191,21 +2191,21 @@ instance_shader_parameters/surface_seed = 0.8099999999999999
 instance_shader_parameters/tint = Color(1.32, 1.3, 1.26, 1)
 mesh = SubResource("ArrayMesh_ul2ji")
 
-[node name="ShelfPostL" type="MeshInstance3D" parent="Clutter" unique_id=803881182]
+[node name="ShelfPostL" type="MeshInstance3D" parent="Clutter" unique_id=64929424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 0.81, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.24
 mesh = SubResource("ArrayMesh_w8dv8")
 
-[node name="ShelfPostR" type="MeshInstance3D" parent="Clutter" unique_id=553667856]
+[node name="ShelfPostR" type="MeshInstance3D" parent="Clutter" unique_id=595441996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65, 0.81, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.32
 mesh = SubResource("ArrayMesh_w8dv8")
 
-[node name="ShelfBoard1" type="MeshInstance3D" parent="Clutter" unique_id=1328516971]
+[node name="ShelfBoard1" type="MeshInstance3D" parent="Clutter" unique_id=1402341426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34, 0.46, -0.86)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2213,7 +2213,7 @@ instance_shader_parameters/surface_seed = 0.4
 instance_shader_parameters/tint = Color(0.5632, 0.7832, 1.4784, 1)
 mesh = SubResource("ArrayMesh_fo17d")
 
-[node name="ShelfBoard2" type="MeshInstance3D" parent="Clutter" unique_id=1777153434]
+[node name="ShelfBoard2" type="MeshInstance3D" parent="Clutter" unique_id=1973826673]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34, 0.98, -0.86)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2221,7 +2221,7 @@ instance_shader_parameters/surface_seed = 0.52
 instance_shader_parameters/tint = Color(0.5632, 0.7832, 1.4784, 1)
 mesh = SubResource("ArrayMesh_fo17d")
 
-[node name="ShelfBoard3" type="MeshInstance3D" parent="Clutter" unique_id=1208004344]
+[node name="ShelfBoard3" type="MeshInstance3D" parent="Clutter" unique_id=1032962905]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34, 1.5, -0.86)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2229,42 +2229,42 @@ instance_shader_parameters/surface_seed = 0.64
 instance_shader_parameters/tint = Color(0.5632, 0.7832, 1.4784, 1)
 mesh = SubResource("ArrayMesh_fo17d")
 
-[node name="ShelfTin1" type="MeshInstance3D" parent="Clutter" unique_id=1588723103]
+[node name="ShelfTin1" type="MeshInstance3D" parent="Clutter" unique_id=585210937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.14, 0.55, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.56
 mesh = SubResource("ArrayMesh_5xqv2")
 
-[node name="ShelfTin2" type="MeshInstance3D" parent="Clutter" unique_id=786600221]
+[node name="ShelfTin2" type="MeshInstance3D" parent="Clutter" unique_id=1906878266]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34, 0.55, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.62
 mesh = SubResource("ArrayMesh_5xqv2")
 
-[node name="ShelfTin3" type="MeshInstance3D" parent="Clutter" unique_id=491822612]
+[node name="ShelfTin3" type="MeshInstance3D" parent="Clutter" unique_id=1040105571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56, 1.07, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.6799999999999999
 mesh = SubResource("ArrayMesh_5xqv2")
 
-[node name="ShelfTin4" type="MeshInstance3D" parent="Clutter" unique_id=695888478]
+[node name="ShelfTin4" type="MeshInstance3D" parent="Clutter" unique_id=937217802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24, 1.59, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.74
 mesh = SubResource("ArrayMesh_5xqv2")
 
-[node name="ShelfTin5" type="MeshInstance3D" parent="Clutter" unique_id=1221558926]
+[node name="ShelfTin5" type="MeshInstance3D" parent="Clutter" unique_id=1303223229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.59, -0.86)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.8
 mesh = SubResource("ArrayMesh_5xqv2")
 
-[node name="UnderCrate" type="MeshInstance3D" parent="Clutter" unique_id=1317503312]
+[node name="UnderCrate" type="MeshInstance3D" parent="Clutter" unique_id=281402085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52, 0.23, -0.02)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2272,14 +2272,14 @@ instance_shader_parameters/surface_seed = 0.61
 instance_shader_parameters/tint = Color(0.5632, 0.7832, 1.4784, 1)
 mesh = SubResource("ArrayMesh_jhtl3")
 
-[node name="Bucket" type="MeshInstance3D" parent="Clutter" unique_id=1392570928]
+[node name="Bucket" type="MeshInstance3D" parent="Clutter" unique_id=401915370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, 0.15, 0.22)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.69
 mesh = SubResource("ArrayMesh_adxan")
 
-[node name="LeaningPlank" type="MeshInstance3D" parent="Clutter" unique_id=693806947]
+[node name="LeaningPlank" type="MeshInstance3D" parent="Clutter" unique_id=796422746]
 transform = Transform3D(0.9945219, -0.023513786, 0.10184941, 0, 0.97437006, 0.22495104, -0.104528464, -0.22371875, 0.9690324, 4.06, 1.06, -0.76)
 material_override = ExtResource("7_s1050")
 gi_mode = 0
@@ -2287,23 +2287,23 @@ instance_shader_parameters/surface_seed = 0.75
 instance_shader_parameters/tint = Color(0.5504, 0.7654, 1.4448, 1)
 mesh = SubResource("ArrayMesh_w5vly")
 
-[node name="Lamp" type="Node3D" parent="." unique_id=9894215]
+[node name="Lamp" type="Node3D" parent="." unique_id=656340961]
 
-[node name="Conduit" type="MeshInstance3D" parent="Lamp" unique_id=268229905]
+[node name="Conduit" type="MeshInstance3D" parent="Lamp" unique_id=410995712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02, 0.12)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.12
 mesh = SubResource("ArrayMesh_sn5cj")
 
-[node name="Rod" type="MeshInstance3D" parent="Lamp" unique_id=1215749562]
+[node name="Rod" type="MeshInstance3D" parent="Lamp" unique_id=910405328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62, 2.6100001, 0.12)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.18
 mesh = SubResource("ArrayMesh_48ewa")
 
-[node name="Shade" type="MeshInstance3D" parent="Lamp" unique_id=1234888508]
+[node name="Shade" type="MeshInstance3D" parent="Lamp" unique_id=1291575917]
 transform = Transform3D(1, 0, 0, 0, -0.7831109, 0.6218821, 0, -0.6218821, -0.7831109, -0.62, 2.2, 0.12)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2311,14 +2311,14 @@ instance_shader_parameters/surface_seed = 0.38
 instance_shader_parameters/tint = Color(0.92, 0.95, 1.04, 1)
 mesh = SubResource("ArrayMesh_u241t")
 
-[node name="Bulb" type="MeshInstance3D" parent="Lamp" unique_id=468251079]
+[node name="Bulb" type="MeshInstance3D" parent="Lamp" unique_id=242076054]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62, 2.156929, 0.08579648)
 material_override = ExtResource("9_racxt")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.44
 mesh = SubResource("ArrayMesh_ixytc")
 
-[node name="Light" type="SpotLight3D" parent="Lamp/Bulb" unique_id=1589033020]
+[node name="Light" type="SpotLight3D" parent="Lamp/Bulb" unique_id=2026576504]
 transform = Transform3D(1, 0, 0, 0, 0.62188214, 0.7831109, 0, -0.7831109, 0.62188214, 0, 0, 0)
 light_color = Color(1, 0.898, 0.776, 1)
 light_energy = 3.1
@@ -2331,14 +2331,14 @@ spot_attenuation = 1.3
 spot_angle = 52.0
 spot_angle_attenuation = 1.4
 
-[node name="Rod2" type="MeshInstance3D" parent="Lamp" unique_id=1822829245]
+[node name="Rod2" type="MeshInstance3D" parent="Lamp" unique_id=894292413]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, 2.6100001, 0.12)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.18
 mesh = SubResource("ArrayMesh_f050o")
 
-[node name="Shade2" type="MeshInstance3D" parent="Lamp" unique_id=117787940]
+[node name="Shade2" type="MeshInstance3D" parent="Lamp" unique_id=840394890]
 transform = Transform3D(1, 0, 0, 0, -0.7831109, 0.6218821, 0, -0.6218821, -0.7831109, 0.62, 2.2, 0.12)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -2346,14 +2346,14 @@ instance_shader_parameters/surface_seed = 0.38
 instance_shader_parameters/tint = Color(0.92, 0.95, 1.04, 1)
 mesh = SubResource("ArrayMesh_cvxnc")
 
-[node name="Bulb2" type="MeshInstance3D" parent="Lamp" unique_id=1712426728]
+[node name="Bulb2" type="MeshInstance3D" parent="Lamp" unique_id=1169561377]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, 2.156929, 0.08579648)
 material_override = ExtResource("9_racxt")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.44
 mesh = SubResource("ArrayMesh_3loqh")
 
-[node name="Light2" type="SpotLight3D" parent="Lamp/Bulb2" unique_id=655318291]
+[node name="Light2" type="SpotLight3D" parent="Lamp/Bulb2" unique_id=1971349435]
 transform = Transform3D(1, 0, 0, 0, 0.62188214, 0.7831109, 0, -0.7831109, 0.62188214, 0, 0, 0)
 light_color = Color(1, 0.898, 0.776, 1)
 light_energy = 3.1
@@ -2365,9 +2365,9 @@ spot_attenuation = 1.3
 spot_angle = 52.0
 spot_angle_attenuation = 1.4
 
-[node name="Fill" type="Node3D" parent="." unique_id=2052733476]
+[node name="Fill" type="Node3D" parent="." unique_id=1726903186]
 
-[node name="BenchFill" type="OmniLight3D" parent="Fill" unique_id=736721336]
+[node name="BenchFill" type="OmniLight3D" parent="Fill" unique_id=517046768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24, 0.34)
 light_color = Color(1, 0.871, 0.729, 1)
 light_energy = 0.9
@@ -2375,7 +2375,7 @@ light_specular = 0.15
 omni_range = 3.4
 omni_attenuation = 1.6
 
-[node name="DoorFill" type="OmniLight3D" parent="Fill" unique_id=791296688]
+[node name="DoorFill" type="OmniLight3D" parent="Fill" unique_id=160654355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62, 1.3, -0.66)
 light_color = Color(1, 0.902, 0.784, 1)
 light_energy = 2.2
@@ -2383,7 +2383,7 @@ light_specular = 0.1
 omni_range = 7.2
 omni_attenuation = 1.3
 
-[node name="RoomFill" type="OmniLight3D" parent="Fill" unique_id=1307430896]
+[node name="RoomFill" type="OmniLight3D" parent="Fill" unique_id=1540210020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, 0.9)
 light_color = Color(0.859, 0.867, 0.918, 1)
 light_energy = 0.62
@@ -2391,9 +2391,9 @@ light_specular = 0.05
 omni_range = 9.0
 omni_attenuation = 1.1
 
-[node name="Cards" type="Node3D" parent="." unique_id=998782075]
+[node name="Cards" type="Node3D" parent="." unique_id=1932233417]
 
-[node name="Card_range" type="StaticBody3D" parent="Cards" unique_id=1197184088]
+[node name="Card_range" type="StaticBody3D" parent="Cards" unique_id=1175657733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8325, 1.86, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2401,14 +2401,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"range"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_range" unique_id=747438661]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_range" unique_id=2095681267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_648vy")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_range" unique_id=1102243964]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_range" unique_id=269310681]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2422,7 +2422,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_range" unique_id=254390985]
+[node name="Label" type="Label3D" parent="Cards/Card_range" unique_id=1451563221]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2435,7 +2435,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_range" unique_id=1381457246]
+[node name="Tag" type="Label3D" parent="Cards/Card_range" unique_id=382354923]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2445,11 +2445,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_range" unique_id=1255731555]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_range" unique_id=550031609]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_8wfjx")
 
-[node name="Card_bestiary" type="StaticBody3D" parent="Cards" unique_id=545881144]
+[node name="Card_bestiary" type="StaticBody3D" parent="Cards" unique_id=917872331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2775, 1.86, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2457,14 +2457,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"bestiary"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_bestiary" unique_id=450566686]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_bestiary" unique_id=1296131741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_jp0vx")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_bestiary" unique_id=77529022]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_bestiary" unique_id=1261964918]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2478,7 +2478,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_bestiary" unique_id=2058373845]
+[node name="Label" type="Label3D" parent="Cards/Card_bestiary" unique_id=1426306112]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2491,7 +2491,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_bestiary" unique_id=885475230]
+[node name="Tag" type="Label3D" parent="Cards/Card_bestiary" unique_id=596961444]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2501,11 +2501,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_bestiary" unique_id=1405325569]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_bestiary" unique_id=173522559]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_dr87y")
 
-[node name="Card_ash_flats" type="StaticBody3D" parent="Cards" unique_id=1014445549]
+[node name="Card_ash_flats" type="StaticBody3D" parent="Cards" unique_id=1442778057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2775, 1.86, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2513,14 +2513,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"ash_flats"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_ash_flats" unique_id=948932341]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_ash_flats" unique_id=519054703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_i61vp")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_ash_flats" unique_id=1069784380]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_ash_flats" unique_id=732015925]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2534,7 +2534,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_ash_flats" unique_id=1321018416]
+[node name="Label" type="Label3D" parent="Cards/Card_ash_flats" unique_id=1096610544]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2547,7 +2547,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_ash_flats" unique_id=334571527]
+[node name="Tag" type="Label3D" parent="Cards/Card_ash_flats" unique_id=811690137]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2557,11 +2557,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_ash_flats" unique_id=1728639217]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_ash_flats" unique_id=206337305]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_ip2l2")
 
-[node name="Card_firefight" type="StaticBody3D" parent="Cards" unique_id=778060969]
+[node name="Card_firefight" type="StaticBody3D" parent="Cards" unique_id=383027151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8325, 1.86, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2569,14 +2569,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"firefight"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_firefight" unique_id=875815615]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_firefight" unique_id=681477189]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_f56pf")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_firefight" unique_id=440995200]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_firefight" unique_id=227132930]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2590,7 +2590,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_firefight" unique_id=1100448629]
+[node name="Label" type="Label3D" parent="Cards/Card_firefight" unique_id=1752144394]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2603,7 +2603,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_firefight" unique_id=2106198659]
+[node name="Tag" type="Label3D" parent="Cards/Card_firefight" unique_id=1858939112]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2613,11 +2613,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_firefight" unique_id=1566598195]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_firefight" unique_id=404661444]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_lmffn")
 
-[node name="Card_arena" type="StaticBody3D" parent="Cards" unique_id=1655843295]
+[node name="Card_arena" type="StaticBody3D" parent="Cards" unique_id=742583195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8325, 1.5, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2625,14 +2625,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"arena"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_arena" unique_id=1418533546]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_arena" unique_id=880488308]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_cg7tq")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_arena" unique_id=1632125069]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_arena" unique_id=40724539]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2646,7 +2646,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_arena" unique_id=580542561]
+[node name="Label" type="Label3D" parent="Cards/Card_arena" unique_id=1472049658]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2659,7 +2659,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_arena" unique_id=340756615]
+[node name="Tag" type="Label3D" parent="Cards/Card_arena" unique_id=507615479]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2669,11 +2669,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_arena" unique_id=1636376108]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_arena" unique_id=768500269]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_4vjuo")
 
-[node name="Card_gunbench" type="StaticBody3D" parent="Cards" unique_id=902069364]
+[node name="Card_gunbench" type="StaticBody3D" parent="Cards" unique_id=571519342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2775, 1.5, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2681,14 +2681,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"gunbench"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_gunbench" unique_id=1594975558]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_gunbench" unique_id=81961977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_534vm")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_gunbench" unique_id=185044693]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_gunbench" unique_id=1599726532]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2702,7 +2702,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_gunbench" unique_id=2063445064]
+[node name="Label" type="Label3D" parent="Cards/Card_gunbench" unique_id=1791593202]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2715,7 +2715,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_gunbench" unique_id=498347970]
+[node name="Tag" type="Label3D" parent="Cards/Card_gunbench" unique_id=610154022]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2725,11 +2725,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_gunbench" unique_id=1628981233]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_gunbench" unique_id=599955452]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_5mlmx")
 
-[node name="Card_movement" type="StaticBody3D" parent="Cards" unique_id=1603820186]
+[node name="Card_movement" type="StaticBody3D" parent="Cards" unique_id=366617122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2775, 1.5, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2737,14 +2737,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"movement"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_movement" unique_id=419764608]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_movement" unique_id=2122391990]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_k8ywq")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_movement" unique_id=712652266]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_movement" unique_id=2007017638]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2758,7 +2758,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_movement" unique_id=2131388866]
+[node name="Label" type="Label3D" parent="Cards/Card_movement" unique_id=1755451645]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2771,7 +2771,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_movement" unique_id=473869361]
+[node name="Tag" type="Label3D" parent="Cards/Card_movement" unique_id=1885544454]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2781,11 +2781,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_movement" unique_id=543774096]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_movement" unique_id=1060319775]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_72chs")
 
-[node name="Card_visuals" type="StaticBody3D" parent="Cards" unique_id=895797603]
+[node name="Card_visuals" type="StaticBody3D" parent="Cards" unique_id=1684021180]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8325, 1.5, -0.415)
 collision_layer = 2
 collision_mask = 0
@@ -2793,14 +2793,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"visuals"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_visuals" unique_id=376061047]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_visuals" unique_id=1585395230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.128, 0.0215)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_6whq1")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_visuals" unique_id=1165325500]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_visuals" unique_id=673208738]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2814,7 +2814,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_visuals" unique_id=1587565936]
+[node name="Label" type="Label3D" parent="Cards/Card_visuals" unique_id=675140824]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0.044701785, 0.041077506)
 pixel_size = 0.0016
 double_sided = false
@@ -2827,7 +2827,7 @@ font_size = 34
 autowrap_mode = 3
 width = 250.125
 
-[node name="Tag" type="Label3D" parent="Cards/Card_visuals" unique_id=1280700801]
+[node name="Tag" type="Label3D" parent="Cards/Card_visuals" unique_id=1309727025]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, -0.077969104, 0.060506664)
 pixel_size = 0.0016
 double_sided = false
@@ -2837,11 +2837,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 24
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_visuals" unique_id=1769053064]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_visuals" unique_id=710767895]
 transform = Transform3D(1, 0, 0, 0, 0.98768836, 0.15643448, 0, -0.15643448, 0.98768836, 0, 0, 0.034995526)
 shape = SubResource("BoxShape3D_2kypa")
 
-[node name="Card_settings" type="StaticBody3D" parent="Cards" unique_id=1516122968]
+[node name="Card_settings" type="StaticBody3D" parent="Cards" unique_id=2041728851]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62, 0.9225, 0.255)
 collision_layer = 2
 collision_mask = 0
@@ -2849,14 +2849,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"settings"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_settings" unique_id=1036893396]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_settings" unique_id=1527609099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.012)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_ntwaq")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_settings" unique_id=479897327]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_settings" unique_id=1363465957]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.04641089, 0.008)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2870,7 +2870,7 @@ metadata/mount_axis = 1
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_settings" unique_id=2015449756]
+[node name="Label" type="Label3D" parent="Cards/Card_settings" unique_id=1680719098]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.05635934, 0.014710315)
 pixel_size = 0.0016
 double_sided = false
@@ -2883,7 +2883,7 @@ font_size = 22
 autowrap_mode = 3
 width = 195.5
 
-[node name="Tag" type="Label3D" parent="Cards/Card_settings" unique_id=1322010061]
+[node name="Tag" type="Label3D" parent="Cards/Card_settings" unique_id=1341914925]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.035389606, 0.045799226)
 pixel_size = 0.0016
 double_sided = false
@@ -2893,11 +2893,11 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_settings" unique_id=1631166193]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_settings" unique_id=1567009683]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.04641089, 0.008)
 shape = SubResource("BoxShape3D_gthgk")
 
-[node name="Card_quit" type="StaticBody3D" parent="Cards" unique_id=995139085]
+[node name="Card_quit" type="StaticBody3D" parent="Cards" unique_id=1682247234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.62, 0.9225, 0.255)
 collision_layer = 2
 collision_mask = 0
@@ -2905,14 +2905,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"quit"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_quit" unique_id=65043584]
+[node name="Bracket" type="MeshInstance3D" parent="Cards/Card_quit" unique_id=1478704479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.012)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_e5e7n")
 
-[node name="Plate" type="MeshInstance3D" parent="Cards/Card_quit" unique_id=1312305150]
+[node name="Plate" type="MeshInstance3D" parent="Cards/Card_quit" unique_id=318229540]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.04641089, 0.008)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -2926,7 +2926,7 @@ metadata/mount_axis = 1
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Cards/Card_quit" unique_id=1409323374]
+[node name="Label" type="Label3D" parent="Cards/Card_quit" unique_id=1456691756]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.05635934, 0.014710315)
 pixel_size = 0.0016
 double_sided = false
@@ -2939,7 +2939,7 @@ font_size = 22
 autowrap_mode = 3
 width = 195.5
 
-[node name="Tag" type="Label3D" parent="Cards/Card_quit" unique_id=576936321]
+[node name="Tag" type="Label3D" parent="Cards/Card_quit" unique_id=673296836]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.035389606, 0.045799226)
 pixel_size = 0.0016
 double_sided = false
@@ -2949,32 +2949,32 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Shape" type="CollisionShape3D" parent="Cards/Card_quit" unique_id=749349503]
+[node name="Shape" type="CollisionShape3D" parent="Cards/Card_quit" unique_id=1603244025]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.04641089, 0.008)
 shape = SubResource("BoxShape3D_tq3fi")
 
-[node name="Lobby" type="Node3D" parent="." unique_id=1437515504]
+[node name="Lobby" type="Node3D" parent="." unique_id=938079611]
 script = ExtResource("12_dbfs1")
 
-[node name="Console" type="Node3D" parent="Lobby" unique_id=1010122035]
+[node name="Console" type="Node3D" parent="Lobby" unique_id=1127567371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9225, 0.245)
 script = ExtResource("13_mxs5a")
 
-[node name="Touch" type="StaticBody3D" parent="Lobby/Console" unique_id=1421997457]
+[node name="Touch" type="StaticBody3D" parent="Lobby/Console" unique_id=1468509446]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("11_rqnt3")
 control_id = &"join"
 cooldown = 0.25
 
-[node name="Case" type="MeshInstance3D" parent="Lobby/Console/Touch" unique_id=724450752]
+[node name="Case" type="MeshInstance3D" parent="Lobby/Console/Touch" unique_id=1783902168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0375, 0)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.28
 mesh = SubResource("ArrayMesh_k80k8")
 
-[node name="Stencil" type="Label3D" parent="Lobby/Console/Touch" unique_id=403213714]
+[node name="Stencil" type="Label3D" parent="Lobby/Console/Touch" unique_id=318486635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 0.04, 0.0815)
 pixel_size = 0.0011
 double_sided = false
@@ -2985,11 +2985,11 @@ text = "JOIN A GAME"
 font = ExtResource("10_dooca")
 font_size = 17
 
-[node name="Shape" type="CollisionShape3D" parent="Lobby/Console/Touch" unique_id=1304975612]
+[node name="Shape" type="CollisionShape3D" parent="Lobby/Console/Touch" unique_id=1374195906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0375, 0)
 shape = SubResource("BoxShape3D_ev0lf")
 
-[node name="Go" type="StaticBody3D" parent="Lobby/Console" unique_id=1088380545]
+[node name="Go" type="StaticBody3D" parent="Lobby/Console" unique_id=1761478917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, 0.04, 0.081)
 collision_layer = 2
 collision_mask = 0
@@ -2997,14 +2997,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"join_go"
 cooldown = 0.25
 
-[node name="Cap" type="MeshInstance3D" parent="Lobby/Console/Go" unique_id=211286175]
+[node name="Cap" type="MeshInstance3D" parent="Lobby/Console/Go" unique_id=124823562]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.009)
 material_override = ExtResource("9_racxt")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.33
 mesh = SubResource("ArrayMesh_pjor8")
 
-[node name="Label" type="Label3D" parent="Lobby/Console/Go" unique_id=1003073159]
+[node name="Label" type="Label3D" parent="Lobby/Console/Go" unique_id=2018013818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.02)
 pixel_size = 0.0009
 double_sided = false
@@ -3015,14 +3015,14 @@ text = "GO"
 font = ExtResource("10_dooca")
 font_size = 11
 
-[node name="Shape" type="CollisionShape3D" parent="Lobby/Console/Go" unique_id=787475890]
+[node name="Shape" type="CollisionShape3D" parent="Lobby/Console/Go" unique_id=1504772531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0135)
 shape = SubResource("BoxShape3D_fl2yn")
 
-[node name="Hinge" type="Node3D" parent="Lobby/Console" unique_id=1861882559]
+[node name="Hinge" type="Node3D" parent="Lobby/Console" unique_id=383213014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.078)
 
-[node name="Lid" type="MeshInstance3D" parent="Lobby/Console/Hinge" unique_id=417556502]
+[node name="Lid" type="MeshInstance3D" parent="Lobby/Console/Hinge" unique_id=1012483349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, -0.065)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -3030,7 +3030,7 @@ instance_shader_parameters/surface_seed = 0.36
 instance_shader_parameters/tint = Color(1.18, 1.14, 1.1, 1)
 mesh = SubResource("ArrayMesh_xjxl5")
 
-[node name="Prompt" type="Label3D" parent="Lobby/Console/Hinge" unique_id=1542619335]
+[node name="Prompt" type="Label3D" parent="Lobby/Console/Hinge" unique_id=1835141552]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0135, -0.117)
 pixel_size = 0.001
 double_sided = false
@@ -3042,7 +3042,7 @@ font_size = 13
 autowrap_mode = 3
 width = 440.0
 
-[node name="Entry" type="Label3D" parent="Lobby/Console/Hinge" unique_id=1249271456]
+[node name="Entry" type="Label3D" parent="Lobby/Console/Hinge" unique_id=1432901232]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0135, -0.084)
 pixel_size = 0.0015
 double_sided = false
@@ -3054,7 +3054,7 @@ font_size = 22
 autowrap_mode = 3
 width = 293.33334
 
-[node name="Status" type="Label3D" parent="Lobby/Console/Hinge" unique_id=642010858]
+[node name="Status" type="Label3D" parent="Lobby/Console/Hinge" unique_id=194491156]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0135, -0.04)
 pixel_size = 0.0012
 double_sided = false
@@ -3066,7 +3066,7 @@ font_size = 11
 autowrap_mode = 3
 width = 366.6667
 
-[node name="Hint" type="Label3D" parent="Lobby/Console/Hinge" unique_id=1251020120]
+[node name="Hint" type="Label3D" parent="Lobby/Console/Hinge" unique_id=1193038486]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.0135, -0.011)
 pixel_size = 0.0009
 double_sided = false
@@ -3078,7 +3078,7 @@ font_size = 9
 autowrap_mode = 3
 width = 488.8889
 
-[node name="Sparks" type="GPUParticles3D" parent="Lobby/Console" unique_id=19419677]
+[node name="Sparks" type="GPUParticles3D" parent="Lobby/Console" unique_id=1668941494]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.079, 0.076)
 emitting = false
 amount = 30
@@ -3089,7 +3089,7 @@ visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
 process_material = SubResource("ParticleProcessMaterial_er36w")
 draw_pass_1 = SubResource("QuadMesh_35mqe")
 
-[node name="Host" type="StaticBody3D" parent="Lobby" unique_id=1121591062]
+[node name="Host" type="StaticBody3D" parent="Lobby" unique_id=1243223017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.335, 0.9225, 0.255)
 collision_layer = 2
 collision_mask = 0
@@ -3097,14 +3097,14 @@ script = ExtResource("11_rqnt3")
 control_id = &"host"
 cooldown = 0.25
 
-[node name="Bracket" type="MeshInstance3D" parent="Lobby/Host" unique_id=223528745]
+[node name="Bracket" type="MeshInstance3D" parent="Lobby/Host" unique_id=1215946933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, -0.01)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.5
 mesh = SubResource("ArrayMesh_daf5a")
 
-[node name="Plate" type="MeshInstance3D" parent="Lobby/Host" unique_id=590382042]
+[node name="Plate" type="MeshInstance3D" parent="Lobby/Host" unique_id=1072565648]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.03998992, 0.008)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
@@ -3118,7 +3118,7 @@ metadata/mount_axis = 1
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Label" type="Label3D" parent="Lobby/Host" unique_id=1967330617]
+[node name="Label" type="Label3D" parent="Lobby/Host" unique_id=613232598]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.049109332, 0.014151122)
 pixel_size = 0.0016
 double_sided = false
@@ -3131,7 +3131,7 @@ font_size = 15
 autowrap_mode = 3
 width = 92.0
 
-[node name="Tag" type="Label3D" parent="Lobby/Host" unique_id=1719745860]
+[node name="Tag" type="Label3D" parent="Lobby/Host" unique_id=772885728]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.031494755, 0.040265806)
 pixel_size = 0.0016
 double_sided = false
@@ -3141,29 +3141,29 @@ modulate = Color(0.353, 0.337, 0.31, 1)
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Shape" type="CollisionShape3D" parent="Lobby/Host" unique_id=322739421]
+[node name="Shape" type="CollisionShape3D" parent="Lobby/Host" unique_id=1951381013]
 transform = Transform3D(1, 0, 0, 0, 0.5591929, 0.82903755, 0, -0.82903755, 0.5591929, 0, 0.03998992, 0.008)
 shape = SubResource("BoxShape3D_iyh7t")
 
-[node name="Roster" type="Node3D" parent="Lobby" unique_id=1646899930]
+[node name="Roster" type="Node3D" parent="Lobby" unique_id=1372872936]
 
-[node name="Slot0" type="Node3D" parent="Lobby/Roster" unique_id=1135662136]
+[node name="Slot0" type="Node3D" parent="Lobby/Roster" unique_id=300780176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525, 0.9225, -0.2)
 
-[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot0" unique_id=1715753397]
+[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot0" unique_id=1041190176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.24
 mesh = SubResource("ArrayMesh_6gcpp")
 
-[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot0" unique_id=584116529]
+[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot0" unique_id=1145074508]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.056198746, -0.018630775)
 material_override = SubResource("StandardMaterial3D_5mdx0")
 gi_mode = 0
 mesh = SubResource("ArrayMesh_eghm0")
 
-[node name="Name" type="Label3D" parent="Lobby/Roster/Slot0/Tag" unique_id=1934879534]
+[node name="Name" type="Label3D" parent="Lobby/Roster/Slot0/Tag" unique_id=2131211407]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, 0.0075)
 pixel_size = 0.0016
 double_sided = false
@@ -3175,7 +3175,7 @@ font_size = 17
 autowrap_mode = 3
 width = 175.0
 
-[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot0/Tag" unique_id=1968806899]
+[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot0/Tag" unique_id=1521955170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026, 0.0075)
 pixel_size = 0.0015
 double_sided = false
@@ -3187,7 +3187,7 @@ font_size = 14
 autowrap_mode = 3
 width = 186.66667
 
-[node name="Free" type="Label3D" parent="Lobby/Roster/Slot0" unique_id=480038832]
+[node name="Free" type="Label3D" parent="Lobby/Roster/Slot0" unique_id=346854528]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.04, -0.012)
 pixel_size = 0.0015
 double_sided = false
@@ -3198,23 +3198,23 @@ text = "OPEN"
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Slot1" type="Node3D" parent="Lobby/Roster" unique_id=1137911148]
+[node name="Slot1" type="Node3D" parent="Lobby/Roster" unique_id=1211680659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.175, 0.9225, -0.2)
 
-[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot1" unique_id=1798981650]
+[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot1" unique_id=1230468418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.31
 mesh = SubResource("ArrayMesh_uqa42")
 
-[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot1" unique_id=981402191]
+[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot1" unique_id=1102269870]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.056198746, -0.018630775)
 material_override = SubResource("StandardMaterial3D_wtur1")
 gi_mode = 0
 mesh = SubResource("ArrayMesh_x7gdj")
 
-[node name="Name" type="Label3D" parent="Lobby/Roster/Slot1/Tag" unique_id=450712443]
+[node name="Name" type="Label3D" parent="Lobby/Roster/Slot1/Tag" unique_id=1539932861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, 0.0075)
 pixel_size = 0.0016
 double_sided = false
@@ -3226,7 +3226,7 @@ font_size = 17
 autowrap_mode = 3
 width = 175.0
 
-[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot1/Tag" unique_id=991903973]
+[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot1/Tag" unique_id=1053942094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026, 0.0075)
 pixel_size = 0.0015
 double_sided = false
@@ -3238,7 +3238,7 @@ font_size = 14
 autowrap_mode = 3
 width = 186.66667
 
-[node name="Free" type="Label3D" parent="Lobby/Roster/Slot1" unique_id=762603276]
+[node name="Free" type="Label3D" parent="Lobby/Roster/Slot1" unique_id=1839394591]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.04, -0.012)
 pixel_size = 0.0015
 double_sided = false
@@ -3249,23 +3249,23 @@ text = "OPEN"
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Slot2" type="Node3D" parent="Lobby/Roster" unique_id=489351127]
+[node name="Slot2" type="Node3D" parent="Lobby/Roster" unique_id=588556422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 0.9225, -0.2)
 
-[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot2" unique_id=632054520]
+[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot2" unique_id=1094545472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.38
 mesh = SubResource("ArrayMesh_5viaa")
 
-[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot2" unique_id=178196646]
+[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot2" unique_id=511770507]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.056198746, -0.018630775)
 material_override = SubResource("StandardMaterial3D_vg6bc")
 gi_mode = 0
 mesh = SubResource("ArrayMesh_fx35d")
 
-[node name="Name" type="Label3D" parent="Lobby/Roster/Slot2/Tag" unique_id=260338896]
+[node name="Name" type="Label3D" parent="Lobby/Roster/Slot2/Tag" unique_id=219120859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, 0.0075)
 pixel_size = 0.0016
 double_sided = false
@@ -3277,7 +3277,7 @@ font_size = 17
 autowrap_mode = 3
 width = 175.0
 
-[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot2/Tag" unique_id=229955371]
+[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot2/Tag" unique_id=1121509832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026, 0.0075)
 pixel_size = 0.0015
 double_sided = false
@@ -3289,7 +3289,7 @@ font_size = 14
 autowrap_mode = 3
 width = 186.66667
 
-[node name="Free" type="Label3D" parent="Lobby/Roster/Slot2" unique_id=220021896]
+[node name="Free" type="Label3D" parent="Lobby/Roster/Slot2" unique_id=450979292]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.04, -0.012)
 pixel_size = 0.0015
 double_sided = false
@@ -3300,23 +3300,23 @@ text = "OPEN"
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Slot3" type="Node3D" parent="Lobby/Roster" unique_id=1429795752]
+[node name="Slot3" type="Node3D" parent="Lobby/Roster" unique_id=448606317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.525, 0.9225, -0.2)
 
-[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot3" unique_id=1350665300]
+[node name="Socket" type="MeshInstance3D" parent="Lobby/Roster/Slot3" unique_id=680978071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
 material_override = ExtResource("6_sb7pk")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.45
 mesh = SubResource("ArrayMesh_8easj")
 
-[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot3" unique_id=2016026090]
+[node name="Tag" type="MeshInstance3D" parent="Lobby/Roster/Slot3" unique_id=1272382293]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.056198746, -0.018630775)
 material_override = SubResource("StandardMaterial3D_csjob")
 gi_mode = 0
 mesh = SubResource("ArrayMesh_vn2do")
 
-[node name="Name" type="Label3D" parent="Lobby/Roster/Slot3/Tag" unique_id=1464048596]
+[node name="Name" type="Label3D" parent="Lobby/Roster/Slot3/Tag" unique_id=1084887302]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, 0.0075)
 pixel_size = 0.0016
 double_sided = false
@@ -3328,7 +3328,7 @@ font_size = 17
 autowrap_mode = 3
 width = 175.0
 
-[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot3/Tag" unique_id=1190207141]
+[node name="Mark" type="Label3D" parent="Lobby/Roster/Slot3/Tag" unique_id=2068589305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026, 0.0075)
 pixel_size = 0.0015
 double_sided = false
@@ -3340,7 +3340,7 @@ font_size = 14
 autowrap_mode = 3
 width = 186.66667
 
-[node name="Free" type="Label3D" parent="Lobby/Roster/Slot3" unique_id=2081514663]
+[node name="Free" type="Label3D" parent="Lobby/Roster/Slot3" unique_id=1228075785]
 transform = Transform3D(1, 0, 0, 0, 0.89879405, 0.43837115, 0, -0.43837115, 0.89879405, 0, 0.04, -0.012)
 pixel_size = 0.0015
 double_sided = false
@@ -3351,18 +3351,18 @@ text = "OPEN"
 font = ExtResource("10_dooca")
 font_size = 14
 
-[node name="Dots" type="Node3D" parent="Lobby" unique_id=821301217]
+[node name="Dots" type="Node3D" parent="Lobby" unique_id=263236811]
 script = ExtResource("14_0c1wp")
 solids = PackedVector3Array(0, 1.625, -0.44, 2.44, 1.35, 0.05, 0, 0.895, 0, 2.16, 0.055, 0.74, 0, 1.89, -1.18, 9.2, 3.78, 0.085, 0, -0.13, 0.7, 9.3, 0.26, 6.6)
 
-[node name="Dot0" type="MeshInstance3D" parent="Lobby/Dots" unique_id=666522064]
+[node name="Dot0" type="MeshInstance3D" parent="Lobby/Dots" unique_id=536403561]
 visible = false
 material_override = SubResource("StandardMaterial3D_kj6vk")
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("SphereMesh_3826t")
 
-[node name="Name" type="Label3D" parent="Lobby/Dots/Dot0" unique_id=171177614]
+[node name="Name" type="Label3D" parent="Lobby/Dots/Dot0" unique_id=1185582896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
 visible = false
 pixel_size = 0.0011
@@ -3374,14 +3374,14 @@ modulate = Color(0.792, 0.749, 0.659, 1)
 font = ExtResource("10_dooca")
 font_size = 13
 
-[node name="Dot1" type="MeshInstance3D" parent="Lobby/Dots" unique_id=397686075]
+[node name="Dot1" type="MeshInstance3D" parent="Lobby/Dots" unique_id=164953349]
 visible = false
 material_override = SubResource("StandardMaterial3D_koxxe")
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("SphereMesh_ca0g2")
 
-[node name="Name" type="Label3D" parent="Lobby/Dots/Dot1" unique_id=1673135452]
+[node name="Name" type="Label3D" parent="Lobby/Dots/Dot1" unique_id=493774298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
 visible = false
 pixel_size = 0.0011
@@ -3393,14 +3393,14 @@ modulate = Color(0.792, 0.749, 0.659, 1)
 font = ExtResource("10_dooca")
 font_size = 13
 
-[node name="Dot2" type="MeshInstance3D" parent="Lobby/Dots" unique_id=1583473541]
+[node name="Dot2" type="MeshInstance3D" parent="Lobby/Dots" unique_id=396416689]
 visible = false
 material_override = SubResource("StandardMaterial3D_yrsrl")
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("SphereMesh_ycv7j")
 
-[node name="Name" type="Label3D" parent="Lobby/Dots/Dot2" unique_id=963742097]
+[node name="Name" type="Label3D" parent="Lobby/Dots/Dot2" unique_id=802657230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0)
 visible = false
 pixel_size = 0.0011
@@ -3412,18 +3412,18 @@ modulate = Color(0.792, 0.749, 0.659, 1)
 font = ExtResource("10_dooca")
 font_size = 13
 
-[node name="LockBar" type="Node3D" parent="Lobby" unique_id=284229291]
+[node name="LockBar" type="Node3D" parent="Lobby" unique_id=825200181]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68, -0.34)
 visible = false
 
-[node name="Bar" type="MeshInstance3D" parent="Lobby/LockBar" unique_id=483807960]
+[node name="Bar" type="MeshInstance3D" parent="Lobby/LockBar" unique_id=421151601]
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.41
 instance_shader_parameters/tint = Color(1.3, 1.1, 0.96, 1)
 mesh = SubResource("ArrayMesh_iuekd")
 
-[node name="Tab" type="MeshInstance3D" parent="Lobby/LockBar" unique_id=494003094]
+[node name="Tab" type="MeshInstance3D" parent="Lobby/LockBar" unique_id=1150141746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0.016)
 material_override = ExtResource("8_i5ydv")
 gi_mode = 0
@@ -3431,7 +3431,7 @@ instance_shader_parameters/surface_seed = 0.47
 instance_shader_parameters/tint = Color(0.88, 0.74, 0.7, 1)
 mesh = SubResource("ArrayMesh_j4qud")
 
-[node name="Text" type="Label3D" parent="Lobby/LockBar" unique_id=1788365086]
+[node name="Text" type="Label3D" parent="Lobby/LockBar" unique_id=363218394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0.026)
 pixel_size = 0.0016
 double_sided = false
@@ -3442,10 +3442,10 @@ text = "THE HOST PICKS"
 font = ExtResource("10_dooca")
 font_size = 22
 
-[node name="Ui" type="CanvasLayer" parent="." unique_id=1776474810]
+[node name="Ui" type="CanvasLayer" parent="." unique_id=254557662]
 layer = 100
 
-[node name="SettingsPanel" type="Control" parent="Ui" unique_id=1835603276 instance=ExtResource("15_l4cq4")]
+[node name="SettingsPanel" type="Control" parent="Ui" unique_id=709412435 instance=ExtResource("15_l4cq4")]
 visible = false
 layout_mode = 3
 anchors_preset = 15

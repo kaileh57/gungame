@@ -18,46 +18,46 @@ height = 1.8
 material = ExtResource("9_io5wk")
 center_offset = Vector3(0, 0.5, 0)
 
-[node name="PlayerAvatar" type="Node3D" unique_id=18072564]
+[node name="PlayerAvatar" type="Node3D" unique_id=1216664211]
 script = ExtResource("1_13r6o")
 
-[node name="Body" type="Node3D" parent="." unique_id=1692486573]
+[node name="Body" type="Node3D" parent="." unique_id=976184118]
 
-[node name="Shell" type="MeshInstance3D" parent="Body" unique_id=163576717]
+[node name="Shell" type="MeshInstance3D" parent="Body" unique_id=156914153]
 gi_mode = 0
 mesh = ExtResource("2_g8hbi")
 
-[node name="Ghost" type="MeshInstance3D" parent="Body" unique_id=1519532664]
+[node name="Ghost" type="MeshInstance3D" parent="Body" unique_id=1758735477]
 visible = false
 material_override = ExtResource("3_0wsfa")
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("2_g8hbi")
 
-[node name="Bubble" type="MeshInstance3D" parent="Body" unique_id=556378703]
+[node name="Bubble" type="MeshInstance3D" parent="Body" unique_id=2068247247]
 visible = false
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("4_knvmq")
 
-[node name="Visor" type="MeshInstance3D" parent="Body" unique_id=32654949]
+[node name="Visor" type="MeshInstance3D" parent="Body" unique_id=2042125474]
 gi_mode = 0
 mesh = ExtResource("5_4x7m2")
 
-[node name="Temples" type="MeshInstance3D" parent="Body" unique_id=613188752]
+[node name="Temples" type="MeshInstance3D" parent="Body" unique_id=1887858721]
 gi_mode = 0
 mesh = ExtResource("6_xeydp")
 
-[node name="Hull" type="AnimatableBody3D" parent="Body" unique_id=1716990428]
+[node name="Hull" type="AnimatableBody3D" parent="Body" unique_id=646573835]
 collision_layer = 4
 collision_mask = 0
 sync_to_physics = false
 
-[node name="Shape" type="CollisionShape3D" parent="Body/Hull" unique_id=2137379428]
+[node name="Shape" type="CollisionShape3D" parent="Body/Hull" unique_id=236581763]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_pgwjm")
 
-[node name="Plate" type="Label3D" parent="." unique_id=853711210]
+[node name="Plate" type="Label3D" parent="." unique_id=1286612351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 0)
 pixel_size = 0.0022
 outline_modulate = Color(0.035, 0.031, 0.028, 1)
@@ -66,7 +66,7 @@ font_size = 42
 outline_size = 10
 script = ExtResource("8_0k37l")
 
-[node name="Beacon" type="MeshInstance3D" parent="." unique_id=1113288200]
+[node name="Beacon" type="MeshInstance3D" parent="." unique_id=1637087310]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55, 0)
 visible = false
 cast_shadow = 0

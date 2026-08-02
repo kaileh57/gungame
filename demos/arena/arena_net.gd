@@ -301,6 +301,13 @@ func note_death(actor: EnemyActor) -> void:
 	_bodies.note_death(actor, from)
 
 
+## Hand the body table the incoming-fire reader. Separate from `bind` because the
+## reader is built by the controller AFTER this node is attached, and because a
+## seven-argument bind is already one argument too many.
+func watch_incoming(threat: ArenaThreat) -> void:
+	_bodies.watch_fire(threat)
+
+
 ## A body pulled a trigger on the host.
 func note_fire(actor: EnemyActor, aim: Vector3) -> void:
 	if NetGame.is_networked() and NetGame.is_authority():

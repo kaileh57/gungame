@@ -1,68 +1,70 @@
 gun cache bake
 
-scanned      40000 seeds, filled 51 of 56 cells across 8 classes
-cached       51 weapons into res://data/guns/cache
+scanned      40000 seeds, filled 53 of 56 cells across 8 classes
+cached       53 weapons into res://data/guns/cache
 manifest     res://data/guns/cache/index.json
 
-ADS sight-line verification, 51 weapons
+ADS sight-line verification, 53 weapons
 id                     sight              |xy| ads        1-cos   relief m    crest  sight%
+launcher_t0            sight          5.296897143125534e-09            0     0.3137    -1.60    8.4%
 launcher_t1            irons          6.752088665962219e-09            0     0.4585    -1.73    6.2%
-launcher_t2            sight          7.65248131529006e-09            0     0.5201    -1.63    2.6%
-launcher_t3            irons          5.9371814131736755e-09            0     0.3407    -1.89    6.6%
-launcher_t4            sight          2.3283064365386963e-10            0     0.4340    -2.32    6.4%
-launcher_t5            sight          7.334165275096893e-09            0     0.4669    -1.80    6.0%
-launcher_t6            sight          2.7939677238464355e-09            0     0.3922    -1.78    3.7%
-lmg_t0                 sight          3.9786116623474754e-09            0     0.3658    -1.60    9.6%
+launcher_t2            irons          5.9371814131736755e-09            0     0.3407    -1.89    6.6%
+launcher_t3            sight          2.3283064365386963e-10            0     0.4340    -2.32    6.4%
+launcher_t4            sight          7.334165275096893e-09            0     0.4669    -1.80    6.0%
+launcher_t5            sight          6.05359673500061e-09            0     0.2837    -1.74    6.8%
+lmg_t0                 sight          2.3283064365386963e-09            0     0.3651    -1.60   14.7%
 lmg_t1                 irons          3.725290298461914e-09            0     0.4715    -1.77   15.2%
 lmg_t2                 irons          1.3969838619232178e-09            0     0.2530    -1.60    2.2%
 lmg_t3                 irons          3.8399412538581146e-09            0     0.2828    -1.60   14.0%
 lmg_t4                 irons          3.8399412538581146e-09            0     0.2828    -1.60   14.0%
 lmg_t5                 sight          1.862645149230957e-09            0     0.3112    -1.89   13.2%
 lmg_t6                 sight          1.3969838619232178e-09            0     0.4277    -1.63    7.7%
-pistol_t0              sight          6.813031916408363e-09            0     0.3877    -1.87    9.5%
+pistol_t0              sight          3.725290298461914e-09            0     0.3005    -1.60    6.6%
 pistol_t1              sight          3.725290298461914e-09            0     0.2577    -1.88   14.6%
-pistol_t2              sight          2.5461649455493784e-10            0     0.2640    -1.60    7.2%
-pistol_t3              sight                     0            0     0.3044    -1.88    9.1%
+pistol_t2              sight                     0            0     0.3044    -1.88    9.1%
+pistol_t3              irons                     0            0     0.2509    -2.05   12.2%
 pistol_t4              sight                     0            0     0.3321    -1.97   10.0%
 pistol_t5              sight                     0            0     0.4088    -1.70    6.2%
-pistol_t6              sight                     0            0     0.3146    -1.72    7.7%
+pistol_t6              sight          2.5793269742280245e-09            0     0.2295    -1.60   17.3%
 revolver_t0            sight          6.0203615426246415e-09            0     0.3169    -1.75    5.3%
 revolver_t1            sight          6.559298881825271e-09            0     0.2452    -1.98    6.0%
 revolver_t2            sight          5.122274160385132e-09            0     0.2990    -1.79    3.4%
 revolver_t3            irons          5.296897143125534e-09            0     0.3148    -1.85   11.0%
-revolver_t4            scope          6.511982064694166e-09            0     0.2583    -1.60    2.2%
-rifle_t0               sight          3.841705620288849e-09            0     0.4009    -1.60    4.6%
+revolver_t4            scope          5.398760549724102e-09            0     0.3148    -1.60    9.2%
+revolver_t5            scope          7.450622896421066e-10            0     0.3654    -2.40    8.4%
+rifle_t0               sight          8.731149137020111e-10            0     0.4565    -1.63    5.0%
 rifle_t1               irons          4.066212255793289e-09            0     0.3765    -1.60    7.1%
 rifle_t2               irons          7.654307410120964e-09            0     0.3698    -1.83   12.5%
 rifle_t3               irons          4.3030383700681796e-09            0     0.3472    -1.85   12.9%
-rifle_t4               scope          7.731820517165033e-09            0     0.3713    -2.09    6.1%
-rifle_t5               sight                     0            0     0.3398    -1.60   10.7%
-rifle_t6               sight          2.6775524020195007e-09            0     0.3057    -1.86    7.8%
+rifle_t4               sight          2.066371962428093e-09            0     0.3713    -1.60    9.1%
+rifle_t5               scope          7.731820517165033e-09            0     0.3713    -2.09    6.1%
+rifle_t6               sight          4.511093720793724e-09            0     0.3202    -1.64    6.4%
+shotgun_t0             sight          7.519891376261967e-09            0     0.5364    -1.60    8.3%
 shotgun_t1             sight          1.6152625903487206e-09            0     0.5367    -2.46    6.3%
 shotgun_t2             irons          6.1497993364412196e-09            0     0.4317    -1.95    3.4%
-shotgun_t3             sight          8.406175311392872e-09            0     0.3995    -1.80    5.8%
-shotgun_t4             scope          5.053152563050389e-09            0     0.4317    -1.95    3.8%
-shotgun_t5             irons          1.5861587598919868e-09            0     0.3574    -2.03    4.3%
-shotgun_t6             scope          2.4156179279088974e-09            0     0.3445    -1.68    7.2%
+shotgun_t3             sight          5.053152563050389e-09            0     0.4317    -1.95    3.8%
+shotgun_t4             scope          3.768271916726462e-09            0     0.3666    -1.89    6.2%
+shotgun_t5             scope          4.060401792571611e-09            0     0.4455    -1.66    5.3%
+smg_t0                 sight                     0            0     0.3776    -1.60    9.2%
 smg_t1                 sight                     0            0     0.2668    -3.13   23.2%
-smg_t2                 irons                     0            0     0.3620    -1.63   11.6%
-smg_t3                 sight          7.450580596923828e-09            0     0.2471    -1.97    6.6%
-smg_t4                 sight          3.725290298461914e-09            0     0.3569    -2.11    4.4%
+smg_t2                 sight          7.450580596923828e-09            0     0.2471    -1.97    6.6%
+smg_t3                 irons          7.450580596923828e-09            0     0.4940    -1.64   26.6%
+smg_t4                 sight                     0            0     0.4420    -1.62    6.6%
 smg_t5                 irons          7.450580596923828e-09            0     0.3684    -1.85    7.1%
 smg_t6                 sight          3.725290298461914e-09            0     0.2207    -1.65    3.1%
-sniper_t0              sight          1.3969838619232178e-09            0     0.3489    -1.71    5.3%
+sniper_t0              sight          4.656612873077393e-10            0     0.2730    -1.60    4.8%
 sniper_t1              sight          2.7939677238464355e-09            0     0.4095    -2.12    7.0%
 sniper_t2              sight          7.307322302807506e-09            0     0.4227    -1.60    5.1%
 sniper_t3              irons          7.4542176875525e-09            0     0.3832    -1.64    3.7%
-sniper_t4              irons          2.3283064365386963e-09            0     0.3952    -1.85    8.4%
+sniper_t4              scope          8.786079419564885e-09            0     0.4045    -3.06   10.5%
 sniper_t5              scope          6.984919309616089e-10            0     0.4116    -1.60    9.2%
-sniper_t6              irons          4.6566128730773926e-09            0     0.4256    -1.83    7.4%
+sniper_t6              scope          3.848489971147728e-09            0     0.2840    -2.07    5.1%
 
-worst sight offset at full ADS   8.406175311392872e-09 m  (tol 1e-06)
+worst sight offset at full ADS   8.786079419564885e-09 m  (tol 1e-06)
 worst bore misalignment  1-cos   0    (tol 1e-09)
 worst marker disagreement        0 mu (tol 1e-05)
 eye relief range                 0.2207 .. 0.5367 m
-view axis inside the gun         0 of 51  (must be 0)
+view axis inside the gun         0 of 53  (must be 0)
 worst crest                      -1.60 deg (bar -0.80)
-worst sight window occluded      23.2%
+worst sight window occluded      26.6%
 result                           PASS

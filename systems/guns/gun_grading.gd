@@ -32,6 +32,12 @@ extends RefCounted
 ## never decoration — `quirks()` names the same thresholds the profiles key off,
 ## so "worn mag" is on the card exactly when `feed_profile` is handing `GunAmmo`
 ## a short fill and a double-feed chance.
+##
+## On top of the ladder sits the character layer, `GunQuirks`. The ladder alone
+## makes every Scrap gun the same Scrap gun; the traits drawn there give one of
+## them a bolt you lean on and the next one a magazine that eats a round every
+## twenty shots. Their effects come back through `trait_mods()` and are folded
+## into every profile below, so those names are behaviour too, not vocabulary.
 
 ## Salts that give each mechanism its own deterministic stream off `GunSpec.cfg`.
 ## Sharing `cfg` un-salted would correlate a fumbled reload with the recoil spice
@@ -83,15 +89,25 @@ const CLEAR_EXP: float = 0.9
 ## Shape of the severity mix. Above 1 the good end of the quality scale gets
 ## disproportionately easy stoppages.
 const SEVERITY_EXP: float = 1.4
-## Largest share of stoppages that are the strip-it-down kind.
-const HARD_SHARE: float = 0.72
+## Largest share of stoppages that are the strip-it-down kind. At 0.72 every
+## Hazard magazine contained a teardown; at 0.50 a Hazard is a third teardowns, a
+## Scrap gun a fifth, and a Field-Grade weapon under a tenth.
+const HARD_SHARE: float = 0.50
 ## Largest share of stoppages that are a tap and a rack.
 const LIGHT_SHARE: float = 0.80
 
 ## How hard tier hits per-shot bloom.
 const BLOOM_EXP: float = 0.85
+## Extra per-shot bloom per unit of rate stress. This is the second half of the
+## answer to the mag-dumping Scrap gun: it does not merely bind more often, it
+## also throws its group open faster than the shooter can walk it back. An action
+## running half again past its workmanship blooms 45 % harder per shot.
+const BLOOM_STRESS_WEIGHT: float = 0.90
 ## How hard tier hits the ceiling accumulated bloom can reach.
 const CEILING_EXP: float = 0.70
+## Extra bloom ceiling per unit of rate stress, so the runaway string ends
+## somewhere wider than the controlled one.
+const CEILING_STRESS_WEIGHT: float = 0.50
 ## How hard tier hits how much the sights are worth.
 const SIGHT_EXP: float = 0.85
 ## How hard tier hits how much of the bloom shouldering absorbs.
@@ -120,6 +136,16 @@ const MISFEED_MAX: float = 0.055
 ## How fast double-feeding disappears as feed quality rises.
 const MISFEED_EXP: float = 2.6
 
+## Largest residual bloom a weapon's decay can never clear, in multiples of the
+## base cone. A rough gun does not come back to its bench group between shots.
+const FLOOR_MAX: float = 0.34
+## How fast the residual bloom disappears as quality rises.
+const FLOOR_EXP: float = 2.4
+
+## How hard feed quality hits the per-shell time of a tube top-up. Negative in
+## effect: a clean feed gate takes shells faster than a bent one.
+const SHELL_EXP: float = 0.65
+
 ## Quality below which the sights stop being worth shouldering.
 const Q_ROUGH: float = 0.46
 ## Quality below which a weapon reads as rough in the hand.
@@ -132,17 +158,37 @@ const STRESS_MARK: float = 0.22
 const FIT_MATCH: float = 0.30
 ## Feed quality below which the magazine itself is the problem.
 const FEED_WORN: float = 0.40
+## Feed quality above which the gate takes shells as fast as you can push them.
+const FEED_QUICK: float = 0.74
 ## Handling below which a reload is something the shooter can drop.
 const HAND_FUMBLE: float = 38.0
 ## Magazine size below which a wear ramp has nowhere to build.
 const HOT_CAPACITY: int = 18
-## `action_load` below which the reference's own runaway sear fires.
-const RUNAWAY_LOAD: float = 0.20
 ## Rate stress at which a worn sear runs away on its own.
 const RUNAWAY_STRESS: float = 0.55
+## Residual bloom above which the weapon never returns to its own bench group.
+const WANDER_MARK: float = 0.10
+## Share of stoppages that must be the strip-it-down kind to be worth a tag.
+## Tracks `HARD_SHARE`: at a third of stoppages the teardown is the thing the
+## player will remember about the weapon.
+const HARD_MARK: float = 0.24
+## Reload time multiplier above which the reload itself is the weapon's problem.
+const SLOW_LOAD_MARK: float = 1.22
+## Per-shot double-feed chance worth warning the player about.
+const MISFEED_MARK: float = 0.012
 ## Ceiling on how many tags a stat card carries. The reference's own quirks are
 ## never dropped; the character tags fill whatever room is left.
-const MAX_QUIRKS: int = 7
+const MAX_QUIRKS: int = 8
+
+## Metadata key marking a spec whose grading has already been written. `GunSpec`
+## is `GunAssembler`'s schema, so the guard rides in Object metadata rather than
+## costing a field this system does not own.
+const GRADED_META: StringName = &"gun_graded"
+## Metadata key holding this weapon's drawn traits, separately from the stat
+## card's `quirks`. The card is truncated for width; the mechanisms must see the
+## whole draw, and re-rolling it on every profile call would cost four draws per
+## configure for no gain.
+const TRAITS_META: StringName = &"gun_traits"
 
 ## The reference prototype's eleven emergent traits, in its own push order. Kept
 ## separate so a census can tell what this port added from what it inherited.
@@ -226,11 +272,41 @@ static func tier_of(spec: GunSpec) -> int:
 	return 0 if condition(spec) < HAZARD_CONDITION else base
 
 
-## Emergent traits, read off the finished record. The first eleven are the
-## reference's own, in its push order; the rest are this port's character tags,
-## each gated on the same threshold the matching profile uses.
+## This weapon's drawn traits — the named faults and virtues from `GunQuirks`.
+##
+## Cached in metadata by `grade()`. The fallback draw exists so a caller that
+## reaches a profile on an ungraded record still gets the same answer rather than
+## a neutral one; it is the same deterministic draw, taken again.
+static func traits(spec: GunSpec) -> PackedStringArray:
+	if spec == null:
+		return PackedStringArray()
+	var cached: Variant = spec.get_meta(TRAITS_META, null)
+	if cached is PackedStringArray:
+		return cached
+	return GunQuirks.roll(spec, quality(spec), rate_stress(spec))
+
+
+## The accumulated effect of this weapon's traits, at a mechanism's own dial.
+## Every profile below multiplies or adds this in, which is what makes a trait a
+## behaviour rather than a word.
+static func trait_mods(spec: GunSpec, strength: float) -> Dictionary:
+	return GunQuirks.mods(traits(spec), strength)
+
+
+## Emergent traits, read off the finished record.
+##
+## Three groups, in display order. The first eleven are the reference's own, in
+## its push order. Then this weapon's DRAWN traits, which are the ones with an
+## independent effect. Then this port's derived character tags, each gated on the
+## same threshold the matching profile uses.
+##
+## The first two groups are never truncated, because every one of them is a
+## statement about a number a mechanism is currently using and a card that hid
+## one would be lying. `MAX_QUIRKS` only limits how many derived tags get to
+## describe the result.
 static func quirks(spec: GunSpec) -> PackedStringArray:
 	var out: PackedStringArray = _reference_quirks(spec)
+	out.append_array(traits(spec))
 	for tag: String in _character_quirks(spec):
 		if out.size() >= MAX_QUIRKS:
 			break
@@ -238,27 +314,83 @@ static func quirks(spec: GunSpec) -> PackedStringArray:
 	return out
 
 
-## True when the action cannot stop itself. The reference's own case is a light
-## impulse against a heavy carrier (`action_load` under 0.20); this port adds the
-## worn sear — a rough weapon geared far past what it can carry does not care
-## that you let go of the trigger.
+## `quirks()` packed into card-width lines, longest-fitting-first, in order.
+##
+## THIS EXISTS BECAUSE THE TAGS OUTGREW THE CARD. Before grading was wired into
+## `GunFactory` a stat card showed only the reference's eleven emergent quirks and
+## the mean weapon carried well under one, so both card builders joined the whole
+## list onto a single line. With the character layer live the mean is 4.4 of a
+## possible `MAX_QUIRKS`, which is 60-100 characters — and `ReadoutCanvas` draws a
+## line through `draw_string` with a width limit, which CLIPS rather than wraps. A
+## single joined line therefore loses tags silently, which is the one thing
+## `quirks()` promises never to happen: every name on that card is a number a
+## mechanism is currently using.
+##
+## `budget` is in characters and is compared against the mono font the diegetic
+## readouts use, so it is a true width. A tag longer than the whole budget still
+## gets its own line rather than being dropped — losing it would be the bug this
+## function exists to prevent.
+static func quirk_lines(spec: GunSpec, budget: int = 34) -> PackedStringArray:
+	var out := PackedStringArray()
+	var line: String = ""
+	for tag: String in quirks(spec):
+		if line.is_empty():
+			line = tag
+		elif line.length() + 2 + tag.length() <= budget:
+			line += ", " + tag
+		else:
+			out.append(line)
+			line = tag
+	if not line.is_empty():
+		out.append(line)
+	return out
+
+
+## True when the action cannot stop itself.
+##
+## The reference's own case is a light impulse against a heavy carrier, which
+## `GunAssembler` tests as `cyc < 0.20` and has already published as
+## `spec.runaway` — the cycle load it tests on is a derivation local and never
+## reaches this resource, so the flag IS the reading. This port adds the second
+## case: a worn sear. A rough weapon geared far past what its workmanship can
+## carry does not care that you let go of the trigger.
+##
+## Monotone in `spec.runaway`, so re-grading an already-graded record is a no-op
+## rather than a flag that flickers.
 static func runs_away(spec: GunSpec) -> bool:
 	if not spec.automatic:
 		return false
-	if spec.action_load > 0.0 and spec.action_load < RUNAWAY_LOAD:
+	if spec.runaway:
 		return true
 	return rate_stress(spec) > RUNAWAY_STRESS and quality(spec) < Q_GRITTY
 
 
-## Write the grading onto a finished record: tier, character, runaway sear.
-## Called once at the end of `GunAssembler.assemble()`, when every number it
-## reads is already on the spec.
+## Write the grading onto a finished record: tier, traits, character, runaway sear.
+##
+## Belongs at the end of `GunAssembler.assemble()`, where every number it reads
+## is already on the spec. Until that call site exists this is reached through
+## `ensure()`, which every mechanism resource calls as it configures — so a gun
+## in a hand is always fully graded even though a census row may not be.
+##
+## The tier goes down FIRST: `quality()` reads it, and the trait draw and every
+## profile past this line are keyed off quality.
 static func grade(spec: GunSpec) -> void:
 	spec.tier_index = tier_of(spec)
 	spec.tier_name = StringName(Palette.GUN_TIER_NAMES[spec.tier_index])
 	spec.tier_color = Palette.TIER_COLORS[spec.tier_index]
-	spec.quirks = quirks(spec)
 	spec.runaway = runs_away(spec)
+	spec.set_meta(TRAITS_META, GunQuirks.roll(spec, quality(spec), rate_stress(spec)))
+	spec.quirks = quirks(spec)
+	spec.set_meta(GRADED_META, true)
+
+
+## Grade `spec` unless it already carries the grading. Idempotent and cheap on
+## the second call, which is what lets all four mechanism resources ask for it
+## without any of them having to be the one that owns the ordering.
+static func ensure(spec: GunSpec) -> void:
+	if spec == null or spec.has_meta(GRADED_META):
+		return
+	grade(spec)
 
 
 ## A deterministic per-weapon stream. Two weapons built from the same five parts
@@ -274,16 +406,24 @@ static func stream(spec: GunSpec, salt: int) -> XorShift32:
 ##   wear          extra chance by the time the magazine is empty
 ##   tail          extra chance over the last rounds
 ##   hard / light  severity mix; the remainder is an ordinary stoppage
-static func jam_profile(spec: GunSpec) -> Dictionary:
+##
+## `strength` is `GunJam.quirk_strength`: how much of the character layer this
+## particular resource wants. Zero leaves the smooth tier ladder alone.
+static func jam_profile(spec: GunSpec, strength: float = 1.0) -> Dictionary:
 	var q: float = quality(spec)
 	var tilt: float = PIVOT / maxf(q, 0.05)
 	var rough: float = 1.0 - q
+	var m: Dictionary = trait_mods(spec, strength)
+	var stressed: float = 1.0 + JAM_STRESS_WEIGHT * rate_stress(spec)
+	var wear: float = WEAR_MAX * pow(rough, WEAR_QUALITY_EXP) + float(m[&"wear"])
+	var tail: float = TAIL_MAX * pow(1.0 - feed_quality(spec), WEAR_QUALITY_EXP)
+	var hard: float = HARD_SHARE * pow(rough, SEVERITY_EXP) * float(m[&"hard"])
 	return {
-		&"chance_scale": pow(tilt, JAM_QUALITY_EXP) * (1.0 + JAM_STRESS_WEIGHT * rate_stress(spec)),
-		&"clear_scale": pow(tilt, CLEAR_EXP),
-		&"wear": WEAR_MAX * pow(rough, WEAR_QUALITY_EXP),
-		&"tail": TAIL_MAX * pow(1.0 - feed_quality(spec), WEAR_QUALITY_EXP),
-		&"hard": HARD_SHARE * pow(rough, SEVERITY_EXP),
+		&"chance_scale": pow(tilt, JAM_QUALITY_EXP) * stressed * float(m[&"jam"]),
+		&"clear_scale": pow(tilt, CLEAR_EXP) * float(m[&"clear"]),
+		&"wear": maxf(wear, 0.0),
+		&"tail": maxf(tail + float(m[&"tail"]), 0.0),
+		&"hard": clampf(hard, 0.0, 1.0),
 		&"light": LIGHT_SHARE * pow(q, SEVERITY_EXP),
 	}
 
@@ -295,15 +435,24 @@ static func jam_profile(spec: GunSpec) -> Dictionary:
 ##                  settles faster than the resource's base, below 1 slower
 ##   sight          0..1, how much of the resource's ADS tightening is earned
 ##   relief         on how much of the bloom shouldering absorbs
-static func spread_profile(spec: GunSpec) -> Dictionary:
+##   floor          residual bloom the decay can never clear. This is the one that
+##                  makes a rough weapon feel rough between shots rather than only
+##                  during a burst: it never comes back to its own bench group.
+static func spread_profile(spec: GunSpec, strength: float = 1.0) -> Dictionary:
 	var q: float = quality(spec)
 	var tilt: float = PIVOT / maxf(q, 0.05)
+	var m: Dictionary = trait_mods(spec, strength)
+	var stress: float = rate_stress(spec)
+	var bloom: float = pow(tilt, BLOOM_EXP) * (1.0 + BLOOM_STRESS_WEIGHT * stress)
+	var ceiling: float = pow(tilt, CEILING_EXP) * (1.0 + CEILING_STRESS_WEIGHT * stress)
+	var floor_rad: float = FLOOR_MAX * pow(1.0 - q, FLOOR_EXP) + float(m[&"floor"])
 	return {
-		&"bloom_scale": pow(tilt, BLOOM_EXP),
-		&"ceiling_scale": pow(tilt, CEILING_EXP),
-		&"settle": q / PIVOT,
-		&"sight": pow(q, SIGHT_EXP),
-		&"relief": pow(q / PIVOT, RELIEF_EXP),
+		&"bloom_scale": bloom * float(m[&"bloom"]),
+		&"ceiling_scale": ceiling * float(m[&"ceiling"]),
+		&"settle": (q / PIVOT) * float(m[&"settle"]),
+		&"sight": pow(q, SIGHT_EXP) * float(m[&"sight"]),
+		&"relief": pow(q / PIVOT, RELIEF_EXP) * float(m[&"relief"]),
+		&"floor": maxf(floor_rad, 0.0),
 	}
 
 
@@ -311,24 +460,34 @@ static func spread_profile(spec: GunSpec) -> Dictionary:
 ##   time_scale   on the rolled reload time
 ##   cycle_scale  on a hand-worked action's cycle, so a rough bolt is slow
 ##   fumble       chance a reload goes wrong and has to be started over
-static func reload_profile(spec: GunSpec) -> Dictionary:
+static func reload_profile(spec: GunSpec, strength: float = 1.0) -> Dictionary:
 	var q: float = quality(spec)
 	var tilt: float = PIVOT / maxf(q, 0.05)
+	var m: Dictionary = trait_mods(spec, strength)
+	var fumble: float = FUMBLE_MAX * pow(1.0 - q, FUMBLE_EXP) + float(m[&"fumble"])
 	return {
-		&"time_scale": pow(tilt, RELOAD_EXP),
-		&"cycle_scale": pow(tilt, CYCLE_EXP),
-		&"fumble": FUMBLE_MAX * pow(1.0 - q, FUMBLE_EXP),
+		&"time_scale": pow(tilt, RELOAD_EXP) * float(m[&"reload"]),
+		&"cycle_scale": pow(tilt, CYCLE_EXP) * float(m[&"cycle"]),
+		&"fumble": maxf(fumble, 0.0),
 	}
 
 
-## What `GunAmmo` needs.
-##   short    largest share of the magazine a reload may fail to seat
-##   misfeed  per-shot chance the stack strips two rounds instead of one
-static func feed_profile(spec: GunSpec) -> Dictionary:
-	var rough: float = 1.0 - feed_quality(spec)
+## What `GunAmmo` needs, plus the one number `GunReload` takes from the feed
+## rather than from the action.
+##   short        largest share of the magazine a reload may fail to seat
+##   misfeed      per-shot chance the stack strips two rounds instead of one
+##   shell_scale  on a tube's per-shell time — a bent loading gate takes them one
+##                reluctant push at a time, a clean one swallows them
+static func feed_profile(spec: GunSpec, strength: float = 1.0) -> Dictionary:
+	var fq: float = feed_quality(spec)
+	var rough: float = 1.0 - fq
+	var m: Dictionary = trait_mods(spec, strength)
+	var short_fill: float = SHORT_MAX * pow(rough, SHORT_EXP) + float(m[&"short"])
+	var misfeed: float = MISFEED_MAX * pow(rough, MISFEED_EXP) + float(m[&"misfeed"])
 	return {
-		&"short": SHORT_MAX * pow(rough, SHORT_EXP),
-		&"misfeed": MISFEED_MAX * pow(rough, MISFEED_EXP),
+		&"short": maxf(short_fill, 0.0),
+		&"misfeed": maxf(misfeed, 0.0),
+		&"shell_scale": pow(PIVOT / maxf(fq, 0.05), SHELL_EXP) * float(m[&"shell"]),
 	}
 
 
@@ -363,14 +522,34 @@ static func _reference_quirks(spec: GunSpec) -> PackedStringArray:
 	return q
 
 
-## This port's character tags. Every one is gated OUTSIDE the middle of the
-## quality band, so an unremarkable Field-Grade weapon carries none of them and
-## the tags stay a statement about the object rather than noise on every card.
+## This port's character tags.
+##
+## EVERY TAG HERE IS READ OFF A PROFILE THIS FILE ALSO HANDS TO A MECHANISM, at
+## the same threshold that mechanism keys off — not off a parallel set of
+## conditions that happen to look similar. "worn mag" is on the card exactly when
+## `feed_profile` is handing `GunAmmo` a short fill and a double-feed chance;
+## "wandering zero" exactly when `spread_profile` is handing `GunSpread` a bloom
+## floor it cannot decay through. There is no such thing here as a tag that only
+## prints.
+##
+## Each is also gated OUTSIDE the middle of the quality band, so an unremarkable
+## Field-Grade weapon carries none of them and a tag stays a statement about the
+## object rather than noise on every card.
 static func _character_quirks(spec: GunSpec) -> PackedStringArray:
 	var q: float = quality(spec)
 	var tags := PackedStringArray()
-	if rate_stress(spec) > STRESS_MARK:
+	if rate_stress(spec) > STRESS_MARK and not traits(spec).has("overrun action"):
 		tags.append("over-revved")
+	tags.append_array(_rough_quirks(spec, q))
+	tags.append_array(_fine_quirks(spec, q))
+	return tags
+
+
+## The unpleasant half. Split out only to keep either branch readable.
+static func _rough_quirks(spec: GunSpec, q: float) -> PackedStringArray:
+	var tags := PackedStringArray()
+	var feed: Dictionary = feed_profile(spec)
+	var spread: Dictionary = spread_profile(spec)
 	if q < Q_GRITTY:
 		tags.append("gritty")
 		if feed_quality(spec) < FEED_WORN and spec.magazine > 4:
@@ -381,10 +560,27 @@ static func _character_quirks(spec: GunSpec) -> PackedStringArray:
 			tags.append("fumbly")
 		if MANUAL_ACTIONS.has(String(GunTables.action_for(spec.fire_mode))):
 			tags.append("sluggish action")
+	if float(spread[&"floor"]) > WANDER_MARK:
+		tags.append("wandering zero")
+	if float(feed[&"misfeed"]) > MISFEED_MARK:
+		tags.append("double-feeding")
+	if float(jam_profile(spec)[&"hard"]) > HARD_MARK:
+		tags.append("hard-jamming")
+	if float(reload_profile(spec)[&"time_scale"]) > SLOW_LOAD_MARK:
+		tags.append("slow to load")
 	if q < Q_ROUGH:
 		tags.append("bent sights")
+	return tags
+
+
+## The earned half. A Gunsmithed weapon and up should be able to say WHY it is
+## better in the same vocabulary the bad ones use.
+static func _fine_quirks(spec: GunSpec, q: float) -> PackedStringArray:
+	var tags := PackedStringArray()
 	if q >= Q_SLICK:
 		tags.append("slick")
 		if spec.fit_error <= FIT_MATCH:
 			tags.append("crisp")
+	if feed_quality(spec) >= FEED_QUICK:
+		tags.append("quick-feeding")
 	return tags

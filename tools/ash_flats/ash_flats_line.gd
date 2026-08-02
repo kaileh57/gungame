@@ -58,6 +58,13 @@ const S_SAND: int = WorldSurface.Kind.SAND
 ## kind, z0, z1, x centre, width, top y at z0, top y at z1. Everything on the spine
 ## sits at x -8, which is the centre of the main carriageway: the one strip 230 m
 ## long that the town bake provably leaves clear at every height a roof can be at.
+##
+## THE SPINE IS ONE CONTINUOUS RUN IN +Z AND HAS TO STAY THAT WAY. Every row at
+## x -8 is picked up by `verify_ash_flats.gd`, which drives the real controller from
+## the first row's z0 to the last row's z1 in one unbroken input — so a hole in the
+## spine that is not one of `GAPS` is a harness failure, not a design choice. Off-spine
+## rows (the landing aprons, the recovery ramps) are ignored by that harness, which is
+## exactly why the recoveries are allowed to sit sideways in a gap's void.
 const LINE: Array[Array] = [
 	[L.RAMP, -110.7, -92.7, -8.0, 7.0, 1.40, 11.15],
 	[L.DECK, -92.7, -86.7, -8.0, 8.0, 11.15, 11.15],
@@ -83,6 +90,31 @@ const LINE: Array[Array] = [
 	# half there is no shortcut back: you run to the berm, which is forty metres and
 	# about six seconds, and that is what missing costs.
 	[L.RAMP, -39.5, -34.1, -12.2, 2.6, -0.30, 1.42],
+	# --- THE NORTH BANK: the second leg ------------------------------------------
+	#
+	# The line used to stop in the riverbed, which is where the town starts. It now
+	# climbs out of it and runs the settlement to a finish on the far carriageway, so
+	# the whole shape is DOWN, UP, DOWN and a race is won on both halves.
+	#
+	# The climb is a VIADUCT, not a second berm: a `DECK` row with a rise in it, so it
+	# comes with piers and kerbs instead of a spoil skirt. Eleven metres of earth heaped
+	# down the middle of an inhabited street is a wall; a ramp on legs over the market
+	# is a thing the town would have built. It rises 27.0 deg against the opening berm's
+	# 28.4, and passes 2.7 m clear over the market canopy at z 16..20.
+	[L.DECK, -0.6, 21.4, -8.0, 7.0, -3.27, 7.94],
+	[L.DECK, 21.4, 27.4, -8.0, 8.0, 7.94, 7.94],
+	[L.PITCH, 27.4, 41.4, -8.0, 6.5, 7.94, 4.45],
+	# GAP FOUR, 10.40 m, landing 1.40 m down. The same shape as GAP TWO, which is the
+	# one measured off a 14 m pitch, and 0.4 m shorter than it.
+	[L.DECK, 51.8, 57.3, -8.0, 8.5, 3.05, 3.05],
+	# The run-out. It lands you 1.1 m over the carriageway with nine metres of street
+	# left, which is the sprint to the line — the finish gantry stands on that street.
+	[L.PITCH, 57.3, 64.3, -8.0, 6.5, 3.05, 1.30],
+	[L.PLANK, 51.8, 57.3, -3.05, 1.4, 2.15, 2.15],
+	[L.PLANK, 51.8, 57.3, -12.95, 1.4, 2.15, 2.15],
+	# Recovery out of GAP FOUR's void, on the same rule as the first one: in the hole,
+	# nothing overhead, and 3.3 m off the flight line.
+	[L.RAMP, 46.0, 51.4, -12.6, 2.6, 0.30, 3.05],
 ]
 ## Column indices into a `LINE` row.
 const P_KIND: int = 0
@@ -111,6 +143,7 @@ const GAPS: Array[Array] = [
 	["GAP ONE", -74.7, -64.7, 8.16, 6.31],
 	["GAP TWO", -44.7, -33.9, 2.82, 1.42],
 	["GAP THREE", -14.9, -4.5, -2.07, -3.27],
+	["GAP FOUR", 41.4, 51.8, 4.45, 3.05],
 ]
 const G_NAME: int = 0
 const G_Z0: int = 1
@@ -119,14 +152,20 @@ const G_Y0: int = 3
 const G_Y1: int = 4
 
 ## The timing gates, in order: name, x, z, deck top y (NAN means stand on the
-## ground). The first arms the clock, the last stops it, the middle two are splits.
+## ground). The first arms the clock and the rest are splits.
 ## START sits 6.5 m from the spawn, which is further than `GATE_RADIUS`: spawn inside
 ## your own start line and the clock is running before you have decided to go.
+##
+## THE FINISH IS NOT IN THIS TABLE. It is wherever the race's finish gantry stands, and
+## `build_gates` appends it from the point it is handed. The solo clock and the race end
+## at the same painted line under the same structure, because two finishes in one demo
+## is two answers to "where does this end".
 const GATES: Array[Array] = [
 	["START", -8.0, -112.0, NAN],
 	["CREST", -8.0, -89.7, 11.15],
 	["MIDWAY", -8.0, -31.4, 1.42],
-	["FINISH", -8.0, 10.0, NAN],
+	["RIVER", -8.0, -2.5, -3.27],
+	["ROOFLINE", -8.0, 24.4, 7.94],
 ]
 const T_NAME: int = 0
 const T_X: int = 1
@@ -467,8 +506,12 @@ static func _line_surface(kind: int) -> int:
 ## A steel goalpost over the line at each timing gate, with the gate's name
 ## stencilled across the lintel. This is the whole of the course's signage: no
 ## screen-space overlay, no floating arrow, a thing you run through.
+##
+## `finish` is where the race's finish gantry ended up. The last gate is placed there
+## and given NO goalpost of its own — the gantry is the arch, and building a second one
+## inside it would read as a mistake from fifty metres back up the course.
 static func build_gates(
-	root: Node3D, material: Material, mesh_dir: String, course_script: GDScript
+	root: Node3D, material: Material, mesh_dir: String, course_script: GDScript, finish: Vector3
 ) -> int:
 	var group := Node3D.new()
 	group.name = "Gates"
@@ -519,7 +562,7 @@ static func build_gates(
 		# range is off the top of the screen.
 		label.pixel_size = 0.0026
 		label.position = Vector3(0.0, 3.86, -0.075)
-		label.modulate = WorldPalette.EXFIL if i == 0 or i == GATES.size() - 1 else Palette.BONE
+		label.modulate = WorldPalette.EXFIL if i == 0 else Palette.BONE
 		label.outline_size = 20
 		label.outline_modulate = Color(0.05, 0.045, 0.04, 1.0)
 		label.visibility_range_end = 150.0
@@ -534,6 +577,16 @@ static func build_gates(
 		positions.push_back(Vector3(x, y, z))
 		names.push_back(row[T_NAME])
 
+	# The finish, as a bare marker under the race's gantry. It still needs a NODE, and
+	# an empty one at that: `AshFlatsCourse._show_lamps` walks `Gates`' children by
+	# INDEX against the gate list, so a missing child would light the wrong plate.
+	var last := Node3D.new()
+	last.name = "gate_%d_finish" % GATES.size()
+	last.position = finish
+	group.add_child(last)
+	positions.push_back(finish)
+	names.push_back("FINISH")
+
 	var course := Node.new()
 	course.name = "Course"
 	course.set_script(course_script)
@@ -541,7 +594,7 @@ static func build_gates(
 	course.set(&"gate_positions", positions)
 	course.set(&"gate_radius", GATE_RADIUS)
 	root.add_child(course)
-	return GATES.size()
+	return names.size()
 
 
 ## Two legs on two feet, a lintel, and a painted band across the deck under it.

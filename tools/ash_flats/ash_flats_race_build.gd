@@ -7,11 +7,21 @@ extends RefCounted
 ## Split out of `tools/build_ash_flats.gd` for the same reason `ash_flats_line.gd` was —
 ## it is the part of that bake with an OPINION. Everything in the builder proper places
 ## something somebody else made; this decides where four people stand, what they look at
-## while they wait, and which five points on the line a run has to touch to count.
+## while they wait, and which points on the line a run has to touch to count.
+##
+## NOTHING IN THE ROUTE IS TAKEN ON TRUST. Every checkpoint is resolved against the ash
+## line's own table and then against the baked collider set before it is written, and
+## what it is standing on is printed in the bake report — see `_support`.
 ##
 ## THE RACE NODE CARRIES THE WHOLE ROUTE AS BAKED ARRAYS and knows no geometry of its
 ## own — the same split `AshFlatsCourse` already uses for the solo clock. Moving the
 ## route is editing `CHECKS` and re-running the builder; nothing under `demos/` follows.
+
+## THE ASH LINE itself. The route is checked against its table, not described beside it:
+## every checkpoint has to sit on a run this file can name, or on the baked town.
+const Line := preload("res://tools/ash_flats/ash_flats_line.gd")
+## The finish gantry and the checkpoint masts — the race's signage, all of it baked.
+const Finish := preload("res://tools/ash_flats/ash_flats_finish.gd")
 
 const RACE_SCRIPT: String = "res://demos/ash_flats/ash_flats_race.gd"
 const GANTRY_SCRIPT: String = "res://demos/ash_flats/ash_flats_gantry.gd"
@@ -63,17 +73,30 @@ const LAMP_COUNT: int = 5
 ## The route, as the race reads it: name, x, z, deck top y (NAN stands on the ground),
 ## and the metres below and above that top which still count as having been there.
 ##
+## THE ROUTE IS TWO LEGS AND A CLIMB BETWEEN THEM. CREST to RIVER is the original run
+## down the berm and the three gaps into the dry river — a hundred and twenty metres,
+## all of it downhill, which was the whole race and was over in half a minute. ROOFLINE
+## and LAST DROP are the second leg: out of the riverbed on the viaduct that climbs over
+## the market, along the high deck, and down one more pitch and gap to a finish on the
+## far carriageway. It is a hundred and ninety metres of z now and the shape of it is
+## DOWN, UP, DOWN, so a race is won on both halves and not on the first gap.
+##
+## THE FINISH IS NOT IN THIS TABLE. It is wherever the gantry could stand — see
+## `finish_point` — and it is appended to the route with the ground under it.
+##
 ## THE `below` COLUMN IS THE ANTI-SHORTCUT and it is the only interesting number in the
 ## table. Two of these decks have a street running directly under them, so a checkpoint
 ## that were a plain cylinder would be crossed by somebody who never left the ground.
-## MIDWAY's deck stands about 1.7 m over its own street, which is why its band is the
-## tight one — everything else on the line is at least four metres up.
+## MIDWAY's deck stands about 1.7 m over its own street and LAST DROP's about 2.8 m,
+## which is why those two bands are the tight ones; everything else on the line is at
+## least four metres up and can afford to be generous.
 const CHECKS: Array[Array] = [
 	["CREST", -8.0, -89.7, 11.15, 2.5, 7.0],
 	["GAP ONE", -8.0, -61.7, 6.31, 2.5, 7.0],
 	["MIDWAY", -8.0, -31.4, 1.42, 1.0, 7.0],
 	["RIVER", -8.0, -2.5, -3.27, 2.5, 7.0],
-	["FINISH", -8.0, 10.0, NAN, 3.0, 8.0],
+	["ROOFLINE", -8.0, 24.4, 7.94, 2.5, 7.0],
+	["LAST DROP", -8.0, 54.5, 3.05, 1.5, 7.0],
 ]
 const C_NAME: int = 0
 const C_X: int = 1
@@ -81,17 +104,62 @@ const C_Z: int = 2
 const C_Y: int = 3
 const C_BELOW: int = 4
 const C_ABOVE: int = 5
+## The finish checkpoint's own band. Generous overhead: you arrive off the last pitch
+## still a stride in the air, and nobody should cross a finish line and not be told.
+const FINISH_BELOW: float = 3.0
+const FINISH_ABOVE: float = 8.0
+
+## Where the finish gantry may stand, best first, as a z on the carriageway. Every
+## candidate is put through the baked collider set's own standing test at all four post
+## positions — the two towers and the two pennant masts — and the first that survives is
+## used. The last is the fallback. This is the same rule the board spots and the course
+## piers follow, and it is the reason the gantry is never found half inside a wall.
+const FINISH_SPOTS: PackedFloat32Array = [73.0, 72.0, 74.0, 71.0, 60.0]
+const FINISH_X: float = -8.0
+## How much clear air a gantry post needs, and the radius it is tested at.
+const FINISH_CLEAR: float = 8.6
+const FINISH_POST_R: float = 0.55
+
+## Metres a checkpoint's own height may differ from what is under it before the bake
+## calls it unsupported. A checkpoint stands ON something; this is the slack for a kerb.
+const SUPPORT_SLACK: float = 0.45
+## Half-width used for a checkpoint's masts when nothing on the line owns that spot.
+const MAST_HALF_FALLBACK: float = 4.0
+## Metres outside the run's own edge the masts stand.
+const MAST_MARGIN: float = 0.45
 
 ## Where the standings board may stand, best first. Every candidate is put through the
 ## baked collider set's own standing test and the first one that survives is used, which
 ## is the same rule the clutter scatter and the course piers follow. The last is the
 ## fallback and is on the carriageway itself, which the town bake provably leaves clear.
+##
+## THEY ARE ALL DOWN-LINE OF THE LINE NOW. You spawn on the start line facing +Z and the
+## first thing you should see is what everyone else has run — a board behind your back is
+## a board nobody reads. The first two candidates put it forward and to one side, clear
+## of the outside lane, and `_build_leaderboard` turns it back to face the line.
 const BOARD_SPOTS: Array[Vector2] = [
-	Vector2(-15.6, -116.4),
-	Vector2(-0.4, -116.4),
+	Vector2(-14.2, -113.4),
+	Vector2(-1.8, -113.4),
+	Vector2(-15.8, -112.6),
+	Vector2(-0.2, -112.6),
+	Vector2(-13.8, -116.6),
+	Vector2(-2.2, -116.6),
 	Vector2(-15.6, -121.0),
 	Vector2(-8.0, -122.6),
 ]
+## Where the board is turned to look: the middle of the start line, a stride behind it,
+## which is where four people are stood when it matters.
+const BOARD_AIM: Vector2 = Vector2(-8.0, LINE_Z - 1.2)
+## Metres between the four standing rows on the board.
+const BOARD_ROW_STEP: float = 0.42
+## Half-width, half-height and centre height of the board's plate, and its leg span. The
+## board grew by half when the demo became mostly a race: it is the first thing you are
+## meant to read on arrival, from the line, which is seven metres of dust away.
+const BOARD_HALF_W: float = 2.00
+const BOARD_HALF_H: float = 1.35
+const BOARD_MID: float = 2.85
+const BOARD_LEG_X: float = 2.05
+const BOARD_TOP: float = 4.20
 
 ## Lamp lens colours. Amber is the project's own exfil orange, which already means "this
 ## one matters" everywhere else in the demo. Green appears NOWHERE else in ash_flats and
@@ -107,7 +175,7 @@ const LAMP_GO: Color = Color(0.31, 0.78, 0.36)
 ## own — the same split `AshFlatsCourse` already uses. That is what lets the route move
 ## by editing `CHECKS` and re-running this builder, with nothing in `demos/` to follow.
 static func build(
-	root: Node3D, query: WorldQuery, meshes: Dictionary, mesh_dir: String
+	root: Node3D, query: WorldQuery, meshes: Dictionary, mesh_dir: String, finish: Vector3
 ) -> Dictionary:
 	var lines: Array[String] = []
 	var lamps: Dictionary = _lamp_materials(mesh_dir)
@@ -116,37 +184,21 @@ static func build(
 		var x: float = -8.0 + offset
 		lanes.push_back(Vector3(x, query.ground_h(x, LINE_Z) + LANE_LIFT, LINE_Z))
 	_build_gantry(root, query, meshes["gantry"], lamps, mesh_dir)
-	var names := PackedStringArray()
-	var points := PackedVector3Array()
-	var below := PackedFloat32Array()
-	var above := PackedFloat32Array()
-	for row: Array in CHECKS:
-		var x: float = row[C_X]
-		var z: float = row[C_Z]
-		var y: float = row[C_Y]
-		if is_nan(y):
-			y = query.ground_h(x, z)
-		names.push_back(String(row[C_NAME]))
-		points.push_back(Vector3(x, y, z))
-		below.push_back(float(row[C_BELOW]))
-		above.push_back(float(row[C_ABOVE]))
-		lines.append(
-			(
-				"  check  %-8s x %6.1f  z %7.1f  y %6.2f   band %.1f below, %.1f above"
-				% [row[C_NAME], x, z, y, float(row[C_BELOW]), float(row[C_ABOVE])]
-			)
-		)
+	var route: Dictionary = _route(query, finish)
 	var race := Node.new()
 	race.name = "Race"
 	race.set_script(load(RACE_SCRIPT))
-	race.set(&"checkpoint_names", names)
-	race.set(&"checkpoint_points", points)
-	race.set(&"checkpoint_below", below)
-	race.set(&"checkpoint_above", above)
+	race.set(&"checkpoint_names", route["names"])
+	race.set(&"checkpoint_points", route["points"])
+	race.set(&"checkpoint_below", route["below"])
+	race.set(&"checkpoint_above", route["above"])
 	race.set(&"lane_points", lanes)
 	race.set(&"lane_yaw", LANE_YAW)
 	root.add_child(race)
-	var spot: Vector2 = _board_spot(query)
+	lines.append_array(route["lines"] as Array[String])
+	_build_masts(root, meshes, lamps, route)
+	Finish.build_finish(root, query, meshes, lamps, finish)
+	var spot: Vector2 = board_spot(query)
 	_build_leaderboard(root, query, meshes["board_frame"], spot)
 	var marked: bool = _build_marks(root, mesh_dir)
 	lines.append(
@@ -155,9 +207,148 @@ static func build(
 			% [LINE_Z, lanes.size(), lanes[0].x, lanes[lanes.size() - 1].x, GANTRY_AHEAD]
 		)
 	)
+	lines.append(
+		(
+			"  finish x %6.1f  z %6.1f  y %6.2f   gantry and %d threshold bars"
+			% [finish.x, finish.z, finish.y, Finish.BAR_COUNT]
+		)
+	)
 	lines.append("  board  %6.1f %6.1f   %d rows" % [spot.x, spot.y, NetPlayer.MAX_PLAYERS])
 	lines.append("  marks  %s" % ("baked" if marked else "NO BEACON - run build_avatar.gd"))
-	return {"lines": lines}
+	return {"lines": lines, "unsupported": route["unsupported"]}
+
+
+## The route as the four baked arrays, with the finish appended and EVERY CHECKPOINT
+## PROVED TO STAND ON SOMETHING before it is written.
+##
+## The proof is the point of this function. A checkpoint is a number in a table and the
+## world is a bake; nothing stops the two drifting apart, and a checkpoint hanging two
+## metres over its own deck is invisible in a screenshot and a race nobody can finish.
+## So each one is resolved against the ash line's own table first — which is the geometry
+## this same bake is about to emit — and then against the baked collider set, exactly the
+## way the course piers and the board spot are. What it finds is written into the report.
+static func _route(query: WorldQuery, finish: Vector3) -> Dictionary:
+	var names := PackedStringArray()
+	var points := PackedVector3Array()
+	var below := PackedFloat32Array()
+	var above := PackedFloat32Array()
+	var lines: Array[String] = []
+	var halves := PackedFloat32Array()
+	var rows: Array[Array] = []
+	rows.append_array(CHECKS)
+	rows.append(["FINISH", finish.x, finish.z, finish.y, FINISH_BELOW, FINISH_ABOVE])
+	var unsupported: int = 0
+	for row: Array in rows:
+		var x: float = row[C_X]
+		var z: float = row[C_Z]
+		var y: float = row[C_Y]
+		if is_nan(y):
+			y = query.ground_h(x, z)
+		var support: Dictionary = _support(query, x, z, y)
+		if not bool(support["ok"]):
+			unsupported += 1
+			push_warning(
+				(
+					"ash_flats_race_build: %s at (%.1f, %.1f) has nothing under y %.2f."
+					% [row[C_NAME], x, z, y]
+				)
+			)
+		names.push_back(String(row[C_NAME]))
+		points.push_back(Vector3(x, y, z))
+		below.push_back(float(row[C_BELOW]))
+		above.push_back(float(row[C_ABOVE]))
+		halves.push_back(float(support["half"]))
+		lines.append(
+			(
+				"  check  %-9s x %6.1f  z %7.1f  y %6.2f   band %.1f/%.1f   on %s"
+				% [row[C_NAME], x, z, y, float(row[C_BELOW]), float(row[C_ABOVE]), support["what"]]
+			)
+		)
+	return {
+		"names": names,
+		"points": points,
+		"below": below,
+		"above": above,
+		"halves": halves,
+		"lines": lines,
+		"unsupported": unsupported,
+	}
+
+
+## What a checkpoint is standing on: a run of the ash line, a baked town roof, or the
+## ground. Returns the half-width of whatever it found, which is where the masts go.
+##
+## THE ASH LINE IS CHECKED FIRST AND IT HAS TO BE. Its decks are not in
+## `colliders.res` — they are emitted by this same bake — so the baked collider set
+## alone would call every checkpoint on the line unsupported and be wrong six times out
+## of seven. The table this reads is the one the geometry is cut from, so the two cannot
+## disagree: move a deck and the answer here moves with it.
+static func _support(query: WorldQuery, x: float, z: float, y: float) -> Dictionary:
+	for row: Array in Line.LINE:
+		var half: float = float(row[Line.P_W]) * 0.5
+		if absf(x - float(row[Line.P_X])) > half:
+			continue
+		var z0: float = minf(float(row[Line.P_Z0]), float(row[Line.P_Z1]))
+		var z1: float = maxf(float(row[Line.P_Z0]), float(row[Line.P_Z1]))
+		if z < z0 - 0.01 or z > z1 + 0.01:
+			continue
+		var top: float = Line.top_at(row, z)
+		if absf(top - y) > SUPPORT_SLACK:
+			continue
+		var kind: String = ["ramp", "pitch", "deck", "plank"][int(row[Line.P_KIND])]
+		return {"ok": true, "half": half, "what": "ash line %s %.2f" % [kind, top]}
+	var town: float = query.top_at(x, z, y - 2.0, y + 2.0)
+	if not is_nan(town) and absf(town - y) <= SUPPORT_SLACK:
+		var standing: bool = query.can_stand(x, z, town, 2.2, 1.2)
+		return {
+			"ok": standing,
+			"half": MAST_HALF_FALLBACK,
+			"what": "town top %.2f%s" % [town, "" if standing else "  NO ROOM"]
+		}
+	return {"ok": false, "half": MAST_HALF_FALLBACK, "what": "NOTHING at %.2f" % y}
+
+
+## Where the finish gantry stands. The first candidate whose four post positions are all
+## clear in the baked collider set wins; the last is the fallback, on the carriageway,
+## which the town bake provably leaves open.
+static func finish_point(query: WorldQuery) -> Vector3:
+	for z: float in FINISH_SPOTS:
+		var clear: bool = true
+		for dx: float in [-Finish.MAST_X, -Finish.TOWER_HALF, Finish.TOWER_HALF, Finish.MAST_X]:
+			var x: float = FINISH_X + dx
+			if not query.can_stand(x, z, query.ground_h(x, z), FINISH_CLEAR, FINISH_POST_R):
+				clear = false
+				break
+		if clear:
+			return Vector3(FINISH_X, query.ground_h(FINISH_X, z), z)
+	var last: float = FINISH_SPOTS[FINISH_SPOTS.size() - 1]
+	return Vector3(FINISH_X, query.ground_h(FINISH_X, last), last)
+
+
+## A pair of masts at every checkpoint, so the route reads on sight from the deck you are
+## stood on and from the one before it.
+##
+## EVERY MAST CARRIES ITS NAME, INCLUDING THE THREE THAT ALSO HAVE A TIMING GATE OVER
+## them. The arch's own plate is driven by the yard board's lamp dial and its default is
+## NEXT — it shows the name of the gate the SOLO clock is waiting for and hides the other
+## three. That is the right behaviour for a stopwatch and the wrong one for a route: a
+## racer who has never been here needs to know what the deck under them is called whether
+## or not a clock is running. So the mast says it always, in gold, a metre above the
+## arch's plate and in a colour the arch never uses.
+static func _build_masts(
+	root: Node3D, meshes: Dictionary, lamps: Dictionary, route: Dictionary
+) -> void:
+	var group := Node3D.new()
+	group.name = "Checkpoints"
+	root.add_child(group)
+	var names: PackedStringArray = route["names"]
+	var points: PackedVector3Array = route["points"]
+	var halves: PackedFloat32Array = route["halves"]
+	for i: int in names.size():
+		# The finish is a gantry, not a pair of masts.
+		if i == names.size() - 1:
+			continue
+		Finish.build_check_mast(group, meshes, lamps, points[i], halves[i] + MAST_MARGIN, names[i])
 
 
 ## The gantry: a span over the line with five lamps on a low bar, and the painted line
@@ -238,15 +429,15 @@ static func _build_leaderboard(
 	var board := Node3D.new()
 	board.name = "Leaderboard"
 	board.position = Vector3(spot.x, query.ground_h(spot.x, spot.y), spot.y)
-	board.rotation = Vector3(0.0, atan2(-8.0 - spot.x, LINE_Z - spot.y), 0.0)
+	board.rotation = Vector3(0.0, atan2(BOARD_AIM.x - spot.x, BOARD_AIM.y - spot.y), 0.0)
 	board.set_script(load(LEADERBOARD_SCRIPT))
 	root.add_child(board)
-	board.add_child(_mesh_node("Frame", frame_mesh, 260.0))
+	board.add_child(_mesh_node("Frame", frame_mesh, 300.0))
 	board.add_child(
-		_board_label("Head", "ASH LINE", Vector3(0.0, 2.80, 0.05), 96, 0, WorldPalette.EXFIL)
+		_board_label("Head", "ASH LINE", Vector3(0.0, 3.76, 0.10), 112, 0, Palette.BONE)
 	)
 	board.add_child(
-		_board_label("Status", "LINE OPEN", Vector3(0.0, 2.55, 0.05), 64, 0, Palette.BONE)
+		_board_label("Status", "PRESS START RACE", Vector3(0.0, 3.40, 0.06), 76, 0, Palette.BONE)
 	)
 	var rows := Node3D.new()
 	rows.name = "Rows"
@@ -254,10 +445,10 @@ static func _build_leaderboard(
 	for i: int in NetPlayer.MAX_PLAYERS:
 		var row := Node3D.new()
 		row.name = "row_%d" % i
-		row.position = Vector3(0.0, 2.22 - 0.30 * float(i), 0.0)
-		row.add_child(_board_label("Place", "", Vector3(-1.22, 0.0, 0.05), 72, 0, Palette.BONE))
-		row.add_child(_board_label("Name", "", Vector3(-1.02, 0.0, 0.05), 72, -1, Palette.BONE))
-		row.add_child(_board_label("Time", "", Vector3(1.30, 0.0, 0.05), 72, 1, Palette.BONE))
+		row.position = Vector3(0.0, 2.98 - BOARD_ROW_STEP * float(i), 0.0)
+		row.add_child(_board_label("Place", "", Vector3(-1.72, 0.0, 0.06), 92, 0, Palette.BONE))
+		row.add_child(_board_label("Name", "", Vector3(-1.44, 0.0, 0.06), 92, -1, Palette.BONE))
+		row.add_child(_board_label("Time", "", Vector3(1.86, 0.0, 0.06), 92, 1, Palette.BONE))
 		rows.add_child(row)
 
 
@@ -285,7 +476,7 @@ static func _board_label(
 	label.modulate = tint
 	label.outline_size = 16
 	label.outline_modulate = Color(0.05, 0.045, 0.04, 1.0)
-	label.visibility_range_end = 120.0
+	label.visibility_range_end = 160.0
 	label.billboard = BaseMaterial3D.BILLBOARD_DISABLED
 	label.double_sided = false
 	return label
@@ -344,13 +535,17 @@ static func _build_mark_scene(mesh_dir: String) -> PackedScene:
 	return _saved(packed, MARK_SCENE) as PackedScene
 
 
-## The three lamp lenses, baked once. Dark is a dead bulb; amber is the demo's own exfil
+## The lamp lenses, baked once. Dark is a dead bulb; amber is the demo's own exfil
 ## orange; green is a signal colour that appears nowhere else in ash_flats, which is the
-## whole reason it reads as GO without a word written anywhere.
+## whole reason it reads as GO without a word written anywhere; and gold is the finish,
+## which is the only other thing here allowed to glow on its own.
 static func _lamp_materials(mesh_dir: String) -> Dictionary:
 	var out: Dictionary = {}
 	for row: Array in [
-		["dark", LAMP_DARK, 0.0], ["armed", WorldPalette.EXFIL, 4.2], ["go", LAMP_GO, 5.0]
+		["dark", LAMP_DARK, 0.0],
+		["armed", WorldPalette.EXFIL, 4.2],
+		["go", LAMP_GO, 5.0],
+		["gold", Finish.GOLD, 3.4]
 	]:
 		var mat := ShaderMaterial.new()
 		mat.shader = ResourceLoader.load(SCRAP_SHADER) as Shader
@@ -364,14 +559,31 @@ static func _lamp_materials(mesh_dir: String) -> Dictionary:
 	return out
 
 
-## Where the standings board may stand. The first candidate the baked collider set says
-## a person could stand on wins; the last is on the carriageway and always survives.
-static func _board_spot(query: WorldQuery) -> Vector2:
+## Where the standings board may stand. The first candidate the baked collider set has
+## room for wins; the last is on the carriageway and always survives.
+##
+## THE TEST IS THE BOARD, NOT A MAN. It used to ask whether a person could stand on the
+## spot, which is the wrong question for four metres of steel four metres wide: the old
+## board cleared it and then grew by half. What is asked now is whether a column of the
+## board's own height is clear at the centre and at four points a leg-span out — four,
+## and not the two legs, because the board is turned to face the line and its yaw is not
+## known until after the spot is chosen.
+static func board_spot(query: WorldQuery) -> Vector2:
 	for spot: Vector2 in BOARD_SPOTS:
-		var g: float = query.ground_h(spot.x, spot.y)
-		if query.can_stand(spot.x, spot.y, g, 3.2, 1.7):
+		if _board_fits(query, spot):
 			return spot
 	return BOARD_SPOTS[BOARD_SPOTS.size() - 1]
+
+
+static func _board_fits(query: WorldQuery, spot: Vector2) -> bool:
+	for step: int in 5:
+		var angle: float = float(step - 1) * PI * 0.5
+		var at: Vector2 = spot
+		if step > 0:
+			at += Vector2(cos(angle), sin(angle)) * BOARD_LEG_X
+		if not query.can_stand(at.x, at.y, query.ground_h(at.x, at.y), BOARD_TOP + 0.2, 0.4):
+			return false
+	return true
 
 
 ## The starter's gantry: two posts, a span with a painted band across it, and the low
@@ -399,15 +611,30 @@ static func emit_gantry(m: WorldMesher) -> void:
 	m.box(Vector3(0, LAMP_BAR_Y, -0.10), Vector3(LAMP_BAR_HALF, 0.24, 0.10), 0.0, RAIL, S_METAL)
 
 
-## The standings board: two legs the full height, a backing plate between them, and a
-## rail top and bottom. Three metres of steel, because it has to be read from the line.
+## The standings board: two legs the full height, a backing plate between them, a rail
+## top and bottom, and a painted head band in the demo's own orange so it reads as the
+## race's board and not as another notice. Four metres of steel, because it is the first
+## thing you should see when you arrive and it is read from the line.
 static func emit_board_frame(m: WorldMesher) -> void:
-	for side: float in [-1.45, 1.45]:
-		m.box(Vector3(side, 1.55, 0), Vector3(0.07, 1.55, 0.07), 0.0, RAIL, S_METAL)
-		m.box(Vector3(side, 0.12, 0), Vector3(0.24, 0.12, 0.24), 0.0, SLAB, S_CONCRETE)
-	m.box(Vector3(0, 2.05, 0.02), Vector3(1.42, 0.95, 0.035), 0.0, DECK, S_TIN)
-	m.box(Vector3(0, 1.10, 0.02), Vector3(1.50, 0.055, 0.055), 0.0, RAIL, S_METAL)
-	m.box(Vector3(0, 3.00, 0.02), Vector3(1.50, 0.055, 0.055), 0.0, RAIL, S_METAL)
+	for side: float in [-BOARD_LEG_X, BOARD_LEG_X]:
+		m.box(
+			Vector3(side, BOARD_TOP * 0.5, 0),
+			Vector3(0.08, BOARD_TOP * 0.5, 0.08),
+			0.0,
+			RAIL,
+			S_METAL
+		)
+		m.box(Vector3(side, 0.14, 0), Vector3(0.28, 0.14, 0.28), 0.0, SLAB, S_CONCRETE)
+	m.box(Vector3(0, BOARD_MID, 0.02), Vector3(BOARD_HALF_W, BOARD_HALF_H, 0.04), 0.0, DECK, S_TIN)
+	m.box(
+		Vector3(0, 3.76, 0.045),
+		Vector3(BOARD_HALF_W - 0.04, 0.26, 0.028),
+		0.0,
+		WorldPalette.EXFIL,
+		S_TIN
+	)
+	m.box(Vector3(0, 1.42, 0.02), Vector3(BOARD_LEG_X + 0.06, 0.06, 0.06), 0.0, RAIL, S_METAL)
+	m.box(Vector3(0, BOARD_TOP, 0.02), Vector3(BOARD_LEG_X + 0.06, 0.06, 0.06), 0.0, RAIL, S_METAL)
 
 
 ## A non-GI mesh that stops drawing past `sight` metres.

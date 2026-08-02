@@ -22,6 +22,15 @@ extends CanvasLayer
 ## In play, `PlayerHealth` drives all four of `set_camera`, `set_health`,
 ## `damage_from` and `set_dead` — it finds this node by method rather than by class,
 ## so a demo gets the whole feedback loop by owning a HUD and nothing else.
+##
+## THE THREAT LAYER IS ADOPTED OR BUILT, not required of the scene. `combat_hud.tscn`
+## is a bake output of `tools/build_ui_assets.gd`, so a HUD that only worked when the
+## bake had been re-run would be a HUD that silently lost its damage indicator on
+## every checkout. `_ready` takes a `Threat` child if one is there and makes one if it
+## is not — the same rule `PlayerHealth.install` follows, and for the same reason:
+## every demo that owns a HUD gets the whole of it, not the demo whose `.tscn`
+## somebody remembered to edit. `damage_from` feeds it, so a demo that already drives
+## the vignette gets the directional arc for free.
 
 ## Seconds a directional damage lobe takes to fall away.
 const PULSE_SECONDS: float = 0.55
@@ -44,6 +53,13 @@ const DEATH_RATE: float = 3.2
 @export_range(0.1, 4.0, 0.05) var pulse_hz: float = 1.35
 ## How much harm one breath is worth on top of the sustained value.
 @export_range(0.0, 0.5, 0.01) var pulse_depth: float = 0.14
+## Build the screen-edge threat layer when the scene did not bake one. Off leaves
+## the HUD exactly as it was before the layer existed.
+@export var spawn_threat_layer: bool = true
+## Fraction of full health a hit has to cost to be worth a full-weight arc. A hit
+## for a fifth of your bar at 0.35 draws at a bit over half weight, which is the
+## curve that keeps a graze legible without making it shout.
+@export_range(0.02, 1.0, 0.01) var threat_reference_damage: float = 0.35
 
 var _camera: Camera3D = null
 var _health: float = 1.0
@@ -58,6 +74,7 @@ var _death_target: float = 0.0
 var _banner_left: float = 0.0
 var _banner_blink: float = 0.0
 var _shader: ShaderMaterial = null
+var _threat: ThreatIndicator = null
 
 @onready var _vignette: ColorRect = $Vignette
 @onready var _reticle: CombatReticle = $Reticle
@@ -70,7 +87,20 @@ func _ready() -> void:
 	if _shader == null:
 		push_error("CombatHud: the Vignette carries no ShaderMaterial.")
 	_banner.visible = false
+	_resolve_threat_layer()
 	_write_shader()
+
+
+## Take the baked threat layer, or make one. Added LAST so it draws over the
+## reticle and the numbers: an arc that is behind a damage pop is an arc you did
+## not see.
+func _resolve_threat_layer() -> void:
+	_threat = get_node_or_null(^"Threat") as ThreatIndicator
+	if _threat != null or not spawn_threat_layer:
+		return
+	_threat = ThreatIndicator.new()
+	_threat.name = "Threat"
+	add_child(_threat)
 
 
 func _process(delta: float) -> void:
@@ -85,6 +115,8 @@ func set_camera(camera: Camera3D) -> void:
 	_camera = camera
 	_pops.set_camera(camera)
 	_reticle.set_camera(camera)
+	if _threat != null:
+		_threat.set_camera(camera)
 
 
 ## Push the sight picture. `spread` is the cone half-angle in radians, `cycle` the
@@ -120,6 +152,8 @@ func pop(world_point: Vector3, text: String, kind: StringName = &"hit") -> void:
 func set_health(fraction: float) -> void:
 	_health = clampf(fraction, 0.0, 1.0)
 	_harm_target = clampf((harm_threshold - _health) / maxf(harm_threshold, 0.001), 0.0, 1.0)
+	if _threat != null:
+		_threat.set_health(_health)
 
 
 ## Down, or back up. Closes a hard iris over the frame rather than cutting to black,
@@ -133,13 +167,54 @@ func set_dead(down: bool) -> void:
 	_beat = 0.0
 	_beat_clock = 0.0
 	_pulse = 0.0
+	if _threat != null:
+		_threat.clear_threats()
 
 
 ## Flash the edge of the screen on the side the damage came from.
-func damage_from(world_point: Vector3) -> void:
+##
+## `amount` and `maximum` are optional and only reach the threat arc: the shader
+## lobe has always been binary and stays that way, because it is a flinch rather
+## than a reading. A caller that knows what the hit cost gets an arc sized by it;
+## one that does not — `PlayerHealth` calls this with the point alone — gets a
+## middling arc, which is still the right bearing.
+func damage_from(world_point: Vector3, amount: float = -1.0, maximum: float = 0.0) -> void:
 	_pulse = 1.0
 	_pulse_dir = _screen_bearing(world_point)
 	_write_shader()
+	if _threat == null:
+		return
+	var sized: bool = amount > 0.0 and maximum > 0.0
+	var weight: float = 0.55
+	if sized:
+		var share: float = amount / maximum
+		weight = clampf(share / maxf(threat_reference_damage, 0.001), 0.12, 1.0)
+	# `sized` is passed through so the indicator can tell this call from the other one
+	# the same round makes. `PlayerHealth` reports the bearing the instant it resolves
+	# the damage; `ArenaThreat` reports what it cost a moment later in the same frame,
+	# and the arc has to be sized off the second without being inflated by the first.
+	_threat.add_threat(world_point, weight, ThreatIndicator.Kind.HIT, null, sized)
+
+
+## A round went past without landing, or a body opened up on you from `world_point`.
+## `source` is the shooter when the caller knows which body it was, which is what
+## puts a caret on it for a moment.
+func near_miss(world_point: Vector3, weight: float = 0.4, source: Node3D = null) -> void:
+	if _threat != null:
+		_threat.add_threat(world_point, weight, ThreatIndicator.Kind.NEAR, source)
+
+
+## Name the body that just shot you, after the fact. Separate from `damage_from`
+## because `PlayerHealth` resolves the damage and the arena resolves the shooter,
+## and neither knows the other's half.
+func mark_shooter(world_point: Vector3, weight: float, source: Node3D) -> void:
+	if _threat != null:
+		_threat.add_threat(world_point, weight, ThreatIndicator.Kind.HIT, source)
+
+
+## The threat layer itself, for a demo that wants to restyle it or read it.
+func threat() -> ThreatIndicator:
+	return _threat
 
 
 ## One line of warning, centred, blinking. `JAM — hold R` is what this is for.

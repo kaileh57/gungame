@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_h5dfw"]
+
+[resource]
+script = ExtResource("1_h5dfw")
+roll_seed = 1602
+cfg = 3904264959
+weapon_name = "Tube Mk.III"
+part_indices = PackedInt32Array(10, 15, 83, 66, 72)
+part_scales = PackedFloat32Array(1, 1.62, 0.96137077, 0.46138558, 0.5972882)
+part_z_scales = PackedFloat32Array(1, 1.6407129, 1.0679152, 0.7, 0.7)
+part_offsets = PackedVector3Array(0, 0, 0, 1.3738899, -0.19093, 0.00192, -1.3738899, -0.00448, 0.00153, 0.45011237, -0.49139997, 0.02473, -0.11575, 0.27859998, 0.02269)
+fit_error = 1.1847792153671444
+muzzle_local = Vector3(10.113142, -0.19093, 0.00192)
+score = 57.74869713508258
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("hand cannon", "crew-served", "tired spring", "bent feed lips", "loose optic", "gritty", "worn mag", "fumbly")
+caliber = "14.5×44 shot"
+bore = 14.5
+case_length = 44
+pellets = 6
+muzzle_velocity = 456
+muzzle_energy = 2536
+effective_range = 55
+sim_velocity = 228
+damage = 285.0
+crit_multiplier = 1.67
+headshot_range = 28.0
+impulse = 13.466044680115715
+fire_mode = &"Break-action"
+archetype = &"Slug gun"
+rpm = 22
+cyclic = 570
+magazine = 8
+reload_time = 3.9
+mass = 12.0
+precision = 47
+reach = 58
+kick = 21
+handling = 14
+reliability = 39
+burst_dps = 104
+sustained_dps = 89
+barrel_length = 787
+overall_length = 1210
+spread = 27.0
+spread_rad = 0.007913097768680011
+spread_text = "27'"
+has_optic = true
+zoom = 2.3125040115827358
+zoom_levels = PackedFloat32Array(2.3)
+recoil_vertical = 0.0029564145091732106
+recoil_horizontal = 0.0016723731385008694
+recoil_drift = 0.319
+recoil_period = 8
+recoil_random = 0.6562348887161178
+recoil_settle = 0.95
+tint = 0.9188757007662207
+donor_groups = Array[StringName]([&"Tube", &"Pumper", &"Stubby", &"Sturmgewehr", &"Serpent"])
+metadata/gun_traits = PackedStringArray("tired spring", "bent feed lips", "loose optic")
+metadata/gun_graded = true

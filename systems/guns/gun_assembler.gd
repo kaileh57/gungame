@@ -22,6 +22,90 @@ const ZERO_FIT_HEIGHT: float = 1.0e-4
 ## with it, part 70 lands on `err = 13.59`; without it, on `inf`.
 const FIT_EPS: float = 1.0e-6
 
+## Rounds per minute no action reaches however light its bolt. The reference's own
+## cyclic clamp, kept as the hard ceiling on the mechanical rate.
+const CYCLIC_CEILING: float = 1850.0
+## Millimetres of case below which the bolt stroke stops shrinking. A pistol-length
+## action still has to unlock, extract, feed and re-lock, so the stroke term is
+## measured against this and never rewards a case shorter than it.
+const CYCLIC_STROKE_FLOOR: float = 30.0
+## Most of its cycle rate a badly mated action may lose to `fit_error`.
+const CYCLIC_FIT_FLOOR: float = 0.45
+## Rounds per minute below which a semi-auto stops being a weapon and becomes a
+## single-shot with extra steps.
+const SEMI_FLOOR_RPM: float = 60.0
+
+## Moment of inertia in kg·m² that halves the swing handling score. A 4.5 kg,
+## 900 mm rifle sits at 3.6; a 1.2 kg, 300 mm snubnose at 0.11.
+##
+## 2.9 is not free: handling is a 1-99 RATING that `score` and `grade` both read,
+## so the swing model has to re-rank the roster without deflating it. At 1.6 the
+## mean handling over 2 000 builds fell 53.9 -> 38.4 and took mean score down with
+## it, which moved 160 weapons a tier down for no design reason. 2.9 puts the mean
+## back on the reference's and keeps the widened ends.
+const SWING_REFERENCE: float = 2.9
+## Millimetres of stock at which the weapon counts as fully shouldered. Everything
+## between a pistol grip and this is a partial shoulder and gets a partial share.
+const SHOULDER_FULL: float = 200.0
+## The rate band the recoil character reads as slow and as fast, rpm. A weapon at
+## or under the low mark shoves once; one at or over low+span climbs and walks.
+const TEMPO_LOW_RPM: float = 200.0
+const TEMPO_SPAN_RPM: float = 900.0
+
+## Extra muzzle rise a weapon with no stock takes, as a share.
+const RISE_STOCKLESS: float = 0.55
+## Share of the rise a barrel-heavy weapon keeps out in front of the hands.
+const RISE_MUZZLE_HEAVY: float = 0.35
+## Widest band the character rise may occupy, radians per shot. The reference's is
+## [0.0016, 0.052]; opening it is most of what makes a launcher unlike an SMG.
+const RISE_MIN: float = 0.0010
+const RISE_MAX: float = 0.075
+
+## Lateral share of the kick: a floor every gun has, plus what the joints, the
+## missing stock, the cyclic tempo and a warhead add on top.
+const LAT_BASE: float = 0.16
+const LAT_FIT: float = 0.30
+const LAT_STOCKLESS: float = 0.42
+const LAT_TEMPO: float = 0.75
+const LAT_EXPLOSIVE: float = 0.30
+const LAT_MIN: float = 0.06
+const LAT_MAX: float = 1.60
+
+## Constant sideways bias in the walk. Its SIGN stays the reference's coin flip off
+## `cfg`; its size is the geometry's, so a matched shouldered rifle barely drifts.
+const DRIFT_BASE: float = 0.18
+const DRIFT_FIT: float = 0.22
+const DRIFT_STOCKLESS: float = 0.45
+## How much of the drift magnitude is the weapon's own `cfg` signature rather than
+## its geometry. `BASE + SPAN * mean|roll|` is 1.0 at the mean, so the roster's mean
+## drift is the geometry's and only its SPREAD comes from here.
+const DRIFT_ROLL_BASE: float = 0.45
+const DRIFT_ROLL_SPAN: float = 1.10
+
+## Shots per horizontal cycle, from the tempo. A bolt gun has nothing to walk over
+## and gets the minimum; a 1 100 rpm SMG sweeps across a dozen rounds.
+const PERIOD_MIN: float = 3.0
+const PERIOD_SPAN: float = 11.0
+const PERIOD_MAX: float = 15.0
+
+## Random spice: what unreliability contributes, the floor under it, and what a
+## missing shoulder adds.
+const RANDOM_REL_WEIGHT: float = 0.85
+const RANDOM_BASE: float = 0.10
+const RANDOM_STOCKLESS: float = 0.30
+const RANDOM_MAX: float = 1.45
+
+## Settle rate — how fast the climb decays towards `GunRecoil.settle_floor`. Mass
+## and a shoulder buy a fast settle (one shove, then calm); tempo spends it (a
+## sustained climb). The reference's band is [0.08, 0.42]; this one is far wider.
+const SETTLE_BASE: float = 0.06
+const SETTLE_MASS: float = 0.55
+const SETTLE_MASS_REFERENCE: float = 8.0
+const SETTLE_SHOULDER: float = 0.30
+const SETTLE_TEMPO: float = 0.28
+const SETTLE_MIN: float = 0.04
+const SETTLE_MAX: float = 0.95
+
 
 ## Fit one part to one receiver socket.
 ##
@@ -215,8 +299,10 @@ static func assemble(
 
 	var mode: StringName = _fire_mode(cap, rec_class, explosive, cyc)
 	var auto_fire: bool = mode == &"Full-auto" or mode == &"Machine pistol"
-	var cyclic: int = roundi(clampf(1500.0 / sqrt(bolt_kg * impulse), 320.0, 1850.0) / 10.0) * 10
-	var rpm: int = _rpm_for(mode, auto_fire, cyclic, impulse)
+	var cyclic: int = _cyclic_rpm(bolt_kg, impulse, case_len, err, tuning)
+	# Free recoil velocity, m/s: what the shooter has to arrest between aimed shots.
+	var recoil_vel: float = impulse / maxf(mass, 0.5)
+	var rpm: int = _rpm_for(mode, auto_fire, cyclic, impulse, recoil_vel, tuning)
 
 	var sidearm: bool = oa_len <= 720.0 and mass <= 3.6
 	var hs_range: int = roundi(clampf((vel - 180.0) * 0.10, 6.0, 320.0))
@@ -243,6 +329,17 @@ static func assemble(
 			groups.append(p.donor_group)
 	var rel0: float = clampf(100.0 - float(classes.size() - 1) * 6.0 - err * 12.0, 10.0, 99.0)
 	var has_optic: bool = sight != null
+	# The Sniper and Marksman gates read `rpm <= 145` as a proxy for "a deliberate,
+	# big-cartridge action", and the reference's semi rate — `320 - impulse*7` — is
+	# exactly a cartridge measure wearing a rate's clothes. The recovery-priced semi
+	# rate moves that whole band, so classification keeps reading the reference's
+	# number and the archetype census does not shift under a rate change. Every other
+	# mode's rate is untouched at this point, so only the semi branch needs it.
+	var class_rpm: int = (
+		_reference_semi_rpm(impulse)
+		if mode == &"Semi-auto" and tuning.semi_rate_ceiling > 0
+		else rpm
+	)
 	var arch: String = _archetype(
 		explosive,
 		pellets,
@@ -253,7 +350,7 @@ static func assemble(
 		bar_len,
 		case_len,
 		case_head,
-		rpm,
+		class_rpm,
 		raw_spread,
 		sidearm
 	)
@@ -274,10 +371,18 @@ static func assemble(
 	var cap_limit: int = tuning.capacity_limit(feed, arch)
 	if cap_limit > 0:
 		cap = mini(cap, cap_limit)
-	rpm = maxi(8, roundi(float(rpm) * float(tune[GunTables.Tune.RPM]) / 2.0) * 2)
 	# A bolt-driven rate is the only one the trigger does not already limit, so it
 	# is the only one that needs a ceiling. Kept even, as the reference's is.
 	var bolt_driven: bool = auto_fire or mode == &"3-round burst"
+	# The archetype multiplier is smallest exactly where the geometry is already
+	# slowest and largest where it is already fastest, so at full strength it drags
+	# both ends of the auto band into the middle. On a bolt-driven rate it is taken
+	# at `archetype_rate_on_cyclic` strength; a trigger-limited rate still takes it
+	# in full, because there the archetype IS the shooter's cadence.
+	var rate_mul: float = float(tune[GunTables.Tune.RPM])
+	if bolt_driven:
+		rate_mul = 1.0 + (rate_mul - 1.0) * clampf(tuning.archetype_rate_on_cyclic, 0.0, 1.0)
+	rpm = maxi(8, roundi(float(rpm) * rate_mul / 2.0) * 2)
 	if bolt_driven and tuning.auto_rpm_ceiling > 0:
 		rpm = mini(rpm, (tuning.auto_rpm_ceiling / 2) * 2)
 
@@ -302,7 +407,7 @@ static func assemble(
 	var kick: float = clampf(
 		26.0 * impulse / maxf(mass, 0.5) * (0.72 if sto_len > 80.0 else 1.0), 3.0, 99.0
 	)
-	var hand: float = clampf(132.0 - 0.062 * oa_len - 5.0 * mass, 1.0, 99.0)
+	var hand: float = _handling(mass, oa_len, tuning)
 	var no_cycle: bool = (
 		mode == &"Break-action"
 		or mode == &"Single-shot"
@@ -400,14 +505,21 @@ static func assemble(
 		cfg = 1
 
 	# --- 4.16 recoil pattern -------------------------------------------------
-	var pr := XorShift32.new((cfg ^ 0x1F2E3D4C) & 0xFFFFFFFF)
-	var rec_v: float = clampf(impulse / maxf(mass, 0.6) * 0.0032, 0.0016, 0.052)
-	var lateral: float = 0.28 + err * 0.55 + (0.0 if sto_len > 80.0 else 0.42)
-	if explosive:
-		lateral += 0.3
-	var rec_h: float = rec_v * clampf(lateral, 0.18, 1.35)
-	var rec_drift: float = GunTables.to_fixed(pr.next() * 2.0 - 1.0, 3)
-	var rec_period: int = roundi(4.0 + pr.next() * 9.0)
+	var pattern: Dictionary = _recoil(
+		{
+			&"impulse": impulse,
+			&"mass": mass,
+			&"err": err,
+			&"stock_mm": sto_len,
+			&"barrel_mm": bar_len,
+			&"overall_mm": oa_len,
+			&"rpm": rpm,
+			&"reliability": rel,
+			&"explosive": explosive,
+			&"cfg": cfg,
+		},
+		tuning
+	)
 
 	# --- assemble the record --------------------------------------------------
 	var spec := GunSpec.new()
@@ -484,12 +596,12 @@ static func assemble(
 	spec.zoom = zoom
 	spec.zoom_levels = PackedFloat32Array()
 
-	spec.recoil_vertical = rec_v
-	spec.recoil_horizontal = rec_h
-	spec.recoil_drift = rec_drift
-	spec.recoil_period = rec_period
-	spec.recoil_random = clampf((100.0 - rel) / 100.0 * 1.15 + 0.16, 0.16, 1.3)
-	spec.recoil_settle = clampf(0.10 + 0.24 * (mass / 6.0), 0.08, 0.42)
+	spec.recoil_vertical = float(pattern[&"vertical"])
+	spec.recoil_horizontal = float(pattern[&"horizontal"])
+	spec.recoil_drift = float(pattern[&"drift"])
+	spec.recoil_period = int(pattern[&"period"])
+	spec.recoil_random = float(pattern[&"random"])
+	spec.recoil_settle = float(pattern[&"settle"])
 
 	spec.tint = 0.86 + 0.28 * XorShift32.new((cfg ^ 0x9E37) & 0xFFFFFFFF).next()
 	spec.donor_groups = groups
@@ -563,13 +675,53 @@ static func _fire_mode(cap: int, rec_class: StringName, explosive: bool, cyc: fl
 	return mode
 
 
+## The MECHANICAL cycle rate: how fast the action can run itself, rounded to ten
+## rpm as the reference does.
+##
+## Four terms, all geometric. The reference's own is a light bolt against a heavy
+## impulse; on top of it the bolt must travel the length of the loaded cartridge,
+## and a badly mated action loses rate to friction and short-stroking. The stroke
+## term is the one that separates an SMG from a battle rifle — same carrier mass,
+## 30 mm of case against 100 mm, and the rifle turns 2.3 times slower.
+##
+## The fourth term is the one that stops the band eating itself. The three physical
+## terms together span roughly 120 to 1900 rpm, and the bottom third of that is
+## below anything a self-loader actually runs at — so it used to be CLAMPED, and a
+## clamp is a collapse: every Auto battle rifle in 2 000 builds came out at exactly
+## the same rate because every one of them was sitting on the floor. `cyclic_contrast`
+## replaces the clamp with a power law about `cyclic_pivot_rpm`, which is the same
+## squeeze in log space but strictly monotone — two actions that differ by a gram or
+## a millimetre still differ in rate, at both ends of the roster.
+static func _cyclic_rpm(
+	bolt_kg: float, impulse: float, case_len: float, err: float, tuning: GunTuning
+) -> int:
+	var raw: float = 1500.0 / sqrt(bolt_kg * impulse)
+	if tuning.cyclic_stroke_power > 0.0:
+		var stroke: float = maxf(case_len, CYCLIC_STROKE_FLOOR) / CYCLIC_STROKE_FLOOR
+		raw /= pow(stroke, tuning.cyclic_stroke_power)
+	if tuning.cyclic_fit_penalty > 0.0:
+		raw *= maxf(1.0 - tuning.cyclic_fit_penalty * maxf(err, 0.0), CYCLIC_FIT_FLOOR)
+	var pivot: float = float(tuning.cyclic_pivot_rpm)
+	if pivot > 0.0:
+		raw = pivot * pow(maxf(raw, 1.0) / pivot, clampf(tuning.cyclic_contrast, 0.05, 2.0))
+	var floor_rpm: float = float(tuning.cyclic_floor_rpm)
+	return roundi(clampf(raw, floor_rpm, CYCLIC_CEILING) / 10.0) * 10
+
+
 ## Trigger-limited rate, before the archetype multiplier.
-static func _rpm_for(mode: StringName, auto_fire: bool, cyclic: int, impulse: float) -> int:
+static func _rpm_for(
+	mode: StringName,
+	auto_fire: bool,
+	cyclic: int,
+	impulse: float,
+	recoil_vel: float,
+	tuning: GunTuning
+) -> int:
 	if auto_fire or mode == &"3-round burst":
 		return cyclic
 	match mode:
 		&"Semi-auto":
-			return roundi(clampf(320.0 - impulse * 7.0, 90.0, 320.0))
+			return _semi_rpm(impulse, recoil_vel, tuning)
 		&"Double-action":
 			return 110
 		&"Pump-action":
@@ -579,6 +731,153 @@ static func _rpm_for(mode: StringName, auto_fire: bool, cyclic: int, impulse: fl
 		&"Break-action":
 			return 24
 	return 16
+
+
+## How fast aimed single shots can actually be taken.
+##
+## The reference prices a semi by IMPULSE, and its ceiling of 320 rpm is also its
+## cyclic floor — so the fastest semi and the slowest full-auto were the same
+## weapon in the hand. This prices it by RECOVERY instead: what paces a semi is
+## getting the muzzle back on the plate, which is free recoil velocity, not
+## momentum. A 1.4 kg snubnose and a 7 kg battle rifle can carry the same impulse
+## and do not recover at anything like the same speed.
+static func _semi_rpm(impulse: float, recoil_vel: float, tuning: GunTuning) -> int:
+	if tuning.semi_rate_ceiling <= 0:
+		return _reference_semi_rpm(impulse)
+	var ceiling: float = float(tuning.semi_rate_ceiling)
+	var scale: float = maxf(tuning.semi_recovery_scale, 0.01)
+	return roundi(clampf(ceiling / (1.0 + maxf(recoil_vel, 0.0) / scale), SEMI_FLOOR_RPM, ceiling))
+
+
+## The reference's impulse-priced semi rate. Still the number the Sniper and
+## Marksman archetype gates are calibrated against — see the call site.
+static func _reference_semi_rpm(impulse: float) -> int:
+	return roundi(clampf(320.0 - impulse * 7.0, 90.0, 320.0))
+
+
+## How quickly the weapon comes onto a target, 1-99.
+##
+## The reference subtracts length and mass separately, which scores a 1.9 m
+## launcher above a sniper rifle for being slightly lighter. What a shooter
+## actually fights is the moment of inertia — mass out at the end of its own
+## length — so the swing model multiplies them, and the two are blended by
+## `handling_from_swing`. The launcher and the snubnose end up an order of
+## magnitude apart instead of thirty points.
+static func _handling(mass: float, oa_len: float, tuning: GunTuning) -> float:
+	var reference: float = 132.0 - 0.062 * oa_len - 5.0 * mass
+	var reach_m: float = oa_len / 1000.0
+	var swing: float = mass * reach_m * reach_m
+	var swing_hand: float = 100.0 / (1.0 + swing / SWING_REFERENCE)
+	var blend: float = clampf(tuning.handling_from_swing, 0.0, 1.0)
+	return clampf(lerpf(reference, swing_hand, blend), 1.0, 99.0)
+
+
+## The six recoil constants, as one record. `parts` carries `impulse`, `mass`,
+## `err`, `stock_mm`, `barrel_mm`, `overall_mm`, `rpm`, `reliability`, `explosive`
+## and `cfg`; the return carries `vertical`, `horizontal`, `drift`, `period`,
+## `random` and `settle`.
+##
+## The reference has ONE magnitude — `impulse / mass` — with the lateral share a
+## near-constant, the drift and the walk period rolled off `cfg`, and the settle
+## rate a straight line in mass. Every gun therefore recoils in the same shape at
+## a different size. The character model gives each field its own piece of the
+## geometry, so a stockless launcher, a shouldered bolt gun and a 1 100 rpm SMG
+## recoil differently in KIND: the launcher shoves hard and sideways once, the
+## bolt gun shoves hard and straight once, the SMG climbs and walks and never
+## quite settles. `recoil_character` blends between the two, field by field, and
+## both branches consume the same two draws so the `cfg` stream is unchanged.
+static func _recoil(parts: Dictionary, tuning: GunTuning) -> Dictionary:
+	var impulse: float = float(parts[&"impulse"])
+	var mass: float = float(parts[&"mass"])
+	var err: float = maxf(float(parts[&"err"]), 0.0)
+	var stock_mm: float = float(parts[&"stock_mm"])
+	var rel: float = float(parts[&"reliability"])
+	var explosive: bool = bool(parts[&"explosive"])
+	var pr := XorShift32.new((int(parts[&"cfg"]) ^ 0x1F2E3D4C) & 0xFFFFFFFF)
+	var rolled_drift: float = GunTables.to_fixed(pr.next() * 2.0 - 1.0, 3)
+	var rolled_period: float = float(roundi(4.0 + pr.next() * 9.0))
+
+	var ref_v: float = clampf(impulse / maxf(mass, 0.6) * 0.0032, 0.0016, 0.052)
+	var ref_lat: float = 0.28 + err * 0.55 + (0.0 if stock_mm > 80.0 else 0.42)
+	if explosive:
+		ref_lat += 0.3
+	var out: Dictionary = {
+		&"vertical": ref_v,
+		&"horizontal": ref_v * clampf(ref_lat, 0.18, 1.35),
+		&"drift": rolled_drift,
+		&"period": int(rolled_period),
+		&"random": clampf((100.0 - rel) / 100.0 * 1.15 + 0.16, 0.16, 1.3),
+		&"settle": clampf(0.10 + 0.24 * (mass / 6.0), 0.08, 0.42),
+	}
+	var blend: float = clampf(tuning.recoil_character, 0.0, 1.0)
+	if blend <= 0.0:
+		return out
+
+	# Three geometric readings, each 0-1: how much shoulder the weapon offers, how
+	# much of its length is barrel hanging off the hands, and how fast it runs.
+	var shoulder: float = clampf(stock_mm / SHOULDER_FULL, 0.0, 1.0)
+	var overall_mm: float = maxf(float(parts[&"overall_mm"]), 1.0)
+	var muzzle_heavy: float = clampf(float(parts[&"barrel_mm"]) / overall_mm, 0.0, 1.0)
+	var tempo: float = clampf((float(parts[&"rpm"]) - TEMPO_LOW_RPM) / TEMPO_SPAN_RPM, 0.0, 1.0)
+
+	var rise: float = impulse / maxf(mass, 0.6) * tuning.recoil_rise_scale
+	rise *= 1.0 + RISE_STOCKLESS * (1.0 - shoulder)
+	rise *= 1.0 - RISE_MUZZLE_HEAVY * muzzle_heavy
+	var ch_v: float = clampf(rise, RISE_MIN, RISE_MAX)
+	var ch_lat: float = (
+		LAT_BASE
+		+ LAT_FIT * err
+		+ LAT_STOCKLESS * (1.0 - shoulder)
+		+ LAT_TEMPO * tempo
+		+ (LAT_EXPLOSIVE if explosive else 0.0)
+	)
+	# The geometry says HOW MUCH the muzzle walks off centre; which way and how
+	# pronounced stays the weapon's own signature, off `cfg`. Without the second
+	# factor every matched shouldered rifle in the game drifts by the same 0.18 and
+	# the pattern stops being something you learn per gun. Mean |roll| is 0.5, so
+	# `DRIFT_ROLL_BASE + DRIFT_ROLL_SPAN * 0.5 == 1.0` keeps the roster's mean drift
+	# exactly where the geometry put it and spreads it 0.45x to 1.55x around that.
+	var sign_drift: float = 1.0 if rolled_drift >= 0.0 else -1.0
+	var drift_geo: float = DRIFT_BASE + DRIFT_FIT * err + DRIFT_STOCKLESS * (1.0 - shoulder)
+	var drift_sig: float = DRIFT_ROLL_BASE + DRIFT_ROLL_SPAN * absf(rolled_drift)
+	var ch_drift: float = sign_drift * clampf(drift_geo * drift_sig, 0.05, 1.0)
+	# Shots per horizontal cycle. The sine only means anything on a weapon that fires
+	# long enough strings to complete one, so the tempo reading owns the field in
+	# proportion to how much tempo there is: at zero the walk period is the weapon's
+	# own rolled one, and every break-action in the game is no longer handed the same
+	# three-shot oscillation it will never live to finish.
+	var walk: float = clampf(PERIOD_MIN + PERIOD_SPAN * tempo, PERIOD_MIN, PERIOD_MAX)
+	var ch_period: float = lerpf(rolled_period, walk, tempo)
+	var ch_random: float = clampf(
+		(
+			(100.0 - rel) / 100.0 * RANDOM_REL_WEIGHT
+			+ RANDOM_BASE
+			+ RANDOM_STOCKLESS * (1.0 - shoulder)
+		),
+		RANDOM_BASE * 0.8,
+		RANDOM_MAX
+	)
+	var ch_settle: float = clampf(
+		(
+			SETTLE_BASE
+			+ SETTLE_MASS * (mass / SETTLE_MASS_REFERENCE)
+			+ SETTLE_SHOULDER * shoulder
+			- SETTLE_TEMPO * tempo
+		),
+		SETTLE_MIN,
+		SETTLE_MAX
+	)
+
+	out[&"vertical"] = lerpf(float(out[&"vertical"]), ch_v, blend)
+	out[&"horizontal"] = (
+		float(out[&"vertical"])
+		* lerpf(clampf(ref_lat, 0.18, 1.35), clampf(ch_lat, LAT_MIN, LAT_MAX), blend)
+	)
+	out[&"drift"] = GunTables.to_fixed(lerpf(rolled_drift, ch_drift, blend), 3)
+	out[&"period"] = roundi(lerpf(rolled_period, ch_period, blend))
+	out[&"random"] = lerpf(float(out[&"random"]), ch_random, blend)
+	out[&"settle"] = lerpf(float(out[&"settle"]), ch_settle, blend)
+	return out
 
 
 ## Unmodified reload time in seconds, before the archetype and mass penalties.

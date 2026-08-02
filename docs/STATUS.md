@@ -11,7 +11,13 @@ Everything below was re-run today against the tree as it now stands, after a
 full `bake_all`. Nothing in the tables is carried from an earlier measurement
 unless the row says **(carried)**.
 
-287 GDScript files.
+345 GDScript files.
+
+> **The integration pass over six parallel agents is in *What this pass
+> changed*.** Read that first, and then KNOWN GAPS 52–58, which are new. The
+> single most important one is 52: **`capture.gd` was measuring the wrong
+> resolution**, so no fps number published before today is comparable to one
+> published after it.
 
 ---
 
@@ -19,12 +25,13 @@ unless the row says **(carried)**.
 
 | gate | command | result |
 |---|---|---|
-| Full bake | `tools/bake_all.gd` | **PASS** — 25 ok, 0 failed, 1 skipped, 142.4 s (green twice today) |
-| Every scene boots | `tools/verify_scenes.gd` | **PASS** — 10/10, 120 frames each |
+| Full bake | `tools/bake_all.gd` | **PASS** — 26 ok, 0 failed, 1 skipped, 120.7 s (re-measured this pass) |
+| Every scene boots | `tools/verify_scenes.gd` | **PASS** — 10/10, 120 frames each (re-measured this pass) |
+| Project boots | `--headless --quit-after 180` | **PASS** — zero output of any kind |
 | **Firefight acceptance** | `tools/verify_firefight.gd` | **PASS ×5** — 25 trials over 5 invocations. See below. |
 | **AI traversal** | `tools/verify_ai_traversal.gd` | **PASS ×2** — climbers reached arena 66%/66%, town 77%/75% of routable roof goals against a 55% bar |
 | Arena acceptance | `demos/arena/tests/verify_arena.gd` | **PASS** — 8-body wave, player kills a body with his own gun |
-| Gun golden vectors | `tools/verify_guns.gd` | **PASS** — 0 failures |
+| Gun golden vectors | `tools/verify_guns.gd` | **PASS** — 0 failures (re-measured this pass, after grading was wired in) |
 | Firing chain | `tools/verify_guns_firing.gd` | **PASS** — 26 checks, 0 failures |
 | Integration | `tools/verify_integration.gd` | **PASS** — 38/38 |
 | Species table | `tools/verify_species.gd` | **PASS** — 12 species, no degenerate stats |
@@ -37,12 +44,91 @@ unless the row says **(carried)**.
 | UI shell + menu | `tools/verify_ui_shell.gd` | **PASS** — 144/144 |
 | Off-mesh link bake | `tools/bake_nav_links.gd` | **PASS** — 2,928 links over three levels, 100% pathable |
 | Multimesh buffers | `tools/verify_multimesh.gd` | **PASS** (runs inside `bake_all`) |
-| Renders | `tools/capture.tscn` | **9/9 shot**, 0 engine errors |
+| Renders | `tools/capture.tscn` | **9/9 shot**, 0 engine errors — **but the first two runs measured the wrong resolution; see GAP 52** |
 | **Mesh validation** | `tools/validate_meshes.gd` | **FAIL** — 71 of 1,048 surfaces, byte-identical to the previous run |
-| Format / Lint / Parse | `gdformat --check`, `gdlint`, `gdparse` | **clean** — 287 files, 0 problems |
+| Format / Lint / Parse | `gdformat --check`, `gdlint`, `gdparse` | **clean** — 345 files, 0 problems (one file needed reformatting and got it) |
 
 **One gate is red and it is the same 71 surfaces it has always been**, listed
 and explained under *Mesh validation*. Everything else is green.
+
+---
+
+## What this pass changed
+
+Six agents ran in parallel — gun rate/recoil, gun tier/jank, ragdolls, the
+ash_flats race, arena legibility, and the full-map dusk demo — and this was the
+integration pass over all six. Their work is on disk and described in their own
+files; what follows is only what INTEGRATION changed, plus what the joint
+measurement showed.
+
+### 1. The grading layer was never reached at roll time — now it is
+
+`GunGrading` (tier, drawn traits, character tags, and the four mechanism
+profiles) was written by the tier agent and reached only through
+`GunGrading.ensure()` inside the four mechanism `configure()` calls. Nothing
+called it at assembly. That is not a missing feature, it is an inconsistency:
+**a weapon was RE-TIERED after the stat card had already read it.** The gunbench
+card, `weapon_bench` and the census showed the assembler's tier and its eleven
+reference quirks, while the same gun in the hand jammed, bloomed and reloaded on
+a different grade.
+
+The seam is `GunFactory`, not `GunAssembler`, and that choice is load-bearing.
+`verify_guns` calls `GunAssembler` DIRECTLY to check nine golden vectors field by
+field against the reference — including seed 1's empty `quirks`, which the
+character layer would legitimately fill. Grading at the assembler would make the
+conformance harness assert against this port's additions instead of against the
+reference, which is the one thing it exists not to do. `GunFactory` is the
+boundary every gameplay path crosses (`roll`, `roll_holstered`, `build`,
+`assemble_indices`, and therefore `reroll_slot`), so the game is fully graded and
+the harness still measures the reference. `verify_guns` re-run after the change:
+**0 failures.**
+
+### 2. The tags then overflowed the card, silently
+
+With grading live the mean weapon carries **4.43 tags of a possible 8**, where
+before it carried well under one. Both card builders joined the whole list onto a
+single line, and `ReadoutCanvas` draws a line through `draw_string` with a width
+limit — which **clips rather than wraps**. So the change above would have made
+stat cards drop tags without saying so, which is exactly what `quirks()` promises
+never happens: every name on that card is a number a mechanism is using right
+now. `GunGrading.quirk_lines()` packs them to a character budget and both cards
+use it.
+
+### 3. The two gun agents compose — measured, not assumed
+
+The brief's stated risk was that one agent widened the rate band while the other
+punished high rate on low tiers, and that together they might make impossible
+guns. Over 2,000 graded builds the ladder is **monotone in all 22 columns** and
+nothing crosses:
+
+```
+tier            n     %   qual  rpm   stress | jam×   p(jam)  bloom  reload  fumble
+Hazard        130   6.5   0.26  133    0.24  | 11.81  14.90%   3.29    1.82   18.7%
+Scrap         626  31.3   0.51  112    0.07  |  2.53   2.46%   1.54    1.22    9.5%
+Cobbled       732  36.6   0.60  357    0.17  |  2.16   1.94%   1.40    1.10    6.4%
+Field-Grade   304  15.2   0.71  637    0.18  |  1.54   0.88%   1.12    0.97    3.1%
+Gunsmithed    136   6.8   0.80  785    0.15  |  1.06   0.44%   0.94    0.90    1.6%
+Warlord-Grade  59   3.0   0.87  873    0.11  |  0.75   0.22%   0.81    0.85    0.7%
+Relic          13   0.7   0.95  849    0.03  |  0.54   0.11%   0.70    0.80    0.1%
+```
+
+That is the intended shape and it reads as interesting rather than broken —
+except at the bottom. **A Hazard jams roughly every seventh round** (14.9% per
+round), at 3.3× bloom, 1.6× clear time and an 18.7% fumbled reload. It is 6.5% of
+rolls and it is meant to be a weapon that may hurt you, but nobody has fired one.
+See GAP 55.
+
+### 4. Ragdolls and arena legibility do not collide
+
+Both touch death and they were checked against each other rather than assumed.
+They compose: the ragdoll work already anticipated the interaction and gates the
+face-the-shooter turn on `not ragdolling`, because yawing the actor after the
+fall has started would swing the whole physics corpse around its feet. The arena
+work hangs off `_on_actor_died` / `_on_actor_fired`, which are different seams
+entirely. `RagdollBudget` is a `class_name` with static state rather than an
+autoload, and `EnemyBody._exit_tree` hands its slot back — so a demo that reloads
+its level does not leak the cap, which is the failure that would have made this
+look fine for two reloads and then stop working.
 
 ---
 
@@ -380,31 +466,53 @@ from 1,792 and settles at 868. The cause is the A\* budget, not the links.
 ### Capture, 1600×900
 
 `tools/capture.tscn` gives each demo 150 warm-up frames then accumulates the
-next 90. Run **three times** on an otherwise idle machine, because one run is
-not a measurement.
+next 90.
 
-| scene | run 1 † | run 2 | run 3 | draw calls | primitives |
-|---|---:|---:|---:|---:|---:|
-| `main_menu` | 231 | 226 | 235 | 329 | 7,454 |
-| `visuals` | 307 | 307 | 305 | 301 | 221,696 |
-| `range` | 339 | 436 | 436 | 184 | 111,072 |
-| `gunbench` | 357 | 454 | 454 | 341–364 | 32,980–42,014 |
-| `bestiary` | 404 | 511 | 510 | 410–443 | 105,066–110,366 |
-| `arena` | 420 | 540 | 532 | **30** | 20,642 |
-| `firefight` | 297 | 366 | 343 | **798–819** | 345,586–347,114 |
-| `ash_flats` | 283 | 358 | 359 | 262 | 598,422 |
-| `movement` | 298 | 452 | 454 | 331 | 20,658 |
+**Run ONCE this pass, not three times, and the reason matters more than the
+numbers.** The machine-safety brief limits windowed GPU runs, and the runs that
+were spent went on finding out that the harness had stopped measuring what it
+claims to (GAP 52). Three runs happened; only the third is a measurement.
 
-† Run 1 immediately followed a full `bake_all` and is a **cold shader cache**.
-Runs 2 and 3 agree with each other to within 7% on every scene (and within 1% on
-six of the nine) and are the ones to quote. Run 1 is kept in the table because it
-is what the first launch after a bake actually feels like, and because it is the
-honest worst case.
+| scene | fps | worst | draw calls | primitives |
+|---|---:|---:|---:|---:|
+| `main_menu` | 156 | 150 | 382 | 8,618 |
+| `visuals` | 159 | **37** | 525 | **794,734** |
+| `range` | 180 | 180 | 189 | 111,482 |
+| `gunbench` | 171 | 165 | 390 | 40,476 |
+| `bestiary` | 205 | 200 | 448 | 110,766 |
+| `arena` | 233 | 220 | **42** | 21,164 |
+| `firefight` | 181 | **60** | **806** | 346,020 |
+| `ash_flats` | 192 | 180 | 316 | 606,842 |
+| `movement` | 281 | 270 | 349 | 21,422 |
 
-**Every one of the 27 measurements clears 120 fps, and the worst clears it by
-1.9×.** The slowest number anywhere in the table is `main_menu` at 226 — a small
-scene with a lot of text that is GPU-idle rather than slow. The heaviest real
-scene is `firefight` at 297 cold.
+**All nine clear 120 fps.** The margin is much thinner than it used to be: the
+worst is `main_menu` at 156 against a previous 226, and nothing is near the
+420–540 the arena and movement used to post.
+
+**Do not read that as a 2–3× regression, and do not read it as fine either.**
+Two things changed at once and only one of them is content:
+
+- **The resolution was wrong in the first two runs.** `--resolution 1600x900` is
+  now silently discarded, so both ran at **2560×1440 — 2.56× the pixels**. That
+  is GAP 52 and `capture.gd` now forces the size itself. The table above is the
+  post-fix run and IS at 1600×900; the two before it read 64–181 fps and are
+  discarded.
+- **`visuals` is genuinely ~3.6× heavier** — 794,734 primitives against 221,696,
+  which is the full-map dusk work landing. Its 159 fps is real and earned.
+  `range` is the control: identical content, 111,482 primitives against 111,072,
+  and it still went 436 → 180.
+
+`range` moving that far on unchanged content means **something other than
+resolution and other than content also got more expensive**, and the likeliest
+candidate is that the settings pass made the graphics defaults actually bite
+where they were previously inert — `GameSettings` defaults `msaa` to 1 and
+`render_scale` to 1.0 and now genuinely applies them. **This is a hypothesis with
+a matching mechanism, not a proven cause; it was not A/B'd, because that is
+another windowed GPU run.** It is GAP 53 and it is the first thing to settle next
+session.
+
+The two worst-frame outliers (`visuals` 37, `firefight` 60) are single-frame
+hitches of the kind the previous table already documented as moving run to run.
 
 Two things worth watching:
 
@@ -421,13 +529,22 @@ The worst-frame column is not reported. It moved between runs on the same scene
 270/145/173), so it is a single-frame hitch landing somewhere different each
 time and not content.
 
-Nine PNGs are in `_shots/`, all shot clean, **zero engine errors across all
-three runs**. Looked at: `firefight.png` now shows the six decks and their ramps
-with the war deployed across the pan and reads better than the flat pan did;
-`main_menu.png` is legible with all nine cards and both plates;
-`arena.png` shows the compound, the containers and the viewmodel — and in one
-frame confirms three separate KNOWN GAPS (no hands, slab silhouette, ground
-detail dying at distance).
+Nine PNGs are in `_shots/`, all shot clean, **zero engine errors**. Two were
+looked at this pass rather than assumed:
+
+- **`visuals.png` is the best frame this project has produced.** The full-map
+  dusk work reads: low sun, a water tower in silhouette, raking shadows across
+  the whole pan, and the town blocks along the right now carry windows, roof
+  units and masts instead of being the untextured cubes of GAP 38. The dash HUD
+  (`HOLD SHIFT · DASH`, a speed readout) and the ranged crosshair (`36 m`) are
+  both legible. **One new defect is visible**: a row of repeating pale elliptical
+  blobs across the upper sky, evenly spaced and clearly tiled — a cloud or sky
+  artifact, not lens flare. That is GAP 56.
+- **`arena.png` confirms three standing GAPS in one frame, again** — the
+  viewmodel has **no hands or arms** (GAP 30), the weapon reads as flat slabs
+  (GAP 31), and the scene is **tonally flat** (GAP 35): pale sand against pale
+  sky with almost no separation. The diegetic `21/21` ammo plate on the receiver
+  is crisp and is the best thing in the frame.
 
 ### AI cost, measured today
 
@@ -716,11 +833,125 @@ pass touched them.
     editor will generate them on first import, which will show up as an
     untracked change.
 
+### New this pass
+
+52. **`capture.gd` silently stopped measuring at the resolution it claims, and
+    every fps number this project ever published is now suspect.** The settings
+    pass fixed "fullscreen does nothing", so `GameSettings._apply_window` genuinely
+    pushes the stored window mode — from an autoload `_ready`, i.e. **after the
+    command line has been consumed**. `--resolution 1600x900` was discarded and
+    every shot came out **2560×1440**, 2.56× the pixels. Found by noticing the PNGs
+    were the wrong size, not by any gate. `capture.gd` now forces windowed mode and
+    `SHOT_SIZE` itself, and re-asserts per scene. **The historical fps tables in
+    this document were taken at 1600×900 by a tool that could still hold it; treat
+    any cross-pass fps comparison older than today as unsound.**
+53. **`range` lost 2.4× fps on byte-identical content and the cause is not
+    established.** 436 → 180 at the same resolution with the same 111k primitives.
+    Suspect: the settings pass made `msaa` (default 1) and `render_scale` (default
+    1.0) actually apply where they were previously inert. **Not A/B'd** — that is a
+    windowed GPU run and the budget went on GAP 52. One run with `msaa` forced to 0
+    answers it.
+54. **The graded tier distribution is not in any gate.** `verify_guns`' census
+    deliberately measures `GunAssembler` (the reference derivation), so it reports
+    the pre-grading tier and the eleven reference quirks — **not what the player
+    actually receives**. The graded census in *What this pass changed* came from
+    `tools/_grading_probe.gd`, which is marked THROWAWAY. Nothing gates on the
+    shipped distribution, so a future tuning change could move it silently.
+55. **Nobody has fired a Hazard.** 6.5% of rolls, jamming ~every 7th round
+    (14.9%/round), 3.3× bloom, 18.7% fumbled reloads. The ladder is monotone and
+    the intent is "may hurt the person holding it", but the bottom rung has only
+    ever been measured, never held. This needs a hand on it before it ships.
+56. **`visuals` has a tiled sky artifact** — a row of evenly spaced pale
+    elliptical blobs across the upper sky in `_shots/visuals.png`. New with the
+    dusk work; not lens flare, it repeats.
+57. **`visuals` is 3.6× its old primitive count** (794,734 vs 221,696) and posts
+    the second-worst single frame in the table (37). Earned by the full-map work,
+    but it is now the scene with the least headroom after `main_menu`.
+58. **`Auto shotgun` is unreachable** — 0 of 40,000 raw builds, `UNREACHABLE in
+    2100 attempts` in the targeted census. **Pre-existing, not caused by this
+    pass** (it is absent from the diff of `gun_balance_report.txt`), but it is a
+    named archetype in the mix that the world can never hand you.
+
+### Carried verbatim from agents who could not playtest
+
+Windowed Godot was barred for machine-safety reasons, so several agents shipped
+untested work and said so. Their words, not re-verified here:
+
+59. **GUN-RATE, on ADS speed:** "ADS SPEED IS NOT DONE. The brief asked for ADS
+    speed to follow mass and length. It does not: the blend is a flat
+    `ads_damp_rate: float = 14.0` at `systems/player/player_controller.gd:142`,
+    driving `ads = PlayerLocomotion.damp(ads, ads_want, ads_damp_rate, dt)` at line
+    908. I do not own that file. `GunSpec.handling` is display-only today — grepped
+    every consumer and it feeds only the two stat cards
+    (`demos/range/weapon_bench.gd`, `demos/gunbench/gunbench_cards.gd`) and one
+    grading gate (`gun_grading.gd:452`). The one-line hook is to scale
+    `ads_damp_rate` by the equipped weapon's handling, e.g.
+    `ads_damp_rate * lerpf(0.45, 1.5, handling/100.0)`, which would put a launcher
+    near 0.5 s to shoulder against a snubnose near 0.15 s. Handling itself is
+    already wide (7-97, swing model) so the data is there; only the consumer is
+    missing."
+60. **GUN-RATE, on its own measurements:** "Untested in a live scene. Per the
+    machine-safety brief I ran no windowed Godot and no demo scene, so the new
+    rates and recoil shapes have not been felt in the hand — only measured over
+    2000 builds."
+61. **GUN-RATE, on the census:** "Reported min/MEAN/max per fire mode, not
+    min/median/max. `tools/verify_guns.gd` `_char_tally` accumulates a running mean
+    and never stores the per-build samples, so there is no median to read."
+62. **GUN-RATE, on the rate floor:** "The cyclic hard floor at 360 rpm still binds
+    on a handful of the very heaviest actions (stat range shows `cyclic min
+    360.0000` exactly). It is a backstop rather than a shaper now — the archetype
+    table shows Auto battle rifle spanning 318-408 rather than pinned — but a small
+    number of builds are still sitting on it. Dropping it further starts crowding
+    the 215 rpm semi ceiling."
+63. **GUN-RATE, on machine pistols:** "Machine pistol still averages 573 rpm
+    (398-1200), slower than intuition says a machine pistol should be. This is
+    honest geometry, not a clamp: the mode needs `cyc < 0.55` on a pistol receiver,
+    which selects for chunky receiver hulls, and bolt mass is derived from hull
+    volume. Fixing it would mean changing the fire-mode ladder, which the brief
+    explicitly ruled out."
+64. **GUN-TIER, on rate and quality:** "RATE AND CAPACITY ARE STILL NOT TIED TO
+    QUALITY AT THE SOURCE. I punish the mismatch (`rate_stress` -> jam, bloom,
+    ceiling, runaway, and the Hazard push-down in `condition`) but I do not prevent
+    it, because `gun_assembler`/`gun_tables`/`gun_tuning` are GUN-RATE's. Max auto
+    rpm by tier is still Scrap 1044, Cobbled/Field/Gunsmithed/Warlord 1200.
+    GUN-RATE's new section 14 adds `cyclic_fit_penalty` which pulls the same
+    direction; whether the two together are enough needs one joint census after
+    both land." — **That joint census was run this pass** and is in *What this pass
+    changed*; the ladder is monotone, but the max-auto-rpm-by-tier figures above
+    are confirmed unchanged (Scrap 1044, everything above it 1200).
+
 ---
 
 ## WHERE TO START
 
 Prioritised for the tuning pass. File and `@export`/`const` named for each.
+
+**Start with 0a–0d. They are new, they are cheap, and two of them decide whether
+the rest of the performance list is even real.**
+
+- **0a. Settle why `range` lost 2.4× fps on unchanged content** (GAP 53). One
+  windowed `capture.tscn` run with `GameSettings` `msaa` forced to 0, against
+  today's table. If MSAA is the cause, the question becomes what the shipped
+  default should be — not a bug, a decision. If it is NOT the cause, something
+  regressed in the renderer path this pass and that is the priority above
+  everything else in this document. **Do this before trusting any other fps
+  number.**
+- **0b. Put a hand on a Hazard** (GAP 55). 6.5% of rolls jam every seventh round
+  with 18.7% fumbled reloads. The ladder is monotone and the numbers are the
+  intended shape, but the bottom rung has only been measured. Roll one in
+  `gunbench`, take it to `range`, and decide whether "may hurt you" is fun or just
+  broken. `GunGrading.HAZARD_CONDITION` (0.55) and `JAM_STRESS_WEIGHT` (2.6) are
+  the dials.
+- **0c. Wire ADS speed to handling** (GAP 59). The previous agent left the exact
+  one-line hook and the file it goes in:
+  `systems/player/player_controller.gd:142`, scale `ads_damp_rate` by the equipped
+  weapon's handling. `GunSpec.handling` is display-only today and is already a
+  wide 7–97, so the data is sitting there unused.
+- **0d. Decide what `tools/_grading_probe.gd` is** (GAP 54). It is the only thing
+  that reports the tier distribution the player actually receives, and it is marked
+  THROWAWAY at the top. Either promote it to a real `verify_*` that gates, or fold
+  its census into `verify_guns` as a second table beside the reference one. Right
+  now the shipped balance is measured by a file whose own docstring says "delete".
 
 1. **Get bodies onto the decks.** This is the biggest remaining behavioural win
    and the level is finally ready for it — 49% of roof goals are reachable *on
@@ -1015,7 +1246,13 @@ rather than shipping ramps inside each other.
   directories the three previous agents left (`cover_before`, `cover_after`,
   `cover_final`, `cover_new`, `cover_old`, `cover_oldfield`, `cover_r2`,
   `watch_before`, `watch_after`, `watch_run3`, `watch_final`) were removed.
-- No probe, scratch or temporary scripts remain in `tools/` or the project root.
+- **Two scratch scripts DO remain, deliberately, and both are named in GAPs.**
+  `tools/_grading_probe.gd` is the only census of the graded (shipped) tier
+  distribution and is marked THROWAWAY in its own docstring — see WHERE TO START
+  0d. `demos/visuals/_dusk_shot.gd` / `_dusk_shot.tscn` is a **windowed,
+  GPU-rendering** single-scene shot tool the dusk agent wrote to avoid
+  `capture.tscn`; it was **not run this pass** and falls under the same
+  machine-safety rule as `capture` and `watch`. Delete or promote both.
 - Every file in `tools/` is a builder invoked by `bake_all`, a `verify_*` /
   `bench_*` harness, an observation tool (`capture`, `watch`, `ads_shot`), or a
   referenced helper. Eight are referenced by nothing else because they are
@@ -1033,7 +1270,15 @@ rather than shipping ramps inside each other.
   `ai_duel_harness.gd`). It is outside the repository, and a previous pass
   destroyed `settings.cfg` by writing there carelessly, so nothing in that
   directory was touched. `settings.cfg` currently holds `vsync=false` and
-  nothing else — **leave it that way, or every capture pins to 60 fps.**
+  nothing else. **That warning is now retired**: `capture.gd` disables vsync and
+  clears `Engine.max_fps` itself, per scene, so the harness no longer depends on
+  a `user://` file outside the repository being in the right state. It was always
+  a fragile thing to rely on and GAP 52 is what relying on it cost.
+- **`tools/capture.gd` changed this pass** — it now forces windowed mode,
+  `SHOT_SIZE` (1600×900), vsync off and `Engine.max_fps = 0` before measuring, and
+  re-asserts all of it as each scene is instanced. Additive; the measurement
+  window, the warm-up and the link installation are untouched. This is the fix for
+  GAP 52.
 - **`tools/watch.gd` changed this pass** — it gained `--eye`/`--look` (park the
   camera anywhere, which is how the cover behaviour was finally photographed)
   and its `--spawn` now clamps to the dial's detent count instead of wrapping.

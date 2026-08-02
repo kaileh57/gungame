@@ -83,8 +83,10 @@ const ANNOUNCE_GRACE: float = 0.6
 ## the start — see `AshFlatsGantry`.
 @export_range(1.0, 12.0, 1.0) var countdown_seconds: float = 5.0
 ## A race longer than this is over whether or not everyone got down. Nobody is left
-## holding a running clock because one person went sightseeing.
-@export_range(30.0, 600.0, 5.0) var race_limit: float = 210.0
+## holding a running clock because one person went sightseeing. The route is 190 m of
+## carriageway with a climb in the middle of it and a fast lap is well under a minute,
+## so this is about five times the time it takes to run it properly.
+@export_range(30.0, 600.0, 5.0) var race_limit: float = 300.0
 ## Seconds the result stands on the board before the line re-arms itself.
 @export_range(2.0, 60.0, 1.0) var cooldown_seconds: float = 16.0
 ## How often the host restates the order. Four players; this is not a hot path.
@@ -206,7 +208,12 @@ func status_text() -> String:
 		State.FINISHED:
 			return "RESULT"
 		_:
-			return "LINE OPEN"
+			# The idle line is an INSTRUCTION, not a state. This is the first thing a
+			# player reads on arrival — the standings board is turned to face the start
+			# line and the console with the button on it is four metres away — and "LINE
+			# OPEN" answers a question nobody has asked yet. Racing is what this place is
+			# for now, so the board says how to start one.
+			return "PRESS START RACE"
 
 
 # --- the phases, on every machine ---------------------------------------------

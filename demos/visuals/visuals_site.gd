@@ -64,10 +64,27 @@ const RIM_MARGIN: float = 60.0
 ## fill is the tax.
 const W_RISE: float = 1.0
 const W_CLEAR: float = 1.6
-const W_FILL: float = 0.30
+const W_FILL: float = 0.50
+
+## Rise past this buys nothing. An eye forty metres over the town's roofs at three
+## hundred metres looks down on it by eight degrees, which is an overlook; eighty
+## metres is an aerial photograph and it is not what standing on a terrace looks
+## like. The cap matters because absolute elevation on this map is unbounded — the
+## rim rises seventy metres above the town — so an uncapped rise score is a scan
+## that always ends up on the highest cliff it can reach, which is what it did.
+const RISE_CAP: float = 40.0
+
+## Metres of fill the terrace may bury before the tax turns quadratic. Under ten the
+## graded edge reads as landscaping; over it, as a retaining wall. The quadratic is
+## what makes the difference decisive rather than a matter of weights: at the sixty-
+## eight metres the first scan picked, the terrace was a poured block taller than the
+## water tower standing alone on the flats, and it beat every honest rise on the map
+## by a linear margin no sane `W_FILL` could close.
+const FILL_SOFT: float = 10.0
+const W_FILL_OVER: float = 0.50
 
 ## Candidates written into the build report.
-const REPORT_ROWS: int = 8
+const REPORT_ROWS: int = 10
 
 ## Where the eye ends up relative to the graded top: the deck's rise plus a
 ## standing eye. Only used for scoring, so it does not have to be exact — but it
@@ -218,12 +235,20 @@ static func _score(
 		out["why"] = "a dune is in the way"
 		return out
 	out["ok"] = true
-	out["score"] = (
-		W_RISE * float(out["rise"])
-		+ W_CLEAR * minf(float(out["clear"]), CLEAR_CAP)
-		- W_FILL * float(out["fill"])
-	)
+	out["score"] = score_of(float(out["rise"]), float(out["clear"]), float(out["fill"]))
 	return out
+
+
+## The three measurements as one number. Rise saturates, clearance saturates, and
+## fill is taxed linearly to `FILL_SOFT` and quadratically past it.
+static func score_of(rise: float, clear: float, fill: float) -> float:
+	var over: float = maxf(fill - FILL_SOFT, 0.0)
+	return (
+		W_RISE * minf(rise, RISE_CAP)
+		+ W_CLEAR * minf(clear, CLEAR_CAP)
+		- W_FILL * fill
+		- W_FILL_OVER * over * over
+	)
 
 
 ## Tightest gap between the ground and the line from the eye to the town's roofs.

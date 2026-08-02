@@ -85,7 +85,7 @@ func build(seed_value: int) -> GunSpec:
 	var pools: Dictionary = part_pools()
 	if pools.is_empty():
 		return null
-	return GunAssembler.build(seed_value, pools, tuning)
+	return _graded(GunAssembler.build(seed_value, pools, tuning))
 
 
 ## Assemble up to `roll_attempts` weapons looking for `want`, keeping the first
@@ -102,10 +102,12 @@ func roll_typed(rand: XorShift32, need_sidearm: bool, want: String) -> GunSpec:
 		if fallback == null:
 			fallback = spec
 		if String(spec.archetype) == want:
+			_graded(spec)
 			weapon_rolled.emit(spec)
 			return spec
 	if fallback == null:
 		fallback = GunAssembler.build(_draw_seed(rand), pools, tuning)
+	_graded(fallback)
 	weapon_rolled.emit(fallback)
 	return fallback
 
@@ -135,6 +137,7 @@ func assemble_indices(
 		seed_value,
 		tuning
 	)
+	_graded(spec)
 	if with_optics:
 		GunAssembler.fit_optics(spec)
 	return spec
@@ -257,6 +260,40 @@ func part_material(surface: int) -> ShaderMaterial:
 func clear_cache() -> void:
 	_pools.clear()
 	_materials = [null, null, null]
+
+
+## Write `GunGrading` onto a finished record, so what the card says and what the
+## hand feels are the same weapon.
+##
+## THIS IS THE SEAM, and it is here rather than at the end of
+## `GunAssembler.assemble()` on purpose. `GunAssembler` is the port of the
+## reference derivation and `tools/verify_guns.gd` calls it directly to check nine
+## golden vectors field by field — including seed 1's empty `quirks`, which the
+## character layer would legitimately fill. Grading at the assembler would make
+## that harness assert against this port's additions instead of against the
+## reference, which is the one thing it exists not to do. `GunFactory` is the
+## boundary every gameplay path crosses — `roll`, `roll_holstered`, `build`,
+## `assemble_indices` and therefore `reroll_slot` — so the game is fully graded
+## and the conformance harness still measures the reference.
+##
+## Without this call the four mechanism resources still reached grading through
+## `GunGrading.ensure()` as they configured, which meant a weapon was RE-TIERED
+## after the stat card had already read it: the gunbench card, `weapon_bench` and
+## the census showed the assembler's tier and its eleven reference quirks, while
+## the gun in the hand jammed, bloomed and reloaded on a different one. Grading
+## here makes the two agree.
+##
+## Order against `fit_optics` does not matter and is not relied on: the only tier
+## move grading can make is Scrap (1) down to Hazard (0), and `GunTables.TIER_RANK`
+## is 0 for both, so the magnification ladder is identical either way.
+## `assemble_indices` still grades first, because reading a tier before it is final
+## is the habit that caused this bug in the first place.
+##
+## Idempotent — `grade()` writes a metadata marker and `ensure()` honours it — so
+## the mechanisms' own `ensure()` calls are now free no-ops.
+func _graded(spec: GunSpec) -> GunSpec:
+	GunGrading.ensure(spec)
+	return spec
 
 
 func _has_tuning() -> bool:

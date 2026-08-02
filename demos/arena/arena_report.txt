@@ -9,4 +9,4 @@ ok    navmesh (563 polys)    res://demos/arena/arena_nav.res
 nav map probe         (0, 1, 0) -> (0.00, 0.40, 0.00)  cell 0.250  regions 1
 ok    cover set (1603 points) res://demos/arena/arena_cover.tres
 ok    scene (154 nodes)      res://demos/arena/arena.tscn
-build time            1095 ms
+build time            1178 ms

@@ -19,4 +19,4 @@ lod0 open edges       800  (must be 800 - the map rim)
 lod1 open edges       800  (must be 800 - the map rim)
 lod2 open edges       800  (must be 800 - the map rim)
 normal agreement      worst 0.7402 rad between terrain_n and ground_normal
-bake time             4669 ms
+bake time             4522 ms

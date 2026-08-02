@@ -58,6 +58,10 @@ var _down_ids: PackedInt32Array = PackedInt32Array()
 var _down_from: PackedVector3Array = PackedVector3Array()
 var _fire_ids: PackedInt32Array = PackedInt32Array()
 var _fire_aim: PackedVector3Array = PackedVector3Array()
+## The incoming-fire reader, on a CLIENT. Optional: a session with no HUD, and the
+## host itself — whose bodies reach the reader through `EnemyActor.fired` directly —
+## both leave it null.
+var _threat: ArenaThreat = null
 
 
 ## The three faction pools, indexed by faction id, exactly as `ArenaController`
@@ -72,6 +76,14 @@ func bind(spawners: Array[EnemySpawner]) -> void:
 		for id: StringName in spawner.species:
 			if not _catalogue.has(id):
 				_catalogue.append(id)
+
+
+## Hand a CLIENT the incoming-fire reader, so replicated fire is drawn, sounded and
+## put on the threat ring exactly as the host's own is. Without it a client sees a
+## body play its attack clip and nothing leaves the muzzle, which is the same
+## "who is shooting me" problem the host had, one machine along.
+func watch_fire(threat: ArenaThreat) -> void:
+	_threat = threat
 
 
 ## HOST. Give a body a network id. Idempotent, so a re-adopted actor keeps the id
@@ -210,6 +222,10 @@ func apply_events(d: Dictionary) -> void:
 		if body != null:
 			body.aim_at(aim[k])
 			body.play_clip(String(BeastClips.ATTACK))
+		# AFTER the aim, not before: `note_replayed_shot` reads `muzzle_point()`, and
+		# on the tick a body opens up that point is only correct once it has turned.
+		if _threat != null:
+			_threat.note_replayed_shot(actor, aim[k])
 
 
 ## CLIENT. This machine's own corpse timer recycled a puppet. Remembered rather

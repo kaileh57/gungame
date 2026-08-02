@@ -18,35 +18,35 @@ size = Vector3(0.036, 0.056, 0.036)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ck70c"]
 size = Vector3(0.42, 0.075, 0.07)
 
-[node name="DiegeticSlider" type="StaticBody3D" unique_id=168296842]
+[node name="DiegeticSlider" type="StaticBody3D" unique_id=1373879782]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_nwat2")
 control_id = &"slider"
 label_text = "SLIDER"
 
-[node name="Rail" type="MeshInstance3D" parent="." unique_id=1152768603]
+[node name="Rail" type="MeshInstance3D" parent="." unique_id=1259738899]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.023)
 mesh = SubResource("BoxMesh_or45m")
 surface_material_override/0 = ExtResource("2_uuebr")
 
-[node name="Groove" type="MeshInstance3D" parent="." unique_id=627911764]
+[node name="Groove" type="MeshInstance3D" parent="." unique_id=1809276723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.006)
 mesh = SubResource("BoxMesh_llhr8")
 surface_material_override/0 = ExtResource("3_ysa7k")
 
-[node name="Knob" type="Node3D" parent="." unique_id=313929290]
+[node name="Knob" type="Node3D" parent="." unique_id=2134356534]
 
-[node name="KnobBody" type="MeshInstance3D" parent="Knob" unique_id=1529379441]
+[node name="KnobBody" type="MeshInstance3D" parent="Knob" unique_id=1103981570]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008)
 mesh = SubResource("BoxMesh_r7vyf")
 surface_material_override/0 = ExtResource("4_qyl8u")
 
-[node name="Hit" type="CollisionShape3D" parent="." unique_id=1493087008]
+[node name="Hit" type="CollisionShape3D" parent="." unique_id=1368968125]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.012)
 shape = SubResource("BoxShape3D_ck70c")
 
-[node name="Label" type="Label3D" parent="." unique_id=986159856]
+[node name="Label" type="Label3D" parent="." unique_id=1958263380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07, 0.002)
 pixel_size = 0.0014
 double_sided = false
@@ -58,7 +58,7 @@ font = ExtResource("5_muyuc")
 font_size = 48
 outline_size = 10
 
-[node name="Readout" type="Label3D" parent="." unique_id=69833711]
+[node name="Readout" type="Label3D" parent="." unique_id=1421420661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.062, 0.002)
 pixel_size = 0.0014
 double_sided = false
@@ -70,6 +70,6 @@ font = ExtResource("5_muyuc")
 font_size = 48
 outline_size = 10
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=979568921]
+[node name="Sound" type="AudioStreamPlayer3D" parent="." unique_id=774541490]
 unit_size = 3.0
 max_distance = 40.0

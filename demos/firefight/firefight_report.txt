@@ -9,7 +9,7 @@ wrote                 res://demos/firefight/firefight_profiles.tres
 wrote                 res://demos/firefight/firefight_nav.res
 navmesh               3869 polys from 7788 source tris
 nav map               0.250/0.250, iteration 2, region 298 x 298 m, snap y 0.50
-cover sample time     4286 ms
+cover sample time     4378 ms
 vantage               56 kept, 233 scored, 342 routable of 375 candidates, 225 ground samples, datum y 0.50
 vantage height        31 of 56 points above 2 m, highest 5.75 m
 wrote                 res://demos/firefight/firefight_cover.tres
@@ -27,4 +27,4 @@ OUTWARD WINDING  : PASS
 NO OPEN SHELLS   : PASS (0 boundary edges)
 NO DEGENERATES   : PASS (0)
 VERDICT          : PASS
-bake time             5494 ms
+bake time             5620 ms

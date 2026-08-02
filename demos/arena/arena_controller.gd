@@ -120,6 +120,9 @@ const SPAWN_RING: float = 1.5
 @export_group("Feel")
 ## Damage numbers float off things you hit.
 @export var show_damage_pops: bool = true
+## Draw and sound the fire coming AT you, and put it on the HUD's threat ring. See
+## `ArenaThreat` for what was wrong without it, which was everything.
+@export var show_incoming_fire: bool = true
 
 var _director: ArenaDirector = null
 ## The multiplayer half of this demo. Always built, and idle when there is no
@@ -140,6 +143,10 @@ var _loadout: ArenaLoadout = null
 var _player: PlayerController = null
 var _hud: CombatHud = null
 var _gates: Array[ArenaGate] = []
+## Incoming fire: the VFX, the voice and the HUD threat ring for every round that
+## comes at the player. Built here rather than baked so a re-bake of the scene
+## cannot lose it.
+var _threat: ArenaThreat = null
 ## The wave still to walk in, as two parallel queues: what species, and which
 ## faction it fights for. Parallel rather than an array of dictionaries because a
 ## hundred-entry queue is drained one entry per gate per tick and allocating a
@@ -181,9 +188,15 @@ func _ready() -> void:
 	_health = _find_health()
 	_resolve_gates()
 	_wire()
+	_build_threat()
 	_build_hands()
 	_net = ArenaNet.attach(self)
 	_net.bind(self, _director, _station, _spawners, _player, _health, _hud)
+	# A client's puppets do not pull their own triggers; their fire arrives as a
+	# replicated event. This is the seam that turns those events back into rounds you
+	# can see and hear, so the fourth player in a lobby gets the same answer to
+	# "who is shooting me" the host does.
+	_net.watch_incoming(_threat)
 	_place_player()
 	_enter_presence.call_deferred()
 	_director.register_viewer(_player.get_node_or_null(^"Eye") as Node3D)
@@ -234,6 +247,21 @@ func _place_player() -> void:
 	var to: Vector3 = _player.global_position + Vector3(sin(angle), 0.0, cos(angle)) * SPAWN_RING
 	_player.teleport(to, _player.yaw)
 	_player.set_spawn(to, _player.yaw)
+
+
+## The incoming-fire reader. Fed from two seams and it needs both: `_on_actor_fired`
+## on the AUTHORITY — the host, and also single player — where a real body really
+## pulled a trigger, and `ArenaNetBodies.apply_events` on a CLIENT, where the same
+## shot arrives as a replicated event and is reconstructed by
+## `ArenaThreat.note_replayed_shot`. Built before `ArenaNet` so it can be handed
+## down, and built here rather than baked so a re-bake of the scene cannot lose it.
+func _build_threat() -> void:
+	if not show_incoming_fire:
+		return
+	_threat = ArenaThreat.new()
+	_threat.name = "Threat"
+	add_child(_threat)
+	_threat.bind(_player, _hud, _health)
 
 
 ## The desk's hands. World geometry is in the mask so the compound wall stops the
@@ -599,10 +627,16 @@ func _on_actor_died(actor: EnemyActor) -> void:
 	_net.note_death(actor)
 
 
+## A body pulled its trigger. Two consumers and they want different things: the
+## network wants the aim point so the other machines can turn the body, and the
+## threat reader wants the whole line so it can draw the round, sound it, and decide
+## whether it came at you.
 func _on_actor_fired(
-	_origin: Vector3, _direction: Vector3, hit_position: Vector3, _hit: Object, actor: EnemyActor
+	origin: Vector3, direction: Vector3, hit_position: Vector3, hit: Object, actor: EnemyActor
 ) -> void:
 	_net.note_fire(actor, hit_position)
+	if _threat != null:
+		_threat.note_shot(actor, origin, direction, hit_position, hit)
 
 
 ## The next holding position in the rotation, or the body's own feet when the

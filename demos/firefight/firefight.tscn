@@ -997,1018 +997,1018 @@ _surfaces = [{
 "vertex_data": PackedByteArray("WDm0vOxRuD4K1yM8WDm0POxRuD7MzEw9WDm0vOxRuD7MzEw9WDm0vOxRuD4K1yM8WDm0POxRuD4K1yM8WDm0POxRuD7MzEw9WDm0vAjXo7wK1yM8WDm0PAjXo7zMzEw9WDm0PAjXo7wK1yM8WDm0vAjXo7wK1yM8WDm0vAjXo7zMzEw9WDm0PAjXo7zMzEw9WDm0vAjXo7zMzEw9WDm0POxRuD7MzEw9WDm0PAjXo7zMzEw9WDm0vAjXo7zMzEw9WDm0vOxRuD7MzEw9WDm0POxRuD7MzEw9WDm0PAjXo7wK1yM8WDm0vOxRuD4K1yM8WDm0vAjXo7wK1yM8WDm0PAjXo7wK1yM8WDm0POxRuD4K1yM8WDm0vOxRuD4K1yM8WDm0PAjXo7zMzEw9WDm0POxRuD4K1yM8WDm0PAjXo7wK1yM8WDm0PAjXo7zMzEw9WDm0POxRuD7MzEw9WDm0POxRuD4K1yM8WDm0vAjXo7wK1yM8WDm0vOxRuD7MzEw9WDm0vAjXo7zMzEw9WDm0vAjXo7wK1yM8WDm0vOxRuD4K1yM8WDm0vOxRuD7MzEw9rkdhvQAAAABCYGU9X0E2vZBqBL1sEoM7rkdhvQAAAABsEoM7rkdhvQAAAABCYGU9X0E2vZBqBL1CYGU9X0E2vZBqBL1sEoM7X0E2vZBqBL1CYGU9DzuLvAdBVr1sEoM7X0E2vZBqBL1sEoM7X0E2vZBqBL1CYGU9DzuLvAdBVr1CYGU9DzuLvAdBVr1sEoM7DzuLvAdBVr1CYGU9DzuLPAdBVr1sEoM7DzuLvAdBVr1sEoM7DzuLvAdBVr1CYGU9DzuLPAdBVr1CYGU9DzuLPAdBVr1sEoM7DzuLPAdBVr1CYGU9X0E2PZBqBL1sEoM7DzuLPAdBVr1sEoM7DzuLPAdBVr1CYGU9X0E2PZBqBL1CYGU9X0E2PZBqBL1sEoM7X0E2PZBqBL1CYGU9rkdhPXF9+KJsEoM7X0E2PZBqBL1sEoM7X0E2PZBqBL1CYGU9rkdhPXF9+KJCYGU9rkdhPXF9+KJsEoM7rkdhPXF9+KJCYGU9X0E2PZBqBD1sEoM7rkdhPXF9+KJsEoM7rkdhPXF9+KJCYGU9X0E2PZBqBD1CYGU9X0E2PZBqBD1sEoM7X0E2PZBqBD1CYGU9DzuLPAdBVj1sEoM7X0E2PZBqBD1sEoM7X0E2PZBqBD1CYGU9DzuLPAdBVj1CYGU9DzuLPAdBVj1sEoM7DzuLPAdBVj1CYGU9DzuLvAdBVj1sEoM7DzuLPAdBVj1sEoM7DzuLPAdBVj1CYGU9DzuLvAdBVj1CYGU9DzuLvAdBVj1sEoM7DzuLvAdBVj1CYGU9X0E2vZBqBD1sEoM7DzuLvAdBVj1sEoM7DzuLvAdBVj1CYGU9X0E2vZBqBD1CYGU9X0E2vZBqBD1sEoM7X0E2vZBqBD1CYGU9rkdhvQAAAABsEoM7X0E2vZBqBD1sEoM7X0E2vZBqBD1CYGU9rkdhvQAAAABCYGU9rkdhvQAAAABsEoM7AAAAAAAAAABsEoM7rkdhvQAAAABsEoM7X0E2vZBqBL1sEoM7AAAAAAAAAABCYGU9X0E2vZBqBL1CYGU9rkdhvQAAAABCYGU9AAAAAAAAAABsEoM7X0E2vZBqBL1sEoM7DzuLvAdBVr1sEoM7AAAAAAAAAABCYGU9DzuLvAdBVr1CYGU9X0E2vZBqBL1CYGU9AAAAAAAAAABsEoM7DzuLvAdBVr1sEoM7DzuLPAdBVr1sEoM7AAAAAAAAAABCYGU9DzuLPAdBVr1CYGU9DzuLvAdBVr1CYGU9AAAAAAAAAABsEoM7DzuLPAdBVr1sEoM7X0E2PZBqBL1sEoM7AAAAAAAAAABCYGU9X0E2PZBqBL1CYGU9DzuLPAdBVr1CYGU9AAAAAAAAAABsEoM7X0E2PZBqBL1sEoM7rkdhPXF9+KJsEoM7AAAAAAAAAABCYGU9rkdhPXF9+KJCYGU9X0E2PZBqBL1CYGU9AAAAAAAAAABsEoM7rkdhPXF9+KJsEoM7X0E2PZBqBD1sEoM7AAAAAAAAAABCYGU9X0E2PZBqBD1CYGU9rkdhPXF9+KJCYGU9AAAAAAAAAABsEoM7X0E2PZBqBD1sEoM7DzuLPAdBVj1sEoM7AAAAAAAAAABCYGU9DzuLPAdBVj1CYGU9X0E2PZBqBD1CYGU9AAAAAAAAAABsEoM7DzuLPAdBVj1sEoM7DzuLvAdBVj1sEoM7AAAAAAAAAABCYGU9DzuLvAdBVj1CYGU9DzuLPAdBVj1CYGU9AAAAAAAAAABsEoM7DzuLvAdBVj1sEoM7X0E2vZBqBD1sEoM7AAAAAAAAAABCYGU9X0E2vZBqBD1CYGU9DzuLvAdBVj1CYGU9AAAAAAAAAABsEoM7X0E2vZBqBD1sEoM7rkdhvQAAAABsEoM7AAAAAAAAAABCYGU9rkdhvQAAAABCYGU9X0E2vZBqBD1CYGU9AID//wAA/78AgP//AAD/vwCA//8AAP+/AID//wAA/78AgP//AAD/vwCA//8AAP+/AIAAAAAA/78AgAAAAAD/vwCAAAAAAP+/AIAAAAAA/78AgAAAAAD/vwCAAAAAAP+//3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA//////9/AID//////38AgP//////fwCA//8AgP9//7///wCA/3//v///AID/f/+///8AgP9//7///wCA/3//v///AID/f/+/AAAAgP9//78AAACA/3//vwAAAID/f/+/AAAAgP9//78AAACA/3//vwAAAID/f/+/Yx+bYI12iM5jH5tgjXaIzmMfm2CNdojOYx+bYI12iM5jH5tgjXaIzmMfm2CNdojOIkrcNThHn9QiStw1OEef1CJK3DU4R5/UIkrcNThHn9QiStw1OEef1CJK3DU4R5/UAIAAAAAA/78AgAAAAAD/vwCAAAAAAP+/AIAAAAAA/78AgAAAAAD/vwCAAAAAAP+/3LXcNThHX6vctdw1OEdfq9y13DU4R1+r3LXcNThHX6vctdw1OEdfq9y13DU4R1+rm+CbYI12dbGb4JtgjXZ1sZvgm2CNdnWxm+CbYI12dbGb4JtgjXZ1sZvgm2CNdnWxm+Bjn412iM6b4GOfjXaIzpvgY5+NdojOm+Bjn412iM6b4GOfjXaIzpvgY5+NdojO3LUiyjhHn9TctSLKOEef1Ny1Iso4R5/U3LUiyjhHn9TctSLKOEef1Ny1Iso4R5/UAID//wAA/78AgP//AAD/vwCA//8AAP+/AID//wAA/78AgP//AAD/vwCA//8AAP+/IkoiyjhHX6siSiLKOEdfqyJKIso4R1+rIkoiyjhHX6siSiLKOEdfqyJKIso4R1+rYx9jn412dbFjH2OfjXZ1sWMfY5+NdnWxYx9jn412dbFjH2OfjXZ1sWMfY5+NdnWx//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9/AID//////38AgP//////fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA")
 }]
 
-[node name="Firefight" type="Node3D" unique_id=1565569711]
+[node name="Firefight" type="Node3D" unique_id=1026274820]
 script = ExtResource("1_3hx2e")
 
-[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=2108736239 instance=ExtResource("2_lu7p5")]
+[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=349678082 instance=ExtResource("2_lu7p5")]
 environment = ExtResource("3_efsrv")
 script = ExtResource("4_qh02b")
 shadow_distance = 56.0
 
-[node name="Vfx" type="Node3D" parent="." unique_id=64469703 instance=ExtResource("5_uwvgq")]
+[node name="Vfx" type="Node3D" parent="." unique_id=1011527264 instance=ExtResource("5_uwvgq")]
 script = ExtResource("6_k82yq")
 preset_budget_scale = PackedFloat32Array(0.3, 0.5, 0.75, 1, 1)
 
-[node name="Arena" type="Node3D" parent="." unique_id=934273561]
+[node name="Arena" type="Node3D" parent="." unique_id=981464425]
 
-[node name="Ground" type="MeshInstance3D" parent="Arena" unique_id=596472773]
+[node name="Ground" type="MeshInstance3D" parent="Arena" unique_id=1109331281]
 mesh = ExtResource("7_qyw8r")
 
-[node name="ArenaBody" type="StaticBody3D" parent="Arena" unique_id=608310125]
+[node name="ArenaBody" type="StaticBody3D" parent="Arena" unique_id=741477741]
 collision_mask = 0
 
-[node name="box_000" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=558266004]
+[node name="box_000" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1057106940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 shape = SubResource("BoxShape3D_qneiq")
 
-[node name="box_001" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1819544849]
+[node name="box_001" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=768205995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, -0.1, 2.9390552e-15)
 shape = SubResource("BoxShape3D_efdwf")
 
-[node name="box_002" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=457827047]
+[node name="box_002" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=919002705]
 transform = Transform3D(0.95233357, 0, 0.30505863, 0, 1, 0, -0.30505863, 0, 0.95233357, -24, -0.1, -41.569218)
 shape = SubResource("BoxShape3D_505xj")
 
-[node name="box_003" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1597644573]
+[node name="box_003" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=820644719]
 transform = Transform3D(0.8138785, 0, 0.58103514, 0, 1, 0, -0.58103514, 0, 0.8138785, -24, -0.1, 41.569218)
 shape = SubResource("BoxShape3D_hdfaq")
 
-[node name="box_004" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=694906430]
+[node name="box_004" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=816958820]
 transform = Transform3D(0.597834, 0, 0.80161995, 0, 1, 0, -0.80161995, 0, 0.597834, 24, -0.1, 41.569218)
 shape = SubResource("BoxShape3D_12js5")
 
-[node name="box_005" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=776697146]
+[node name="box_005" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1993967245]
 transform = Transform3D(0.3247963, 0, 0.94578403, 0, 1, 0, -0.94578403, 0, 0.3247963, 24, -0.1, -41.569218)
 shape = SubResource("BoxShape3D_tincq")
 
-[node name="box_006" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=831239904]
+[node name="box_006" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1959007832]
 transform = Transform3D(0.020794876, 0, 0.99978375, 0, 1, 0, -0.99978375, 0, 0.020794876, -48, -0.1, -8.817166e-15)
 shape = SubResource("BoxShape3D_w7rnk")
 
-[node name="box_007" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1520984668]
+[node name="box_007" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=117348490]
 transform = Transform3D(-0.28518906, 0, 0.9584713, 0, 1, 0, -0.9584713, 0, -0.28518906, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_c8rop")
 
-[node name="box_008" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=438867148]
+[node name="box_008" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1164580699]
 transform = Transform3D(0.1242788, 0, 0.99224734, 0, 1, 0, -0.99224734, 0, 0.1242788, 23.557104, 0, -6.2666974)
 shape = SubResource("BoxShape3D_03mlf")
 
-[node name="box_009" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=502034919]
+[node name="box_009" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1301138880]
 transform = Transform3D(-0.53169507, 0, -0.84693587, 0, 1, 0, 0.84693587, 0, -0.53169507, -23.094145, 0, -23.177406)
 shape = SubResource("BoxShape3D_g7hi1")
 
-[node name="box_010" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=625795546]
+[node name="box_010" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=855860347]
 transform = Transform3D(0.98438084, 0, 0.17605211, 0, 1, 0, -0.17605211, 0, 0.98438084, -8.129277, 0, 30.121965)
 shape = SubResource("BoxShape3D_2h103")
 
-[node name="box_011" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=472232023]
+[node name="box_011" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=443211392]
 transform = Transform3D(0.32841215, 0, 0.94453454, 0, 1, 0, -0.94453454, 0, 0.32841215, 48.681534, 0.4, 38.631287)
 shape = SubResource("BoxShape3D_s503r")
 
-[node name="box_012" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2061640322]
+[node name="box_012" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1560336327]
 transform = Transform3D(0.366724, 0, 0.9303298, 0, 1, 0, -0.9303298, 0, 0.366724, 61.428307, 0.4, -1.6795841)
 shape = SubResource("BoxShape3D_px8wu")
 
-[node name="box_013" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=738268732]
+[node name="box_013" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1385279612]
 transform = Transform3D(-0.22297604, 0, 0.97482395, 0, 1, 0, -0.97482395, 0, -0.22297604, 48.811447, 0.4, -43.285366)
 shape = SubResource("BoxShape3D_mkohx")
 
-[node name="box_014" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=164951795]
+[node name="box_014" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=201348476]
 transform = Transform3D(-0.9003643, 0, -0.43513697, 0, 1, 0, 0.43513697, 0, -0.9003643, 9.816665, 0.4, -66.208046)
 shape = SubResource("BoxShape3D_utnjm")
 
-[node name="box_015" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=149521279]
+[node name="box_015" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1293632007]
 transform = Transform3D(-0.32367572, 0, -0.94616807, 0, 1, 0, 0.94616807, 0, -0.32367572, -33.766747, 0.4, -54.959682)
 shape = SubResource("BoxShape3D_2jw5y")
 
-[node name="box_016" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=608877003]
+[node name="box_016" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1717102380]
 transform = Transform3D(-0.01915575, 0, -0.99981654, 0, 1, 0, 0.99981654, 0, -0.01915575, -62.927998, 0.4, -20.974596)
 shape = SubResource("BoxShape3D_ktsbl")
 
-[node name="box_017" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1845415715]
+[node name="box_017" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1734068085]
 transform = Transform3D(0.50286883, 0, -0.8643627, 0, 1, 0, 0.8643627, 0, 0.50286883, -59.70038, 0.4, 23.596323)
 shape = SubResource("BoxShape3D_bnoxo")
 
-[node name="box_018" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1156841178]
+[node name="box_018" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=525241381]
 transform = Transform3D(0.9431409, 0, -0.3323931, 0, 1, 0, 0.3323931, 0, 0.9431409, -31.1342, 0.4, 57.500397)
 shape = SubResource("BoxShape3D_kx5pv")
 
-[node name="box_019" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=179674040]
+[node name="box_019" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=472169758]
 transform = Transform3D(0.9103726, 0, -0.41378945, 0, 1, 0, 0.41378945, 0, 0.9103726, 13.425121, 0.4, 65.598526)
 shape = SubResource("BoxShape3D_o6ln0")
 
-[node name="box_020" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=491181250]
+[node name="box_020" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=951487735]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.2, 88)
 shape = SubResource("BoxShape3D_eecrg")
 
-[node name="box_021" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1840621445]
+[node name="box_021" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1054042241]
 transform = Transform3D(-0.22252095, 0, 0.9749279, 0, 1, 0, -0.9749279, 0, -0.22252095, 19.581842, 2.2, 85.793655)
 shape = SubResource("BoxShape3D_capbe")
 
-[node name="box_022" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1689124501]
+[node name="box_022" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=623964686]
 transform = Transform3D(-0.43388385, 0, 0.90096885, 0, 1, 0, -0.90096885, 0, -0.43388385, 38.18177, 2.2, 79.28526)
 shape = SubResource("BoxShape3D_rafmg")
 
-[node name="box_023" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1663493464]
+[node name="box_023" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=802445557]
 transform = Transform3D(-0.6234898, 0, 0.7818315, 0, 1, 0, -0.7818315, 0, -0.6234898, 54.867104, 2.2, 68.80117)
 shape = SubResource("BoxShape3D_h5v34")
 
-[node name="box_024" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1355709568]
+[node name="box_024" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=502405980]
 transform = Transform3D(-0.7818315, 0, 0.62348974, 0, 1, 0, -0.62348974, 0, -0.7818315, 68.80117, 2.2, 54.867104)
 shape = SubResource("BoxShape3D_3hnc8")
 
-[node name="box_025" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1760931689]
+[node name="box_025" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=948855407]
 transform = Transform3D(-0.90096885, 0, 0.43388382, 0, 1, 0, -0.43388382, 0, -0.90096885, 79.28526, 2.2, 38.18177)
 shape = SubResource("BoxShape3D_y0aw1")
 
-[node name="box_026" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=216658610]
+[node name="box_026" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1974081650]
 transform = Transform3D(-0.9749279, 0, 0.22252093, 0, 1, 0, -0.22252093, 0, -0.9749279, 85.793655, 2.2, 19.581842)
 shape = SubResource("BoxShape3D_pmhop")
 
-[node name="box_027" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1361966148]
+[node name="box_027" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=596003623]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 88, 2.2, 5.388268e-15)
 shape = SubResource("BoxShape3D_fxi1x")
 
-[node name="box_028" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1471894985]
+[node name="box_028" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1428444839]
 transform = Transform3D(-0.9749279, 0, -0.22252087, 0, 1, 0, 0.22252087, 0, -0.9749279, 85.793655, 2.2, -19.581842)
 shape = SubResource("BoxShape3D_6hs8a")
 
-[node name="box_029" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2029732940]
+[node name="box_029" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=799581829]
 transform = Transform3D(-0.90096885, 0, -0.43388376, 0, 1, 0, 0.43388376, 0, -0.90096885, 79.28526, 2.2, -38.18177)
 shape = SubResource("BoxShape3D_pmlre")
 
-[node name="box_030" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1207062642]
+[node name="box_030" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=744785808]
 transform = Transform3D(-0.78183156, 0, -0.62348974, 0, 1, 0, 0.62348974, 0, -0.78183156, 68.80117, 2.2, -54.867104)
 shape = SubResource("BoxShape3D_kwiv2")
 
-[node name="box_031" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1287601769]
+[node name="box_031" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=851189763]
 transform = Transform3D(-0.6234896, 0, -0.7818316, 0, 1, 0, 0.7818316, 0, -0.6234896, 54.867104, 2.2, -68.80117)
 shape = SubResource("BoxShape3D_e8jm3")
 
-[node name="box_032" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1943915140]
+[node name="box_032" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2130615229]
 transform = Transform3D(-0.4338839, 0, -0.9009688, 0, 1, 0, 0.9009688, 0, -0.4338839, 38.18177, 2.2, -79.28526)
 shape = SubResource("BoxShape3D_0jesv")
 
-[node name="box_033" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1016091331]
+[node name="box_033" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1775138567]
 transform = Transform3D(-0.222521, 0, -0.9749279, 0, 1, 0, 0.9749279, 0, -0.222521, 19.581842, 2.2, -85.793655)
 shape = SubResource("BoxShape3D_rfpn6")
 
-[node name="box_034" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1029426199]
+[node name="box_034" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=514186216]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 1.0776536e-14, 2.2, -88)
 shape = SubResource("BoxShape3D_k6s0n")
 
-[node name="box_035" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=916965371]
+[node name="box_035" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1839275500]
 transform = Transform3D(0.22252104, 0, -0.9749279, 0, 1, 0, 0.9749279, 0, 0.22252104, -19.581842, 2.2, -85.793655)
 shape = SubResource("BoxShape3D_uds0d")
 
-[node name="box_036" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=456197185]
+[node name="box_036" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1532358868]
 transform = Transform3D(0.4338839, 0, -0.9009688, 0, 1, 0, 0.9009688, 0, 0.4338839, -38.18177, 2.2, -79.28526)
 shape = SubResource("BoxShape3D_haq8s")
 
-[node name="box_037" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2123514164]
+[node name="box_037" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1999387660]
 transform = Transform3D(0.6234897, 0, -0.7818316, 0, 1, 0, 0.7818316, 0, 0.6234897, -54.867104, 2.2, -68.80117)
 shape = SubResource("BoxShape3D_nbfi0")
 
-[node name="box_038" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1330377314]
+[node name="box_038" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=104232003]
 transform = Transform3D(0.78183144, 0, -0.62348986, 0, 1, 0, 0.62348986, 0, 0.78183144, -68.80117, 2.2, -54.867104)
 shape = SubResource("BoxShape3D_lvsn5")
 
-[node name="box_039" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1354457226]
+[node name="box_039" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2098798714]
 transform = Transform3D(0.90096885, 0, -0.43388376, 0, 1, 0, 0.43388376, 0, 0.90096885, -79.28526, 2.2, -38.18177)
 shape = SubResource("BoxShape3D_r2tlp")
 
-[node name="box_040" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1365905358]
+[node name="box_040" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1767551395]
 transform = Transform3D(0.9749279, 0, -0.22252086, 0, 1, 0, 0.22252086, 0, 0.9749279, -85.793655, 2.2, -19.581842)
 shape = SubResource("BoxShape3D_rtycw")
 
-[node name="box_041" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1847808473]
+[node name="box_041" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1514638036]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -88, 2.2, -1.6164804e-14)
 shape = SubResource("BoxShape3D_awbdc")
 
-[node name="box_042" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1094369604]
+[node name="box_042" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=518772156]
 transform = Transform3D(0.97492796, 0, 0.22252072, 0, 1, 0, -0.22252072, 0, 0.97492796, -85.793655, 2.2, 19.581842)
 shape = SubResource("BoxShape3D_g0u7c")
 
-[node name="box_043" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2144249505]
+[node name="box_043" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=881175324]
 transform = Transform3D(0.9009689, 0, 0.43388364, 0, 1, 0, -0.43388364, 0, 0.9009689, -79.28526, 2.2, 38.18177)
 shape = SubResource("BoxShape3D_l1jlx")
 
-[node name="box_044" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1231207071]
+[node name="box_044" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=427086331]
 transform = Transform3D(0.7818315, 0, 0.6234898, 0, 1, 0, -0.6234898, 0, 0.7818315, -68.80117, 2.2, 54.867104)
 shape = SubResource("BoxShape3D_2xkht")
 
-[node name="box_045" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=225582878]
+[node name="box_045" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=858381007]
 transform = Transform3D(0.62348974, 0, 0.7818315, 0, 1, 0, -0.7818315, 0, 0.62348974, -54.867104, 2.2, 68.80117)
 shape = SubResource("BoxShape3D_ot1y1")
 
-[node name="box_046" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1925904958]
+[node name="box_046" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=77967132]
 transform = Transform3D(0.4338836, 0, 0.9009689, 0, 1, 0, -0.9009689, 0, 0.4338836, -38.18177, 2.2, 79.28526)
 shape = SubResource("BoxShape3D_m1pd4")
 
-[node name="box_047" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1570742570]
+[node name="box_047" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=574057013]
 transform = Transform3D(0.22252116, 0, 0.97492784, 0, 1, 0, -0.97492784, 0, 0.22252116, -19.581842, 2.2, 85.793655)
 shape = SubResource("BoxShape3D_3p628")
 
-[node name="box_048" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1480746213]
+[node name="box_048" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=634982389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 74)
 shape = SubResource("BoxShape3D_15tqt")
 
-[node name="box_049" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=338555605]
+[node name="box_049" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=985454779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55, 69.2)
 shape = SubResource("BoxShape3D_4e4dx")
 
-[node name="box_050" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1488953470]
+[node name="box_050" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=816298477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.3, 69.2)
 shape = SubResource("BoxShape3D_txwbx")
 
-[node name="box_051" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2002627661]
+[node name="box_051" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1590408599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.333, 1.3, 69.2)
 shape = SubResource("BoxShape3D_u8t6v")
 
-[node name="box_052" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1046564850]
+[node name="box_052" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1889763483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.666, 1.3, 69.2)
 shape = SubResource("BoxShape3D_70dpd")
 
-[node name="box_053" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=584965998]
+[node name="box_053" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1656459005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 1.3, 69.2)
 shape = SubResource("BoxShape3D_uv7fe")
 
-[node name="box_054" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=690764527]
+[node name="box_054" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=898638689]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.668, 1.3, 69.2)
 shape = SubResource("BoxShape3D_d4ffd")
 
-[node name="box_055" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=786042501]
+[node name="box_055" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1007061062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.335, 1.3, 69.2)
 shape = SubResource("BoxShape3D_a001m")
 
-[node name="box_056" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1883426025]
+[node name="box_056" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1563594662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.002, 1.3, 69.2)
 shape = SubResource("BoxShape3D_h1qwk")
 
-[node name="box_057" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=626717859]
+[node name="box_057" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1459956324]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 10.5, -0.1, 18.186533)
 shape = SubResource("BoxShape3D_s5g8i")
 
-[node name="box_058" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2116418880]
+[node name="box_058" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2012302405]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 10.5, 2.3, 18.186533)
 shape = SubResource("BoxShape3D_vkrcx")
 
-[node name="box_059" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1158704768]
+[node name="box_059" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=644796584]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 9.549969, 5.625, 26.841032)
 shape = SubResource("BoxShape3D_71yfg")
 
-[node name="box_060" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=4746269]
+[node name="box_060" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=867944734]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 18.470032, 5.625, 21.69103)
 shape = SubResource("BoxShape3D_pt7j4")
 
-[node name="box_061" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1244994667]
+[node name="box_061" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1195385632]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 10.584005, 5.625, 10.032035)
 shape = SubResource("BoxShape3D_sejlw")
 
-[node name="box_062" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1310119052]
+[node name="box_062" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1667466513]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 3.3959944, 5.625, 14.1820345)
 shape = SubResource("BoxShape3D_v0xt3")
 
-[node name="box_063" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=547073866]
+[node name="box_063" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1863990098]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 19.1545, 5.625, 19.136564)
 shape = SubResource("BoxShape3D_3nys6")
 
-[node name="box_064" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1432210994]
+[node name="box_064" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=967725411]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 14.0044985, 5.625, 10.216501)
 shape = SubResource("BoxShape3D_cstke")
 
-[node name="box_065" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1657312421]
+[node name="box_065" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2039862466]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 2.3455017, 5.625, 18.102528)
 shape = SubResource("BoxShape3D_a7kug")
 
-[node name="box_066" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=368283844]
+[node name="box_066" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=942519302]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 6.4955015, 5.625, 25.290539)
 shape = SubResource("BoxShape3D_o66th")
 
-[node name="box_067" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2088356653]
+[node name="box_067" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1643615579]
 transform = Transform3D(0.44147384, 0.23473579, -0.8660254, -0.46947157, 0.8829476, 0, 0.76465505, 0.40657425, 0.50000006, 16.812502, 2.363531, 29.120106)
 shape = SubResource("BoxShape3D_tw4t5")
 
-[node name="box_068" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=548134789]
+[node name="box_068" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=126018359]
 transform = Transform3D(0.76465505, 0.40657425, 0.50000006, -0.46947157, 0.8829476, 0, -0.44147384, -0.23473579, 0.8660254, 21.43357, 2.363531, 11.874031)
 shape = SubResource("BoxShape3D_3j7t1")
 
-[node name="box_069" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=505268058]
+[node name="box_069" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=892063865]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 10.5, -0.1, -18.186533)
 shape = SubResource("BoxShape3D_u86dt")
 
-[node name="box_070" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=364957311]
+[node name="box_070" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=784406603]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 10.5, 2.3, -18.186533)
 shape = SubResource("BoxShape3D_m076e")
 
-[node name="box_071" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=314573447]
+[node name="box_071" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1090595351]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 18.470032, 5.625, -21.69103)
 shape = SubResource("BoxShape3D_o4ujh")
 
-[node name="box_072" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=290944608]
+[node name="box_072" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=578720226]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 9.549969, 5.625, -26.841032)
 shape = SubResource("BoxShape3D_ji37x")
 
-[node name="box_073" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=265868213]
+[node name="box_073" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=21587358]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 3.3959944, 5.625, -14.1820345)
 shape = SubResource("BoxShape3D_j56pe")
 
-[node name="box_074" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=555168518]
+[node name="box_074" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=306477765]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 10.584005, 5.625, -10.032035)
 shape = SubResource("BoxShape3D_r0cln")
 
-[node name="box_075" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1311636176]
+[node name="box_075" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=781863584]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 6.9955015, 5.625, -26.156565)
 shape = SubResource("BoxShape3D_ik830")
 
-[node name="box_076" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=474937582]
+[node name="box_076" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1095916253]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 1.8455017, 5.625, -17.236502)
 shape = SubResource("BoxShape3D_hebw1")
 
-[node name="box_077" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=99083668]
+[node name="box_077" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1288844323]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 14.5044985, 5.625, -11.082527)
 shape = SubResource("BoxShape3D_fj4wf")
 
-[node name="box_078" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2146488247]
+[node name="box_078" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=8166473]
 transform = Transform3D(-0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, -0.8660254, 18.6545, 5.625, -18.270538)
 shape = SubResource("BoxShape3D_ui860")
 
-[node name="box_079" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1976734707]
+[node name="box_079" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=840099193]
 transform = Transform3D(0.44147384, 0.23473579, 0.8660254, -0.46947157, 0.8829476, 0, -0.76465505, -0.40657425, 0.50000006, 16.812502, 2.363531, -29.120106)
 shape = SubResource("BoxShape3D_umu2t")
 
-[node name="box_080" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1567008134]
+[node name="box_080" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1699033463]
 transform = Transform3D(-0.76465505, -0.40657428, 0.50000006, -0.46947157, 0.8829476, 0, -0.4414739, -0.23473582, -0.8660253, -0.4335724, 2.363531, -24.499035)
 shape = SubResource("BoxShape3D_g725k")
 
-[node name="box_081" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2059792454]
+[node name="box_081" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1866605899]
 transform = Transform3D(-1.8369095e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369095e-16, -21, -0.1, -3.85751e-15)
 shape = SubResource("BoxShape3D_sob2i")
 
-[node name="box_082" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=277001374]
+[node name="box_082" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=477546134]
 transform = Transform3D(-1.8369095e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369095e-16, -21, 2.3, -3.85751e-15)
 shape = SubResource("BoxShape3D_2hnfe")
 
-[node name="box_083" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1459837945]
+[node name="box_083" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=982637025]
 transform = Transform3D(-1.8369095e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369097e-16, -28.02, 5.625, -5.15)
 shape = SubResource("BoxShape3D_3qu3n")
 
-[node name="box_084" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=955330895]
+[node name="box_084" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=664662915]
 transform = Transform3D(-1.8369095e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369097e-16, -28.02, 5.625, 5.15)
 shape = SubResource("BoxShape3D_4wuin")
 
-[node name="box_085" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=723182333]
+[node name="box_085" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=707913996]
 transform = Transform3D(-1.8369095e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369097e-16, -13.98, 5.625, 4.15)
 shape = SubResource("BoxShape3D_nnai5")
 
-[node name="box_086" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1424791078]
+[node name="box_086" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=791976065]
 transform = Transform3D(-1.8369095e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369097e-16, -13.98, 5.625, -4.15)
 shape = SubResource("BoxShape3D_l6f30")
 
-[node name="box_087" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2047430752]
+[node name="box_087" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=868590543]
 transform = Transform3D(-1.8369097e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369095e-16, -26.15, 5.625, 7.02)
 shape = SubResource("BoxShape3D_085dy")
 
-[node name="box_088" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=9818821]
+[node name="box_088" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1434350231]
 transform = Transform3D(-1.8369097e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369095e-16, -15.85, 5.625, 7.02)
 shape = SubResource("BoxShape3D_e65wc")
 
-[node name="box_089" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1022646728]
+[node name="box_089" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1539294575]
 transform = Transform3D(-1.8369097e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369095e-16, -16.85, 5.625, -7.02)
 shape = SubResource("BoxShape3D_k3bvt")
 
-[node name="box_090" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=292143943]
+[node name="box_090" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=312132050]
 transform = Transform3D(-1.8369097e-16, 0, -1, 0, 1, 0, 1, 0, -1.8369095e-16, -25.15, 5.625, -7.02)
 shape = SubResource("BoxShape3D_dsnb3")
 
-[node name="box_091" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1157449383]
+[node name="box_091" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1127610224]
 transform = Transform3D(-0.8829476, -0.46947154, 1.8369095e-16, -0.46947154, 0.8829476, 0, -1.6218948e-16, -8.6237675e-17, -1, -33.625004, 2.363531, -6.176609e-15)
 shape = SubResource("BoxShape3D_t7is5")
 
-[node name="box_092" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=834773805]
+[node name="box_092" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2105627326]
 transform = Transform3D(0, 0, -1, -0.46947154, 0.8829476, 0, 0.8829476, 0.46947154, 0, -21, 2.363531, 12.625003)
 shape = SubResource("BoxShape3D_3o4mm")
 
-[node name="box_093" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=690788096]
+[node name="box_093" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1342459815]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 31.212082, -0.1, 28.103487)
 shape = SubResource("BoxShape3D_mrsqw")
 
-[node name="box_094" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=234726544]
+[node name="box_094" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1076423096]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 31.212082, 2.3, 28.103487)
 shape = SubResource("BoxShape3D_368te")
 
-[node name="box_095" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1462095032]
+[node name="box_095" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1057537945]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 32.982937, 5.625, 36.62798)
 shape = SubResource("BoxShape3D_qx4an")
 
-[node name="box_096" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1094898798]
+[node name="box_096" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1354662662]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 39.87498, 5.625, 28.973589)
 shape = SubResource("BoxShape3D_anea5")
 
-[node name="box_097" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1045969676]
+[node name="box_097" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1224037253]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 28.772097, 5.625, 20.322138)
 shape = SubResource("BoxShape3D_ghtx0")
 
-[node name="box_098" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1101282387]
+[node name="box_098" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2012598463]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 23.218313, 5.625, 26.49024)
 shape = SubResource("BoxShape3D_oe1p7")
 
-[node name="box_099" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1962489082]
+[node name="box_099" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=372741030]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 38.99343, 5.625, 25.663502)
 shape = SubResource("BoxShape3D_fb347")
 
-[node name="box_100" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1510320019]
+[node name="box_100" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=698928653]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 32.825325, 5.625, 20.109718)
 shape = SubResource("BoxShape3D_hb7cv")
 
-[node name="box_101" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1656727985]
+[node name="box_101" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1928139051]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 22.68759, 5.625, 29.87434)
 shape = SubResource("BoxShape3D_e07se")
 
-[node name="box_102" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2070541828]
+[node name="box_102" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=343544463]
 transform = Transform3D(0.6691306, 0, 0.7431448, 0, 1, 0, -0.7431448, 0, 0.6691306, 30.341982, 5.625, 36.766384)
 shape = SubResource("BoxShape3D_aup2t")
 
-[node name="box_103" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1221205157]
+[node name="box_103" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=968741961]
 transform = Transform3D(-0.59080744, -0.31413794, -0.74314463, -0.46947163, 0.88294756, 0, 0.65615773, 0.34888533, -0.6691308, 22.764305, 2.3635314, 37.48569)
 shape = SubResource("BoxShape3D_38j4r")
 
-[node name="box_104" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=279683901]
+[node name="box_104" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=702450945]
 transform = Transform3D(0.65615803, 0.34888548, -0.6691305, -0.46947163, 0.88294756, 0, 0.59080714, 0.3141378, 0.7431449, 40.594288, 2.3635314, 36.55126)
 shape = SubResource("BoxShape3D_0gy12")
 
-[node name="box_105" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2100335963]
+[node name="box_105" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=135068893]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, 2.9297717, -0.1, -41.89769)
 shape = SubResource("BoxShape3D_7c2ou")
 
-[node name="box_106" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1476067852]
+[node name="box_106" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=914179935]
 transform = Transform3D(-0.997564, 0, 0.06975646, 0, 1, 0, -0.06975646, 0, -0.997564, 2.9297717, 2.3, -41.89769)
 shape = SubResource("BoxShape3D_inpaf")
 
-[node name="box_107" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=236848499]
+[node name="box_107" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=145077490]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, 8.556917, 5.625, -48.541344)
 shape = SubResource("BoxShape3D_duqu6")
 
-[node name="box_108" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2053871720]
+[node name="box_108" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1664389691]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, -1.7179928, 5.625, -49.259834)
 shape = SubResource("BoxShape3D_f3lo2")
 
-[node name="box_109" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=226603417]
+[node name="box_109" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=531605852]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, -1.69981, 5.625, -35.18428)
 shape = SubResource("BoxShape3D_pv1oa")
 
-[node name="box_110" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=797060435]
+[node name="box_110" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=325791618]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, 6.5799723, 5.625, -34.6053)
 shape = SubResource("BoxShape3D_3y8q0")
 
-[node name="box_111" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=641085113]
+[node name="box_111" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=781120064]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, -3.7836385, 5.625, -46.52727)
 shape = SubResource("BoxShape3D_avmm7")
 
-[node name="box_112" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2142117859]
+[node name="box_112" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=938688127]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, -4.362617, 5.625, -38.247486)
 shape = SubResource("BoxShape3D_h63nx")
 
-[node name="box_113" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=978273404]
+[node name="box_113" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1979518377]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, 9.573425, 5.625, -36.270546)
 shape = SubResource("BoxShape3D_52get")
 
-[node name="box_114" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=107290908]
+[node name="box_114" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1884839758]
 transform = Transform3D(-0.9975641, 0, 0.06975647, 0, 1, 0, -0.06975647, 0, -0.9975641, 10.291918, 5.625, -46.545456)
 shape = SubResource("BoxShape3D_q68vm")
 
-[node name="box_115" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1651583342]
+[node name="box_115" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=445000308]
 transform = Transform3D(0.88079673, 0.46832794, -0.06975623, -0.4694715, 0.88294756, 0, 0.06159109, 0.032748565, 0.9975641, 15.52402, 2.3635314, -41.017014)
 shape = SubResource("BoxShape3D_ja3rv")
 
-[node name="box_116" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=202584674]
+[node name="box_116" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2007302803]
 transform = Transform3D(0.061591323, 0.032748688, 0.99756396, -0.46947157, 0.88294756, 0, -0.88079673, -0.46832794, 0.069756486, 3.8104475, 2.363531, -54.491936)
 shape = SubResource("BoxShape3D_36ys7")
 
-[node name="box_117" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1684541384]
+[node name="box_117" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1235367205]
 transform = Transform3D(0.309017, 0, -0.95105654, 0, 1, 0, 0.95105654, 0, 0.309017, -39.944374, -0.1, 12.978714)
 shape = SubResource("BoxShape3D_qtvny")
 
-[node name="box_118" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1181169291]
+[node name="box_118" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1646755557]
 transform = Transform3D(0.309017, 0, -0.95105654, 0, 1, 0, 0.95105654, 0, 0.309017, -39.944374, 2.3, 12.978714)
 shape = SubResource("BoxShape3D_n4vop")
 
-[node name="box_119" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=914856839]
+[node name="box_119" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1089555243]
 transform = Transform3D(0.30901697, 0, -0.95105654, 0, 1, 0, 0.9510564, 0, 0.309017, -48.21223, 5.625, 10.2500725)
 shape = SubResource("BoxShape3D_26mug")
 
-[node name="box_120" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1075614061]
+[node name="box_120" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1524788955]
 transform = Transform3D(0.30901697, 0, -0.95105654, 0, 1, 0, 0.9510564, 0, 0.309017, -45.029354, 5.625, 20.045954)
 shape = SubResource("BoxShape3D_0h3gr")
 
-[node name="box_121" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=775193694]
+[node name="box_121" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1579086425]
 transform = Transform3D(0.30901697, 0, -0.95105654, 0, 1, 0, 0.9510565, 0, 0.309017, -31.985535, 5.625, 14.7563)
 shape = SubResource("BoxShape3D_uqu4r")
 
-[node name="box_122" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=906435567]
+[node name="box_122" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1996963105]
 transform = Transform3D(0.30901697, 0, -0.95105654, 0, 1, 0, 0.9510565, 0, 0.309017, -34.550377, 5.625, 6.86253)
 shape = SubResource("BoxShape3D_m347f")
 
-[node name="box_123" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=509449356]
+[node name="box_123" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1821409639]
 transform = Transform3D(0.309017, 0, -0.9510565, 0, 1, 0, 0.95105654, 0, 0.30901697, -41.72196, 5.625, 20.937551)
 shape = SubResource("BoxShape3D_28tvq")
 
-[node name="box_124" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=988423067]
+[node name="box_124" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1643597438]
 transform = Transform3D(0.309017, 0, -0.9510565, 0, 1, 0, 0.95105654, 0, 0.30901697, -33.82819, 5.625, 18.37271)
 shape = SubResource("BoxShape3D_3whkw")
 
-[node name="box_125" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1762106708]
+[node name="box_125" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1373362746]
 transform = Transform3D(0.309017, 0, -0.9510564, 0, 1, 0, 0.95105654, 0, 0.30901697, -37.215733, 5.625, 4.7108593)
 shape = SubResource("BoxShape3D_75ke5")
 
-[node name="box_126" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1714636651]
+[node name="box_126" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=2023043551]
 transform = Transform3D(0.309017, 0, -0.9510564, 0, 1, 0, 0.95105654, 0, 0.30901697, -47.011616, 5.625, 7.893735)
 shape = SubResource("BoxShape3D_b8j48")
 
-[node name="box_127" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1898421407]
+[node name="box_127" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1448404422]
 transform = Transform3D(-0.27284583, -0.1450747, 0.9510565, -0.46947154, 0.88294756, 0, -0.83973306, -0.44649395, -0.30901703, -43.845715, 2.363531, 0.97162324)
 shape = SubResource("BoxShape3D_7yre6")
 
-[node name="box_128" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=710798906]
+[node name="box_128" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=979271237]
 transform = Transform3D(-0.8397331, -0.44649392, -0.30901688, -0.46947148, 0.8829476, 0, 0.27284572, 0.14507462, -0.9510565, -51.95146, 2.363531, 16.880053)
 shape = SubResource("BoxShape3D_2b3dw")
 
-[node name="box_129" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1961216904]
+[node name="box_129" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=621627204]
 transform = Transform3D(0.08148374, 0, 0.9966747, 0, 1, 0, -0.9966747, 0, 0.08148373, 50.253307, 4.3121653, 1.9225957)
 shape = SubResource("BoxShape3D_4t8u6")
 
-[node name="box_130" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=817965954]
+[node name="box_130" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=204259955]
 transform = Transform3D(0.83634067, 0.5421206, -0.081483744, -0.5439293, 0.8391311, 0, 0.06837554, 0.0443214, 0.9966747, 55.18277, 2.1009407, 2.3256068)
 shape = SubResource("BoxShape3D_yfdq2")
 
-[node name="box_131" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1774679413]
+[node name="box_131" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1326967451]
 transform = Transform3D(-0.9105077, -0.405384, 0.08148372, -0.40673652, 0.91354555, 0, -0.07443909, -0.033142406, -0.9966747, 47.852264, 4.049456, 1.7262971)
 shape = SubResource("BoxShape3D_y4m5a")
 
-[node name="box_132" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=711456412]
+[node name="box_132" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1784472940]
 transform = Transform3D(-0.90388745, 0, -0.42777035, 0, 1, 0, 0.4277704, 0, -0.9038874, -23.461637, 4.3121653, -44.481937)
 shape = SubResource("BoxShape3D_0p72y")
 
-[node name="box_133" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1969438956]
+[node name="box_133" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1646990697]
 transform = Transform3D(-0.35895553, -0.23267697, 0.90388733, -0.5439294, 0.839131, 0, -0.75847995, -0.49165088, -0.42777053, -25.57735, 2.1009407, -48.95248)
 shape = SubResource("BoxShape3D_4obwh")
 
-[node name="box_134" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=38429409]
+[node name="box_134" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1328806317]
 transform = Transform3D(0.3907875, 0.17398985, -0.9038875, -0.40673673, 0.9135454, 0, 0.8257423, 0.36764425, 0.42777023, -22.431118, 4.049456, -42.304424)
 shape = SubResource("BoxShape3D_4783c")
 
-[node name="box_135" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=83548151]
+[node name="box_135" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=529626882]
 transform = Transform3D(0.8224037, 0, -0.5689043, 0, 1, 0, 0.56890434, 0, 0.82240367, -26.79167, 4.3121653, 42.55934)
 shape = SubResource("BoxShape3D_tqo2m")
 
-[node name="box_136" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1502625407]
+[node name="box_136" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1414740520]
 transform = Transform3D(-0.4773853, -0.30944377, -0.8224037, -0.5439294, 0.839131, 0, 0.6901045, 0.4473295, -0.56890434, -29.60542, 2.1009407, 46.626877)
 shape = SubResource("BoxShape3D_c2mwa")
 
-[node name="box_137" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1681352435]
+[node name="box_137" type="CollisionShape3D" parent="Arena/ArenaBody" unique_id=1789973709]
 transform = Transform3D(0.51971996, 0.2313943, 0.82240367, -0.40673673, 0.9135454, 0, -0.75130314, -0.33450177, 0.56890434, -25.421148, 4.049456, 40.57813)
 shape = SubResource("BoxShape3D_cbgsy")
 
-[node name="Compound_SCAV" type="Node3D" parent="Arena" unique_id=360505066 instance=ExtResource("8_qv8ew")]
+[node name="Compound_SCAV" type="Node3D" parent="Arena" unique_id=1004065711 instance=ExtResource("8_qv8ew")]
 transform = Transform3D(6.123032e-17, 0, 1, 0, 1, 0, -1, 0, 6.123032e-17, 48, 0, 2.9390552e-15)
 metadata/kit_id = "compound"
 metadata/kit_blurb = "Walled yard, 24 x 24 m, one gate on -Z, single-storey shack inside."
 metadata/kit_size = Vector3(24.395, 6.83714, 24.34)
 metadata/kit_origin_offset = Vector3(-12.225, -1.9, -12.17)
 
-[node name="Compound_FOUNDRY" type="Node3D" parent="Arena" unique_id=705622501 instance=ExtResource("8_qv8ew")]
+[node name="Compound_FOUNDRY" type="Node3D" parent="Arena" unique_id=360618514 instance=ExtResource("8_qv8ew")]
 transform = Transform3D(-0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, -0.8660254, -24, 0, -41.569218)
 metadata/kit_id = "compound"
 metadata/kit_blurb = "Walled yard, 24 x 24 m, one gate on -Z, single-storey shack inside."
 metadata/kit_size = Vector3(24.395, 6.83714, 24.34)
 metadata/kit_origin_offset = Vector3(-12.225, -1.9, -12.17)
 
-[node name="Compound_CHOIR" type="Node3D" parent="Arena" unique_id=1286005693 instance=ExtResource("8_qv8ew")]
+[node name="Compound_CHOIR" type="Node3D" parent="Arena" unique_id=788600053 instance=ExtResource("8_qv8ew")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -24, 0, 41.569218)
 metadata/kit_id = "compound"
 metadata/kit_blurb = "Walled yard, 24 x 24 m, one gate on -Z, single-storey shack inside."
 metadata/kit_size = Vector3(24.395, 6.83714, 24.34)
 metadata/kit_origin_offset = Vector3(-12.225, -1.9, -12.17)
 
-[node name="containers_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=433210995]
+[node name="containers_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=822523042]
 multimesh = SubResource("MultiMesh_ilpiq")
 
-[node name="sandbags_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=1671221984]
+[node name="sandbags_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=1289617374]
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_d476f")
 
-[node name="wreck_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=630891638]
+[node name="wreck_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=520314920]
 multimesh = SubResource("MultiMesh_php18")
 
-[node name="big_crate_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=761486747]
+[node name="big_crate_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=1024480413]
 multimesh = SubResource("MultiMesh_opx0r")
 
-[node name="rock_cluster_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=769785070]
+[node name="rock_cluster_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=480975008]
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_tlc31")
 
-[node name="barrel_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=1883259876]
+[node name="barrel_mm" type="MultiMeshInstance3D" parent="Arena" unique_id=1451641029]
 cast_shadow = 0
 multimesh = SubResource("MultiMesh_2j12h")
 
-[node name="containers_body" type="StaticBody3D" parent="Arena" unique_id=1611619310]
+[node name="containers_body" type="StaticBody3D" parent="Arena" unique_id=583093407]
 collision_layer = 2
 collision_mask = 0
 
-[node name="containers_00" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1917343053]
+[node name="containers_00" type="CollisionShape3D" parent="Arena/containers_body" unique_id=879324449]
 transform = Transform3D(-0.42125893, 0, 0.9069404, 0, 1, 0, -0.9069404, 0, -0.42125893, 2.506993, 0, -69.135376)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_01" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1593769730]
+[node name="containers_01" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1974004394]
 transform = Transform3D(0.90048087, 0, -0.43489563, 0, 1, 0, 0.43489563, 0, 0.90048087, 57.980522, 0, -48.559303)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_02" type="CollisionShape3D" parent="Arena/containers_body" unique_id=718495627]
+[node name="containers_02" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1699367123]
 transform = Transform3D(-0.5344143, 0, -0.84522265, 0, 1, 0, 0.84522265, 0, -0.5344143, -67.95167, 0, -27.105667)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_03" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1587958761]
+[node name="containers_03" type="CollisionShape3D" parent="Arena/containers_body" unique_id=2143301355]
 transform = Transform3D(-0.4380619, 0, 0.8989448, 0, 1, 0, -0.8989448, 0, -0.4380619, -57.3476, 0, -49.265934)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_04" type="CollisionShape3D" parent="Arena/containers_body" unique_id=191671881]
+[node name="containers_04" type="CollisionShape3D" parent="Arena/containers_body" unique_id=2015290175]
 transform = Transform3D(-0.49565324, 0, 0.8685205, 0, 1, 0, -0.8685205, 0, -0.49565324, 27.639017, 0, -52.977356)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_05" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1365661185]
+[node name="containers_05" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1132144877]
 transform = Transform3D(0.99747676, 0, -0.07099356, 0, 1, 0, 0.07099356, 0, 0.99747676, -13.899342, 0, 54.16376)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_06" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1135433390]
+[node name="containers_06" type="CollisionShape3D" parent="Arena/containers_body" unique_id=43339277]
 transform = Transform3D(0.791813, 0, 0.61076355, 0, 1, 0, -0.61076355, 0, 0.791813, -4.539831, 0, -19.872276)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_07" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1295959924]
+[node name="containers_07" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1719147763]
 transform = Transform3D(-0.63917303, 0, 0.769063, 0, 1, 0, -0.769063, 0, -0.63917303, -29.204563, 0, 57.94182)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_08" type="CollisionShape3D" parent="Arena/containers_body" unique_id=204894583]
+[node name="containers_08" type="CollisionShape3D" parent="Arena/containers_body" unique_id=568692750]
 transform = Transform3D(-0.3234715, 0, 0.9462379, 0, 1, 0, -0.9462379, 0, -0.3234715, -44.368736, 0, -27.235495)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_09" type="CollisionShape3D" parent="Arena/containers_body" unique_id=1779841357]
+[node name="containers_09" type="CollisionShape3D" parent="Arena/containers_body" unique_id=11832869]
 transform = Transform3D(-0.49042612, 0, 0.8714828, 0, 1, 0, -0.8714828, 0, -0.49042612, 35.4512, 0, -50.525475)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_10" type="CollisionShape3D" parent="Arena/containers_body" unique_id=871256396]
+[node name="containers_10" type="CollisionShape3D" parent="Arena/containers_body" unique_id=971444118]
 transform = Transform3D(0.97134364, 0, 0.23767939, 0, 1, 0, -0.23767939, 0, 0.97134364, 13.25829, 0, 54.514538)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="containers_11" type="CollisionShape3D" parent="Arena/containers_body" unique_id=413787818]
+[node name="containers_11" type="CollisionShape3D" parent="Arena/containers_body" unique_id=792907099]
 transform = Transform3D(0.15433462, 0, -0.98801863, 0, 1, 0, 0.98801863, 0, 0.15433462, -37.6368, 0, -12.59296)
 shape = SubResource("ConcavePolygonShape3D_vebda")
 
-[node name="sandbags_body" type="StaticBody3D" parent="Arena" unique_id=1152830490]
+[node name="sandbags_body" type="StaticBody3D" parent="Arena" unique_id=279812401]
 collision_layer = 2
 collision_mask = 0
 
-[node name="sandbags_00" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=867879552]
+[node name="sandbags_00" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1785941392]
 transform = Transform3D(-0.86927533, 0, 0.49432823, 0, 1, 0, -0.49432823, 0, -0.86927533, -22.610586, 0, -21.010818)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_01" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1155452783]
+[node name="sandbags_01" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=553559787]
 transform = Transform3D(-0.6584528, 0, -0.752622, 0, 1, 0, 0.752622, 0, -0.6584528, -17.426403, 0, -66.09028)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_02" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=973755522]
+[node name="sandbags_02" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=749342009]
 transform = Transform3D(-0.99938583, 0, -0.035041872, 0, 1, 0, 0.035041872, 0, -0.99938583, 55.71619, 0, 44.5893)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_03" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=446471046]
+[node name="sandbags_03" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1388716259]
 transform = Transform3D(0.21977921, 0, -0.97554964, 0, 1, 0, 0.97554964, 0, 0.21977921, 39.689354, 0, -20.063116)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_04" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=132258795]
+[node name="sandbags_04" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=646835957]
 transform = Transform3D(-0.2844522, 0, -0.9586902, 0, 1, 0, 0.9586902, 0, -0.2844522, 14.325666, 0, -51.75439)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_05" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1133881437]
+[node name="sandbags_05" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1185099591]
 transform = Transform3D(0.11822447, 0, 0.9929869, 0, 1, 0, -0.9929869, 0, 0.11822447, -40.471767, 0, -30.195024)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_06" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1540749950]
+[node name="sandbags_06" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1309555380]
 transform = Transform3D(0.40550962, 0, -0.91409075, 0, 1, 0, 0.91409075, 0, 0.40550962, -61.180363, 0, 22.600636)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_07" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1036794818]
+[node name="sandbags_07" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=974564081]
 transform = Transform3D(-0.50097454, 0, 0.86546206, 0, 1, 0, -0.86546206, 0, -0.50097454, -64.10225, 0, -33.40397)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_08" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1729307221]
+[node name="sandbags_08" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=521986529]
 transform = Transform3D(0.7494765, 0, 0.662031, 0, 1, 0, -0.662031, 0, 0.7494765, -11.751003, 0, -18.335016)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_09" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=593643672]
+[node name="sandbags_09" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=107113648]
 transform = Transform3D(0.76526433, 0, -0.64371616, 0, 1, 0, 0.64371616, 0, 0.76526433, 17.261915, 0, -67.85726)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_10" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=137823220]
+[node name="sandbags_10" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1075778665]
 transform = Transform3D(-0.25394884, 0, 0.9672176, 0, 1, 0, -0.9672176, 0, -0.25394884, -15.077425, 0, 24.503403)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_11" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1340835787]
+[node name="sandbags_11" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=694523444]
 transform = Transform3D(0.7194443, 0, -0.69455016, 0, 1, 0, 0.69455016, 0, 0.7194443, 6.0720034, 0, 59.388)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_12" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=207113781]
+[node name="sandbags_12" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=917455093]
 transform = Transform3D(-0.22557698, 0, -0.97422534, 0, 1, 0, 0.97422534, 0, -0.22557698, 14.029437, 0, -59.172703)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_13" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1923973661]
+[node name="sandbags_13" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=609592511]
 transform = Transform3D(0.5747995, 0, 0.8182943, 0, 1, 0, -0.8182943, 0, 0.5747995, -46.683517, 0, 25.402954)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_14" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1479725628]
+[node name="sandbags_14" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1421016474]
 transform = Transform3D(-0.993589, 0, 0.11305301, 0, 1, 0, -0.11305301, 0, -0.993589, 29.800474, 0, 13.318473)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_15" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=360050883]
+[node name="sandbags_15" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1339063094]
 transform = Transform3D(0.99414426, 0, 0.108061045, 0, 1, 0, -0.108061045, 0, 0.99414426, 7.7417946, 0, -70.55699)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_16" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=200199463]
+[node name="sandbags_16" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=746341038]
 transform = Transform3D(-0.4932384, 0, -0.8698942, 0, 1, 0, 0.8698942, 0, -0.4932384, -6.3674355, 0, 17.327057)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_17" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=660367518]
+[node name="sandbags_17" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1695544930]
 transform = Transform3D(-0.6280488, 0, 0.778174, 0, 1, 0, -0.778174, 0, -0.6280488, -57.63501, 0, -1.9377282)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_18" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=894327243]
+[node name="sandbags_18" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=2063955292]
 transform = Transform3D(0.9475176, 0, 0.31970367, 0, 1, 0, -0.31970367, 0, 0.9475176, 50.02902, 0, 22.571926)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="sandbags_19" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1206463519]
+[node name="sandbags_19" type="CollisionShape3D" parent="Arena/sandbags_body" unique_id=1636658637]
 transform = Transform3D(-0.13430844, 0, -0.99093956, 0, 1, 0, 0.99093956, 0, -0.13430844, -52.66129, 0, -21.015957)
 shape = SubResource("ConcavePolygonShape3D_ph465")
 
-[node name="wreck_body" type="StaticBody3D" parent="Arena" unique_id=2045053854]
+[node name="wreck_body" type="StaticBody3D" parent="Arena" unique_id=68863786]
 collision_layer = 2
 collision_mask = 0
 
-[node name="wreck_00" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=101509278]
+[node name="wreck_00" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=2123983613]
 transform = Transform3D(0.95187145, 0, 0.3064975, 0, 1, 0, -0.3064975, 0, 0.95187145, 48.47733, 0, -34.42743)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_01" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=955214200]
+[node name="wreck_01" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=475005697]
 transform = Transform3D(-0.41712216, 0, 0.90885043, 0, 1, 0, -0.90885043, 0, -0.41712216, 8.42034, 0, 44.833195)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_02" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=1676938153]
+[node name="wreck_02" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=565909926]
 transform = Transform3D(0.12576568, 0, -0.99205995, 0, 1, 0, 0.99205995, 0, 0.12576568, 42.041985, 0, -25.317286)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_03" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=1727699167]
+[node name="wreck_03" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=2028591593]
 transform = Transform3D(-0.44560647, 0, -0.895229, 0, 1, 0, 0.895229, 0, -0.44560647, 43.102566, 0, 55.416115)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_04" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=35109221]
+[node name="wreck_04" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=535526737]
 transform = Transform3D(0.24367416, 0, -0.96985716, 0, 1, 0, 0.96985716, 0, 0.24367416, -66.55466, 0, 6.830362)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_05" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=1278672037]
+[node name="wreck_05" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=568217731]
 transform = Transform3D(-0.85267174, 0, -0.522447, 0, 1, 0, 0.522447, 0, -0.85267174, -71.53931, 0, -6.6080055)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_06" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=164904555]
+[node name="wreck_06" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=302970750]
 transform = Transform3D(0.8964261, 0, -0.44319326, 0, 1, 0, 0.44319326, 0, 0.8964261, -16.387226, 0, 66.086105)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_07" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=158822465]
+[node name="wreck_07" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=1923215634]
 transform = Transform3D(-0.9976251, 0, -0.06887733, 0, 1, 0, 0.06887733, 0, -0.9976251, 27.049355, 0, 50.08888)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_08" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=1919565703]
+[node name="wreck_08" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=36663433]
 transform = Transform3D(-0.99224806, 0, -0.1242729, 0, 1, 0, 0.1242729, 0, -0.99224806, 33.552914, 0, 15.245703)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="wreck_09" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=1033311910]
+[node name="wreck_09" type="CollisionShape3D" parent="Arena/wreck_body" unique_id=225418285]
 transform = Transform3D(0.70529187, 0, 0.708917, 0, 1, 0, -0.708917, 0, 0.70529187, 47.25007, 0, 51.51967)
 shape = SubResource("ConcavePolygonShape3D_hjncc")
 
-[node name="big_crate_body" type="StaticBody3D" parent="Arena" unique_id=1844492396]
+[node name="big_crate_body" type="StaticBody3D" parent="Arena" unique_id=1322294677]
 collision_layer = 2
 collision_mask = 0
 
-[node name="big_crate_00" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=209427778]
+[node name="big_crate_00" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=973641102]
 transform = Transform3D(0.92781955, 0, 0.37302932, 0, 1, 0, -0.37302932, 0, 0.92781955, -56.674393, 0, 36.008953)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_01" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=110916702]
+[node name="big_crate_01" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1088698699]
 transform = Transform3D(0.9997809, 0, 0.020933157, 0, 1, 0, -0.020933157, 0, 0.9997809, 33.185757, 0, 55.752953)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_02" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=2130225757]
+[node name="big_crate_02" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=2015726333]
 transform = Transform3D(0.99949205, 0, -0.031869084, 0, 1, 0, 0.031869084, 0, 0.99949205, -6.872729, 0, -69.21878)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_03" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1848039301]
+[node name="big_crate_03" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1539323605]
 transform = Transform3D(-0.76267594, 0, 0.64678085, 0, 1, 0, -0.64678085, 0, -0.76267594, -8.648254, 0, 29.922348)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_04" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1747488525]
+[node name="big_crate_04" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1653711623]
 transform = Transform3D(0.96416014, 0, -0.26532102, 0, 1, 0, 0.26532102, 0, 0.96416014, 26.59686, 0, -18.054064)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_05" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=244290996]
+[node name="big_crate_05" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1602441926]
 transform = Transform3D(0.13406086, 0, -0.9909731, 0, 1, 0, 0.9909731, 0, 0.13406086, -2.8381934, 0, 31.970356)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_06" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1364405997]
+[node name="big_crate_06" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=852690425]
 transform = Transform3D(-0.6444551, 0, 0.7646422, 0, 1, 0, -0.7646422, 0, -0.6444551, 47.266533, 0, 33.614773)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_07" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=429629283]
+[node name="big_crate_07" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=2130667488]
 transform = Transform3D(-0.86289656, 0, -0.5053806, 0, 1, 0, 0.5053806, 0, -0.86289656, -48.63771, 0, 44.086494)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_08" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=434049705]
+[node name="big_crate_08" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1565304101]
 transform = Transform3D(-0.56862086, 0, -0.8225997, 0, 1, 0, 0.8225997, 0, -0.56862086, -20.911316, 0, 58.88074)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_09" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1336002914]
+[node name="big_crate_09" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=755233462]
 transform = Transform3D(-0.9679036, 0, 0.2513218, 0, 1, 0, -0.2513218, 0, -0.9679036, 61.77194, 0, 19.79231)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_10" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1708110166]
+[node name="big_crate_10" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=893089091]
 transform = Transform3D(0.4206028, 0, 0.90724486, 0, 1, 0, -0.90724486, 0, 0.4206028, -54.44877, 0, 26.828772)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_11" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=286726952]
+[node name="big_crate_11" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=416931344]
 transform = Transform3D(-0.56674874, 0, 0.8238907, 0, 1, 0, -0.8238907, 0, -0.56674874, -33.52199, 0, -14.559616)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_12" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=927541275]
+[node name="big_crate_12" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=304749265]
 transform = Transform3D(0.84672517, 0, -0.5320305, 0, 1, 0, 0.5320305, 0, 0.84672517, -29.372679, 0, -16.007757)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="big_crate_13" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1830868623]
+[node name="big_crate_13" type="CollisionShape3D" parent="Arena/big_crate_body" unique_id=1631436404]
 transform = Transform3D(0.45867065, 0, -0.88860637, 0, 1, 0, 0.88860637, 0, 0.45867065, 2.9661715, 0, 44.733723)
 shape = SubResource("ConcavePolygonShape3D_8xpbp")
 
-[node name="rock_cluster_body" type="StaticBody3D" parent="Arena" unique_id=55398161]
+[node name="rock_cluster_body" type="StaticBody3D" parent="Arena" unique_id=1074824350]
 collision_layer = 2
 collision_mask = 0
 
-[node name="rock_cluster_00" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1433937728]
+[node name="rock_cluster_00" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1457379013]
 transform = Transform3D(0.8676189, 0, 0.4972297, 0, 1, 0, -0.4972297, 0, 0.8676189, -50.033806, 0, 30.127455)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_01" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1327137284]
+[node name="rock_cluster_01" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1031006375]
 transform = Transform3D(0.1420162, 0, 0.98986435, 0, 1, 0, -0.98986435, 0, 0.1420162, 67.69322, 0, 23.4328)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_02" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1307779017]
+[node name="rock_cluster_02" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=231801465]
 transform = Transform3D(0.23506518, 0, -0.9719796, 0, 1, 0, 0.9719796, 0, 0.23506518, 17.799837, 0, -36.54966)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_03" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1906964305]
+[node name="rock_cluster_03" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=2066792152]
 transform = Transform3D(0.9950645, 0, -0.099230096, 0, 1, 0, 0.099230096, 0, 0.9950645, 70.18534, 0, -18.240347)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_04" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=241577026]
+[node name="rock_cluster_04" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=2100592664]
 transform = Transform3D(-0.65337, 0, -0.7570387, 0, 1, 0, 0.7570387, 0, -0.65337, 54.26, 0, -43.028618)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_05" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1927874042]
+[node name="rock_cluster_05" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=649550199]
 transform = Transform3D(-0.990897, 0, -0.13462205, 0, 1, 0, 0.13462205, 0, -0.990897, -8.398772, 0, -23.296041)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_06" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1619263187]
+[node name="rock_cluster_06" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1148223497]
 transform = Transform3D(0.43452483, 0, 0.90065986, 0, 1, 0, -0.90065986, 0, 0.43452483, -34.246567, 0, 63.177326)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_07" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=336722925]
+[node name="rock_cluster_07" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=489012834]
 transform = Transform3D(0.989568, 0, -0.14406663, 0, 1, 0, 0.14406663, 0, 0.989568, -79.78978, 0, 18.218456)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_08" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1489595323]
+[node name="rock_cluster_08" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1955575071]
 transform = Transform3D(-0.8018961, 0, -0.5974635, 0, 1, 0, 0.5974635, 0, -0.8018961, 41.8854, 0, -64.20367)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_09" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=614270455]
+[node name="rock_cluster_09" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1518953898]
 transform = Transform3D(-0.49490264, 0, 0.86894846, 0, 1, 0, -0.86894846, 0, -0.49490264, -67.039055, 0, -22.29093)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_10" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1224042266]
+[node name="rock_cluster_10" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1513679585]
 transform = Transform3D(0.30192724, 0, -0.953331, 0, 1, 0, 0.953331, 0, 0.30192724, -63.738346, 0, 51.440178)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_11" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=2060238809]
+[node name="rock_cluster_11" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=63226210]
 transform = Transform3D(-0.81249213, 0, -0.58297217, 0, 1, 0, 0.58297217, 0, -0.81249213, 52.23127, 0, -58.242985)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_12" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1275415742]
+[node name="rock_cluster_12" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1919227645]
 transform = Transform3D(0.6405862, 0, 0.7678863, 0, 1, 0, -0.7678863, 0, 0.6405862, 23.250729, 0, -56.72403)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_13" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1051241277]
+[node name="rock_cluster_13" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1318915914]
 transform = Transform3D(-0.9047519, 0, 0.425939, 0, 1, 0, -0.425939, 0, -0.9047519, 13.761052, 0, -63.977844)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_14" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1583089779]
+[node name="rock_cluster_14" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=331539499]
 transform = Transform3D(0.27509877, 0, 0.96141595, 0, 1, 0, -0.96141595, 0, 0.27509877, -41.2264, 0, -67.7754)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="rock_cluster_15" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=1549741440]
+[node name="rock_cluster_15" type="CollisionShape3D" parent="Arena/rock_cluster_body" unique_id=916284470]
 transform = Transform3D(0.8847085, 0, 0.46614462, 0, 1, 0, -0.46614462, 0, 0.8847085, -7.137105, 0, -78.6864)
 shape = SubResource("ConcavePolygonShape3D_lud4m")
 
-[node name="barrel_body" type="StaticBody3D" parent="Arena" unique_id=207418829]
+[node name="barrel_body" type="StaticBody3D" parent="Arena" unique_id=1714787568]
 collision_layer = 2
 collision_mask = 0
 
-[node name="barrel_00" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1648939799]
+[node name="barrel_00" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=754087836]
 transform = Transform3D(-0.37981862, 0, 0.925061, 0, 1, 0, -0.925061, 0, -0.37981862, -53.342358, 0, -8.955556)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_01" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=30311780]
+[node name="barrel_01" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=454193645]
 transform = Transform3D(-0.10779755, 0, -0.9941729, 0, 1, 0, 0.9941729, 0, -0.10779755, -53.84251, 0, 11.611309)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_02" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1765153807]
+[node name="barrel_02" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1966936443]
 transform = Transform3D(0.9969365, 0, 0.07821506, 0, 1, 0, -0.07821506, 0, 0.9969365, 34.234783, 0, -43.915455)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_03" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1891356729]
+[node name="barrel_03" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1901117686]
 transform = Transform3D(-0.95936906, 0, -0.2821541, 0, 1, 0, 0.2821541, 0, -0.95936906, -2.504174, 0, -69.14248)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_04" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1483655023]
+[node name="barrel_04" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=409014583]
 transform = Transform3D(0.5607834, 0, -0.8279625, 0, 1, 0, 0.8279625, 0, 0.5607834, -10.501368, 0, 15.645971)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_05" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=833297597]
+[node name="barrel_05" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=939958378]
 transform = Transform3D(-0.7649878, 0, 0.64404476, 0, 1, 0, -0.64404476, 0, -0.7649878, -5.098111, 0, 49.826088)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_06" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1431093849]
+[node name="barrel_06" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=2124314230]
 transform = Transform3D(0.998736, 0, 0.05026342, 0, 1, 0, -0.05026342, 0, 0.998736, -38.22689, 0, -21.568611)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_07" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=680642410]
+[node name="barrel_07" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1547674072]
 transform = Transform3D(0.98323905, 0, -0.18232107, 0, 1, 0, 0.18232107, 0, 0.98323905, -25.405844, 0, -65.15805)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_08" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=854663337]
+[node name="barrel_08" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=823842422]
 transform = Transform3D(-0.5124413, 0, 0.85872227, 0, 1, 0, -0.85872227, 0, -0.5124413, -16.997063, 0, -17.836351)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_09" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1818897160]
+[node name="barrel_09" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=581575204]
 transform = Transform3D(0.826245, 0, -0.5633109, 0, 1, 0, 0.5633109, 0, 0.826245, -51.707684, 0, -29.273804)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_10" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=998981621]
+[node name="barrel_10" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=799282547]
 transform = Transform3D(0.03215529, 0, 0.99948287, 0, 1, 0, -0.99948287, 0, 0.03215529, -36.985615, 0, -50.562355)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_11" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1811207046]
+[node name="barrel_11" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1118086477]
 transform = Transform3D(-0.54893744, 0, 0.8358634, 0, 1, 0, -0.8358634, 0, -0.54893744, 21.415073, 0, -2.3729293)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_12" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=701148322]
+[node name="barrel_12" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1041897720]
 transform = Transform3D(0.96622884, 0, -0.2576856, 0, 1, 0, 0.2576856, 0, 0.96622884, 20.22125, 0, 59.653915)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_13" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=524556688]
+[node name="barrel_13" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1294323799]
 transform = Transform3D(0.9884522, 0, -0.151533, 0, 1, 0, 0.151533, 0, 0.9884522, -14.065254, 0, -13.201785)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_14" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=2127659911]
+[node name="barrel_14" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1775805529]
 transform = Transform3D(0.99813336, 0, 0.06107188, 0, 1, 0, -0.06107188, 0, 0.99813336, -56.01734, 0, -24.414877)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_15" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1972137566]
+[node name="barrel_15" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1036596497]
 transform = Transform3D(0.6939285, 0, 0.7200439, 0, 1, 0, -0.7200439, 0, 0.6939285, 11.056923, 0, -56.17269)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_16" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=155570637]
+[node name="barrel_16" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=2020226835]
 transform = Transform3D(-0.18072252, 0, 0.9835341, 0, 1, 0, -0.9835341, 0, -0.18072252, 49.133495, 0, -30.238585)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_17" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1400533526]
+[node name="barrel_17" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1641460819]
 transform = Transform3D(0.15790096, 0, -0.98745495, 0, 1, 0, 0.98745495, 0, 0.15790096, -58.011616, 0, 4.830866)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_18" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=61429223]
+[node name="barrel_18" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1817271105]
 transform = Transform3D(0.65164715, 0, 0.7585222, 0, 1, 0, -0.7585222, 0, 0.65164715, 63.383533, 0, 11.14688)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="barrel_19" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1503738899]
+[node name="barrel_19" type="CollisionShape3D" parent="Arena/barrel_body" unique_id=1561876487]
 transform = Transform3D(-0.9872896, 0, -0.1589314, 0, 1, 0, 0.1589314, 0, -0.9872896, 30.85894, 0, -7.7956133)
 shape = SubResource("ConcavePolygonShape3D_d5u60")
 
-[node name="Nav" type="NavigationRegion3D" parent="." unique_id=1224901775]
+[node name="Nav" type="NavigationRegion3D" parent="." unique_id=216013178]
 navigation_mesh = ExtResource("10_2fnne")
 
-[node name="Zones" type="Node3D" parent="." unique_id=314477755]
+[node name="Zones" type="Node3D" parent="." unique_id=852889342]
 
-[node name="Zone_scav_yard" type="Node3D" parent="Zones" unique_id=866507344 groups=["firefight_zone"]]
+[node name="Zone_scav_yard" type="Node3D" parent="Zones" unique_id=1366064929 groups=["firefight_zone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 2.9390552e-15)
 script = ExtResource("11_pyjic")
 zone_id = &"scav_yard"
@@ -2016,7 +2016,7 @@ initial_owner = 0
 radius = 24.0
 height = 26.0
 
-[node name="Zone_foundry_gate" type="Node3D" parent="Zones" unique_id=1351320805 groups=["firefight_zone"]]
+[node name="Zone_foundry_gate" type="Node3D" parent="Zones" unique_id=953859143 groups=["firefight_zone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -41.569218)
 script = ExtResource("11_pyjic")
 zone_id = &"foundry_gate"
@@ -2024,7 +2024,7 @@ initial_owner = 1
 radius = 24.0
 height = 26.0
 
-[node name="Zone_choir_house" type="Node3D" parent="Zones" unique_id=1019151122 groups=["firefight_zone"]]
+[node name="Zone_choir_house" type="Node3D" parent="Zones" unique_id=2111220220 groups=["firefight_zone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 41.569218)
 script = ExtResource("11_pyjic")
 zone_id = &"choir_house"
@@ -2032,7 +2032,7 @@ initial_owner = 2
 radius = 24.0
 height = 26.0
 
-[node name="Zone_tank_farm" type="Node3D" parent="Zones" unique_id=1391719939 groups=["firefight_zone"]]
+[node name="Zone_tank_farm" type="Node3D" parent="Zones" unique_id=1541193529 groups=["firefight_zone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 41.569218)
 script = ExtResource("11_pyjic")
 zone_id = &"tank_farm"
@@ -2040,7 +2040,7 @@ radius = 24.0
 height = 26.0
 value = 1.15
 
-[node name="Zone_cut_bank" type="Node3D" parent="Zones" unique_id=1743281440 groups=["firefight_zone"]]
+[node name="Zone_cut_bank" type="Node3D" parent="Zones" unique_id=2104810840 groups=["firefight_zone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -41.569218)
 script = ExtResource("11_pyjic")
 zone_id = &"cut_bank"
@@ -2048,7 +2048,7 @@ radius = 24.0
 height = 26.0
 value = 1.15
 
-[node name="Zone_slag_road" type="Node3D" parent="Zones" unique_id=2013511303 groups=["firefight_zone"]]
+[node name="Zone_slag_road" type="Node3D" parent="Zones" unique_id=682384019 groups=["firefight_zone"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, -8.817166e-15)
 script = ExtResource("11_pyjic")
 zone_id = &"slag_road"
@@ -2056,28 +2056,28 @@ radius = 24.0
 height = 26.0
 value = 1.15
 
-[node name="Zone_the_pan" type="Node3D" parent="Zones" unique_id=1305029862 groups=["firefight_zone"]]
+[node name="Zone_the_pan" type="Node3D" parent="Zones" unique_id=467780595 groups=["firefight_zone"]]
 script = ExtResource("11_pyjic")
 zone_id = &"the_pan"
 radius = 31.200000000000003
 height = 26.0
 value = 1.6
 
-[node name="Fixtures" type="Node3D" parent="." unique_id=1786717141]
+[node name="Fixtures" type="Node3D" parent="." unique_id=469698913]
 
-[node name="Banner_scav_yard" type="Node3D" parent="Fixtures" unique_id=4853960]
+[node name="Banner_scav_yard" type="Node3D" parent="Fixtures" unique_id=371302018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 4.6)
 script = ExtResource("12_ro2nv")
 zone_id = &"scav_yard"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_scav_yard" unique_id=2117073060]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_scav_yard" unique_id=1596581151]
 mesh = SubResource("ArrayMesh_j0nw5")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_scav_yard" unique_id=858907782]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_scav_yard" unique_id=2068657099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_3oyoe")
 
-[node name="Marker_scav_yard" type="Node3D" parent="Fixtures" unique_id=341052062]
+[node name="Marker_scav_yard" type="Node3D" parent="Fixtures" unique_id=1775561015]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 77, 0, 4.7147345e-15)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2087,16 +2087,16 @@ tinted_paths = Array[NodePath]([NodePath("Post"), NodePath("Head/Vane")])
 lift_path = NodePath("Head")
 base_tint = Color(0.7852941, 0.7558824, 0.6911765, 1)
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_scav_yard" unique_id=1117556059]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_scav_yard" unique_id=1928438674]
 mesh = SubResource("ArrayMesh_tmnae")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_scav_yard" unique_id=977648572]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_scav_yard" unique_id=1998876803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_scav_yard/Head" unique_id=1275802175]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_scav_yard/Head" unique_id=1475410752]
 mesh = SubResource("ArrayMesh_yh4id")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_scav_yard/Head" unique_id=802796949]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_scav_yard/Head" unique_id=1312642435]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2107,19 +2107,19 @@ text = "SCAV YARD"
 font_size = 96
 outline_size = 18
 
-[node name="Banner_foundry_gate" type="Node3D" parent="Fixtures" unique_id=476255146]
+[node name="Banner_foundry_gate" type="Node3D" parent="Fixtures" unique_id=2130943988]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -36.96922)
 script = ExtResource("12_ro2nv")
 zone_id = &"foundry_gate"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_foundry_gate" unique_id=939002974]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_foundry_gate" unique_id=2137429637]
 mesh = SubResource("ArrayMesh_dns7n")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_foundry_gate" unique_id=263164321]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_foundry_gate" unique_id=2131383320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_sl0ob")
 
-[node name="Marker_foundry_gate" type="Node3D" parent="Fixtures" unique_id=1536827115]
+[node name="Marker_foundry_gate" type="Node3D" parent="Fixtures" unique_id=1416691987]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -38.5, 0, -66.68395)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2129,16 +2129,16 @@ tinted_paths = Array[NodePath]([NodePath("Post"), NodePath("Head/Vane")])
 lift_path = NodePath("Head")
 base_tint = Color(0.8382353, 0.45294118, 0.34117648, 1)
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_foundry_gate" unique_id=1498003667]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_foundry_gate" unique_id=1304039942]
 mesh = SubResource("ArrayMesh_dr2iy")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_foundry_gate" unique_id=58584119]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_foundry_gate" unique_id=1793476327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_foundry_gate/Head" unique_id=2019433556]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_foundry_gate/Head" unique_id=1860004439]
 mesh = SubResource("ArrayMesh_ttp7i")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_foundry_gate/Head" unique_id=208691915]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_foundry_gate/Head" unique_id=1419954865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2149,19 +2149,19 @@ text = "FOUNDRY GATE"
 font_size = 96
 outline_size = 18
 
-[node name="Banner_choir_house" type="Node3D" parent="Fixtures" unique_id=748288134]
+[node name="Banner_choir_house" type="Node3D" parent="Fixtures" unique_id=1585169847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 46.169216)
 script = ExtResource("12_ro2nv")
 zone_id = &"choir_house"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_choir_house" unique_id=557058224]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_choir_house" unique_id=1089932732]
 mesh = SubResource("ArrayMesh_6pfnc")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_choir_house" unique_id=518696027]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_choir_house" unique_id=1683275931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_qu571")
 
-[node name="Marker_choir_house" type="Node3D" parent="Fixtures" unique_id=1793971383]
+[node name="Marker_choir_house" type="Node3D" parent="Fixtures" unique_id=562237034]
 transform = Transform3D(-0.8660254, 0, 0.50000006, 0, 1, 0, -0.50000006, 0, -0.8660254, -38.5, 0, 66.68395)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2171,16 +2171,16 @@ tinted_paths = Array[NodePath]([NodePath("Post"), NodePath("Head/Vane")])
 lift_path = NodePath("Head")
 base_tint = Color(0.60294116, 0.7588235, 0.8382353, 1)
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_choir_house" unique_id=159741029]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_choir_house" unique_id=806665461]
 mesh = SubResource("ArrayMesh_4lbp2")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_choir_house" unique_id=773814760]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_choir_house" unique_id=2065989133]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_choir_house/Head" unique_id=97880998]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_choir_house/Head" unique_id=1036657492]
 mesh = SubResource("ArrayMesh_qrlj6")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_choir_house/Head" unique_id=535479407]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_choir_house/Head" unique_id=272039937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2191,19 +2191,19 @@ text = "CHOIR HOUSE"
 font_size = 96
 outline_size = 18
 
-[node name="Banner_tank_farm" type="Node3D" parent="Fixtures" unique_id=1196867030]
+[node name="Banner_tank_farm" type="Node3D" parent="Fixtures" unique_id=625244237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 46.169216)
 script = ExtResource("12_ro2nv")
 zone_id = &"tank_farm"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_tank_farm" unique_id=2038677098]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_tank_farm" unique_id=844094703]
 mesh = SubResource("ArrayMesh_h0sw7")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_tank_farm" unique_id=342013523]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_tank_farm" unique_id=161336864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_h8s5i")
 
-[node name="Marker_tank_farm" type="Node3D" parent="Fixtures" unique_id=775687516]
+[node name="Marker_tank_farm" type="Node3D" parent="Fixtures" unique_id=1898719151]
 transform = Transform3D(-0.8660254, 0, -0.50000006, 0, 1, 0, 0.50000006, 0, -0.8660254, 38.5, 0, 66.68395)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2213,16 +2213,16 @@ tinted_paths = Array[NodePath]([NodePath("Post"), NodePath("Head/Vane")])
 lift_path = NodePath("Head")
 base_tint = Color(0.84, 0.82, 0.78, 1)
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_tank_farm" unique_id=42246613]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_tank_farm" unique_id=1820045737]
 mesh = SubResource("ArrayMesh_iwt8a")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_tank_farm" unique_id=2012932285]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_tank_farm" unique_id=1947948624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_tank_farm/Head" unique_id=1203027078]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_tank_farm/Head" unique_id=1380127669]
 mesh = SubResource("ArrayMesh_1tv3l")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_tank_farm/Head" unique_id=1710263405]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_tank_farm/Head" unique_id=640518110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2233,19 +2233,19 @@ text = "TANK FARM"
 font_size = 96
 outline_size = 18
 
-[node name="Banner_cut_bank" type="Node3D" parent="Fixtures" unique_id=123328774]
+[node name="Banner_cut_bank" type="Node3D" parent="Fixtures" unique_id=496033217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36.96922)
 script = ExtResource("12_ro2nv")
 zone_id = &"cut_bank"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_cut_bank" unique_id=1167597661]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_cut_bank" unique_id=1179206197]
 mesh = SubResource("ArrayMesh_g66h0")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_cut_bank" unique_id=1485384382]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_cut_bank" unique_id=470522865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_ihuj5")
 
-[node name="Marker_cut_bank" type="Node3D" parent="Fixtures" unique_id=614683828]
+[node name="Marker_cut_bank" type="Node3D" parent="Fixtures" unique_id=1076851718]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 38.5, 0, -66.68395)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2255,16 +2255,16 @@ tinted_paths = Array[NodePath]([NodePath("Post"), NodePath("Head/Vane")])
 lift_path = NodePath("Head")
 base_tint = Color(0.84, 0.82, 0.78, 1)
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_cut_bank" unique_id=1350046287]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_cut_bank" unique_id=479765256]
 mesh = SubResource("ArrayMesh_axd6d")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_cut_bank" unique_id=1528093120]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_cut_bank" unique_id=1747389425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_cut_bank/Head" unique_id=1030230008]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_cut_bank/Head" unique_id=1506354731]
 mesh = SubResource("ArrayMesh_bdujc")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_cut_bank/Head" unique_id=311148577]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_cut_bank/Head" unique_id=635049983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2275,19 +2275,19 @@ text = "CUT BANK"
 font_size = 96
 outline_size = 18
 
-[node name="Banner_slag_road" type="Node3D" parent="Fixtures" unique_id=2050033997]
+[node name="Banner_slag_road" type="Node3D" parent="Fixtures" unique_id=604862759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 4.6)
 script = ExtResource("12_ro2nv")
 zone_id = &"slag_road"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_slag_road" unique_id=306801982]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_slag_road" unique_id=1103470308]
 mesh = SubResource("ArrayMesh_2ph8v")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_slag_road" unique_id=1271214380]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_slag_road" unique_id=1319442156]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_k60w5")
 
-[node name="Marker_slag_road" type="Node3D" parent="Fixtures" unique_id=1150230064]
+[node name="Marker_slag_road" type="Node3D" parent="Fixtures" unique_id=1760126120]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77, 0, -1.4144203e-14)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2297,16 +2297,16 @@ tinted_paths = Array[NodePath]([NodePath("Post"), NodePath("Head/Vane")])
 lift_path = NodePath("Head")
 base_tint = Color(0.84, 0.82, 0.78, 1)
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_slag_road" unique_id=2001132341]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_slag_road" unique_id=1271625842]
 mesh = SubResource("ArrayMesh_hmut2")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_slag_road" unique_id=696611887]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_slag_road" unique_id=1622417760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_slag_road/Head" unique_id=1054049576]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_slag_road/Head" unique_id=1178512958]
 mesh = SubResource("ArrayMesh_7qofo")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_slag_road/Head" unique_id=2143408666]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_slag_road/Head" unique_id=402476371]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2317,19 +2317,19 @@ text = "SLAG ROAD"
 font_size = 96
 outline_size = 18
 
-[node name="Banner_the_pan" type="Node3D" parent="Fixtures" unique_id=1419499018]
+[node name="Banner_the_pan" type="Node3D" parent="Fixtures" unique_id=1772070238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.6)
 script = ExtResource("12_ro2nv")
 zone_id = &"the_pan"
 
-[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_the_pan" unique_id=575000910]
+[node name="Mast" type="MeshInstance3D" parent="Fixtures/Banner_the_pan" unique_id=1111276303]
 mesh = SubResource("ArrayMesh_228rh")
 
-[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_the_pan" unique_id=1125801597]
+[node name="Flag" type="MeshInstance3D" parent="Fixtures/Banner_the_pan" unique_id=354047539]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2, 0)
 mesh = SubResource("ArrayMesh_ylk07")
 
-[node name="Marker_the_pan" type="Node3D" parent="Fixtures" unique_id=1929534582]
+[node name="Marker_the_pan" type="Node3D" parent="Fixtures" unique_id=1339167564]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 29)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 9.5, 5)
@@ -2341,16 +2341,16 @@ lift_path = NodePath("Head")
 base_tint = Color(0.84, 0.82, 0.78, 1)
 reach = 60.0
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_the_pan" unique_id=297711489]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_the_pan" unique_id=1603081929]
 mesh = SubResource("ArrayMesh_4vcoo")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_the_pan" unique_id=2127160301]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_the_pan" unique_id=1967428698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_the_pan/Head" unique_id=437944355]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_the_pan/Head" unique_id=1625606249]
 mesh = SubResource("ArrayMesh_c0kl8")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_the_pan/Head" unique_id=749769985]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_the_pan/Head" unique_id=1693513280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2361,7 +2361,7 @@ text = "THE PAN"
 font_size = 96
 outline_size = 18
 
-[node name="Marker_gantry" type="Node3D" parent="Fixtures" unique_id=628171914]
+[node name="Marker_gantry" type="Node3D" parent="Fixtures" unique_id=1534165090]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.6, 1.22, 74)
 script = ExtResource("14_qsue5")
 eye_offset = Vector3(0, 2.1, 2.8)
@@ -2372,16 +2372,16 @@ lift_path = NodePath("Head")
 base_tint = Color(0.86, 0.84, 0.8, 1)
 reach = 18.0
 
-[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_gantry" unique_id=781000524]
+[node name="Post" type="MeshInstance3D" parent="Fixtures/Marker_gantry" unique_id=1376456813]
 mesh = SubResource("ArrayMesh_8lion")
 
-[node name="Head" type="Node3D" parent="Fixtures/Marker_gantry" unique_id=1222118860]
+[node name="Head" type="Node3D" parent="Fixtures/Marker_gantry" unique_id=1707983016]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98, 0)
 
-[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_gantry/Head" unique_id=1874293801]
+[node name="Vane" type="MeshInstance3D" parent="Fixtures/Marker_gantry/Head" unique_id=1761341840]
 mesh = SubResource("ArrayMesh_8wn30")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Marker_gantry/Head" unique_id=88779281]
+[node name="Plate" type="Label3D" parent="Fixtures/Marker_gantry/Head" unique_id=509645171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42, 0)
 pixel_size = 0.0022
 shaded = true
@@ -2392,7 +2392,7 @@ text = "THE GANTRY"
 font_size = 96
 outline_size = 18
 
-[node name="Dial" type="Node3D" parent="Fixtures" unique_id=1651046898]
+[node name="Dial" type="Node3D" parent="Fixtures" unique_id=1000809517]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.6, 1.22, 74)
 script = ExtResource("15_6ajjq")
 detents = PackedFloat32Array(0.25, 0.5, 1, 2, 4)
@@ -2403,19 +2403,19 @@ lift_height = 0.03
 base_tint = Color(0.8, 0.78, 0.74, 1)
 reach = 14.0
 
-[node name="Plinth" type="MeshInstance3D" parent="Fixtures/Dial" unique_id=1897553132]
+[node name="Plinth" type="MeshInstance3D" parent="Fixtures/Dial" unique_id=1612799411]
 mesh = SubResource("ArrayMesh_dvfeb")
 
-[node name="Head" type="Node3D" parent="Fixtures/Dial" unique_id=1739023791]
+[node name="Head" type="Node3D" parent="Fixtures/Dial" unique_id=1668615031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, -0.42)
 
-[node name="Drum" type="MeshInstance3D" parent="Fixtures/Dial/Head" unique_id=442391600]
+[node name="Drum" type="MeshInstance3D" parent="Fixtures/Dial/Head" unique_id=573431709]
 mesh = SubResource("ArrayMesh_mxsql")
 
-[node name="Needle" type="MeshInstance3D" parent="Fixtures/Dial/Head" unique_id=346131434]
+[node name="Needle" type="MeshInstance3D" parent="Fixtures/Dial/Head" unique_id=1562269845]
 mesh = SubResource("ArrayMesh_g0u2t")
 
-[node name="Plate" type="Label3D" parent="Fixtures/Dial/Head" unique_id=1716630376]
+[node name="Plate" type="Label3D" parent="Fixtures/Dial/Head" unique_id=1239595914]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.42, 0.06)
 pixel_size = 0.0022
 shaded = true
@@ -2426,10 +2426,10 @@ text = "SIM RATE"
 font_size = 96
 outline_size = 18
 
-[node name="Sign" type="Node3D" parent="Fixtures" unique_id=392767554]
+[node name="Sign" type="Node3D" parent="Fixtures" unique_id=1267978701]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.86, 69.1)
 
-[node name="Plate" type="Label3D" parent="Fixtures/Sign" unique_id=1671389499]
+[node name="Plate" type="Label3D" parent="Fixtures/Sign" unique_id=1102319542]
 pixel_size = 0.0022
 shaded = true
 double_sided = false
@@ -2439,7 +2439,7 @@ text = "LOOK AT A POST — PRESS  E"
 font_size = 96
 outline_size = 18
 
-[node name="Director" type="Node3D" parent="." unique_id=1683904481]
+[node name="Director" type="Node3D" parent="." unique_id=616188594]
 script = ExtResource("16_x00xn")
 spawner_paths = Array[NodePath]([NodePath("Spawn_SCAV"), NodePath("Spawn_FOUNDRY"), NodePath("Spawn_CHOIR")])
 cover_set = ExtResource("17_wi38x")
@@ -2450,7 +2450,7 @@ front_inner = 12.0
 front_outer = 36.0
 front_arc_degrees = 100.0
 
-[node name="Scheduler" type="Node" parent="Director" unique_id=1901766533]
+[node name="Scheduler" type="Node" parent="Director" unique_id=867795020]
 script = ExtResource("20_i8k0n")
 near_radius = 30.0
 mid_radius = 90.0
@@ -2463,12 +2463,12 @@ agents_per_frame = 40
 ray_budget_per_frame = 60
 path_budget_per_frame = 10
 
-[node name="Paths" type="Node" parent="Director" unique_id=647478958]
+[node name="Paths" type="Node" parent="Director" unique_id=1323091979]
 script = ExtResource("21_ug03i")
 repath_interval = 2.2
 combat_repath_interval = 0.7
 
-[node name="Spawn_SCAV" type="Node3D" parent="Director" unique_id=1514173417]
+[node name="Spawn_SCAV" type="Node3D" parent="Director" unique_id=555576201]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 2.9390552e-15)
 script = ExtResource("22_opf8l")
 species = Array[StringName]([&"rat", &"picker", &"marksman", &"gasman"])
@@ -2479,7 +2479,7 @@ yaw_jitter = 0.7
 spread_radius = 7.5
 seed_value = 6072094
 
-[node name="Spawn_FOUNDRY" type="Node3D" parent="Director" unique_id=792108417]
+[node name="Spawn_FOUNDRY" type="Node3D" parent="Director" unique_id=317789291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -41.569218)
 script = ExtResource("22_opf8l")
 species = Array[StringName]([&"latchdog", &"sentinel", &"wasp", &"foreman"])
@@ -2491,7 +2491,7 @@ yaw_jitter = 0.7
 spread_radius = 7.5
 seed_value = 6080013
 
-[node name="Spawn_CHOIR" type="Node3D" parent="Director" unique_id=616068833]
+[node name="Spawn_CHOIR" type="Node3D" parent="Director" unique_id=419986392]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 41.569218)
 script = ExtResource("22_opf8l")
 species = Array[StringName]([&"husk", &"skitter", &"stilt", &"gorger"])
@@ -2503,17 +2503,17 @@ yaw_jitter = 0.7
 spread_radius = 7.5
 seed_value = 6087932
 
-[node name="Gunfire" type="Node" parent="." unique_id=840757515]
+[node name="Gunfire" type="Node" parent="." unique_id=1403352417]
 script = ExtResource("24_qq0a5")
 
-[node name="Freecam" type="Camera3D" parent="." unique_id=1630588716 instance=ExtResource("25_wyxmc")]
+[node name="Freecam" type="Camera3D" parent="." unique_id=1269616980 instance=ExtResource("25_wyxmc")]
 top_level = true
 cull_mask = 1048447
 fov = 66.0
 far = 1400.0
 script = ExtResource("26_7t8wm")
 
-[node name="Spectator" type="Node" parent="." unique_id=1928690576]
+[node name="Spectator" type="Node" parent="." unique_id=1119316653]
 script = ExtResource("27_yxo23")
 freecam_path = NodePath("../Freecam")
 start_transform = Transform3D(0.98521173, 0.05760222, -0.16136847, 0, 0.9417962, 0.33618432, 0.17134118, -0.33121273, 0.9278687, -12, 26, 67)

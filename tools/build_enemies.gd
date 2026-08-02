@@ -55,64 +55,14 @@ const EYE_HEIGHT_K: float = 0.92
 
 # ------------------------------------------------------------------ ragdoll
 #
-# Every constant below shapes the physics ragdoll baked into
-# `res://data/enemies/ragdolls/<id>.res`. See `_bake_ragdoll` for why the set of
-# simulated bones is a pruned STRUCTURAL set rather than every bone: a tail, a
-# rotor and a finger add joints and solve cost and change nothing a corpse does.
+# Shape, mass, joint limit and damping for the physics corpse all live in
+# `RagdollBake`, which is the only thing that authors them and is called only from
+# here. This file owns the two paths and nothing else.
 
-## Longest simulated chain a species may bake. A body past this drops its
-## smallest-mass simulated bones first; nothing in the roster comes close.
-const RAGDOLL_MAX_BONES: int = 24
-## Aspect ratio at which a bone's shell is called a limb and gets a capsule
-## rather than a box. Below it the shell is a torso, a head or a pelvis.
-const RAGDOLL_CAPSULE_RATIO: float = 1.55
-## Smallest half-extent, radius or half-height a ragdoll shape may have. Jolt
-## solves sub-centimetre shapes badly and they buy nothing at this scale.
-const RAGDOLL_MIN_EXTENT: float = 0.035
-## A bone lighter than this share of the body is not worth a rigid body of its
-## own; its mass rolls up into its nearest simulated ancestor and it rides along
-## rigidly, which is what a hand or a foot pad does anyway.
-const RAGDOLL_MIN_MASS_SHARE: float = 0.004
-## Mass clamp, as a share of the whole body. A joint between a 40 kg torso and a
-## 0.2 kg forearm is soft and jittery in every solver; pulling the ratio in is
-## what buys a settle instead of a shiver.
-const RAGDOLL_MASS_MIN_SHARE: float = 0.020
-const RAGDOLL_MASS_MAX_SHARE: float = 0.340
-## Cone-twist limits in DEGREES, keyed by joint role. Godot's
-## `joint_constraints/swing_span` and `twist_span` are degrees, not radians.
-##
-## Every joint is a cone twist, including the knee and the elbow. A hinge would be
-## anatomically truer, but the hinge angle's SIGN depends on the solver's frame
-## convention and a hinge fitted backwards bends a knee the wrong way — which
-## reads as broken in a way a stiff knee never does. A 26 deg cone folds a leg
-## under a falling body convincingly and cannot invert it.
-const RAGDOLL_JOINTS: Dictionary = {
-	"spine": [24.0, 16.0],
-	"neck": [34.0, 22.0],
-	"head": [30.0, 26.0],
-	"hip": [56.0, 26.0],
-	"knee": [26.0, 10.0],
-	"ankle": [26.0, 14.0],
-	"shoulder": [64.0, 32.0],
-	"elbow": [30.0, 12.0],
-	"wrist": [30.0, 20.0],
-	"held": [10.0, 10.0]
-}
-## Angular damping per joint role — the single biggest lever on "puppet" versus
-## "body". The torso is allowed to keep rotating; the limbs are not.
-const RAGDOLL_ANGULAR_DAMP: Dictionary = {
-	"spine": 1.4, "neck": 2.2, "head": 2.2, "hip": 2.6, "knee": 3.2, "ankle": 3.6,
-	"shoulder": 2.6, "elbow": 3.2, "wrist": 3.6, "held": 4.0
-}
-## Linear damping, applied in REPLACE mode so a level's default area damp cannot
-## change how a corpse falls.
-const RAGDOLL_LINEAR_DAMP: float = 0.22
-## Baked gravity scale. `EnemyBody.ragdoll_gravity_scale` overrides it live; the
-## reference's hand-authored collapse falls at 2.8 g because true gravity reads
-## floaty on a body this size, and a real ragdoll has the same problem.
-const RAGDOLL_GRAVITY_SCALE: float = 1.85
-## Contact friction. High: a corpse that slides after it lands looks like a prop.
-const RAGDOLL_FRICTION: float = 0.95
+## The corpse's runtime script. Loaded on the first idle frame rather than
+## `preload`ed, for the same reason the actor scripts are — see
+## `ACTOR_SCRIPT_PATH`.
+const RAGDOLL_SCRIPT_PATH: String = "res://systems/enemies/ragdoll.gd"
 
 
 ## One material's worth of merged geometry.
@@ -176,6 +126,7 @@ var _rows: Array[Dictionary] = []
 var _failures: PackedStringArray = PackedStringArray()
 var _actor_script: GDScript = null
 var _body_script: GDScript = null
+var _ragdoll_script: GDScript = null
 var _started: bool = false
 
 
@@ -185,6 +136,7 @@ func _process(_delta: float) -> bool:
 	_started = true
 	_actor_script = load(ACTOR_SCRIPT_PATH) as GDScript
 	_body_script = load(BODY_SCRIPT_PATH) as GDScript
+	_ragdoll_script = load(RAGDOLL_SCRIPT_PATH) as GDScript
 	if _actor_script == null or _body_script == null:
 		printerr("build_enemies: could not load the actor scripts.")
 		quit(1)
@@ -195,6 +147,7 @@ func _process(_delta: float) -> bool:
 
 func _run() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(OUT_DIR))
+	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(RAGDOLL_DIR))
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(BeastMat.MATERIAL_DIR))
 	print("build_enemies: %d species" % SpeciesTable.IDS.size())
 	var built: Array = []
@@ -239,7 +192,10 @@ func _bake_species(id: StringName, inst: RigInstance) -> void:
 	var skin: Skin = _build_skin(rig, rest)
 	var check: Dictionary = _validate(inst)
 
-	var scene: PackedScene = _assemble(id, rig, stats, mesh, skin, flash, _zones(inst))
+	var rag: Dictionary = _bake_ragdoll(id, inst, stats)
+	var scene: PackedScene = _assemble(
+		id, rig, stats, mesh, skin, flash, _zones(inst), rag.get("scene") as PackedScene
+	)
 	var path: String = "%s/%s.res" % [OUT_DIR, id]
 	var err: int = ResourceSaver.save(scene, path)
 	if err != OK:
@@ -258,6 +214,9 @@ func _bake_species(id: StringName, inst: RigInstance) -> void:
 		"poses": int(check["poses"]),
 		"clips": check["clips"],
 		"height": stats.height,
+		"mass": stats.mass,
+		"rag_bones": int(rag.get("bones", 0)),
+		"rag_caps": int(rag.get("capsules", 0)),
 		"saved": err == OK
 	}
 	row["pass"] = (
@@ -270,7 +229,7 @@ func _bake_species(id: StringName, inst: RigInstance) -> void:
 	_rows.append(row)
 	print(
 		(
-			"  %-9s parts %3d  surf %2d  verts %6d  sep %+9.5f m  floating %d  %s"
+			"  %-9s parts %3d  surf %2d  verts %6d  sep %+9.5f m  floating %d  rag %2d  %s"
 			% [
 				id,
 				row["parts"],
@@ -278,10 +237,41 @@ func _bake_species(id: StringName, inst: RigInstance) -> void:
 				row["verts"],
 				row["separation"],
 				row["floating"],
+				row["rag_bones"],
 				"PASS" if row["pass"] else "FAIL"
 			]
 		)
 	)
+
+
+## Bake the physics corpse for one species and save it beside the actor.
+##
+## Returns `{scene, bones, capsules}`, or an empty dictionary when the rig has too
+## little structure to hinge. That is not a failure: a species whose whole body is
+## one welded shell has nothing to ragdoll and stays on `DeathPoser` forever, which
+## is the right answer and what `EnemyBody` does with a null `ragdoll_scene`.
+##
+## The corpse is saved FIRST and loaded back before it is handed to `_assemble`, so
+## `data/enemies/<id>.res` stores it as an EXTERNAL reference. Packing the
+## in-memory scene instead would embed a second copy of every collision shape in
+## the species scene and load a ragdoll into memory for every creature that spawns,
+## whether or not it ever dies on camera.
+func _bake_ragdoll(id: StringName, inst: RigInstance, stats: EnemyStats) -> Dictionary:
+	if _ragdoll_script == null:
+		return {}
+	var made: Dictionary = RagdollBake.build(inst, _ragdoll_script, stats.mass)
+	if made.is_empty():
+		return {}
+	var path: String = "%s/%s.res" % [RAGDOLL_DIR, id]
+	var err: int = ResourceSaver.save(made["scene"], path)
+	if err != OK:
+		_failures.append("%s: ragdoll ResourceSaver.save -> %d" % [id, err])
+		return {}
+	var loaded := load(path) as PackedScene
+	if loaded == null:
+		_failures.append("%s: ragdoll did not load back from %s" % [id, path])
+		return {}
+	return {"scene": loaded, "bones": int(made["bones"]), "capsules": int(made["capsules"])}
 
 
 # ------------------------------------------------------------------ geometry
@@ -577,7 +567,8 @@ func _assemble(
 	mesh: ArrayMesh,
 	skin: Skin,
 	flash: Dictionary,
-	zones: Array[StringName]
+	zones: Array[StringName],
+	ragdoll: PackedScene
 ) -> PackedScene:
 	var actor := CharacterBody3D.new()
 	actor.set_script(_actor_script)
@@ -616,6 +607,7 @@ func _assemble(
 	body.set(&"species_rig", rig)
 	body.set(&"species_stats", stats)
 	body.set(&"bone_zones", zones)
+	body.set(&"ragdoll_scene", ragdoll)
 
 	var skel := Skeleton3D.new()
 	skel.name = "Skeleton"
@@ -705,6 +697,38 @@ func _save_materials() -> void:
 # ------------------------------------------------------------------ report
 
 
+## The physics corpse, one line per species.
+##
+## `rigid` is what a single active ragdoll actually costs the solver — bodies and
+## joints — and it is the number `EnemyBody.ragdoll_max_active` is chosen against.
+## A zero means the species has no ragdoll and every one of its deaths takes the
+## cheap `DeathPoser` path, which is a legitimate outcome and not an error.
+func _write_ragdoll_table(out: PackedStringArray) -> void:
+	out.append("RAGDOLL BAKE  -> %s/<id>.res" % RAGDOLL_DIR)
+	out.append("%-10s %6s %8s %9s %10s" % ["species", "rigid", "capsule", "mass (kg)", "tier"])
+	var total: int = 0
+	for r in _rows:
+		var n: int = int(r["rag_bones"])
+		total += n
+		out.append(
+			(
+				"%-10s %6d %8d %9.2f %10s"
+				% [
+					r["id"],
+					n,
+					int(r["rag_caps"]),
+					float(r["mass"]),
+					"physics" if n > 0 else "poser"
+				]
+			)
+		)
+	out.append("")
+	out.append("%d rigid bodies over %d species." % [total, _rows.size()])
+	out.append("A death only reaches physics when it is inside EnemyBody.ragdoll_distance")
+	out.append("of the camera AND RagdollBudget has a free slot; everything else collapses")
+	out.append("on the seeded DeathPoser exactly as it did before.")
+
+
 func _write_report() -> bool:
 	var ok: bool = _failures.is_empty() and not _rows.is_empty()
 	var out: PackedStringArray = PackedStringArray()
@@ -755,6 +779,8 @@ func _write_report() -> bool:
 	out.append("sampled pose. It must be <= 0: a positive number is an open joint.")
 	out.append("`inv` counts primitives whose emitted shell encloses negative volume;")
 	out.append("`floating` counts parent/child links with no overlap at all.")
+	out.append("")
+	_write_ragdoll_table(out)
 	out.append("")
 	out.append("PER-CLIP DETAIL (frames / floating / min overlap / min Y / max Y)")
 	for r in _rows:

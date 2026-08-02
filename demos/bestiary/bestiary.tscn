@@ -9608,14 +9608,14 @@ size = Vector3(2.2, 1, 0.7)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ijj4"]
 size = Vector3(2.2, 1, 0.7)
 
-[node name="Bestiary" type="Node3D" unique_id=970532677]
+[node name="Bestiary" type="Node3D" unique_id=2021222423]
 script = ExtResource("1_xljpf")
 
-[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=2108736239 instance=ExtResource("2_mpxhs")]
+[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=349678082 instance=ExtResource("2_mpxhs")]
 environment = ExtResource("3_guqn3")
 script = ExtResource("4_ng4bf")
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=539354987 instance=ExtResource("5_htapp")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=198506092 instance=ExtResource("5_htapp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 13.9)
 collision_layer = 4
 collision_mask = 3
@@ -9624,164 +9624,164 @@ safe_margin = 0.008
 script = ExtResource("6_wi5st")
 slide = SubResource("Resource_jxjpr")
 
-[node name="Structure" type="Node3D" parent="." unique_id=491189418]
+[node name="Structure" type="Node3D" parent="." unique_id=1435893223]
 
-[node name="Deck" type="MeshInstance3D" parent="Structure" unique_id=1145070876]
+[node name="Deck" type="MeshInstance3D" parent="Structure" unique_id=1204320186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
 material_override = ExtResource("8_r612f")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.07
 mesh = SubResource("ArrayMesh_urj3s")
 
-[node name="WallW" type="MeshInstance3D" parent="Structure" unique_id=1451398035]
+[node name="WallW" type="MeshInstance3D" parent="Structure" unique_id=1066346017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78, 0.475, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.13
 mesh = SubResource("ArrayMesh_xnwph")
 
-[node name="WallE" type="MeshInstance3D" parent="Structure" unique_id=1434661933]
+[node name="WallE" type="MeshInstance3D" parent="Structure" unique_id=557373489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78, 0.475, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.30000000000000004
 mesh = SubResource("ArrayMesh_xnwph")
 
-[node name="WallN" type="MeshInstance3D" parent="Structure" unique_id=888561722]
+[node name="WallN" type="MeshInstance3D" parent="Structure" unique_id=422137172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, -16.78)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.4700000000000001
 mesh = SubResource("ArrayMesh_hghhb")
 
-[node name="WallS" type="MeshInstance3D" parent="Structure" unique_id=180981709]
+[node name="WallS" type="MeshInstance3D" parent="Structure" unique_id=163642404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 16.78)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.6400000000000001
 mesh = SubResource("ArrayMesh_hghhb")
 
-[node name="RailW" type="MeshInstance3D" parent="Structure" unique_id=697947274]
+[node name="RailW" type="MeshInstance3D" parent="Structure" unique_id=570869136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 4.8, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.29
 mesh = SubResource("ArrayMesh_ny3pw")
 
-[node name="RailE" type="MeshInstance3D" parent="Structure" unique_id=251420326]
+[node name="RailE" type="MeshInstance3D" parent="Structure" unique_id=364908078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 4.8, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.41
 mesh = SubResource("ArrayMesh_ny3pw")
 
-[node name="GantryCrossbeams" type="MultiMeshInstance3D" parent="Structure" unique_id=320444922]
+[node name="GantryCrossbeams" type="MultiMeshInstance3D" parent="Structure" unique_id=551632867]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_rvumj")
 
-[node name="Leg1" type="MeshInstance3D" parent="Structure" unique_id=299218647]
+[node name="Leg1" type="MeshInstance3D" parent="Structure" unique_id=1232695091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.48, 12.6)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.11
 mesh = SubResource("ArrayMesh_u6qsl")
 
-[node name="Leg2" type="MeshInstance3D" parent="Structure" unique_id=304150818]
+[node name="Leg2" type="MeshInstance3D" parent="Structure" unique_id=872596283]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.48, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.22
 mesh = SubResource("ArrayMesh_u6qsl")
 
-[node name="Leg3" type="MeshInstance3D" parent="Structure" unique_id=1779722492]
+[node name="Leg3" type="MeshInstance3D" parent="Structure" unique_id=201419730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.48, -12.6)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.33
 mesh = SubResource("ArrayMesh_u6qsl")
 
-[node name="Leg4" type="MeshInstance3D" parent="Structure" unique_id=1716782566]
+[node name="Leg4" type="MeshInstance3D" parent="Structure" unique_id=1283657089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.48, 12.6)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.44
 mesh = SubResource("ArrayMesh_u6qsl")
 
-[node name="Leg5" type="MeshInstance3D" parent="Structure" unique_id=526610792]
+[node name="Leg5" type="MeshInstance3D" parent="Structure" unique_id=320842328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.48, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.55
 mesh = SubResource("ArrayMesh_u6qsl")
 
-[node name="Leg6" type="MeshInstance3D" parent="Structure" unique_id=478968600]
+[node name="Leg6" type="MeshInstance3D" parent="Structure" unique_id=1667374966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.48, -12.6)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.66
 mesh = SubResource("ArrayMesh_u6qsl")
 
-[node name="PlinthBases" type="MultiMeshInstance3D" parent="Structure" unique_id=695635081]
+[node name="PlinthBases" type="MultiMeshInstance3D" parent="Structure" unique_id=1842936690]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_ipd1h")
 
-[node name="PlinthBodies" type="MultiMeshInstance3D" parent="Structure" unique_id=1952199370]
+[node name="PlinthBodies" type="MultiMeshInstance3D" parent="Structure" unique_id=712208679]
 material_override = ExtResource("10_gr6sv")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_jukpn")
 
-[node name="PlacardPosts" type="MultiMeshInstance3D" parent="Structure" unique_id=1207686557]
+[node name="PlacardPosts" type="MultiMeshInstance3D" parent="Structure" unique_id=626798272]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_d7cvg")
 
-[node name="PlacardStands" type="MultiMeshInstance3D" parent="Structure" unique_id=141518674]
+[node name="PlacardStands" type="MultiMeshInstance3D" parent="Structure" unique_id=490391491]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_upm4p")
 
-[node name="LampStems" type="MultiMeshInstance3D" parent="Structure" unique_id=2086140140]
+[node name="LampStems" type="MultiMeshInstance3D" parent="Structure" unique_id=745091412]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_50ouj")
 
-[node name="LampShades" type="MultiMeshInstance3D" parent="Structure" unique_id=1971836830]
+[node name="LampShades" type="MultiMeshInstance3D" parent="Structure" unique_id=748247480]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 multimesh = SubResource("MultiMesh_q0ynw")
 
-[node name="LampBulbs" type="MultiMeshInstance3D" parent="Structure" unique_id=426096314]
+[node name="LampBulbs" type="MultiMeshInstance3D" parent="Structure" unique_id=38153527]
 material_override = ExtResource("11_qqgct")
 cast_shadow = 0
 gi_mode = 0
 multimesh = SubResource("MultiMesh_kq6i7")
 
-[node name="BaySign_scav" type="Node3D" parent="Structure" unique_id=1120715170]
+[node name="BaySign_scav" type="Node3D" parent="Structure" unique_id=1633009270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 8.5)
 
-[node name="Plate" type="MeshInstance3D" parent="Structure/BaySign_scav" unique_id=1291090088]
+[node name="Plate" type="MeshInstance3D" parent="Structure/BaySign_scav" unique_id=836513988]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.23
 mesh = SubResource("ArrayMesh_chgq2")
 
-[node name="RodL" type="MeshInstance3D" parent="Structure/BaySign_scav" unique_id=2010966744]
+[node name="RodL" type="MeshInstance3D" parent="Structure/BaySign_scav" unique_id=850939620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.5, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_oui5q")
 
-[node name="RodR" type="MeshInstance3D" parent="Structure/BaySign_scav" unique_id=1580763974]
+[node name="RodR" type="MeshInstance3D" parent="Structure/BaySign_scav" unique_id=536487124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.5, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_oui5q")
 
-[node name="FaceN" type="Label3D" parent="Structure/BaySign_scav" unique_id=2057394547]
+[node name="FaceN" type="Label3D" parent="Structure/BaySign_scav" unique_id=1466938610]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.049000002)
 pixel_size = 0.0042
 double_sided = false
@@ -9792,7 +9792,7 @@ text = "SCAV"
 font = ExtResource("12_fmksa")
 font_size = 64
 
-[node name="FaceS" type="Label3D" parent="Structure/BaySign_scav" unique_id=1541172832]
+[node name="FaceS" type="Label3D" parent="Structure/BaySign_scav" unique_id=276702406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049000002)
 pixel_size = 0.0042
 double_sided = false
@@ -9803,30 +9803,30 @@ text = "SCAV"
 font = ExtResource("12_fmksa")
 font_size = 64
 
-[node name="BaySign_machine" type="Node3D" parent="Structure" unique_id=556557819]
+[node name="BaySign_machine" type="Node3D" parent="Structure" unique_id=1162869117]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, 0)
 
-[node name="Plate" type="MeshInstance3D" parent="Structure/BaySign_machine" unique_id=1995515791]
+[node name="Plate" type="MeshInstance3D" parent="Structure/BaySign_machine" unique_id=1545300914]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.42000000000000004
 mesh = SubResource("ArrayMesh_chgq2")
 
-[node name="RodL" type="MeshInstance3D" parent="Structure/BaySign_machine" unique_id=1127482033]
+[node name="RodL" type="MeshInstance3D" parent="Structure/BaySign_machine" unique_id=1374777678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.5, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_oui5q")
 
-[node name="RodR" type="MeshInstance3D" parent="Structure/BaySign_machine" unique_id=1721387531]
+[node name="RodR" type="MeshInstance3D" parent="Structure/BaySign_machine" unique_id=1067557441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.5, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_oui5q")
 
-[node name="FaceN" type="Label3D" parent="Structure/BaySign_machine" unique_id=1594451524]
+[node name="FaceN" type="Label3D" parent="Structure/BaySign_machine" unique_id=104605672]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.049000002)
 pixel_size = 0.0042
 double_sided = false
@@ -9837,7 +9837,7 @@ text = "MACHINE"
 font = ExtResource("12_fmksa")
 font_size = 64
 
-[node name="FaceS" type="Label3D" parent="Structure/BaySign_machine" unique_id=2037929313]
+[node name="FaceS" type="Label3D" parent="Structure/BaySign_machine" unique_id=1505675958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049000002)
 pixel_size = 0.0042
 double_sided = false
@@ -9848,30 +9848,30 @@ text = "MACHINE"
 font = ExtResource("12_fmksa")
 font_size = 64
 
-[node name="BaySign_mutant" type="Node3D" parent="Structure" unique_id=2028728354]
+[node name="BaySign_mutant" type="Node3D" parent="Structure" unique_id=144399722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1, -8.5)
 
-[node name="Plate" type="MeshInstance3D" parent="Structure/BaySign_mutant" unique_id=1582555242]
+[node name="Plate" type="MeshInstance3D" parent="Structure/BaySign_mutant" unique_id=1674528730]
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_chgq2")
 
-[node name="RodL" type="MeshInstance3D" parent="Structure/BaySign_mutant" unique_id=1548069026]
+[node name="RodL" type="MeshInstance3D" parent="Structure/BaySign_mutant" unique_id=1777714605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.5, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_oui5q")
 
-[node name="RodR" type="MeshInstance3D" parent="Structure/BaySign_mutant" unique_id=566754537]
+[node name="RodR" type="MeshInstance3D" parent="Structure/BaySign_mutant" unique_id=258081795]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.5, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.61
 mesh = SubResource("ArrayMesh_oui5q")
 
-[node name="FaceN" type="Label3D" parent="Structure/BaySign_mutant" unique_id=1984901779]
+[node name="FaceN" type="Label3D" parent="Structure/BaySign_mutant" unique_id=1853609846]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -0.049000002)
 pixel_size = 0.0042
 double_sided = false
@@ -9882,7 +9882,7 @@ text = "MUTANT"
 font = ExtResource("12_fmksa")
 font_size = 64
 
-[node name="FaceS" type="Label3D" parent="Structure/BaySign_mutant" unique_id=766256946]
+[node name="FaceS" type="Label3D" parent="Structure/BaySign_mutant" unique_id=739105792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.049000002)
 pixel_size = 0.0042
 double_sided = false
@@ -9893,30 +9893,30 @@ text = "MUTANT"
 font = ExtResource("12_fmksa")
 font_size = 64
 
-[node name="Gate" type="Node3D" parent="Structure" unique_id=102836648]
+[node name="Gate" type="Node3D" parent="Structure" unique_id=1909042093]
 
-[node name="PostL" type="MeshInstance3D" parent="Structure/Gate" unique_id=588963818]
+[node name="PostL" type="MeshInstance3D" parent="Structure/Gate" unique_id=996644163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.475, 16.4)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.33
 mesh = SubResource("ArrayMesh_6e3an")
 
-[node name="PostR" type="MeshInstance3D" parent="Structure/Gate" unique_id=1363942342]
+[node name="PostR" type="MeshInstance3D" parent="Structure/Gate" unique_id=849006460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.475, 16.4)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.47
 mesh = SubResource("ArrayMesh_6e3an")
 
-[node name="Plate" type="MeshInstance3D" parent="Structure/Gate" unique_id=258150392]
+[node name="Plate" type="MeshInstance3D" parent="Structure/Gate" unique_id=836816586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45, 16.4)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.57
 mesh = SubResource("ArrayMesh_6loeq")
 
-[node name="Title" type="Label3D" parent="Structure/Gate" unique_id=1128676388]
+[node name="Title" type="Label3D" parent="Structure/Gate" unique_id=1835238241]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.59, 16.325)
 pixel_size = 0.004
 double_sided = false
@@ -9927,7 +9927,7 @@ text = "BESTIARY"
 font = ExtResource("12_fmksa")
 font_size = 96
 
-[node name="Sub" type="Label3D" parent="Structure/Gate" unique_id=2130975594]
+[node name="Sub" type="Label3D" parent="Structure/Gate" unique_id=1651669714]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.23, 16.325)
 pixel_size = 0.0026
 double_sided = false
@@ -9938,9 +9938,9 @@ text = "TWELVE SPECIES. NONE OF THEM FRIENDLY."
 font = ExtResource("13_5uhb7")
 font_size = 44
 
-[node name="Lamps" type="Node3D" parent="." unique_id=2043054357]
+[node name="Lamps" type="Node3D" parent="." unique_id=246047212]
 
-[node name="Lamp0" type="SpotLight3D" parent="Lamps" unique_id=2040649619]
+[node name="Lamp0" type="SpotLight3D" parent="Lamps" unique_id=1601784242]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.3, 3.98, 10.6)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -9951,7 +9951,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp1" type="SpotLight3D" parent="Lamps" unique_id=1342593823]
+[node name="Lamp1" type="SpotLight3D" parent="Lamps" unique_id=1686544169]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.3, 3.98, 10.6)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -9962,7 +9962,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp2" type="SpotLight3D" parent="Lamps" unique_id=1051226822]
+[node name="Lamp2" type="SpotLight3D" parent="Lamps" unique_id=1642518798]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.3, 3.98, 6.4)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -9973,7 +9973,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp3" type="SpotLight3D" parent="Lamps" unique_id=626192520]
+[node name="Lamp3" type="SpotLight3D" parent="Lamps" unique_id=925734074]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.3, 3.98, 6.4)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -9984,7 +9984,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp4" type="SpotLight3D" parent="Lamps" unique_id=70667269]
+[node name="Lamp4" type="SpotLight3D" parent="Lamps" unique_id=67680733]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.3, 3.98, 2.1)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -9995,7 +9995,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp5" type="SpotLight3D" parent="Lamps" unique_id=1835622404]
+[node name="Lamp5" type="SpotLight3D" parent="Lamps" unique_id=1880818375]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.3, 3.98, 2.1)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10006,7 +10006,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp6" type="SpotLight3D" parent="Lamps" unique_id=1850731933]
+[node name="Lamp6" type="SpotLight3D" parent="Lamps" unique_id=493750152]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.3, 3.98, -2.1)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10017,7 +10017,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp7" type="SpotLight3D" parent="Lamps" unique_id=2134546900]
+[node name="Lamp7" type="SpotLight3D" parent="Lamps" unique_id=883188010]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.3, 3.98, -2.1)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10028,7 +10028,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp8" type="SpotLight3D" parent="Lamps" unique_id=1680452350]
+[node name="Lamp8" type="SpotLight3D" parent="Lamps" unique_id=2009795411]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.3, 3.98, -6.4)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10039,7 +10039,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp9" type="SpotLight3D" parent="Lamps" unique_id=1802340639]
+[node name="Lamp9" type="SpotLight3D" parent="Lamps" unique_id=1574609687]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.3, 3.98, -6.4)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10050,7 +10050,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp10" type="SpotLight3D" parent="Lamps" unique_id=379084287]
+[node name="Lamp10" type="SpotLight3D" parent="Lamps" unique_id=806617896]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.3, 3.98, -10.6)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10061,7 +10061,7 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Lamp11" type="SpotLight3D" parent="Lamps" unique_id=1097366225]
+[node name="Lamp11" type="SpotLight3D" parent="Lamps" unique_id=22723455]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.3, 3.98, -10.6)
 light_color = Color(1, 0.878, 0.729, 1)
 light_energy = 10.5
@@ -10072,14 +10072,14 @@ spot_attenuation = 1.35
 spot_angle = 33.0
 spot_angle_attenuation = 1.15
 
-[node name="Exhibits" type="Node3D" parent="." unique_id=886413680]
+[node name="Exhibits" type="Node3D" parent="." unique_id=651288405]
 
-[node name="Exhibit_rat" type="Node3D" parent="Exhibits" unique_id=1224039417]
+[node name="Exhibit_rat" type="Node3D" parent="Exhibits" unique_id=1860281171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.34, 10.6)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_rat" unique_id=479130495]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_rat" unique_id=814963915]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_rat/Turntable" unique_id=1634870373 instance=ExtResource("14_1xv3u")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_rat/Turntable" unique_id=169815624 instance=ExtResource("14_1xv3u")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10090,7 +10090,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_rat" unique_id=365799567 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_rat" unique_id=50089678 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10102,12 +10102,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_picker" type="Node3D" parent="Exhibits" unique_id=744570880]
+[node name="Exhibit_picker" type="Node3D" parent="Exhibits" unique_id=1704055354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.34, 10.6)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_picker" unique_id=1980377054]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_picker" unique_id=596249574]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_picker/Turntable" unique_id=1635028545 instance=ExtResource("24_ix2hq")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_picker/Turntable" unique_id=2084497079 instance=ExtResource("24_ix2hq")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10118,7 +10118,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_picker" unique_id=2050870250 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_picker" unique_id=2143101342 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10130,12 +10130,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_gasman" type="Node3D" parent="Exhibits" unique_id=1963561899]
+[node name="Exhibit_gasman" type="Node3D" parent="Exhibits" unique_id=2125486158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.34, 6.4)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_gasman" unique_id=797975230]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_gasman" unique_id=1150429450]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_gasman/Turntable" unique_id=1756123479 instance=ExtResource("25_81uxv")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_gasman/Turntable" unique_id=1617069688 instance=ExtResource("25_81uxv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10147,7 +10147,7 @@ shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 flash_paths = Array[NodePath]([NodePath("Skeleton/Flash16/Mesh")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_gasman" unique_id=697183100 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_gasman" unique_id=663655753 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10159,12 +10159,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_marksman" type="Node3D" parent="Exhibits" unique_id=1619993883]
+[node name="Exhibit_marksman" type="Node3D" parent="Exhibits" unique_id=130918487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.34, 6.4)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_marksman" unique_id=1880186133]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_marksman" unique_id=1005744006]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_marksman/Turntable" unique_id=682793720 instance=ExtResource("28_786gr")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_marksman/Turntable" unique_id=1920493232 instance=ExtResource("28_786gr")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10176,7 +10176,7 @@ shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 flash_paths = Array[NodePath]([NodePath("Skeleton/Flash17/Mesh")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_marksman" unique_id=1417669558 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_marksman" unique_id=1652205270 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10188,12 +10188,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_latchdog" type="Node3D" parent="Exhibits" unique_id=324384955]
+[node name="Exhibit_latchdog" type="Node3D" parent="Exhibits" unique_id=967456712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.34, 2.1)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_latchdog" unique_id=1406420359]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_latchdog" unique_id=330272547]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_latchdog/Turntable" unique_id=139727661 instance=ExtResource("29_hg6wm")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_latchdog/Turntable" unique_id=449740893 instance=ExtResource("29_hg6wm")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10204,7 +10204,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_latchdog" unique_id=1610024796 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_latchdog" unique_id=1812559821 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10216,12 +10216,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_sentinel" type="Node3D" parent="Exhibits" unique_id=1334626337]
+[node name="Exhibit_sentinel" type="Node3D" parent="Exhibits" unique_id=1511794413]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.34, 2.1)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_sentinel" unique_id=1251343189]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_sentinel" unique_id=145966018]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_sentinel/Turntable" unique_id=1875177181 instance=ExtResource("30_doyxn")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_sentinel/Turntable" unique_id=1114812510 instance=ExtResource("30_doyxn")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10233,7 +10233,7 @@ shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 flash_paths = Array[NodePath]([NodePath("Skeleton/Flash16/Mesh")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_sentinel" unique_id=1477744114 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_sentinel" unique_id=182875721 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10245,12 +10245,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_wasp" type="Node3D" parent="Exhibits" unique_id=1277381091]
+[node name="Exhibit_wasp" type="Node3D" parent="Exhibits" unique_id=1938399826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.34, -2.1)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_wasp" unique_id=2018906710]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_wasp" unique_id=1812820949]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_wasp/Turntable" unique_id=2081426310 instance=ExtResource("31_dn26b")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_wasp/Turntable" unique_id=640029448 instance=ExtResource("31_dn26b")]
 transform = Transform3D(-4.371139e-08, 0.3334871, 0.9427547, 0, 0.9427547, -0.3334871, -1, -1.4577184e-08, -4.1209116e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10262,7 +10262,7 @@ shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 flash_paths = Array[NodePath]([NodePath("Skeleton/Flash9/Mesh")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_wasp" unique_id=98346942 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_wasp" unique_id=177297988 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.98976004, 0.6465439, 0.9897599)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10274,12 +10274,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.9200001, 0.58, 0.91999996)
 
-[node name="Exhibit_foreman" type="Node3D" parent="Exhibits" unique_id=1553805006]
+[node name="Exhibit_foreman" type="Node3D" parent="Exhibits" unique_id=1089792774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.34, -2.1)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_foreman" unique_id=1968347087]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_foreman" unique_id=1170434013]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_foreman/Turntable" unique_id=1642673175 instance=ExtResource("32_clhw3")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_foreman/Turntable" unique_id=572929457 instance=ExtResource("32_clhw3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10290,7 +10290,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_foreman" unique_id=1232663603 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_foreman" unique_id=1160649729 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.98976004, 0.6465439, 0.9897599)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10302,12 +10302,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.9200001, 0.58, 0.91999996)
 
-[node name="Exhibit_husk" type="Node3D" parent="Exhibits" unique_id=416225356]
+[node name="Exhibit_husk" type="Node3D" parent="Exhibits" unique_id=1127220348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.34, -6.4)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_husk" unique_id=126298975]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_husk" unique_id=1087519344]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_husk/Turntable" unique_id=2099647345 instance=ExtResource("33_b3hy6")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_husk/Turntable" unique_id=1884909392 instance=ExtResource("33_b3hy6")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10318,7 +10318,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_husk" unique_id=1354133692 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_husk" unique_id=312863873 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10330,12 +10330,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_stilt" type="Node3D" parent="Exhibits" unique_id=1225141531]
+[node name="Exhibit_stilt" type="Node3D" parent="Exhibits" unique_id=2101193275]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.34, -6.4)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_stilt" unique_id=1009590845]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_stilt" unique_id=565955085]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_stilt/Turntable" unique_id=2131413400 instance=ExtResource("34_io3ym")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_stilt/Turntable" unique_id=544087006 instance=ExtResource("34_io3ym")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10346,7 +10346,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_stilt" unique_id=278665617 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_stilt" unique_id=1996065466 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10358,12 +10358,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_skitter" type="Node3D" parent="Exhibits" unique_id=1018013640]
+[node name="Exhibit_skitter" type="Node3D" parent="Exhibits" unique_id=307813821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.34, -10.6)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_skitter" unique_id=1229608462]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_skitter" unique_id=687872213]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_skitter/Turntable" unique_id=1001735288 instance=ExtResource("35_sqj5n")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_skitter/Turntable" unique_id=1123257495 instance=ExtResource("35_sqj5n")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10374,7 +10374,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_skitter" unique_id=1737675790 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_skitter" unique_id=1001084231 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10386,12 +10386,12 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, -0.39540908, 0.5862181, 0, 0.8290376, 0.5591929, -0.70710677, -0.39540908, 0.5862181, 0.9200001, 0.58, 0.9200001)
 
-[node name="Exhibit_gorger" type="Node3D" parent="Exhibits" unique_id=1112595454]
+[node name="Exhibit_gorger" type="Node3D" parent="Exhibits" unique_id=1664741575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.34, -10.6)
 
-[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_gorger" unique_id=1055791095]
+[node name="Turntable" type="Node3D" parent="Exhibits/Exhibit_gorger" unique_id=362050664]
 
-[node name="Body" type="Node3D" parent="Exhibits/Exhibit_gorger/Turntable" unique_id=584931930 instance=ExtResource("36_vev6d")]
+[node name="Body" type="Node3D" parent="Exhibits/Exhibit_gorger/Turntable" unique_id=1852975261 instance=ExtResource("36_vev6d")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("15_k66b4")
 notifier_path = NodePath("Vis")
@@ -10402,7 +10402,7 @@ bone_zones = Array[StringName]([&"core", &"core", &"core", &"head", &"head", &"l
 shell_paths = Array[NodePath]([NodePath("Skeleton/Shell")])
 pose_hz_near = 60.0
 
-[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_gorger" unique_id=345855040 instance=ExtResource("22_apubo")]
+[node name="Placard" type="Node3D" parent="Exhibits/Exhibit_gorger" unique_id=985528369 instance=ExtResource("22_apubo")]
 transform = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.98976004, 0.6465439, 0.98976004)
 script = ExtResource("23_fotqq")
 painted = true
@@ -10414,47 +10414,47 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(0.70710677, 0.39540908, -0.5862181, 0, 0.8290376, 0.5591929, 0.70710677, -0.39540908, 0.5862181, -0.9200001, 0.58, 0.9200001)
 
-[node name="Consoles" type="Node3D" parent="." unique_id=1657609146]
+[node name="Consoles" type="Node3D" parent="." unique_id=854961047]
 
-[node name="Console_entry" type="Node3D" parent="Consoles" unique_id=5002677]
+[node name="Console_entry" type="Node3D" parent="Consoles" unique_id=1708313997]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 14.6)
 
-[node name="Kick" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=927617870]
+[node name="Kick" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=1341715527]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, -0.26)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.19
 mesh = SubResource("ArrayMesh_662qq")
 
-[node name="SideL" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=699302957]
+[node name="SideL" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=1191228915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0.51, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.27
 mesh = SubResource("ArrayMesh_qw63t")
 
-[node name="SideR" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=371182187]
+[node name="SideR" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=961521802]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04, 0.51, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.35
 mesh = SubResource("ArrayMesh_qw63t")
 
-[node name="Top" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=615796109]
+[node name="Top" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=46799610]
 transform = Transform3D(1, 0, 0, 0, 0.95105654, -0.309017, 0, 0.309017, 0.95105654, 0, 1, 0.06)
 material_override = ExtResource("37_t5kee")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.43
 mesh = SubResource("ArrayMesh_fjigq")
 
-[node name="Panel" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=614545040]
+[node name="Panel" type="MeshInstance3D" parent="Consoles/Console_entry" unique_id=870760314]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.44, -0.3)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.51
 mesh = SubResource("ArrayMesh_4051j")
 
-[node name="Deck" type="Label3D" parent="Consoles/Console_entry" unique_id=1432906874]
+[node name="Deck" type="Label3D" parent="Consoles/Console_entry" unique_id=1985900572]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, -0.78, 1.0216434, 0.16166398)
 pixel_size = 0.0018
 double_sided = false
@@ -10465,7 +10465,7 @@ text = "EXHIBIT CONTROL"
 font = ExtResource("12_fmksa")
 font_size = 24
 
-[node name="Head" type="Label3D" parent="Consoles/Console_entry" unique_id=2043813802]
+[node name="Head" type="Label3D" parent="Consoles/Console_entry" unique_id=188465563]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.8832333, -0.3077617)
 pixel_size = 0.0018
 double_sided = false
@@ -10476,7 +10476,7 @@ text = "THE RACK"
 font = ExtResource("12_fmksa")
 font_size = 44
 
-[node name="Control_clip" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=1938835309 instance=ExtResource("38_8sulb")]
+[node name="Control_clip" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=333177233 instance=ExtResource("38_8sulb")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, -0.34, 1.0494549, 0.076068886)
 collision_layer = 2
 collision_mask = 0
@@ -10486,7 +10486,7 @@ sweep_degrees = 300.0
 control_id = &"clip"
 label_text = "CLIP"
 
-[node name="Control_pace" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=168296842 instance=ExtResource("40_qu562")]
+[node name="Control_pace" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=1373879782 instance=ExtResource("40_qu562")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.1, 1.0494549, 0.076068886)
 collision_layer = 2
 collision_mask = 0
@@ -10497,7 +10497,7 @@ value_format = "%.2fx"
 control_id = &"pace"
 label_text = "PACE"
 
-[node name="Control_prev" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=2069199919 instance=ExtResource("42_7fib3")]
+[node name="Control_prev" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=552549059 instance=ExtResource("42_7fib3")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.5, 1.030914, 0.13313228)
 collision_layer = 2
 collision_mask = 0
@@ -10507,7 +10507,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"prev"
 label_text = "PREV"
 
-[node name="Control_next" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=772011089 instance=ExtResource("42_7fib3")]
+[node name="Control_next" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=2101728093 instance=ExtResource("42_7fib3")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.74, 1.030914, 0.13313228)
 collision_layer = 2
 collision_mask = 0
@@ -10517,7 +10517,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"next"
 label_text = "NEXT"
 
-[node name="Control_take" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=1932701696 instance=ExtResource("42_7fib3")]
+[node name="Control_take" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=2042716263 instance=ExtResource("42_7fib3")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.98, 1.030914, 0.13313228)
 collision_layer = 2
 collision_mask = 0
@@ -10527,7 +10527,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"take"
 label_text = "TAKE"
 
-[node name="Control_turn" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=122036863 instance=ExtResource("45_8eusk")]
+[node name="Control_turn" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=309511323 instance=ExtResource("45_8eusk")]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, -0.82, 1.1696837, -0.21151814)
 collision_layer = 2
 collision_mask = 0
@@ -10537,7 +10537,7 @@ on_text = "TURN"
 control_id = &"turn"
 label_text = "TURN"
 
-[node name="Control_track" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=136896703 instance=ExtResource("45_8eusk")]
+[node name="Control_track" type="StaticBody3D" parent="Consoles/Console_entry" unique_id=625577726 instance=ExtResource("45_8eusk")]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0.82, 1.1696837, -0.21151814)
 collision_layer = 2
 collision_mask = 0
@@ -10547,7 +10547,7 @@ on_text = "ON YOU"
 control_id = &"track"
 label_text = "TRACK"
 
-[node name="Card" type="Node3D" parent="Consoles/Console_entry" unique_id=1955437791 instance=ExtResource("22_apubo")]
+[node name="Card" type="Node3D" parent="Consoles/Console_entry" unique_id=445480562 instance=ExtResource("22_apubo")]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.5152819, -0.19545984)
 script = ExtResource("23_fotqq")
 metadata/mount_bounds = AABB(-0.3, -0.21000001, -0.060000002, 0.6, 0.42000002, 0.07000001)
@@ -10558,45 +10558,45 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.44, -0.3)
 
-[node name="Console_far" type="Node3D" parent="Consoles" unique_id=1559996739]
+[node name="Console_far" type="Node3D" parent="Consoles" unique_id=106955038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.6)
 
-[node name="Kick" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=928026959]
+[node name="Kick" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=1492051941]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, -0.26)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.19
 mesh = SubResource("ArrayMesh_662qq")
 
-[node name="SideL" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=661373074]
+[node name="SideL" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=1758353886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04, 0.51, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.27
 mesh = SubResource("ArrayMesh_qw63t")
 
-[node name="SideR" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=2087578364]
+[node name="SideR" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=1803960907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04, 0.51, 0)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.35
 mesh = SubResource("ArrayMesh_qw63t")
 
-[node name="Top" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=1045705999]
+[node name="Top" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=1212832971]
 transform = Transform3D(1, 0, 0, 0, 0.95105654, -0.309017, 0, 0.309017, 0.95105654, 0, 1, 0.06)
 material_override = ExtResource("37_t5kee")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.43
 mesh = SubResource("ArrayMesh_fjigq")
 
-[node name="Panel" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=1568385269]
+[node name="Panel" type="MeshInstance3D" parent="Consoles/Console_far" unique_id=663470098]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.44, -0.3)
 material_override = ExtResource("9_btweh")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.51
 mesh = SubResource("ArrayMesh_4051j")
 
-[node name="Deck" type="Label3D" parent="Consoles/Console_far" unique_id=971640201]
+[node name="Deck" type="Label3D" parent="Consoles/Console_far" unique_id=1863435365]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, -0.78, 1.0216434, 0.16166398)
 pixel_size = 0.0018
 double_sided = false
@@ -10607,7 +10607,7 @@ text = "EXHIBIT CONTROL"
 font = ExtResource("12_fmksa")
 font_size = 24
 
-[node name="Head" type="Label3D" parent="Consoles/Console_far" unique_id=277870939]
+[node name="Head" type="Label3D" parent="Consoles/Console_far" unique_id=1228697411]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.8832333, -0.3077617)
 pixel_size = 0.0018
 double_sided = false
@@ -10618,7 +10618,7 @@ text = "THE RACK"
 font = ExtResource("12_fmksa")
 font_size = 44
 
-[node name="Control_clip" type="StaticBody3D" parent="Consoles/Console_far" unique_id=1290598237 instance=ExtResource("38_8sulb")]
+[node name="Control_clip" type="StaticBody3D" parent="Consoles/Console_far" unique_id=1930662225 instance=ExtResource("38_8sulb")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, -0.34, 1.0494549, 0.076068886)
 collision_layer = 2
 collision_mask = 0
@@ -10628,7 +10628,7 @@ sweep_degrees = 300.0
 control_id = &"clip"
 label_text = "CLIP"
 
-[node name="Control_pace" type="StaticBody3D" parent="Consoles/Console_far" unique_id=261163423 instance=ExtResource("40_qu562")]
+[node name="Control_pace" type="StaticBody3D" parent="Consoles/Console_far" unique_id=45954931 instance=ExtResource("40_qu562")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.1, 1.0494549, 0.076068886)
 collision_layer = 2
 collision_mask = 0
@@ -10639,7 +10639,7 @@ value_format = "%.2fx"
 control_id = &"pace"
 label_text = "PACE"
 
-[node name="Control_prev" type="StaticBody3D" parent="Consoles/Console_far" unique_id=1410596926 instance=ExtResource("42_7fib3")]
+[node name="Control_prev" type="StaticBody3D" parent="Consoles/Console_far" unique_id=1283903047 instance=ExtResource("42_7fib3")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.5, 1.030914, 0.13313228)
 collision_layer = 2
 collision_mask = 0
@@ -10649,7 +10649,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"prev"
 label_text = "PREV"
 
-[node name="Control_next" type="StaticBody3D" parent="Consoles/Console_far" unique_id=1570029475 instance=ExtResource("42_7fib3")]
+[node name="Control_next" type="StaticBody3D" parent="Consoles/Console_far" unique_id=444337928 instance=ExtResource("42_7fib3")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.74, 1.030914, 0.13313228)
 collision_layer = 2
 collision_mask = 0
@@ -10659,7 +10659,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"next"
 label_text = "NEXT"
 
-[node name="Control_take" type="StaticBody3D" parent="Consoles/Console_far" unique_id=925749960 instance=ExtResource("42_7fib3")]
+[node name="Control_take" type="StaticBody3D" parent="Consoles/Console_far" unique_id=918854927 instance=ExtResource("42_7fib3")]
 transform = Transform3D(1, 0, 0, 0, 0.30901697, 0.95105654, 0, -0.95105654, 0.30901697, 0.98, 1.030914, 0.13313228)
 collision_layer = 2
 collision_mask = 0
@@ -10669,7 +10669,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"take"
 label_text = "TAKE"
 
-[node name="Control_turn" type="StaticBody3D" parent="Consoles/Console_far" unique_id=1211657469 instance=ExtResource("45_8eusk")]
+[node name="Control_turn" type="StaticBody3D" parent="Consoles/Console_far" unique_id=116302742 instance=ExtResource("45_8eusk")]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, -0.82, 1.1696837, -0.21151814)
 collision_layer = 2
 collision_mask = 0
@@ -10679,7 +10679,7 @@ on_text = "TURN"
 control_id = &"turn"
 label_text = "TURN"
 
-[node name="Control_track" type="StaticBody3D" parent="Consoles/Console_far" unique_id=777009739 instance=ExtResource("45_8eusk")]
+[node name="Control_track" type="StaticBody3D" parent="Consoles/Console_far" unique_id=215195937 instance=ExtResource("45_8eusk")]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0.82, 1.1696837, -0.21151814)
 collision_layer = 2
 collision_mask = 0
@@ -10689,7 +10689,7 @@ on_text = "ON YOU"
 control_id = &"track"
 label_text = "TRACK"
 
-[node name="Card" type="Node3D" parent="Consoles/Console_far" unique_id=176116146 instance=ExtResource("22_apubo")]
+[node name="Card" type="Node3D" parent="Consoles/Console_far" unique_id=1850256514 instance=ExtResource("22_apubo")]
 transform = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.5152819, -0.19545984)
 script = ExtResource("23_fotqq")
 metadata/mount_bounds = AABB(-0.3, -0.21000001, -0.060000002, 0.6, 0.42000002, 0.07000001)
@@ -10700,10 +10700,10 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 0.99026805, 0.1391731, 0, -0.1391731, 0.99026805, 0, 1.44, -0.3)
 
-[node name="FocusRig" type="Node3D" parent="." unique_id=1867874329]
+[node name="FocusRig" type="Node3D" parent="." unique_id=159858994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 1.24, 10.6)
 
-[node name="Light" type="SpotLight3D" parent="FocusRig" unique_id=695604453]
+[node name="Light" type="SpotLight3D" parent="FocusRig" unique_id=1463407826]
 transform = Transform3D(1, 0, 0, 0, 0.74899656, 0.6625739, 0, -0.6625739, 0.74899656, 0, 2.3, 2.6)
 light_color = Color(1, 0.933, 0.827, 1)
 light_energy = 15.0
@@ -10715,168 +10715,168 @@ spot_range = 8.0
 spot_attenuation = 1.2
 spot_angle = 25.0
 
-[node name="Bead" type="MeshInstance3D" parent="." unique_id=2052747948]
+[node name="Bead" type="MeshInstance3D" parent="." unique_id=1969445682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 material_override = ExtResource("11_qqgct")
 gi_mode = 0
 instance_shader_parameters/surface_seed = 0.91
 mesh = SubResource("ArrayMesh_drij4")
 
-[node name="Collision" type="StaticBody3D" parent="." unique_id=128497556]
+[node name="Collision" type="StaticBody3D" parent="." unique_id=1944602300]
 collision_mask = 0
 
-[node name="DeckShape" type="CollisionShape3D" parent="Collision" unique_id=1481829191]
+[node name="DeckShape" type="CollisionShape3D" parent="Collision" unique_id=47521360]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
 shape = SubResource("BoxShape3D_kyqmh")
 
-[node name="WallWShape" type="CollisionShape3D" parent="Collision" unique_id=342943688]
+[node name="WallWShape" type="CollisionShape3D" parent="Collision" unique_id=1650070761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78, 0.475, 0)
 shape = SubResource("BoxShape3D_u1wld")
 
-[node name="WallEShape" type="CollisionShape3D" parent="Collision" unique_id=1595081285]
+[node name="WallEShape" type="CollisionShape3D" parent="Collision" unique_id=78158908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78, 0.475, 0)
 shape = SubResource("BoxShape3D_5ej5e")
 
-[node name="WallNShape" type="CollisionShape3D" parent="Collision" unique_id=2046147462]
+[node name="WallNShape" type="CollisionShape3D" parent="Collision" unique_id=1610076481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, -16.78)
 shape = SubResource("BoxShape3D_6akwd")
 
-[node name="WallSShape" type="CollisionShape3D" parent="Collision" unique_id=1548012098]
+[node name="WallSShape" type="CollisionShape3D" parent="Collision" unique_id=1073911149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 16.78)
 shape = SubResource("BoxShape3D_siqso")
 
-[node name="Leg1Shape" type="CollisionShape3D" parent="Collision" unique_id=1980086917]
+[node name="Leg1Shape" type="CollisionShape3D" parent="Collision" unique_id=1580432703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.48, 12.6)
 shape = SubResource("BoxShape3D_7gie8")
 
-[node name="Leg2Shape" type="CollisionShape3D" parent="Collision" unique_id=467755838]
+[node name="Leg2Shape" type="CollisionShape3D" parent="Collision" unique_id=1410704397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.48, 0)
 shape = SubResource("BoxShape3D_5uy7b")
 
-[node name="Leg3Shape" type="CollisionShape3D" parent="Collision" unique_id=227175526]
+[node name="Leg3Shape" type="CollisionShape3D" parent="Collision" unique_id=1236136755]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.48, -12.6)
 shape = SubResource("BoxShape3D_k1gag")
 
-[node name="Leg4Shape" type="CollisionShape3D" parent="Collision" unique_id=1794528192]
+[node name="Leg4Shape" type="CollisionShape3D" parent="Collision" unique_id=1243074332]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.48, 12.6)
 shape = SubResource("BoxShape3D_gytvc")
 
-[node name="Leg5Shape" type="CollisionShape3D" parent="Collision" unique_id=762391647]
+[node name="Leg5Shape" type="CollisionShape3D" parent="Collision" unique_id=1845508591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.48, 0)
 shape = SubResource("BoxShape3D_qxoaq")
 
-[node name="Leg6Shape" type="CollisionShape3D" parent="Collision" unique_id=1978825338]
+[node name="Leg6Shape" type="CollisionShape3D" parent="Collision" unique_id=402176442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6, 2.48, -12.6)
 shape = SubResource("BoxShape3D_61s4h")
 
-[node name="PlinthShape0" type="CollisionShape3D" parent="Collision" unique_id=689222333]
+[node name="PlinthShape0" type="CollisionShape3D" parent="Collision" unique_id=2061706724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.17, 10.6)
 shape = SubResource("BoxShape3D_agrk7")
 
-[node name="PostShape0" type="CollisionShape3D" parent="Collision" unique_id=1653137198]
+[node name="PostShape0" type="CollisionShape3D" parent="Collision" unique_id=819162568]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 0.55, 11.52)
 shape = SubResource("BoxShape3D_hjskm")
 
-[node name="PlinthShape1" type="CollisionShape3D" parent="Collision" unique_id=190279911]
+[node name="PlinthShape1" type="CollisionShape3D" parent="Collision" unique_id=1683043177]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.17, 10.6)
 shape = SubResource("BoxShape3D_pr07v")
 
-[node name="PostShape1" type="CollisionShape3D" parent="Collision" unique_id=820431581]
+[node name="PostShape1" type="CollisionShape3D" parent="Collision" unique_id=135703719]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38, 0.55, 11.52)
 shape = SubResource("BoxShape3D_eqemf")
 
-[node name="PlinthShape2" type="CollisionShape3D" parent="Collision" unique_id=378968565]
+[node name="PlinthShape2" type="CollisionShape3D" parent="Collision" unique_id=93660290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.17, 6.4)
 shape = SubResource("BoxShape3D_phs7g")
 
-[node name="PostShape2" type="CollisionShape3D" parent="Collision" unique_id=1222619971]
+[node name="PostShape2" type="CollisionShape3D" parent="Collision" unique_id=251891957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 0.55, 7.32)
 shape = SubResource("BoxShape3D_asnjf")
 
-[node name="PlinthShape3" type="CollisionShape3D" parent="Collision" unique_id=823525932]
+[node name="PlinthShape3" type="CollisionShape3D" parent="Collision" unique_id=1256299360]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.17, 6.4)
 shape = SubResource("BoxShape3D_gw7dw")
 
-[node name="PostShape3" type="CollisionShape3D" parent="Collision" unique_id=74026113]
+[node name="PostShape3" type="CollisionShape3D" parent="Collision" unique_id=249467218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38, 0.55, 7.32)
 shape = SubResource("BoxShape3D_x41ia")
 
-[node name="PlinthShape4" type="CollisionShape3D" parent="Collision" unique_id=1610568597]
+[node name="PlinthShape4" type="CollisionShape3D" parent="Collision" unique_id=648220759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.17, 2.1)
 shape = SubResource("BoxShape3D_w0ify")
 
-[node name="PostShape4" type="CollisionShape3D" parent="Collision" unique_id=429031212]
+[node name="PostShape4" type="CollisionShape3D" parent="Collision" unique_id=1051512820]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 0.55, 3.02)
 shape = SubResource("BoxShape3D_ilauj")
 
-[node name="PlinthShape5" type="CollisionShape3D" parent="Collision" unique_id=1074685973]
+[node name="PlinthShape5" type="CollisionShape3D" parent="Collision" unique_id=1428106876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.17, 2.1)
 shape = SubResource("BoxShape3D_fgvow")
 
-[node name="PostShape5" type="CollisionShape3D" parent="Collision" unique_id=1507030346]
+[node name="PostShape5" type="CollisionShape3D" parent="Collision" unique_id=1687995696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38, 0.55, 3.02)
 shape = SubResource("BoxShape3D_2ydnh")
 
-[node name="PlinthShape6" type="CollisionShape3D" parent="Collision" unique_id=1002918111]
+[node name="PlinthShape6" type="CollisionShape3D" parent="Collision" unique_id=878404889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.17, -2.1)
 shape = SubResource("BoxShape3D_1su8t")
 
-[node name="PostShape6" type="CollisionShape3D" parent="Collision" unique_id=1988632625]
+[node name="PostShape6" type="CollisionShape3D" parent="Collision" unique_id=739045545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 0.55, -1.18)
 shape = SubResource("BoxShape3D_ga8te")
 
-[node name="PlinthShape7" type="CollisionShape3D" parent="Collision" unique_id=1068644891]
+[node name="PlinthShape7" type="CollisionShape3D" parent="Collision" unique_id=1204649779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.17, -2.1)
 shape = SubResource("BoxShape3D_fcb7r")
 
-[node name="PostShape7" type="CollisionShape3D" parent="Collision" unique_id=1637386066]
+[node name="PostShape7" type="CollisionShape3D" parent="Collision" unique_id=49225499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38, 0.55, -1.18)
 shape = SubResource("BoxShape3D_koqvi")
 
-[node name="PlinthShape8" type="CollisionShape3D" parent="Collision" unique_id=2062678075]
+[node name="PlinthShape8" type="CollisionShape3D" parent="Collision" unique_id=810428845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.17, -6.4)
 shape = SubResource("BoxShape3D_fqp35")
 
-[node name="PostShape8" type="CollisionShape3D" parent="Collision" unique_id=1671847381]
+[node name="PostShape8" type="CollisionShape3D" parent="Collision" unique_id=1659977976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 0.55, -5.48)
 shape = SubResource("BoxShape3D_pioku")
 
-[node name="PlinthShape9" type="CollisionShape3D" parent="Collision" unique_id=708265912]
+[node name="PlinthShape9" type="CollisionShape3D" parent="Collision" unique_id=938999291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.17, -6.4)
 shape = SubResource("BoxShape3D_xxkux")
 
-[node name="PostShape9" type="CollisionShape3D" parent="Collision" unique_id=886440382]
+[node name="PostShape9" type="CollisionShape3D" parent="Collision" unique_id=1412554709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38, 0.55, -5.48)
 shape = SubResource("BoxShape3D_orkcd")
 
-[node name="PlinthShape10" type="CollisionShape3D" parent="Collision" unique_id=401137372]
+[node name="PlinthShape10" type="CollisionShape3D" parent="Collision" unique_id=540871429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.17, -10.6)
 shape = SubResource("BoxShape3D_4qc0s")
 
-[node name="PostShape10" type="CollisionShape3D" parent="Collision" unique_id=983767711]
+[node name="PostShape10" type="CollisionShape3D" parent="Collision" unique_id=1627762592]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 0.55, -9.68)
 shape = SubResource("BoxShape3D_o61ba")
 
-[node name="PlinthShape11" type="CollisionShape3D" parent="Collision" unique_id=516380970]
+[node name="PlinthShape11" type="CollisionShape3D" parent="Collision" unique_id=577730486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0.17, -10.6)
 shape = SubResource("BoxShape3D_42y7g")
 
-[node name="PostShape11" type="CollisionShape3D" parent="Collision" unique_id=171469711]
+[node name="PostShape11" type="CollisionShape3D" parent="Collision" unique_id=1878463373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38, 0.55, -9.68)
 shape = SubResource("BoxShape3D_pivjy")
 
-[node name="GatePostLShape" type="CollisionShape3D" parent="Collision" unique_id=1759338924]
+[node name="GatePostLShape" type="CollisionShape3D" parent="Collision" unique_id=741743551]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 1.475, 16.4)
 shape = SubResource("BoxShape3D_kp6gy")
 
-[node name="GatePostRShape" type="CollisionShape3D" parent="Collision" unique_id=130382324]
+[node name="GatePostRShape" type="CollisionShape3D" parent="Collision" unique_id=803875813]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 1.475, 16.4)
 shape = SubResource("BoxShape3D_7ip7i")
 
-[node name="Console_entryShape" type="CollisionShape3D" parent="Collision" unique_id=1424904099]
+[node name="Console_entryShape" type="CollisionShape3D" parent="Collision" unique_id=177010600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.371139e-09, 0.5, 14.650001)
 shape = SubResource("BoxShape3D_a58ye")
 
-[node name="Console_farShape" type="CollisionShape3D" parent="Collision" unique_id=602376375]
+[node name="Console_farShape" type="CollisionShape3D" parent="Collision" unique_id=343704655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -14.650001)
 shape = SubResource("BoxShape3D_1ijj4")

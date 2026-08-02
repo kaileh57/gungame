@@ -1,0 +1,48 @@
+[gd_resource type="Environment" format=3]
+
+[ext_resource type="Material" path="res://demos/visuals/dusk_sky.tres" id="1_uclqn"]
+
+[sub_resource type="Sky" id="Sky_77jww"]
+sky_material = ExtResource("1_uclqn")
+process_mode = 3
+radiance_size = 2
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_77jww")
+ambient_light_source = 3
+ambient_light_energy = 0.34
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 1.28
+tonemap_white = 7.0
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 1.6
+ssao_light_affect = 0.1
+glow_enabled = true
+glow_levels/2 = 0.3
+glow_levels/3 = 0.62
+glow_levels/4 = 0.46
+glow_levels/5 = 0.18
+glow_levels/6 = 0.07
+glow_intensity = 0.52
+glow_hdr_threshold = 1.35
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.627451, 0.40784314, 0.26666668, 1)
+fog_light_energy = 0.6
+fog_sun_scatter = 0.3
+fog_density = 1.0
+fog_aerial_perspective = 0.62
+fog_sky_affect = 0.05
+fog_depth_curve = 1.35
+fog_depth_begin = 70.0
+fog_depth_end = 1250.0
+volumetric_fog_density = 0.0006
+volumetric_fog_albedo = Color(0.627451, 0.40784314, 0.26666668, 1)
+volumetric_fog_length = 160.0
+volumetric_fog_ambient_inject = 0.14
+volumetric_fog_sky_affect = 0.1
+adjustment_enabled = true
+adjustment_saturation = 1.22

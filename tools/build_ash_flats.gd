@@ -40,6 +40,8 @@ const Scatter := preload("res://tools/ash_flats/ash_flats_scatter.gd")
 const Line := preload("res://tools/ash_flats/ash_flats_line.gd")
 ## THE RACE: the start line, the gantry, the standings board and the route it is run on.
 const Race := preload("res://tools/ash_flats/ash_flats_race_build.gd")
+## THE FINISH: the gantry over the line at the end of it, and the checkpoint masts.
+const Finish := preload("res://tools/ash_flats/ash_flats_finish.gd")
 const MESH_DIR: String = "res://demos/ash_flats/meshes"
 const REPORT_PATH: String = "res://demos/ash_flats/ash_flats_report.txt"
 
@@ -63,6 +65,29 @@ const BUTTON_SCENE: String = "res://ui/diegetic/diegetic_button.tscn"
 ## The town's own seed, xored so the clutter is a different stream from the
 ## streets it is scattered along.
 const SCATTER_SEED: int = 4471 ^ 0x5CA7
+
+## The race corridor, as (x centre, z south, z north). Everything this builder places
+## for the sake of the WORLD rather than the RACE — the landmark posts, the extraction
+## pads — has to fall inside it or it is not built at all. See `_build_signs`.
+const RACE_CORRIDOR: Vector3 = Vector3(-8.0, -140.0, 100.0)
+## How far either side of the line a landmark post, and an extraction pad, may sit.
+const SIGN_CORRIDOR_X: float = 30.0
+const PAD_CORRIDOR_X: float = 70.0
+
+## Where the yard console may stand, as offsets from the spawn, best first. The outside
+## lanes are at x -11.3 and -4.7, so 5.4 m either side of the centre line clears a body
+## stood in one by a metre. The last is where the console stood before the demo became
+## mostly a race, and it is the fallback because it has provably always fitted.
+const CONSOLE_SPOTS: Array[Vector2] = [
+	Vector2(5.4, 2.6),
+	Vector2(-5.4, 2.6),
+	Vector2(5.4, 0.4),
+	Vector2(-5.4, 0.4),
+	Vector2(-5.4, -1.6),
+	Vector2(2.4, -1.6),
+]
+## Metres the console keeps away from the standings board.
+const CONSOLE_CLEAR: float = 3.6
 
 ## The start of the run: on the main carriageway, six metres south of the start
 ## gate, facing north up the line. Yaw PI is +Z, and +Z is downhill.
@@ -134,12 +159,20 @@ static func bake() -> PackedStringArray:
 	var scatter_stats: Dictionary = _build_scatter(root, props, placements)
 	var material := ResourceLoader.load(WORLD_MATERIAL) as Material
 	var line_stats: Dictionary = Line.build(root, query, material, MESH_DIR)
-	var gates: int = Line.build_gates(root, material, MESH_DIR, load(COURSE_SCRIPT))
+	# The finish is resolved ONCE and handed to both halves of the course. The solo
+	# clock's last gate and the race's last checkpoint are the same painted line under
+	# the same gantry, and that is only true if one place decides where it is.
+	var finish: Vector3 = Race.finish_point(query)
+	var gates: int = Line.build_gates(root, material, MESH_DIR, load(COURSE_SCRIPT), finish)
 	var ladders: int = _build_ladders(root, layout)
-	var signs: int = _build_signs(root, layout, meshes["signpost"])
-	var pads: int = _build_pads(root, layout, meshes["gauge_post"])
-	_build_board(root, spawn, meshes["yard_frame"])
-	var race_stats: Dictionary = Race.build(root, query, meshes, MESH_DIR)
+	var signs: Dictionary = _build_signs(root, layout, meshes["signpost"])
+	var pads: Dictionary = _build_pads(root, layout, meshes["gauge_post"])
+	# The console goes wherever the standings board is not. Both of them want the same
+	# few square metres beside the start line, and two four-metre objects a metre apart
+	# is one object with a bug in it.
+	var board_at: Vector2 = Race.board_spot(query)
+	_build_board(root, spawn, meshes["yard_frame"], _console_spot(query, board_at, spawn))
+	var race_stats: Dictionary = Race.build(root, query, meshes, MESH_DIR, finish)
 	_build_player(root, spawn)
 	_set_owner(root, root)
 	var packed := PackedScene.new()
@@ -160,8 +193,14 @@ static func bake() -> PackedStringArray:
 				% [spawn.x, spawn.y, spawn.z, SPAWN_YAW]
 			),
 			"ladders               %d climb volumes" % ladders,
-			"signs                 %d landmark posts" % signs,
-			"extraction pads       %d" % pads,
+			(
+				"signs                 %d landmark posts  (%d off the race, not built)"
+				% [signs["made"], signs["skipped"]]
+			),
+			(
+				"extraction pads       %d  (%d off the race, not built)"
+				% [pads["made"], pads["skipped"]]
+			),
 			"timing gates          %d" % gates,
 			"",
 			"THE ASH LINE",
@@ -174,6 +213,17 @@ static func bake() -> PackedStringArray:
 	log_lines.push_back("THE RACE")
 	for line: String in race_stats["lines"]:
 		log_lines.push_back(line)
+	var loose: int = int(race_stats["unsupported"])
+	log_lines.push_back(
+		(
+			"  route  %s"
+			% (
+				"every checkpoint stands on something"
+				if loose == 0
+				else "FAIL - %d checkpoints stand on nothing" % loose
+			)
+		)
+	)
 	log_lines.push_back("")
 	log_lines.push_back("SCATTER")
 	for line: String in scatter_stats["lines"]:
@@ -297,18 +347,29 @@ static func _build_ladders(root: Node3D, layout: WorldLayoutData) -> int:
 	return layout.ladder_count()
 
 
-## A stencilled steel post at every landmark — the whole of the demo's wayfinding.
-## No compass, no minimap, no overlay: a name on a plate you walk up to and read.
+## A stencilled steel post at every landmark ON THE RACE — the whole of the demo's
+## wayfinding. No compass, no minimap, no overlay: a name on a plate you walk up to.
 ## The label stops drawing at sixty metres, so it never fogs the view.
-static func _build_signs(root: Node3D, layout: WorldLayoutData, mesh: ArrayMesh) -> int:
+##
+## THE FAR ONES ARE GONE ON PURPOSE. This demo used to carry a signpost at every named
+## place in three hundred metres of map, because it was the demo you went and LOOKED at
+## the world in. That is `demos/visuals` now. What is left here is the race and the
+## ground it is run on, so a post survives only inside `RACE_CORRIDOR` — which keeps the
+## market and the plaza the line runs through and drops the camps and the crash site
+## nobody comes here for any more.
+static func _build_signs(root: Node3D, layout: WorldLayoutData, mesh: ArrayMesh) -> Dictionary:
 	var group := Node3D.new()
 	group.name = "Signs"
 	root.add_child(group)
 	var made: int = 0
+	var skipped: int = 0
 	for i: int in layout.poi_name.size():
 		if layout.poi_kind[i] != WorldLayoutData.PoiKind.POI:
 			continue
 		var p: Vector3 = layout.poi_pos[i]
+		if not _on_the_race(p, SIGN_CORRIDOR_X):
+			skipped += 1
+			continue
 		var post := Node3D.new()
 		post.name = "sign_%02d" % i
 		post.position = p
@@ -328,21 +389,31 @@ static func _build_signs(root: Node3D, layout: WorldLayoutData, mesh: ArrayMesh)
 		post.add_child(label)
 		group.add_child(post)
 		made += 1
-	return made
+	return {"made": made, "skipped": skipped}
 
 
-## An extraction pad per baked exfil: the trigger, and a gauge on a post just
-## outside the painted ring so it never sits under your feet while you stand on it.
-static func _build_pads(root: Node3D, layout: WorldLayoutData, post_mesh: ArrayMesh) -> int:
+## An extraction pad per baked exfil ON THE RACE: the trigger, and a gauge on a post
+## just outside the painted ring so it never sits under your feet while you stand on it.
+##
+## ONE PAD SURVIVES THE TRIM AND IT IS THE ONE THAT CLOSES THE LOOP. An extraction here
+## is not an escape, it is a lift back to the head of the line — so the pad worth having
+## is the one you can walk to FROM THE FINISH, and the ROOFTOP LZ is sixty metres east
+## of it. The two two-hundred-metre ones were an errand across a map this demo is no
+## longer about; `demos/visuals` is where the map is the point.
+static func _build_pads(root: Node3D, layout: WorldLayoutData, post_mesh: ArrayMesh) -> Dictionary:
 	var group := Node3D.new()
 	group.name = "Pads"
 	root.add_child(group)
 	var readout_scene := ResourceLoader.load(READOUT_SCENE) as PackedScene
 	var made: int = 0
+	var skipped: int = 0
 	for i: int in layout.poi_name.size():
 		if layout.poi_kind[i] != WorldLayoutData.PoiKind.EXFIL:
 			continue
 		var p: Vector3 = layout.poi_pos[i]
+		if not _on_the_race(p, PAD_CORRIDOR_X):
+			skipped += 1
+			continue
 		var pad := Node3D.new()
 		pad.set_script(load(PAD_SCRIPT))
 		pad.name = "pad_%s" % layout.poi_name[i].to_lower().replace(" ", "_")
@@ -371,7 +442,43 @@ static func _build_pads(root: Node3D, layout: WorldLayoutData, post_mesh: ArrayM
 		pad.set(&"readout_path", NodePath("Stand/Gauge"))
 		group.add_child(pad)
 		made += 1
-	return made
+	return {"made": made, "skipped": skipped}
+
+
+## Where the yard console stands: beside the start line, in the arrival view, clear of
+## the outside lanes, clear of the standings board and clear of the baked town.
+##
+## The candidates are offsets from the spawn, best first, and the LAST is where the
+## console stood before any of this — a spot the demo has been shipping for as long as
+## there has been one, which is the only kind of fallback worth having. A candidate is
+## refused if it is inside `CONSOLE_CLEAR` of the standings board or if the collider set
+## has no room for a console-sized column at it.
+static func _console_spot(query: WorldQuery, avoid: Vector2, spawn: Vector3) -> Vector3:
+	for offset: Vector2 in CONSOLE_SPOTS:
+		var x: float = spawn.x + offset.x
+		var z: float = spawn.z + offset.y
+		if Vector2(x, z).distance_to(avoid) < CONSOLE_CLEAR:
+			continue
+		var room: bool = true
+		for dx: float in [-1.05, 0.0, 1.05]:
+			if not query.can_stand(x + dx, z, query.ground_h(x + dx, z), 2.4, 0.35):
+				room = false
+				break
+		if room:
+			return Vector3(x, query.ground_h(x, z), z)
+	var last: Vector2 = CONSOLE_SPOTS[CONSOLE_SPOTS.size() - 1]
+	return Vector3(
+		spawn.x + last.x, query.ground_h(spawn.x + last.x, spawn.z + last.y), spawn.z + last.y
+	)
+
+
+## Is this place close enough to the race to be worth a post? A box around the line,
+## which runs x -8 from z -118 to the finish — generous across, because the race is the
+## reason to be here but the street beside it is still where you walk back.
+static func _on_the_race(p: Vector3, half_x: float) -> bool:
+	return (
+		absf(p.x - RACE_CORRIDOR.x) <= half_x and p.z >= RACE_CORRIDOR.y and p.z <= RACE_CORRIDOR.z
+	)
 
 
 ## The yard board: the demo's own console, on a frame at the start point. A lever for the
@@ -395,16 +502,24 @@ static func _build_pads(root: Node3D, layout: WorldLayoutData, post_mesh: ArrayM
 ## contract this file can reach: `verify_click_input.gd` is not ours to edit. The RIGHT
 ## fix is one line in its `AVOID` — `&"ash_flats": [&"race"]` — and then this id comes
 ## back. Nothing here needs it: the demo wires this button by node path.
-static func _build_board(root: Node3D, spawn: Vector3, frame_mesh: ArrayMesh) -> void:
+static func _build_board(root: Node3D, spawn: Vector3, frame_mesh: ArrayMesh, at: Vector3) -> void:
 	var board := Node3D.new()
 	board.name = "YardBoard"
-	board.position = spawn + Vector3(2.4, 0.0, -1.6)
+	# DOWN-LINE OF THE SPAWN AND TURNED BACK AT IT. You arrive facing +Z with the start
+	# line half a metre ahead; a console behind your shoulder is a console you find on
+	# your second visit. `_console_spot` puts it beside the line, clear of the outside
+	# lanes and of the standings board, and it is turned to look at where you land.
+	board.position = at
+	board.rotation = Vector3(0.0, atan2(spawn.x - at.x, spawn.z - at.z), 0.0)
 	root.add_child(board)
 	board.add_child(_mesh_node("Frame", frame_mesh, 120.0))
 	var readout: Node3D = (ResourceLoader.load(READOUT_SCENE) as PackedScene).instantiate()
 	readout.name = "Readout"
 	readout.position = Vector3(0.0, 1.62, 0.075)
 	board.add_child(readout)
+	# START RACE IS THE MIDDLE CONTROL. The clock and the lamp dial are settings for the
+	# solo run; the button is what the demo is for, and the middle of a three-control
+	# console is where a hand goes first.
 	var lever: Node3D = (ResourceLoader.load(LEVER_SCENE) as PackedScene).instantiate()
 	lever.name = "Clock"
 	lever.position = Vector3(-0.66, 1.06, 0.075)
@@ -415,13 +530,13 @@ static func _build_board(root: Node3D, spawn: Vector3, frame_mesh: ArrayMesh) ->
 	board.add_child(lever)
 	var dial: Node3D = (ResourceLoader.load(DIAL_SCENE) as PackedScene).instantiate()
 	dial.name = "Lamps"
-	dial.position = Vector3(0.0, 1.06, 0.075)
+	dial.position = Vector3(0.66, 1.06, 0.075)
 	dial.set(&"control_id", &"lamps")
 	dial.set(&"label_text", "GATE LAMPS")
 	board.add_child(dial)
 	var start: Node3D = (ResourceLoader.load(BUTTON_SCENE) as PackedScene).instantiate()
 	start.name = "Race"
-	start.position = Vector3(0.66, 1.06, 0.075)
+	start.position = Vector3(0.0, 1.06, 0.075)
 	start.set(&"label_text", "START RACE")
 	board.add_child(start)
 
@@ -456,6 +571,20 @@ static func _author_meshes() -> Dictionary:
 	var board := WorldMesher.new()
 	Race.emit_board_frame(board)
 	_finish_mesh(out, "board_frame", board, material)
+	# The finish and the checkpoint masts. Each one is split where it has to be lit: the
+	# gold band and the amber lamps are separate meshes because `scrap_surface` carries
+	# emission as a material uniform, so one mesh is one glow.
+	for row: Array in [
+		["finish", Finish.emit_finish],
+		["finish_gold", Finish.emit_finish_gold],
+		["finish_lamp", Finish.emit_finish_lamp],
+		["finish_bar", Finish.emit_finish_bar],
+		["check_mast", Finish.emit_check_mast],
+		["check_lamp", Finish.emit_check_lamp],
+	]:
+		var m := WorldMesher.new()
+		(row[1] as Callable).call(m)
+		_finish_mesh(out, String(row[0]), m, material)
 	return out
 
 

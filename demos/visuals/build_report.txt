@@ -1,8 +1,24 @@
 build_visuals
 
-site                  (-220, -40)
+town centre           (5, -2)  reach 381 m  mean roof 7.1 m
+site scan             160 candidates on the view axis
+site                 range     off    rise   clear    fill  score
+(128, 236)             250      96    18.0     6.4    13.5  15.3 
+(158, 263)             290      96    15.8     3.5    13.0  10.4 
+(165, 269)             300      96    14.5     2.3    11.9  10.3 
+(135, 243)             260      96    17.9     6.0    14.5  9.9 
+(150, 256)             280      96    17.2     4.7    14.3  8.1 
+(143, 249)             270      96    18.1     5.8    15.3  5.8 
+(160, 200)             250      48    39.7    14.7    36.9  -317.1 
+(199, 171)             260       0    42.0    14.0    38.1  -352.4 
+(207, 178)             270       0    41.8    13.8    38.6  -365.6 
+(167, 207)             260      48    41.1    14.6    38.6  -365.8 
+
+site                  (128, 236)
 terrain samples       3828 at 2.0 m
-pad top / bottom      10.265 / 0.276 m  (9.99 m fill)
+pad top / bottom      20.778 / 0.246 m  (20.53 m fill)
+dusk sun              3.5 deg elevation, -87.0 deg azimuth  dir (-0.997, 0.061, -0.052)
+shadow length         98 m from a 6 m pole (cascade reaches 260 m)
 
 hero eye              pad (24.8, 30.1) yaw 0.845
 element                  bearing   range screen x
@@ -32,7 +48,7 @@ prop crate             180.0 deg     6.6      off
 post                   180.0 deg     6.7      off
 rack                   180.0 deg     3.5      off
 
-shell pad      228 tris  vol +346713.22  bad 0/0/0  OK
+shell pad      228 tris  vol +754229.84  bad 0/0/0  OK
 clutter barrel        30 x 1 boxes
 clutter crate         24 x 3 boxes
 clutter sandbags      20 x 7 boxes
@@ -41,8 +57,9 @@ shell lamp     132 tris  vol     +0.40  bad 0/0/0  OK
 shell bulb      48 tris  vol     +0.01  bad 0/0/0  OK
 shell rack     132 tris  vol     +0.56  bad 0/0/0  OK
 shell post      72 tris  vol     +4.45  bad 0/0/0  OK
+dash overlay          4 widgets, script res://demos/visuals/visuals_dash.gd
 
-scene nodes           410 declared, 25 instanced, 36 meshes, 6 lights
+scene nodes           422 declared, 25 instanced, 36 meshes, 9 lights
 diegetic controls     5
 
 shells checked        5

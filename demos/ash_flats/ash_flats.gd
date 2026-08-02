@@ -1,21 +1,29 @@
 class_name AshFlats
 extends Node3D
-## ASH FLATS. One dead town on one dry river, and everything in it is walkable.
+## ASH FLATS. One dead town on one dry river, and THE RACE that is run through it.
 ##
-## THERE IS NOTHING TO FIGHT HERE. No spawner, no patrol, no AI. The demo is the
-## world and the moving through it: THE ASH LINE runs down the main carriageway
-## from the spoil heap at the south end to the dry river at the bottom, and the
-## whole of it is built to be taken at speed. Sprint up the berm, slide the pitched
-## roofs, and the three gaps open up — a slide off a fourteen-degree roof leaves the
-## lip at nearly thirteen metres a second against a sprint's seven and a half, and
-## that difference is exactly what the gaps are cut to.
+## THIS IS A RACE TRACK FIRST. Up to four people, one start line under a light gantry,
+## one route, one clock, and the standings on a steel board turned to face the line you
+## spawn on. It did not use to be: this was also the demo you came to LOOK at the world
+## in, and it carried a signpost at every named place in three hundred metres of map and
+## an extraction pad two hundred metres from anything. `demos/visuals` is where the world
+## is the point now, so what is left here is the race, the ground it is run on, and the
+## one pad you can walk to from the finish to be lifted back to the start.
 ##
-## AND IT IS A RACE TRACK. Up to four people, one start line under a light gantry at the
-## head of the berm, and the standings on a steel board you can walk up to. `AshFlatsRace`
-## owns all of that and the host owns `AshFlatsRace`; this file is the wiring between it
-## and everything in the demo that has to get out of its way — the extraction pads, which
-## would otherwise fly a racer home mid-run, and the presence mode, which becomes GHOST
-## for the duration so nobody can body-block anybody and everybody stays findable.
+## THE ASH LINE runs 190 m down the main carriageway: down the berm and the three gaps
+## into the dry river, UP the viaduct that climbs out of it over the market, and down one
+## more pitch and gap to the finish gantry on the far carriageway. All of it is built to
+## be taken at speed — a slide off a fourteen-degree roof leaves the lip at nearly
+## thirteen metres a second against a sprint's seven and a half, and that difference is
+## exactly what the gaps are cut to.
+##
+## `AshFlatsRace` owns the race and the host owns `AshFlatsRace`; this file is the wiring
+## between it and everything in the demo that has to get out of its way — the extraction
+## pad, which would otherwise fly a racer home mid-run, and the presence mode, which
+## becomes GHOST for the duration so nobody can body-block anybody and everybody stays
+## findable.
+##
+## THERE IS NOTHING TO FIGHT HERE. No spawner, no patrol, no AI.
 ##
 ## The scene is assembly, not authorship: the terrain, the town, the props, the
 ## player and the course were all baked by their own builders and are instanced here
@@ -34,7 +42,7 @@ signal respawned(where: Vector3, reason: StringName)
 
 const DEMO_ID: String = "ash_flats"
 const DEMO_TITLE: String = "ASH FLATS"
-const DEMO_BLURB: String = "One dead town on one dry river. Take the line."
+const DEMO_BLURB: String = "Four on the line, one dead town, one clock. Race it."
 ## What the gate-lamp dial steps through, in `AshFlatsCourse.Lamps` order.
 const LAMP_STEPS: PackedStringArray = ["OFF", "NEXT", "ALL"]
 ## Seconds between refreshes of the board and the debug notes. Both are read, not

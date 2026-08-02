@@ -105,16 +105,43 @@ func _ready() -> void:
 func flash(at: Node3D, scale: float) -> void:
 	if _sprites.is_empty() or at == null or not at.is_inside_tree():
 		return
+	_seat(at)
+	_fire_slot(at.global_position + _seat_bore * muzzle_lead, scale, _seat_layers)
+
+
+## A flash with no anchor node: an enemy's weapon, a turret, a projectile launcher —
+## anything whose muzzle is a POSITION and a BORE rather than a node in the tree.
+##
+## This exists because the AI has no muzzle node. `AICombat` fires from
+## `EnemyActor.muzzle_point()`, which is a computed Vector3 on a rig that is being
+## posed by a solver, so there is nothing to hand `flash()` and no anchor to read a
+## bore off. Without it every shot fired at the player was invisible — which is the
+## whole of "I can't tell who is shooting at me".
+##
+## `bore` is the direction the round left along; it is normalised here and only used
+## for `muzzle_lead`, so a caller that passes the aim vector unscaled is correct. The
+## flare goes to `world_layers`, which is right by construction: nothing in the
+## viewmodel pass fires without an anchor.
+func flash_at(origin: Vector3, bore: Vector3, scale: float) -> void:
+	if _sprites.is_empty():
+		return
+	var along: Vector3 = Vector3.FORWARD
+	if bore.length_squared() > 1.0e-8:
+		along = bore.normalized()
+	_fire_slot(origin + along * muzzle_lead, scale, world_layers)
+
+
+## Seat one flash. `scale` is the reference's `fs` BEFORE `flash_size`, because the
+## light energy is calibrated against `reference_scale` in those units and trimming
+## it twice would make every flash in the game dim when the one global knob moved.
+func _fire_slot(origin: Vector3, scale: float, layers: int) -> void:
 	var size: float = maxf(scale, 0.001) * flash_size
 	var slot: int = _head
 	_head = (_head + 1) % _sprites.size()
 
-	_seat(at)
-	var origin: Vector3 = at.global_position + _seat_bore * muzzle_lead
-
 	var sprite: MeshInstance3D = _sprites[slot]
 	sprite.transform = Transform3D(Basis.IDENTITY.scaled(Vector3(size, size, size)), origin)
-	sprite.layers = _seat_layers
+	sprite.layers = layers
 	sprite.set_instance_shader_parameter(P_OPACITY, 1.0)
 	sprite.set_instance_shader_parameter(P_ROLL, _rng.randf() * TAU)
 	sprite.visible = true
@@ -123,7 +150,7 @@ func flash(at: Node3D, scale: float) -> void:
 	light.position = origin
 	# The world always, plus the viewmodel when that is where the flare went, so one
 	# shot lights the wall in front of you AND the gun that fired it.
-	light.layers = _seat_layers | world_layers
+	light.layers = layers | world_layers
 	light.omni_range = light_range
 	light.light_energy = (
 		light_energy * sqrt(clampf(scale / maxf(reference_scale, 0.001), 0.05, 4.0))

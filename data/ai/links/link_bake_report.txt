@@ -1,6 +1,6 @@
 NAV LINK BAKE
 
-town       29942 polys, 10358 border edges, 62287 probes, 795 ms
+town       29942 polys, 10358 border edges, 62287 probes, 811 ms
            33 ladders from layout, 0 ends unusable, 3671 discovered
            1792 links -> 28% pathable; trying 896 (good 0, bad 1792)
            896 links -> 11% pathable; trying 448 (good 0, bad 896)
@@ -20,7 +20,7 @@ town       29942 polys, 10358 border edges, 62287 probes, 795 ms
            jump     138 baked,  137 pathable ( 99%),   92 join new ground, 0 orphan ends
            1995 faces too tall to climb, 3.4 m to 14.3 m (climb_max 3.4 m)
 
-arena      563 polys, 501 border edges, 9100 probes, 31 ms
+arena      563 polys, 501 border edges, 9100 probes, 32 ms
            0 ladders from layout, 0 ends unusable, 268 discovered
            shipped: 74 ladder, 27 mantle, 105 drop, 62 jump  (268 links, budget 1792)
            map valid true, 1 regions, 268 links, iteration 11
@@ -33,7 +33,7 @@ arena      563 polys, 501 border edges, 9100 probes, 31 ms
            jump      62 baked,   62 pathable (100%),    8 join new ground, 0 orphan ends
            85 faces too tall to climb, 3.5 m to 6.8 m (climb_max 3.4 m)
 
-firefight  3869 polys, 3541 border edges, 34346 probes, 222 ms
+firefight  3869 polys, 3541 border edges, 34346 probes, 227 ms
            1 ladders from layout, 0 ends unusable, 1800 discovered
            shipped: 274 ladder, 271 mantle, 592 drop, 655 jump  (1792 links, budget 1792)
            map valid true, 1 regions, 1792 links, iteration 14

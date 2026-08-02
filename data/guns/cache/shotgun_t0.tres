@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_i5sbe"]
+
+[resource]
+script = ExtResource("1_i5sbe")
+roll_seed = 3062
+cfg = 3387920468
+weapon_name = "Pumper Mk.XI"
+part_indices = PackedInt32Array(19, 45, 29, 43, 67)
+part_scales = PackedFloat32Array(1, 0.76756996, 0.8198321, 1.077884, 1.6)
+part_z_scales = PackedFloat32Array(1, 0.7, 0.8090678, 0.73112994, 1.3656847)
+part_offsets = PackedVector3Array(0, 0, 0, 2.1777701, 0.14574, 0.00161, -2.1777701, -0.25579, 0.0017, -0.4610834, -0.06708, 0.00161, 0.43261, 0.31655, 0.00161)
+fit_error = 2.8811540311923216
+muzzle_local = Vector3(4.0147953, 0.14574, 0.00161)
+score = 53.7581566251701
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("drum-fed", "tired spring", "stiff spring", "grit in the works", "gritty", "worn mag", "binds hot", "wandering zero")
+caliber = "7.92×57"
+bore = 8.1
+case_length = 63
+muzzle_velocity = 665
+muzzle_energy = 1018
+effective_range = 53
+sim_velocity = 333
+damage = 43.0
+crit_multiplier = 2.31
+headshot_range = 49.0
+impulse = 4.429539982703876
+fire_mode = &"Semi-auto"
+archetype = &"Snubnose"
+rpm = 168
+cyclic = 480
+magazine = 60
+reload_time = 3.4
+mass = 4.829594726925514
+precision = 32
+reach = 57
+kick = 17
+handling = 42
+reliability = 39
+burst_dps = 122
+sustained_dps = 105
+barrel_length = 165
+overall_length = 909
+spread = 64.0
+spread_rad = 0.018748582222845037
+spread_text = "1.1°"
+has_optic = true
+zoom = 1.7508000257730487
+zoom_levels = PackedFloat32Array(1.8)
+recoil_vertical = 0.002748158572022504
+recoil_horizontal = 0.002815065815965112
+recoil_drift = 0.473
+recoil_period = 9
+recoil_random = 0.6148777111816167
+recoil_settle = 0.692034637476129
+tint = 0.9084505781345069
+donor_groups = Array[StringName]([&"Pumper", &"Chattergun", &"Karabiner", &"Broomstick", &"Sturmgewehr"])
+metadata/gun_traits = PackedStringArray("tired spring", "stiff spring", "grit in the works")
+metadata/gun_graded = true

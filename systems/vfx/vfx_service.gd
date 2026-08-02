@@ -38,6 +38,20 @@ static var _hub: VfxService = null
 @export_range(0.005, 0.3, 0.001) var tracer_width: float = 0.05
 ## Below this muzzle-to-impact distance a tracer is not worth a slot.
 @export_range(0.0, 20.0, 0.1) var tracer_min_length: float = 1.2
+## Width multiplier on a tracer coming AT the player rather than leaving their own
+## muzzle. Incoming fire is drawn end-on — a round on a collision course with your
+## eye subtends almost no screen area at any width, and at the shipped 0.05 m it is
+## a scratch two pixels long that nobody reported ever seeing. Widening it is the
+## only lever the ribbon geometry gives; the pool has no colour channel free (the
+## four custom-data floats are birth, life, speed and path), so this is what
+## distinguishes hostile fire until somebody bakes a second tracer material.
+@export_range(1.0, 8.0, 0.1) var hostile_tracer_gain: float = 2.8
+## Lifetime multiplier on the same. A 45 ms streak read across your view is fine;
+## the same streak read down its own axis is gone before the eye finds it.
+@export_range(1.0, 8.0, 0.1) var hostile_tracer_life_gain: float = 2.4
+## Minimum length for a hostile tracer, metres. Far shorter than `tracer_min_length`
+## because a body shooting you at three metres is the case that most needs drawing.
+@export_range(0.0, 20.0, 0.1) var hostile_tracer_min_length: float = 0.35
 
 @export_group("Impacts")
 ## Multiplier on every surface's spark count. The per-surface numbers live in
@@ -109,9 +123,23 @@ static func spawn_decal(pos: Vector3, normal: Vector3, size: float) -> void:
 		_hub.decal(pos, normal, size, false, 0.0)
 
 
+## A round coming toward the player: wider, longer-lived, and drawn at ranges an
+## outgoing tracer is not worth a slot at. See `hostile_tracer_gain`.
+static func spawn_hostile_tracer(from: Vector3, to: Vector3, speed: float) -> void:
+	if _hub != null:
+		_hub.hostile_tracer(from, to, speed)
+
+
 static func spawn_muzzle_flash(at: Node3D, scale: float) -> void:
 	if _hub != null:
 		_hub.muzzle_flash(at, scale)
+
+
+## A flash from a muzzle that is a point and a direction rather than a node — every
+## weapon the AI carries. `VfxMuzzle.flash_at` documents why that case exists.
+static func spawn_muzzle_flash_at(pos: Vector3, bore: Vector3, scale: float) -> void:
+	if _hub != null:
+		_hub.muzzle_flash_at(pos, bore, scale)
 
 
 static func spawn_explosion(pos: Vector3, radius: float) -> void:
@@ -230,6 +258,22 @@ func tracer(from: Vector3, to: Vector3, speed: float) -> void:
 	_tracers.add(from, to, speed, _camera_pos, _clock, TRACER_LIFE, tracer_width)
 
 
+## The same ribbon, drawn for a round travelling toward the eye.
+func hostile_tracer(from: Vector3, to: Vector3, speed: float) -> void:
+	if from.distance_squared_to(to) < hostile_tracer_min_length * hostile_tracer_min_length:
+		return
+	_tracer_count += 1
+	_tracers.add(
+		from,
+		to,
+		speed,
+		_camera_pos,
+		_clock,
+		TRACER_LIFE * hostile_tracer_life_gain,
+		tracer_width * hostile_tracer_gain
+	)
+
+
 ## Sparks, spray, dust and a hole, all keyed off the surface that was hit.
 func impact(pos: Vector3, normal: Vector3, surface: int, intensity: float = 1.0) -> void:
 	var kind: int = VFXSurface.valid(surface)
@@ -281,6 +325,11 @@ func decal(
 func muzzle_flash(at: Node3D, scale: float) -> void:
 	_shot_count += 1
 	_muzzles.flash(at, scale)
+
+
+func muzzle_flash_at(pos: Vector3, bore: Vector3, scale: float) -> void:
+	_shot_count += 1
+	_muzzles.flash_at(pos, bore, scale)
 
 
 func explosion(pos: Vector3, radius: float) -> void:

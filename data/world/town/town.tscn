@@ -417,1621 +417,1621 @@
 [ext_resource type="ArrayOccluder3D" path="res://data/world/town/town_occluders.res" id="415_v56tr"]
 [ext_resource type="NavigationMesh" path="res://data/world/town/town_nav.res" id="416_lassk"]
 
-[node name="Town" type="Node3D" unique_id=223106262]
+[node name="Town" type="Node3D" unique_id=1363265071]
 
-[node name="chunk_n04_n09" type="MeshInstance3D" parent="." unique_id=653167739]
+[node name="chunk_n04_n09" type="MeshInstance3D" parent="." unique_id=1489850202]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("1_64mna")
 
-[node name="chunk_n03_n09" type="MeshInstance3D" parent="." unique_id=1126414671]
+[node name="chunk_n03_n09" type="MeshInstance3D" parent="." unique_id=1265859715]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("2_1ply7")
 
-[node name="chunk_n02_n09" type="MeshInstance3D" parent="." unique_id=341906307]
+[node name="chunk_n02_n09" type="MeshInstance3D" parent="." unique_id=255523694]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("3_j6gic")
 
-[node name="chunk_n01_n09" type="MeshInstance3D" parent="." unique_id=1147330130]
+[node name="chunk_n01_n09" type="MeshInstance3D" parent="." unique_id=2025526015]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("4_1sakb")
 
-[node name="chunk_p02_n09" type="MeshInstance3D" parent="." unique_id=1712834167]
+[node name="chunk_p02_n09" type="MeshInstance3D" parent="." unique_id=531808861]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("5_nwar5")
 
-[node name="chunk_p03_n09" type="MeshInstance3D" parent="." unique_id=808787536]
+[node name="chunk_p03_n09" type="MeshInstance3D" parent="." unique_id=1059243721]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("6_8uloi")
 
-[node name="chunk_n06_n08" type="MeshInstance3D" parent="." unique_id=1155647121]
+[node name="chunk_n06_n08" type="MeshInstance3D" parent="." unique_id=424585236]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("7_17ox8")
 
-[node name="chunk_n05_n08" type="MeshInstance3D" parent="." unique_id=1331545378]
+[node name="chunk_n05_n08" type="MeshInstance3D" parent="." unique_id=2116154308]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("8_m78oe")
 
-[node name="chunk_n04_n08" type="MeshInstance3D" parent="." unique_id=227007362]
+[node name="chunk_n04_n08" type="MeshInstance3D" parent="." unique_id=1015270346]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("9_am5l4")
 
-[node name="chunk_n03_n08" type="MeshInstance3D" parent="." unique_id=1322902508]
+[node name="chunk_n03_n08" type="MeshInstance3D" parent="." unique_id=1288303126]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("10_g5g2y")
 
-[node name="chunk_n02_n08" type="MeshInstance3D" parent="." unique_id=1444455217]
+[node name="chunk_n02_n08" type="MeshInstance3D" parent="." unique_id=1163928913]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("11_81qf6")
 
-[node name="chunk_n01_n08" type="MeshInstance3D" parent="." unique_id=1762745628]
+[node name="chunk_n01_n08" type="MeshInstance3D" parent="." unique_id=1665154722]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("12_qvkhv")
 
-[node name="chunk_p00_n08" type="MeshInstance3D" parent="." unique_id=966278064]
+[node name="chunk_p00_n08" type="MeshInstance3D" parent="." unique_id=1288772031]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("13_qw0gv")
 
-[node name="chunk_p01_n08" type="MeshInstance3D" parent="." unique_id=1036789768]
+[node name="chunk_p01_n08" type="MeshInstance3D" parent="." unique_id=119783303]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("14_ybr8c")
 
-[node name="chunk_p02_n08" type="MeshInstance3D" parent="." unique_id=700430814]
+[node name="chunk_p02_n08" type="MeshInstance3D" parent="." unique_id=546543933]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("15_k14q6")
 
-[node name="chunk_p03_n08" type="MeshInstance3D" parent="." unique_id=1972299913]
+[node name="chunk_p03_n08" type="MeshInstance3D" parent="." unique_id=1255585954]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("16_qs7qk")
 
-[node name="chunk_p04_n08" type="MeshInstance3D" parent="." unique_id=599642441]
+[node name="chunk_p04_n08" type="MeshInstance3D" parent="." unique_id=690178972]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("17_b44lx")
 
-[node name="chunk_n06_n07" type="MeshInstance3D" parent="." unique_id=1885295458]
+[node name="chunk_n06_n07" type="MeshInstance3D" parent="." unique_id=736027077]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("18_pxun2")
 
-[node name="chunk_n05_n07" type="MeshInstance3D" parent="." unique_id=612032951]
+[node name="chunk_n05_n07" type="MeshInstance3D" parent="." unique_id=307286570]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("19_6od5i")
 
-[node name="chunk_n03_n07" type="MeshInstance3D" parent="." unique_id=1664337602]
+[node name="chunk_n03_n07" type="MeshInstance3D" parent="." unique_id=1327787592]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("20_lw0my")
 
-[node name="chunk_n02_n07" type="MeshInstance3D" parent="." unique_id=1721512448]
+[node name="chunk_n02_n07" type="MeshInstance3D" parent="." unique_id=431288925]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("21_8gixy")
 
-[node name="chunk_n01_n07" type="MeshInstance3D" parent="." unique_id=1309396619]
+[node name="chunk_n01_n07" type="MeshInstance3D" parent="." unique_id=1282189757]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("22_jcbnn")
 
-[node name="chunk_p00_n07" type="MeshInstance3D" parent="." unique_id=250325366]
+[node name="chunk_p00_n07" type="MeshInstance3D" parent="." unique_id=1474877403]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("23_uuiwa")
 
-[node name="chunk_p03_n07" type="MeshInstance3D" parent="." unique_id=802309590]
+[node name="chunk_p03_n07" type="MeshInstance3D" parent="." unique_id=1048596181]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("24_5m5dc")
 
-[node name="chunk_p04_n07" type="MeshInstance3D" parent="." unique_id=1703083679]
+[node name="chunk_p04_n07" type="MeshInstance3D" parent="." unique_id=143220425]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("25_cjod2")
 
-[node name="chunk_p05_n07" type="MeshInstance3D" parent="." unique_id=1600645298]
+[node name="chunk_p05_n07" type="MeshInstance3D" parent="." unique_id=883531003]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("26_ya8i7")
 
-[node name="chunk_p06_n07" type="MeshInstance3D" parent="." unique_id=324678096]
+[node name="chunk_p06_n07" type="MeshInstance3D" parent="." unique_id=673641660]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("27_1gjgp")
 
-[node name="chunk_n08_n06" type="MeshInstance3D" parent="." unique_id=1862778654]
+[node name="chunk_n08_n06" type="MeshInstance3D" parent="." unique_id=1463340711]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("28_j8b25")
 
-[node name="chunk_n05_n06" type="MeshInstance3D" parent="." unique_id=109569446]
+[node name="chunk_n05_n06" type="MeshInstance3D" parent="." unique_id=872715300]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("29_6cjyb")
 
-[node name="chunk_n04_n06" type="MeshInstance3D" parent="." unique_id=525950959]
+[node name="chunk_n04_n06" type="MeshInstance3D" parent="." unique_id=453134642]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("30_8mr3n")
 
-[node name="chunk_n02_n06" type="MeshInstance3D" parent="." unique_id=186105414]
+[node name="chunk_n02_n06" type="MeshInstance3D" parent="." unique_id=1200058369]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("31_7akmk")
 
-[node name="chunk_n01_n06" type="MeshInstance3D" parent="." unique_id=602756220]
+[node name="chunk_n01_n06" type="MeshInstance3D" parent="." unique_id=322021670]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("32_vckq3")
 
-[node name="chunk_p00_n06" type="MeshInstance3D" parent="." unique_id=2032882965]
+[node name="chunk_p00_n06" type="MeshInstance3D" parent="." unique_id=1639340810]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("33_ki4ys")
 
-[node name="chunk_p01_n06" type="MeshInstance3D" parent="." unique_id=2127475280]
+[node name="chunk_p01_n06" type="MeshInstance3D" parent="." unique_id=384351941]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("34_vewgs")
 
-[node name="chunk_p03_n06" type="MeshInstance3D" parent="." unique_id=673640624]
+[node name="chunk_p03_n06" type="MeshInstance3D" parent="." unique_id=1649829139]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("35_khniw")
 
-[node name="chunk_p04_n06" type="MeshInstance3D" parent="." unique_id=137278398]
+[node name="chunk_p04_n06" type="MeshInstance3D" parent="." unique_id=44004073]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("36_vj8sl")
 
-[node name="chunk_p06_n06" type="MeshInstance3D" parent="." unique_id=508794158]
+[node name="chunk_p06_n06" type="MeshInstance3D" parent="." unique_id=912637619]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("37_8sbnx")
 
-[node name="chunk_n08_n05" type="MeshInstance3D" parent="." unique_id=91509084]
+[node name="chunk_n08_n05" type="MeshInstance3D" parent="." unique_id=38495990]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("38_h1sb0")
 
-[node name="chunk_n06_n05" type="MeshInstance3D" parent="." unique_id=14509318]
+[node name="chunk_n06_n05" type="MeshInstance3D" parent="." unique_id=1423866693]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("39_u5xpj")
 
-[node name="chunk_n05_n05" type="MeshInstance3D" parent="." unique_id=1288499859]
+[node name="chunk_n05_n05" type="MeshInstance3D" parent="." unique_id=2085527865]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("40_d4xpx")
 
-[node name="chunk_n04_n05" type="MeshInstance3D" parent="." unique_id=384073002]
+[node name="chunk_n04_n05" type="MeshInstance3D" parent="." unique_id=522597772]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("41_6sqee")
 
-[node name="chunk_n03_n05" type="MeshInstance3D" parent="." unique_id=377200097]
+[node name="chunk_n03_n05" type="MeshInstance3D" parent="." unique_id=393132630]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("42_3iijg")
 
-[node name="chunk_n02_n05" type="MeshInstance3D" parent="." unique_id=107163618]
+[node name="chunk_n02_n05" type="MeshInstance3D" parent="." unique_id=730276195]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("43_bujf6")
 
-[node name="chunk_n01_n05" type="MeshInstance3D" parent="." unique_id=498396418]
+[node name="chunk_n01_n05" type="MeshInstance3D" parent="." unique_id=457806760]
 gi_mode = 0
 mesh = ExtResource("44_jw7ni")
 
-[node name="chunk_p00_n05" type="MeshInstance3D" parent="." unique_id=1113562860]
+[node name="chunk_p00_n05" type="MeshInstance3D" parent="." unique_id=1898378936]
 gi_mode = 0
 mesh = ExtResource("45_05pks")
 
-[node name="chunk_p01_n05" type="MeshInstance3D" parent="." unique_id=1114558791]
+[node name="chunk_p01_n05" type="MeshInstance3D" parent="." unique_id=1800039312]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("46_w7kjp")
 
-[node name="chunk_p02_n05" type="MeshInstance3D" parent="." unique_id=1783864843]
+[node name="chunk_p02_n05" type="MeshInstance3D" parent="." unique_id=2013426365]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("47_y2p7p")
 
-[node name="chunk_p03_n05" type="MeshInstance3D" parent="." unique_id=94240967]
+[node name="chunk_p03_n05" type="MeshInstance3D" parent="." unique_id=552935815]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("48_qx2if")
 
-[node name="chunk_p04_n05" type="MeshInstance3D" parent="." unique_id=2042026177]
+[node name="chunk_p04_n05" type="MeshInstance3D" parent="." unique_id=991787299]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("49_c6wq1")
 
-[node name="chunk_p05_n05" type="MeshInstance3D" parent="." unique_id=1144143490]
+[node name="chunk_p05_n05" type="MeshInstance3D" parent="." unique_id=358128154]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("50_hdwmd")
 
-[node name="chunk_p07_n05" type="MeshInstance3D" parent="." unique_id=997275537]
+[node name="chunk_p07_n05" type="MeshInstance3D" parent="." unique_id=1502908396]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("51_fulql")
 
-[node name="chunk_n09_n04" type="MeshInstance3D" parent="." unique_id=867655287]
+[node name="chunk_n09_n04" type="MeshInstance3D" parent="." unique_id=560653910]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("52_eaa06")
 
-[node name="chunk_n08_n04" type="MeshInstance3D" parent="." unique_id=1230909053]
+[node name="chunk_n08_n04" type="MeshInstance3D" parent="." unique_id=786628812]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("53_cwno7")
 
-[node name="chunk_n04_n04" type="MeshInstance3D" parent="." unique_id=1526645157]
+[node name="chunk_n04_n04" type="MeshInstance3D" parent="." unique_id=1771076968]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("54_grfme")
 
-[node name="chunk_p00_n04" type="MeshInstance3D" parent="." unique_id=1557143092]
+[node name="chunk_p00_n04" type="MeshInstance3D" parent="." unique_id=64167846]
 gi_mode = 0
 mesh = ExtResource("55_lsa22")
 
-[node name="chunk_p01_n04" type="MeshInstance3D" parent="." unique_id=658315998]
+[node name="chunk_p01_n04" type="MeshInstance3D" parent="." unique_id=1648184127]
 gi_mode = 0
 mesh = ExtResource("56_yw6lr")
 
-[node name="chunk_p03_n04" type="MeshInstance3D" parent="." unique_id=1819604906]
+[node name="chunk_p03_n04" type="MeshInstance3D" parent="." unique_id=1107892103]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("57_2ov6t")
 
-[node name="chunk_p04_n04" type="MeshInstance3D" parent="." unique_id=1161934200]
+[node name="chunk_p04_n04" type="MeshInstance3D" parent="." unique_id=1803629434]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("58_0gw3i")
 
-[node name="chunk_p05_n04" type="MeshInstance3D" parent="." unique_id=66740383]
+[node name="chunk_p05_n04" type="MeshInstance3D" parent="." unique_id=1074264233]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("59_6ul4y")
 
-[node name="chunk_p06_n04" type="MeshInstance3D" parent="." unique_id=1734293661]
+[node name="chunk_p06_n04" type="MeshInstance3D" parent="." unique_id=405491406]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("60_3mw18")
 
-[node name="chunk_p07_n04" type="MeshInstance3D" parent="." unique_id=1380363614]
+[node name="chunk_p07_n04" type="MeshInstance3D" parent="." unique_id=1789707128]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("61_2uy6r")
 
-[node name="chunk_n09_n03" type="MeshInstance3D" parent="." unique_id=1561488893]
+[node name="chunk_n09_n03" type="MeshInstance3D" parent="." unique_id=1392634828]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("62_kk4cr")
 
-[node name="chunk_n08_n03" type="MeshInstance3D" parent="." unique_id=631966692]
+[node name="chunk_n08_n03" type="MeshInstance3D" parent="." unique_id=1699959045]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("63_6qckx")
 
-[node name="chunk_n07_n03" type="MeshInstance3D" parent="." unique_id=301267537]
+[node name="chunk_n07_n03" type="MeshInstance3D" parent="." unique_id=568761410]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("64_n3dbi")
 
-[node name="chunk_n06_n03" type="MeshInstance3D" parent="." unique_id=970675972]
+[node name="chunk_n06_n03" type="MeshInstance3D" parent="." unique_id=541043737]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("65_uip1b")
 
-[node name="chunk_n05_n03" type="MeshInstance3D" parent="." unique_id=1290312580]
+[node name="chunk_n05_n03" type="MeshInstance3D" parent="." unique_id=1556025720]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("66_e8n8t")
 
-[node name="chunk_n04_n03" type="MeshInstance3D" parent="." unique_id=1755808439]
+[node name="chunk_n04_n03" type="MeshInstance3D" parent="." unique_id=540443392]
 gi_mode = 0
 mesh = ExtResource("67_bbhyx")
 
-[node name="chunk_n03_n03" type="MeshInstance3D" parent="." unique_id=1113629627]
+[node name="chunk_n03_n03" type="MeshInstance3D" parent="." unique_id=1815456383]
 gi_mode = 0
 mesh = ExtResource("68_iag4q")
 
-[node name="chunk_n02_n03" type="MeshInstance3D" parent="." unique_id=921380697]
+[node name="chunk_n02_n03" type="MeshInstance3D" parent="." unique_id=1139290534]
 gi_mode = 0
 mesh = ExtResource("69_d0l42")
 
-[node name="chunk_n01_n03" type="MeshInstance3D" parent="." unique_id=91829620]
+[node name="chunk_n01_n03" type="MeshInstance3D" parent="." unique_id=1260004622]
 gi_mode = 0
 mesh = ExtResource("70_lvfgp")
 
-[node name="chunk_p00_n03" type="MeshInstance3D" parent="." unique_id=34838354]
+[node name="chunk_p00_n03" type="MeshInstance3D" parent="." unique_id=2112831242]
 gi_mode = 0
 mesh = ExtResource("71_eyfhr")
 
-[node name="chunk_p01_n03" type="MeshInstance3D" parent="." unique_id=853843611]
+[node name="chunk_p01_n03" type="MeshInstance3D" parent="." unique_id=1858699979]
 gi_mode = 0
 mesh = ExtResource("72_vcx4g")
 
-[node name="chunk_p02_n03" type="MeshInstance3D" parent="." unique_id=132854128]
+[node name="chunk_p02_n03" type="MeshInstance3D" parent="." unique_id=1015796773]
 gi_mode = 0
 mesh = ExtResource("73_q66vj")
 
-[node name="chunk_p03_n03" type="MeshInstance3D" parent="." unique_id=1870585120]
+[node name="chunk_p03_n03" type="MeshInstance3D" parent="." unique_id=1775072264]
 gi_mode = 0
 mesh = ExtResource("74_k1vib")
 
-[node name="chunk_p05_n03" type="MeshInstance3D" parent="." unique_id=1886503591]
+[node name="chunk_p05_n03" type="MeshInstance3D" parent="." unique_id=933087195]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("75_qc7do")
 
-[node name="chunk_p06_n03" type="MeshInstance3D" parent="." unique_id=2089133169]
+[node name="chunk_p06_n03" type="MeshInstance3D" parent="." unique_id=443547459]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("76_r8wuy")
 
-[node name="chunk_n09_n02" type="MeshInstance3D" parent="." unique_id=883077329]
+[node name="chunk_n09_n02" type="MeshInstance3D" parent="." unique_id=1654175669]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("77_d6leo")
 
-[node name="chunk_n08_n02" type="MeshInstance3D" parent="." unique_id=1261601503]
+[node name="chunk_n08_n02" type="MeshInstance3D" parent="." unique_id=1016916976]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("78_lwe1p")
 
-[node name="chunk_n07_n02" type="MeshInstance3D" parent="." unique_id=1396028272]
+[node name="chunk_n07_n02" type="MeshInstance3D" parent="." unique_id=615961593]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("79_co5tj")
 
-[node name="chunk_n06_n02" type="MeshInstance3D" parent="." unique_id=2120720431]
+[node name="chunk_n06_n02" type="MeshInstance3D" parent="." unique_id=958266993]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("80_c0pk7")
 
-[node name="chunk_n05_n02" type="MeshInstance3D" parent="." unique_id=1673690534]
+[node name="chunk_n05_n02" type="MeshInstance3D" parent="." unique_id=366130475]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("81_n0i23")
 
-[node name="chunk_n04_n02" type="MeshInstance3D" parent="." unique_id=750064740]
+[node name="chunk_n04_n02" type="MeshInstance3D" parent="." unique_id=28983349]
 gi_mode = 0
 mesh = ExtResource("82_j41pk")
 
-[node name="chunk_n03_n02" type="MeshInstance3D" parent="." unique_id=376406091]
+[node name="chunk_n03_n02" type="MeshInstance3D" parent="." unique_id=2044739913]
 gi_mode = 0
 mesh = ExtResource("83_lj117")
 
-[node name="chunk_n02_n02" type="MeshInstance3D" parent="." unique_id=314833595]
+[node name="chunk_n02_n02" type="MeshInstance3D" parent="." unique_id=62481861]
 gi_mode = 0
 mesh = ExtResource("84_66b5l")
 
-[node name="chunk_n01_n02" type="MeshInstance3D" parent="." unique_id=1322232775]
+[node name="chunk_n01_n02" type="MeshInstance3D" parent="." unique_id=722808377]
 gi_mode = 0
 mesh = ExtResource("85_f72xu")
 
-[node name="chunk_p00_n02" type="MeshInstance3D" parent="." unique_id=789124192]
+[node name="chunk_p00_n02" type="MeshInstance3D" parent="." unique_id=1961404414]
 gi_mode = 0
 mesh = ExtResource("86_nm5jq")
 
-[node name="chunk_p01_n02" type="MeshInstance3D" parent="." unique_id=457896034]
+[node name="chunk_p01_n02" type="MeshInstance3D" parent="." unique_id=167871511]
 gi_mode = 0
 mesh = ExtResource("87_81fae")
 
-[node name="chunk_p02_n02" type="MeshInstance3D" parent="." unique_id=1394175987]
+[node name="chunk_p02_n02" type="MeshInstance3D" parent="." unique_id=1275700341]
 gi_mode = 0
 mesh = ExtResource("88_rbwjd")
 
-[node name="chunk_p03_n02" type="MeshInstance3D" parent="." unique_id=148326171]
+[node name="chunk_p03_n02" type="MeshInstance3D" parent="." unique_id=1769854756]
 gi_mode = 0
 mesh = ExtResource("89_e0w37")
 
-[node name="chunk_p04_n02" type="MeshInstance3D" parent="." unique_id=1629258354]
+[node name="chunk_p04_n02" type="MeshInstance3D" parent="." unique_id=157711035]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("90_op7gh")
 
-[node name="chunk_p05_n02" type="MeshInstance3D" parent="." unique_id=57755106]
+[node name="chunk_p05_n02" type="MeshInstance3D" parent="." unique_id=1027731669]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("91_xo663")
 
-[node name="chunk_p06_n02" type="MeshInstance3D" parent="." unique_id=532238075]
+[node name="chunk_p06_n02" type="MeshInstance3D" parent="." unique_id=593869709]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("92_vcli1")
 
-[node name="chunk_p07_n02" type="MeshInstance3D" parent="." unique_id=1388762744]
+[node name="chunk_p07_n02" type="MeshInstance3D" parent="." unique_id=1915794944]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("93_jxy61")
 
-[node name="chunk_n09_n01" type="MeshInstance3D" parent="." unique_id=618332705]
+[node name="chunk_n09_n01" type="MeshInstance3D" parent="." unique_id=1031716103]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("94_gvaon")
 
-[node name="chunk_n08_n01" type="MeshInstance3D" parent="." unique_id=792820713]
+[node name="chunk_n08_n01" type="MeshInstance3D" parent="." unique_id=2061365458]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("95_emllt")
 
-[node name="chunk_n07_n01" type="MeshInstance3D" parent="." unique_id=1334062157]
+[node name="chunk_n07_n01" type="MeshInstance3D" parent="." unique_id=224624941]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("96_86smf")
 
-[node name="chunk_n05_n01" type="MeshInstance3D" parent="." unique_id=1466676113]
+[node name="chunk_n05_n01" type="MeshInstance3D" parent="." unique_id=1331828425]
 gi_mode = 0
 mesh = ExtResource("97_6hde4")
 
-[node name="chunk_n03_n01" type="MeshInstance3D" parent="." unique_id=1894069038]
+[node name="chunk_n03_n01" type="MeshInstance3D" parent="." unique_id=35418113]
 gi_mode = 0
 mesh = ExtResource("98_4c1kg")
 
-[node name="chunk_n02_n01" type="MeshInstance3D" parent="." unique_id=542550095]
+[node name="chunk_n02_n01" type="MeshInstance3D" parent="." unique_id=1581651135]
 gi_mode = 0
 mesh = ExtResource("99_onhys")
 
-[node name="chunk_n01_n01" type="MeshInstance3D" parent="." unique_id=338305333]
+[node name="chunk_n01_n01" type="MeshInstance3D" parent="." unique_id=599638789]
 gi_mode = 0
 mesh = ExtResource("100_qxd2c")
 
-[node name="chunk_p00_n01" type="MeshInstance3D" parent="." unique_id=682994645]
+[node name="chunk_p00_n01" type="MeshInstance3D" parent="." unique_id=188470908]
 gi_mode = 0
 mesh = ExtResource("101_v1vvp")
 
-[node name="chunk_p01_n01" type="MeshInstance3D" parent="." unique_id=1175401070]
+[node name="chunk_p01_n01" type="MeshInstance3D" parent="." unique_id=468385561]
 gi_mode = 0
 mesh = ExtResource("102_ulnxk")
 
-[node name="chunk_p02_n01" type="MeshInstance3D" parent="." unique_id=536944625]
+[node name="chunk_p02_n01" type="MeshInstance3D" parent="." unique_id=801846515]
 gi_mode = 0
 mesh = ExtResource("103_nt2ht")
 
-[node name="chunk_p03_n01" type="MeshInstance3D" parent="." unique_id=1527158047]
+[node name="chunk_p03_n01" type="MeshInstance3D" parent="." unique_id=2039043469]
 gi_mode = 0
 mesh = ExtResource("104_030gj")
 
-[node name="chunk_p06_n01" type="MeshInstance3D" parent="." unique_id=1158681200]
+[node name="chunk_p06_n01" type="MeshInstance3D" parent="." unique_id=1180147848]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("105_jv07i")
 
-[node name="chunk_p07_n01" type="MeshInstance3D" parent="." unique_id=541878663]
+[node name="chunk_p07_n01" type="MeshInstance3D" parent="." unique_id=1487446773]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("106_qygdi")
 
-[node name="chunk_n09_p00" type="MeshInstance3D" parent="." unique_id=1705327872]
+[node name="chunk_n09_p00" type="MeshInstance3D" parent="." unique_id=705786260]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("107_45u2o")
 
-[node name="chunk_n08_p00" type="MeshInstance3D" parent="." unique_id=1825186609]
+[node name="chunk_n08_p00" type="MeshInstance3D" parent="." unique_id=1262604097]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("108_8yc1v")
 
-[node name="chunk_n04_p00" type="MeshInstance3D" parent="." unique_id=346371961]
+[node name="chunk_n04_p00" type="MeshInstance3D" parent="." unique_id=1481234771]
 gi_mode = 0
 mesh = ExtResource("109_qoi8k")
 
-[node name="chunk_n03_p00" type="MeshInstance3D" parent="." unique_id=1291721384]
+[node name="chunk_n03_p00" type="MeshInstance3D" parent="." unique_id=663077275]
 gi_mode = 0
 mesh = ExtResource("110_vdifo")
 
-[node name="chunk_n02_p00" type="MeshInstance3D" parent="." unique_id=346168178]
+[node name="chunk_n02_p00" type="MeshInstance3D" parent="." unique_id=743255825]
 gi_mode = 0
 mesh = ExtResource("111_akgys")
 
-[node name="chunk_n01_p00" type="MeshInstance3D" parent="." unique_id=755858262]
+[node name="chunk_n01_p00" type="MeshInstance3D" parent="." unique_id=1745569232]
 gi_mode = 0
 mesh = ExtResource("112_wb8ua")
 
-[node name="chunk_p00_p00" type="MeshInstance3D" parent="." unique_id=1791603598]
+[node name="chunk_p00_p00" type="MeshInstance3D" parent="." unique_id=79510778]
 gi_mode = 0
 mesh = ExtResource("113_pooiq")
 
-[node name="chunk_p01_p00" type="MeshInstance3D" parent="." unique_id=3046871]
+[node name="chunk_p01_p00" type="MeshInstance3D" parent="." unique_id=1081777739]
 gi_mode = 0
 mesh = ExtResource("114_ncg5m")
 
-[node name="chunk_p02_p00" type="MeshInstance3D" parent="." unique_id=269985032]
+[node name="chunk_p02_p00" type="MeshInstance3D" parent="." unique_id=778072608]
 gi_mode = 0
 mesh = ExtResource("115_3b7q7")
 
-[node name="chunk_p05_p00" type="MeshInstance3D" parent="." unique_id=458274563]
+[node name="chunk_p05_p00" type="MeshInstance3D" parent="." unique_id=1022508838]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("116_0r3bt")
 
-[node name="chunk_p07_p00" type="MeshInstance3D" parent="." unique_id=765447304]
+[node name="chunk_p07_p00" type="MeshInstance3D" parent="." unique_id=1692861490]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("117_ygypt")
 
-[node name="chunk_p08_p00" type="MeshInstance3D" parent="." unique_id=1178537282]
+[node name="chunk_p08_p00" type="MeshInstance3D" parent="." unique_id=142608068]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("118_f7ryc")
 
-[node name="chunk_n08_p01" type="MeshInstance3D" parent="." unique_id=1008633934]
+[node name="chunk_n08_p01" type="MeshInstance3D" parent="." unique_id=859718786]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("119_ct0p4")
 
-[node name="chunk_n07_p01" type="MeshInstance3D" parent="." unique_id=1909582477]
+[node name="chunk_n07_p01" type="MeshInstance3D" parent="." unique_id=1791650498]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("120_oyk4m")
 
-[node name="chunk_n05_p01" type="MeshInstance3D" parent="." unique_id=16822712]
+[node name="chunk_n05_p01" type="MeshInstance3D" parent="." unique_id=991669502]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("121_88far")
 
-[node name="chunk_n04_p01" type="MeshInstance3D" parent="." unique_id=3219474]
+[node name="chunk_n04_p01" type="MeshInstance3D" parent="." unique_id=587194415]
 gi_mode = 0
 mesh = ExtResource("122_qr1hw")
 
-[node name="chunk_n03_p01" type="MeshInstance3D" parent="." unique_id=1871054462]
+[node name="chunk_n03_p01" type="MeshInstance3D" parent="." unique_id=1376420156]
 gi_mode = 0
 mesh = ExtResource("123_i0hdt")
 
-[node name="chunk_n02_p01" type="MeshInstance3D" parent="." unique_id=2120438752]
+[node name="chunk_n02_p01" type="MeshInstance3D" parent="." unique_id=506123012]
 gi_mode = 0
 mesh = ExtResource("124_x4uxr")
 
-[node name="chunk_n01_p01" type="MeshInstance3D" parent="." unique_id=1228028053]
+[node name="chunk_n01_p01" type="MeshInstance3D" parent="." unique_id=817433664]
 gi_mode = 0
 mesh = ExtResource("125_53wjr")
 
-[node name="chunk_p00_p01" type="MeshInstance3D" parent="." unique_id=587653279]
+[node name="chunk_p00_p01" type="MeshInstance3D" parent="." unique_id=466052370]
 gi_mode = 0
 mesh = ExtResource("126_u2k3s")
 
-[node name="chunk_p01_p01" type="MeshInstance3D" parent="." unique_id=114042955]
+[node name="chunk_p01_p01" type="MeshInstance3D" parent="." unique_id=1145402331]
 gi_mode = 0
 mesh = ExtResource("127_v4gey")
 
-[node name="chunk_p02_p01" type="MeshInstance3D" parent="." unique_id=2095990733]
+[node name="chunk_p02_p01" type="MeshInstance3D" parent="." unique_id=123607077]
 gi_mode = 0
 mesh = ExtResource("128_egk1r")
 
-[node name="chunk_p03_p01" type="MeshInstance3D" parent="." unique_id=1717611913]
+[node name="chunk_p03_p01" type="MeshInstance3D" parent="." unique_id=806529704]
 gi_mode = 0
 mesh = ExtResource("129_dfp1i")
 
-[node name="chunk_p04_p01" type="MeshInstance3D" parent="." unique_id=55248325]
+[node name="chunk_p04_p01" type="MeshInstance3D" parent="." unique_id=1856611831]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("130_7j6w7")
 
-[node name="chunk_p05_p01" type="MeshInstance3D" parent="." unique_id=900402605]
+[node name="chunk_p05_p01" type="MeshInstance3D" parent="." unique_id=2082026444]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("131_43fow")
 
-[node name="chunk_p06_p01" type="MeshInstance3D" parent="." unique_id=406533426]
+[node name="chunk_p06_p01" type="MeshInstance3D" parent="." unique_id=434924750]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("132_46yfp")
 
-[node name="chunk_p08_p01" type="MeshInstance3D" parent="." unique_id=85053732]
+[node name="chunk_p08_p01" type="MeshInstance3D" parent="." unique_id=1475198787]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("133_o3fnx")
 
-[node name="chunk_n09_p02" type="MeshInstance3D" parent="." unique_id=1575090714]
+[node name="chunk_n09_p02" type="MeshInstance3D" parent="." unique_id=1266342012]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("134_6wnop")
 
-[node name="chunk_n07_p02" type="MeshInstance3D" parent="." unique_id=319692937]
+[node name="chunk_n07_p02" type="MeshInstance3D" parent="." unique_id=354476546]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("135_fq1io")
 
-[node name="chunk_n06_p02" type="MeshInstance3D" parent="." unique_id=147773715]
+[node name="chunk_n06_p02" type="MeshInstance3D" parent="." unique_id=28285428]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("136_6n406")
 
-[node name="chunk_n05_p02" type="MeshInstance3D" parent="." unique_id=1623507827]
+[node name="chunk_n05_p02" type="MeshInstance3D" parent="." unique_id=2011462098]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("137_2q2vo")
 
-[node name="chunk_n03_p02" type="MeshInstance3D" parent="." unique_id=204344890]
+[node name="chunk_n03_p02" type="MeshInstance3D" parent="." unique_id=2001653779]
 gi_mode = 0
 mesh = ExtResource("138_mnopp")
 
-[node name="chunk_n02_p02" type="MeshInstance3D" parent="." unique_id=1215670924]
+[node name="chunk_n02_p02" type="MeshInstance3D" parent="." unique_id=1130355271]
 gi_mode = 0
 mesh = ExtResource("139_ggytc")
 
-[node name="chunk_n01_p02" type="MeshInstance3D" parent="." unique_id=1590154139]
+[node name="chunk_n01_p02" type="MeshInstance3D" parent="." unique_id=1547654331]
 gi_mode = 0
 mesh = ExtResource("140_wm5yw")
 
-[node name="chunk_p00_p02" type="MeshInstance3D" parent="." unique_id=1083377080]
+[node name="chunk_p00_p02" type="MeshInstance3D" parent="." unique_id=1875400140]
 gi_mode = 0
 mesh = ExtResource("141_h6ffe")
 
-[node name="chunk_p01_p02" type="MeshInstance3D" parent="." unique_id=612751465]
+[node name="chunk_p01_p02" type="MeshInstance3D" parent="." unique_id=478094951]
 gi_mode = 0
 mesh = ExtResource("142_2bli6")
 
-[node name="chunk_p02_p02" type="MeshInstance3D" parent="." unique_id=1868447804]
+[node name="chunk_p02_p02" type="MeshInstance3D" parent="." unique_id=547114727]
 gi_mode = 0
 mesh = ExtResource("143_mcebv")
 
-[node name="chunk_p03_p02" type="MeshInstance3D" parent="." unique_id=331350115]
+[node name="chunk_p03_p02" type="MeshInstance3D" parent="." unique_id=399301390]
 gi_mode = 0
 mesh = ExtResource("144_2ycub")
 
-[node name="chunk_p04_p02" type="MeshInstance3D" parent="." unique_id=307666848]
+[node name="chunk_p04_p02" type="MeshInstance3D" parent="." unique_id=1738904335]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("145_rlsq6")
 
-[node name="chunk_p05_p02" type="MeshInstance3D" parent="." unique_id=1488733356]
+[node name="chunk_p05_p02" type="MeshInstance3D" parent="." unique_id=1293898339]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("146_oamjq")
 
-[node name="chunk_p07_p02" type="MeshInstance3D" parent="." unique_id=1894288152]
+[node name="chunk_p07_p02" type="MeshInstance3D" parent="." unique_id=47382584]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("147_cc2lv")
 
-[node name="chunk_p08_p02" type="MeshInstance3D" parent="." unique_id=2136512313]
+[node name="chunk_p08_p02" type="MeshInstance3D" parent="." unique_id=1843118495]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("148_clyer")
 
-[node name="chunk_n07_p03" type="MeshInstance3D" parent="." unique_id=639047477]
+[node name="chunk_n07_p03" type="MeshInstance3D" parent="." unique_id=476003276]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("149_8uihp")
 
-[node name="chunk_n04_p03" type="MeshInstance3D" parent="." unique_id=1563762115]
+[node name="chunk_n04_p03" type="MeshInstance3D" parent="." unique_id=540968528]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("150_g6xgq")
 
-[node name="chunk_n03_p03" type="MeshInstance3D" parent="." unique_id=1928398596]
+[node name="chunk_n03_p03" type="MeshInstance3D" parent="." unique_id=1446922406]
 gi_mode = 0
 mesh = ExtResource("151_id515")
 
-[node name="chunk_n02_p03" type="MeshInstance3D" parent="." unique_id=1734861656]
+[node name="chunk_n02_p03" type="MeshInstance3D" parent="." unique_id=1556059397]
 gi_mode = 0
 mesh = ExtResource("152_0v4yi")
 
-[node name="chunk_n01_p03" type="MeshInstance3D" parent="." unique_id=571192506]
+[node name="chunk_n01_p03" type="MeshInstance3D" parent="." unique_id=944945113]
 gi_mode = 0
 mesh = ExtResource("153_xk4oe")
 
-[node name="chunk_p01_p03" type="MeshInstance3D" parent="." unique_id=1142006971]
+[node name="chunk_p01_p03" type="MeshInstance3D" parent="." unique_id=464943945]
 gi_mode = 0
 mesh = ExtResource("154_e08mu")
 
-[node name="chunk_p03_p03" type="MeshInstance3D" parent="." unique_id=1644666676]
+[node name="chunk_p03_p03" type="MeshInstance3D" parent="." unique_id=1018856044]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("155_pslm6")
 
-[node name="chunk_p04_p03" type="MeshInstance3D" parent="." unique_id=1733070574]
+[node name="chunk_p04_p03" type="MeshInstance3D" parent="." unique_id=591162461]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("156_c4iyl")
 
-[node name="chunk_p05_p03" type="MeshInstance3D" parent="." unique_id=2045175340]
+[node name="chunk_p05_p03" type="MeshInstance3D" parent="." unique_id=784491916]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("157_vtocr")
 
-[node name="chunk_p06_p03" type="MeshInstance3D" parent="." unique_id=1732863132]
+[node name="chunk_p06_p03" type="MeshInstance3D" parent="." unique_id=214205230]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("158_v4dru")
 
-[node name="chunk_p07_p03" type="MeshInstance3D" parent="." unique_id=1277448660]
+[node name="chunk_p07_p03" type="MeshInstance3D" parent="." unique_id=1078299996]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("159_ub0oq")
 
-[node name="chunk_n08_p04" type="MeshInstance3D" parent="." unique_id=1992880230]
+[node name="chunk_n08_p04" type="MeshInstance3D" parent="." unique_id=1488188241]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("160_wnmld")
 
-[node name="chunk_n07_p04" type="MeshInstance3D" parent="." unique_id=832673373]
+[node name="chunk_n07_p04" type="MeshInstance3D" parent="." unique_id=1116035731]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("161_637vn")
 
-[node name="chunk_n06_p04" type="MeshInstance3D" parent="." unique_id=735832691]
+[node name="chunk_n06_p04" type="MeshInstance3D" parent="." unique_id=1994556485]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("162_fy5gh")
 
-[node name="chunk_n03_p04" type="MeshInstance3D" parent="." unique_id=2100843984]
+[node name="chunk_n03_p04" type="MeshInstance3D" parent="." unique_id=1308530897]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("163_fbdfk")
 
-[node name="chunk_n02_p04" type="MeshInstance3D" parent="." unique_id=457272049]
+[node name="chunk_n02_p04" type="MeshInstance3D" parent="." unique_id=769734619]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("164_wlajs")
 
-[node name="chunk_n01_p04" type="MeshInstance3D" parent="." unique_id=1534468134]
+[node name="chunk_n01_p04" type="MeshInstance3D" parent="." unique_id=1576875185]
 gi_mode = 0
 mesh = ExtResource("165_vd5gj")
 
-[node name="chunk_p00_p04" type="MeshInstance3D" parent="." unique_id=1380552766]
+[node name="chunk_p00_p04" type="MeshInstance3D" parent="." unique_id=775606191]
 gi_mode = 0
 mesh = ExtResource("166_s6i4j")
 
-[node name="chunk_p01_p04" type="MeshInstance3D" parent="." unique_id=2132932128]
+[node name="chunk_p01_p04" type="MeshInstance3D" parent="." unique_id=274219568]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("167_binp0")
 
-[node name="chunk_p02_p04" type="MeshInstance3D" parent="." unique_id=1290281880]
+[node name="chunk_p02_p04" type="MeshInstance3D" parent="." unique_id=1767671666]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("168_sbtu1")
 
-[node name="chunk_p03_p04" type="MeshInstance3D" parent="." unique_id=1322524671]
+[node name="chunk_p03_p04" type="MeshInstance3D" parent="." unique_id=788111780]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("169_yy5ok")
 
-[node name="chunk_p05_p04" type="MeshInstance3D" parent="." unique_id=1920570004]
+[node name="chunk_p05_p04" type="MeshInstance3D" parent="." unique_id=437010802]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("170_qolah")
 
-[node name="chunk_p06_p04" type="MeshInstance3D" parent="." unique_id=675970228]
+[node name="chunk_p06_p04" type="MeshInstance3D" parent="." unique_id=1456882662]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("171_e2xcy")
 
-[node name="chunk_n06_p05" type="MeshInstance3D" parent="." unique_id=1673818757]
+[node name="chunk_n06_p05" type="MeshInstance3D" parent="." unique_id=103014944]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("172_n2lv2")
 
-[node name="chunk_n05_p05" type="MeshInstance3D" parent="." unique_id=2117405468]
+[node name="chunk_n05_p05" type="MeshInstance3D" parent="." unique_id=1797040871]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("173_jusii")
 
-[node name="chunk_n04_p05" type="MeshInstance3D" parent="." unique_id=573012311]
+[node name="chunk_n04_p05" type="MeshInstance3D" parent="." unique_id=2096220406]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("174_5o3l2")
 
-[node name="chunk_n03_p05" type="MeshInstance3D" parent="." unique_id=1648100364]
+[node name="chunk_n03_p05" type="MeshInstance3D" parent="." unique_id=2101417009]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("175_doqi5")
 
-[node name="chunk_n01_p05" type="MeshInstance3D" parent="." unique_id=2097477523]
+[node name="chunk_n01_p05" type="MeshInstance3D" parent="." unique_id=1141804848]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("176_h413i")
 
-[node name="chunk_p00_p05" type="MeshInstance3D" parent="." unique_id=1387378803]
+[node name="chunk_p00_p05" type="MeshInstance3D" parent="." unique_id=1900346994]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("177_bvhhr")
 
-[node name="chunk_p01_p05" type="MeshInstance3D" parent="." unique_id=516069534]
+[node name="chunk_p01_p05" type="MeshInstance3D" parent="." unique_id=1619100226]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("178_6cuwe")
 
-[node name="chunk_p02_p05" type="MeshInstance3D" parent="." unique_id=119664813]
+[node name="chunk_p02_p05" type="MeshInstance3D" parent="." unique_id=2009927752]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("179_f25um")
 
-[node name="chunk_p03_p05" type="MeshInstance3D" parent="." unique_id=1323829827]
+[node name="chunk_p03_p05" type="MeshInstance3D" parent="." unique_id=564779914]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("180_0lgy3")
 
-[node name="chunk_p04_p05" type="MeshInstance3D" parent="." unique_id=1752442863]
+[node name="chunk_p04_p05" type="MeshInstance3D" parent="." unique_id=958108733]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("181_liald")
 
-[node name="chunk_p05_p05" type="MeshInstance3D" parent="." unique_id=1684788201]
+[node name="chunk_p05_p05" type="MeshInstance3D" parent="." unique_id=680720051]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("182_jdio3")
 
-[node name="chunk_p07_p05" type="MeshInstance3D" parent="." unique_id=1542959508]
+[node name="chunk_p07_p05" type="MeshInstance3D" parent="." unique_id=2023991071]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("183_ed15d")
 
-[node name="chunk_n07_p06" type="MeshInstance3D" parent="." unique_id=376632066]
+[node name="chunk_n07_p06" type="MeshInstance3D" parent="." unique_id=351216461]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("184_ultyb")
 
-[node name="chunk_n06_p06" type="MeshInstance3D" parent="." unique_id=815611033]
+[node name="chunk_n06_p06" type="MeshInstance3D" parent="." unique_id=965520590]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("185_nskmc")
 
-[node name="chunk_n05_p06" type="MeshInstance3D" parent="." unique_id=2003980025]
+[node name="chunk_n05_p06" type="MeshInstance3D" parent="." unique_id=247991424]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("186_htm82")
 
-[node name="chunk_n04_p06" type="MeshInstance3D" parent="." unique_id=1915499199]
+[node name="chunk_n04_p06" type="MeshInstance3D" parent="." unique_id=1659806979]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("187_dlnsu")
 
-[node name="chunk_n03_p06" type="MeshInstance3D" parent="." unique_id=819044067]
+[node name="chunk_n03_p06" type="MeshInstance3D" parent="." unique_id=412316007]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("188_emi7x")
 
-[node name="chunk_n01_p06" type="MeshInstance3D" parent="." unique_id=1962398956]
+[node name="chunk_n01_p06" type="MeshInstance3D" parent="." unique_id=1460392964]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("189_1uvhi")
 
-[node name="chunk_p00_p06" type="MeshInstance3D" parent="." unique_id=1865783748]
+[node name="chunk_p00_p06" type="MeshInstance3D" parent="." unique_id=443452367]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("190_ohw7q")
 
-[node name="chunk_p01_p06" type="MeshInstance3D" parent="." unique_id=405497389]
+[node name="chunk_p01_p06" type="MeshInstance3D" parent="." unique_id=168542703]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("191_uouu7")
 
-[node name="chunk_p03_p06" type="MeshInstance3D" parent="." unique_id=234488721]
+[node name="chunk_p03_p06" type="MeshInstance3D" parent="." unique_id=365597729]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("192_nfu4u")
 
-[node name="chunk_p04_p06" type="MeshInstance3D" parent="." unique_id=303027247]
+[node name="chunk_p04_p06" type="MeshInstance3D" parent="." unique_id=1429896168]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("193_7t6u3")
 
-[node name="chunk_p05_p06" type="MeshInstance3D" parent="." unique_id=679359343]
+[node name="chunk_p05_p06" type="MeshInstance3D" parent="." unique_id=388396295]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("194_chx1d")
 
-[node name="chunk_p06_p06" type="MeshInstance3D" parent="." unique_id=1969664626]
+[node name="chunk_p06_p06" type="MeshInstance3D" parent="." unique_id=87832080]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("195_vfyxc")
 
-[node name="chunk_n04_p07" type="MeshInstance3D" parent="." unique_id=615373355]
+[node name="chunk_n04_p07" type="MeshInstance3D" parent="." unique_id=530611449]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("196_1ms6v")
 
-[node name="chunk_n03_p07" type="MeshInstance3D" parent="." unique_id=603908049]
+[node name="chunk_n03_p07" type="MeshInstance3D" parent="." unique_id=608383741]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("197_qjgyn")
 
-[node name="chunk_n02_p07" type="MeshInstance3D" parent="." unique_id=942005236]
+[node name="chunk_n02_p07" type="MeshInstance3D" parent="." unique_id=521846873]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("198_3oa3y")
 
-[node name="chunk_n01_p07" type="MeshInstance3D" parent="." unique_id=994294433]
+[node name="chunk_n01_p07" type="MeshInstance3D" parent="." unique_id=1282668087]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("199_ajyor")
 
-[node name="chunk_p00_p07" type="MeshInstance3D" parent="." unique_id=679085048]
+[node name="chunk_p00_p07" type="MeshInstance3D" parent="." unique_id=547634520]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("200_2j43t")
 
-[node name="chunk_p01_p07" type="MeshInstance3D" parent="." unique_id=811065583]
+[node name="chunk_p01_p07" type="MeshInstance3D" parent="." unique_id=601014010]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("201_34i7o")
 
-[node name="chunk_p02_p07" type="MeshInstance3D" parent="." unique_id=1182444784]
+[node name="chunk_p02_p07" type="MeshInstance3D" parent="." unique_id=342508548]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("202_44wlj")
 
-[node name="chunk_p03_p07" type="MeshInstance3D" parent="." unique_id=1215279821]
+[node name="chunk_p03_p07" type="MeshInstance3D" parent="." unique_id=185286958]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("203_a3ier")
 
-[node name="chunk_p05_p07" type="MeshInstance3D" parent="." unique_id=1951827017]
+[node name="chunk_p05_p07" type="MeshInstance3D" parent="." unique_id=790269910]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("204_5ms2u")
 
-[node name="chunk_n05_p08" type="MeshInstance3D" parent="." unique_id=68830605]
+[node name="chunk_n05_p08" type="MeshInstance3D" parent="." unique_id=569213152]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("205_20s5n")
 
-[node name="chunk_n04_p08" type="MeshInstance3D" parent="." unique_id=797132262]
+[node name="chunk_n04_p08" type="MeshInstance3D" parent="." unique_id=761376255]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("206_voknb")
 
-[node name="chunk_n03_p08" type="MeshInstance3D" parent="." unique_id=2001944131]
+[node name="chunk_n03_p08" type="MeshInstance3D" parent="." unique_id=1890695682]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("207_mrem2")
 
-[node name="chunk_n02_p08" type="MeshInstance3D" parent="." unique_id=1904382685]
+[node name="chunk_n02_p08" type="MeshInstance3D" parent="." unique_id=780793022]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("208_c35ot")
 
-[node name="chunk_n01_p08" type="MeshInstance3D" parent="." unique_id=1886527776]
+[node name="chunk_n01_p08" type="MeshInstance3D" parent="." unique_id=832601747]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("209_sxbj7")
 
-[node name="chunk_p00_p08" type="MeshInstance3D" parent="." unique_id=239428885]
+[node name="chunk_p00_p08" type="MeshInstance3D" parent="." unique_id=1657777672]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("210_67qxu")
 
-[node name="chunk_p02_p08" type="MeshInstance3D" parent="." unique_id=1768933065]
+[node name="chunk_p02_p08" type="MeshInstance3D" parent="." unique_id=898220436]
 cast_shadow = 0
 gi_mode = 0
 mesh = ExtResource("211_4xw2b")
 
-[node name="Collision" type="StaticBody3D" parent="." unique_id=1016877154]
+[node name="Collision" type="StaticBody3D" parent="." unique_id=1974668568]
 collision_mask = 0
 
-[node name="shape_n04_n09" type="CollisionShape3D" parent="Collision" unique_id=67650520]
+[node name="shape_n04_n09" type="CollisionShape3D" parent="Collision" unique_id=128258636]
 shape = ExtResource("212_ehh8c")
 
-[node name="shape_n03_n09" type="CollisionShape3D" parent="Collision" unique_id=64402637]
+[node name="shape_n03_n09" type="CollisionShape3D" parent="Collision" unique_id=191631277]
 shape = ExtResource("213_o1bru")
 
-[node name="shape_n02_n09" type="CollisionShape3D" parent="Collision" unique_id=608371558]
+[node name="shape_n02_n09" type="CollisionShape3D" parent="Collision" unique_id=1592705057]
 shape = ExtResource("214_6n5q3")
 
-[node name="shape_n01_n09" type="CollisionShape3D" parent="Collision" unique_id=109177869]
+[node name="shape_n01_n09" type="CollisionShape3D" parent="Collision" unique_id=171543769]
 shape = ExtResource("215_oont5")
 
-[node name="shape_p02_n09" type="CollisionShape3D" parent="Collision" unique_id=606563017]
+[node name="shape_p02_n09" type="CollisionShape3D" parent="Collision" unique_id=839807662]
 shape = ExtResource("216_yrx7c")
 
-[node name="shape_n06_n08" type="CollisionShape3D" parent="Collision" unique_id=318929787]
+[node name="shape_n06_n08" type="CollisionShape3D" parent="Collision" unique_id=1272785541]
 shape = ExtResource("217_cdds5")
 
-[node name="shape_n05_n08" type="CollisionShape3D" parent="Collision" unique_id=1542477096]
+[node name="shape_n05_n08" type="CollisionShape3D" parent="Collision" unique_id=813672296]
 shape = ExtResource("218_p5jp4")
 
-[node name="shape_n04_n08" type="CollisionShape3D" parent="Collision" unique_id=1456561990]
+[node name="shape_n04_n08" type="CollisionShape3D" parent="Collision" unique_id=1494946091]
 shape = ExtResource("219_yagoq")
 
-[node name="shape_n02_n08" type="CollisionShape3D" parent="Collision" unique_id=1530955499]
+[node name="shape_n02_n08" type="CollisionShape3D" parent="Collision" unique_id=1128150821]
 shape = ExtResource("220_hh6yw")
 
-[node name="shape_n01_n08" type="CollisionShape3D" parent="Collision" unique_id=243657818]
+[node name="shape_n01_n08" type="CollisionShape3D" parent="Collision" unique_id=1181831034]
 shape = ExtResource("221_7l3lo")
 
-[node name="shape_p00_n08" type="CollisionShape3D" parent="Collision" unique_id=1007336545]
+[node name="shape_p00_n08" type="CollisionShape3D" parent="Collision" unique_id=1552557119]
 shape = ExtResource("222_6g4km")
 
-[node name="shape_p01_n08" type="CollisionShape3D" parent="Collision" unique_id=146349500]
+[node name="shape_p01_n08" type="CollisionShape3D" parent="Collision" unique_id=1021260032]
 shape = ExtResource("223_rftsr")
 
-[node name="shape_p02_n08" type="CollisionShape3D" parent="Collision" unique_id=1988856634]
+[node name="shape_p02_n08" type="CollisionShape3D" parent="Collision" unique_id=371065374]
 shape = ExtResource("224_70hnm")
 
-[node name="shape_p03_n08" type="CollisionShape3D" parent="Collision" unique_id=311644560]
+[node name="shape_p03_n08" type="CollisionShape3D" parent="Collision" unique_id=1525024009]
 shape = ExtResource("225_uiiji")
 
-[node name="shape_p04_n08" type="CollisionShape3D" parent="Collision" unique_id=15396910]
+[node name="shape_p04_n08" type="CollisionShape3D" parent="Collision" unique_id=2117857485]
 shape = ExtResource("226_ynoj8")
 
-[node name="shape_n06_n07" type="CollisionShape3D" parent="Collision" unique_id=1492481570]
+[node name="shape_n06_n07" type="CollisionShape3D" parent="Collision" unique_id=1574995444]
 shape = ExtResource("227_mjri2")
 
-[node name="shape_n05_n07" type="CollisionShape3D" parent="Collision" unique_id=1294301571]
+[node name="shape_n05_n07" type="CollisionShape3D" parent="Collision" unique_id=50877338]
 shape = ExtResource("228_af0fe")
 
-[node name="shape_n03_n07" type="CollisionShape3D" parent="Collision" unique_id=1729995830]
+[node name="shape_n03_n07" type="CollisionShape3D" parent="Collision" unique_id=1033097743]
 shape = ExtResource("229_hmrik")
 
-[node name="shape_n02_n07" type="CollisionShape3D" parent="Collision" unique_id=255318309]
+[node name="shape_n02_n07" type="CollisionShape3D" parent="Collision" unique_id=1875314071]
 shape = ExtResource("230_kbf0m")
 
-[node name="shape_n01_n07" type="CollisionShape3D" parent="Collision" unique_id=936710614]
+[node name="shape_n01_n07" type="CollisionShape3D" parent="Collision" unique_id=2114001089]
 shape = ExtResource("231_t4bod")
 
-[node name="shape_p00_n07" type="CollisionShape3D" parent="Collision" unique_id=982375901]
+[node name="shape_p00_n07" type="CollisionShape3D" parent="Collision" unique_id=200143216]
 shape = ExtResource("232_skqnq")
 
-[node name="shape_p03_n07" type="CollisionShape3D" parent="Collision" unique_id=1419934349]
+[node name="shape_p03_n07" type="CollisionShape3D" parent="Collision" unique_id=1977969815]
 shape = ExtResource("233_rqdq8")
 
-[node name="shape_p04_n07" type="CollisionShape3D" parent="Collision" unique_id=1652991121]
+[node name="shape_p04_n07" type="CollisionShape3D" parent="Collision" unique_id=806914352]
 shape = ExtResource("234_67oqq")
 
-[node name="shape_p05_n07" type="CollisionShape3D" parent="Collision" unique_id=1525646397]
+[node name="shape_p05_n07" type="CollisionShape3D" parent="Collision" unique_id=954472291]
 shape = ExtResource("235_nk1yv")
 
-[node name="shape_p06_n07" type="CollisionShape3D" parent="Collision" unique_id=1701406951]
+[node name="shape_p06_n07" type="CollisionShape3D" parent="Collision" unique_id=1468535672]
 shape = ExtResource("236_yl74b")
 
-[node name="shape_n05_n06" type="CollisionShape3D" parent="Collision" unique_id=1235646288]
+[node name="shape_n05_n06" type="CollisionShape3D" parent="Collision" unique_id=1747687569]
 shape = ExtResource("237_fyqbv")
 
-[node name="shape_n04_n06" type="CollisionShape3D" parent="Collision" unique_id=1095454758]
+[node name="shape_n04_n06" type="CollisionShape3D" parent="Collision" unique_id=1457366680]
 shape = ExtResource("238_3sn8s")
 
-[node name="shape_n02_n06" type="CollisionShape3D" parent="Collision" unique_id=1641621320]
+[node name="shape_n02_n06" type="CollisionShape3D" parent="Collision" unique_id=1758082349]
 shape = ExtResource("239_0ioj3")
 
-[node name="shape_n01_n06" type="CollisionShape3D" parent="Collision" unique_id=480684667]
+[node name="shape_n01_n06" type="CollisionShape3D" parent="Collision" unique_id=124615056]
 shape = ExtResource("240_7258y")
 
-[node name="shape_p00_n06" type="CollisionShape3D" parent="Collision" unique_id=1920556819]
+[node name="shape_p00_n06" type="CollisionShape3D" parent="Collision" unique_id=2058109322]
 shape = ExtResource("241_2t8dd")
 
-[node name="shape_p01_n06" type="CollisionShape3D" parent="Collision" unique_id=727699839]
+[node name="shape_p01_n06" type="CollisionShape3D" parent="Collision" unique_id=856112321]
 shape = ExtResource("242_gxmhs")
 
-[node name="shape_p03_n06" type="CollisionShape3D" parent="Collision" unique_id=565081148]
+[node name="shape_p03_n06" type="CollisionShape3D" parent="Collision" unique_id=719542122]
 shape = ExtResource("243_bit7e")
 
-[node name="shape_p04_n06" type="CollisionShape3D" parent="Collision" unique_id=2030513405]
+[node name="shape_p04_n06" type="CollisionShape3D" parent="Collision" unique_id=1245259578]
 shape = ExtResource("244_0j5nw")
 
-[node name="shape_p06_n06" type="CollisionShape3D" parent="Collision" unique_id=1237702808]
+[node name="shape_p06_n06" type="CollisionShape3D" parent="Collision" unique_id=281017695]
 shape = ExtResource("245_6owdg")
 
-[node name="shape_n08_n05" type="CollisionShape3D" parent="Collision" unique_id=278541887]
+[node name="shape_n08_n05" type="CollisionShape3D" parent="Collision" unique_id=1045616992]
 shape = ExtResource("246_4pqgv")
 
-[node name="shape_n06_n05" type="CollisionShape3D" parent="Collision" unique_id=282935388]
+[node name="shape_n06_n05" type="CollisionShape3D" parent="Collision" unique_id=2137629610]
 shape = ExtResource("247_y1it0")
 
-[node name="shape_n05_n05" type="CollisionShape3D" parent="Collision" unique_id=1607415075]
+[node name="shape_n05_n05" type="CollisionShape3D" parent="Collision" unique_id=1293692272]
 shape = ExtResource("248_k78yt")
 
-[node name="shape_n04_n05" type="CollisionShape3D" parent="Collision" unique_id=1475285631]
+[node name="shape_n04_n05" type="CollisionShape3D" parent="Collision" unique_id=2065701925]
 shape = ExtResource("249_mki0k")
 
-[node name="shape_n03_n05" type="CollisionShape3D" parent="Collision" unique_id=244191043]
+[node name="shape_n03_n05" type="CollisionShape3D" parent="Collision" unique_id=1772611891]
 shape = ExtResource("250_p1h44")
 
-[node name="shape_n02_n05" type="CollisionShape3D" parent="Collision" unique_id=623807028]
+[node name="shape_n02_n05" type="CollisionShape3D" parent="Collision" unique_id=26122014]
 shape = ExtResource("251_3si1m")
 
-[node name="shape_n01_n05" type="CollisionShape3D" parent="Collision" unique_id=845990051]
+[node name="shape_n01_n05" type="CollisionShape3D" parent="Collision" unique_id=1947569855]
 shape = ExtResource("252_yn55u")
 
-[node name="shape_p00_n05" type="CollisionShape3D" parent="Collision" unique_id=938350620]
+[node name="shape_p00_n05" type="CollisionShape3D" parent="Collision" unique_id=712617702]
 shape = ExtResource("253_be87v")
 
-[node name="shape_p01_n05" type="CollisionShape3D" parent="Collision" unique_id=635588559]
+[node name="shape_p01_n05" type="CollisionShape3D" parent="Collision" unique_id=1448811947]
 shape = ExtResource("254_tabpj")
 
-[node name="shape_p02_n05" type="CollisionShape3D" parent="Collision" unique_id=1812808205]
+[node name="shape_p02_n05" type="CollisionShape3D" parent="Collision" unique_id=1910852611]
 shape = ExtResource("255_7juyj")
 
-[node name="shape_p03_n05" type="CollisionShape3D" parent="Collision" unique_id=867730624]
+[node name="shape_p03_n05" type="CollisionShape3D" parent="Collision" unique_id=2127583967]
 shape = ExtResource("256_688dp")
 
-[node name="shape_p04_n05" type="CollisionShape3D" parent="Collision" unique_id=717505109]
+[node name="shape_p04_n05" type="CollisionShape3D" parent="Collision" unique_id=519674843]
 shape = ExtResource("257_8mdag")
 
-[node name="shape_p05_n05" type="CollisionShape3D" parent="Collision" unique_id=922245997]
+[node name="shape_p05_n05" type="CollisionShape3D" parent="Collision" unique_id=1449288597]
 shape = ExtResource("258_26y6n")
 
-[node name="shape_p07_n05" type="CollisionShape3D" parent="Collision" unique_id=1695494260]
+[node name="shape_p07_n05" type="CollisionShape3D" parent="Collision" unique_id=1513691598]
 shape = ExtResource("259_awr63")
 
-[node name="shape_n09_n04" type="CollisionShape3D" parent="Collision" unique_id=1118657691]
+[node name="shape_n09_n04" type="CollisionShape3D" parent="Collision" unique_id=1799013857]
 shape = ExtResource("260_otlpr")
 
-[node name="shape_n08_n04" type="CollisionShape3D" parent="Collision" unique_id=1236872369]
+[node name="shape_n08_n04" type="CollisionShape3D" parent="Collision" unique_id=1925096766]
 shape = ExtResource("261_cb82b")
 
-[node name="shape_n04_n04" type="CollisionShape3D" parent="Collision" unique_id=327430554]
+[node name="shape_n04_n04" type="CollisionShape3D" parent="Collision" unique_id=937958129]
 shape = ExtResource("262_ytgme")
 
-[node name="shape_p00_n04" type="CollisionShape3D" parent="Collision" unique_id=474866511]
+[node name="shape_p00_n04" type="CollisionShape3D" parent="Collision" unique_id=1254012853]
 shape = ExtResource("263_xuc7r")
 
-[node name="shape_p01_n04" type="CollisionShape3D" parent="Collision" unique_id=1297027489]
+[node name="shape_p01_n04" type="CollisionShape3D" parent="Collision" unique_id=190922564]
 shape = ExtResource("264_ck0xl")
 
-[node name="shape_p03_n04" type="CollisionShape3D" parent="Collision" unique_id=2011475865]
+[node name="shape_p03_n04" type="CollisionShape3D" parent="Collision" unique_id=451102505]
 shape = ExtResource("265_gujxs")
 
-[node name="shape_p04_n04" type="CollisionShape3D" parent="Collision" unique_id=1605019945]
+[node name="shape_p04_n04" type="CollisionShape3D" parent="Collision" unique_id=368882457]
 shape = ExtResource("266_qygsb")
 
-[node name="shape_p05_n04" type="CollisionShape3D" parent="Collision" unique_id=860989027]
+[node name="shape_p05_n04" type="CollisionShape3D" parent="Collision" unique_id=1398084990]
 shape = ExtResource("267_lc6ro")
 
-[node name="shape_p06_n04" type="CollisionShape3D" parent="Collision" unique_id=1660524383]
+[node name="shape_p06_n04" type="CollisionShape3D" parent="Collision" unique_id=1452095339]
 shape = ExtResource("268_mbsfj")
 
-[node name="shape_p07_n04" type="CollisionShape3D" parent="Collision" unique_id=1896514095]
+[node name="shape_p07_n04" type="CollisionShape3D" parent="Collision" unique_id=447041102]
 shape = ExtResource("269_q01d8")
 
-[node name="shape_n09_n03" type="CollisionShape3D" parent="Collision" unique_id=235913448]
+[node name="shape_n09_n03" type="CollisionShape3D" parent="Collision" unique_id=1284383116]
 shape = ExtResource("270_fkelj")
 
-[node name="shape_n08_n03" type="CollisionShape3D" parent="Collision" unique_id=741349765]
+[node name="shape_n08_n03" type="CollisionShape3D" parent="Collision" unique_id=87085435]
 shape = ExtResource("271_b1pn1")
 
-[node name="shape_n07_n03" type="CollisionShape3D" parent="Collision" unique_id=851264998]
+[node name="shape_n07_n03" type="CollisionShape3D" parent="Collision" unique_id=1928642072]
 shape = ExtResource("272_hbkij")
 
-[node name="shape_n06_n03" type="CollisionShape3D" parent="Collision" unique_id=1423884872]
+[node name="shape_n06_n03" type="CollisionShape3D" parent="Collision" unique_id=1799285878]
 shape = ExtResource("273_2ohvh")
 
-[node name="shape_n05_n03" type="CollisionShape3D" parent="Collision" unique_id=1144256756]
+[node name="shape_n05_n03" type="CollisionShape3D" parent="Collision" unique_id=951661191]
 shape = ExtResource("274_irdp2")
 
-[node name="shape_n04_n03" type="CollisionShape3D" parent="Collision" unique_id=2039264337]
+[node name="shape_n04_n03" type="CollisionShape3D" parent="Collision" unique_id=135727304]
 shape = ExtResource("275_uh7fx")
 
-[node name="shape_n03_n03" type="CollisionShape3D" parent="Collision" unique_id=160919854]
+[node name="shape_n03_n03" type="CollisionShape3D" parent="Collision" unique_id=78852742]
 shape = ExtResource("276_lsu4s")
 
-[node name="shape_n02_n03" type="CollisionShape3D" parent="Collision" unique_id=170558201]
+[node name="shape_n02_n03" type="CollisionShape3D" parent="Collision" unique_id=598156]
 shape = ExtResource("277_03swb")
 
-[node name="shape_n01_n03" type="CollisionShape3D" parent="Collision" unique_id=950174402]
+[node name="shape_n01_n03" type="CollisionShape3D" parent="Collision" unique_id=2095893109]
 shape = ExtResource("278_irx5j")
 
-[node name="shape_p00_n03" type="CollisionShape3D" parent="Collision" unique_id=470242162]
+[node name="shape_p00_n03" type="CollisionShape3D" parent="Collision" unique_id=635569063]
 shape = ExtResource("279_qoika")
 
-[node name="shape_p01_n03" type="CollisionShape3D" parent="Collision" unique_id=412112575]
+[node name="shape_p01_n03" type="CollisionShape3D" parent="Collision" unique_id=916264080]
 shape = ExtResource("280_5a7gn")
 
-[node name="shape_p02_n03" type="CollisionShape3D" parent="Collision" unique_id=298233662]
+[node name="shape_p02_n03" type="CollisionShape3D" parent="Collision" unique_id=365707345]
 shape = ExtResource("281_uh17h")
 
-[node name="shape_p03_n03" type="CollisionShape3D" parent="Collision" unique_id=693396114]
+[node name="shape_p03_n03" type="CollisionShape3D" parent="Collision" unique_id=1496901321]
 shape = ExtResource("282_bc7xe")
 
-[node name="shape_p05_n03" type="CollisionShape3D" parent="Collision" unique_id=1111605644]
+[node name="shape_p05_n03" type="CollisionShape3D" parent="Collision" unique_id=1752994738]
 shape = ExtResource("283_icwui")
 
-[node name="shape_p06_n03" type="CollisionShape3D" parent="Collision" unique_id=661401306]
+[node name="shape_p06_n03" type="CollisionShape3D" parent="Collision" unique_id=570511599]
 shape = ExtResource("284_ajs8c")
 
-[node name="shape_n09_n02" type="CollisionShape3D" parent="Collision" unique_id=756146962]
+[node name="shape_n09_n02" type="CollisionShape3D" parent="Collision" unique_id=192623774]
 shape = ExtResource("285_xpxsm")
 
-[node name="shape_n08_n02" type="CollisionShape3D" parent="Collision" unique_id=37738939]
+[node name="shape_n08_n02" type="CollisionShape3D" parent="Collision" unique_id=1745656476]
 shape = ExtResource("286_dpsfm")
 
-[node name="shape_n07_n02" type="CollisionShape3D" parent="Collision" unique_id=1634543448]
+[node name="shape_n07_n02" type="CollisionShape3D" parent="Collision" unique_id=2144000726]
 shape = ExtResource("287_dbk0g")
 
-[node name="shape_n06_n02" type="CollisionShape3D" parent="Collision" unique_id=1318216044]
+[node name="shape_n06_n02" type="CollisionShape3D" parent="Collision" unique_id=276204527]
 shape = ExtResource("288_2ujr6")
 
-[node name="shape_n05_n02" type="CollisionShape3D" parent="Collision" unique_id=2002038463]
+[node name="shape_n05_n02" type="CollisionShape3D" parent="Collision" unique_id=1926605081]
 shape = ExtResource("289_xryas")
 
-[node name="shape_n04_n02" type="CollisionShape3D" parent="Collision" unique_id=1786894357]
+[node name="shape_n04_n02" type="CollisionShape3D" parent="Collision" unique_id=1972902033]
 shape = ExtResource("290_l7akm")
 
-[node name="shape_n03_n02" type="CollisionShape3D" parent="Collision" unique_id=1971937089]
+[node name="shape_n03_n02" type="CollisionShape3D" parent="Collision" unique_id=782931381]
 shape = ExtResource("291_2m4mo")
 
-[node name="shape_n02_n02" type="CollisionShape3D" parent="Collision" unique_id=450017887]
+[node name="shape_n02_n02" type="CollisionShape3D" parent="Collision" unique_id=593170405]
 shape = ExtResource("292_mnwfr")
 
-[node name="shape_n01_n02" type="CollisionShape3D" parent="Collision" unique_id=1577474345]
+[node name="shape_n01_n02" type="CollisionShape3D" parent="Collision" unique_id=841831991]
 shape = ExtResource("293_a5hmn")
 
-[node name="shape_p00_n02" type="CollisionShape3D" parent="Collision" unique_id=255459771]
+[node name="shape_p00_n02" type="CollisionShape3D" parent="Collision" unique_id=478863438]
 shape = ExtResource("294_lpos4")
 
-[node name="shape_p01_n02" type="CollisionShape3D" parent="Collision" unique_id=924169369]
+[node name="shape_p01_n02" type="CollisionShape3D" parent="Collision" unique_id=591166466]
 shape = ExtResource("295_74a7g")
 
-[node name="shape_p02_n02" type="CollisionShape3D" parent="Collision" unique_id=1366459265]
+[node name="shape_p02_n02" type="CollisionShape3D" parent="Collision" unique_id=12596149]
 shape = ExtResource("296_ac1jx")
 
-[node name="shape_p03_n02" type="CollisionShape3D" parent="Collision" unique_id=936827487]
+[node name="shape_p03_n02" type="CollisionShape3D" parent="Collision" unique_id=1317157427]
 shape = ExtResource("297_llxyo")
 
-[node name="shape_p04_n02" type="CollisionShape3D" parent="Collision" unique_id=1615757794]
+[node name="shape_p04_n02" type="CollisionShape3D" parent="Collision" unique_id=110074754]
 shape = ExtResource("298_hm4rk")
 
-[node name="shape_p05_n02" type="CollisionShape3D" parent="Collision" unique_id=1115932918]
+[node name="shape_p05_n02" type="CollisionShape3D" parent="Collision" unique_id=1550312713]
 shape = ExtResource("299_4ipjb")
 
-[node name="shape_p06_n02" type="CollisionShape3D" parent="Collision" unique_id=235203284]
+[node name="shape_p06_n02" type="CollisionShape3D" parent="Collision" unique_id=1375867254]
 shape = ExtResource("300_1lsyj")
 
-[node name="shape_p07_n02" type="CollisionShape3D" parent="Collision" unique_id=1797640448]
+[node name="shape_p07_n02" type="CollisionShape3D" parent="Collision" unique_id=2011417862]
 shape = ExtResource("301_7nrwt")
 
-[node name="shape_n09_n01" type="CollisionShape3D" parent="Collision" unique_id=1171245337]
+[node name="shape_n09_n01" type="CollisionShape3D" parent="Collision" unique_id=1420390773]
 shape = ExtResource("302_unjh8")
 
-[node name="shape_n08_n01" type="CollisionShape3D" parent="Collision" unique_id=192296382]
+[node name="shape_n08_n01" type="CollisionShape3D" parent="Collision" unique_id=1787854646]
 shape = ExtResource("303_trwvk")
 
-[node name="shape_n07_n01" type="CollisionShape3D" parent="Collision" unique_id=1625225948]
+[node name="shape_n07_n01" type="CollisionShape3D" parent="Collision" unique_id=891253724]
 shape = ExtResource("304_eqe8k")
 
-[node name="shape_n05_n01" type="CollisionShape3D" parent="Collision" unique_id=1170610500]
+[node name="shape_n05_n01" type="CollisionShape3D" parent="Collision" unique_id=217324357]
 shape = ExtResource("305_7a6o5")
 
-[node name="shape_n03_n01" type="CollisionShape3D" parent="Collision" unique_id=1494295841]
+[node name="shape_n03_n01" type="CollisionShape3D" parent="Collision" unique_id=259318930]
 shape = ExtResource("306_8kop2")
 
-[node name="shape_n02_n01" type="CollisionShape3D" parent="Collision" unique_id=1246916316]
+[node name="shape_n02_n01" type="CollisionShape3D" parent="Collision" unique_id=1082697521]
 shape = ExtResource("307_g7hvi")
 
-[node name="shape_n01_n01" type="CollisionShape3D" parent="Collision" unique_id=194650163]
+[node name="shape_n01_n01" type="CollisionShape3D" parent="Collision" unique_id=1293804548]
 shape = ExtResource("308_gnp8g")
 
-[node name="shape_p00_n01" type="CollisionShape3D" parent="Collision" unique_id=457628669]
+[node name="shape_p00_n01" type="CollisionShape3D" parent="Collision" unique_id=1696841568]
 shape = ExtResource("309_0us46")
 
-[node name="shape_p01_n01" type="CollisionShape3D" parent="Collision" unique_id=228920107]
+[node name="shape_p01_n01" type="CollisionShape3D" parent="Collision" unique_id=711835943]
 shape = ExtResource("310_xli5c")
 
-[node name="shape_p02_n01" type="CollisionShape3D" parent="Collision" unique_id=1923031889]
+[node name="shape_p02_n01" type="CollisionShape3D" parent="Collision" unique_id=1298672853]
 shape = ExtResource("311_7jjd7")
 
-[node name="shape_p03_n01" type="CollisionShape3D" parent="Collision" unique_id=1549719102]
+[node name="shape_p03_n01" type="CollisionShape3D" parent="Collision" unique_id=742402417]
 shape = ExtResource("312_fbjaj")
 
-[node name="shape_p06_n01" type="CollisionShape3D" parent="Collision" unique_id=1529437376]
+[node name="shape_p06_n01" type="CollisionShape3D" parent="Collision" unique_id=1858014615]
 shape = ExtResource("313_vhyjv")
 
-[node name="shape_p07_n01" type="CollisionShape3D" parent="Collision" unique_id=2103546425]
+[node name="shape_p07_n01" type="CollisionShape3D" parent="Collision" unique_id=1177756283]
 shape = ExtResource("314_g7yi1")
 
-[node name="shape_n09_p00" type="CollisionShape3D" parent="Collision" unique_id=706362426]
+[node name="shape_n09_p00" type="CollisionShape3D" parent="Collision" unique_id=98510660]
 shape = ExtResource("315_2142p")
 
-[node name="shape_n08_p00" type="CollisionShape3D" parent="Collision" unique_id=1846471763]
+[node name="shape_n08_p00" type="CollisionShape3D" parent="Collision" unique_id=384599515]
 shape = ExtResource("316_3l5he")
 
-[node name="shape_n04_p00" type="CollisionShape3D" parent="Collision" unique_id=69505592]
+[node name="shape_n04_p00" type="CollisionShape3D" parent="Collision" unique_id=2000042195]
 shape = ExtResource("317_qlfpc")
 
-[node name="shape_n03_p00" type="CollisionShape3D" parent="Collision" unique_id=877063283]
+[node name="shape_n03_p00" type="CollisionShape3D" parent="Collision" unique_id=1157989229]
 shape = ExtResource("318_ugo5u")
 
-[node name="shape_n02_p00" type="CollisionShape3D" parent="Collision" unique_id=556426942]
+[node name="shape_n02_p00" type="CollisionShape3D" parent="Collision" unique_id=445517626]
 shape = ExtResource("319_fjtkq")
 
-[node name="shape_n01_p00" type="CollisionShape3D" parent="Collision" unique_id=1056504833]
+[node name="shape_n01_p00" type="CollisionShape3D" parent="Collision" unique_id=319594829]
 shape = ExtResource("320_b225e")
 
-[node name="shape_p00_p00" type="CollisionShape3D" parent="Collision" unique_id=427274407]
+[node name="shape_p00_p00" type="CollisionShape3D" parent="Collision" unique_id=1032671957]
 shape = ExtResource("321_afy5o")
 
-[node name="shape_p01_p00" type="CollisionShape3D" parent="Collision" unique_id=184309291]
+[node name="shape_p01_p00" type="CollisionShape3D" parent="Collision" unique_id=1466762398]
 shape = ExtResource("322_4hg7x")
 
-[node name="shape_p02_p00" type="CollisionShape3D" parent="Collision" unique_id=1801836953]
+[node name="shape_p02_p00" type="CollisionShape3D" parent="Collision" unique_id=1174323695]
 shape = ExtResource("323_vix88")
 
-[node name="shape_p05_p00" type="CollisionShape3D" parent="Collision" unique_id=1649269558]
+[node name="shape_p05_p00" type="CollisionShape3D" parent="Collision" unique_id=1978152156]
 shape = ExtResource("324_12maw")
 
-[node name="shape_p07_p00" type="CollisionShape3D" parent="Collision" unique_id=1967998780]
+[node name="shape_p07_p00" type="CollisionShape3D" parent="Collision" unique_id=1769917658]
 shape = ExtResource("325_8xn5h")
 
-[node name="shape_p08_p00" type="CollisionShape3D" parent="Collision" unique_id=205501756]
+[node name="shape_p08_p00" type="CollisionShape3D" parent="Collision" unique_id=86792187]
 shape = ExtResource("326_wt8km")
 
-[node name="shape_n08_p01" type="CollisionShape3D" parent="Collision" unique_id=1216250143]
+[node name="shape_n08_p01" type="CollisionShape3D" parent="Collision" unique_id=280105151]
 shape = ExtResource("327_mlx2t")
 
-[node name="shape_n07_p01" type="CollisionShape3D" parent="Collision" unique_id=1376772754]
+[node name="shape_n07_p01" type="CollisionShape3D" parent="Collision" unique_id=1462326940]
 shape = ExtResource("328_0v5y7")
 
-[node name="shape_n05_p01" type="CollisionShape3D" parent="Collision" unique_id=349894656]
+[node name="shape_n05_p01" type="CollisionShape3D" parent="Collision" unique_id=1361770186]
 shape = ExtResource("329_iui5r")
 
-[node name="shape_n03_p01" type="CollisionShape3D" parent="Collision" unique_id=1274086474]
+[node name="shape_n03_p01" type="CollisionShape3D" parent="Collision" unique_id=1516240775]
 shape = ExtResource("330_1eb28")
 
-[node name="shape_n02_p01" type="CollisionShape3D" parent="Collision" unique_id=1486744689]
+[node name="shape_n02_p01" type="CollisionShape3D" parent="Collision" unique_id=2005919803]
 shape = ExtResource("331_eeahh")
 
-[node name="shape_n01_p01" type="CollisionShape3D" parent="Collision" unique_id=272823069]
+[node name="shape_n01_p01" type="CollisionShape3D" parent="Collision" unique_id=63353639]
 shape = ExtResource("332_bcrq6")
 
-[node name="shape_p00_p01" type="CollisionShape3D" parent="Collision" unique_id=702176807]
+[node name="shape_p00_p01" type="CollisionShape3D" parent="Collision" unique_id=1998193118]
 shape = ExtResource("333_6451g")
 
-[node name="shape_p01_p01" type="CollisionShape3D" parent="Collision" unique_id=712514356]
+[node name="shape_p01_p01" type="CollisionShape3D" parent="Collision" unique_id=444689648]
 shape = ExtResource("334_0td80")
 
-[node name="shape_p02_p01" type="CollisionShape3D" parent="Collision" unique_id=1053043635]
+[node name="shape_p02_p01" type="CollisionShape3D" parent="Collision" unique_id=2031153993]
 shape = ExtResource("335_7rao5")
 
-[node name="shape_p03_p01" type="CollisionShape3D" parent="Collision" unique_id=2020423451]
+[node name="shape_p03_p01" type="CollisionShape3D" parent="Collision" unique_id=1963617969]
 shape = ExtResource("336_0v0dh")
 
-[node name="shape_p04_p01" type="CollisionShape3D" parent="Collision" unique_id=549897162]
+[node name="shape_p04_p01" type="CollisionShape3D" parent="Collision" unique_id=769570545]
 shape = ExtResource("337_jq5bl")
 
-[node name="shape_p05_p01" type="CollisionShape3D" parent="Collision" unique_id=881591966]
+[node name="shape_p05_p01" type="CollisionShape3D" parent="Collision" unique_id=347242216]
 shape = ExtResource("338_rwyja")
 
-[node name="shape_p06_p01" type="CollisionShape3D" parent="Collision" unique_id=2058690701]
+[node name="shape_p06_p01" type="CollisionShape3D" parent="Collision" unique_id=1521626594]
 shape = ExtResource("339_ourre")
 
-[node name="shape_p08_p01" type="CollisionShape3D" parent="Collision" unique_id=1644503954]
+[node name="shape_p08_p01" type="CollisionShape3D" parent="Collision" unique_id=595219892]
 shape = ExtResource("340_lym25")
 
-[node name="shape_n09_p02" type="CollisionShape3D" parent="Collision" unique_id=861855750]
+[node name="shape_n09_p02" type="CollisionShape3D" parent="Collision" unique_id=1691087142]
 shape = ExtResource("341_dim1g")
 
-[node name="shape_n07_p02" type="CollisionShape3D" parent="Collision" unique_id=1881629167]
+[node name="shape_n07_p02" type="CollisionShape3D" parent="Collision" unique_id=1303207235]
 shape = ExtResource("342_la5rm")
 
-[node name="shape_n06_p02" type="CollisionShape3D" parent="Collision" unique_id=847837902]
+[node name="shape_n06_p02" type="CollisionShape3D" parent="Collision" unique_id=1037164762]
 shape = ExtResource("343_kq6fm")
 
-[node name="shape_n05_p02" type="CollisionShape3D" parent="Collision" unique_id=642452854]
+[node name="shape_n05_p02" type="CollisionShape3D" parent="Collision" unique_id=917498823]
 shape = ExtResource("344_ni0rs")
 
-[node name="shape_n03_p02" type="CollisionShape3D" parent="Collision" unique_id=1248715860]
+[node name="shape_n03_p02" type="CollisionShape3D" parent="Collision" unique_id=662784895]
 shape = ExtResource("345_calj8")
 
-[node name="shape_n02_p02" type="CollisionShape3D" parent="Collision" unique_id=1803785556]
+[node name="shape_n02_p02" type="CollisionShape3D" parent="Collision" unique_id=46965429]
 shape = ExtResource("346_7olts")
 
-[node name="shape_n01_p02" type="CollisionShape3D" parent="Collision" unique_id=2072687928]
+[node name="shape_n01_p02" type="CollisionShape3D" parent="Collision" unique_id=496335025]
 shape = ExtResource("347_gmevv")
 
-[node name="shape_p00_p02" type="CollisionShape3D" parent="Collision" unique_id=502174839]
+[node name="shape_p00_p02" type="CollisionShape3D" parent="Collision" unique_id=148723015]
 shape = ExtResource("348_oaukf")
 
-[node name="shape_p01_p02" type="CollisionShape3D" parent="Collision" unique_id=1737391752]
+[node name="shape_p01_p02" type="CollisionShape3D" parent="Collision" unique_id=1476881016]
 shape = ExtResource("349_gdm6v")
 
-[node name="shape_p02_p02" type="CollisionShape3D" parent="Collision" unique_id=800610764]
+[node name="shape_p02_p02" type="CollisionShape3D" parent="Collision" unique_id=1349936619]
 shape = ExtResource("350_crh0b")
 
-[node name="shape_p03_p02" type="CollisionShape3D" parent="Collision" unique_id=1153324535]
+[node name="shape_p03_p02" type="CollisionShape3D" parent="Collision" unique_id=2090383871]
 shape = ExtResource("351_1qag8")
 
-[node name="shape_p04_p02" type="CollisionShape3D" parent="Collision" unique_id=275889252]
+[node name="shape_p04_p02" type="CollisionShape3D" parent="Collision" unique_id=595757379]
 shape = ExtResource("352_3c0s0")
 
-[node name="shape_p05_p02" type="CollisionShape3D" parent="Collision" unique_id=1690951543]
+[node name="shape_p05_p02" type="CollisionShape3D" parent="Collision" unique_id=1516990126]
 shape = ExtResource("353_xhp5g")
 
-[node name="shape_p08_p02" type="CollisionShape3D" parent="Collision" unique_id=2140200078]
+[node name="shape_p08_p02" type="CollisionShape3D" parent="Collision" unique_id=134919099]
 shape = ExtResource("354_suiih")
 
-[node name="shape_n07_p03" type="CollisionShape3D" parent="Collision" unique_id=71735639]
+[node name="shape_n07_p03" type="CollisionShape3D" parent="Collision" unique_id=1114522925]
 shape = ExtResource("355_17y8l")
 
-[node name="shape_n04_p03" type="CollisionShape3D" parent="Collision" unique_id=1173874840]
+[node name="shape_n04_p03" type="CollisionShape3D" parent="Collision" unique_id=933428734]
 shape = ExtResource("356_ys2tw")
 
-[node name="shape_n03_p03" type="CollisionShape3D" parent="Collision" unique_id=148031420]
+[node name="shape_n03_p03" type="CollisionShape3D" parent="Collision" unique_id=652493403]
 shape = ExtResource("357_i3wrl")
 
-[node name="shape_n02_p03" type="CollisionShape3D" parent="Collision" unique_id=1998517589]
+[node name="shape_n02_p03" type="CollisionShape3D" parent="Collision" unique_id=1590131390]
 shape = ExtResource("358_h3pha")
 
-[node name="shape_n01_p03" type="CollisionShape3D" parent="Collision" unique_id=517250379]
+[node name="shape_n01_p03" type="CollisionShape3D" parent="Collision" unique_id=2055203975]
 shape = ExtResource("359_4uep6")
 
-[node name="shape_p01_p03" type="CollisionShape3D" parent="Collision" unique_id=792129525]
+[node name="shape_p01_p03" type="CollisionShape3D" parent="Collision" unique_id=987296555]
 shape = ExtResource("360_o0o5k")
 
-[node name="shape_p03_p03" type="CollisionShape3D" parent="Collision" unique_id=1122951270]
+[node name="shape_p03_p03" type="CollisionShape3D" parent="Collision" unique_id=22347055]
 shape = ExtResource("361_tt1wm")
 
-[node name="shape_p04_p03" type="CollisionShape3D" parent="Collision" unique_id=1710640658]
+[node name="shape_p04_p03" type="CollisionShape3D" parent="Collision" unique_id=1488751470]
 shape = ExtResource("362_rhpgk")
 
-[node name="shape_p05_p03" type="CollisionShape3D" parent="Collision" unique_id=1572937253]
+[node name="shape_p05_p03" type="CollisionShape3D" parent="Collision" unique_id=1291260215]
 shape = ExtResource("363_a8e5g")
 
-[node name="shape_p07_p03" type="CollisionShape3D" parent="Collision" unique_id=1557311459]
+[node name="shape_p07_p03" type="CollisionShape3D" parent="Collision" unique_id=54163626]
 shape = ExtResource("364_nteee")
 
-[node name="shape_n08_p04" type="CollisionShape3D" parent="Collision" unique_id=1310661331]
+[node name="shape_n08_p04" type="CollisionShape3D" parent="Collision" unique_id=1924681119]
 shape = ExtResource("365_17hqi")
 
-[node name="shape_n07_p04" type="CollisionShape3D" parent="Collision" unique_id=348115944]
+[node name="shape_n07_p04" type="CollisionShape3D" parent="Collision" unique_id=1974968427]
 shape = ExtResource("366_w57wa")
 
-[node name="shape_n03_p04" type="CollisionShape3D" parent="Collision" unique_id=1673864646]
+[node name="shape_n03_p04" type="CollisionShape3D" parent="Collision" unique_id=2085096040]
 shape = ExtResource("367_3tqck")
 
-[node name="shape_n02_p04" type="CollisionShape3D" parent="Collision" unique_id=1658204442]
+[node name="shape_n02_p04" type="CollisionShape3D" parent="Collision" unique_id=506838830]
 shape = ExtResource("368_rlp2p")
 
-[node name="shape_n01_p04" type="CollisionShape3D" parent="Collision" unique_id=729078619]
+[node name="shape_n01_p04" type="CollisionShape3D" parent="Collision" unique_id=295264492]
 shape = ExtResource("369_8px21")
 
-[node name="shape_p00_p04" type="CollisionShape3D" parent="Collision" unique_id=977488610]
+[node name="shape_p00_p04" type="CollisionShape3D" parent="Collision" unique_id=29490259]
 shape = ExtResource("370_rjhok")
 
-[node name="shape_p01_p04" type="CollisionShape3D" parent="Collision" unique_id=103537335]
+[node name="shape_p01_p04" type="CollisionShape3D" parent="Collision" unique_id=1150132576]
 shape = ExtResource("371_u4trl")
 
-[node name="shape_p02_p04" type="CollisionShape3D" parent="Collision" unique_id=1550572076]
+[node name="shape_p02_p04" type="CollisionShape3D" parent="Collision" unique_id=1463550772]
 shape = ExtResource("372_2yx4d")
 
-[node name="shape_p03_p04" type="CollisionShape3D" parent="Collision" unique_id=50071124]
+[node name="shape_p03_p04" type="CollisionShape3D" parent="Collision" unique_id=863164990]
 shape = ExtResource("373_ikad4")
 
-[node name="shape_p05_p04" type="CollisionShape3D" parent="Collision" unique_id=1811806008]
+[node name="shape_p05_p04" type="CollisionShape3D" parent="Collision" unique_id=1161019276]
 shape = ExtResource("374_dhqgu")
 
-[node name="shape_p06_p04" type="CollisionShape3D" parent="Collision" unique_id=1483406700]
+[node name="shape_p06_p04" type="CollisionShape3D" parent="Collision" unique_id=847670028]
 shape = ExtResource("375_34wk4")
 
-[node name="shape_n06_p05" type="CollisionShape3D" parent="Collision" unique_id=956162450]
+[node name="shape_n06_p05" type="CollisionShape3D" parent="Collision" unique_id=784001675]
 shape = ExtResource("376_ho8no")
 
-[node name="shape_n05_p05" type="CollisionShape3D" parent="Collision" unique_id=242224101]
+[node name="shape_n05_p05" type="CollisionShape3D" parent="Collision" unique_id=1602367917]
 shape = ExtResource("377_e5wc6")
 
-[node name="shape_n04_p05" type="CollisionShape3D" parent="Collision" unique_id=1832651236]
+[node name="shape_n04_p05" type="CollisionShape3D" parent="Collision" unique_id=174730067]
 shape = ExtResource("378_idhqa")
 
-[node name="shape_n03_p05" type="CollisionShape3D" parent="Collision" unique_id=747813199]
+[node name="shape_n03_p05" type="CollisionShape3D" parent="Collision" unique_id=2108357100]
 shape = ExtResource("379_weouc")
 
-[node name="shape_n01_p05" type="CollisionShape3D" parent="Collision" unique_id=2088832246]
+[node name="shape_n01_p05" type="CollisionShape3D" parent="Collision" unique_id=1093059524]
 shape = ExtResource("380_4a37i")
 
-[node name="shape_p00_p05" type="CollisionShape3D" parent="Collision" unique_id=909248050]
+[node name="shape_p00_p05" type="CollisionShape3D" parent="Collision" unique_id=560746016]
 shape = ExtResource("381_w6fb6")
 
-[node name="shape_p01_p05" type="CollisionShape3D" parent="Collision" unique_id=1686980107]
+[node name="shape_p01_p05" type="CollisionShape3D" parent="Collision" unique_id=1300923477]
 shape = ExtResource("382_dhu7i")
 
-[node name="shape_p02_p05" type="CollisionShape3D" parent="Collision" unique_id=1873547079]
+[node name="shape_p02_p05" type="CollisionShape3D" parent="Collision" unique_id=327119246]
 shape = ExtResource("383_57431")
 
-[node name="shape_p03_p05" type="CollisionShape3D" parent="Collision" unique_id=1957729513]
+[node name="shape_p03_p05" type="CollisionShape3D" parent="Collision" unique_id=2105154410]
 shape = ExtResource("384_ivw33")
 
-[node name="shape_p04_p05" type="CollisionShape3D" parent="Collision" unique_id=1270687462]
+[node name="shape_p04_p05" type="CollisionShape3D" parent="Collision" unique_id=176280330]
 shape = ExtResource("385_h2h2n")
 
-[node name="shape_p05_p05" type="CollisionShape3D" parent="Collision" unique_id=9775507]
+[node name="shape_p05_p05" type="CollisionShape3D" parent="Collision" unique_id=189235919]
 shape = ExtResource("386_s0k7y")
 
-[node name="shape_p07_p05" type="CollisionShape3D" parent="Collision" unique_id=1849899933]
+[node name="shape_p07_p05" type="CollisionShape3D" parent="Collision" unique_id=1433292312]
 shape = ExtResource("387_2cw73")
 
-[node name="shape_n07_p06" type="CollisionShape3D" parent="Collision" unique_id=1373015493]
+[node name="shape_n07_p06" type="CollisionShape3D" parent="Collision" unique_id=75019277]
 shape = ExtResource("388_oabgt")
 
-[node name="shape_n06_p06" type="CollisionShape3D" parent="Collision" unique_id=1205360572]
+[node name="shape_n06_p06" type="CollisionShape3D" parent="Collision" unique_id=1360465364]
 shape = ExtResource("389_uy1fj")
 
-[node name="shape_n05_p06" type="CollisionShape3D" parent="Collision" unique_id=1624848810]
+[node name="shape_n05_p06" type="CollisionShape3D" parent="Collision" unique_id=36106565]
 shape = ExtResource("390_mafwm")
 
-[node name="shape_n04_p06" type="CollisionShape3D" parent="Collision" unique_id=1289265172]
+[node name="shape_n04_p06" type="CollisionShape3D" parent="Collision" unique_id=1447081686]
 shape = ExtResource("391_h1357")
 
-[node name="shape_n03_p06" type="CollisionShape3D" parent="Collision" unique_id=1927419295]
+[node name="shape_n03_p06" type="CollisionShape3D" parent="Collision" unique_id=1495855386]
 shape = ExtResource("392_ctgvw")
 
-[node name="shape_n01_p06" type="CollisionShape3D" parent="Collision" unique_id=777799110]
+[node name="shape_n01_p06" type="CollisionShape3D" parent="Collision" unique_id=763902784]
 shape = ExtResource("393_sbqk7")
 
-[node name="shape_p00_p06" type="CollisionShape3D" parent="Collision" unique_id=1141131529]
+[node name="shape_p00_p06" type="CollisionShape3D" parent="Collision" unique_id=1919134565]
 shape = ExtResource("394_pufbg")
 
-[node name="shape_p01_p06" type="CollisionShape3D" parent="Collision" unique_id=1014060701]
+[node name="shape_p01_p06" type="CollisionShape3D" parent="Collision" unique_id=1725576765]
 shape = ExtResource("395_8tm3y")
 
-[node name="shape_p03_p06" type="CollisionShape3D" parent="Collision" unique_id=274508346]
+[node name="shape_p03_p06" type="CollisionShape3D" parent="Collision" unique_id=1534147858]
 shape = ExtResource("396_vkxj0")
 
-[node name="shape_p04_p06" type="CollisionShape3D" parent="Collision" unique_id=79357684]
+[node name="shape_p04_p06" type="CollisionShape3D" parent="Collision" unique_id=1289748379]
 shape = ExtResource("397_ochjx")
 
-[node name="shape_p05_p06" type="CollisionShape3D" parent="Collision" unique_id=456157699]
+[node name="shape_p05_p06" type="CollisionShape3D" parent="Collision" unique_id=1250674329]
 shape = ExtResource("398_e7ox0")
 
-[node name="shape_p06_p06" type="CollisionShape3D" parent="Collision" unique_id=1100363521]
+[node name="shape_p06_p06" type="CollisionShape3D" parent="Collision" unique_id=1837611388]
 shape = ExtResource("399_g7wj2")
 
-[node name="shape_n04_p07" type="CollisionShape3D" parent="Collision" unique_id=1753679750]
+[node name="shape_n04_p07" type="CollisionShape3D" parent="Collision" unique_id=1713640379]
 shape = ExtResource("400_c8cpl")
 
-[node name="shape_n03_p07" type="CollisionShape3D" parent="Collision" unique_id=834303637]
+[node name="shape_n03_p07" type="CollisionShape3D" parent="Collision" unique_id=765687623]
 shape = ExtResource("401_b46if")
 
-[node name="shape_n02_p07" type="CollisionShape3D" parent="Collision" unique_id=237318371]
+[node name="shape_n02_p07" type="CollisionShape3D" parent="Collision" unique_id=722707839]
 shape = ExtResource("402_aqerk")
 
-[node name="shape_n01_p07" type="CollisionShape3D" parent="Collision" unique_id=1985807691]
+[node name="shape_n01_p07" type="CollisionShape3D" parent="Collision" unique_id=941116838]
 shape = ExtResource("403_hswow")
 
-[node name="shape_p00_p07" type="CollisionShape3D" parent="Collision" unique_id=912724165]
+[node name="shape_p00_p07" type="CollisionShape3D" parent="Collision" unique_id=452453295]
 shape = ExtResource("404_ueyvr")
 
-[node name="shape_p01_p07" type="CollisionShape3D" parent="Collision" unique_id=2080592030]
+[node name="shape_p01_p07" type="CollisionShape3D" parent="Collision" unique_id=1016650318]
 shape = ExtResource("405_x7gk4")
 
-[node name="shape_p02_p07" type="CollisionShape3D" parent="Collision" unique_id=985891300]
+[node name="shape_p02_p07" type="CollisionShape3D" parent="Collision" unique_id=1799884819]
 shape = ExtResource("406_wc3bk")
 
-[node name="shape_p03_p07" type="CollisionShape3D" parent="Collision" unique_id=1430684826]
+[node name="shape_p03_p07" type="CollisionShape3D" parent="Collision" unique_id=2069617222]
 shape = ExtResource("407_3qkns")
 
-[node name="shape_p05_p07" type="CollisionShape3D" parent="Collision" unique_id=880941259]
+[node name="shape_p05_p07" type="CollisionShape3D" parent="Collision" unique_id=86448631]
 shape = ExtResource("408_abm8y")
 
-[node name="shape_n05_p08" type="CollisionShape3D" parent="Collision" unique_id=409812383]
+[node name="shape_n05_p08" type="CollisionShape3D" parent="Collision" unique_id=1723867571]
 shape = ExtResource("409_0ao2c")
 
-[node name="shape_n03_p08" type="CollisionShape3D" parent="Collision" unique_id=484017527]
+[node name="shape_n03_p08" type="CollisionShape3D" parent="Collision" unique_id=999259893]
 shape = ExtResource("410_xot1m")
 
-[node name="shape_n02_p08" type="CollisionShape3D" parent="Collision" unique_id=1634193153]
+[node name="shape_n02_p08" type="CollisionShape3D" parent="Collision" unique_id=674137094]
 shape = ExtResource("411_rmw1d")
 
-[node name="shape_n01_p08" type="CollisionShape3D" parent="Collision" unique_id=1492256250]
+[node name="shape_n01_p08" type="CollisionShape3D" parent="Collision" unique_id=1286515878]
 shape = ExtResource("412_lfk26")
 
-[node name="shape_p00_p08" type="CollisionShape3D" parent="Collision" unique_id=185744530]
+[node name="shape_p00_p08" type="CollisionShape3D" parent="Collision" unique_id=1793010512]
 shape = ExtResource("413_dq85n")
 
-[node name="shape_p02_p08" type="CollisionShape3D" parent="Collision" unique_id=96396665]
+[node name="shape_p02_p08" type="CollisionShape3D" parent="Collision" unique_id=1121109799]
 shape = ExtResource("414_qtavu")
 
-[node name="Occluders" type="OccluderInstance3D" parent="." unique_id=1853939520]
+[node name="Occluders" type="OccluderInstance3D" parent="." unique_id=1713588306]
 occluder = ExtResource("415_v56tr")
 
-[node name="Nav" type="NavigationRegion3D" parent="." unique_id=131858377]
+[node name="Nav" type="NavigationRegion3D" parent="." unique_id=1337286324]
 navigation_mesh = ExtResource("416_lassk")

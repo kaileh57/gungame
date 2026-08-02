@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="GunSpec" format=3]
+
+[ext_resource type="Script" path="res://core/gun_spec.gd" id="1_c4qqi"]
+
+[resource]
+script = ExtResource("1_c4qqi")
+roll_seed = 2335
+cfg = 3890714736
+weapon_name = "The Verdict"
+part_indices = PackedInt32Array(14, 15, 5, 47, 62)
+part_scales = PackedFloat32Array(1, 1.471366, 0.77553946, 1.6, 0.5708201)
+part_z_scales = PackedFloat32Array(1, 1.849329, 1.0815398, 1.9, 0.9273958)
+part_offsets = PackedVector3Array(0, 0, 0, 0.85131, 0.01099, 0, -0.85131, -0.05561, 0, -0.3708368, -0.47237, 0, 0, 0.1872, 0)
+fit_error = 1.7416411056435381
+muzzle_local = Vector3(8.788741, 0.01099, 0)
+score = 61.02421107818223
+tier_index = 0
+tier_name = &"Hazard"
+tier_color = Color(0.627451, 0.21176471, 0.21176471, 1)
+quirks = PackedStringArray("crew-served", "cracked stock", "whippy barrel", "muzzle-heavy", "gritty", "worn mag", "binds hot", "fumbly")
+caliber = ".44 Magnum"
+bore = 11.8
+case_length = 32
+muzzle_velocity = 448
+muzzle_energy = 1361
+effective_range = 266
+sim_velocity = 224
+damage = 56.0
+crit_multiplier = 2.19
+headshot_range = 27.0
+impulse = 7.346642748207483
+fire_mode = &"Semi-auto"
+archetype = &"Carbine"
+rpm = 144
+cyclic = 800
+magazine = 42
+reload_time = 4.8
+mass = 12.0
+precision = 59
+reach = 80
+kick = 11
+handling = 14
+reliability = 32
+burst_dps = 133
+sustained_dps = 105
+barrel_length = 714
+overall_length = 1228
+spread = 13.0
+spread_rad = 0.0037146630841497752
+spread_text = "13'"
+has_optic = true
+zoom = 1.9870428498944284
+zoom_levels = PackedFloat32Array(2)
+recoil_vertical = 0.0015600893180722944
+recoil_horizontal = 0.0010647489963405985
+recoil_drift = -0.555
+recoil_period = 11
+recoil_random = 0.6771473927756407
+recoil_settle = 0.95
+tint = 1.1080905883014203
+donor_groups = Array[StringName]([&"Spitter", &"Pumper", &"Woodsman", &"Chattergun", &"Longshot"])
+metadata/gun_traits = PackedStringArray("cracked stock", "whippy barrel", "muzzle-heavy")
+metadata/gun_graded = true

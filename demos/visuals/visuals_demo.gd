@@ -32,7 +32,7 @@ extends Node3D
 ## predates this demo. Frozen: the main menu and any bookmark use this string.
 const DEMO_ID: String = "visuals"
 const DEMO_TITLE: String = "THE FLATS AT DUSK"
-const DEMO_BLURB: String = "Nothing to shoot. Stand on the rise and look at it."
+const DEMO_BLURB: String = "Nothing to shoot. The whole map at sunset — hold sprint and go look."
 
 ## Control ids on the post. These are stamped onto the controls by the builder.
 const ID_QUALITY: StringName = &"quality"
@@ -70,30 +70,60 @@ const FRAME_BUDGET_MS: float = 8.333
 ## Metres you can reach a control from. Arm's length plus a step.
 @export_range(0.5, 6.0, 0.05) var reach: float = 3.2
 
+@export_group("Stage")
+## Metres past which a baked town chunk stops drawing. Zero never culls, which is
+## the shipped value and the honest one for a demo whose whole subject is the
+## scale of the map: the town is 211 chunks and its far side is 600 m from the
+## overlook, so any cull tight enough to save draw calls also eats the skyline
+## you climbed the terrace to see. It is here because it is the first lever to
+## reach for if a machine cannot hold the frame.
+@export_range(0.0, 2000.0, 10.0) var town_draw_distance: float = 0.0
+## Multiplier on the terrain's own LOD switch distances. Under one drops the far
+## chunks to their coarse level sooner; the terrain is 100 chunks and the coarse
+## level is a fifth of the fine one, so this is the cheapest frame in the scene.
+##
+## Shipped at 0.7 rather than the terrain's own 1.0 because this demo is the one
+## that looks at ALL of it. The switch distances in `TerrainChunks` are tuned for a
+## player standing inside the town with a few hundred metres of interest; here the
+## eye is on a rise with the whole 1760 m map in frame, and at 1.0 the far dunes —
+## which are haze and silhouette by the time you see them — were still holding their
+## fine level. Under about 0.5 the seam between levels starts to show on the near
+## slopes, which is the floor this was set against.
+@export_range(0.25, 4.0, 0.05) var terrain_lod_scale: float = 0.7
+
 @export_group("Sun")
 ## Azimuth is fixed — it is what puts the settlement between you and the light —
-## and the slider moves elevation only, between these two degrees.
-@export_range(1.0, 30.0, 0.5) var sun_elevation_min: float = 3.0
+## and the slider moves elevation only, between these two degrees. The floor is a
+## degree rather than three: this demo is a SUNSET, and the difference between a
+## three-degree sun and a one-degree sun is the difference between long shadows
+## and shadows that run off the end of the map.
+@export_range(0.5, 30.0, 0.5) var sun_elevation_min: float = 1.0
 @export_range(10.0, 80.0, 0.5) var sun_elevation_max: float = 46.0
-## Where the slider starts. Low enough to throw the shadows the length of the pan.
-@export_range(1.0, 80.0, 0.5) var sun_elevation_start: float = 12.5
+## Where the slider starts. Low enough that a six metre lamp standard throws
+## ninety-eight metres of shadow, which is what "dusk" actually looks like.
+@export_range(0.5, 80.0, 0.5) var sun_elevation_start: float = 3.5
 ## Compass bearing the sun sits on, degrees, measured the same way the baked
 ## `Palette.SUN_DIRECTION` is. Not on a control: moving it wrecks the composition.
 @export_range(-180.0, 180.0, 0.5) var sun_azimuth_degrees: float = -130.5
 
 @export_group("Light")
-## The world scene ships a balance for a mid-afternoon sun. This one is twelve
-## degrees off the horizon, where a horizontal surface receives about a fifth of
-## the key — so with the shipped fill the settlement floor turns pale blue and the
-## shot loses its contrast. These four numbers restore it: more key, much less
-## sky, a little more warm bounce off the sand.
-@export_range(0.0, 6.0, 0.01) var sun_energy: float = 2.35:
+## The four numbers that make a sunset out of a landscape, live on the slider so
+## the balance follows the sun down. Defaults are `VisualsDusk`'s, which the
+## builder also writes into the `World` node — they are repeated here because the
+## demo re-applies them at `_ready()` and the two must not disagree.
+##
+## At three and a half degrees a horizontal surface receives sin(3.5) = 0.061 of
+## the beam, so the key has to be most of a stop over the shared daytime value
+## just to keep the flats off black; the cold sky fill is cut to a third, because
+## a shadow at dusk is lit by an orange sky and not by a blue one; and the warm
+## sand bounce goes up to carry what the fill gave back.
+@export_range(0.0, 8.0, 0.01) var sun_energy: float = 4.2:
 	set = _set_light
-@export_range(0.0, 1.0, 0.01) var ambient_energy: float = 0.17:
+@export_range(0.0, 1.0, 0.01) var ambient_energy: float = 0.34:
 	set = _set_light
-@export_range(0.0, 1.0, 0.01) var sky_fill_energy: float = 0.06:
+@export_range(0.0, 1.0, 0.01) var sky_fill_energy: float = 0.09:
 	set = _set_light
-@export_range(0.0, 1.0, 0.01) var bounce_energy: float = 0.30:
+@export_range(0.0, 1.0, 0.01) var bounce_energy: float = 0.46:
 	set = _set_light
 
 @export_group("Lamps")
@@ -131,6 +161,8 @@ var _readout_clock: float = 0.0
 var _hands: DiegeticInteractor = null
 
 @onready var _world: ScavWorldEnvironment = $World
+@onready var _town: Node3D = get_node_or_null(^"Town") as Node3D
+@onready var _terrain: TerrainChunks = get_node_or_null(^"Terrain") as TerrainChunks
 @onready var _post: Node3D = $Post
 @onready var _readout: DiegeticReadout = $Post/Readout
 @onready var _rig: VisualsCameraRig = $CameraRig
@@ -146,6 +178,7 @@ func _ready() -> void:
 	GameSettings.register_viewport(get_viewport())
 	VfxService.set_ground_y(ground_y)
 
+	_tune_stage()
 	_build_hands()
 	_place_player()
 	_collect_controls()
@@ -206,6 +239,29 @@ func _unhandled_input(event: InputEvent) -> void:
 ## frame later the tree is idle and the add lands.
 func _enter_presence() -> void:
 	NetPresence.enter(NetPresence.FULL, _player.get_node_or_null(^"Eye") as Camera3D)
+
+
+## Push this demo's culling policy onto the two baked worlds it instances. Both
+## are shared scenes owned by other builders, so nothing is written to disk here —
+## the town's chunks ship with no visibility range at all, and the terrain ships
+## with the switch distances that suit a demo standing inside the town rather than
+## one standing four hundred metres outside it looking in.
+##
+## This is the only place in the demo that reaches into an instanced sub-scene,
+## and it is deliberately confined to two renderer-side properties: a visibility
+## range and an LOD multiplier. Neither changes what is baked, so re-running any
+## other builder cannot invalidate it.
+func _tune_stage() -> void:
+	if _terrain != null:
+		_terrain.lod_scale = terrain_lod_scale
+	if _town == null:
+		return
+	for node: Node in _town.get_children():
+		var mi := node as MeshInstance3D
+		if mi == null:
+			continue
+		mi.visibility_range_end = town_draw_distance
+		mi.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_DISABLED
 
 
 ## The post's hands. Only the PROP layer, as the old probe had it, so the post

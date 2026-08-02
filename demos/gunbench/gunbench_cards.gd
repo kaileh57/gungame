@@ -107,8 +107,12 @@ static func cartridge_lines(spec: GunSpec) -> PackedStringArray:
 		out.append("headshot inside %.0f m" % spec.headshot_range)
 	out.append("recoil %.2f Ns  ·  kick %d" % [spec.impulse, spec.kick])
 	out.append(optic_line(spec))
-	if not spec.quirks.is_empty():
-		out.append("· " + ", ".join(spec.quirks).to_lower())
+	# Wrapped, not joined: the character layer puts a mean 4.4 tags on a card and a
+	# single line would be clipped by `ReadoutCanvas` without saying so.
+	var first: bool = true
+	for line: String in GunGrading.quirk_lines(spec):
+		out.append(("· " if first else "  ") + line.to_lower())
+		first = false
 	return out
 
 

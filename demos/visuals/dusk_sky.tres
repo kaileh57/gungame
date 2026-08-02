@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://art/sky.gdshader" id="1_q3dht"]
+
+[resource]
+shader = ExtResource("1_q3dht")
+shader_parameter/sun_direction = Vector3(-0.9967669, 0.061048545, -0.05223834)
+shader_parameter/zenith_color = Vector3(0.010960091, 0.015208514, 0.039546225)
+shader_parameter/mid_color = Vector3(0.10461648, 0.06847817, 0.12477182)
+shader_parameter/horizon_color = Vector3(1, 0.25818285, 0.046665084)
+shader_parameter/ground_color = Vector3(0.2541521, 0.102241725, 0.046665084)
+shader_parameter/horizon_band = 0.085
+shader_parameter/sky_energy = 0.7
+shader_parameter/sun_disc = 16.0
+shader_parameter/sun_halo = 0.17
+shader_parameter/sun_glow = 0.062
+shader_parameter/cloud_amount = 1.35

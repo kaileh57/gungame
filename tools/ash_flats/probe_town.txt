@@ -1,139 +1,157 @@
 ROOF CENTRES: what top_at says vs what the layout claims
-  b09  x  -59.45 z  -93.84  claim   1.41  top_at  -0.81  stand yes  w 11.81 d 17.65
-  b10  x  -38.57 z  -90.23  claim   4.82  top_at   4.82  stand yes  w 21.10 d 12.85
-  b11  x  -19.39 z -101.31  claim   4.62  top_at   4.62  stand yes  w 12.20 d 32.06
-  b12  x  -61.82 z  -62.66  claim  -1.38  top_at  -1.38  stand yes  w 28.56 d 31.43
-  b13  x  -28.01 z  -63.19  claim   6.47  top_at   9.38  stand yes  w 28.03 d 30.20
-  b20  x  -56.55 z  -34.72  claim   3.52  top_at   5.05  stand yes  w 17.98 d  9.47
-  b21  x  -56.17 z  -17.79  claim  12.77  top_at  12.77  stand yes  w 17.85 d 16.59
-  b22  x  -55.63 z    0.81  claim  13.97  top_at  13.97  stand yes  w 17.81 d 18.60
-  b23  x  -33.83 z  -35.08  claim  -2.26  top_at  -2.26  stand yes  w 14.44 d  8.65
-  b24  x  -34.55 z  -22.31  claim   0.75  top_at  -1.60  stand yes  w 14.18 d 10.06
-  b25  x  -18.12 z  -34.14  claim   2.16  top_at   2.16  stand NO   w 10.96 d 10.95
-  b26  x  -17.93 z  -21.70  claim   4.82  top_at   4.82  stand yes  w  9.64 d  7.64
-  b27  x    3.78 z -113.55  claim   4.62  top_at   2.08  stand NO   w 10.28 d  8.07
-  b28  x   17.01 z -111.86  claim   4.76  top_at   4.76  stand yes  w  9.83 d 11.73
-  b29  x   16.77 z  -98.79  claim   7.56  top_at   7.56  stand yes  w  9.74 d  7.97
-  b30  x    4.57 z  -84.35  claim  14.58  top_at  14.58  stand yes  w 10.90 d 12.47
-  b31  x   16.96 z  -84.09  claim   6.51  top_at   6.51  stand yes  w  8.45 d 13.08
-  b32  x   10.18 z  -69.66  claim   9.84  top_at   9.84  stand yes  w 23.12 d  8.46
-  b33  x   38.64 z  -85.41  claim   3.10  top_at   2.94  stand yes  w 22.09 d 15.71
-  b34  x   32.13 z  -70.10  claim   3.90  top_at   3.90  stand yes  w  9.48 d  8.52
-  b35  x   45.26 z  -70.73  claim   6.79  top_at   6.79  stand yes  w 10.31 d  9.49
-  b36  x    8.03 z  -50.78  claim  10.82  top_at  10.82  stand yes  w 18.16 d 16.73
-  b37  x   44.37 z  -54.76  claim  14.31  top_at  14.31  stand yes  w 11.51 d  8.16
-  b38  x   44.05 z  -43.38  claim   6.58  top_at   7.59  stand yes  w 12.54 d  8.20
-  b39  x   28.11 z  -30.31  claim   3.42  top_at   3.42  stand yes  w 11.73 d 12.16
-  b40  x   43.50 z  -30.31  claim   2.88  top_at   0.28  stand yes  w 13.37 d 11.24
-  b71  x  -47.59 z   31.26  claim   3.69  top_at   3.69  stand yes  w 22.25 d 18.20
-  b72  x  -53.19 z   49.08  claim   3.32  top_at   3.32  stand yes  w  8.29 d 11.23
-  b73  x  -40.56 z   48.96  claim   3.43  top_at   3.43  stand yes  w 10.23 d 11.65
-  b74  x  -22.23 z   27.55  claim   3.50  top_at   3.50  stand yes  w 17.26 d 11.38
-  b75  x  -22.27 z   44.89  claim   7.37  top_at   7.37  stand yes  w 16.49 d 18.34
-  b84  x    4.32 z   48.50  claim   3.74  top_at   3.74  stand yes  w 11.68 d 11.97
-  b86  x   47.96 z   31.81  claim  10.11  top_at  10.11  stand yes  w 41.88 d 20.93
-  b87  x   37.16 z   51.37  claim   5.86  top_at   5.86  stand yes  w 19.94 d  7.85
-  b103  x  -62.00 z  -48.00  claim  14.50  top_at  18.35  stand yes  w  6.39 d  6.39
+  b09 x  -59.45 z  -93.84  claim   1.41  top  -0.81  stand yes  room NO   w 11.81 d 17.65
+  b10 x  -38.57 z  -90.23  claim   4.82  top   4.82  stand yes  room NO   w 21.10 d 12.85
+  b11 x  -19.39 z -101.31  claim   4.62  top   4.62  stand yes  room NO   w 12.20 d 32.06
+  b12 x  -61.82 z  -62.66  claim  -1.38  top  -1.38  stand yes  room yes  w 28.56 d 31.43
+  b13 x  -28.01 z  -63.19  claim   6.47  top   9.38  stand yes  room yes  w 28.03 d 30.20
+  b20 x  -56.55 z  -34.72  claim   3.52  top   5.05  stand yes  room yes  w 17.98 d  9.47
+  b21 x  -56.17 z  -17.79  claim  12.77  top  12.77  stand yes  room NO   w 17.85 d 16.59
+  b22 x  -55.63 z    0.81  claim  13.97  top  13.97  stand yes  room yes  w 17.81 d 18.60
+  b23 x  -33.83 z  -35.08  claim  -2.26  top  -2.26  stand yes  room yes  w 14.44 d  8.65
+  b24 x  -34.55 z  -22.31  claim   0.75  top  -1.60  stand yes  room NO   w 14.18 d 10.06
+  b25 x  -18.12 z  -34.14  claim   2.16  top   2.16  stand NO   room NO   w 10.96 d 10.95
+  b26 x  -17.93 z  -21.70  claim   4.82  top   4.82  stand yes  room NO   w  9.64 d  7.64
+  b27 x    3.78 z -113.55  claim   4.62  top   2.08  stand NO   room NO   w 10.28 d  8.07
+  b28 x   17.01 z -111.86  claim   4.76  top   4.76  stand yes  room yes  w  9.83 d 11.73
+  b29 x   16.77 z  -98.79  claim   7.56  top   7.56  stand yes  room NO   w  9.74 d  7.97
+  b30 x    4.57 z  -84.35  claim  14.58  top  14.58  stand yes  room NO   w 10.90 d 12.47
+  b31 x   16.96 z  -84.09  claim   6.51  top   6.51  stand yes  room yes  w  8.45 d 13.08
+  b32 x   10.18 z  -69.66  claim   9.84  top   9.84  stand yes  room yes  w 23.12 d  8.46
+  b33 x   38.64 z  -85.41  claim   3.10  top   2.94  stand yes  room yes  w 22.09 d 15.71
+  b34 x   32.13 z  -70.10  claim   3.90  top   3.90  stand yes  room yes  w  9.48 d  8.52
+  b35 x   45.26 z  -70.73  claim   6.79  top   6.79  stand yes  room yes  w 10.31 d  9.49
+  b36 x    8.03 z  -50.78  claim  10.82  top  10.82  stand yes  room yes  w 18.16 d 16.73
+  b37 x   44.37 z  -54.76  claim  14.31  top  14.31  stand yes  room yes  w 11.51 d  8.16
+  b38 x   44.05 z  -43.38  claim   6.58  top   7.59  stand yes  room yes  w 12.54 d  8.20
+  b39 x   28.11 z  -30.31  claim   3.42  top   3.42  stand yes  room yes  w 11.73 d 12.16
+  b40 x   43.50 z  -30.31  claim   2.88  top   0.28  stand yes  room NO   w 13.37 d 11.24
+  b71 x  -47.59 z   31.26  claim   3.69  top   3.69  stand yes  room yes  w 22.25 d 18.20
+  b72 x  -53.19 z   49.08  claim   3.32  top   3.32  stand yes  room NO   w  8.29 d 11.23
+  b73 x  -40.56 z   48.96  claim   3.43  top   3.43  stand yes  room yes  w 10.23 d 11.65
+  b74 x  -22.23 z   27.55  claim   3.50  top   3.50  stand yes  room yes  w 17.26 d 11.38
+  b75 x  -22.27 z   44.89  claim   7.37  top   7.37  stand yes  room yes  w 16.49 d 18.34
+  b76 x  -49.76 z   67.20  claim   3.67  top   3.67  stand yes  room yes  w 16.58 d 12.52
+  b77 x  -24.82 z   73.38  claim   3.54  top   3.80  stand yes  room yes  w 21.65 d 23.32
+  b81 x  -18.86 z   95.95  claim   4.13  top   1.70  stand yes  room NO   w 11.81 d  9.89
+  b84 x    4.32 z   48.50  claim   3.74  top   3.74  stand yes  room yes  w 11.68 d 11.97
+  b85 x   16.27 z   64.30  claim   3.49  top   3.49  stand yes  room NO   w  7.74 d 13.82
+  b86 x   47.96 z   31.81  claim  10.11  top  10.11  stand yes  room yes  w 41.88 d 20.93
+  b87 x   37.16 z   51.37  claim   5.86  top   5.86  stand yes  room yes  w 19.94 d  7.85
+  b88 x   36.68 z   64.34  claim   8.61  top   8.61  stand yes  room yes  w 20.19 d 13.31
+  b93 x   50.95 z   88.38  claim   0.77  top  -0.26  stand yes  room yes  w 11.87 d 20.68
+  b103 x  -62.00 z  -48.00  claim  14.50  top  18.35  stand yes  room yes  w  6.39 d  6.39
 
-CARRIAGEWAY x -8: ground, top_at, standable
-  z  -20.0  ground  -4.11  top  -4.11  stand(3.2m) yes  stand(6m) yes
-  z  -18.0  ground  -4.08  top  -4.08  stand(3.2m) yes  stand(6m) yes
-  z  -16.0  ground  -4.05  top  -4.05  stand(3.2m) yes  stand(6m) yes
-  z  -14.0  ground  -4.02  top  -4.02  stand(3.2m) yes  stand(6m) yes
-  z  -12.0  ground  -3.96  top  -3.96  stand(3.2m) yes  stand(6m) yes
-  z  -10.0  ground  -3.94  top  -3.94  stand(3.2m) yes  stand(6m) yes
-  z   -8.0  ground  -3.93  top  -3.93  stand(3.2m) yes  stand(6m) yes
-  z   -6.0  ground  -3.88  top  -3.88  stand(3.2m) yes  stand(6m) yes
-  z   -4.0  ground  -3.78  top  -3.78  stand(3.2m) yes  stand(6m) yes
-  z   -2.0  ground  -3.39  top  -3.39  stand(3.2m) yes  stand(6m) yes
-  z    0.0  ground  -2.96  top  -2.96  stand(3.2m) yes  stand(6m) yes
-  z    2.0  ground  -2.40  top  -2.40  stand(3.2m) yes  stand(6m) yes
-  z    4.0  ground  -1.85  top  -1.85  stand(3.2m) yes  stand(6m) yes
-  z    6.0  ground  -1.30  top  -1.30  stand(3.2m) yes  stand(6m) NO 
-  z    8.0  ground  -0.86  top  -0.86  stand(3.2m) NO   stand(6m) NO 
-  z   10.0  ground  -0.47  top  -0.47  stand(3.2m) NO   stand(6m) NO 
-  z   12.0  ground  -0.24  top  -0.24  stand(3.2m) NO   stand(6m) NO 
-  z   14.0  ground  -0.04  top   0.18  stand(3.2m) NO   stand(6m) NO 
-  z   16.0  ground   0.04  top   2.26  stand(3.2m) NO   stand(6m) NO 
-  z   18.0  ground   0.11  top   0.11  stand(3.2m) NO   stand(6m) NO 
-  z   20.0  ground   0.15  top   2.46  stand(3.2m) NO   stand(6m) NO 
-  z   22.0  ground   0.19  top   0.19  stand(3.2m) NO   stand(6m) NO 
-  z   24.0  ground   0.22  top   0.22  stand(3.2m) yes  stand(6m) NO 
-  z   26.0  ground   0.24  top   0.24  stand(3.2m) yes  stand(6m) yes
-  z   28.0  ground   0.26  top   0.26  stand(3.2m) yes  stand(6m) yes
-  z   30.0  ground   0.28  top   0.28  stand(3.2m) yes  stand(6m) yes
-  z   32.0  ground   0.29  top   0.29  stand(3.2m) yes  stand(6m) yes
-  z   34.0  ground   0.29  top   0.29  stand(3.2m) yes  stand(6m) yes
-  z   36.0  ground   0.28  top   0.28  stand(3.2m) yes  stand(6m) yes
-  z   38.0  ground   0.27  top   0.27  stand(3.2m) yes  stand(6m) yes
-  z   40.0  ground   0.26  top   0.26  stand(3.2m) yes  stand(6m) yes
-  z   42.0  ground   0.26  top   0.26  stand(3.2m) yes  stand(6m) NO 
-  z   44.0  ground   0.25  top   0.25  stand(3.2m) NO   stand(6m) NO 
-  z   46.0  ground   0.25  top   0.25  stand(3.2m) NO   stand(6m) NO 
-  z   48.0  ground   0.24  top   0.24  stand(3.2m) NO   stand(6m) NO 
-  z   50.0  ground   0.25  top   0.25  stand(3.2m) NO   stand(6m) NO 
-  z   52.0  ground   0.25  top   0.25  stand(3.2m) yes  stand(6m) NO 
-  z   54.0  ground   0.24  top   0.24  stand(3.2m) yes  stand(6m) yes
-  z   56.0  ground   0.24  top   0.24  stand(3.2m) yes  stand(6m) yes
-  z   58.0  ground   0.23  top   0.23  stand(3.2m) yes  stand(6m) yes
-  z   60.0  ground   0.22  top   0.22  stand(3.2m) yes  stand(6m) yes
-  z   62.0  ground   0.22  top   0.22  stand(3.2m) yes  stand(6m) yes
-  z   64.0  ground   0.21  top   0.21  stand(3.2m) yes  stand(6m) yes
-  z   66.0  ground   0.21  top   0.21  stand(3.2m) yes  stand(6m) NO 
-  z   68.0  ground   0.22  top   0.22  stand(3.2m) yes  stand(6m) NO 
+LADDERS  z -20..92, x -50..30   (foot, top, yaw)
+  L29  x  -48.73 z   46.78  foot   0.04  top   4.49  yaw  1.57  ground  -0.01
+  L30  x  -39.08 z   55.10  foot   0.11  top   4.85  yaw  0.00  ground   0.01
+  L31  x  -20.39 z   21.54  foot   0.14  top   4.90  yaw  3.14  ground   0.19
+  L32  x  -30.83 z   47.44  foot   0.24  top   8.66  yaw  4.71  ground   0.29
+  L33  x  -30.55 z   70.26  foot   0.09  top   5.11  yaw  4.52  ground  -0.11
+  L35  x   20.46 z   61.86  foot  -0.13  top   4.64  yaw  1.57  ground  -0.20
 
-GRID top_at, x -60..24 step 4, z -44..60 step 4   ('.' = ground only)
-          -60  -56  -52  -48  -44  -40  -36  -32  -28  -24  -20  -16  -12   -8   -4    0    4    8   12   16   20   24
-  z  -44    .    .    .    .    .    .    .    .    .    .    .    .    .    .    . 10.8 10.8 10.8 10.8 10.8    .    .
-  z  -40    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z  -36  3.5  3.5  3.5  3.5    . -2.3 -2.3 -2.3 -2.3    .  2.2  2.2    .    .    .    .    .    .    .    .    .  3.4
-  z  -32  5.2  3.5  3.5  3.5    . -2.3 -2.3 -2.3 -2.3    .  2.2  2.2    .    .    .    .    .    .    .    .    .  3.4
-  z  -28    .    .    .    .    .    .    . -1.3    .    .    .    .    .    .    .    .    .    .    .    .    .  3.4
-  z  -24 12.8 12.8 12.8    .    .    .    . -1.7 -2.0    .  4.8  4.8    .    .    .    .    .    .    .    .    .  3.2
-  z  -20 12.8 12.8 12.8 12.8    .    .    .    . -2.0    .  4.8  4.8    .    .    .    .    .    .    .    .    .    .
-  z  -16 14.3 15.3 12.8 12.8    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z  -12 12.8 12.8 12.8 12.8    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z   -8 14.0 14.1 14.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z   -4 14.0 14.0 14.0 14.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z    0 14.0 14.0 14.0 14.0    .    .    .    .    .    .    .    .    .    .    .    .    .    . -1.8    .    .    .
-  z    4 14.0 14.0 14.0 14.0    .    .    .    .    .    .    .    .    .    .    .    . -0.3 -0.3 -1.0    .    .    .
-  z    8 14.0 14.0 14.0 14.0    .    .    .    .    .    .    .    .    .    .  1.4 -0.3 -0.3    .    .    .    .    .
-  z   12    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z   16    .    .    .    .    .    .    .    .    .    .    .    .  2.4  2.3  2.4    .    .    .    .    .    .    .
-  z   20    .    .    .    .    .    .    .    .  0.7    .    .    .  2.8  2.5  2.4    .    .    .    .    . -2.7    .
-  z   24    .  3.7  3.7  3.7  3.7  3.7    .    .  3.5  3.5  3.5    .    .    .    .    .    .    .    .    .    .    .
-  z   28    .  3.7  3.7  3.7  3.7  3.7    .    .  3.5  3.5  3.5  3.5    .    .    .    .    .  2.7  6.7    .    .    .
-  z   32    .  3.7  3.7  3.7  3.7  3.7    .    .  3.5  3.5  3.5  3.5    .    .    .    .    .  2.7  6.7    .    .    .
-  z   36    .  3.7  3.7  3.7  3.7  3.7    .    .  7.4  7.4  7.4  7.4    .    .    .    .    .    .    .    .    .    .
-  z   40    .  3.7  3.7  3.7  3.7  3.8    .    .  7.4  7.4  7.4  7.4    .    .    .    .    .    .    .    .    .    .
-  z   44    .  3.3  3.3    .  3.4  3.4    .    .  7.4  7.4  7.4  7.4    .    .    .  3.7  3.7    .    .    .    .    .
-  z   48    .  3.3  4.8    .  3.4  3.4  3.4    .  7.4  7.4  7.4  7.4    .    .    .  3.7  3.7  3.7    .    .    .    .
-  z   52    .  3.3  3.3    .  3.4  3.4  3.4    .  7.4  7.4  7.4  7.4    .    .    .  3.7  3.7  3.7    .    .    .    .
-  z   56    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
-  z   60    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  3.5  4.3    .
+POIS
+  MARKET         poi   x   -9.00 y   2.71 z   18.00  ground   0.11
+  PLAZA          poi   x    4.00 y  -3.97 z    6.00  ground  -3.97
+  MARKET         poi   x   38.64 y   3.10 z  -85.41  ground   0.50
+  MARKET         poi   x   43.50 y   2.88 z  -30.31  ground   0.28
+  MARKET         poi   x   73.36 y   4.99 z -101.37  ground   2.39
+  MARKET         poi   x  -75.55 y   7.38 z   94.19  ground   4.78
+  TOWER          poi   x  -62.00 y  14.50 z  -48.00  ground  -1.11
+  TOWER          poi   x   74.00 y  15.23 z   66.00  ground  -2.22
+  CAMP           poi   x -236.00 y  14.10 z  118.00  ground  14.10
+  CAMP           poi   x  214.00 y  13.30 z -168.00  ground  13.30
+  CAMP           poi   x -176.00 y  19.08 z -244.00  ground  19.08
+  CAMP           poi   x  262.00 y   3.87 z  262.00  ground   3.87
+  CRASH          poi   x -284.00 y  11.00 z  132.00  ground  11.00
+  CULVERT        EXFIL x   62.33 y   9.81 z  196.00  ground   9.81
+  NORTH GATE     EXFIL x    9.10 y   5.19 z -236.00  ground   5.19
+  ROOFTOP LZ     EXFIL x   47.96 y  10.11 z   31.81  ground  -4.08
 
-CANDIDATE POINTS
-  riv bank N   x   -8.00 z    6.00  ground  -1.30  top  -1.30  stand yes
-  riv bank N2  x   -8.00 z   12.00  ground  -0.24  top  -0.24  stand yes
-  market       x   -9.00 z   18.00  ground   0.11  top   0.11  stand yes
-  cross        x   -8.00 z   16.00  ground   0.04  top   2.26  stand yes
-  road 24      x   -8.00 z   24.00  ground   0.22  top   0.22  stand yes
-  road 32      x   -8.00 z   32.00  ground   0.29  top   0.29  stand yes
-  road 40      x   -8.00 z   40.00  ground   0.26  top   0.26  stand yes
-  road 48      x   -8.00 z   48.00  ground   0.24  top   0.24  stand yes
-  road 56      x   -8.00 z   56.00  ground   0.24  top   0.24  stand yes
-  b74 roof     x  -22.23 z   27.55  ground   0.14  top   3.50  stand yes
-  b75 roof     x  -22.27 z   44.89  ground   0.24  top   7.37  stand yes
-  b71 roof     x  -47.59 z   31.26  ground   0.31  top   3.69  stand yes
-  b84 roof     x    4.32 z   48.50  ground   0.18  top   3.74  stand yes
-  b26 roof     x  -17.93 z  -21.70  ground  -4.58  top   4.82  stand yes
-  b25 roof     x  -18.12 z  -34.14  ground  -4.82  top   2.16  stand NO 
-  b24 roof     x  -34.55 z  -22.31  ground  -2.10  top  -1.60  stand yes
-  b23 roof     x  -33.83 z  -35.08  ground  -5.60  top  -2.26  stand yes
-  b36 roof     x    8.03 z  -50.78  ground   0.23  top  10.82  stand yes
-  b32 roof     x   10.18 z  -69.66  ground   0.32  top   9.84  stand yes
-  b30 roof     x    4.57 z  -84.35  ground   0.64  top  14.58  stand yes
-  b13 roof     x  -28.01 z  -63.19  ground   0.14  top   9.38  stand yes
-  b21 roof     x  -56.17 z  -17.79  ground  -0.21  top  12.77  stand yes
-  b22 roof     x  -55.63 z    0.81  ground   0.01  top  13.97  stand yes
-  plaza        x    4.00 z    6.00  ground  -3.97  top  -0.27  stand yes
+CARRIAGEWAY x -8: ground, top, clearance for a runner and for a gantry
+  z   -6.0  ground  -3.88  top  -3.88  run yes  post yes  span yes
+  z   -4.0  ground  -3.78  top  -3.78  run yes  post yes  span yes
+  z   -2.0  ground  -3.39  top  -3.39  run yes  post yes  span yes
+  z    0.0  ground  -2.96  top  -2.96  run yes  post yes  span yes
+  z    2.0  ground  -2.40  top  -2.40  run yes  post yes  span yes
+  z    4.0  ground  -1.85  top  -1.85  run yes  post yes  span yes
+  z    6.0  ground  -1.30  top  -1.30  run yes  post NO   span yes
+  z    8.0  ground  -0.86  top  -0.86  run NO   post NO   span yes
+  z   10.0  ground  -0.47  top  -0.47  run NO   post NO   span yes
+  z   12.0  ground  -0.24  top  -0.24  run NO   post NO   span yes
+  z   14.0  ground  -0.04  top   0.18  run NO   post yes  span yes
+  z   16.0  ground   0.04  top   2.26  run NO   post NO   span yes
+  z   18.0  ground   0.11  top   0.11  run NO   post NO   span yes
+  z   20.0  ground   0.15  top   2.46  run NO   post NO   span yes
+  z   22.0  ground   0.19  top   0.19  run NO   post NO   span yes
+  z   24.0  ground   0.22  top   0.22  run yes  post NO   span yes
+  z   26.0  ground   0.24  top   0.24  run yes  post NO   span yes
+  z   28.0  ground   0.26  top   0.26  run yes  post NO   span yes
+  z   30.0  ground   0.28  top   0.28  run yes  post NO   span yes
+  z   32.0  ground   0.29  top   0.29  run yes  post NO   span yes
+  z   34.0  ground   0.29  top   0.29  run yes  post yes  span yes
+  z   36.0  ground   0.28  top   0.28  run yes  post NO   span yes
+  z   38.0  ground   0.27  top   0.27  run yes  post NO   span yes
+  z   40.0  ground   0.26  top   0.26  run yes  post NO   span yes
+  z   42.0  ground   0.26  top   0.26  run yes  post NO   span yes
+  z   44.0  ground   0.25  top   0.25  run NO   post NO   span yes
+  z   46.0  ground   0.25  top   0.25  run NO   post NO   span yes
+  z   48.0  ground   0.24  top   0.24  run NO   post NO   span yes
+  z   50.0  ground   0.25  top   0.25  run NO   post NO   span yes
+  z   52.0  ground   0.25  top   0.25  run yes  post NO   span yes
+  z   54.0  ground   0.24  top   0.24  run yes  post NO   span yes
+  z   56.0  ground   0.24  top   0.24  run yes  post yes  span yes
+  z   58.0  ground   0.23  top   0.23  run yes  post yes  span yes
+  z   60.0  ground   0.22  top   0.22  run yes  post yes  span yes
+  z   62.0  ground   0.22  top   0.22  run yes  post NO   span yes
+  z   64.0  ground   0.21  top   0.21  run yes  post NO   span yes
+  z   66.0  ground   0.21  top   0.21  run yes  post NO   span yes
+  z   68.0  ground   0.22  top   0.22  run yes  post NO   span yes
+  z   70.0  ground   0.24  top   0.24  run NO   post NO   span yes
+  z   72.0  ground   0.28  top   0.28  run yes  post yes  span yes
+  z   74.0  ground   0.32  top   0.32  run yes  post yes  span yes
+  z   76.0  ground   0.37  top   0.37  run yes  post NO   span yes
+  z   78.0  ground   0.43  top   0.43  run yes  post NO   span yes
+  z   80.0  ground   0.49  top   1.03  run NO   post NO   span yes
+  z   82.0  ground   0.54  top   0.54  run NO   post NO   span yes
+  z   84.0  ground   0.60  top   0.60  run yes  post NO   span yes
+  z   86.0  ground   0.67  top   0.67  run yes  post yes  span yes
+  z   88.0  ground   0.75  top   0.75  run yes  post yes  span yes
+  z   90.0  ground   0.83  top   0.83  run yes  post yes  span yes
+  z   92.0  ground   0.93  top   0.93  run yes  post NO   span yes
+
+GRID top_at, x -32..14 step 2, z -8..92 step 3   ('.' = ground only)
+          -32  -30  -28  -26  -24  -22  -20  -18  -16  -14  -12  -10   -8   -6   -4   -2    0    2    4    6    8   10   12   14
+  z   -8    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   -5    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   -2    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z    1    .    .    .    .    .    .    .    .    .    . -0.5    .    .    .    .    .    .    .    .    .    . -0.3 -1.4 -2.7
+  z    4    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    . -1.0 -0.3 -0.3 -0.3 -0.3 -1.0 -1.8
+  z    7    .    .    .    .    .    .    .    .    .    .    .    .    .    . -1.0  1.4 -0.3 -0.3 -0.3 -0.3 -1.0    .    .    .
+  z   10    .    .    .    .    .    .    .    .    .    .    .  0.4    .    .  1.4  1.4  1.4 -2.6    .    .    .    .    .    .
+  z   13    .    .    .    .    .    .    .    .    .    .    .  1.0    .    .    .    .    .    .    .    .    .    .    .    .
+  z   16    .    .    .    .    .    .    .    .    .  2.4  2.4  2.3  2.3  2.4  2.4    .    .    .    .    .    .    .    .    .
+  z   19    .    .    .    .    .    .    .    .    .    .    .    .  2.5  2.4  2.4    .    .    .    .    .    .    .    .    .
+  z   22    .  4.6  4.6  4.6  4.6  4.6  4.6  4.6  4.6  4.6  2.8    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   25    .  3.5  3.5  3.5  3.5  3.5  3.5  3.5  3.5  3.5    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   28    .  3.5  3.5  3.5  3.5  3.5  3.5  3.5  3.5  3.5    .    .    .    .    .    .    .    .    .  2.7  2.7  4.9  6.7  4.1
+  z   31  3.8  3.8  3.5  3.5  3.5  3.5  3.5  3.5  3.5  3.5    .    .    .    .    .    .    .    .    .  2.7  2.7  4.9  6.7  4.1
+  z   34    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   37    .  7.4  7.4  7.4  7.4  7.4  7.4  7.4    .  7.4    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   40    .  7.4  7.4  7.4  7.4  7.4  7.4  7.4  7.4  8.4    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   43    .  7.4  7.4  7.4  7.4  7.4  7.4  7.4  7.4  8.4    .    .    .    .    .    .  3.7  3.7  3.7  3.7    .  4.7    .    .
+  z   46    .  7.4  7.4  7.4  7.4  7.4  7.4  7.4  7.4  8.4    .    .    .  1.1    .    .  3.7  3.7  3.7  3.7  3.7  4.7    .    .
+  z   49    .  7.4  7.4  7.4  7.4  7.4  7.4  7.4  7.4  8.4    .    .    .  0.9    .    .  3.7  3.7  3.7  3.7  3.7  4.7    .  0.9
+  z   52    .  7.4  7.4  7.4  7.4  7.4  7.4  7.4  7.4  8.4    .    .    .    .    .    .  3.7  3.7  3.7  3.7  3.7  4.7    .    .
+  z   55    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   58    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  3.5
+  z   61    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  3.5
+  z   64    .    .  0.7    .    .    .    .    .    .  3.5    .    .    .    .    .    .    .    .    .  1.3    .    .    .  5.0
+  z   67    .    .    .    .    .    .    .    .    .  3.5    .  2.9    .    .    .    .    .    .    .    .    .    .    .  3.5
+  z   70    .  4.8  3.8  3.8    .  4.8    .    .    .  3.5    .  0.8    .    .    .    .    .    .    .    .    .    .    .  3.5
+  z   73    .  3.8  3.8  3.8  3.8    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   76    .  3.8  3.8  3.8  3.8    .    .    .    .  3.5    .    .    .    .    .    .    .    .    .    .    .    .    .    .
+  z   79    .    .    .    .    .    .    .    .    .  3.5    .    .    .    .    .    .  4.8  4.8  4.8  4.8  4.8  4.8  4.8  4.8
+  z   82    .    .    .    .    .    .    .    .    .  3.5    .    .    .    .    .    .  4.8  4.8  4.8  4.8  4.8  4.8  4.8  4.8
+  z   85  3.0  3.0  3.0  3.0  3.0  3.0  3.0  3.0  3.0  3.5    .    .    .    .    .    .  4.8  4.8  4.8  4.8  4.8  4.8  4.8  4.8
+  z   88    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .    .  4.8  4.8  4.8  4.8  4.8  4.8  4.8  4.8
+  z   91    .    .    .    .  7.9  5.2  7.9  6.1  7.6  6.7    .    .    .    .    .    .  4.8  4.8  4.8  4.8  4.8  4.8  4.8  4.8

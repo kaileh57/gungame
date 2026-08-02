@@ -3,14 +3,24 @@ extends SceneTree
 ##
 ## Run headless: godot --headless --path <project> --script res://tools/build_visuals.gd
 ##
-## A scav settlement graded into the ash flats at (-220, -40), seen from a lookout
-## terrace on its east shoulder with the low sun almost in your eyes. Five town kits,
-## a hundred props, six lamps, a rack of real guns, five creatures, a camera on a rail.
+## THE WHOLE MAP AT SUNSET. The baked terrain (100 chunks, three LODs, 1760 m across)
+## and the baked town (211 chunks, 114 buildings, its own occluder hulls) are both
+## instanced whole, and a lookout terrace is graded into the flats OUTSIDE the town on
+## the axis the hero camera already looks down — so what you arrive to is a scav
+## settlement in the foreground and the entire city behind it. Where that terrace
+## stands is not typed in: `VisualsSite` scans the baked terrain and the baked layout
+## for a rise that clears the town's roofs with a sightline that no dune interrupts.
 ##
-## Nothing already baked is remade — terrain, kits, props, guns, creatures, player,
-## VFX hub and environment are all instanced. The only geometry authored here is the
-## pad, post, rack and lamp standard, each checked for outward winding, positive
-## volume and zero open boundary edges before packing.
+## Nothing already baked is remade — terrain, town, kits, props, guns, creatures,
+## player and VFX hub are all instanced. The only geometry authored here is the pad,
+## post, rack and lamp standard, each checked for outward winding, positive volume and
+## zero open boundary edges before packing.
+##
+## THE LIGHT IS THIS DEMO'S OWN. `res://art/scav_world.tscn` is shared by all nine
+## demos and is a mid-afternoon balance; the other eight are daytime and must stay
+## that way. So this builder bakes a dusk sky material, a dusk Environment and a
+## `World` node carrying the same `ScavWorldEnvironment` script over three lights of
+## its own — see `VisualsDusk` for what makes a sunset read.
 ##
 ## THE PAD. Terrain is nowhere flat enough for a pre-baked kit: the flattest 100 m
 ## square still falls 3.3 m corner to corner. So the settlement gets a graded terrace —
@@ -26,6 +36,20 @@ const MmBake := preload("res://tools/mm_bake.gd")
 ## The shot. Preloaded, not reached by class name: `--script` runs before the global
 ## class cache is necessarily built.
 const Shot := preload("res://demos/visuals/visuals_shot.gd")
+## Where the terrace is graded in, decided off the bake rather than typed in.
+const Site := preload("res://demos/visuals/visuals_site.gd")
+## The dusk look: sky material, Environment and the three lights.
+const Dusk := preload("res://demos/visuals/visuals_dusk.gd")
+## Authors the hold-to-dash overlay. Note that this is NOT `visuals_dash.gd`: that
+## script declares `PlayerController`, `PlayerCameraRig` and `FreecamController`
+## members, preloading it drags in two scripts that name the `GameSettings` autoload,
+## and an autoload does not exist on the bare `SceneTree` a `--script` bake runs on.
+## The result was a silent "PackedScene.pack failed"; see `VisualsDashHud`.
+const Dash := preload("res://demos/visuals/visuals_dash_hud.gd")
+## The three tests every authored shell has to pass.
+const Shell := preload("res://demos/visuals/visuals_shell.gd")
+## The five authored shells and the dimensions they are authored to.
+const Parts := preload("res://demos/visuals/visuals_parts.gd")
 ## Seats the post's screen and name plate; no standoff here is picked by hand.
 const PanelMount := preload("res://ui/diegetic/panel_mount.gd")
 
@@ -36,14 +60,19 @@ const OUT_POST: String = "res://demos/visuals/post_mesh.res"
 const OUT_RACK: String = "res://demos/visuals/rack_mesh.res"
 const OUT_LAMP: String = "res://demos/visuals/lamp_mesh.res"
 const OUT_BULB: String = "res://demos/visuals/bulb_mesh.res"
+const OUT_SKY: String = "res://demos/visuals/dusk_sky.tres"
+const OUT_ENV: String = "res://demos/visuals/dusk_environment.tres"
 const OUT_REPORT: String = "res://demos/visuals/build_report.txt"
 
 const DEMO_SCRIPT: String = "res://demos/visuals/visuals_demo.gd"
 const RIG_SCRIPT: String = "res://demos/visuals/visuals_camera_rig.gd"
+const DASH_SCRIPT: String = "res://demos/visuals/visuals_dash.gd"
+const WORLD_SCRIPT: String = "res://art/world_environment.gd"
 
-const WORLD_SCENE: String = "res://art/scav_world.tscn"
 const TERRAIN_SCENE: String = "res://data/world/terrain/terrain.tscn"
+const TOWN_SCENE: String = "res://data/world/town/town.tscn"
 const TERRAIN_DATA: String = "res://data/world/terrain_data.res"
+const LAYOUT_DATA: String = "res://data/world/layout.res"
 const PLAYER_SCENE: String = "res://data/player/player.tscn"
 const VFX_SCENE: String = "res://data/vfx/vfx.tscn"
 const KIT_DIR: String = "res://data/world/kits"
@@ -59,60 +88,33 @@ const CTL_SLIDER: String = "res://ui/diegetic/diegetic_slider.tscn"
 const CTL_LEVER: String = "res://ui/diegetic/diegetic_lever.tscn"
 const CTL_READOUT: String = "res://ui/diegetic/diegetic_readout.tscn"
 
-## Where the settlement is graded in: the flattest ground outside the town.
-const SITE: Vector2 = Vector2(-220.0, -40.0)
-## Half-extents of the level top course, metres. Everything built stands inside it.
-const PAD_HALF: Vector2 = Vector2(56.0, 48.0)
-## Each course out from the top is this much wider and this much lower.
-const STEP_OUT: float = 4.5
-const STEP_DOWN: float = 0.95
-const STEP_COUNT: int = 3
-const PAD_BURY: float = 6.0
-const PAD_CLEAR: float = 0.25
+## Where the sun stands. The azimuth is not free: the hero axis bears -48.4 degrees,
+## and -87 puts the sun 38.6 degrees off the left of it — ahead of you, back-lighting
+## the town, out of frame at a 78 degree lens by a hair. Moving it wrecks the shot.
+## The elevation is what makes it dusk rather than afternoon; at 3.5 degrees a six
+## metre pole throws ninety-eight metres of shadow across the flats.
+const SUN_AZIMUTH: float = -87.0
+const SUN_ELEVATION: float = 3.5
 
-## Tread rise of the stair off the back of the deck. Where it stands is `VisualsShot`.
-const STEP_RISE: float = 0.6
-const STEP_TREADS: int = 4
-
-## Floor albedo. Darker than the terrain's sand: flat ground is the brightest case in
-## `world_material.gdshader` (slope-darkening drops out at a straight-up normal), so
-## raw terrain colours read as bleached paper here.
-const PAD_FLOOR: Color = Color("60503a")
-## The deck is read at arm's length. Dusted concrete, not asphalt: the asphalt branch
-## carries drift and wear at 9 m and 22 m wavelengths, which on a 21 m slab is one
-## blotch that reads as cloud. Warm too — a dark neutral flat under a 12-degree sun
-## catches only sky and turns blue.
-const DECK_FLOOR: Color = Color("6b5f4c")
+## What the on-screen dash prompt says. The trigger is the `sprint` action, so the
+## prompt names the key that action ships bound to rather than the action.
+const DASH_PROMPT: String = "HOLD  SHIFT  ·  DASH"
 
 const SEED: int = 0x5E17
-const SEG: int = 12
-const WELD: float = 0.0002
 
 ## Weapons standing in the rack, left to right. Real cache entries, real specs.
 const RACK_GUNS: PackedStringArray = ["rifle_t5", "shotgun_t3", "smg_t4", "sniper_t6", "lmg_t4"]
 
-## The post's face is canted off vertical so you read it looking down, standing at it.
-const POST_TOP_Y: float = 1.02
-const POST_FACE_TILT: float = deg_to_rad(24.0)
-## The two solids anything on the post mounts against, and the raked name plate that
-## had its lower line inside the first. One description each, used by the mesher AND
-## by the mount, so the two cannot disagree.
-const POST_PLINTH_AT: Vector3 = Vector3(0.0, 0.16, 0.0)
-const POST_PLINTH_HALF: Vector3 = Vector3(1.30, 0.56, 0.55)
-const POST_MAST_AT: Vector3 = Vector3(0.0, 1.72, -0.34)
-const POST_MAST_HALF: Vector3 = Vector3(0.66, 0.30, 0.045)
-const POST_PLACARD_RAKE_DEG: float = 17.19
-const POST_PLACARD_Y: float = 0.72
-## Fallback bounds for the name plate: a headless `Label3D` reports no AABB at all,
-## because its geometry is a glyph run the text server has not been asked to lay out.
-const POST_PLACARD_SIZE: Vector3 = Vector3(1.10, 0.14, 0.0)
-
 var _mat_world: Material = null
 var _mat_ember: Material = null
 var _terrain: WorldTerrainData = null
+var _layout: WorldLayoutData = null
 var _props: WorldPropSet = null
 var _rng: XorShift32 = null
 
+## Where the terrace is graded in. Chosen, not typed: `VisualsSite` scans the axis
+## behind the town for the rise with the best clear look at it.
+var _site: Vector2 = Vector2.ZERO
 var _pad_top: float = 0.0
 var _pad_bottom: float = 0.0
 
@@ -130,13 +132,20 @@ func _initialize() -> void:
 	_mat_world = load(MAT_WORLD) as Material
 	_mat_ember = load(MAT_EMBER) as Material
 	_terrain = load(TERRAIN_DATA) as WorldTerrainData
+	_layout = load(LAYOUT_DATA) as WorldLayoutData
 	_props = load(PROP_SET) as WorldPropSet
 	if _mat_world == null or _terrain == null or _props == null:
 		_fail("a required baked input is missing; run the world and art bakes first")
 		_finish()
 		return
+	if _layout == null:
+		_fail("the town layout is missing; run build_town.gd first")
+		_finish()
+		return
 	_terrain.build_lut()
+	_choose_site()
 	_measure_site()
+	_bake_dusk()
 	_frame_report()
 	_line("")
 
@@ -154,11 +163,48 @@ func _initialize() -> void:
 	_finish()
 
 
+## Put the terrace where the town is worth looking at. The old coordinate was typed
+## in — (-220, -40), the flattest ground going — and it was a fine answer to "where is
+## flat" and the wrong answer to "where can you SEE the city from". `VisualsSite`
+## scans back along the hero axis for a rise that clears the town's mean roof with a
+## sightline no dune interrupts, and writes its whole scan table into the report.
+func _choose_site() -> void:
+	var outer: float = Parts.STEP_OUT * float(Parts.STEP_COUNT - 1)
+	_site = Site.choose(_terrain, _layout, Parts.PAD_HALF, outer, _report)
+	_line("")
+
+
+## The dusk sky and Environment this demo alone uses. Baked, not authored at load,
+## and saved beside the scene so `visuals.tscn` carries a plain resource reference.
+func _bake_dusk() -> void:
+	var el: float = deg_to_rad(SUN_ELEVATION)
+	var az: float = deg_to_rad(SUN_AZIMUTH)
+	var horizontal: float = cos(el)
+	var dir := Vector3(sin(az) * horizontal, sin(el), -cos(az) * horizontal)
+	_save(Dusk.sky_material(dir), OUT_SKY)
+	_save(Dusk.environment(OUT_SKY), OUT_ENV)
+	_line(
+		(
+			"dusk sun              %.1f deg elevation, %.1f deg azimuth  dir (%.3f, %.3f, %.3f)"
+			% [SUN_ELEVATION, SUN_AZIMUTH, dir.x, dir.y, dir.z]
+		)
+	)
+	# A six metre lamp standard's shadow, which is the number the look lives or dies
+	# on and the one thing about "dusk" that can be checked with arithmetic.
+	_line(
+		(
+			"shadow length         %.0f m from a 6 m pole (cascade reaches %.0f m)"
+			% [6.0 / maxf(tan(el), 0.0001), Dusk.SHADOW_DISTANCE]
+		)
+	)
+
+
 ## Fix the terrace's two heights from the ground it is cut into: the top clears the
 ## highest point under it, the bottom is buried below the lowest.
 func _measure_site() -> void:
 	var top_hi: float = -1.0e9
-	var wide: Vector2 = PAD_HALF + Vector2.ONE * (STEP_OUT * float(STEP_COUNT - 1))
+	var out: float = Parts.STEP_OUT * float(Parts.STEP_COUNT - 1)
+	var wide: Vector2 = Parts.PAD_HALF + Vector2.ONE * out
 	var wide_lo: float = 1.0e9
 	var samples: int = 0
 	var step: float = 2.0
@@ -166,23 +212,23 @@ func _measure_site() -> void:
 	while x <= wide.x:
 		var z: float = -wide.y
 		while z <= wide.y:
-			var h: float = _terrain.ground_h(SITE.x + x, SITE.y + z)
+			var h: float = _terrain.ground_h(_site.x + x, _site.y + z)
 			wide_lo = minf(wide_lo, h)
-			if absf(x) <= PAD_HALF.x and absf(z) <= PAD_HALF.y:
+			if absf(x) <= Parts.PAD_HALF.x and absf(z) <= Parts.PAD_HALF.y:
 				top_hi = maxf(top_hi, h)
 			samples += 1
 			z += step
 		x += step
-	_pad_top = top_hi + PAD_CLEAR
-	_pad_bottom = wide_lo - PAD_BURY
-	_line("site                  (%.0f, %.0f)" % [SITE.x, SITE.y])
+	_pad_top = top_hi + Parts.PAD_CLEAR
+	_pad_bottom = wide_lo - Parts.PAD_BURY
+	_line("site                  (%.0f, %.0f)" % [_site.x, _site.y])
 	_line("terrain samples       %d at %.1f m" % [samples, step])
 	var fill: float = _pad_top - _pad_bottom
 	_line("pad top / bottom      %.3f / %.3f m  (%.2f m fill)" % [_pad_top, _pad_bottom, fill])
 
 
 func _world_of(local: Vector2) -> Vector3:
-	return Vector3(SITE.x + local.x, _pad_top, SITE.y + local.y)
+	return Vector3(_site.x + local.x, _pad_top, _site.y + local.y)
 
 
 ## Where the player stands: at the parapet, left of the deck's centre.
@@ -193,82 +239,29 @@ func _stand() -> Vector3:
 ## Deck-local metres to a world point on the deck's top.
 func _deck_of(local: Vector2) -> Vector3:
 	var at: Vector2 = Shot.deck_local(local)
-	return Vector3(SITE.x + at.x, _pad_top + Shot.DECK_RISE, SITE.y + at.y)
-
-
-## The deck, kerb and stair, welded into the pad's shell: each reaches the buried
-## bottom, so the terrace stays one closed solid. Everything here is yawed to the
-## hero axis, which the mesher takes as an argument, so the terrace is still built
-## out of closed boxes and still passes the same three tests.
-func _build_deck(m: WorldMesher) -> void:
-	var yaw: float = Shot.VIEW_YAW
-	var half: Vector2 = Shot.DECK_HALF
-	var deck_top: float = _pad_top + Shot.DECK_RISE
-	var rise: float = (deck_top - _pad_bottom) * 0.5
-	var centre: Vector2 = Shot.deck_local(Vector2.ZERO)
-	m.box(
-		Vector3(SITE.x + centre.x, _pad_bottom + rise, SITE.y + centre.y),
-		Vector3(half.x, rise, half.y),
-		yaw,
-		DECK_FLOOR,
-		WorldSurface.Kind.CONCRETE
-	)
-	# The street: a slab three centimetres proud of the floor. Proud, not flush — two
-	# coplanar faces in one place is the z-fight this project bans. It crosses the left
-	# of frame at forty metres, giving the raking light a long flat thing to skim.
-	m.box(
-		Vector3(SITE.x - 12.0, _pad_top - 0.24, SITE.y + 14.0),
-		Vector3(30.0, 0.27, 4.5),
-		0.42,
-		Palette.WORLD_ASPHALT[0],
-		WorldSurface.Kind.ASPHALT
-	)
-	# Kerb: four overlapping bars, so the drop has an edge you can see from below. Warm
-	# and dark, not neutral concrete: a light neutral bar lying flat under the eye is
-	# the one thing in frame with no warm bounce, and reads as a grey rule.
-	var kerb: Color = Color("57493a")
-	var bars: Array = [
-		[Vector2(0.0, -half.y - 0.02), Vector2(half.x + 0.16, 0.16)],
-		[Vector2(0.0, half.y + 0.02), Vector2(half.x + 0.16, 0.16)],
-		[Vector2(-half.x - 0.02, 0.0), Vector2(0.16, half.y + 0.16)],
-		[Vector2(half.x + 0.02, 0.0), Vector2(0.16, half.y + 0.16)],
-	]
-	for bar: Array in bars:
-		var at: Vector2 = Shot.deck_local(bar[0] as Vector2)
-		var bh: Vector2 = bar[1]
-		var top := Vector3(SITE.x + at.x, deck_top + 0.01, SITE.y + at.y)
-		m.box(top, Vector3(bh.x, 0.28, bh.y), yaw, kerb, WorldSurface.Kind.CONCRETE)
-	# Stair off the back face, at the far end from where you stand: you come up it, pass
-	# the console, and walk to the parapet. Each tread reaches the pad bottom and the
-	# last stops BELOW the floor — a tread laid ON it puts two faces in one place.
-	for t in STEP_TREADS:
-		var tread: float = deck_top - STEP_RISE * float(t + 1)
-		var at: Vector2 = Shot.deck_local(
-			Vector2(Shot.STAIR_LOCAL_X, half.y + 0.55 + 1.10 * float(t))
-		)
-		m.box(
-			Vector3(SITE.x + at.x, (_pad_bottom + tread) * 0.5, SITE.y + at.y),
-			Vector3(3.0, (tread - _pad_bottom) * 0.5, 0.62),
-			yaw,
-			Palette.WORLD_CONCRETE[1],
-			WorldSurface.Kind.CONCRETE
-		)
+	return Vector3(_site.x + at.x, _pad_top + Shot.DECK_RISE, _site.y + at.y)
 
 
 func _build_scene() -> Node3D:
 	var root := Node3D.new()
 	root.name = "Visuals"
 	root.set_script(load(DEMO_SCRIPT))
-	root.set("sun_azimuth_degrees", -87.0)
-	root.set("sun_elevation_start", 12.5)
+	root.set("sun_azimuth_degrees", SUN_AZIMUTH)
+	root.set("sun_elevation_start", SUN_ELEVATION)
+	root.set("sun_elevation_min", 1.0)
+	root.set("sun_energy", Dusk.SUN_ENERGY)
+	root.set("ambient_energy", Dusk.AMBIENT_ENERGY)
+	root.set("sky_fill_energy", Dusk.SKY_FILL_ENERGY)
+	root.set("bounce_energy", Dusk.BOUNCE_ENERGY)
 	root.set("ash_motes", 420)
 	root.set("ground_y", _pad_top)
 	root.set("player_spawn", _stand())
 	root.set("player_yaw", Shot.VIEW_YAW)
 	root.set("player_pitch_degrees", Shot.VIEW_PITCH_DEGREES)
 
-	_add(root, _instance(WORLD_SCENE, "World"))
+	_add(root, _build_world())
 	_add(root, _instance3d(TERRAIN_SCENE, "Terrain"))
+	_add(root, _instance3d(TOWN_SCENE, "Town"))
 	_add(root, _build_pad())
 	_add(root, _build_kits())
 	_add(root, _build_clutter())
@@ -279,6 +272,7 @@ func _build_scene() -> Node3D:
 	_add(root, _build_creatures())
 	_add(root, _build_rig())
 	_add(root, _build_player())
+	_add(root, Dash.build(load(DASH_SCRIPT), DASH_PROMPT))
 
 	var vfx: Node3D = _instance3d(VFX_SCENE, "Vfx")
 	if vfx != null:
@@ -287,35 +281,25 @@ func _build_scene() -> Node3D:
 	return root
 
 
-## The terrace: closed boxes, each narrower and taller than the last, overlapping
-## by a full course in Y so the union is watertight.
+## The dusk `World` node: the shared `ScavWorldEnvironment` script over this demo's
+## own Environment and its own three lights. Not `scav_world.tscn` — that scene is
+## instanced by the other eight demos and they are all daytime.
+func _build_world() -> WorldEnvironment:
+	var script := load(WORLD_SCRIPT) as Script
+	var env := load(OUT_ENV) as Environment
+	if script == null or env == null:
+		_fail("the dusk environment did not bake")
+		return null
+	var el: float = deg_to_rad(SUN_ELEVATION)
+	var az: float = deg_to_rad(SUN_AZIMUTH)
+	var horizontal: float = cos(el)
+	var dir := Vector3(sin(az) * horizontal, sin(el), -cos(az) * horizontal)
+	return Dusk.world_node(script, env, dir)
+
+
+## The terrace, meshed by `VisualsParts` and checked before it is packed.
 func _build_pad() -> Node3D:
-	var m := WorldMesher.new()
-	for i in STEP_COUNT:
-		var out: float = STEP_OUT * float(STEP_COUNT - 1 - i)
-		var half := Vector3(PAD_HALF.x + out, 0.0, PAD_HALF.y + out)
-		var top: float = _pad_top - STEP_DOWN * float(STEP_COUNT - 1 - i)
-		half.y = (top - _pad_bottom) * 0.5
-		# Sand, never concrete: the concrete branch brightens by up to 1.8x, and a
-		# hundred metres of it under a low sun reads as poured white.
-		var col: Color = PAD_FLOOR if i == STEP_COUNT - 1 else Palette.WORLD_SAND[i]
-		m.box(Vector3(SITE.x, _pad_bottom + half.y, SITE.y), half, 0.0, col, WorldSurface.Kind.SAND)
-	# One ramp up the south face. Stacked boxes, not a sloped plane.
-	for lane in [-30.0]:
-		for s in 6:
-			var t: float = float(s) / 6.0
-			var rise: float = _pad_top - (_pad_top - STEP_DOWN * float(STEP_COUNT))
-			var y_top: float = _pad_top - rise * t
-			var depth: float = 1.6
-			var z: float = SITE.y + PAD_HALF.y + STEP_OUT * float(STEP_COUNT - 1) + depth * float(s)
-			m.box(
-				Vector3(SITE.x + lane, (_pad_bottom + y_top) * 0.5, z),
-				Vector3(4.2, (y_top - _pad_bottom) * 0.5, depth * 0.85),
-				0.0,
-				Palette.WORLD_SAND[1],
-				WorldSurface.Kind.SAND
-			)
-	_build_deck(m)
+	var m: WorldMesher = Parts.pad(_site, _pad_top, _pad_bottom)
 	_check(m, "pad")
 
 	var mesh: ArrayMesh = m.build_mesh(_mat_world)
@@ -367,8 +351,8 @@ func _scatter(parent: Node3D, id: StringName, count: int, _pad: float) -> void:
 	while transforms.size() < count and tries < count * 60:
 		tries += 1
 		var p := Vector2(
-			_rng.next_range(-PAD_HALF.x + 6.0, PAD_HALF.x - 6.0),
-			_rng.next_range(-PAD_HALF.y + 6.0, PAD_HALF.y - 6.0)
+			_rng.next_range(-Parts.PAD_HALF.x + 6.0, Parts.PAD_HALF.x - 6.0),
+			_rng.next_range(-Parts.PAD_HALF.y + 6.0, Parts.PAD_HALF.y - 6.0)
 		)
 		if not _clutter_spot_free(p, maxf(asset.bounds.size.x, asset.bounds.size.z) * 0.5 + 0.4):
 			continue
@@ -478,31 +462,12 @@ func _build_landmarks() -> Node3D:
 ## A lamp standard: buried foot, tapered pole, cranked arm, conical shade, and a
 ## bulb on its own emissive mesh with an omni behind it. Built once, instanced six.
 func _build_lamps() -> Node3D:
-	var m := WorldMesher.new()
-	var steel: Color = Palette.WORLD_METAL[0]
-	var rust: Color = Palette.WORLD_RUST[0]
-	# Foot: buried 0.35 m so the pad swallows the base plate.
-	m.box(
-		Vector3(0.0, -0.15, 0.0), Vector3(0.34, 0.20, 0.34), 0.0, rust, WorldSurface.Kind.CONCRETE
-	)
-	m.cylinder(Vector3(0.0, 2.35, 0.0), 0.10, 0.062, 2.45, SEG, steel, WorldSurface.Kind.METAL)
-	# Crank: two struts, overlapping the pole head and each other.
-	m.strut(
-		Vector3(0.0, 4.62, 0.0), Vector3(0.0, 5.05, -0.50), 0.05, steel, WorldSurface.Kind.METAL
-	)
-	m.strut(
-		Vector3(0.0, 5.02, -0.44), Vector3(0.0, 5.06, -1.28), 0.05, steel, WorldSurface.Kind.METAL
-	)
-	# Shade: a capped cone, wide end down, overlapping the arm tip.
-	m.cylinder(Vector3(0.0, 4.90, -1.24), 0.44, 0.10, 0.20, SEG, rust, WorldSurface.Kind.TIN)
+	var m: WorldMesher = Parts.lamp()
 	_check(m, "lamp")
 	var lamp_mesh: ArrayMesh = m.build_mesh(_mat_world)
 	_save(lamp_mesh, OUT_LAMP)
 
-	var b := WorldMesher.new()
-	b.cylinder(
-		Vector3(0.0, 4.74, -1.24), 0.155, 0.155, 0.055, SEG, Palette.GOLD, WorldSurface.Kind.POLY
-	)
+	var b: WorldMesher = Parts.bulb()
 	_check(b, "bulb")
 	var bulb_mesh: ArrayMesh = b.build_mesh(_mat_ember)
 	_save(bulb_mesh, OUT_BULB)
@@ -570,23 +535,7 @@ func _build_lamps() -> Node3D:
 ## cache scenes, forced onto the world render layer — their default is the
 ## viewmodel layer, and a rack of invisible rifles is a subtle bug to chase.
 func _build_rack() -> Node3D:
-	var m := WorldMesher.new()
-	var wood: Color = Palette.WORLD_WOOD[0]
-	var steel: Color = Palette.WORLD_METAL[1]
-	# Buried sill, two uprights, a back rail and a butt shelf. Every joint overlaps.
-	m.box(Vector3(0.0, -0.06, 0.0), Vector3(1.35, 0.10, 0.34), 0.0, wood, WorldSurface.Kind.WOOD)
-	for sx in [-1.28, 1.28]:
-		m.box(
-			Vector3(sx, 0.58, -0.20), Vector3(0.07, 0.66, 0.07), 0.0, wood, WorldSurface.Kind.WOOD
-		)
-	m.box(Vector3(0.0, 1.14, -0.20), Vector3(1.35, 0.06, 0.07), 0.0, wood, WorldSurface.Kind.WOOD)
-	m.box(Vector3(0.0, 0.13, -0.02), Vector3(1.35, 0.05, 0.15), 0.0, steel, WorldSurface.Kind.METAL)
-	# Five dividers on the rail, so each weapon has a slot to lean in.
-	for i in 6:
-		var x: float = -1.20 + 0.48 * float(i)
-		m.box(
-			Vector3(x, 1.20, -0.20), Vector3(0.035, 0.09, 0.09), 0.0, steel, WorldSurface.Kind.METAL
-		)
+	var m: WorldMesher = Parts.rack()
 	_check(m, "rack")
 	var mesh: ArrayMesh = m.build_mesh(_mat_world)
 	_save(mesh, OUT_RACK)
@@ -632,35 +581,7 @@ func _build_rack() -> Node3D:
 ## The control post: a steel console on a plinth, with the dial, the slider, the
 ## three levers and the panel on its canted face. This demo's whole UI.
 func _build_post() -> Node3D:
-	var m := WorldMesher.new()
-	# Neither straight off the palette. `WORLD_CONCRETE[0]` through the shader's
-	# concrete branch peaks near 1.8x and, on a plinth you stand over, reads as poured
-	# white; `WORLD_METAL[0]` is a cool grey, and the console's top faces nothing but
-	# sky, which turns it navy. Warm dark concrete and the art direction's own steel.
-	var concrete: Color = Color("554c40")
-	var steel: Color = Color("4d4a44")
-	# Plinth, buried 0.4 m.
-	m.box(POST_PLINTH_AT, POST_PLINTH_HALF, 0.0, concrete, WorldSurface.Kind.CONCRETE)
-	# Console body, overlapping the plinth top by 6 cm.
-	m.box(Vector3(0.0, 0.86, 0.0), Vector3(1.16, 0.24, 0.44), 0.0, steel, WorldSurface.Kind.METAL)
-	# Canted face: an oriented box tilted about local X. The frame stays
-	# right-handed, so the shell stays outward.
-	var c: float = cos(POST_FACE_TILT)
-	var s: float = sin(POST_FACE_TILT)
-	m.oriented_box(
-		Vector3(0.0, POST_TOP_Y + 0.10, 0.10),
-		Vector3(1.16, 0.0, 0.0),
-		Vector3(0.0, c, s) * 0.055,
-		Vector3(0.0, -s, c) * 0.36,
-		steel,
-		WorldSurface.Kind.METAL
-	)
-	# Panel mast behind the face, carrying the readout.
-	for sx in [-0.60, 0.60]:
-		m.box(
-			Vector3(sx, 1.30, -0.34), Vector3(0.05, 0.42, 0.05), 0.0, steel, WorldSurface.Kind.METAL
-		)
-	m.box(POST_MAST_AT, POST_MAST_HALF, 0.0, steel, WorldSurface.Kind.METAL)
+	var m: WorldMesher = Parts.post()
 	_check(m, "post")
 	var mesh: ArrayMesh = m.build_mesh(_mat_world)
 	_save(mesh, OUT_POST)
@@ -682,8 +603,8 @@ func _build_post() -> Node3D:
 	node.add_child(_static_trimesh(mesh, "Body", WorldSurface.Kind.METAL))
 
 	# Everything mounted on the face shares this basis, so nothing floats or sinks.
-	var face := Basis(Vector3.RIGHT, -POST_FACE_TILT)
-	var face_y: float = POST_TOP_Y + 0.16
+	var face := Basis(Vector3.RIGHT, -Parts.POST_FACE_TILT)
+	var face_y: float = Parts.POST_TOP_Y + 0.16
 	var face_z: float = 0.10
 
 	# Left to right along the face. One table, one loop: five controls that differ
@@ -719,8 +640,8 @@ func _build_post() -> Node3D:
 		readout.set("painted", false)
 		readout.set("glow", 1.9)
 		node.add_child(readout)
-		var mast: AABB = PanelMount.half_box(POST_MAST_AT, POST_MAST_HALF)
-		PanelMount.new().apply(readout, mast, Vector3(0.0, POST_MAST_AT.y, 0.0), "PanelMast")
+		var mast: AABB = PanelMount.half_box(Parts.POST_MAST_AT, Parts.POST_MAST_HALF)
+		PanelMount.new().apply(readout, mast, Vector3(0.0, Parts.POST_MAST_AT.y, 0.0), "PanelMast")
 
 	# The one thing the post has to say that a control cannot: what it is.
 	var placard := Label3D.new()
@@ -738,10 +659,10 @@ func _build_post() -> Node3D:
 	# Raked 17 degrees toward the eye, which swings its lower line 19 mm back — far
 	# enough that at 0.56 the last line was inside the plinth's top-front corner.
 	var seat := PanelMount.new()
-	seat.tilt_degrees = -POST_PLACARD_RAKE_DEG
-	seat.bounds_override = PanelMount.centred(Vector3.ZERO, POST_PLACARD_SIZE)
-	var plinth: AABB = PanelMount.half_box(POST_PLINTH_AT, POST_PLINTH_HALF)
-	seat.apply(placard, plinth, Vector3(0.0, POST_PLACARD_Y, 0.0), "Plinth")
+	seat.tilt_degrees = -Parts.POST_PLACARD_RAKE_DEG
+	seat.bounds_override = PanelMount.centred(Vector3.ZERO, Parts.POST_PLACARD_SIZE)
+	var plinth: AABB = PanelMount.half_box(Parts.POST_PLINTH_AT, Parts.POST_PLINTH_HALF)
+	seat.apply(placard, plinth, Vector3(0.0, Parts.POST_PLACARD_Y, 0.0), "Plinth")
 	return node
 
 
@@ -831,7 +752,7 @@ func _build_player() -> Node3D:
 ## `VisualsShot` owns the layout; the builder's job is to refuse to bake one that
 ## does not fit. Faults become build failures, the frame table goes in the report.
 func _frame_report() -> void:
-	for fault: String in Shot.layout_faults(PAD_HALF):
+	for fault: String in Shot.layout_faults(Parts.PAD_HALF):
 		_fail(fault)
 	_line("")
 	for text: String in Shot.frame_lines():
@@ -839,48 +760,13 @@ func _frame_report() -> void:
 
 
 ## Every authored shell, tested three ways: outward winding, positive enclosed
-## volume, no open boundary edge.
+## volume, no open boundary edge. The tests themselves live in `VisualsShell`.
 func _check(m: WorldMesher, label: String) -> void:
 	_shells += 1
-	var vol: float = m.signed_volume()
-	var conflicts: int = m.normal_conflicts()
-	var degen: int = m.degenerate_count()
-	var open: int = _open_edges(m.vertices())
-	var ok: bool = vol > 0.0 and conflicts == 0 and degen == 0 and open == 0
-	if not ok:
+	var result: Array = Shell.report(m, label)
+	if not bool(result[0]):
 		_failures += 1
-	var tag: String = "OK" if ok else "FAIL"
-	var fmt: String = "shell %-6s %5d tris  vol %+9.2f  bad %d/%d/%d  %s"
-	_line(fmt % [label, m.triangle_count(), vol, conflicts, degen, open, tag])
-
-
-## Boundary edges of a welded triangle soup. A closed solid has none; one is the
-## air gap this project bans.
-func _open_edges(pos: PackedVector3Array) -> int:
-	var ids: Dictionary = {}
-	var index := PackedInt32Array()
-	index.resize(pos.size())
-	for i in pos.size():
-		var key: Vector3i = Vector3i(
-			roundi(pos[i].x / WELD), roundi(pos[i].y / WELD), roundi(pos[i].z / WELD)
-		)
-		if not ids.has(key):
-			ids[key] = ids.size()
-		index[i] = ids[key]
-	var edges: Dictionary = {}
-	for t in index.size() / 3:
-		for e in 3:
-			var a: int = index[t * 3 + e]
-			var b: int = index[t * 3 + (e + 1) % 3]
-			if a == b:
-				continue
-			var key: Vector2i = Vector2i(mini(a, b), maxi(a, b))
-			edges[key] = int(edges.get(key, 0)) + 1
-	var open: int = 0
-	for count: int in edges.values():
-		if count % 2 == 1:
-			open += 1
-	return open
+	_line(String(result[1]))
 
 
 func _load_back() -> void:
@@ -909,6 +795,7 @@ func _load_back() -> void:
 		var file: String = script.resource_path.get_file()
 		if file.begins_with("diegetic_") and file != "diegetic_readout.gd":
 			controls += 1
+	_check_dash(root)
 	root.free()
 	_line("")
 	var fmt: String = "scene nodes           %d declared, %d instanced, %d meshes, %d lights"
@@ -916,6 +803,25 @@ func _load_back() -> void:
 	_line("diegetic controls     %d" % controls)
 	if controls != 5:
 		_fail("expected 5 diegetic controls on the post, packed %d" % controls)
+
+
+## The dash overlay is authored by one file and driven by another, so the seam
+## between them is checked here rather than trusted: every widget `visuals_dash.gd`
+## resolves by path has to exist in the scene that was just written back.
+func _check_dash(root: Node) -> void:
+	var dash: Node = root.get_node_or_null(^"Dash")
+	if dash == null:
+		_fail("the dash overlay did not pack")
+		return
+	var missing := PackedStringArray()
+	for path: String in Dash.WIDGETS:
+		if dash.get_node_or_null(NodePath(path)) == null:
+			missing.append(path)
+	_line("dash overlay          %d widgets, script %s" % [Dash.WIDGETS.size(), DASH_SCRIPT])
+	if not missing.is_empty():
+		_fail("the dash overlay is missing %s" % ", ".join(missing))
+	if dash.get_script() == null:
+		_fail("the dash overlay packed without its script")
 
 
 func _instance(path: String, node_name: String) -> Node:

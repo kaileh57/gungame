@@ -8,15 +8,15 @@
 [sub_resource type="QuadMesh" id="QuadMesh_kdarh"]
 material = ExtResource("2_hyg0d")
 
-[node name="LaserCursor" type="Node3D" unique_id=897722653]
+[node name="LaserCursor" type="Node3D" unique_id=131554283]
 script = ExtResource("1_kpp1q")
 
-[node name="Dot" type="MeshInstance3D" parent="." unique_id=1241794391]
+[node name="Dot" type="MeshInstance3D" parent="." unique_id=592367525]
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_kdarh")
 
-[node name="Plate" type="Label3D" parent="." unique_id=1228543277]
+[node name="Plate" type="Label3D" parent="." unique_id=1064602595]
 visible = false
 pixel_size = 0.0022
 outline_modulate = Color(0.035, 0.031, 0.028, 1)

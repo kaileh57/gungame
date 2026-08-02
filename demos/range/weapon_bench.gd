@@ -287,9 +287,12 @@ func _write_parts(spec: GunSpec) -> void:
 		lines.append(
 			"%-10s %s  %s" % [kinds[i], String(part.donor_group), String(part.weapon_class)]
 		)
-	if not spec.quirks.is_empty():
+	# Wrapped, not joined — see `GunGrading.quirk_lines`. This panel already carries
+	# five part rows, so it is the tightest of the two for height.
+	var tags: PackedStringArray = GunGrading.quirk_lines(spec)
+	if not tags.is_empty():
 		lines.append("")
-		lines.append(" · ".join(spec.quirks))
+		lines.append_array(tags)
 	lines.append("")
 	lines.append("seed %d  ·  fit %.2f" % [spec.roll_seed, spec.fit_error])
 	_parts.set_lines(lines)

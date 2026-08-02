@@ -20,6 +20,26 @@ sampled pose. It must be <= 0: a positive number is an open joint.
 `inv` counts primitives whose emitted shell encloses negative volume;
 `floating` counts parent/child links with no overlap at all.
 
+RAGDOLL BAKE  -> res://data/enemies/ragdolls/<id>.res
+species     rigid  capsule mass (kg)       tier
+rat            17       12     56.78    physics
+picker         17       11    118.19    physics
+gasman         17       12    137.54    physics
+marksman       18       14     71.19    physics
+latchdog       17       12     57.58    physics
+sentinel       17       12    137.95    physics
+wasp            2        1     12.24    physics
+foreman        17       12   2898.59    physics
+husk           17       12     40.50    physics
+stilt          17       15     84.32    physics
+skitter        17       13     39.34    physics
+gorger         15        8    247.59    physics
+
+188 rigid bodies over 12 species.
+A death only reaches physics when it is inside EnemyBody.ragdoll_distance
+of the camera AND RagdollBudget has a free slot; everything else collapses
+on the seeded DeathPoser exactly as it did before.
+
 PER-CLIP DETAIL (frames / floating / min overlap / min Y / max Y)
 
 rat  height 1.5936 m

@@ -2,9 +2,9 @@ ASH FLATS BAKE  seed 19920   (no enemies: world and traversal only)
 
 spawn                 -8.0 2.2 -118.5  yaw 3.14
 ladders               62 climb volumes
-signs                 13 landmark posts
-extraction pads       3
-timing gates          4
+signs                 2 landmark posts  (11 off the race, not built)
+extraction pads       1  (2 off the race, not built)
+timing gates          6
 
 THE ASH LINE
   ramp   z  -110.7 ->   -92.7  x   -8.0  w  7.0  y   1.40 ->  11.15  -28.4 deg
@@ -20,20 +20,33 @@ THE ASH LINE
   plank  z   -33.9 ->   -28.9  x   -2.8  w  1.2  y   0.52 ->   0.52    0.0 deg
   plank  z   -33.9 ->   -28.9  x  -13.2  w  1.2  y   0.52 ->   0.52    0.0 deg
   ramp   z   -39.5 ->   -34.1  x  -12.2  w  2.6  y  -0.30 ->   1.42  -17.7 deg
+  deck   z    -0.6 ->    21.4  x   -8.0  w  7.0  y  -3.27 ->   7.94  -27.0 deg
+  deck   z    21.4 ->    27.4  x   -8.0  w  8.0  y   7.94 ->   7.94    0.0 deg
+  pitch  z    27.4 ->    41.4  x   -8.0  w  6.5  y   7.94 ->   4.45   14.0 deg
+  deck   z    51.8 ->    57.3  x   -8.0  w  8.5  y   3.05 ->   3.05    0.0 deg
+  pitch  z    57.3 ->    64.3  x   -8.0  w  6.5  y   3.05 ->   1.30   14.0 deg
+  plank  z    51.8 ->    57.3  x   -3.0  w  1.4  y   2.15 ->   2.15    0.0 deg
+  plank  z    51.8 ->    57.3  x  -12.9  w  1.4  y   2.15 ->   2.15    0.0 deg
+  ramp   z    46.0 ->    51.4  x  -12.6  w  2.6  y   0.30 ->   3.05  -27.0 deg
   GAP    GAP ONE     10.00 m across, landing 1.85 m below the lip
   GAP    GAP TWO     10.80 m across, landing 1.40 m below the lip
   GAP    GAP THREE   10.40 m across, landing 1.20 m below the lip
-  built  864 tris, vol +1125.562, conflicts 0, degenerate 0, 72 shapes, 37 piers (11 refused)
+  GAP    GAP FOUR    10.40 m across, landing 1.40 m below the lip
+  built  1464 tris, vol +1472.136, conflicts 0, degenerate 0, 122 shapes, 67 piers (16 refused)
 
 THE RACE
-  check  CREST    x   -8.0  z   -89.7  y  11.15   band 2.5 below, 7.0 above
-  check  GAP ONE  x   -8.0  z   -61.7  y   6.31   band 2.5 below, 7.0 above
-  check  MIDWAY   x   -8.0  z   -31.4  y   1.42   band 1.0 below, 7.0 above
-  check  RIVER    x   -8.0  z    -2.5  y  -3.27   band 2.5 below, 7.0 above
-  check  FINISH   x   -8.0  z    10.0  y  -0.47   band 3.0 below, 8.0 above
+  check  CREST     x   -8.0  z   -89.7  y  11.15   band 2.5/7.0   on ash line deck 11.15
+  check  GAP ONE   x   -8.0  z   -61.7  y   6.31   band 2.5/7.0   on ash line deck 6.31
+  check  MIDWAY    x   -8.0  z   -31.4  y   1.42   band 1.0/7.0   on ash line deck 1.42
+  check  RIVER     x   -8.0  z    -2.5  y  -3.27   band 2.5/7.0   on ash line deck -3.27
+  check  ROOFLINE  x   -8.0  z    24.4  y   7.94   band 2.5/7.0   on ash line deck 7.94
+  check  LAST DROP x   -8.0  z    54.5  y   3.05   band 1.5/7.0   on ash line deck 3.05
+  check  FINISH    x   -8.0  z    73.0  y   0.30   band 3.0/8.0   on town top 0.30
   line   z -118.0   4 lanes x -11.3 .. -4.7   gantry 3.4 m down-line
-  board   -15.6 -121.0   4 rows
+  finish x   -8.0  z   73.0  y   0.30   gantry and 6 threshold bars
+  board    -2.2 -116.6   4 rows
   marks  baked
+  route  every checkpoint stands on something
 
 SCATTER
   barrel               150 in 13 cells of   96 m   11.5 per draw
@@ -52,9 +65,15 @@ AUTHORED MESHES  (signed volume must be positive, conflicts must be 0)
   gauge_post    120 tris  vol  +0.0944  conflicts 0  degenerate 0
   yard_frame     84 tris  vol  +0.2933  conflicts 0  degenerate 0
   gantry        108 tris  vol  +2.8934  conflicts 0  degenerate 0
-  board_frame    84 tris  vol  +0.6824  conflicts 0  degenerate 0
+  board_frame    96 tris  vol  +1.4903  conflicts 0  degenerate 0
+  finish        660 tris  vol  +9.6769  conflicts 0  degenerate 0
+  finish_gold    24 tris  vol  +1.4208  conflicts 0  degenerate 0
+  finish_lamp   524 tris  vol  +0.2536  conflicts 0  degenerate 0
+  finish_bar     12 tris  vol  +0.5040  conflicts 0  degenerate 0
+  check_mast     80 tris  vol  +0.2740  conflicts 0  degenerate 0
+  check_lamp     40 tris  vol  +0.0082  conflicts 0  degenerate 0
 
 LOAD-BACK
-  ash_flats.tscn   2237 nodes, 103 scripted, 744 scattered instances
-                   1133 collision shapes, 62 ladders, 0 empty meshes (must be 0)
-bake time             1725 ms
+  ash_flats.tscn   2301 nodes, 97 scripted, 744 scattered instances
+                   1187 collision shapes, 62 ladders, 0 empty meshes (must be 0)
+bake time             1596 ms

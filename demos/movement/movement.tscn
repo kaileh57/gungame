@@ -980,115 +980,115 @@ size = Vector2(1.95, 0.66)
 [sub_resource type="QuadMesh" id="QuadMesh_rlroc"]
 size = Vector2(1.95, 0.66)
 
-[node name="Movement" type="Node3D" unique_id=1014733537]
+[node name="Movement" type="Node3D" unique_id=373260712]
 script = ExtResource("1_potq4")
 
-[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=2108736239 instance=ExtResource("2_gu5tq")]
+[node name="ScavWorld" type="WorldEnvironment" parent="." unique_id=349678082 instance=ExtResource("2_gu5tq")]
 environment = ExtResource("3_vv8pl")
 script = ExtResource("4_s3waq")
 
-[node name="Course" type="Node3D" parent="." unique_id=567647632]
+[node name="Course" type="Node3D" parent="." unique_id=2107931752]
 
-[node name="CourseMesh" type="MeshInstance3D" parent="Course" unique_id=1248000716]
+[node name="CourseMesh" type="MeshInstance3D" parent="Course" unique_id=1924141742]
 mesh = ExtResource("5_ybu0l")
 
-[node name="Yard" type="StaticBody3D" parent="Course" unique_id=836389370]
+[node name="Yard" type="StaticBody3D" parent="Course" unique_id=2058308251]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/Yard" unique_id=158008916]
+[node name="S000" type="CollisionShape3D" parent="Course/Yard" unique_id=1000634088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -4)
 shape = SubResource("BoxShape3D_lofxp")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/Yard" unique_id=1892787996]
+[node name="S001" type="CollisionShape3D" parent="Course/Yard" unique_id=1134620652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5, 2.1, -4)
 shape = SubResource("BoxShape3D_tfeth")
 metadata/surf = 4
 
-[node name="S002" type="CollisionShape3D" parent="Course/Yard" unique_id=1043731151]
+[node name="S002" type="CollisionShape3D" parent="Course/Yard" unique_id=1299953105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, -34.5)
 shape = SubResource("BoxShape3D_xk3ol")
 metadata/surf = 4
 
-[node name="S003" type="CollisionShape3D" parent="Course/Yard" unique_id=936636527]
+[node name="S003" type="CollisionShape3D" parent="Course/Yard" unique_id=1335527491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.5, 2.1, -4)
 shape = SubResource("BoxShape3D_jxsmy")
 metadata/surf = 4
 
-[node name="S004" type="CollisionShape3D" parent="Course/Yard" unique_id=1863567446]
+[node name="S004" type="CollisionShape3D" parent="Course/Yard" unique_id=2097644875]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1, 26.5)
 shape = SubResource("BoxShape3D_reijx")
 metadata/surf = 4
 
-[node name="ConsolePad" type="StaticBody3D" parent="Course" unique_id=90327977]
+[node name="ConsolePad" type="StaticBody3D" parent="Course" unique_id=1439450954]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1841208307]
+[node name="S000" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1235692096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 16)
 shape = SubResource("BoxShape3D_bxplm")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1673968165]
+[node name="S001" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1979808743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.825, 18.4)
 shape = SubResource("BoxShape3D_osfm5")
 metadata/surf = 4
 
-[node name="S002" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1639911565]
+[node name="S002" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=229937139]
 transform = Transform3D(0.96449834, -0.26408884, 0, 0.26408884, 0.96449834, 0, 0, 0, 1, -9.247281, 0.62179005, 18.4)
 shape = SubResource("BoxShape3D_dsjhy")
 metadata/surf = 4
 
-[node name="S003" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=112618659]
+[node name="S003" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=204876547]
 transform = Transform3D(-0.96449834, 0.26408884, -8.742278e-08, 0.26408884, 0.96449834, 0, 8.4319126e-08, -2.308738e-08, -1, 9.247281, 0.62179005, 18.4)
 shape = SubResource("BoxShape3D_f1drs")
 metadata/surf = 4
 
-[node name="S004" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1499764910]
+[node name="S004" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1140011966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 1.54, 13.4)
 shape = SubResource("BoxShape3D_ijc4q")
 metadata/surf = 4
 
-[node name="S005" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=565679741]
+[node name="S005" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=200453027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 1.54, 13.4)
 shape = SubResource("BoxShape3D_thbla")
 metadata/surf = 4
 
-[node name="S006" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=194352605]
+[node name="S006" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1687514255]
 transform = Transform3D(0.97589743, 0, 0.21822962, 0, 1, 0, -0.21822962, 0, 0.97589743, -4.6, 0.89, 12.2)
 shape = SubResource("BoxShape3D_18lat")
 metadata/surf = 4
 
-[node name="S007" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=347633951]
+[node name="S007" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1138695224]
 transform = Transform3D(0.9553365, 0, -0.29552022, 0, 1, 0, 0.29552022, 0, 0.9553365, -4.72, 1.55, 12.06)
 shape = SubResource("BoxShape3D_rwhpu")
 metadata/surf = 4
 
-[node name="S008" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1784436803]
+[node name="S008" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1167842595]
 transform = Transform3D(0.9959527, 0, 0.08987855, 0, 1, 0, -0.08987855, 0, 0.9959527, -6.2, 0.77, 10.8)
 shape = SubResource("BoxShape3D_j282p")
 metadata/surf = 4
 
-[node name="S009" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1493644127]
+[node name="S009" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1654005127]
 transform = Transform3D(0.9171208, 0, 0.3986093, 0, 1, 0, -0.3986093, 0, 0.9171208, -2.9, 0.91, 13)
 shape = SubResource("BoxShape3D_rb411")
 metadata/surf = 0
 
-[node name="S010" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=258779006]
+[node name="S010" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1592818634]
 transform = Transform3D(0.990216, 0, -0.13954312, 0, 1, 0, 0.13954312, 0, 0.990216, 3.6, 0.83, 12.6)
 shape = SubResource("BoxShape3D_4n5x3")
 metadata/surf = 4
 
-[node name="S011" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1694287478]
+[node name="S011" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=780983251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, 0.89, 11.6)
 shape = SubResource("BoxShape3D_2oroh")
 metadata/surf = 0
 
-[node name="S012" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1249760847]
+[node name="S012" type="CollisionShape3D" parent="Course/ConsolePad" unique_id=1880395465]
 transform = Transform3D(0.8525245, 0, 0.52268726, 0, 1, 0, -0.52268726, 0, 0.8525245, 5.62, 0.89, 12.24)
 shape = SubResource("BoxShape3D_0rdtw")
 metadata/surf = 0
 
-[node name="T000" type="Label3D" parent="Course" unique_id=1277015486]
+[node name="T000" type="Label3D" parent="Course" unique_id=1106074544]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.62, 15)
 visibility_range_end = 62.0
 pixel_size = 0.0054166666
@@ -1100,150 +1100,150 @@ text = "SHOOT OR PRESS E"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="LedgeBank" type="StaticBody3D" parent="Course" unique_id=629699495]
+[node name="LedgeBank" type="StaticBody3D" parent="Course" unique_id=1040585998]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1766639144]
+[node name="S000" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2055674256]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6, -0.049999997, -15)
 shape = SubResource("BoxShape3D_yy1dg")
 metadata/surf = 0
 
-[node name="S001" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2006678302]
+[node name="S001" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1073568264]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6, 0.1, -13.43)
 shape = SubResource("BoxShape3D_44avy")
 metadata/surf = 0
 
-[node name="S002" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1389873347]
+[node name="S002" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=347829094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.050000004, -15)
 shape = SubResource("BoxShape3D_nbhtk")
 metadata/surf = 0
 
-[node name="S003" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=447108747]
+[node name="S003" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=183078698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.3, -13.43)
 shape = SubResource("BoxShape3D_rvbrs")
 metadata/surf = 0
 
-[node name="S004" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1980895747]
+[node name="S004" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=357489032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4, 0.13999999, -15)
 shape = SubResource("BoxShape3D_nxg8u")
 metadata/surf = 0
 
-[node name="S005" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=869773698]
+[node name="S005" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1424605772]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4, 0.48, -13.43)
 shape = SubResource("BoxShape3D_o7buq")
 metadata/surf = 0
 
-[node name="S006" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2011644587]
+[node name="S006" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=875142650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8, 0.225, -15)
 shape = SubResource("BoxShape3D_w4kwt")
 metadata/surf = 0
 
-[node name="S007" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2144732093]
+[node name="S007" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1264736270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8, 0.65, -13.43)
 shape = SubResource("BoxShape3D_wsqao")
 metadata/surf = 0
 
-[node name="S008" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1205503973]
+[node name="S008" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2135581325]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 0.29999998, -15)
 shape = SubResource("BoxShape3D_f1upp")
 metadata/surf = 0
 
-[node name="S009" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=752210082]
+[node name="S009" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=78138577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 0.79999995, -13.43)
 shape = SubResource("BoxShape3D_nesp7")
 metadata/surf = 0
 
-[node name="S010" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=711753227]
+[node name="S010" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2018015099]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 0.38500002, -15)
 shape = SubResource("BoxShape3D_2gaue")
 metadata/surf = 0
 
-[node name="S011" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1082701559]
+[node name="S011" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1379544383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 0.97, -13.43)
 shape = SubResource("BoxShape3D_j3fax")
 metadata/surf = 0
 
-[node name="S012" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=738187752]
+[node name="S012" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=200221659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.51000005, -15)
 shape = SubResource("BoxShape3D_2o3ms")
 metadata/surf = 0
 
-[node name="S013" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1169268297]
+[node name="S013" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1080503819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.22, -13.43)
 shape = SubResource("BoxShape3D_bbyc7")
 metadata/surf = 0
 
-[node name="S014" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=563804307]
+[node name="S014" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=868713803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4, 0.65000004, -15)
 shape = SubResource("BoxShape3D_r5s18")
 metadata/surf = 0
 
-[node name="S015" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=867577527]
+[node name="S015" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1979334846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4, 1.5, -13.43)
 shape = SubResource("BoxShape3D_8h8lf")
 metadata/surf = 0
 
-[node name="S016" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=9539556]
+[node name="S016" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=67580679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 0.875, -15)
 shape = SubResource("BoxShape3D_cx5kb")
 metadata/surf = 0
 
-[node name="S017" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=853468565]
+[node name="S017" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1171356979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 1.9499999, -13.43)
 shape = SubResource("BoxShape3D_frurd")
 metadata/surf = 0
 
-[node name="S018" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=874268722]
+[node name="S018" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=386517129]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.25, -15)
 shape = SubResource("BoxShape3D_d056f")
 metadata/surf = 0
 
-[node name="S019" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1414111058]
+[node name="S019" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=276687580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 2.7, -13.43)
 shape = SubResource("BoxShape3D_je572")
 metadata/surf = 0
 
-[node name="S020" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=2132691766]
+[node name="S020" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=691919724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1.5500001, -15)
 shape = SubResource("BoxShape3D_vlswa")
 metadata/surf = 0
 
-[node name="S021" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1625771415]
+[node name="S021" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1610701096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 3.3000002, -13.43)
 shape = SubResource("BoxShape3D_88gjv")
 metadata/surf = 0
 
-[node name="S022" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1783207581]
+[node name="S022" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1853416536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.65, 2.35, -18)
 shape = SubResource("BoxShape3D_x5qh7")
 metadata/surf = 0
 
-[node name="S023" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=564868795]
+[node name="S023" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1205082699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55, 2.35, -18)
 shape = SubResource("BoxShape3D_824uu")
 metadata/surf = 0
 
-[node name="S024" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1110518947]
+[node name="S024" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=486946561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 4.4, -18)
 shape = SubResource("BoxShape3D_xddjm")
 metadata/surf = 0
 
-[node name="S025" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=66538374]
+[node name="S025" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1041638281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7, 0.85, -11.8)
 shape = SubResource("BoxShape3D_4govf")
 metadata/surf = 0
 
-[node name="S026" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=1302346318]
+[node name="S026" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=704950014]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.3, 0.85, -11.8)
 shape = SubResource("BoxShape3D_0wk03")
 metadata/surf = 0
 
-[node name="S027" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=508847643]
+[node name="S027" type="CollisionShape3D" parent="Course/LedgeBank" unique_id=118286585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2.35, -11.8)
 shape = SubResource("BoxShape3D_5sfmm")
 metadata/surf = 0
 
-[node name="T001" type="Label3D" parent="Course" unique_id=2061162765]
+[node name="T001" type="Label3D" parent="Course" unique_id=612518749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6, 1.4901161e-09, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.0025
@@ -1255,7 +1255,7 @@ text = "0.20"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T002" type="Label3D" parent="Course" unique_id=2130531234]
+[node name="T002" type="Label3D" parent="Course" unique_id=765357426]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0.1, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.004166667
@@ -1267,7 +1267,7 @@ text = "0.40"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T003" type="Label3D" parent="Course" unique_id=636826362]
+[node name="T003" type="Label3D" parent="Course" unique_id=1945835859]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4, 0.19, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.0060416665
@@ -1279,7 +1279,7 @@ text = "0.58"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T004" type="Label3D" parent="Course" unique_id=1531108108]
+[node name="T004" type="Label3D" parent="Course" unique_id=1322407413]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8, 0.275, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.0078125
@@ -1291,7 +1291,7 @@ text = "0.75"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T005" type="Label3D" parent="Course" unique_id=1359652828]
+[node name="T005" type="Label3D" parent="Course" unique_id=1113409431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 0.35, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1303,7 +1303,7 @@ text = "0.90"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T006" type="Label3D" parent="Course" unique_id=1672136526]
+[node name="T006" type="Label3D" parent="Course" unique_id=983986081]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6, 0.43500003, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1315,7 +1315,7 @@ text = "1.07"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T007" type="Label3D" parent="Course" unique_id=923044399]
+[node name="T007" type="Label3D" parent="Course" unique_id=355613576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.56, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1327,7 +1327,7 @@ text = "1.32"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T008" type="Label3D" parent="Course" unique_id=81644869]
+[node name="T008" type="Label3D" parent="Course" unique_id=586262938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4, 0.7, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1339,7 +1339,7 @@ text = "1.60"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T009" type="Label3D" parent="Course" unique_id=708107379]
+[node name="T009" type="Label3D" parent="Course" unique_id=122740467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 0.92499995, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1351,7 +1351,7 @@ text = "2.05"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T010" type="Label3D" parent="Course" unique_id=692596813]
+[node name="T010" type="Label3D" parent="Course" unique_id=903717771]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 1.3, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1363,7 +1363,7 @@ text = "2.80"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T011" type="Label3D" parent="Course" unique_id=190859873]
+[node name="T011" type="Label3D" parent="Course" unique_id=2056802951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 1.6, -13.4)
 visibility_range_end = 46.0
 pixel_size = 0.007916667
@@ -1375,7 +1375,7 @@ text = "3.40"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T012" type="Label3D" parent="Course" unique_id=108099522]
+[node name="T012" type="Label3D" parent="Course" unique_id=1930605068]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 4.4, -17.84)
 visibility_range_end = 62.0
 pixel_size = 0.010833333
@@ -1387,7 +1387,7 @@ text = "STEP"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T013" type="Label3D" parent="Course" unique_id=1328374750]
+[node name="T013" type="Label3D" parent="Course" unique_id=1873087963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 4.4, -17.84)
 visibility_range_end = 62.0
 pixel_size = 0.010833333
@@ -1399,7 +1399,7 @@ text = "JUMP"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T014" type="Label3D" parent="Course" unique_id=1554745748]
+[node name="T014" type="Label3D" parent="Course" unique_id=1281516024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4.4, -17.84)
 visibility_range_end = 62.0
 pixel_size = 0.010833333
@@ -1411,7 +1411,7 @@ text = "AUTO VAULT"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T015" type="Label3D" parent="Course" unique_id=2126273346]
+[node name="T015" type="Label3D" parent="Course" unique_id=1816744744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1, 4.4, -17.84)
 visibility_range_end = 62.0
 pixel_size = 0.010833333
@@ -1423,7 +1423,7 @@ text = "HOLD JUMP"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T016" type="Label3D" parent="Course" unique_id=1380479719]
+[node name="T016" type="Label3D" parent="Course" unique_id=2136344135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 4.4, -17.84)
 visibility_range_end = 62.0
 pixel_size = 0.010833333
@@ -1435,7 +1435,7 @@ text = "JUMP THEN VAULT"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T017" type="Label3D" parent="Course" unique_id=425985180]
+[node name="T017" type="Label3D" parent="Course" unique_id=1988854356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6, 4.4, -17.84)
 visibility_range_end = 62.0
 pixel_size = 0.010833333
@@ -1447,7 +1447,7 @@ text = "NO"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T018" type="Label3D" parent="Course" unique_id=828103317]
+[node name="T018" type="Label3D" parent="Course" unique_id=1279704007]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2.55, -11.71)
 visibility_range_end = 110.0
 pixel_size = 0.00875
@@ -1459,7 +1459,7 @@ text = "LEDGE BANK"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T019" type="Label3D" parent="Course" unique_id=333204119]
+[node name="T019" type="Label3D" parent="Course" unique_id=1046730589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 2.1, -11.71)
 visibility_range_end = 110.0
 pixel_size = 0.0054166666
@@ -1471,250 +1471,250 @@ text = "TOP HEIGHT IN METRES"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="GapRun" type="StaticBody3D" parent="Course" unique_id=506087657]
+[node name="GapRun" type="StaticBody3D" parent="Course" unique_id=291820828]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/GapRun" unique_id=394708157]
+[node name="S000" type="CollisionShape3D" parent="Course/GapRun" unique_id=1722210285]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 1.02, 0.9)
 shape = SubResource("BoxShape3D_e4j31")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/GapRun" unique_id=1843267103]
+[node name="S001" type="CollisionShape3D" parent="Course/GapRun" unique_id=170379495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 0.3, 0.9)
 shape = SubResource("BoxShape3D_igjiy")
 metadata/surf = 4
 
-[node name="S002" type="CollisionShape3D" parent="Course/GapRun" unique_id=295975100]
+[node name="S002" type="CollisionShape3D" parent="Course/GapRun" unique_id=1109523946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 1.02, -4)
 shape = SubResource("BoxShape3D_d0m4x")
 metadata/surf = 4
 
-[node name="S003" type="CollisionShape3D" parent="Course/GapRun" unique_id=318671767]
+[node name="S003" type="CollisionShape3D" parent="Course/GapRun" unique_id=1145887770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 0.3, -4)
 shape = SubResource("BoxShape3D_1m6ns")
 metadata/surf = 4
 
-[node name="S004" type="CollisionShape3D" parent="Course/GapRun" unique_id=700469766]
+[node name="S004" type="CollisionShape3D" parent="Course/GapRun" unique_id=1267429089]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 1.1, 2.52)
 shape = SubResource("BoxShape3D_5drul")
 metadata/surf = 0
 
-[node name="S005" type="CollisionShape3D" parent="Course/GapRun" unique_id=1797089907]
+[node name="S005" type="CollisionShape3D" parent="Course/GapRun" unique_id=850232104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 1.02, 0.9)
 shape = SubResource("BoxShape3D_dgupx")
 metadata/surf = 4
 
-[node name="S006" type="CollisionShape3D" parent="Course/GapRun" unique_id=638115297]
+[node name="S006" type="CollisionShape3D" parent="Course/GapRun" unique_id=1182140593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 0.3, 0.9)
 shape = SubResource("BoxShape3D_dqfqc")
 metadata/surf = 4
 
-[node name="S007" type="CollisionShape3D" parent="Course/GapRun" unique_id=1305434241]
+[node name="S007" type="CollisionShape3D" parent="Course/GapRun" unique_id=416790572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 1.02, -4.5)
 shape = SubResource("BoxShape3D_c266p")
 metadata/surf = 4
 
-[node name="S008" type="CollisionShape3D" parent="Course/GapRun" unique_id=1664518358]
+[node name="S008" type="CollisionShape3D" parent="Course/GapRun" unique_id=399127290]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 0.3, -4.5)
 shape = SubResource("BoxShape3D_mmfrq")
 metadata/surf = 4
 
-[node name="S009" type="CollisionShape3D" parent="Course/GapRun" unique_id=854590932]
+[node name="S009" type="CollisionShape3D" parent="Course/GapRun" unique_id=634568572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 1.1, 2.52)
 shape = SubResource("BoxShape3D_krmjh")
 metadata/surf = 0
 
-[node name="S010" type="CollisionShape3D" parent="Course/GapRun" unique_id=1012770667]
+[node name="S010" type="CollisionShape3D" parent="Course/GapRun" unique_id=1373730816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 1.02, 0.9)
 shape = SubResource("BoxShape3D_1mogc")
 metadata/surf = 4
 
-[node name="S011" type="CollisionShape3D" parent="Course/GapRun" unique_id=394389376]
+[node name="S011" type="CollisionShape3D" parent="Course/GapRun" unique_id=506251206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0.3, 0.9)
 shape = SubResource("BoxShape3D_wvi28")
 metadata/surf = 4
 
-[node name="S012" type="CollisionShape3D" parent="Course/GapRun" unique_id=2130441953]
+[node name="S012" type="CollisionShape3D" parent="Course/GapRun" unique_id=1312007336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 1.02, -5)
 shape = SubResource("BoxShape3D_g6owh")
 metadata/surf = 4
 
-[node name="S013" type="CollisionShape3D" parent="Course/GapRun" unique_id=1114423592]
+[node name="S013" type="CollisionShape3D" parent="Course/GapRun" unique_id=1543061222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0.3, -5)
 shape = SubResource("BoxShape3D_mlbv0")
 metadata/surf = 4
 
-[node name="S014" type="CollisionShape3D" parent="Course/GapRun" unique_id=497619407]
+[node name="S014" type="CollisionShape3D" parent="Course/GapRun" unique_id=411160143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 1.1, 2.52)
 shape = SubResource("BoxShape3D_uq6yk")
 metadata/surf = 0
 
-[node name="S015" type="CollisionShape3D" parent="Course/GapRun" unique_id=379815787]
+[node name="S015" type="CollisionShape3D" parent="Course/GapRun" unique_id=2057226282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 1.02, 0.9)
 shape = SubResource("BoxShape3D_46ux8")
 metadata/surf = 4
 
-[node name="S016" type="CollisionShape3D" parent="Course/GapRun" unique_id=682540093]
+[node name="S016" type="CollisionShape3D" parent="Course/GapRun" unique_id=432670271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0.3, 0.9)
 shape = SubResource("BoxShape3D_b2jq6")
 metadata/surf = 4
 
-[node name="S017" type="CollisionShape3D" parent="Course/GapRun" unique_id=1087785085]
+[node name="S017" type="CollisionShape3D" parent="Course/GapRun" unique_id=1192698697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 1.02, -5.5)
 shape = SubResource("BoxShape3D_bmkms")
 metadata/surf = 4
 
-[node name="S018" type="CollisionShape3D" parent="Course/GapRun" unique_id=1085499866]
+[node name="S018" type="CollisionShape3D" parent="Course/GapRun" unique_id=1697662541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0.3, -5.5)
 shape = SubResource("BoxShape3D_jywyl")
 metadata/surf = 4
 
-[node name="S019" type="CollisionShape3D" parent="Course/GapRun" unique_id=1254759359]
+[node name="S019" type="CollisionShape3D" parent="Course/GapRun" unique_id=727417829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 1.1, 2.52)
 shape = SubResource("BoxShape3D_fwoxm")
 metadata/surf = 0
 
-[node name="S020" type="CollisionShape3D" parent="Course/GapRun" unique_id=314934668]
+[node name="S020" type="CollisionShape3D" parent="Course/GapRun" unique_id=2014861194]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, 0.9)
 shape = SubResource("BoxShape3D_3qa6d")
 metadata/surf = 4
 
-[node name="S021" type="CollisionShape3D" parent="Course/GapRun" unique_id=468632182]
+[node name="S021" type="CollisionShape3D" parent="Course/GapRun" unique_id=283535017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.9)
 shape = SubResource("BoxShape3D_pp4he")
 metadata/surf = 4
 
-[node name="S022" type="CollisionShape3D" parent="Course/GapRun" unique_id=1421474339]
+[node name="S022" type="CollisionShape3D" parent="Course/GapRun" unique_id=853376400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02, -6)
 shape = SubResource("BoxShape3D_qqv5n")
 metadata/surf = 4
 
-[node name="S023" type="CollisionShape3D" parent="Course/GapRun" unique_id=1906745167]
+[node name="S023" type="CollisionShape3D" parent="Course/GapRun" unique_id=499486374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -6)
 shape = SubResource("BoxShape3D_smh6r")
 metadata/surf = 4
 
-[node name="S024" type="CollisionShape3D" parent="Course/GapRun" unique_id=1450522308]
+[node name="S024" type="CollisionShape3D" parent="Course/GapRun" unique_id=1370255465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 2.52)
 shape = SubResource("BoxShape3D_7v7nf")
 metadata/surf = 0
 
-[node name="S025" type="CollisionShape3D" parent="Course/GapRun" unique_id=1428510109]
+[node name="S025" type="CollisionShape3D" parent="Course/GapRun" unique_id=1224105272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.02, 0.9)
 shape = SubResource("BoxShape3D_y3f5a")
 metadata/surf = 4
 
-[node name="S026" type="CollisionShape3D" parent="Course/GapRun" unique_id=859564634]
+[node name="S026" type="CollisionShape3D" parent="Course/GapRun" unique_id=1767561031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.3, 0.9)
 shape = SubResource("BoxShape3D_vhj62")
 metadata/surf = 4
 
-[node name="S027" type="CollisionShape3D" parent="Course/GapRun" unique_id=587589203]
+[node name="S027" type="CollisionShape3D" parent="Course/GapRun" unique_id=1614908968]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.02, -6.5)
 shape = SubResource("BoxShape3D_dmh6q")
 metadata/surf = 4
 
-[node name="S028" type="CollisionShape3D" parent="Course/GapRun" unique_id=1813435082]
+[node name="S028" type="CollisionShape3D" parent="Course/GapRun" unique_id=1862103867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.3, -6.5)
 shape = SubResource("BoxShape3D_g5gdf")
 metadata/surf = 4
 
-[node name="S029" type="CollisionShape3D" parent="Course/GapRun" unique_id=839645770]
+[node name="S029" type="CollisionShape3D" parent="Course/GapRun" unique_id=1134082785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.1, 2.52)
 shape = SubResource("BoxShape3D_11y6k")
 metadata/surf = 0
 
-[node name="S030" type="CollisionShape3D" parent="Course/GapRun" unique_id=525636650]
+[node name="S030" type="CollisionShape3D" parent="Course/GapRun" unique_id=1425609970]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 1.02, 0.9)
 shape = SubResource("BoxShape3D_cwls2")
 metadata/surf = 4
 
-[node name="S031" type="CollisionShape3D" parent="Course/GapRun" unique_id=2074749364]
+[node name="S031" type="CollisionShape3D" parent="Course/GapRun" unique_id=1920447105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0.3, 0.9)
 shape = SubResource("BoxShape3D_6m125")
 metadata/surf = 4
 
-[node name="S032" type="CollisionShape3D" parent="Course/GapRun" unique_id=1216054875]
+[node name="S032" type="CollisionShape3D" parent="Course/GapRun" unique_id=251040389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 1.02, -7)
 shape = SubResource("BoxShape3D_j440u")
 metadata/surf = 4
 
-[node name="S033" type="CollisionShape3D" parent="Course/GapRun" unique_id=860537019]
+[node name="S033" type="CollisionShape3D" parent="Course/GapRun" unique_id=414962082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0.3, -7)
 shape = SubResource("BoxShape3D_7odnx")
 metadata/surf = 4
 
-[node name="S034" type="CollisionShape3D" parent="Course/GapRun" unique_id=490897]
+[node name="S034" type="CollisionShape3D" parent="Course/GapRun" unique_id=1951791004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 1.1, 2.52)
 shape = SubResource("BoxShape3D_65t7x")
 metadata/surf = 0
 
-[node name="S035" type="CollisionShape3D" parent="Course/GapRun" unique_id=800569697]
+[node name="S035" type="CollisionShape3D" parent="Course/GapRun" unique_id=804673055]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 1.02, 0.9)
 shape = SubResource("BoxShape3D_01qh3")
 metadata/surf = 4
 
-[node name="S036" type="CollisionShape3D" parent="Course/GapRun" unique_id=1756204711]
+[node name="S036" type="CollisionShape3D" parent="Course/GapRun" unique_id=649451421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0.3, 0.9)
 shape = SubResource("BoxShape3D_qf8lj")
 metadata/surf = 4
 
-[node name="S037" type="CollisionShape3D" parent="Course/GapRun" unique_id=1939388906]
+[node name="S037" type="CollisionShape3D" parent="Course/GapRun" unique_id=1351125566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 1.02, -7.5)
 shape = SubResource("BoxShape3D_n65ud")
 metadata/surf = 4
 
-[node name="S038" type="CollisionShape3D" parent="Course/GapRun" unique_id=853156377]
+[node name="S038" type="CollisionShape3D" parent="Course/GapRun" unique_id=2120793714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0.3, -7.5)
 shape = SubResource("BoxShape3D_cnsko")
 metadata/surf = 4
 
-[node name="S039" type="CollisionShape3D" parent="Course/GapRun" unique_id=750727112]
+[node name="S039" type="CollisionShape3D" parent="Course/GapRun" unique_id=583592331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 1.1, 2.52)
 shape = SubResource("BoxShape3D_tgw4v")
 metadata/surf = 0
 
-[node name="S040" type="CollisionShape3D" parent="Course/GapRun" unique_id=111148752]
+[node name="S040" type="CollisionShape3D" parent="Course/GapRun" unique_id=1311945826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.02, 0.9)
 shape = SubResource("BoxShape3D_wv6bx")
 metadata/surf = 4
 
-[node name="S041" type="CollisionShape3D" parent="Course/GapRun" unique_id=1901955679]
+[node name="S041" type="CollisionShape3D" parent="Course/GapRun" unique_id=845541723]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 0.3, 0.9)
 shape = SubResource("BoxShape3D_0wx5p")
 metadata/surf = 4
 
-[node name="S042" type="CollisionShape3D" parent="Course/GapRun" unique_id=235004618]
+[node name="S042" type="CollisionShape3D" parent="Course/GapRun" unique_id=1592248768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.02, -8)
 shape = SubResource("BoxShape3D_rr7pl")
 metadata/surf = 4
 
-[node name="S043" type="CollisionShape3D" parent="Course/GapRun" unique_id=828557398]
+[node name="S043" type="CollisionShape3D" parent="Course/GapRun" unique_id=1003467075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 0.3, -8)
 shape = SubResource("BoxShape3D_eniky")
 metadata/surf = 4
 
-[node name="S044" type="CollisionShape3D" parent="Course/GapRun" unique_id=1638404477]
+[node name="S044" type="CollisionShape3D" parent="Course/GapRun" unique_id=904586071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 1.1, 2.52)
 shape = SubResource("BoxShape3D_inklt")
 metadata/surf = 0
 
-[node name="S045" type="CollisionShape3D" parent="Course/GapRun" unique_id=1488591955]
+[node name="S045" type="CollisionShape3D" parent="Course/GapRun" unique_id=1555419567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.300001, 0.85, -2)
 shape = SubResource("BoxShape3D_2sne3")
 metadata/surf = 0
 
-[node name="S046" type="CollisionShape3D" parent="Course/GapRun" unique_id=81803502]
+[node name="S046" type="CollisionShape3D" parent="Course/GapRun" unique_id=762785732]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.900001, 0.85, -2)
 shape = SubResource("BoxShape3D_ij36y")
 metadata/surf = 0
 
-[node name="S047" type="CollisionShape3D" parent="Course/GapRun" unique_id=1122869620]
+[node name="S047" type="CollisionShape3D" parent="Course/GapRun" unique_id=1969300884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 2.35, -2)
 shape = SubResource("BoxShape3D_adeow")
 metadata/surf = 0
 
-[node name="T020" type="Label3D" parent="Course" unique_id=160899433]
+[node name="T020" type="Label3D" parent="Course" unique_id=561325326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1726,7 +1726,7 @@ text = "1.5"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T021" type="Label3D" parent="Course" unique_id=1068153127]
+[node name="T021" type="Label3D" parent="Course" unique_id=759987063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1738,7 +1738,7 @@ text = "2.0"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T022" type="Label3D" parent="Course" unique_id=1866543342]
+[node name="T022" type="Label3D" parent="Course" unique_id=1072450965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1750,7 +1750,7 @@ text = "2.5"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T023" type="Label3D" parent="Course" unique_id=183678108]
+[node name="T023" type="Label3D" parent="Course" unique_id=1758985717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1762,7 +1762,7 @@ text = "3.0"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T024" type="Label3D" parent="Course" unique_id=233878523]
+[node name="T024" type="Label3D" parent="Course" unique_id=1018091368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1774,7 +1774,7 @@ text = "3.5"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T025" type="Label3D" parent="Course" unique_id=1419849447]
+[node name="T025" type="Label3D" parent="Course" unique_id=1359425613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1786,7 +1786,7 @@ text = "4.0"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T026" type="Label3D" parent="Course" unique_id=934644174]
+[node name="T026" type="Label3D" parent="Course" unique_id=1976399860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1798,7 +1798,7 @@ text = "4.5"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T027" type="Label3D" parent="Course" unique_id=191668206]
+[node name="T027" type="Label3D" parent="Course" unique_id=35935903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1810,7 +1810,7 @@ text = "5.0"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T028" type="Label3D" parent="Course" unique_id=1546761603]
+[node name="T028" type="Label3D" parent="Course" unique_id=357292103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6, 0.52, 2.55)
 visibility_range_end = 46.0
 pixel_size = 0.0095833335
@@ -1822,7 +1822,7 @@ text = "5.5"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T029" type="Label3D" parent="Course" unique_id=1691077624]
+[node name="T029" type="Label3D" parent="Course" unique_id=1620376694]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.02, 5.1)
 visibility_range_end = 46.0
 pixel_size = 0.011458334
@@ -1834,7 +1834,7 @@ text = "1.20  VAULT ON"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T030" type="Label3D" parent="Course" unique_id=2141662178]
+[node name="T030" type="Label3D" parent="Course" unique_id=1019094153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 2.55, -1.91)
 visibility_range_end = 110.0
 pixel_size = 0.00875
@@ -1846,7 +1846,7 @@ text = "GAP RUN"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T031" type="Label3D" parent="Course" unique_id=1988578367]
+[node name="T031" type="Label3D" parent="Course" unique_id=292349060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6, 2.1, -1.91)
 visibility_range_end = 110.0
 pixel_size = 0.0054166666
@@ -1858,175 +1858,175 @@ text = "CLEAR DISTANCE IN METRES"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="SlopeFan" type="StaticBody3D" parent="Course" unique_id=926002435]
+[node name="SlopeFan" type="StaticBody3D" parent="Course" unique_id=9063378]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=184000384]
+[node name="S000" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2123046559]
 transform = Transform3D(-4.304731e-08, 7.590403e-09, 1, 0.17364818, 0.9848077, 0, -0.9848077, 0.17364818, -4.371139e-08, 27.5, 0.43887365, -17.331781)
 shape = SubResource("BoxShape3D_6nj0t")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2129578218]
+[node name="S001" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1499036748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 0.6434714, -23.6)
 shape = SubResource("BoxShape3D_b0mtg")
 metadata/surf = 4
 
-[node name="S002" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=871690035]
+[node name="S002" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=793902457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 2.336943, -24.95)
 shape = SubResource("BoxShape3D_67lgo")
 metadata/surf = 0
 
-[node name="S003" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1111485692]
+[node name="S003" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=475663696]
 transform = Transform3D(-4.1572e-08, 1.3507562e-08, 1, 0.309017, 0.95105654, 0, -0.95105654, 0.309017, -4.371139e-08, 25, 0.90205514, -16.81178)
 shape = SubResource("BoxShape3D_wb6r4")
 metadata/surf = 4
 
-[node name="S004" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1851713650]
+[node name="S004" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=779933427]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.15, -22.601976)
 shape = SubResource("BoxShape3D_rfp8x")
 metadata/surf = 4
 
-[node name="S005" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=814184857]
+[node name="S005" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1678722797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3.35, -23.951977)
 shape = SubResource("BoxShape3D_q8qvn")
 metadata/surf = 0
 
-[node name="S006" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1873403084]
+[node name="S006" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1366590751]
 transform = Transform3D(-3.9287535e-08, 1.9161812e-08, 1, 0.43837115, 0.89879405, 0, -0.89879405, 0.43837115, -4.371139e-08, 22.5, 0.8670374, -15.507666)
 shape = SubResource("BoxShape3D_4kajc")
 metadata/surf = 4
 
-[node name="S007" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1992359499]
+[node name="S007" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1334968271]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 1.15, -19.93079)
 shape = SubResource("BoxShape3D_mgrje")
 metadata/surf = 4
 
-[node name="S008" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=769424345]
+[node name="S008" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=36185452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 3.35, -21.28079)
 shape = SubResource("BoxShape3D_j5m6d")
 metadata/surf = 0
 
-[node name="S009" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=947079934]
+[node name="S009" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1078181950]
 transform = Transform3D(-3.706936e-08, 2.3163507e-08, 1, 0.52991927, 0.8480481, 0, -0.8480481, 0.52991927, -4.371139e-08, 20, 0.8466569, -14.958799)
 shape = SubResource("BoxShape3D_utqg6")
 metadata/surf = 4
 
-[node name="S010" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=298716402]
+[node name="S010" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=441064562]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.15, -18.76087)
 shape = SubResource("BoxShape3D_rud5b")
 metadata/surf = 4
 
-[node name="S011" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=126567152]
+[node name="S011" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1475412123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3.35, -20.11087)
 shape = SubResource("BoxShape3D_w6v00")
 metadata/surf = 0
 
-[node name="S012" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1612043760]
+[node name="S012" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1416525299]
 transform = Transform3D(-3.4445044e-08, 2.6911419e-08, 1, 0.6156615, 0.7880108, 0, -0.7880108, 0.6156615, -4.371139e-08, 17.5, 0.83157206, -14.58413)
 shape = SubResource("BoxShape3D_2e0gc")
 metadata/surf = 4
 
-[node name="S013" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=930236582]
+[node name="S013" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=437682355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 1.15, -17.927849)
 shape = SubResource("BoxShape3D_mg884")
 metadata/surf = 4
 
-[node name="S014" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=236409839]
+[node name="S014" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=232712127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 3.35, -19.277847)
 shape = SubResource("BoxShape3D_5ab8y")
 metadata/surf = 0
 
-[node name="S015" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2044088438]
+[node name="S015" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1743745389]
 transform = Transform3D(-3.1968487e-08, 2.9811094e-08, 1, 0.6819984, 0.7313537, 0, -0.7313537, 0.6819984, -4.371139e-08, 15, 0.8231675, -14.351949)
 shape = SubResource("BoxShape3D_d04p2")
 metadata/surf = 4
 
-[node name="S016" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1636266674]
+[node name="S016" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=427932334]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.15, -17.388159)
 shape = SubResource("BoxShape3D_hquee")
 metadata/surf = 4
 
-[node name="S017" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1699626252]
+[node name="S017" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2064326276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.35, -18.73816)
 shape = SubResource("BoxShape3D_o7fcd")
 metadata/surf = 0
 
-[node name="S018" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1878280994]
+[node name="S018" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=871598343]
 transform = Transform3D(-3.0364482e-08, 3.1443342e-08, 1, 0.7193398, 0.6946584, 0, -0.6946584, 0.7193398, -4.371139e-08, 12.5, 0.8199734, -14.236691)
 shape = SubResource("BoxShape3D_jqnty")
 metadata/surf = 4
 
-[node name="S019" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1239669459]
+[node name="S019" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=838783800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1.15, -17.11079)
 shape = SubResource("BoxShape3D_wcn5k")
 metadata/surf = 4
 
-[node name="S020" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2102871861]
+[node name="S020" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1430528610]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 3.35, -18.46079)
 shape = SubResource("BoxShape3D_nm8y1")
 metadata/surf = 0
 
-[node name="S021" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1760575472]
+[node name="S021" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=472177871]
 transform = Transform3D(-2.809714e-08, 3.3484866e-08, 1, 0.76604444, 0.64278764, 0, -0.64278764, 0.76604444, -4.371139e-08, 10, 0.81789017, -14.104022)
 shape = SubResource("BoxShape3D_ks6ni")
 metadata/surf = 4
 
-[node name="S022" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=994385239]
+[node name="S022" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=10791399]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.15, -16.781658)
 shape = SubResource("BoxShape3D_pl8g7")
 metadata/surf = 4
 
-[node name="S023" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1807579188]
+[node name="S023" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1969991233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.35, -18.131659)
 shape = SubResource("BoxShape3D_g0mrx")
 metadata/surf = 0
 
-[node name="S024" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=505091172]
+[node name="S024" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=35287107]
 transform = Transform3D(-2.5071824e-08, 3.5806274e-08, 1, 0.81915206, 0.57357645, 0, -0.57357645, 0.81915206, -4.371139e-08, 7.5, 0.8187948, -13.963974)
 shape = SubResource("BoxShape3D_w22xq")
 metadata/surf = 4
 
-[node name="S025" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1718419311]
+[node name="S025" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=293667400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.15, -16.42054)
 shape = SubResource("BoxShape3D_xy6pf")
 metadata/surf = 4
 
-[node name="S026" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1765892574]
+[node name="S026" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1571946251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.35, -17.77054)
 shape = SubResource("BoxShape3D_f1j3y")
 metadata/surf = 0
 
-[node name="S027" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2132304718]
+[node name="S027" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=45612679]
 transform = Transform3D(-2.0521254e-08, 3.8594862e-08, 1, 0.88294756, 0.46947157, 0, -0.46947157, 0.88294756, -4.371139e-08, 5, 0.82659, -13.8019285)
 shape = SubResource("BoxShape3D_wov38")
 metadata/surf = 4
 
-[node name="S028" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=182570730]
+[node name="S028" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=2101156826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.15, -15.982445)
 shape = SubResource("BoxShape3D_8s5g1")
 metadata/surf = 4
 
-[node name="S029" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=798309286]
+[node name="S029" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=765659943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.35, -17.332445)
 shape = SubResource("BoxShape3D_xw4yh")
 metadata/surf = 0
 
-[node name="S030" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1717660130]
+[node name="S030" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1451858932]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9000006, 0.85, -11)
 shape = SubResource("BoxShape3D_j0k4k")
 metadata/surf = 0
 
-[node name="S031" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1940276015]
+[node name="S031" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=640896085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3, 0.85, -11)
 shape = SubResource("BoxShape3D_wp5yh")
 metadata/surf = 0
 
-[node name="S032" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=1519465226]
+[node name="S032" type="CollisionShape3D" parent="Course/SlopeFan" unique_id=810049226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 2.35, -11)
 shape = SubResource("BoxShape3D_6807o")
 metadata/surf = 0
 
-[node name="T032" type="Label3D" parent="Course" unique_id=556500558]
+[node name="T032" type="Label3D" parent="Course" unique_id=63105219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 2.476943, -24.83)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2038,7 +2038,7 @@ text = "10"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T033" type="Label3D" parent="Course" unique_id=1991938925]
+[node name="T033" type="Label3D" parent="Course" unique_id=1627057229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3.49, -23.831976)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2050,7 +2050,7 @@ text = "18"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T034" type="Label3D" parent="Course" unique_id=1383764107]
+[node name="T034" type="Label3D" parent="Course" unique_id=796118583]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 3.49, -21.16079)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2062,7 +2062,7 @@ text = "26"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T035" type="Label3D" parent="Course" unique_id=1434348730]
+[node name="T035" type="Label3D" parent="Course" unique_id=546261746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3.49, -19.99087)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2074,7 +2074,7 @@ text = "32"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T036" type="Label3D" parent="Course" unique_id=2047211153]
+[node name="T036" type="Label3D" parent="Course" unique_id=1455219587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5, 3.49, -19.157846)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2086,7 +2086,7 @@ text = "38"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T037" type="Label3D" parent="Course" unique_id=421719197]
+[node name="T037" type="Label3D" parent="Course" unique_id=1376514710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.49, -18.618158)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2098,7 +2098,7 @@ text = "43"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T038" type="Label3D" parent="Course" unique_id=573775734]
+[node name="T038" type="Label3D" parent="Course" unique_id=1503400811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 3.49, -18.34079)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2110,7 +2110,7 @@ text = "46"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T039" type="Label3D" parent="Course" unique_id=1138968097]
+[node name="T039" type="Label3D" parent="Course" unique_id=1999270124]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 2.85, -18.34079)
 visibility_range_end = 62.0
 pixel_size = 0.00625
@@ -2122,7 +2122,7 @@ text = "LIMIT"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T040" type="Label3D" parent="Course" unique_id=1604008836]
+[node name="T040" type="Label3D" parent="Course" unique_id=712157933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3.49, -18.011658)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2134,7 +2134,7 @@ text = "50"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T041" type="Label3D" parent="Course" unique_id=615067409]
+[node name="T041" type="Label3D" parent="Course" unique_id=816306716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 3.49, -17.65054)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2146,7 +2146,7 @@ text = "55"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T042" type="Label3D" parent="Course" unique_id=1185182240]
+[node name="T042" type="Label3D" parent="Course" unique_id=410050130]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3.49, -17.212444)
 visibility_range_end = 62.0
 pixel_size = 0.015
@@ -2158,7 +2158,7 @@ text = "62"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T043" type="Label3D" parent="Course" unique_id=1335492770]
+[node name="T043" type="Label3D" parent="Course" unique_id=624368442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 2.55, -10.91)
 visibility_range_end = 110.0
 pixel_size = 0.00875
@@ -2170,7 +2170,7 @@ text = "SLOPE FAN"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T044" type="Label3D" parent="Course" unique_id=279687930]
+[node name="T044" type="Label3D" parent="Course" unique_id=944742421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 2.1, -10.91)
 visibility_range_end = 110.0
 pixel_size = 0.0054166666
@@ -2182,300 +2182,300 @@ text = "DEGREES — WALKABLE TO 46"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="StairBank" type="StaticBody3D" parent="Course" unique_id=1945628865]
+[node name="StairBank" type="StaticBody3D" parent="Course" unique_id=2016146590]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/StairBank" unique_id=1949573689]
+[node name="S000" type="CollisionShape3D" parent="Course/StairBank" unique_id=573782423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.09, 0.31)
 shape = SubResource("BoxShape3D_mtr38")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/StairBank" unique_id=397096929]
+[node name="S001" type="CollisionShape3D" parent="Course/StairBank" unique_id=845072716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.030000003, -0.01)
 shape = SubResource("BoxShape3D_x8jnj")
 metadata/surf = 4
 
-[node name="S002" type="CollisionShape3D" parent="Course/StairBank" unique_id=203823446]
+[node name="S002" type="CollisionShape3D" parent="Course/StairBank" unique_id=155521164]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.029999996, -0.33)
 shape = SubResource("BoxShape3D_bxsaw")
 metadata/surf = 4
 
-[node name="S003" type="CollisionShape3D" parent="Course/StairBank" unique_id=1318441727]
+[node name="S003" type="CollisionShape3D" parent="Course/StairBank" unique_id=1857089110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.089999996, -0.65)
 shape = SubResource("BoxShape3D_3xt4d")
 metadata/surf = 4
 
-[node name="S004" type="CollisionShape3D" parent="Course/StairBank" unique_id=2002785870]
+[node name="S004" type="CollisionShape3D" parent="Course/StairBank" unique_id=1109324655]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.14999999, -0.97)
 shape = SubResource("BoxShape3D_awb7t")
 metadata/surf = 4
 
-[node name="S005" type="CollisionShape3D" parent="Course/StairBank" unique_id=393441290]
+[node name="S005" type="CollisionShape3D" parent="Course/StairBank" unique_id=670262221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.21, -1.29)
 shape = SubResource("BoxShape3D_pyfhy")
 metadata/surf = 4
 
-[node name="S006" type="CollisionShape3D" parent="Course/StairBank" unique_id=1333646699]
+[node name="S006" type="CollisionShape3D" parent="Course/StairBank" unique_id=24233027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.26999998, -1.61)
 shape = SubResource("BoxShape3D_qsjd6")
 metadata/surf = 4
 
-[node name="S007" type="CollisionShape3D" parent="Course/StairBank" unique_id=1479430486]
+[node name="S007" type="CollisionShape3D" parent="Course/StairBank" unique_id=1104972422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.32999998, -1.93)
 shape = SubResource("BoxShape3D_k5r8w")
 metadata/surf = 4
 
-[node name="S008" type="CollisionShape3D" parent="Course/StairBank" unique_id=2087485796]
+[node name="S008" type="CollisionShape3D" parent="Course/StairBank" unique_id=834222171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.39, -2.25)
 shape = SubResource("BoxShape3D_8lvu7")
 metadata/surf = 4
 
-[node name="S009" type="CollisionShape3D" parent="Course/StairBank" unique_id=1906430758]
+[node name="S009" type="CollisionShape3D" parent="Course/StairBank" unique_id=667238876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.45, -2.57)
 shape = SubResource("BoxShape3D_aklm8")
 metadata/surf = 4
 
-[node name="S010" type="CollisionShape3D" parent="Course/StairBank" unique_id=1575713876]
+[node name="S010" type="CollisionShape3D" parent="Course/StairBank" unique_id=1851051075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.51, -2.89)
 shape = SubResource("BoxShape3D_r4bru")
 metadata/surf = 4
 
-[node name="S011" type="CollisionShape3D" parent="Course/StairBank" unique_id=1939506554]
+[node name="S011" type="CollisionShape3D" parent="Course/StairBank" unique_id=520119040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.57, -3.21)
 shape = SubResource("BoxShape3D_o0l32")
 metadata/surf = 4
 
-[node name="S012" type="CollisionShape3D" parent="Course/StairBank" unique_id=239959739]
+[node name="S012" type="CollisionShape3D" parent="Course/StairBank" unique_id=1528564884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.63, -3.53)
 shape = SubResource("BoxShape3D_c3wpw")
 metadata/surf = 4
 
-[node name="S013" type="CollisionShape3D" parent="Course/StairBank" unique_id=2109114373]
+[node name="S013" type="CollisionShape3D" parent="Course/StairBank" unique_id=412431464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.69, -3.85)
 shape = SubResource("BoxShape3D_y4t5k")
 metadata/surf = 4
 
-[node name="S014" type="CollisionShape3D" parent="Course/StairBank" unique_id=283914447]
+[node name="S014" type="CollisionShape3D" parent="Course/StairBank" unique_id=1519354083]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.75, -4.17)
 shape = SubResource("BoxShape3D_vxaac")
 metadata/surf = 4
 
-[node name="S015" type="CollisionShape3D" parent="Course/StairBank" unique_id=1873587003]
+[node name="S015" type="CollisionShape3D" parent="Course/StairBank" unique_id=885422270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.81, -4.49)
 shape = SubResource("BoxShape3D_v4qoc")
 metadata/surf = 4
 
-[node name="S016" type="CollisionShape3D" parent="Course/StairBank" unique_id=2042037249]
+[node name="S016" type="CollisionShape3D" parent="Course/StairBank" unique_id=391333656]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.87, -4.81)
 shape = SubResource("BoxShape3D_piftm")
 metadata/surf = 4
 
-[node name="S017" type="CollisionShape3D" parent="Course/StairBank" unique_id=187043648]
+[node name="S017" type="CollisionShape3D" parent="Course/StairBank" unique_id=35228641]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.92999995, -5.13)
 shape = SubResource("BoxShape3D_mlyi5")
 metadata/surf = 4
 
-[node name="S018" type="CollisionShape3D" parent="Course/StairBank" unique_id=473333890]
+[node name="S018" type="CollisionShape3D" parent="Course/StairBank" unique_id=18977009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.98999995, -5.45)
 shape = SubResource("BoxShape3D_jmgl7")
 metadata/surf = 4
 
-[node name="S019" type="CollisionShape3D" parent="Course/StairBank" unique_id=1670378764]
+[node name="S019" type="CollisionShape3D" parent="Course/StairBank" unique_id=1293384418]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.05, -5.77)
 shape = SubResource("BoxShape3D_f2cw7")
 metadata/surf = 4
 
-[node name="S020" type="CollisionShape3D" parent="Course/StairBank" unique_id=1970308144]
+[node name="S020" type="CollisionShape3D" parent="Course/StairBank" unique_id=1352593911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.11, -6.09)
 shape = SubResource("BoxShape3D_hb108")
 metadata/surf = 4
 
-[node name="S021" type="CollisionShape3D" parent="Course/StairBank" unique_id=434131481]
+[node name="S021" type="CollisionShape3D" parent="Course/StairBank" unique_id=431230669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.11, -7.72)
 shape = SubResource("BoxShape3D_rx4ht")
 metadata/surf = 4
 
-[node name="S022" type="CollisionShape3D" parent="Course/StairBank" unique_id=575178567]
+[node name="S022" type="CollisionShape3D" parent="Course/StairBank" unique_id=1793905357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.22, -9.07)
 shape = SubResource("BoxShape3D_s4msi")
 metadata/surf = 0
 
-[node name="S023" type="CollisionShape3D" parent="Course/StairBank" unique_id=1117406365]
+[node name="S023" type="CollisionShape3D" parent="Course/StairBank" unique_id=517458098]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, -0.04, 0.31)
 shape = SubResource("BoxShape3D_61iq3")
 metadata/surf = 4
 
-[node name="S024" type="CollisionShape3D" parent="Course/StairBank" unique_id=1763624049]
+[node name="S024" type="CollisionShape3D" parent="Course/StairBank" unique_id=2053064679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.07, -0.01)
 shape = SubResource("BoxShape3D_xv7yr")
 metadata/surf = 4
 
-[node name="S025" type="CollisionShape3D" parent="Course/StairBank" unique_id=188099215]
+[node name="S025" type="CollisionShape3D" parent="Course/StairBank" unique_id=488616726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.17999999, -0.33)
 shape = SubResource("BoxShape3D_kjvud")
 metadata/surf = 4
 
-[node name="S026" type="CollisionShape3D" parent="Course/StairBank" unique_id=645494093]
+[node name="S026" type="CollisionShape3D" parent="Course/StairBank" unique_id=89767684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.29, -0.65)
 shape = SubResource("BoxShape3D_a2vox")
 metadata/surf = 4
 
-[node name="S027" type="CollisionShape3D" parent="Course/StairBank" unique_id=743328366]
+[node name="S027" type="CollisionShape3D" parent="Course/StairBank" unique_id=935884417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.4, -0.97)
 shape = SubResource("BoxShape3D_01sik")
 metadata/surf = 4
 
-[node name="S028" type="CollisionShape3D" parent="Course/StairBank" unique_id=1275085544]
+[node name="S028" type="CollisionShape3D" parent="Course/StairBank" unique_id=1897224515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.51, -1.29)
 shape = SubResource("BoxShape3D_4fdrm")
 metadata/surf = 4
 
-[node name="S029" type="CollisionShape3D" parent="Course/StairBank" unique_id=538678748]
+[node name="S029" type="CollisionShape3D" parent="Course/StairBank" unique_id=1916150190]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.62, -1.61)
 shape = SubResource("BoxShape3D_jxr26")
 metadata/surf = 4
 
-[node name="S030" type="CollisionShape3D" parent="Course/StairBank" unique_id=741543631]
+[node name="S030" type="CollisionShape3D" parent="Course/StairBank" unique_id=2070145067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.73, -1.93)
 shape = SubResource("BoxShape3D_dw7d7")
 metadata/surf = 4
 
-[node name="S031" type="CollisionShape3D" parent="Course/StairBank" unique_id=1611538003]
+[node name="S031" type="CollisionShape3D" parent="Course/StairBank" unique_id=398076921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.84, -2.25)
 shape = SubResource("BoxShape3D_qoo0h")
 metadata/surf = 4
 
-[node name="S032" type="CollisionShape3D" parent="Course/StairBank" unique_id=1791464222]
+[node name="S032" type="CollisionShape3D" parent="Course/StairBank" unique_id=1877675838]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 0.95, -2.57)
 shape = SubResource("BoxShape3D_n07d6")
 metadata/surf = 4
 
-[node name="S033" type="CollisionShape3D" parent="Course/StairBank" unique_id=1824965542]
+[node name="S033" type="CollisionShape3D" parent="Course/StairBank" unique_id=337004269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 1.06, -2.89)
 shape = SubResource("BoxShape3D_epfji")
 metadata/surf = 4
 
-[node name="S034" type="CollisionShape3D" parent="Course/StairBank" unique_id=641810828]
+[node name="S034" type="CollisionShape3D" parent="Course/StairBank" unique_id=743976812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 1.17, -3.21)
 shape = SubResource("BoxShape3D_1nl83")
 metadata/surf = 4
 
-[node name="S035" type="CollisionShape3D" parent="Course/StairBank" unique_id=507841123]
+[node name="S035" type="CollisionShape3D" parent="Course/StairBank" unique_id=86257001]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 1.17, -4.84)
 shape = SubResource("BoxShape3D_chr53")
 metadata/surf = 4
 
-[node name="S036" type="CollisionShape3D" parent="Course/StairBank" unique_id=689051912]
+[node name="S036" type="CollisionShape3D" parent="Course/StairBank" unique_id=370015398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 3.34, -6.19)
 shape = SubResource("BoxShape3D_38pyw")
 metadata/surf = 0
 
-[node name="S037" type="CollisionShape3D" parent="Course/StairBank" unique_id=1357606278]
+[node name="S037" type="CollisionShape3D" parent="Course/StairBank" unique_id=741768463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 0.020000001, 0.31)
 shape = SubResource("BoxShape3D_wxhnx")
 metadata/surf = 4
 
-[node name="S038" type="CollisionShape3D" parent="Course/StairBank" unique_id=297890632]
+[node name="S038" type="CollisionShape3D" parent="Course/StairBank" unique_id=450014656]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 0.19, -0.01)
 shape = SubResource("BoxShape3D_wilmu")
 metadata/surf = 4
 
-[node name="S039" type="CollisionShape3D" parent="Course/StairBank" unique_id=438161712]
+[node name="S039" type="CollisionShape3D" parent="Course/StairBank" unique_id=1515023766]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 0.36, -0.33)
 shape = SubResource("BoxShape3D_xfvmx")
 metadata/surf = 4
 
-[node name="S040" type="CollisionShape3D" parent="Course/StairBank" unique_id=1944533026]
+[node name="S040" type="CollisionShape3D" parent="Course/StairBank" unique_id=1896349010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 0.53000003, -0.65)
 shape = SubResource("BoxShape3D_g1eat")
 metadata/surf = 4
 
-[node name="S041" type="CollisionShape3D" parent="Course/StairBank" unique_id=207117979]
+[node name="S041" type="CollisionShape3D" parent="Course/StairBank" unique_id=1607894829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 0.7, -0.97)
 shape = SubResource("BoxShape3D_qbabs")
 metadata/surf = 4
 
-[node name="S042" type="CollisionShape3D" parent="Course/StairBank" unique_id=745823357]
+[node name="S042" type="CollisionShape3D" parent="Course/StairBank" unique_id=515924934]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 0.87, -1.29)
 shape = SubResource("BoxShape3D_l24a0")
 metadata/surf = 4
 
-[node name="S043" type="CollisionShape3D" parent="Course/StairBank" unique_id=1013095334]
+[node name="S043" type="CollisionShape3D" parent="Course/StairBank" unique_id=1291349153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 1.04, -1.61)
 shape = SubResource("BoxShape3D_022x5")
 metadata/surf = 4
 
-[node name="S044" type="CollisionShape3D" parent="Course/StairBank" unique_id=419972367]
+[node name="S044" type="CollisionShape3D" parent="Course/StairBank" unique_id=553159938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 1.21, -1.93)
 shape = SubResource("BoxShape3D_n3acb")
 metadata/surf = 4
 
-[node name="S045" type="CollisionShape3D" parent="Course/StairBank" unique_id=1400256713]
+[node name="S045" type="CollisionShape3D" parent="Course/StairBank" unique_id=62075879]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 1.21, -3.56)
 shape = SubResource("BoxShape3D_5kj1d")
 metadata/surf = 4
 
-[node name="S046" type="CollisionShape3D" parent="Course/StairBank" unique_id=313535577]
+[node name="S046" type="CollisionShape3D" parent="Course/StairBank" unique_id=385285261]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 3.42, -4.91)
 shape = SubResource("BoxShape3D_5pnsm")
 metadata/surf = 0
 
-[node name="S047" type="CollisionShape3D" parent="Course/StairBank" unique_id=1508117796]
+[node name="S047" type="CollisionShape3D" parent="Course/StairBank" unique_id=2070892704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 0.080000006, 0.31)
 shape = SubResource("BoxShape3D_ci668")
 metadata/surf = 4
 
-[node name="S048" type="CollisionShape3D" parent="Course/StairBank" unique_id=271055040]
+[node name="S048" type="CollisionShape3D" parent="Course/StairBank" unique_id=874739868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 0.31, -0.01)
 shape = SubResource("BoxShape3D_aaui0")
 metadata/surf = 4
 
-[node name="S049" type="CollisionShape3D" parent="Course/StairBank" unique_id=664868328]
+[node name="S049" type="CollisionShape3D" parent="Course/StairBank" unique_id=2088581033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 0.54, -0.33)
 shape = SubResource("BoxShape3D_teydu")
 metadata/surf = 4
 
-[node name="S050" type="CollisionShape3D" parent="Course/StairBank" unique_id=1844551780]
+[node name="S050" type="CollisionShape3D" parent="Course/StairBank" unique_id=780625060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 0.77000004, -0.65)
 shape = SubResource("BoxShape3D_lg6ae")
 metadata/surf = 4
 
-[node name="S051" type="CollisionShape3D" parent="Course/StairBank" unique_id=1533369970]
+[node name="S051" type="CollisionShape3D" parent="Course/StairBank" unique_id=380571963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 1, -0.97)
 shape = SubResource("BoxShape3D_bv01b")
 metadata/surf = 4
 
-[node name="S052" type="CollisionShape3D" parent="Course/StairBank" unique_id=1283946406]
+[node name="S052" type="CollisionShape3D" parent="Course/StairBank" unique_id=2020270291]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 1.23, -1.29)
 shape = SubResource("BoxShape3D_uqhdx")
 metadata/surf = 4
 
-[node name="S053" type="CollisionShape3D" parent="Course/StairBank" unique_id=1701960073]
+[node name="S053" type="CollisionShape3D" parent="Course/StairBank" unique_id=2030124071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 1.23, -2.92)
 shape = SubResource("BoxShape3D_76dm8")
 metadata/surf = 4
 
-[node name="S054" type="CollisionShape3D" parent="Course/StairBank" unique_id=1191805831]
+[node name="S054" type="CollisionShape3D" parent="Course/StairBank" unique_id=92866435]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 3.46, -4.27)
 shape = SubResource("BoxShape3D_pwp61")
 metadata/surf = 0
 
-[node name="S055" type="CollisionShape3D" parent="Course/StairBank" unique_id=1115238317]
+[node name="S055" type="CollisionShape3D" parent="Course/StairBank" unique_id=1673045806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.900001, 0.85, 3.9)
 shape = SubResource("BoxShape3D_dtmo2")
 metadata/surf = 0
 
-[node name="S056" type="CollisionShape3D" parent="Course/StairBank" unique_id=632974135]
+[node name="S056" type="CollisionShape3D" parent="Course/StairBank" unique_id=351678018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3, 0.85, 3.9)
 shape = SubResource("BoxShape3D_u6eu0")
 metadata/surf = 0
 
-[node name="S057" type="CollisionShape3D" parent="Course/StairBank" unique_id=1575090450]
+[node name="S057" type="CollisionShape3D" parent="Course/StairBank" unique_id=1725270874]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 2.35, 3.9)
 shape = SubResource("BoxShape3D_ih36k")
 metadata/surf = 0
 
-[node name="T045" type="Label3D" parent="Course" unique_id=443938989]
+[node name="T045" type="Label3D" parent="Course" unique_id=1918124024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.28, -8.95)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2487,7 +2487,7 @@ text = "0.12"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T046" type="Label3D" parent="Course" unique_id=1601499875]
+[node name="T046" type="Label3D" parent="Course" unique_id=645094880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2, 3.3999999, -6.07)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2499,7 +2499,7 @@ text = "0.22"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T047" type="Label3D" parent="Course" unique_id=1119852975]
+[node name="T047" type="Label3D" parent="Course" unique_id=1583123095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4, 3.48, -4.79)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2511,7 +2511,7 @@ text = "0.34"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T048" type="Label3D" parent="Course" unique_id=251980812]
+[node name="T048" type="Label3D" parent="Course" unique_id=1064852214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6, 3.52, -4.15)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2523,7 +2523,7 @@ text = "0.46"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T049" type="Label3D" parent="Course" unique_id=982162221]
+[node name="T049" type="Label3D" parent="Course" unique_id=916263525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 2.55, 3.99)
 visibility_range_end = 110.0
 pixel_size = 0.00875
@@ -2535,7 +2535,7 @@ text = "STAIR BANK"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T050" type="Label3D" parent="Course" unique_id=1373890950]
+[node name="T050" type="Label3D" parent="Course" unique_id=1117272483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6, 2.1, 3.99)
 visibility_range_end = 110.0
 pixel_size = 0.0054166666
@@ -2547,110 +2547,110 @@ text = "RISE PER STEP IN METRES"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="LadderTower" type="StaticBody3D" parent="Course" unique_id=1376955920]
+[node name="LadderTower" type="StaticBody3D" parent="Course" unique_id=538267706]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1401241469]
+[node name="S000" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1239895930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.55, -20.15)
 shape = SubResource("BoxShape3D_7we5e")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1251833927]
+[node name="S001" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1951373720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, 4.55, -21.15)
 shape = SubResource("BoxShape3D_407rm")
 metadata/surf = 0
 
-[node name="S002" type="CollisionShape3D" parent="Course/LadderTower" unique_id=12337035]
+[node name="S002" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1838187348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, 4.55, -25.55)
 shape = SubResource("BoxShape3D_pp8fp")
 metadata/surf = 0
 
-[node name="S003" type="CollisionShape3D" parent="Course/LadderTower" unique_id=296388096]
+[node name="S003" type="CollisionShape3D" parent="Course/LadderTower" unique_id=682970748]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 4.55, -21.15)
 shape = SubResource("BoxShape3D_6hg0h")
 metadata/surf = 0
 
-[node name="S004" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1837282791]
+[node name="S004" type="CollisionShape3D" parent="Course/LadderTower" unique_id=304094401]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1, 4.55, -25.55)
 shape = SubResource("BoxShape3D_ucl1c")
 metadata/surf = 0
 
-[node name="S005" type="CollisionShape3D" parent="Course/LadderTower" unique_id=85232952]
+[node name="S005" type="CollisionShape3D" parent="Course/LadderTower" unique_id=772966269]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, -23.075)
 shape = SubResource("BoxShape3D_phk03")
 metadata/surf = 5
 
-[node name="S006" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1778004316]
+[node name="S006" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1594792346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35, 3.06, -22.975)
 shape = SubResource("BoxShape3D_flxag")
 metadata/surf = 0
 
-[node name="S007" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1407362291]
+[node name="S007" type="CollisionShape3D" parent="Course/LadderTower" unique_id=703742553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35, 3.06, -22.975)
 shape = SubResource("BoxShape3D_lybnc")
 metadata/surf = 0
 
-[node name="S008" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1417147060]
+[node name="S008" type="CollisionShape3D" parent="Course/LadderTower" unique_id=2115134889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06, -25.91)
 shape = SubResource("BoxShape3D_0rg1p")
 metadata/surf = 0
 
-[node name="S009" type="CollisionShape3D" parent="Course/LadderTower" unique_id=787740103]
+[node name="S009" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1888991105]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8, -23.075)
 shape = SubResource("BoxShape3D_tqw5j")
 metadata/surf = 5
 
-[node name="S010" type="CollisionShape3D" parent="Course/LadderTower" unique_id=2059697126]
+[node name="S010" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1486766720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35, 6.06, -22.975)
 shape = SubResource("BoxShape3D_w4l7m")
 metadata/surf = 0
 
-[node name="S011" type="CollisionShape3D" parent="Course/LadderTower" unique_id=275969006]
+[node name="S011" type="CollisionShape3D" parent="Course/LadderTower" unique_id=279956773]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35, 6.06, -22.975)
 shape = SubResource("BoxShape3D_ap13q")
 metadata/surf = 0
 
-[node name="S012" type="CollisionShape3D" parent="Course/LadderTower" unique_id=781209022]
+[node name="S012" type="CollisionShape3D" parent="Course/LadderTower" unique_id=17575930]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.06, -25.91)
 shape = SubResource("BoxShape3D_7ordg")
 metadata/surf = 0
 
-[node name="S013" type="CollisionShape3D" parent="Course/LadderTower" unique_id=537692486]
+[node name="S013" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1445285219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.8, -23.075)
 shape = SubResource("BoxShape3D_4odo0")
 metadata/surf = 5
 
-[node name="S014" type="CollisionShape3D" parent="Course/LadderTower" unique_id=871854415]
+[node name="S014" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1498600697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35, 9.06, -22.975)
 shape = SubResource("BoxShape3D_c27th")
 metadata/surf = 0
 
-[node name="S015" type="CollisionShape3D" parent="Course/LadderTower" unique_id=484065398]
+[node name="S015" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1451718911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35, 9.06, -22.975)
 shape = SubResource("BoxShape3D_q2g81")
 metadata/surf = 0
 
-[node name="S016" type="CollisionShape3D" parent="Course/LadderTower" unique_id=617483750]
+[node name="S016" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1535342718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.06, -25.91)
 shape = SubResource("BoxShape3D_c0cqj")
 metadata/surf = 0
 
-[node name="S017" type="CollisionShape3D" parent="Course/LadderTower" unique_id=478970206]
+[node name="S017" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1554796384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8999999, 0.85, -16.6)
 shape = SubResource("BoxShape3D_e0vdu")
 metadata/surf = 0
 
-[node name="S018" type="CollisionShape3D" parent="Course/LadderTower" unique_id=701586042]
+[node name="S018" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1030496714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0.85, -16.6)
 shape = SubResource("BoxShape3D_s0ysp")
 metadata/surf = 0
 
-[node name="S019" type="CollisionShape3D" parent="Course/LadderTower" unique_id=1520363586]
+[node name="S019" type="CollisionShape3D" parent="Course/LadderTower" unique_id=519344467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 2.35, -16.6)
 shape = SubResource("BoxShape3D_l3bpt")
 metadata/surf = 0
 
-[node name="T051" type="Label3D" parent="Course" unique_id=1217029774]
+[node name="T051" type="Label3D" parent="Course" unique_id=1879895858]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 2.45, -19.96)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2662,7 +2662,7 @@ text = "3.0 M"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T052" type="Label3D" parent="Course" unique_id=1493251445]
+[node name="T052" type="Label3D" parent="Course" unique_id=685069945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 5.45, -19.96)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2674,7 +2674,7 @@ text = "6.0 M"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T053" type="Label3D" parent="Course" unique_id=2012077339]
+[node name="T053" type="Label3D" parent="Course" unique_id=1934130093]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.55, 8.45, -19.96)
 visibility_range_end = 62.0
 pixel_size = 0.012916666
@@ -2686,7 +2686,7 @@ text = "9.0 M"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T054" type="Label3D" parent="Course" unique_id=65317805]
+[node name="T054" type="Label3D" parent="Course" unique_id=63085574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35, 9.55, -19.96)
 visibility_range_end = 62.0
 pixel_size = 0.0070833336
@@ -2700,22 +2700,22 @@ OVER 8.5"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Ladder0" type="Node3D" parent="Course" unique_id=784227634]
+[node name="Ladder0" type="Node3D" parent="Course" unique_id=1522577122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.55)
 script = ExtResource("7_m6l28")
 climb_height = 3.3
 
-[node name="Ladder1" type="Node3D" parent="Course" unique_id=2106684120]
+[node name="Ladder1" type="Node3D" parent="Course" unique_id=648455472]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -19.55)
 script = ExtResource("7_m6l28")
 climb_height = 3.3
 
-[node name="Ladder2" type="Node3D" parent="Course" unique_id=661266932]
+[node name="Ladder2" type="Node3D" parent="Course" unique_id=2133182351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -19.55)
 script = ExtResource("7_m6l28")
 climb_height = 3.3
 
-[node name="T055" type="Label3D" parent="Course" unique_id=1685470715]
+[node name="T055" type="Label3D" parent="Course" unique_id=1423795352]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 2.55, -16.51)
 visibility_range_end = 110.0
 pixel_size = 0.00875
@@ -2727,7 +2727,7 @@ text = "LADDER TOWER"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T056" type="Label3D" parent="Course" unique_id=593440563]
+[node name="T056" type="Label3D" parent="Course" unique_id=2090525002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 2.1, -16.51)
 visibility_range_end = 110.0
 pixel_size = 0.0054166666
@@ -2739,65 +2739,65 @@ text = "3 / 6 / 9 METRES"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="SlideRun" type="StaticBody3D" parent="Course" unique_id=1480079404]
+[node name="SlideRun" type="StaticBody3D" parent="Course" unique_id=938834398]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1381958040]
+[node name="S000" type="CollisionShape3D" parent="Course/SlideRun" unique_id=890352299]
 transform = Transform3D(-3.8732583e-08, 2.026012e-08, 1, 0.46349752, 0.8860982, 0, -0.8860982, 0.46349752, -4.371139e-08, 33, 1.2344666, -0.61513764)
 shape = SubResource("BoxShape3D_340qs")
 metadata/surf = 4
 
-[node name="S001" type="CollisionShape3D" parent="Course/SlideRun" unique_id=2004899876]
+[node name="S001" type="CollisionShape3D" parent="Course/SlideRun" unique_id=176154762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.55, -6.25)
 shape = SubResource("BoxShape3D_r1jm4")
 metadata/surf = 4
 
-[node name="S002" type="CollisionShape3D" parent="Course/SlideRun" unique_id=627292869]
+[node name="S002" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1069929600]
 transform = Transform3D(-4.0228944e-08, -1.70973e-08, 1, -0.39114064, 0.92033094, 0, -0.92033094, -0.39114064, -4.371139e-08, 33, 1.3778841, -12.163102)
 shape = SubResource("BoxShape3D_q717w")
 metadata/surf = 4
 
-[node name="S003" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1478879495]
+[node name="S003" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1513181741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.45, 1.3, -24.7)
 shape = SubResource("BoxShape3D_cryaf")
 metadata/surf = 4
 
-[node name="S004" type="CollisionShape3D" parent="Course/SlideRun" unique_id=525868548]
+[node name="S004" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1531030313]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.55, 1.3, -24.7)
 shape = SubResource("BoxShape3D_uqwym")
 metadata/surf = 4
 
-[node name="S005" type="CollisionShape3D" parent="Course/SlideRun" unique_id=251904483]
+[node name="S005" type="CollisionShape3D" parent="Course/SlideRun" unique_id=320971107]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 2, -19.1)
 shape = SubResource("BoxShape3D_23cic")
 metadata/surf = 5
 
-[node name="S006" type="CollisionShape3D" parent="Course/SlideRun" unique_id=446424631]
+[node name="S006" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1196085925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.6999999, -24.7)
 shape = SubResource("BoxShape3D_qike7")
 metadata/surf = 5
 
-[node name="S007" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1352409586]
+[node name="S007" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1708319216]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.52, -30.3)
 shape = SubResource("BoxShape3D_orkb6")
 metadata/surf = 5
 
-[node name="S008" type="CollisionShape3D" parent="Course/SlideRun" unique_id=758979282]
+[node name="S008" type="CollisionShape3D" parent="Course/SlideRun" unique_id=369293963]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.9, 0.85, 1.3)
 shape = SubResource("BoxShape3D_2l6fg")
 metadata/surf = 0
 
-[node name="S009" type="CollisionShape3D" parent="Course/SlideRun" unique_id=986304742]
+[node name="S009" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1349861139]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.300001, 0.85, 1.3)
 shape = SubResource("BoxShape3D_wlkxx")
 metadata/surf = 0
 
-[node name="S010" type="CollisionShape3D" parent="Course/SlideRun" unique_id=192065309]
+[node name="S010" type="CollisionShape3D" parent="Course/SlideRun" unique_id=1183067611]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6, 2.35, 1.3)
 shape = SubResource("BoxShape3D_o3dbr")
 metadata/surf = 0
 
-[node name="T057" type="Label3D" parent="Course" unique_id=1086991044]
+[node name="T057" type="Label3D" parent="Course" unique_id=869860321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 2, -16.12)
 visibility_range_end = 62.0
 pixel_size = 0.009166666
@@ -2809,7 +2809,7 @@ text = "1.70"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T058" type="Label3D" parent="Course" unique_id=276989775]
+[node name="T058" type="Label3D" parent="Course" unique_id=203541744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.6999999, -21.72)
 visibility_range_end = 62.0
 pixel_size = 0.009166666
@@ -2821,7 +2821,7 @@ text = "1.40"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T059" type="Label3D" parent="Course" unique_id=1212624034]
+[node name="T059" type="Label3D" parent="Course" unique_id=1086857570]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.52, -27.32)
 visibility_range_end = 62.0
 pixel_size = 0.009166666
@@ -2833,7 +2833,7 @@ text = "1.22"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T060" type="Label3D" parent="Course" unique_id=688679995]
+[node name="T060" type="Label3D" parent="Course" unique_id=1324331187]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6, 2.55, 1.39)
 visibility_range_end = 110.0
 pixel_size = 0.00875
@@ -2845,7 +2845,7 @@ text = "SLIDE RUN"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T061" type="Label3D" parent="Course" unique_id=839816828]
+[node name="T061" type="Label3D" parent="Course" unique_id=1771268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6, 2.1, 1.39)
 visibility_range_end = 110.0
 pixel_size = 0.0054166666
@@ -2857,7 +2857,7 @@ text = "ROOF CLEARANCE IN METRES"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=539354987 instance=ExtResource("8_y7yrl")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=198506092 instance=ExtResource("8_y7yrl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 16.8)
 collision_layer = 4
 collision_mask = 3
@@ -2866,247 +2866,247 @@ safe_margin = 0.008
 script = ExtResource("9_ewjlf")
 slide = SubResource("Resource_jt60j")
 
-[node name="Console" type="Node3D" parent="." unique_id=567525240]
+[node name="Console" type="Node3D" parent="." unique_id=1178700246]
 script = ExtResource("11_73xtx")
 player_path = NodePath("../Player")
 readout_path = NodePath("Readout")
 
-[node name="Frame" type="StaticBody3D" parent="Console" unique_id=838341599]
+[node name="Frame" type="StaticBody3D" parent="Console" unique_id=1935494954]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Console/Frame" unique_id=972198358]
+[node name="S000" type="CollisionShape3D" parent="Console/Frame" unique_id=770441236]
 transform = Transform3D(1, 0, 0, 0, 0.921061, -0.38941833, 0, 0.38941833, 0.921061, -5.2, 1.0699999, 9.9)
 shape = SubResource("BoxShape3D_kyw2b")
 metadata/surf = 0
 
-[node name="S001" type="CollisionShape3D" parent="Console/Frame" unique_id=1666007446]
+[node name="S001" type="CollisionShape3D" parent="Console/Frame" unique_id=442649214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5699997, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_5phcx")
 metadata/surf = 0
 
-[node name="S002" type="CollisionShape3D" parent="Console/Frame" unique_id=727777450]
+[node name="S002" type="CollisionShape3D" parent="Console/Frame" unique_id=1929719999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.62, 1, 9.4)
 shape = SubResource("BoxShape3D_5qkba")
 metadata/surf = 0
 
-[node name="S003" type="CollisionShape3D" parent="Console/Frame" unique_id=657506166]
+[node name="S003" type="CollisionShape3D" parent="Console/Frame" unique_id=1189665240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_81rl7")
 metadata/surf = 0
 
-[node name="S004" type="CollisionShape3D" parent="Console/Frame" unique_id=907093668]
+[node name="S004" type="CollisionShape3D" parent="Console/Frame" unique_id=648759916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7799997, 1, 9.4)
 shape = SubResource("BoxShape3D_3xw5j")
 metadata/surf = 0
 
-[node name="S005" type="CollisionShape3D" parent="Console/Frame" unique_id=735010776]
+[node name="S005" type="CollisionShape3D" parent="Console/Frame" unique_id=1084754384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.4, 9.4)
 shape = SubResource("BoxShape3D_x3b43")
 metadata/surf = 0
 
-[node name="S006" type="CollisionShape3D" parent="Console/Frame" unique_id=748030503]
+[node name="S006" type="CollisionShape3D" parent="Console/Frame" unique_id=1753877921]
 transform = Transform3D(1, 0, 0, 0, 0.921061, -0.38941833, 0, 0.38941833, 0.921061, 5.2, 1.0699999, 9.9)
 shape = SubResource("BoxShape3D_d8bno")
 metadata/surf = 0
 
-[node name="S007" type="CollisionShape3D" parent="Console/Frame" unique_id=1848058767]
+[node name="S007" type="CollisionShape3D" parent="Console/Frame" unique_id=766047982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.83, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_7psqs")
 metadata/surf = 0
 
-[node name="S008" type="CollisionShape3D" parent="Console/Frame" unique_id=1340297651]
+[node name="S008" type="CollisionShape3D" parent="Console/Frame" unique_id=2003989384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7799997, 1, 9.4)
 shape = SubResource("BoxShape3D_aifkd")
 metadata/surf = 0
 
-[node name="S009" type="CollisionShape3D" parent="Console/Frame" unique_id=1357202981]
+[node name="S009" type="CollisionShape3D" parent="Console/Frame" unique_id=229286278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5699997, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_y773q")
 metadata/surf = 0
 
-[node name="S010" type="CollisionShape3D" parent="Console/Frame" unique_id=515587830]
+[node name="S010" type="CollisionShape3D" parent="Console/Frame" unique_id=1135764675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.62, 1, 9.4)
 shape = SubResource("BoxShape3D_wo3d3")
 metadata/surf = 0
 
-[node name="S011" type="CollisionShape3D" parent="Console/Frame" unique_id=1272130258]
+[node name="S011" type="CollisionShape3D" parent="Console/Frame" unique_id=940454781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 1.4, 9.4)
 shape = SubResource("BoxShape3D_2qc0v")
 metadata/surf = 0
 
-[node name="S012" type="CollisionShape3D" parent="Console/Frame" unique_id=1102287289]
+[node name="S012" type="CollisionShape3D" parent="Console/Frame" unique_id=1521630489]
 transform = Transform3D(1, 0, 0, 0, 0.921061, -0.38941833, 0, 0.38941833, 0.921061, -8.9, 1.0699999, 9.9)
 shape = SubResource("BoxShape3D_b8itk")
 metadata/surf = 0
 
-[node name="S013" type="CollisionShape3D" parent="Console/Frame" unique_id=856095134]
+[node name="S013" type="CollisionShape3D" parent="Console/Frame" unique_id=19492477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2699995, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_ocubp")
 metadata/surf = 0
 
-[node name="S014" type="CollisionShape3D" parent="Console/Frame" unique_id=1296963847]
+[node name="S014" type="CollisionShape3D" parent="Console/Frame" unique_id=421043720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.32, 1, 9.4)
 shape = SubResource("BoxShape3D_6fo4s")
 metadata/surf = 0
 
-[node name="S015" type="CollisionShape3D" parent="Console/Frame" unique_id=1502784452]
+[node name="S015" type="CollisionShape3D" parent="Console/Frame" unique_id=1185762200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5299997, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_kte0m")
 metadata/surf = 0
 
-[node name="S016" type="CollisionShape3D" parent="Console/Frame" unique_id=792564589]
+[node name="S016" type="CollisionShape3D" parent="Console/Frame" unique_id=1440021440]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4799995, 1, 9.4)
 shape = SubResource("BoxShape3D_nj1bh")
 metadata/surf = 0
 
-[node name="S017" type="CollisionShape3D" parent="Console/Frame" unique_id=163857747]
+[node name="S017" type="CollisionShape3D" parent="Console/Frame" unique_id=1683104012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9, 1.4, 9.4)
 shape = SubResource("BoxShape3D_cnf3w")
 metadata/surf = 0
 
-[node name="S018" type="CollisionShape3D" parent="Console/Frame" unique_id=1847324307]
+[node name="S018" type="CollisionShape3D" parent="Console/Frame" unique_id=521983640]
 transform = Transform3D(1, 0, 0, 0, 0.921061, -0.38941833, 0, 0.38941833, 0.921061, 8.9, 1.0699999, 9.9)
 shape = SubResource("BoxShape3D_lhoh6")
 metadata/surf = 0
 
-[node name="S019" type="CollisionShape3D" parent="Console/Frame" unique_id=327300691]
+[node name="S019" type="CollisionShape3D" parent="Console/Frame" unique_id=1823676620]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5299997, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_5acaw")
 metadata/surf = 0
 
-[node name="S020" type="CollisionShape3D" parent="Console/Frame" unique_id=1603324757]
+[node name="S020" type="CollisionShape3D" parent="Console/Frame" unique_id=2127434864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4799995, 1, 9.4)
 shape = SubResource("BoxShape3D_ibknl")
 metadata/surf = 0
 
-[node name="S021" type="CollisionShape3D" parent="Console/Frame" unique_id=1997640692]
+[node name="S021" type="CollisionShape3D" parent="Console/Frame" unique_id=966829051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2699995, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_fkh6y")
 metadata/surf = 0
 
-[node name="S022" type="CollisionShape3D" parent="Console/Frame" unique_id=142294772]
+[node name="S022" type="CollisionShape3D" parent="Console/Frame" unique_id=1315833532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.32, 1, 9.4)
 shape = SubResource("BoxShape3D_p86pm")
 metadata/surf = 0
 
-[node name="S023" type="CollisionShape3D" parent="Console/Frame" unique_id=669490944]
+[node name="S023" type="CollisionShape3D" parent="Console/Frame" unique_id=1349972736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 1.4, 9.4)
 shape = SubResource("BoxShape3D_1mvmh")
 metadata/surf = 0
 
-[node name="S024" type="CollisionShape3D" parent="Console/Frame" unique_id=489162790]
+[node name="S024" type="CollisionShape3D" parent="Console/Frame" unique_id=2143963393]
 transform = Transform3D(1, 0, 0, 0, 0.921061, -0.38941833, 0, 0.38941833, 0.921061, -12.6, 1.0699999, 9.9)
 shape = SubResource("BoxShape3D_40rit")
 metadata/surf = 0
 
-[node name="S025" type="CollisionShape3D" parent="Console/Frame" unique_id=1845855825]
+[node name="S025" type="CollisionShape3D" parent="Console/Frame" unique_id=1590154282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.97, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_gbycf")
 metadata/surf = 0
 
-[node name="S026" type="CollisionShape3D" parent="Console/Frame" unique_id=1192138844]
+[node name="S026" type="CollisionShape3D" parent="Console/Frame" unique_id=882695612]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.02, 1, 9.4)
 shape = SubResource("BoxShape3D_fodvp")
 metadata/surf = 0
 
-[node name="S027" type="CollisionShape3D" parent="Console/Frame" unique_id=370607312]
+[node name="S027" type="CollisionShape3D" parent="Console/Frame" unique_id=206254485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2300005, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_p0nix")
 metadata/surf = 0
 
-[node name="S028" type="CollisionShape3D" parent="Console/Frame" unique_id=1460826743]
+[node name="S028" type="CollisionShape3D" parent="Console/Frame" unique_id=1746002979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.18, 1, 9.4)
 shape = SubResource("BoxShape3D_ilmxe")
 metadata/surf = 0
 
-[node name="S029" type="CollisionShape3D" parent="Console/Frame" unique_id=1390091550]
+[node name="S029" type="CollisionShape3D" parent="Console/Frame" unique_id=979968036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 1.4, 9.4)
 shape = SubResource("BoxShape3D_ugyqf")
 metadata/surf = 0
 
-[node name="S030" type="CollisionShape3D" parent="Console/Frame" unique_id=103827634]
+[node name="S030" type="CollisionShape3D" parent="Console/Frame" unique_id=1543419426]
 transform = Transform3D(1, 0, 0, 0, 0.921061, -0.38941833, 0, 0.38941833, 0.921061, 12.6, 1.0699999, 9.9)
 shape = SubResource("BoxShape3D_jd4vo")
 metadata/surf = 0
 
-[node name="S031" type="CollisionShape3D" parent="Console/Frame" unique_id=331821641]
+[node name="S031" type="CollisionShape3D" parent="Console/Frame" unique_id=1783107025]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2300005, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_iw3ri")
 metadata/surf = 0
 
-[node name="S032" type="CollisionShape3D" parent="Console/Frame" unique_id=1537076801]
+[node name="S032" type="CollisionShape3D" parent="Console/Frame" unique_id=2012118657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.18, 1, 9.4)
 shape = SubResource("BoxShape3D_01b3i")
 metadata/surf = 0
 
-[node name="S033" type="CollisionShape3D" parent="Console/Frame" unique_id=164835522]
+[node name="S033" type="CollisionShape3D" parent="Console/Frame" unique_id=1799715066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.97, 0.66999996, 9.9)
 shape = SubResource("BoxShape3D_sp5k1")
 metadata/surf = 0
 
-[node name="S034" type="CollisionShape3D" parent="Console/Frame" unique_id=1720342302]
+[node name="S034" type="CollisionShape3D" parent="Console/Frame" unique_id=394461333]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.02, 1, 9.4)
 shape = SubResource("BoxShape3D_o6dhg")
 metadata/surf = 0
 
-[node name="S035" type="CollisionShape3D" parent="Console/Frame" unique_id=1558696803]
+[node name="S035" type="CollisionShape3D" parent="Console/Frame" unique_id=283201232]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 1.4, 9.4)
 shape = SubResource("BoxShape3D_ttxhj")
 metadata/surf = 0
 
-[node name="S036" type="CollisionShape3D" parent="Console/Frame" unique_id=1343796953]
+[node name="S036" type="CollisionShape3D" parent="Console/Frame" unique_id=1227713485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 11.4)
 shape = SubResource("BoxShape3D_3l4k0")
 metadata/surf = 0
 
-[node name="S037" type="CollisionShape3D" parent="Console/Frame" unique_id=211995507]
+[node name="S037" type="CollisionShape3D" parent="Console/Frame" unique_id=179455501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24, 11.4)
 shape = SubResource("BoxShape3D_5p7qk")
 metadata/surf = 0
 
-[node name="S038" type="CollisionShape3D" parent="Console/Frame" unique_id=1021027021]
+[node name="S038" type="CollisionShape3D" parent="Console/Frame" unique_id=906723704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59, 11.1)
 shape = SubResource("BoxShape3D_0xbrk")
 metadata/surf = 0
 
-[node name="S039" type="CollisionShape3D" parent="Console/Frame" unique_id=780642593]
+[node name="S039" type="CollisionShape3D" parent="Console/Frame" unique_id=1252737749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 2.65, 11.1)
 shape = SubResource("BoxShape3D_sx5vd")
 metadata/surf = 0
 
-[node name="S040" type="CollisionShape3D" parent="Console/Frame" unique_id=1643643261]
+[node name="S040" type="CollisionShape3D" parent="Console/Frame" unique_id=145950005]
 transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -1.94, 4.84, 11.12)
 shape = SubResource("BoxShape3D_sf60s")
 metadata/surf = 0
 
-[node name="S041" type="CollisionShape3D" parent="Console/Frame" unique_id=516011055]
+[node name="S041" type="CollisionShape3D" parent="Console/Frame" unique_id=1978850168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 2.65, 11.1)
 shape = SubResource("BoxShape3D_gmm4n")
 metadata/surf = 0
 
-[node name="S042" type="CollisionShape3D" parent="Console/Frame" unique_id=1827210083]
+[node name="S042" type="CollisionShape3D" parent="Console/Frame" unique_id=1981758578]
 transform = Transform3D(-0.70710677, -0.70710677, 0, 0.70710677, -0.70710677, 0, 0, 0, 1, 1.94, 4.84, 11.12)
 shape = SubResource("BoxShape3D_n4s8r")
 metadata/surf = 0
 
-[node name="S043" type="CollisionShape3D" parent="Console/Frame" unique_id=1000532256]
+[node name="S043" type="CollisionShape3D" parent="Console/Frame" unique_id=1259828499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38, 11.1)
 shape = SubResource("BoxShape3D_0krlr")
 metadata/surf = 0
 
-[node name="S044" type="CollisionShape3D" parent="Console/Frame" unique_id=2042648386]
+[node name="S044" type="CollisionShape3D" parent="Console/Frame" unique_id=2074846826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44, 5, 11.05)
 shape = SubResource("BoxShape3D_junhb")
 metadata/surf = 0
 
-[node name="S045" type="CollisionShape3D" parent="Console/Frame" unique_id=1332343583]
+[node name="S045" type="CollisionShape3D" parent="Console/Frame" unique_id=210813847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44, 5, 11.05)
 shape = SubResource("BoxShape3D_i7hb2")
 metadata/surf = 0
 
-[node name="Desks" type="Node3D" parent="Console" unique_id=1753072863]
+[node name="Desks" type="Node3D" parent="Console" unique_id=131439488]
 
-[node name="T062" type="Label3D" parent="Console/Desks" unique_id=1713000356]
+[node name="T062" type="Label3D" parent="Console/Desks" unique_id=1278944753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 1.4, 9.48)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -3118,7 +3118,7 @@ text = "GROUND"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slider_walk_speed" type="StaticBody3D" parent="Console/Desks" unique_id=168296842 instance=ExtResource("12_y15d4")]
+[node name="Slider_walk_speed" type="StaticBody3D" parent="Console/Desks" unique_id=1373879782 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -6.5249996, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3128,7 +3128,7 @@ value_format = "%.2f m/s"
 control_id = &"walk_speed"
 label_text = "WALK"
 
-[node name="Slider_sprint_speed" type="StaticBody3D" parent="Console/Desks" unique_id=1664304416 instance=ExtResource("12_y15d4")]
+[node name="Slider_sprint_speed" type="StaticBody3D" parent="Console/Desks" unique_id=17176247 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -5.995, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3138,7 +3138,7 @@ value_format = "%.2f m/s"
 control_id = &"sprint_speed"
 label_text = "SPRINT"
 
-[node name="Slider_crouch_speed" type="StaticBody3D" parent="Console/Desks" unique_id=2055677101 instance=ExtResource("12_y15d4")]
+[node name="Slider_crouch_speed" type="StaticBody3D" parent="Console/Desks" unique_id=96024263 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -5.4649997, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3148,7 +3148,7 @@ value_format = "%.2f m/s"
 control_id = &"crouch_speed"
 label_text = "CROUCH"
 
-[node name="Slider_ground_accel" type="StaticBody3D" parent="Console/Desks" unique_id=838773259 instance=ExtResource("12_y15d4")]
+[node name="Slider_ground_accel" type="StaticBody3D" parent="Console/Desks" unique_id=1538766979 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -4.935, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3160,7 +3160,7 @@ value_format = "%.1f"
 control_id = &"ground_accel"
 label_text = "ACCEL"
 
-[node name="Slider_friction" type="StaticBody3D" parent="Console/Desks" unique_id=932938519 instance=ExtResource("12_y15d4")]
+[node name="Slider_friction" type="StaticBody3D" parent="Console/Desks" unique_id=294702203 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -4.4049997, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3171,7 +3171,7 @@ value_format = "%.1f"
 control_id = &"friction"
 label_text = "FRICTION"
 
-[node name="Slider_stop_speed" type="StaticBody3D" parent="Console/Desks" unique_id=649163272 instance=ExtResource("12_y15d4")]
+[node name="Slider_stop_speed" type="StaticBody3D" parent="Console/Desks" unique_id=212523740 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -3.875, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3183,7 +3183,7 @@ value_format = "%.1f"
 control_id = &"stop_speed"
 label_text = "STOP SPEED"
 
-[node name="T063" type="Label3D" parent="Console/Desks" unique_id=1564137128]
+[node name="T063" type="Label3D" parent="Console/Desks" unique_id=1669550431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 1.4, 9.48)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -3195,7 +3195,7 @@ text = "AIR"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slider_gravity" type="StaticBody3D" parent="Console/Desks" unique_id=925812908 instance=ExtResource("12_y15d4")]
+[node name="Slider_gravity" type="StaticBody3D" parent="Console/Desks" unique_id=553768286 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 3.875, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3207,7 +3207,7 @@ value_format = "%.1f"
 control_id = &"gravity"
 label_text = "GRAVITY"
 
-[node name="Slider_jump_velocity" type="StaticBody3D" parent="Console/Desks" unique_id=1882206576 instance=ExtResource("12_y15d4")]
+[node name="Slider_jump_velocity" type="StaticBody3D" parent="Console/Desks" unique_id=1661755063 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 4.4049997, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3218,7 +3218,7 @@ value_format = "%.2f m/s"
 control_id = &"jump_velocity"
 label_text = "JUMP"
 
-[node name="Slider_air_accel" type="StaticBody3D" parent="Console/Desks" unique_id=1817770955 instance=ExtResource("12_y15d4")]
+[node name="Slider_air_accel" type="StaticBody3D" parent="Console/Desks" unique_id=1176527968 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 4.935, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3230,7 +3230,7 @@ value_format = "%.1f"
 control_id = &"air_accel"
 label_text = "AIR ACCEL"
 
-[node name="Slider_air_wish_speed" type="StaticBody3D" parent="Console/Desks" unique_id=2077343046 instance=ExtResource("12_y15d4")]
+[node name="Slider_air_wish_speed" type="StaticBody3D" parent="Console/Desks" unique_id=320275474 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 5.4649997, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3241,7 +3241,7 @@ step = 0.01
 control_id = &"air_wish_speed"
 label_text = "AIR WISH"
 
-[node name="Slider_coyote_time" type="StaticBody3D" parent="Console/Desks" unique_id=539830764 instance=ExtResource("12_y15d4")]
+[node name="Slider_coyote_time" type="StaticBody3D" parent="Console/Desks" unique_id=218109816 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 5.995, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3252,7 +3252,7 @@ value_format = "%.3f s"
 control_id = &"coyote_time"
 label_text = "COYOTE"
 
-[node name="Slider_jump_buffer_time" type="StaticBody3D" parent="Console/Desks" unique_id=120590790 instance=ExtResource("12_y15d4")]
+[node name="Slider_jump_buffer_time" type="StaticBody3D" parent="Console/Desks" unique_id=1044689440 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 6.5249996, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3263,7 +3263,7 @@ value_format = "%.3f s"
 control_id = &"jump_buffer_time"
 label_text = "JUMP BUFFER"
 
-[node name="T064" type="Label3D" parent="Console/Desks" unique_id=1171832251]
+[node name="T064" type="Label3D" parent="Console/Desks" unique_id=1999717151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9, 1.4, 9.48)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -3275,7 +3275,7 @@ text = "BODY"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slider_step_height" type="StaticBody3D" parent="Console/Desks" unique_id=1619907490 instance=ExtResource("12_y15d4")]
+[node name="Slider_step_height" type="StaticBody3D" parent="Console/Desks" unique_id=1606099827 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -10.224999, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3286,7 +3286,7 @@ value_format = "%.2f m"
 control_id = &"step_height"
 label_text = "STEP"
 
-[node name="Slider_snap_probe" type="StaticBody3D" parent="Console/Desks" unique_id=402371588 instance=ExtResource("12_y15d4")]
+[node name="Slider_snap_probe" type="StaticBody3D" parent="Console/Desks" unique_id=1306506115 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -9.695, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3297,7 +3297,7 @@ value_format = "%.2f m"
 control_id = &"snap_probe"
 label_text = "SNAP DOWN"
 
-[node name="Slider_crouch_height" type="StaticBody3D" parent="Console/Desks" unique_id=1856798244 instance=ExtResource("12_y15d4")]
+[node name="Slider_crouch_height" type="StaticBody3D" parent="Console/Desks" unique_id=652574585 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -9.165, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3309,7 +3309,7 @@ value_format = "%.2f m"
 control_id = &"crouch_height"
 label_text = "CROUCH H"
 
-[node name="Slider_stand_eye" type="StaticBody3D" parent="Console/Desks" unique_id=838509840 instance=ExtResource("12_y15d4")]
+[node name="Slider_stand_eye" type="StaticBody3D" parent="Console/Desks" unique_id=1501385414 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -8.634999, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3321,7 +3321,7 @@ value_format = "%.2f m"
 control_id = &"stand_eye"
 label_text = "EYE"
 
-[node name="Slider_crouch_rate" type="StaticBody3D" parent="Console/Desks" unique_id=1558154818 instance=ExtResource("12_y15d4")]
+[node name="Slider_crouch_rate" type="StaticBody3D" parent="Console/Desks" unique_id=1346324504 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -8.105, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3333,7 +3333,7 @@ value_format = "%.1f"
 control_id = &"crouch_rate"
 label_text = "DUCK RATE"
 
-[node name="Slider_ground_skin" type="StaticBody3D" parent="Console/Desks" unique_id=81131174 instance=ExtResource("12_y15d4")]
+[node name="Slider_ground_skin" type="StaticBody3D" parent="Console/Desks" unique_id=898668521 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -7.575, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3345,7 +3345,7 @@ value_format = "%.3f m"
 control_id = &"ground_skin"
 label_text = "FOOT SKIN"
 
-[node name="T065" type="Label3D" parent="Console/Desks" unique_id=1217889826]
+[node name="T065" type="Label3D" parent="Console/Desks" unique_id=1242944302]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9, 1.4, 9.48)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -3357,7 +3357,7 @@ text = "SLIDE"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slider_slide_entry_speed" type="StaticBody3D" parent="Console/Desks" unique_id=1497086011 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_entry_speed" type="StaticBody3D" parent="Console/Desks" unique_id=162167154 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 7.5199995, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3369,7 +3369,7 @@ value_format = "%.1f m/s"
 control_id = &"slide_entry_speed"
 label_text = "ENTRY"
 
-[node name="Slider_slide_boost" type="StaticBody3D" parent="Console/Desks" unique_id=1562592514 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_boost" type="StaticBody3D" parent="Console/Desks" unique_id=1367497689 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 7.9799995, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3381,7 +3381,7 @@ value_format = "%.2f x"
 control_id = &"slide_boost"
 label_text = "BOOST"
 
-[node name="Slider_slide_min_speed" type="StaticBody3D" parent="Console/Desks" unique_id=2004748341 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_min_speed" type="StaticBody3D" parent="Console/Desks" unique_id=772808717 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 8.44, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3393,7 +3393,7 @@ value_format = "%.1f m/s"
 control_id = &"slide_min_speed"
 label_text = "FLOOR"
 
-[node name="Slider_slide_max_speed" type="StaticBody3D" parent="Console/Desks" unique_id=2069439799 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_max_speed" type="StaticBody3D" parent="Console/Desks" unique_id=2129952280 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 8.9, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3405,7 +3405,7 @@ value_format = "%.1f m/s"
 control_id = &"slide_max_speed"
 label_text = "CEILING"
 
-[node name="Slider_slide_friction" type="StaticBody3D" parent="Console/Desks" unique_id=906049316 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_friction" type="StaticBody3D" parent="Console/Desks" unique_id=1842899460 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 9.36, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3415,7 +3415,7 @@ step = 0.01
 control_id = &"slide_friction"
 label_text = "FRICTION"
 
-[node name="Slider_slide_steer" type="StaticBody3D" parent="Console/Desks" unique_id=2114088293 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_steer" type="StaticBody3D" parent="Console/Desks" unique_id=906461122 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 9.82, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3426,7 +3426,7 @@ value_format = "%.1f"
 control_id = &"slide_steer"
 label_text = "STEER"
 
-[node name="Slider_slide_gravity_scale" type="StaticBody3D" parent="Console/Desks" unique_id=835248854 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_gravity_scale" type="StaticBody3D" parent="Console/Desks" unique_id=1679409420 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 10.28, 1.2307792, 9.750835)
 collision_layer = 2
 collision_mask = 0
@@ -3437,7 +3437,7 @@ value_format = "%.2f x"
 control_id = &"slide_gravity_scale"
 label_text = "PULL"
 
-[node name="Slider_slide_downhill_friction" type="StaticBody3D" parent="Console/Desks" unique_id=1595561378 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_downhill_friction" type="StaticBody3D" parent="Console/Desks" unique_id=756126780 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 7.5199995, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3449,7 +3449,7 @@ value_format = "%.2f x"
 control_id = &"slide_downhill_friction"
 label_text = "DOWNHILL"
 
-[node name="Slider_slide_uphill_friction" type="StaticBody3D" parent="Console/Desks" unique_id=150632031 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_uphill_friction" type="StaticBody3D" parent="Console/Desks" unique_id=772412506 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 7.9799995, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3460,7 +3460,7 @@ value_format = "%.2f x"
 control_id = &"slide_uphill_friction"
 label_text = "UPHILL"
 
-[node name="Slider_slide_jump_vertical" type="StaticBody3D" parent="Console/Desks" unique_id=332725865 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_jump_vertical" type="StaticBody3D" parent="Console/Desks" unique_id=740337148 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 8.44, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3472,7 +3472,7 @@ value_format = "%.2f x"
 control_id = &"slide_jump_vertical"
 label_text = "HOP"
 
-[node name="Slider_slide_jump_lift_gain" type="StaticBody3D" parent="Console/Desks" unique_id=7016416 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_jump_lift_gain" type="StaticBody3D" parent="Console/Desks" unique_id=1187323253 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 8.9, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3482,7 +3482,7 @@ value_format = "%.3f"
 control_id = &"slide_jump_lift_gain"
 label_text = "LIFT"
 
-[node name="Slider_slide_jump_boost" type="StaticBody3D" parent="Console/Desks" unique_id=1016631349 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_jump_boost" type="StaticBody3D" parent="Console/Desks" unique_id=1546751646 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 9.36, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3494,7 +3494,7 @@ value_format = "%.2f x"
 control_id = &"slide_jump_boost"
 label_text = "LAUNCH"
 
-[node name="Slider_slide_jump_air_turn" type="StaticBody3D" parent="Console/Desks" unique_id=1810207583 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_jump_air_turn" type="StaticBody3D" parent="Console/Desks" unique_id=1878655280 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 9.82, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3505,7 +3505,7 @@ value_format = "%.0f d/s"
 control_id = &"slide_jump_air_turn"
 label_text = "AIR TURN"
 
-[node name="Slider_slide_land_conserve" type="StaticBody3D" parent="Console/Desks" unique_id=610995848 instance=ExtResource("12_y15d4")]
+[node name="Slider_slide_land_conserve" type="StaticBody3D" parent="Console/Desks" unique_id=568660529 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 10.28, 1.0750117, 10.119259)
 collision_layer = 2
 collision_mask = 0
@@ -3514,7 +3514,7 @@ step = 0.01
 control_id = &"slide_land_conserve"
 label_text = "CHAIN"
 
-[node name="T066" type="Label3D" parent="Console/Desks" unique_id=163948389]
+[node name="T066" type="Label3D" parent="Console/Desks" unique_id=16643631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6, 1.4, 9.48)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -3526,7 +3526,7 @@ text = "TRAVERSAL"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slider_mantle_auto_rise" type="StaticBody3D" parent="Console/Desks" unique_id=382002126 instance=ExtResource("12_y15d4")]
+[node name="Slider_mantle_auto_rise" type="StaticBody3D" parent="Console/Desks" unique_id=1585196625 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -13.925, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3538,7 +3538,7 @@ value_format = "%.2f m"
 control_id = &"mantle_auto_rise"
 label_text = "AUTO VAULT"
 
-[node name="Slider_mantle_manual_rise" type="StaticBody3D" parent="Console/Desks" unique_id=1308758658 instance=ExtResource("12_y15d4")]
+[node name="Slider_mantle_manual_rise" type="StaticBody3D" parent="Console/Desks" unique_id=957974427 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -13.395, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3550,7 +3550,7 @@ value_format = "%.2f m"
 control_id = &"mantle_manual_rise"
 label_text = "HELD VAULT"
 
-[node name="Slider_ladder_climb_speed" type="StaticBody3D" parent="Console/Desks" unique_id=381802190 instance=ExtResource("12_y15d4")]
+[node name="Slider_ladder_climb_speed" type="StaticBody3D" parent="Console/Desks" unique_id=1847480538 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -12.865001, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3561,7 +3561,7 @@ value_format = "%.2f m/s"
 control_id = &"ladder_climb_speed"
 label_text = "CLIMB"
 
-[node name="Slider_ladder_descend_speed" type="StaticBody3D" parent="Console/Desks" unique_id=1083432323 instance=ExtResource("12_y15d4")]
+[node name="Slider_ladder_descend_speed" type="StaticBody3D" parent="Console/Desks" unique_id=72020347 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -12.335, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3572,7 +3572,7 @@ value_format = "%.2f m/s"
 control_id = &"ladder_descend_speed"
 label_text = "DESCEND"
 
-[node name="Slider_ladder_kick_out" type="StaticBody3D" parent="Console/Desks" unique_id=128233799 instance=ExtResource("12_y15d4")]
+[node name="Slider_ladder_kick_out" type="StaticBody3D" parent="Console/Desks" unique_id=457295228 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -11.805, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3583,7 +3583,7 @@ value_format = "%.1f m/s"
 control_id = &"ladder_kick_out"
 label_text = "KICK OUT"
 
-[node name="Slider_ladder_kick_up" type="StaticBody3D" parent="Console/Desks" unique_id=2081284784 instance=ExtResource("12_y15d4")]
+[node name="Slider_ladder_kick_up" type="StaticBody3D" parent="Console/Desks" unique_id=1290143100 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, -11.275001, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3594,7 +3594,7 @@ value_format = "%.1f m/s"
 control_id = &"ladder_kick_up"
 label_text = "KICK UP"
 
-[node name="T067" type="Label3D" parent="Console/Desks" unique_id=1120779428]
+[node name="T067" type="Label3D" parent="Console/Desks" unique_id=1713760834]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6, 1.4, 9.48)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -3606,7 +3606,7 @@ text = "FEEL"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slider_stair_smooth_rate" type="StaticBody3D" parent="Console/Desks" unique_id=1055529272 instance=ExtResource("12_y15d4")]
+[node name="Slider_stair_smooth_rate" type="StaticBody3D" parent="Console/Desks" unique_id=1759584572 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 11.275001, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3618,7 +3618,7 @@ value_format = "%.1f"
 control_id = &"stair_smooth_rate"
 label_text = "STAIR SMOOTH"
 
-[node name="Slider_bob_idle_rate" type="StaticBody3D" parent="Console/Desks" unique_id=217943790 instance=ExtResource("12_y15d4")]
+[node name="Slider_bob_idle_rate" type="StaticBody3D" parent="Console/Desks" unique_id=1476051918 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 11.805, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3628,7 +3628,7 @@ step = 0.01
 control_id = &"bob_idle_rate"
 label_text = "BOB IDLE"
 
-[node name="Slider_bob_speed_gain" type="StaticBody3D" parent="Console/Desks" unique_id=88346227 instance=ExtResource("12_y15d4")]
+[node name="Slider_bob_speed_gain" type="StaticBody3D" parent="Console/Desks" unique_id=170085509 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 12.335, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3638,7 +3638,7 @@ step = 0.01
 control_id = &"bob_speed_gain"
 label_text = "BOB GAIN"
 
-[node name="Slider_land_spring_stiffness" type="StaticBody3D" parent="Console/Desks" unique_id=332738377 instance=ExtResource("12_y15d4")]
+[node name="Slider_land_spring_stiffness" type="StaticBody3D" parent="Console/Desks" unique_id=718224819 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 12.865001, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3650,7 +3650,7 @@ value_format = "%.0f"
 control_id = &"land_spring_stiffness"
 label_text = "LAND SPRING"
 
-[node name="Slider_land_spring_damping" type="StaticBody3D" parent="Console/Desks" unique_id=36110727 instance=ExtResource("12_y15d4")]
+[node name="Slider_land_spring_damping" type="StaticBody3D" parent="Console/Desks" unique_id=383831049 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 13.395, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3662,7 +3662,7 @@ value_format = "%.1f"
 control_id = &"land_spring_damping"
 label_text = "LAND DAMP"
 
-[node name="Slider_look_scale" type="StaticBody3D" parent="Console/Desks" unique_id=1715515182 instance=ExtResource("12_y15d4")]
+[node name="Slider_look_scale" type="StaticBody3D" parent="Console/Desks" unique_id=2080861381 instance=ExtResource("12_y15d4")]
 transform = Transform3D(1, 0, 0, 0, 0.38941833, 0.921061, 0, -0.921061, 0.38941833, 13.925, 1.1528955, 9.935047)
 collision_layer = 2
 collision_mask = 0
@@ -3674,7 +3674,7 @@ value_format = "%.2f x"
 control_id = &"look_scale"
 label_text = "LOOK TRIM"
 
-[node name="Preset" type="StaticBody3D" parent="Console" unique_id=1938835309 instance=ExtResource("14_lgdn5")]
+[node name="Preset" type="StaticBody3D" parent="Console" unique_id=333177233 instance=ExtResource("14_lgdn5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, 1.59, 11.185)
 collision_layer = 2
 collision_mask = 0
@@ -3684,7 +3684,7 @@ wraps = false
 control_id = &"preset"
 label_text = "PRESET"
 
-[node name="Reset" type="StaticBody3D" parent="Console" unique_id=2069199919 instance=ExtResource("16_x4nic")]
+[node name="Reset" type="StaticBody3D" parent="Console" unique_id=552549059 instance=ExtResource("16_x4nic")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, 1.59, 11.185)
 collision_layer = 2
 collision_mask = 0
@@ -3694,7 +3694,7 @@ lamp_on_material = SubResource("ShaderMaterial_j20o7")
 control_id = &"reset"
 label_text = "RESET"
 
-[node name="SlowMotion" type="StaticBody3D" parent="Console" unique_id=122036863 instance=ExtResource("19_cojx1")]
+[node name="SlowMotion" type="StaticBody3D" parent="Console" unique_id=309511323 instance=ExtResource("19_cojx1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1.295, 11.46)
 collision_layer = 2
 collision_mask = 0
@@ -3704,7 +3704,7 @@ on_text = "0.32x"
 control_id = &"slowmo"
 label_text = "SLOW"
 
-[node name="Readout" type="Node3D" parent="Console" unique_id=365799567 instance=ExtResource("21_dibli")]
+[node name="Readout" type="Node3D" parent="Console" unique_id=50089678 instance=ExtResource("21_dibli")]
 transform = Transform3D(1.9, 0, 0, 0, 1.8757318, -0.3027046, 0, 0.3027046, 1.8757318, 0, 4.6, 11.2)
 script = ExtResource("22_13fpb")
 glow = 1.9
@@ -3716,7 +3716,7 @@ metadata/mount_axis = 2
 metadata/mount_direction = 1
 metadata/mount_frame = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="T068" type="Label3D" parent="Console" unique_id=798528178]
+[node name="T068" type="Label3D" parent="Console" unique_id=1480086741]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38, 11.2300005)
 visibility_range_end = 62.0
 pixel_size = 0.00625
@@ -3728,131 +3728,131 @@ text = "MOVEMENT BENCH"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="SpeedLoop" type="Node3D" parent="." unique_id=583596240]
+[node name="SpeedLoop" type="Node3D" parent="." unique_id=1855450152]
 
-[node name="Arches" type="StaticBody3D" parent="SpeedLoop" unique_id=227413403]
+[node name="Arches" type="StaticBody3D" parent="SpeedLoop" unique_id=1390836655]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1991627487]
+[node name="S000" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=582183765]
 transform = Transform3D(-0.07124705, 0, 0.9974587, 0, 1, 0, -0.9974587, 0, -0.07124705, 0.15674351, 1.45, 7.6944094)
 shape = SubResource("BoxShape3D_xe5l3")
 metadata/surf = 0
 
-[node name="S001" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=994628357]
+[node name="S001" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1772332365]
 transform = Transform3D(-0.07124705, 0, 0.9974587, 0, 1, 0, -0.9974587, 0, -0.07124705, -0.15674351, 1.45, 3.3055909)
 shape = SubResource("BoxShape3D_crpu8")
 metadata/surf = 0
 
-[node name="S002" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=2004356523]
+[node name="S002" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=734944243]
 transform = Transform3D(-0.07124705, 0, 0.9974587, 0, 1, 0, -0.9974587, 0, -0.07124705, 0, 3.05, 5.5)
 shape = SubResource("BoxShape3D_rb2xt")
 metadata/surf = 0
 
-[node name="S003" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1851245283]
+[node name="S003" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=292130527]
 transform = Transform3D(0.40450606, 0, 0.91453534, 0, 1, 0, -0.91453534, 0, 0.40450606, -26.889914, 1.45, -3.988022)
 shape = SubResource("BoxShape3D_ec37h")
 metadata/surf = 0
 
-[node name="S004" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1935228479]
+[node name="S004" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1954937390]
 transform = Transform3D(0.40450606, 0, 0.91453534, 0, 1, 0, -0.91453534, 0, 0.40450606, -25.110086, 1.45, -8.011978)
 shape = SubResource("BoxShape3D_1hul8")
 metadata/surf = 0
 
-[node name="S005" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=619285337]
+[node name="S005" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1780447547]
 transform = Transform3D(0.40450606, 0, 0.91453534, 0, 1, 0, -0.91453534, 0, 0.40450606, -26, 3.05, -6)
 shape = SubResource("BoxShape3D_4lc2d")
 metadata/surf = 0
 
-[node name="S006" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1354135711]
+[node name="S006" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1808584166]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -9.555635, 1.45, -25.555635)
 shape = SubResource("BoxShape3D_di274")
 metadata/surf = 0
 
-[node name="S007" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1401906726]
+[node name="S007" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=2018918292]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -6.444365, 1.45, -22.444365)
 shape = SubResource("BoxShape3D_ygncu")
 metadata/surf = 0
 
-[node name="S008" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1442972945]
+[node name="S008" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1688291936]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -8, 3.05, -24)
 shape = SubResource("BoxShape3D_i8pwr")
 metadata/surf = 0
 
-[node name="S009" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=37666431]
+[node name="S009" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=2032696463]
 transform = Transform3D(0.2169304, 0, -0.97618705, 0, 1, 0, 0.97618705, 0, 0.2169304, 9.522753, 1.45, -30.147612)
 shape = SubResource("BoxShape3D_w20yk")
 metadata/surf = 0
 
-[node name="S010" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1285109695]
+[node name="S010" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=701223820]
 transform = Transform3D(0.2169304, 0, -0.97618705, 0, 1, 0, 0.97618705, 0, 0.2169304, 10.477247, 1.45, -25.852388)
 shape = SubResource("BoxShape3D_dcpxl")
 metadata/surf = 0
 
-[node name="S011" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=2074125961]
+[node name="S011" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1734262555]
 transform = Transform3D(0.2169304, 0, -0.97618705, 0, 1, 0, 0.97618705, 0, 0.2169304, 10, 3.05, -28)
 shape = SubResource("BoxShape3D_ncbov")
 metadata/surf = 0
 
-[node name="S012" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=559095762]
+[node name="S012" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1983311876]
 transform = Transform3D(-0.9456866, 0, -0.32507977, 0, 1, 0, 0.32507977, 0, -0.9456866, 23.080511, 1.45, 3.2848244)
 shape = SubResource("BoxShape3D_6qpej")
 metadata/surf = 0
 
-[node name="S013" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1310540412]
+[node name="S013" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1044721461]
 transform = Transform3D(-0.9456866, 0, -0.32507977, 0, 1, 0, 0.32507977, 0, -0.9456866, 18.919489, 1.45, 4.7151756)
 shape = SubResource("BoxShape3D_ur32l")
 metadata/surf = 0
 
-[node name="S014" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=1699808193]
+[node name="S014" type="CollisionShape3D" parent="SpeedLoop/Arches" unique_id=577181992]
 transform = Transform3D(-0.9456866, 0, -0.32507977, 0, 1, 0, 0.32507977, 0, -0.9456866, 21, 3.05, 4)
 shape = SubResource("BoxShape3D_w5uui")
 metadata/surf = 0
 
-[node name="Gate0" type="Area3D" parent="SpeedLoop" unique_id=1598115996]
+[node name="Gate0" type="Area3D" parent="SpeedLoop" unique_id=1128129303]
 transform = Transform3D(-0.07124705, 0, 0.9974587, 0, 1, 0, -0.9974587, 0, -0.07124705, 0, 0, 5.5)
 script = ExtResource("23_afndv")
 gate_name = "START"
 pass_sound = ExtResource("24_losdr")
 lap_sound = ExtResource("25_qy4uo")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate0" unique_id=213299942]
+[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate0" unique_id=597853341]
 unit_size = 5.0
 max_distance = 70.0
 
-[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate0" unique_id=1933213832]
+[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate0" unique_id=957507553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 visible = false
 
-[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate0/Beacon" unique_id=721661825]
+[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate0/Beacon" unique_id=617750148]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_vf82e")
 metadata/holo_scan = 0.0
 
-[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate0/Beacon" unique_id=734433704]
+[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate0/Beacon" unique_id=1619655560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_gs03w")
 metadata/holo_scan = 0.0
 
-[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate0/Beacon" unique_id=644433945]
+[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate0/Beacon" unique_id=329669776]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_csvoo")
 metadata/holo_scan = 0.0
 
-[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate0/Beacon" unique_id=453966528]
+[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate0/Beacon" unique_id=1190719485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 omni_range = 5.5
 
-[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate0" unique_id=440397085]
+[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate0" unique_id=1085456231]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("BoxShape3D_1eryw")
 
-[node name="Board" type="Label3D" parent="SpeedLoop/Gate0" unique_id=667555849]
+[node name="Board" type="Label3D" parent="SpeedLoop/Gate0" unique_id=2056223511]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, 0.22399999)
 visibility_range_end = 62.0
 pixel_size = 0.0054166666
@@ -3865,7 +3865,7 @@ text = "START
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Gate1" type="Area3D" parent="SpeedLoop" unique_id=632919701]
+[node name="Gate1" type="Area3D" parent="SpeedLoop" unique_id=1360529087]
 transform = Transform3D(0.40450606, 0, 0.91453534, 0, 1, 0, -0.91453534, 0, 0.40450606, -26, 0, -6)
 script = ExtResource("23_afndv")
 gate_index = 1
@@ -3873,44 +3873,44 @@ gate_name = "LEDGE BANK"
 pass_sound = ExtResource("24_losdr")
 lap_sound = ExtResource("25_qy4uo")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate1" unique_id=1676253059]
+[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate1" unique_id=1035183168]
 unit_size = 5.0
 max_distance = 70.0
 
-[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate1" unique_id=1882496908]
+[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate1" unique_id=135405746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 visible = false
 
-[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate1/Beacon" unique_id=77412441]
+[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate1/Beacon" unique_id=531465940]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_1x3me")
 metadata/holo_scan = 0.0
 
-[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate1/Beacon" unique_id=1657077914]
+[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate1/Beacon" unique_id=648277584]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_723i4")
 metadata/holo_scan = 0.0
 
-[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate1/Beacon" unique_id=1014618946]
+[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate1/Beacon" unique_id=1173181255]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_xh4sq")
 metadata/holo_scan = 0.0
 
-[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate1/Beacon" unique_id=19030364]
+[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate1/Beacon" unique_id=435175372]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 omni_range = 5.5
 
-[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate1" unique_id=224033479]
+[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate1" unique_id=1649777460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("BoxShape3D_drmw3")
 
-[node name="Board" type="Label3D" parent="SpeedLoop/Gate1" unique_id=1740163737]
+[node name="Board" type="Label3D" parent="SpeedLoop/Gate1" unique_id=357626433]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, 0.22399999)
 visibility_range_end = 62.0
 pixel_size = 0.0054166666
@@ -3923,7 +3923,7 @@ text = "LEDGE BANK
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Gate2" type="Area3D" parent="SpeedLoop" unique_id=497088064]
+[node name="Gate2" type="Area3D" parent="SpeedLoop" unique_id=1885601288]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -8, 0, -24)
 script = ExtResource("23_afndv")
 gate_index = 2
@@ -3931,44 +3931,44 @@ gate_name = "TOWER"
 pass_sound = ExtResource("24_losdr")
 lap_sound = ExtResource("25_qy4uo")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate2" unique_id=799261739]
+[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate2" unique_id=2027014867]
 unit_size = 5.0
 max_distance = 70.0
 
-[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate2" unique_id=831229538]
+[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate2" unique_id=141647324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 visible = false
 
-[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate2/Beacon" unique_id=1556931561]
+[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate2/Beacon" unique_id=1818345095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_y2n83")
 metadata/holo_scan = 0.0
 
-[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate2/Beacon" unique_id=1220228168]
+[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate2/Beacon" unique_id=631916050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_6by4w")
 metadata/holo_scan = 0.0
 
-[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate2/Beacon" unique_id=2021403814]
+[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate2/Beacon" unique_id=402087017]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_mrtc0")
 metadata/holo_scan = 0.0
 
-[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate2/Beacon" unique_id=1607232745]
+[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate2/Beacon" unique_id=1829210003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 omni_range = 5.5
 
-[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate2" unique_id=1180321684]
+[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate2" unique_id=1611141526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("BoxShape3D_snddh")
 
-[node name="Board" type="Label3D" parent="SpeedLoop/Gate2" unique_id=783783851]
+[node name="Board" type="Label3D" parent="SpeedLoop/Gate2" unique_id=596950027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, 0.22399999)
 visibility_range_end = 62.0
 pixel_size = 0.0054166666
@@ -3981,7 +3981,7 @@ text = "TOWER
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Gate3" type="Area3D" parent="SpeedLoop" unique_id=1215298931]
+[node name="Gate3" type="Area3D" parent="SpeedLoop" unique_id=1589583510]
 transform = Transform3D(0.2169304, 0, -0.97618705, 0, 1, 0, 0.97618705, 0, 0.2169304, 10, 0, -28)
 script = ExtResource("23_afndv")
 gate_index = 3
@@ -3989,44 +3989,44 @@ gate_name = "SLOPE FAN"
 pass_sound = ExtResource("24_losdr")
 lap_sound = ExtResource("25_qy4uo")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate3" unique_id=1491681630]
+[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate3" unique_id=1708786966]
 unit_size = 5.0
 max_distance = 70.0
 
-[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate3" unique_id=206227414]
+[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate3" unique_id=159856002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 visible = false
 
-[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate3/Beacon" unique_id=616852251]
+[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate3/Beacon" unique_id=221123844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_w48t4")
 metadata/holo_scan = 0.0
 
-[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate3/Beacon" unique_id=294571256]
+[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate3/Beacon" unique_id=783330079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_a7re6")
 metadata/holo_scan = 0.0
 
-[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate3/Beacon" unique_id=1140712053]
+[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate3/Beacon" unique_id=483055434]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_cawul")
 metadata/holo_scan = 0.0
 
-[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate3/Beacon" unique_id=789683688]
+[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate3/Beacon" unique_id=1146170230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 omni_range = 5.5
 
-[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate3" unique_id=1367963045]
+[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate3" unique_id=1286935710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("BoxShape3D_5kaka")
 
-[node name="Board" type="Label3D" parent="SpeedLoop/Gate3" unique_id=402825507]
+[node name="Board" type="Label3D" parent="SpeedLoop/Gate3" unique_id=1667918529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, 0.22399999)
 visibility_range_end = 62.0
 pixel_size = 0.0054166666
@@ -4039,7 +4039,7 @@ text = "SLOPE FAN
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Gate4" type="Area3D" parent="SpeedLoop" unique_id=352465583]
+[node name="Gate4" type="Area3D" parent="SpeedLoop" unique_id=810292524]
 transform = Transform3D(-0.9456866, 0, -0.32507977, 0, 1, 0, 0.32507977, 0, -0.9456866, 21, 0, 4)
 script = ExtResource("23_afndv")
 gate_index = 4
@@ -4047,44 +4047,44 @@ gate_name = "STAIR BANK"
 pass_sound = ExtResource("24_losdr")
 lap_sound = ExtResource("25_qy4uo")
 
-[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate4" unique_id=650615294]
+[node name="Sound" type="AudioStreamPlayer3D" parent="SpeedLoop/Gate4" unique_id=211534867]
 unit_size = 5.0
 max_distance = 70.0
 
-[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate4" unique_id=1711554364]
+[node name="Beacon" type="Node3D" parent="SpeedLoop/Gate4" unique_id=1944346535]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.27, 0)
 visible = false
 
-[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate4/Beacon" unique_id=709541669]
+[node name="Lamp" type="MeshInstance3D" parent="SpeedLoop/Gate4/Beacon" unique_id=1593083475]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_bhbtm")
 metadata/holo_scan = 0.0
 
-[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate4/Beacon" unique_id=1397635234]
+[node name="Column0" type="MeshInstance3D" parent="SpeedLoop/Gate4/Beacon" unique_id=1555434341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_1mupu")
 metadata/holo_scan = 0.0
 
-[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate4/Beacon" unique_id=2118364306]
+[node name="Column1" type="MeshInstance3D" parent="SpeedLoop/Gate4/Beacon" unique_id=1314170070]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.92, 0)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_1w63i")
 metadata/holo_scan = 0.0
 
-[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate4/Beacon" unique_id=410344251]
+[node name="Glow" type="OmniLight3D" parent="SpeedLoop/Gate4/Beacon" unique_id=1266932494]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 omni_range = 5.5
 
-[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate4" unique_id=1320375460]
+[node name="Hit" type="CollisionShape3D" parent="SpeedLoop/Gate4" unique_id=28103326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 shape = SubResource("BoxShape3D_1u5vf")
 
-[node name="Board" type="Label3D" parent="SpeedLoop/Gate4" unique_id=573851343]
+[node name="Board" type="Label3D" parent="SpeedLoop/Gate4" unique_id=1218798103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05, 0.22399999)
 visibility_range_end = 62.0
 pixel_size = 0.0054166666
@@ -4097,41 +4097,41 @@ text = "STAIR BANK
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="RunTimer" type="Node" parent="SpeedLoop" unique_id=1070918805]
+[node name="RunTimer" type="Node" parent="SpeedLoop" unique_id=402086259]
 script = ExtResource("27_7gu0r")
 
-[node name="Scoreboard" type="Node3D" parent="." unique_id=1359564844]
+[node name="Scoreboard" type="Node3D" parent="." unique_id=2002241407]
 script = ExtResource("28_32amj")
 
-[node name="Posts" type="StaticBody3D" parent="Scoreboard" unique_id=643395490]
+[node name="Posts" type="StaticBody3D" parent="Scoreboard" unique_id=420659288]
 collision_mask = 0
 
-[node name="S000" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=1640137579]
+[node name="S000" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=966305375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.45, 1.05, 4.6)
 shape = SubResource("BoxShape3D_i0pgp")
 metadata/surf = 0
 
-[node name="S001" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=1635908132]
+[node name="S001" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=23475433]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.349999, 1.05, 4.6)
 shape = SubResource("BoxShape3D_orff2")
 metadata/surf = 0
 
-[node name="S002" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=223822742]
+[node name="S002" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=1239937318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4, 2.68, 4.6)
 shape = SubResource("BoxShape3D_by1t3")
 metadata/surf = 0
 
-[node name="S003" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=561261809]
+[node name="S003" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=436470892]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 0.7, 4.6)
 shape = SubResource("BoxShape3D_saeag")
 metadata/surf = 0
 
-[node name="S004" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=462620987]
+[node name="S004" type="CollisionShape3D" parent="Scoreboard/Posts" unique_id=808266824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 1.44, 4.6)
 shape = SubResource("BoxShape3D_i82at")
 metadata/surf = 0
 
-[node name="Who" type="Label3D" parent="Scoreboard" unique_id=1810838028]
+[node name="Who" type="Label3D" parent="Scoreboard" unique_id=887721942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4, 3.1, 4.71)
 visibility_range_end = 62.0
 double_sided = false
@@ -4142,7 +4142,7 @@ text = "PLAYER 1"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Best" type="Label3D" parent="Scoreboard" unique_id=1008550899]
+[node name="Best" type="Label3D" parent="Scoreboard" unique_id=1093646837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4, 2.66, 4.71)
 visibility_range_end = 62.0
 pixel_size = 0.008333334
@@ -4154,7 +4154,7 @@ text = "- - . - -"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Last" type="Label3D" parent="Scoreboard" unique_id=201059882]
+[node name="Last" type="Label3D" parent="Scoreboard" unique_id=806709616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4, 2.22, 4.71)
 visibility_range_end = 62.0
 pixel_size = 0.004166667
@@ -4166,7 +4166,7 @@ text = "LAST  - - . - -"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="T077" type="Label3D" parent="Scoreboard" unique_id=873982619]
+[node name="T077" type="Label3D" parent="Scoreboard" unique_id=399753559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 1.02, 4.75)
 visibility_range_end = 62.0
 pixel_size = 0.0035416668
@@ -4178,17 +4178,17 @@ text = "RIVAL BEST"
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slot0" type="Node3D" parent="Scoreboard" unique_id=1791630774]
+[node name="Slot0" type="Node3D" parent="Scoreboard" unique_id=252236976]
 visible = false
 
-[node name="Panel" type="MeshInstance3D" parent="Scoreboard/Slot0" unique_id=1350860831]
+[node name="Panel" type="MeshInstance3D" parent="Scoreboard/Slot0" unique_id=713331278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 1.92, 4.63)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_qgh3s")
 metadata/holo_scan = 1.0
 
-[node name="Name" type="Label3D" parent="Scoreboard/Slot0" unique_id=800991729]
+[node name="Name" type="Label3D" parent="Scoreboard/Slot0" unique_id=145479321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 2.09, 4.66)
 visibility_range_end = 62.0
 pixel_size = 0.0039583333
@@ -4199,7 +4199,7 @@ outline_modulate = Color(0.035, 0.031, 0.028, 1)
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Time" type="Label3D" parent="Scoreboard/Slot0" unique_id=1047487268]
+[node name="Time" type="Label3D" parent="Scoreboard/Slot0" unique_id=1473008580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 1.79, 4.66)
 visibility_range_end = 62.0
 pixel_size = 0.00625
@@ -4210,17 +4210,17 @@ outline_modulate = Color(0.035, 0.031, 0.028, 1)
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slot1" type="Node3D" parent="Scoreboard" unique_id=1867284056]
+[node name="Slot1" type="Node3D" parent="Scoreboard" unique_id=144449587]
 visible = false
 
-[node name="Panel" type="MeshInstance3D" parent="Scoreboard/Slot1" unique_id=2005702477]
+[node name="Panel" type="MeshInstance3D" parent="Scoreboard/Slot1" unique_id=1699373411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 2.72, 4.63)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_0grbl")
 metadata/holo_scan = 1.0
 
-[node name="Name" type="Label3D" parent="Scoreboard/Slot1" unique_id=697794574]
+[node name="Name" type="Label3D" parent="Scoreboard/Slot1" unique_id=700901153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 2.89, 4.66)
 visibility_range_end = 62.0
 pixel_size = 0.0039583333
@@ -4231,7 +4231,7 @@ outline_modulate = Color(0.035, 0.031, 0.028, 1)
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Time" type="Label3D" parent="Scoreboard/Slot1" unique_id=1220393666]
+[node name="Time" type="Label3D" parent="Scoreboard/Slot1" unique_id=263793278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 2.59, 4.66)
 visibility_range_end = 62.0
 pixel_size = 0.00625
@@ -4242,17 +4242,17 @@ outline_modulate = Color(0.035, 0.031, 0.028, 1)
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Slot2" type="Node3D" parent="Scoreboard" unique_id=122595176]
+[node name="Slot2" type="Node3D" parent="Scoreboard" unique_id=357721971]
 visible = false
 
-[node name="Panel" type="MeshInstance3D" parent="Scoreboard/Slot2" unique_id=2031958257]
+[node name="Panel" type="MeshInstance3D" parent="Scoreboard/Slot2" unique_id=1516253483]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 3.52, 4.63)
 material_override = ExtResource("26_v000g")
 cast_shadow = 0
 mesh = SubResource("QuadMesh_rlroc")
 metadata/holo_scan = 1.0
 
-[node name="Name" type="Label3D" parent="Scoreboard/Slot2" unique_id=291111604]
+[node name="Name" type="Label3D" parent="Scoreboard/Slot2" unique_id=494552006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 3.69, 4.66)
 visibility_range_end = 62.0
 pixel_size = 0.0039583333
@@ -4263,7 +4263,7 @@ outline_modulate = Color(0.035, 0.031, 0.028, 1)
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Time" type="Label3D" parent="Scoreboard/Slot2" unique_id=872033199]
+[node name="Time" type="Label3D" parent="Scoreboard/Slot2" unique_id=2034083027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 3.39, 4.66)
 visibility_range_end = 62.0
 pixel_size = 0.00625
@@ -4274,10 +4274,10 @@ outline_modulate = Color(0.035, 0.031, 0.028, 1)
 font = ExtResource("6_nxqlq")
 font_size = 48
 
-[node name="Link" type="Node" parent="." unique_id=2104114034]
+[node name="Link" type="Node" parent="." unique_id=2089063021]
 script = ExtResource("29_62xbi")
 
-[node name="Hands" type="Node3D" parent="." unique_id=910416222]
+[node name="Hands" type="Node3D" parent="." unique_id=781198996]
 process_physics_priority = -32
 script = ExtResource("30_tgvqq")
 eye_path = NodePath("../Player/Eye")

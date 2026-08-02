@@ -186,11 +186,7 @@ func bone_shells() -> Array[Dictionary]:
 	var out: Array[Dictionary] = []
 	out.resize(n)
 	for b in n:
-		out[b] = {
-			"solid": solid[b] != 0,
-			"box": AABB(lows[b], highs[b] - lows[b]),
-			"mass": mass[b]
-		}
+		out[b] = {"solid": solid[b] != 0, "box": AABB(lows[b], highs[b] - lows[b]), "mass": mass[b]}
 	return out
 
 
