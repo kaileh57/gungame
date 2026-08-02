@@ -1,26 +1,15 @@
-verify_scenes — 2026-08-01T15:33:18
+verify_scenes — 2026-08-01T17:27:21
 120 frames per demo
 
-OK    main_menu       1.5s
-FAIL  range           3.1s  exit=0
-        WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
-        ERROR: 1 resources still in use at exit (run with --verbose for details).
-FAIL  bestiary        2.0s  exit=0
-        WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
-        ERROR: 1 resources still in use at exit (run with --verbose for details).
-OK    ash_flats       3.2s
-OK    arena           2.3s
-OK    firefight       3.4s
-FAIL  gunbench        1.9s  exit=0
-        WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
-        ERROR: 1 resources still in use at exit (run with --verbose for details).
-FAIL  movement        2.8s  exit=0
-        WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
-        ERROR: 1 resources still in use at exit (run with --verbose for details).
-FAIL  visuals         2.2s  exit=0
-        WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
-        ERROR: 1 resources still in use at exit (run with --verbose for details).
-OK    prefabs         2.5s
+OK    main_menu       1.7s
+OK    range           3.4s
+OK    bestiary        2.2s
+OK    ash_flats       3.5s
+OK    arena           2.6s
+OK    firefight       3.6s
+OK    gunbench        2.1s
+OK    movement        2.9s
+OK    visuals         2.4s
+OK    prefabs         2.6s
 
-10 checked, 5 failed
-failed: range, bestiary, gunbench, movement, visuals
+10 checked, 0 failed

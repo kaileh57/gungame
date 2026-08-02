@@ -193,18 +193,13 @@ const STAT_FIELDS := [
 	"fit_error",
 ]
 
-## Columns of the per-mode / per-archetype character table: heading, `GunSpec`
-## field, decimals. `rpm` is reported separately as a min/mean/max band, because
-## the whole point of the rate work is how wide that band is inside one bucket.
-const CHAR_COLS := [
-	["cyclic", "cyclic", 0],
-	["recV", "recoil_vertical", 4],
-	["recH", "recoil_horizontal", 4],
-	["settle", "recoil_settle", 3],
-	["period", "recoil_period", 2],
-	["kick", "kick", 0],
-	["hand", "handling", 0],
-]
+## Per-bucket character columns, as `GunSpec field:decimals`. `rpm` is reported
+## separately as a min/mean/max band, because how WIDE that band is inside one
+## bucket is the whole question the rate work has to answer.
+const CHAR_COLS := (
+	"cyclic:0 recoil_vertical:4 recoil_horizontal:4 recoil_settle:3"
+	+ " recoil_period:2 kick:0 handling:0"
+)
 
 ## The rows the before/after and ablation tables report. Deliberately only the
 ## metrics the shipped departures are meant to move, so a surprise is visible.
@@ -625,12 +620,8 @@ func _census(pools: Dictionary, tuning: GunTuning, label: String) -> Dictionary:
 	_say("")
 	_say("feed census")
 	_dump_counts(feed_count)
-	_say("")
-	_say("rate and recoil character by fire mode")
-	_char_dump(mode_char)
-	_say("")
-	_say("rate and recoil character by archetype")
-	_char_dump(arch_char)
+	_char_dump(mode_char, "by fire mode")
+	_char_dump(arch_char, "by archetype")
 	_say("")
 	_say("quirk census")
 	_dump_counts(quirk_count)
@@ -941,43 +932,37 @@ func _tally(d: Dictionary, key: String) -> void:
 
 
 ## Accumulate one bucket of the rate-and-recoil character table. Two guns of
-## different classes are supposed to land on visibly different ROWS here; a table
-## whose rows all read alike is a census of one gun wearing nine hats.
+## different classes are meant to land on visibly different ROWS here.
 func _char_tally(d: Dictionary, key: String, w: GunSpec) -> void:
-	var row: Dictionary = d.get(key, {})
-	if row.is_empty():
-		row = {"n": 0, "lo": INF, "hi": -INF, "rpm": 0.0}
-		for c: Array in CHAR_COLS:
-			row[c[0]] = 0.0
-		d[key] = row
+	var row: Dictionary = d.get(key, {"n": 0, "lo": INF, "hi": -INF, "rpm": 0.0, "mean": 0.0})
+	d[key] = row
 	row["n"] = int(row["n"]) + 1
 	row["lo"] = minf(float(row["lo"]), float(w.rpm))
 	row["hi"] = maxf(float(row["hi"]), float(w.rpm))
 	row["rpm"] = float(row["rpm"]) + float(w.rpm)
-	for c: Array in CHAR_COLS:
-		row[c[0]] = float(row[c[0]]) + float(w.get(c[1]))
+	row["mean"] = float(row["rpm"]) / float(row["n"])
+	for c: String in CHAR_COLS.split(" "):
+		row[c] = float(row.get(c, 0.0)) + float(w.get(c.get_slice(":", 0)))
 
 
-## Print a character table, fastest mean rate first.
-func _char_dump(d: Dictionary) -> void:
+## Print one character table, fastest mean rate first.
+func _char_dump(d: Dictionary, title: String) -> void:
 	var keys: Array = d.keys()
-	keys.sort_custom(
-		func(a: String, b: String) -> bool:
-			return float(d[a]["rpm"]) / float(d[a]["n"]) > float(d[b]["rpm"]) / float(d[b]["n"])
-	)
-	var head: String = "  %-19s %5s %6s %7s %6s" % ["bucket", "n", "rpmLo", "rpmMean", "rpmHi"]
-	for c: Array in CHAR_COLS:
-		head += " %8s" % c[0]
+	keys.sort_custom(func(a: String, b: String) -> bool: return d[a]["mean"] > d[b]["mean"])
+	var head: String = "  %-19s %5s %6s %7s %6s" % [title, "n", "rpmLo", "rpmMean", "rpmHi"]
+	for c: String in CHAR_COLS.split(" "):
+		head += " %10s" % c.get_slice(":", 0).trim_prefix("recoil_")
+	_say("")
 	_say(head)
 	for k: String in keys:
 		var r: Dictionary = d[k]
 		var n: float = float(r["n"])
 		var line: String = (
 			"  %-19s %5d %6.0f %7.0f %6.0f"
-			% [k, int(n), float(r["lo"]), float(r["rpm"]) / n, float(r["hi"])]
+			% [k, int(n), float(r["lo"]), float(r["mean"]), float(r["hi"])]
 		)
-		for c: Array in CHAR_COLS:
-			line += ("%%8.%df" % int(c[2])) % (float(r[c[0]]) / n)
+		for c: String in CHAR_COLS.split(" "):
+			line += ("%%10.%sf" % c.get_slice(":", 1)) % (float(r[c]) / n)
 		_say(line)
 
 

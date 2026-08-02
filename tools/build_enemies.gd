@@ -29,6 +29,9 @@ const ACTOR_SCRIPT_PATH: String = "res://systems/enemies/enemy_actor.gd"
 const BODY_SCRIPT_PATH: String = "res://systems/enemies/enemy_body.gd"
 
 const OUT_DIR: String = "res://data/enemies"
+## Ragdolls live in their own directory so nothing that walks `data/enemies/*.res`
+## looking for a species ever picks one up.
+const RAGDOLL_DIR: String = "res://data/enemies/ragdolls"
 const REPORT_PATH: String = "res://data/enemy_bake_report.txt"
 
 ## The reference's validation grid: frames sampled per clip, `t = i/frames * len`.
@@ -49,6 +52,67 @@ const COLLIDER_WIDTH_K: float = 0.5
 const AIM_HEIGHT_K: float = 0.62
 ## Eye point as a fraction of body height.
 const EYE_HEIGHT_K: float = 0.92
+
+# ------------------------------------------------------------------ ragdoll
+#
+# Every constant below shapes the physics ragdoll baked into
+# `res://data/enemies/ragdolls/<id>.res`. See `_bake_ragdoll` for why the set of
+# simulated bones is a pruned STRUCTURAL set rather than every bone: a tail, a
+# rotor and a finger add joints and solve cost and change nothing a corpse does.
+
+## Longest simulated chain a species may bake. A body past this drops its
+## smallest-mass simulated bones first; nothing in the roster comes close.
+const RAGDOLL_MAX_BONES: int = 24
+## Aspect ratio at which a bone's shell is called a limb and gets a capsule
+## rather than a box. Below it the shell is a torso, a head or a pelvis.
+const RAGDOLL_CAPSULE_RATIO: float = 1.55
+## Smallest half-extent, radius or half-height a ragdoll shape may have. Jolt
+## solves sub-centimetre shapes badly and they buy nothing at this scale.
+const RAGDOLL_MIN_EXTENT: float = 0.035
+## A bone lighter than this share of the body is not worth a rigid body of its
+## own; its mass rolls up into its nearest simulated ancestor and it rides along
+## rigidly, which is what a hand or a foot pad does anyway.
+const RAGDOLL_MIN_MASS_SHARE: float = 0.004
+## Mass clamp, as a share of the whole body. A joint between a 40 kg torso and a
+## 0.2 kg forearm is soft and jittery in every solver; pulling the ratio in is
+## what buys a settle instead of a shiver.
+const RAGDOLL_MASS_MIN_SHARE: float = 0.020
+const RAGDOLL_MASS_MAX_SHARE: float = 0.340
+## Cone-twist limits in DEGREES, keyed by joint role. Godot's
+## `joint_constraints/swing_span` and `twist_span` are degrees, not radians.
+##
+## Every joint is a cone twist, including the knee and the elbow. A hinge would be
+## anatomically truer, but the hinge angle's SIGN depends on the solver's frame
+## convention and a hinge fitted backwards bends a knee the wrong way — which
+## reads as broken in a way a stiff knee never does. A 26 deg cone folds a leg
+## under a falling body convincingly and cannot invert it.
+const RAGDOLL_JOINTS: Dictionary = {
+	"spine": [24.0, 16.0],
+	"neck": [34.0, 22.0],
+	"head": [30.0, 26.0],
+	"hip": [56.0, 26.0],
+	"knee": [26.0, 10.0],
+	"ankle": [26.0, 14.0],
+	"shoulder": [64.0, 32.0],
+	"elbow": [30.0, 12.0],
+	"wrist": [30.0, 20.0],
+	"held": [10.0, 10.0]
+}
+## Angular damping per joint role — the single biggest lever on "puppet" versus
+## "body". The torso is allowed to keep rotating; the limbs are not.
+const RAGDOLL_ANGULAR_DAMP: Dictionary = {
+	"spine": 1.4, "neck": 2.2, "head": 2.2, "hip": 2.6, "knee": 3.2, "ankle": 3.6,
+	"shoulder": 2.6, "elbow": 3.2, "wrist": 3.6, "held": 4.0
+}
+## Linear damping, applied in REPLACE mode so a level's default area damp cannot
+## change how a corpse falls.
+const RAGDOLL_LINEAR_DAMP: float = 0.22
+## Baked gravity scale. `EnemyBody.ragdoll_gravity_scale` overrides it live; the
+## reference's hand-authored collapse falls at 2.8 g because true gravity reads
+## floaty on a body this size, and a real ragdoll has the same problem.
+const RAGDOLL_GRAVITY_SCALE: float = 1.85
+## Contact friction. High: a corpse that slides after it lands looks like a prop.
+const RAGDOLL_FRICTION: float = 0.95
 
 
 ## One material's worth of merged geometry.

@@ -136,6 +136,64 @@ func lowest_point(core_only: bool) -> float:
 	return lo
 
 
+## Per-bone solid shell: the bone-local bounding box of everything welded to that
+## bone, and the mass that geometry carries.
+##
+## One entry per bone, in bone order. `solid` is false for a bone that carries no
+## non-fx primitive at all — a pure pivot — and its box and mass are meaningless.
+##
+## The box is expressed in the BONE's own frame, which makes it a rest-pose
+## quantity that stays correct in every pose: a part never moves relative to its
+## bone. Mass is RAW volume times density — the same product `EnemyStats.derive`
+## sums, but without its whole-body `MASS_FUDGE`, because the overlap that fudge
+## corrects for is not distributed evenly over the bones. A caller that wants the
+## bestiary's mass should scale these by `stats.mass / sum`, which is exact and
+## does not drag the stats module into the rig core.
+func bone_shells() -> Array[Dictionary]:
+	var n: int = rig.bones.size()
+	var lows: PackedVector3Array = PackedVector3Array()
+	var highs: PackedVector3Array = PackedVector3Array()
+	var mass: PackedFloat32Array = PackedFloat32Array()
+	var solid: PackedByteArray = PackedByteArray()
+	lows.resize(n)
+	highs.resize(n)
+	mass.resize(n)
+	solid.resize(n)
+	for i in part_bone.size():
+		var b: int = part_bone[i]
+		if part_fx[i] != 0 or b < 0:
+			continue
+		var p: RigPart = rig.parts[i]
+		var m: Transform3D = part_local[i]
+		var e: Vector3 = p.extent()
+		mass[b] += p.volume() * rig.density_of(p)
+		for k in 8:
+			var pt: Vector3 = (
+				m
+				* Vector3(
+					e.x if (k & 1) != 0 else -e.x,
+					e.y if (k & 2) != 0 else -e.y,
+					e.z if (k & 4) != 0 else -e.z
+				)
+			)
+			if solid[b] == 0:
+				lows[b] = pt
+				highs[b] = pt
+				solid[b] = 1
+			else:
+				lows[b] = lows[b].min(pt)
+				highs[b] = highs[b].max(pt)
+	var out: Array[Dictionary] = []
+	out.resize(n)
+	for b in n:
+		out[b] = {
+			"solid": solid[b] != 0,
+			"box": AABB(lows[b], highs[b] - lows[b]),
+			"mass": mass[b]
+		}
+	return out
+
+
 ## Rig-space muzzle position and bore direction, or an empty dictionary for an
 ## unarmed rig.
 func muzzle() -> Dictionary:
