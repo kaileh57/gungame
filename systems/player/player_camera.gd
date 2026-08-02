@@ -77,6 +77,9 @@ signal zoom_changed(level: float, index: int, scoped: bool)
 ## leans in by this much and the magnification happens inside the tube — which is what
 ## makes a scope read as a scope rather than as a wider crop of the same picture.
 @export_range(1.0, 2.0, 0.01) var scoped_lean: float = 1.14
+## Draw the sniper-scope picture when a scoped weapon is shouldered. Off is for a
+## display stand or a cutscene, which has a camera but no shooter.
+@export var scope_overlay: bool = true
 ## How far into the shoulder the magnification wheel takes over from weapon switching.
 @export_range(0.1, 1.0, 0.01) var zoom_cycle_ads: float = 0.55
 ## Optional. A `WeaponHolster` whose equipped `GunSpec` supplies the zoom ladder.
@@ -103,6 +106,7 @@ var _effects: PlayerViewEffects = null
 var _holster: WeaponHolster = null
 var _zoom_levels: PackedFloat32Array = PackedFloat32Array([1.15])
 var _scoped: bool = false
+var _scope: ScopeOverlay = null
 var _roll: float = 0.0
 var _fov: float = 78.0
 ## The movement-driven field of view before the ADS blend, rate-limited on its own so a
@@ -128,8 +132,31 @@ func _ready() -> void:
 	fov = _fov
 	_zoom_levels = PackedFloat32Array([zoom_default])
 	_bind_holster()
+	_mount_scope()
 	GameSettings.settings_changed.connect(_on_settings_changed)
 	process_priority = 100
+
+
+## Build the scope picture and hang it on its own layer.
+##
+## THE CAMERA OWNS IT because the camera is what knows the weapon is scoped and which
+## rung of the ladder is selected, and because mounting it here means every armed level
+## has a working scope instead of the ones that remembered to add one -- the same
+## reasoning that put the ammunition plate on `WeaponHolster`.
+##
+## A high layer so the tube sits over the combat HUD: the crosshair and the hit markers
+## belong to shooting from the hip, and drawing them across a scope picture is exactly
+## the clutter the tube exists to remove.
+func _mount_scope() -> void:
+	if not scope_overlay:
+		return
+	var layer := CanvasLayer.new()
+	layer.name = "ScopeLayer"
+	layer.layer = 64
+	add_child(layer)
+	_scope = ScopeOverlay.new()
+	_scope.name = "ScopeOverlay"
+	layer.add_child(_scope)
 
 
 func _process(delta: float) -> void:
@@ -258,6 +285,9 @@ func _aim(dt: float) -> void:
 		var o: Vector3 = _effects.offset()
 		if o != Vector3.ZERO:
 			global_position += global_basis * o
+
+	if _scope != null:
+		_scope.set_state(_player.ads, _scoped, current_zoom())
 
 	var sp: float = _player.speed
 	var move: float = fov_base
