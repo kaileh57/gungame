@@ -160,6 +160,15 @@ const BOARD_HALF_H: float = 1.35
 const BOARD_MID: float = 2.85
 const BOARD_LEG_X: float = 2.05
 const BOARD_TOP: float = 4.20
+## Z the stencilled text sits at, in board space.
+##
+## The panel is `box(centre z 0.02, half-extent z 0.04)`, so its FRONT FACE IS AT
+## z = 0.06 — and every row label and the status line were placed at exactly 0.06.
+## Coplanar with the surface they are written on, which is why the leaderboard
+## flickered and tore: the depth buffer had no way to choose. 15 mm of standoff is
+## invisible at reading distance and unambiguous to the sorter.
+const BOARD_FACE_Z: float = 0.06
+const BOARD_TEXT_Z: float = BOARD_FACE_Z + 0.015
 
 ## Lamp lens colours. Amber is the project's own exfil orange, which already means "this
 ## one matters" everywhere else in the demo. Green appears NOWHERE else in ash_flats and
@@ -437,7 +446,9 @@ static func _build_leaderboard(
 		_board_label("Head", "ASH LINE", Vector3(0.0, 3.76, 0.10), 112, 0, Palette.BONE)
 	)
 	board.add_child(
-		_board_label("Status", "PRESS START RACE", Vector3(0.0, 3.40, 0.06), 76, 0, Palette.BONE)
+		_board_label(
+			"Status", "PRESS START RACE", Vector3(0.0, 3.40, BOARD_TEXT_Z), 76, 0, Palette.BONE
+		)
 	)
 	var rows := Node3D.new()
 	rows.name = "Rows"
@@ -446,9 +457,15 @@ static func _build_leaderboard(
 		var row := Node3D.new()
 		row.name = "row_%d" % i
 		row.position = Vector3(0.0, 2.98 - BOARD_ROW_STEP * float(i), 0.0)
-		row.add_child(_board_label("Place", "", Vector3(-1.72, 0.0, 0.06), 92, 0, Palette.BONE))
-		row.add_child(_board_label("Name", "", Vector3(-1.44, 0.0, 0.06), 92, -1, Palette.BONE))
-		row.add_child(_board_label("Time", "", Vector3(1.86, 0.0, 0.06), 92, 1, Palette.BONE))
+		row.add_child(
+			_board_label("Place", "", Vector3(-1.72, 0.0, BOARD_TEXT_Z), 92, 0, Palette.BONE)
+		)
+		row.add_child(
+			_board_label("Name", "", Vector3(-1.44, 0.0, BOARD_TEXT_Z), 92, -1, Palette.BONE)
+		)
+		row.add_child(
+			_board_label("Time", "", Vector3(1.86, 0.0, BOARD_TEXT_Z), 92, 1, Palette.BONE)
+		)
 		rows.add_child(row)
 
 

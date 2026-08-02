@@ -243,6 +243,19 @@ func _check_grab(bench: Node, stand_path: String, id: String, mark: String) -> v
 	_say("GRAB %s    took %-26s left %-26s" % [mark, _name_of(after_hand), _name_of(after_stand)])
 	if after_hand != before_stand:
 		_fail("GRAB %s did not put THAT stand's weapon in your hands" % mark)
+	# The holster, not the model. This is the assertion the suite was missing.
+	var held: Object = _held(bench)
+	_say("held      %s (holster) vs %s (bench model)" % [_name_of(held), _name_of(after_hand)])
+	if held != after_hand:
+		_fail(
+			(
+				(
+					"GRAB %s changed the bench's mind but not the player's hands: "
+					+ "holster still holds %s while the bench thinks you hold %s"
+				)
+				% [mark, _name_of(held), _name_of(after_hand)]
+			)
+		)
 	if after_stand != before_hand:
 		_fail("GRAB %s did not put the weapon you were holding back on the stand" % mark)
 	if after_other != before_other:
@@ -348,18 +361,26 @@ func _check_console(bench: Node) -> void:
 
 	var peg: DiegeticControl = bench.get_node_or_null(^"Rack/Pegs/Peg0")
 	var hook: Object = null if peg == null else peg.call(&"spec")
+	# The rack trades with YOUR HANDS, not with stand A. Shooting a hook hands you that
+	# weapon and hangs what you were carrying in its place. Both readings are taken
+	# BEFORE the press, or "what you were carrying" is already what you just picked up.
+	var before_peg_hand: Object = _hand(bench)
+	var before_peg_a: Object = _stand_spec(bench, "Stands/MainStand")
 	if peg == null or not peg.interact():
 		_fail("the first peg refused a walk-up press")
 		return
-	await physics_frame
-	if _stand_spec(bench, "Stands/MainStand") != hook:
-		_fail("a peg press did not put that hook's weapon on stand A")
-	elif peg.call(&"spec") != after_a:
-		_fail("a peg press did not hang stand A's weapon back on the hook")
+	for _p: int in SWAP_FRAMES:
+		await physics_frame
+	if _hand(bench) != hook:
+		_fail("a peg press did not put that hook's weapon in your hands")
+	elif _held(bench) != hook:
+		_fail("a peg press changed the bench's mind but not the player's hands")
+	elif peg.call(&"spec") != before_peg_hand:
+		_fail("a peg press did not hang the weapon you were carrying back on the hook")
+	elif _stand_spec(bench, "Stands/MainStand") != before_peg_a:
+		_fail("a peg press disturbed stand A — the rack trades with you, not the stand")
 	else:
-		_say("PEG 0     traded %s onto stand A" % _name_of(hook))
-	if _hand(bench) != hand:
-		_fail("a peg press reached into your hands")
+		_say("PEG 0     took %s into your hands" % _name_of(hook))
 
 
 # --- the photographs ----------------------------------------------------------
@@ -432,6 +453,19 @@ func _stand_spec(bench: Node, path: String) -> Object:
 
 func _hand(bench: Node) -> Object:
 	return bench.call(&"hand_spec")
+
+
+## What is ACTUALLY IN THE PLAYER'S HANDS, read off the holster rather than off the
+## demo.
+##
+## This file's own header says reading `hand_spec()` "would only prove the demo agrees
+## with itself", and then every assertion below did exactly that. So this suite passed
+## while the user reported the opposite: the stands swap, the cards swap, and the gun
+## you are carrying never changes. `hand_spec` is the bench's MODEL; the holster is the
+## truth, and they are only the same once the swap has actually exchanged the geometry.
+func _held(bench: Node) -> Object:
+	var holster: Node = bench.get_node_or_null(^"Player/Eye/Holster")
+	return null if holster == null else holster.call(&"active_spec")
 
 
 func _rack(bench: Node) -> Array:

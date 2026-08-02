@@ -717,7 +717,7 @@ func _resolve(peer: int, action: StringName, value: int) -> void:
 			_set_tier(value)
 			_set_stand(_main, _roll())
 		ID_PEG:
-			_trade_peg(value)
+			_trade_peg(value, peer)
 		_:
 			# An id the bench does not own. A client cannot make one up that matters.
 			return
@@ -755,18 +755,26 @@ func _set_strip(on: bool) -> void:
 		lever.set_on(on, true)
 
 
-## The rack and stand A trade. Taking a gun off a peg puts stand A's weapon back on
-## that hook, so the wall stays full and nothing is ever thrown away. The rack does not
+## The rack and YOUR HANDS trade. Shooting a hook hands you that weapon and hangs what
+## you were carrying in its place, so the wall stays full and nothing is thrown away.
+##
+## IT USED TO TRADE WITH STAND A, which is what the user reported as "the guns are not
+## selectable": you shoot a gun on the wall, the DISPLAY changes, your own gun does not,
+## and the weapon you thought you had picked up is then what the grab plate puts back
+## down. The bench was doing exactly what it was built to do, and what it was built to
+## do was not what shooting a gun off a wall obviously means. The grab plates under the
+## two stands are still how you take a DISPLAYED gun; the rack is now its own route.
+## The rack does not
 ## reach into your hands: a peg and a grab station are two different movements.
-func _trade_peg(index: int) -> void:
+func _trade_peg(index: int, peer: int) -> void:
 	if index < 0 or index >= _pegs.size():
 		return
 	var peg: GunbenchPeg = _pegs[index]
 	var taken: GunSpec = peg.spec()
 	if taken == null:
 		return
-	peg.set_spec(_main.spec())
-	_set_stand(_main, taken)
+	peg.set_spec(_hand_of(peer))
+	_give_hand(peer, taken)
 
 
 ## Turn a dial to a detent and answer with the detent it actually settled on, which is

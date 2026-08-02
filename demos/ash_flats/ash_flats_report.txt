@@ -76,4 +76,4 @@ AUTHORED MESHES  (signed volume must be positive, conflicts must be 0)
 LOAD-BACK
   ash_flats.tscn   2301 nodes, 97 scripted, 744 scattered instances
                    1187 collision shapes, 62 ladders, 0 empty meshes (must be 0)
-bake time             1596 ms
+bake time             1924 ms

@@ -41,7 +41,15 @@ const START_TRIES: int = 3
 @export_range(0.5, 30.0, 0.5, "suffix:s") var max_solve_time: float = 6.0
 ## Ceiling on one killing impulse, in newton-seconds. A launcher should throw a
 ## body; it should not fire it out of the level.
-@export_range(0.0, 8000.0, 10.0) var max_impulse: float = 1400.0
+##
+## WAS 1400, WHICH LAUNCHED EVERY CORPSE INTO THE SKY. The impulse lands on ONE
+## bone, and `ragdoll_bake.gd` gives a bone 2%-34% of body mass — so a limb is
+## roughly 1.4-5 kg on a 70 kg humanoid. 1400 Ns into 3 kg is 470 m/s. Even a
+## rifle at the old 20x scale was 240 Ns, or about 80 m/s. For reference a real
+## 7.62 round carries about 8 Ns of momentum in total, which is why people do not
+## fly when shot. 60 Ns is a launcher genuinely throwing a body (20 m/s on a limb,
+## 3 m/s on a torso) and is the most any weapon may do.
+@export_range(0.0, 400.0, 5.0) var max_impulse: float = 60.0
 ## Put every body to sleep the moment the corpse is declared down, instead of
 ## waiting for the engine's own sleep threshold to catch up. A sleeping body is
 ## skipped by the solver entirely, which is the whole point of measuring the
@@ -154,7 +162,12 @@ func _finish(by_stillness: bool) -> void:
 	set_physics_process(false)
 	if sleep_on_settle and by_stillness:
 		for pb in _bones:
-			pb.sleeping = true
+			# NOT `pb.sleeping = true`. `sleeping` is a RigidBody3D property and
+			# PhysicalBone3D is a PhysicsBody3D, so that assignment crashed the game
+			# outright: "Invalid assignment of property or key 'sleeping' with value
+			# of type 'bool' on a base object of type 'PhysicalBone3D'". The server
+			# takes the same instruction against the body's RID.
+			PhysicsServer3D.body_set_state(pb.get_rid(), PhysicsServer3D.BODY_STATE_SLEEPING, true)
 	settled.emit()
 
 

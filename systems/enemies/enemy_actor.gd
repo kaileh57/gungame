@@ -66,9 +66,15 @@ const RUN_HYSTERESIS: float = 0.12
 @export_group("Death impulse")
 ## Newton-seconds of ragdoll push per unit of `GunSpec.impulse` in the killing
 ## round. This is the number that makes a launcher throw a body and a pistol drop
-## it, so it is deliberately generous: a pistol's impulse is around 4 Ns and a
-## launcher's around 40.
-@export_range(0.0, 200.0, 0.5) var death_impulse_scale: float = 20.0
+## it: a pistol's impulse is around 4 Ns and a launcher's around 40.
+##
+## WAS 20.0, AND "DELIBERATELY GENEROUS" WAS WRONG BY ABOUT AN ORDER OF MAGNITUDE.
+## The push lands on one bone, and a bone is 1.4-5 kg, so 20x turned a rifle kill
+## into 240 Ns on a limb — roughly 80 m/s, which is every corpse leaving the map.
+## At 1.5 a pistol nudges a limb at ~2 m/s and a rifle shoves it at ~6 m/s, which
+## reads as being shot rather than being shelled. `Ragdoll.max_impulse` (60) is
+## the ceiling, so a launcher still throws.
+@export_range(0.0, 40.0, 0.1) var death_impulse_scale: float = 1.5
 ## Fallback push per point of damage the killing hit did, used when the round's
 ## own impulse never reached this body. `GunDamage` hands a receiver the amount,
 ## the point and the direction but not the impulse — see `apply_bullet_damage` —
