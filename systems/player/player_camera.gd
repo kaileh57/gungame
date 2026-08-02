@@ -184,11 +184,27 @@ func is_scoped() -> bool:
 	return _scoped
 
 
-## Fully shouldered FOV in degrees, per `docs/spec/range.md` §14.3:
-## `2*atan(tan(base/2) / (scoped ? 1.14 : z))`. A scoped weapon leans in and stops there;
-## everything else zooms the world camera to the selected rung of its ladder.
+## Fully shouldered FOV in degrees: `2*atan(tan(base/2) / z)`, where z is the selected
+## rung of the weapon's own zoom ladder.
+##
+## SCOPES USED TO ZOOM *LESS* THAN IRON SIGHTS. The rule here was
+## `scoped ? scoped_lean : zoom`, which handed a scoped weapon a flat 1.14x and threw
+## its ladder away — and since scoped weapons are the ones whose ladders reach 4.2x to
+## 5.4x, putting a real scope to your eye zoomed you in less than a set of irons with a
+## middling optic. The reasoning behind it, recorded on `scoped_lean`, was that you keep
+## both eyes open and the magnification happens inside the tube.
+##
+## THERE IS NO TUBE. Nothing in the project draws one: `zoom_changed` carries a `scoped`
+## flag and has no listeners, and there is no overlay, no masked render and no reticle
+## anywhere. So the magnification a scope was promised to do "inside the tube" was not
+## happening anywhere at all, which is exactly what the player hit — twice — as "I
+## cannot get the zoom scope to actually do the GUI zoom in any situation".
+##
+## Until a tube exists, a scope magnifies the world camera like every other optic, which
+## is what makes it worth carrying. `scoped_lean` is kept because a real scope overlay
+## is still the better answer and this is the number it will want back.
 func ads_fov() -> float:
-	var divisor: float = scoped_lean if _scoped else maxf(current_zoom(), 1.0)
+	var divisor: float = maxf(current_zoom(), 1.0)
 	return rad_to_deg(2.0 * atan(tan(deg_to_rad(fov_base) * 0.5) / divisor))
 
 
