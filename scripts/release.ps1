@@ -198,6 +198,40 @@ foreach ($tool in @("git", "gh")) {
     }
 }
 
+# CHECK WHO gh IS BEFORE SPENDING TEN MINUTES ON A BUILD.
+#
+# `gh` can hold several accounts at once and publishes as whichever is ACTIVE, which is
+# not necessarily the one that owns this repo -- switch to a work account for an
+# afternoon and the next release exports fine, packages fine, and then dies on the
+# upload with a 404 that reads like the release is missing rather than like the wrong
+# person is asking. One API call up front turns that into an instant, actionable stop.
+if (-not $NoPublish) {
+    $prevEap = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
+    $who  = (& gh api user --jq .login 2>$null)
+    $perm = (& gh api "repos/$Repo" --jq .permissions.push 2>$null)
+    $ErrorActionPreference = $prevEap
+    if (-not $who) {
+        Fail "gh is not logged in. Run: gh auth login   (or set GH_TOKEN)"
+    }
+    if ("$perm" -ne "true") {
+        $owner = $Repo.Split("/")[0]
+        Fail @"
+gh is signed in as '$who', which cannot publish to $Repo.
+
+Switch to the account that owns it and re-run:
+  gh auth switch --user $owner
+
+Or publish as a one-off without changing your active account:
+  `$env:GH_TOKEN = "<token with repo scope on $Repo>"
+
+Or build without publishing:
+  pwsh -File scripts/release.ps1 -NoPublish
+"@
+    }
+    Write-Note "gh: $who (can publish to $Repo)"
+}
+
 Push-Location $Root
 try {
     $sha = (& git rev-parse --short=7 HEAD).Trim()
