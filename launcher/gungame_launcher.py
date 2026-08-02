@@ -242,11 +242,11 @@ def _open(url: str, token: str, accept: str, timeout: int = 60):
                 "It must be valid and have read access to a private repository."
             ) from exc
         if exc.code == 404:
-            raise AuthError(
+            raise GitHubError(
                 f"HTTP 404 for {url}\n\n"
-                f"{REPO} is private, so an unauthenticated or under-scoped token "
-                "gets a 404 rather than a 403. Either the token is missing, or it "
-                "cannot see this repository, or there is no release yet."
+                f"{REPO} is public, so this is almost certainly 'no release published "
+                "yet' rather than a permissions problem. If the repository was made "
+                "private again, add a token that can read it."
             ) from exc
         raise GitHubError(f"HTTP {exc.code} from GitHub: {body or exc.reason}") from exc
     except urllib.error.URLError as exc:
@@ -508,11 +508,10 @@ class LauncherUI:
         self.log(f"Data directory: {DATA_DIR}")
         self.root.after(80, self.pump)
 
-        if load_token():
-            self.on_check()
-        else:
-            self.log("No token set. Click 'Token...' -- this repository is private "
-                     "and its releases cannot be read anonymously.")
+        # Always check on startup. The repository is public, so there is nothing to
+        # configure before the first install -- which is the whole point of being able
+        # to hand this executable to somebody who has never heard of GitHub.
+        self.on_check()
 
     # -- plumbing ---------------------------------------------------------
 
@@ -651,13 +650,11 @@ class LauncherUI:
     # -- worker bodies (run off the UI thread; talk back only via post()) --
 
     def work_check(self) -> None:
+        # NO TOKEN REQUIRED. The repository is public, so releases and their assets read
+        # anonymously and whoever you handed this to needs no GitHub account at all. A
+        # configured token is still used when present, purely to lift the 60-request-an-
+        # hour anonymous rate limit.
         token = load_token()
-        if not token:
-            raise AuthError(
-                "No GitHub token configured.\n\n"
-                f"{REPO} is private; its releases are invisible without one. "
-                "Click 'Token...' to add one."
-            )
         self.post("status", "Checking GitHub for the latest release...")
         release = fetch_latest(token)
         self.post("latest", release)
@@ -669,9 +666,6 @@ class LauncherUI:
 
     def work_install(self, release: Release) -> None:
         token = load_token()
-        if not token:
-            raise AuthError("No GitHub token configured.")
-
         asset = pick_asset(release)
         self.post("log", f"Downloading {asset.name} ({_human(asset.size)})")
 
@@ -729,13 +723,14 @@ class TokenDialog(tk.Toplevel):
         frame.pack(fill="both", expand=True)
 
         blurb = (
-            f"{REPO} is a private repository, so reading its releases and\n"
-            "downloading build assets both require a GitHub token.\n\n"
-            "Create a fine-grained personal access token with the single\n"
-            "permission  Repository -> Contents: Read-only,  scoped to just\n"
-            "this repository. A classic token with the 'repo' scope also works\n"
-            "but grants far more than the launcher needs.\n\n"
-            "github.com -> Settings -> Developer settings -> Personal access tokens\n\n"
+            f"{REPO} is public, so you do NOT need a token to install or\n"
+            "play. Leave this blank unless you are told to set one.\n\n"
+            "GitHub allows 60 anonymous API requests an hour per address;\n"
+            "a token raises that to 5,000. Only worth setting if you check\n"
+            "for updates constantly, or share an address with a lot of\n"
+            "other traffic.\n\n"
+            "A fine-grained token with  Repository -> Contents: Read-only\n"
+            "is more than enough.\n\n"
             + ("The token is sealed with Windows DPAPI and can only be read back\n"
                "by your Windows account on this machine."
                if IS_WINDOWS else
