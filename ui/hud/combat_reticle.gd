@@ -180,15 +180,25 @@ const PICTURE_MEMORY: float = 0.5
 @export_group("Aim down sights")
 ## ADS blend the indicator starts fading at.
 @export_range(0.0, 1.0, 0.01) var ads_fade_start: float = 0.35
-## ADS blend the indicator is fully gone at. The sight picture owns the screen from
-## here; the hit markers stay, because they are the only feedback a scope leaves you.
+## ADS blend the indicator is fully gone at. ONLY APPLIES TO A SCOPED WEAPON, which
+## brings its own reticle up inside the tube; the hit markers stay either way, because
+## they are the only feedback a scope leaves you. See `_fade`.
 @export_range(0.0, 1.0, 0.01) var ads_fade_full: float = 0.85
+## Smallest radius the cycle arc will draw at, in pixels. The arc normally sits on the
+## spread cone, and a precise weapon fully shouldered has almost no cone — which drew
+## the reload timer as a twenty-pixel scratch nobody could read. It is a clock, so it
+## gets a size of its own.
+@export_range(10.0, 120.0, 1.0) var cycle_min_radius: float = 38.0
 
 var _marker_age: float = 999.0
 var _marker_kill: bool = false
 var _marker_crit: bool = false
 var _ads: float = 0.0
 var _ads_source: Node = null
+## The eye that owns the current weapon's optics, for `is_scoped`. Resolved once off
+## `_ads_source` rather than searched per frame.
+var _eye_source: Node = null
+var _scoped: bool = false
 var _camera: Camera3D = null
 var _camera_id: int = 0
 var _hands: DiegeticInteractor = null
@@ -368,6 +378,7 @@ func _draw() -> void:
 			_draw_cone(centre, fade)
 		if style != Style.SELECTOR:
 			_draw_dot(centre, fade)
+	_draw_cycle(centre)
 	_draw_marker(centre)
 
 
@@ -621,6 +632,33 @@ func _draw_dot(centre: Vector2, fade: float) -> void:
 	draw_circle(centre, dot_radius, color, true, -1.0, true)
 
 
+## The action-cycle arc, drawn WHATEVER the fade is doing.
+##
+## It used to live inside `_draw_cone`, which is skipped once the indicator has faded —
+## so shouldering a weapon took away the one thing that tells you when it will next
+## fire. That is backwards: the moment you are committed to a target is the moment the
+## timer matters most, and a scoped weapon hides everything else behind its tube. Drawn
+## at full strength alongside the hit markers, which are exempt for the same reason.
+##
+## Placed at the cone radius so it still reads as belonging to the crosshair when there
+## is a crosshair to belong to.
+func _draw_cycle(centre: Vector2) -> void:
+	if cycle >= 0.999 or not _live():
+		return
+	var arc: Color = UiStyle.ACCENT
+	arc.a = 0.8
+	draw_arc(
+		centre,
+		maxf(_cone_radius() + tick_length + 5.0, cycle_min_radius),
+		-PI * 0.5,
+		-PI * 0.5 + TAU * clampf(cycle, 0.0, 1.0),
+		32,
+		arc,
+		3.0,
+		true
+	)
+
+
 func _draw_cone(centre: Vector2, fade: float) -> void:
 	var radius: float = _cone_radius()
 	var color: Color = reticle_color
@@ -633,19 +671,7 @@ func _draw_cone(centre: Vector2, fade: float) -> void:
 		var b: Vector2 = centre + dir * (radius + tick_length)
 		draw_line(a, b, ink, tick_width + INK_BLEED)
 		draw_line(a, b, color, tick_width)
-	if cycle < 0.999:
-		var arc: Color = UiStyle.ACCENT
-		arc.a = 0.8 * fade
-		draw_arc(
-			centre,
-			radius + tick_length + 5.0,
-			-PI * 0.5,
-			-PI * 0.5 + TAU * clampf(cycle, 0.0, 1.0),
-			24,
-			arc,
-			2.0,
-			true
-		)
+
 
 
 ## The bestiary's bead, in two dimensions. A framed object when there is one, and a
@@ -806,9 +832,22 @@ func _live() -> bool:
 	return true
 
 
+## How much of the aiming indicator to draw, 0 to 1.
+##
+## A SCOPE HAS ITS OWN RETICLE. NOTHING ELSE HAS ANY. This used to fade the crosshair
+## out on EVERY weapon as it came to the shoulder, on the reasoning that the sight
+## picture takes over — but these weapons have no working iron sights to take over
+## with, so shouldering anything unscoped left the screen with no aiming mark at all.
+## That was survivable while your own laser dot was drawn; now that it is correctly
+## hidden, it leaves you aiming at nothing.
+##
+## So the fade is a SCOPE behaviour, not an ADS behaviour: a scoped weapon still hands
+## the screen to its tube, and everything else keeps its crosshair all the way in.
 func _fade() -> float:
 	if not _live():
 		return 0.0
+	if not _scoped:
+		return 1.0
 	var span: float = maxf(ads_fade_full - ads_fade_start, 0.001)
 	return clampf(1.0 - (_ads - ads_fade_start) / span, 0.0, 1.0)
 
@@ -821,6 +860,10 @@ func _read_ads() -> void:
 	var value: Variant = _ads_source.get(&"ads")
 	if typeof(value) == TYPE_FLOAT:
 		_ads = clampf(value, 0.0, 1.0)
+	if _eye_source == null or not is_instance_valid(_eye_source):
+		_eye_source = _ads_source.get_node_or_null(^"Eye")
+	if _eye_source != null and _eye_source.has_method(&"is_scoped"):
+		_scoped = bool(_eye_source.call(&"is_scoped"))
 
 
 func _aim_centre() -> Vector2:

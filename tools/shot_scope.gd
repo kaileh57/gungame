@@ -4,8 +4,8 @@ extends Node
 ## Deliberately NOT headless: the whole point is to see what is actually drawn.
 
 const RANGE_SCENE := "res://demos/range/range.tscn"
-const OUT := "res://_shots/scope.png"
-const OUT_HIP := "res://_shots/scope_hip.png"
+const OUT := "res://_shots/ads_cycle.png"
+const OUT_HIP := "res://_shots/ads_cycle_hip.png"
 
 var _f := 0
 var _root: Node = null
@@ -15,6 +15,9 @@ var _note := ""
 
 
 func _ready() -> void:
+	# Last in the frame: RangeShooter pushes `cycle` into the HUD every frame, so a value
+	# set earlier is overwritten before anything is drawn.
+	process_priority = 1000
 	DirAccess.make_dir_recursive_absolute("res://_shots")
 	_root = (load(RANGE_SCENE) as PackedScene).instantiate()
 	add_child(_root)
@@ -30,6 +33,8 @@ func _process(_d: float) -> void:
 		_save(OUT_HIP, "hip")
 	if _f >= 150 and _player != null:
 		_player.set(&"ads", 1.0)
+		# Hold the action mid-cycle so the reload arc has something to draw.
+		_hold_cycle(_root)
 	if _f == 240:
 		_save(OUT, "shouldered")
 		print(_note)
@@ -46,7 +51,7 @@ func _equip() -> void:
 			holster.call(&"equip", 0, s)
 			_note = "weapon %s  scoped=%s  ladder=%s" % [s.weapon_name, s.scoped, s.zoom_ladder()]
 			return
-	_note = "NO SCOPED SNIPER FOUND"
+	_note = "NO UNSCOPED WEAPON FOUND"
 
 
 func _save(path: String, label: String) -> void:
@@ -64,6 +69,15 @@ func _save(path: String, label: String) -> void:
 	_note += "\n%-11s saved=%s  overlay.visible=%s  fov=%.1f  scoped=%s" % [
 		label, err == OK, vis, float(_cam.get(&"fov")), _cam.call(&"is_scoped")
 	]
+
+
+## Every node carrying a `cycle` property, because the HUD wrapper and the reticle both
+## answer to `set_picture` and only one of them owns the number.
+func _hold_cycle(n: Node) -> void:
+	if typeof(n.get(&"cycle")) == TYPE_FLOAT:
+		n.set(&"cycle", 0.4)
+	for c: Node in n.get_children():
+		_hold_cycle(c)
 
 
 func _find(n: Node, m: StringName) -> Node:
