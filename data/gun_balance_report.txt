@@ -164,25 +164,25 @@ flags
   auto           480   24.0%
   runaway         92    4.6%
   optic         1254   62.7%
-  scoped         228   11.4%
+  scoped          73    3.6%
   optic:iron sights   746   37.3%
   optic:reflex sight    80    4.0%
-  optic:prism sight   945   47.3%
+  optic:prism sight  1005   50.3%
   odd:belt-fed hose    41    2.0%
   odd:runaway     92    4.6%
   hazard         136    6.8%
   hazard:runaway    35    1.8%
-  optic:marksman scope   219   10.9%
+  optic:magnified optic    96    4.8%
   hazard:tame     76    3.8%
   odd:pocket cannon    22    1.1%
   marksman        61    3.0%
   marksman_scoped    50    2.5%
+  optic:marksman scope    64    3.2%
   hazard:explosive    25    1.3%
   marksman_irons    11    0.6%
   optic:sniper scope     9    0.5%
   odd:relic       15    0.8%
-  optic:magnified optic     1    0.1%
-  odd:scoped bullet hose    25    1.3%
+  odd:scoped bullet hose     2    0.1%
 
 stat ranges                   min         mean          max
   score                   22.4851      63.0601      78.6924
@@ -358,26 +358,26 @@ flags
   auto           506   25.3%
   runaway         77    3.9%
   optic         1254   62.7%
-  scoped         235   11.8%
+  scoped          69    3.5%
   optic:iron sights   746   37.3%
   optic:reflex sight    80    4.0%
-  optic:prism sight   938   46.9%
+  optic:prism sight  1006   50.3%
   odd:belt-fed hose    41    2.0%
   odd:runaway     77    3.9%
-  optic:marksman scope   226   11.3%
+  optic:magnified optic    99    5.0%
   odd:relic       48    2.4%
   hazard          40    2.0%
   hazard:tame      9    0.5%
   odd:pocket cannon    22    1.1%
   marksman        62    3.1%
   marksman_scoped    51    2.5%
-  odd:scoped bullet hose    48    2.4%
+  optic:marksman scope    60    3.0%
   odd:automatic shot    26    1.3%
   hazard:explosive    20    1.0%
   marksman_irons    11    0.6%
   hazard:runaway    11    0.6%
   optic:sniper scope     9    0.5%
-  optic:magnified optic     1    0.1%
+  odd:scoped bullet hose     6    0.3%
 
 stat ranges                   min         mean          max
   score                   30.9348      63.5962      79.9208
@@ -612,5 +612,5 @@ non-finite / absurd values: none
   built 4 weapons, 18 mesh instances
   holstered Boxgun-Spitter (2.55 kg, 418 mm), rerolled barrel 11 -> 69, name Boxgun Mk.VIII
 
-elapsed              10507 ms
+elapsed              10538 ms
 FAILURES             0

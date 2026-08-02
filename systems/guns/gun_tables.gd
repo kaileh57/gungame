@@ -289,6 +289,68 @@ const ACTION: Dictionary = {
 ## Where `rpm` sits inside its class's expected band, 0 at the slow end and 1 at the
 ## fast end. Outside the band it keeps going, so a genuinely freakish rate still
 ## reads as freakish rather than saturating.
+## Classes that have no business carrying a sniper scope: everything you fight with
+## inside fifty metres. `docs/GUN_DESIGN.md` §4 asks for irons to be far more common on
+## shotguns and pistols, and for a scoped bullet hose to stay a rare joke rather than
+## the default.
+const CLOSE_QUARTERS: Array = [
+	"Shotgun",
+	"Auto shotgun",
+	"Slug gun",
+	"Snubnose",
+	"Sidearm",
+	"Hand cannon",
+	"Submachine gun",
+	"Chopped auto",
+	"Launcher",
+]
+
+## Share of otherwise-eligible weapons that keep a scope they have no use for. Two
+## rates: a close-quarters weapon almost never keeps one, which is what makes a scoped
+## machine pistol a story rather than a Tuesday, and everything else keeps one
+## sometimes.
+const SCOPE_STRAY: float = 0.20
+const SCOPE_STRAY_CLOSE: float = 0.06
+
+
+## A deterministic 0..1 draw for a weapon, off its own config word.
+##
+## Not an RNG: the same five parts must produce the same weapon every time on every
+## machine, or two players quoting a seed would see different guns and the golden
+## vectors would stop meaning anything. `salt` separates independent decisions that
+## would otherwise correlate.
+static func draw01(cfg: int, salt: int) -> float:
+	var h: int = (cfg ^ salt) & 0x7FFFFFFF
+	h = (h * 374761393 + 668265263) & 0x7FFFFFFF
+	h = ((h ^ (h >> 13)) * 1274126177) & 0x7FFFFFFF
+	return float(h & 0xFFFF) / 65535.0
+
+
+## Whether this weapon ends up carrying a real scope.
+##
+## SCOPES WERE SPRAYED ACROSS THE LIBRARY. The rule was "marksman, OR a good battle
+## rifle, OR any ladder topping SCOPE_ZOOM" — and that last clause caught everything,
+## so 235 weapons were scoped and only 51 of them were marksman weapons. 78% of every
+## scope in the game sat on a gun with no use for one, which is both what
+## `docs/GUN_DESIGN.md` §4 complains about and why a player hunting a sniper could not
+## find one worth carrying.
+##
+## Marksman glass is scoped outright and a rank-2 battle rifle has earned it. Anything
+## else only KEEPS a scope on a deterministic draw, and that draw is far harsher for a
+## close-quarters weapon — so a scoped machine pistol stays the joke the design asks
+## for rather than the ordinary case.
+static func scope_fitted(
+	spec: GunSpec, marksman: bool, battle: bool, rank: int, top_zoom: float
+) -> bool:
+	if marksman or (rank >= 2 and battle):
+		return true
+	if top_zoom < 4.2:
+		return false
+	var arch: String = String(spec.archetype)
+	var limit: float = SCOPE_STRAY_CLOSE if CLOSE_QUARTERS.has(arch) else SCOPE_STRAY
+	return draw01(spec.cfg, 0x5C09E) < limit
+
+
 static func rate_position(archetype: String, rpm: float) -> float:
 	var band: Array = CLASS_RATE.get(archetype, CLASS_RATE_DEFAULT)
 	var lo: float = float(band[0])

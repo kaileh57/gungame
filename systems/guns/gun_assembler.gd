@@ -638,10 +638,9 @@ static func fit_optics(spec: GunSpec) -> GunSpec:
 		levels.append(GunTables.to_fixed(spec.zoom + (top - spec.zoom) * t, 1))
 	spec.zoom_levels = levels
 	var battle: bool = spec.archetype == &"Battle rifle" or spec.archetype == &"Auto battle rifle"
-	# Scopes you can find: 3% -> 11%. Marksman glass is scoped outright, and so is
-	# anything topping SCOPE_ZOOM — hence the scoped machine pistol.
+	# Who ends up scoped is `GunTables.scope_fitted`, not a raw zoom threshold.
 	var top_zoom: float = levels[levels.size() - 1]
-	spec.scoped = spec.has_optic and (marksman or top_zoom >= SCOPE_ZOOM or (rank >= 2 and battle))
+	spec.scoped = spec.has_optic and GunTables.scope_fitted(spec, marksman, battle, rank, top_zoom)
 	return spec
 
 
