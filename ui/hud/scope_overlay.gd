@@ -46,8 +46,24 @@ var _reticle: int = Reticle.CROSS
 func _ready() -> void:
 	# The tube is scenery. It must never eat a click or a hover.
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	set_anchors_preset(Control.PRESET_FULL_RECT)
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	visible = false
+	# SIZE IT BY HAND, EVERY TIME. `set_anchors_preset` alone left this Control at
+	# (0, 0) under a CanvasLayer — anchors were 0..1 and the viewport was 1920x1080, and
+	# the rect still never resolved. Every coordinate in `_draw` derives from `size`, so
+	# the whole tube collapsed to a point and drew nothing at all while `visible` stayed
+	# true and every headless assertion passed. Assigning the rect is not belt-and-braces
+	# here; it is the only thing that actually worked.
+	get_viewport().size_changed.connect(_fit)
+	_fit()
+
+
+## Match the viewport exactly. Called on entry and on every window resize.
+func _fit() -> void:
+	position = Vector2.ZERO
+	size = get_viewport_rect().size
+	if visible:
+		queue_redraw()
 
 
 ## Drive the tube. `ads` is the shoulder blend, `scoped` whether the weapon carries a
@@ -73,23 +89,45 @@ func _draw() -> void:
 	if _amount <= 0.001:
 		return
 	var mid: Vector2 = size * 0.5
+	if size.x < 2.0 or size.y < 2.0:
+		return
 	# The tube opens up as the weapon comes to the shoulder: at half-shoulder the circle
 	# is wider than the screen, so the mask is invisible and only closes in as you commit.
 	var full: float = minf(size.x, size.y) * 0.5 * tube_fraction
-	var wide: float = maxf(size.x, size.y)
+	var wide: float = size.length()
 	var radius: float = lerpf(wide, full, _amount)
 
-	# One annulus, from the tube edge out past every corner. `draw_arc` centres its
-	# stroke on the radius it is given, hence the half-width offset.
-	var band: float = wide * 2.0
-	draw_arc(mid, radius + band * 0.5, 0.0, TAU, 128, mask_color, band, false)
-	draw_arc(mid, radius, 0.0, TAU, 128, ring_color, 3.0, true)
+	_draw_mask(mid, radius, wide)
+	draw_arc(mid, radius, 0.0, TAU, 96, ring_color, 3.0, true)
 
 	var ink: Color = reticle_color
 	ink.a *= _amount
 	_draw_cross(mid, radius, ink)
 	if _reticle == Reticle.MIL_DOT:
 		_draw_mils(mid, radius, ink)
+
+
+## Black out everything outside the tube, as a ring of quads.
+##
+## NOT one `draw_arc` with a screen-wide stroke, which is what this was: Godot draws an
+## arc as a polyline, and at a width of two thousand pixels the segments overlap so
+## badly that nothing usable comes out. A strip of quads between an inner circle and an
+## outer one far past every corner is exact, and ninety-six of them is nothing for a
+## surface that only redraws when the state changes.
+func _draw_mask(mid: Vector2, radius: float, wide: float) -> void:
+	var segs: int = 96
+	var outer: float = radius + wide
+	for i in segs:
+		var a0: float = TAU * float(i) / float(segs)
+		var a1: float = TAU * float(i + 1) / float(segs)
+		var d0 := Vector2(cos(a0), sin(a0))
+		var d1 := Vector2(cos(a1), sin(a1))
+		draw_colored_polygon(
+			PackedVector2Array(
+				[mid + d0 * radius, mid + d1 * radius, mid + d1 * outer, mid + d0 * outer]
+			),
+			mask_color
+		)
 
 
 ## The crosshair: four spokes from the tube wall toward the middle, stopping short so

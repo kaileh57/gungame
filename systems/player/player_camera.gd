@@ -80,6 +80,8 @@ signal zoom_changed(level: float, index: int, scoped: bool)
 ## Draw the sniper-scope picture when a scoped weapon is shouldered. Off is for a
 ## display stand or a cutscene, which has a camera but no shooter.
 @export var scope_overlay: bool = true
+## Shoulder blend past which a scope tube replaces the hands entirely.
+@export_range(0.5, 1.0, 0.01) var scope_hides_hands: float = 0.90
 ## How far into the shoulder the magnification wheel takes over from weapon switching.
 @export_range(0.1, 1.0, 0.01) var zoom_cycle_ads: float = 0.55
 ## Optional. A `WeaponHolster` whose equipped `GunSpec` supplies the zoom ladder.
@@ -107,6 +109,7 @@ var _holster: WeaponHolster = null
 var _zoom_levels: PackedFloat32Array = PackedFloat32Array([1.15])
 var _scoped: bool = false
 var _scope: ScopeOverlay = null
+var _viewmodel: ViewmodelPass = null
 var _roll: float = 0.0
 var _fov: float = 78.0
 ## The movement-driven field of view before the ADS blend, rate-limited on its own so a
@@ -154,6 +157,7 @@ func _mount_scope() -> void:
 	layer.name = "ScopeLayer"
 	layer.layer = 64
 	add_child(layer)
+	_viewmodel = get_node_or_null(^"../Viewmodel") as ViewmodelPass
 	_scope = ScopeOverlay.new()
 	_scope.name = "ScopeOverlay"
 	layer.add_child(_scope)
@@ -288,6 +292,10 @@ func _aim(dt: float) -> void:
 
 	if _scope != null:
 		_scope.set_state(_player.ads, _scoped, current_zoom())
+		# The hands go away once the tube has actually closed, not the instant the
+		# weapon starts coming up, or the gun would vanish mid-raise.
+		if _viewmodel != null:
+			_viewmodel.set_suppressed(_scoped and _player.ads >= scope_hides_hands)
 
 	var sp: float = _player.speed
 	var move: float = fov_base

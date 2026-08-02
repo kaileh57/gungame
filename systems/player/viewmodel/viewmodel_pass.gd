@@ -77,6 +77,8 @@ extends CanvasLayer
 var _eye: Camera3D = null
 var _player: PlayerController = null
 var _container: SubViewportContainer = null
+## Set while a scope tube has replaced the hands. See `set_suppressed`.
+var _suppressed: bool = false
 var _view: SubViewport = null
 var _cam: Camera3D = null
 var _key: DirectionalLight3D = null
@@ -118,9 +120,21 @@ func _exit_tree() -> void:
 		GameSettings.unregister_viewport(_view)
 
 
+## Hide the hands entirely, for the duration of something that replaces them.
+##
+## A SCOPE PICTURE WITH A RIFLE IN IT IS NOT A SCOPE PICTURE. Looking down a tube you
+## see the target and nothing else — leaving the weapon and its ammunition plate drawn
+## inside the circle is what made the first working tube still read wrong. Routed
+## through the same switch freecam uses, so the gun viewport genuinely stops rendering
+## rather than being drawn and covered: at 4x-9x magnification the pass is the most
+## expensive thing on screen and it is completely invisible.
+func set_suppressed(value: bool) -> void:
+	_suppressed = value
+
+
 func _process(_delta: float) -> void:
 	# Freecam is a debug view of the world, not of your hands.
-	var showing: bool = not _player.freecam_active
+	var showing: bool = not _player.freecam_active and not _suppressed
 	if _container.visible != showing:
 		_container.visible = showing
 		_view.render_target_update_mode = (
