@@ -679,7 +679,11 @@ func _on_round_landed(collider: Object, at: Vector3, _normal: Vector3, damage: f
 		return
 	_hud.hit_mark(not actor.alive, false)
 	if show_damage_pops:
-		_hud.pop(at, str(roundi(damage)))
+		# What the body ACTUALLY took, not what the weapon offered. `report_hit` has
+		# already resolved the round against this machine's copy, so armour and the zone
+		# multiplier are both in by now.
+		var landed: float = actor.damage_taken()
+		_hud.pop(at, str(roundi(landed if landed > 0.0 else damage)))
 
 
 ## The direction the round was travelling, near enough for the host to reproduce

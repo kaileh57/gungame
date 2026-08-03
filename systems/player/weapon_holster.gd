@@ -322,6 +322,9 @@ func bind_weapon(weapon: Weapon) -> void:
 	_weapon.fired.connect(_on_weapon_fired)
 	_weapon.state_changed.connect(_on_weapon_state)
 	_weapon.ammo_changed.connect(_on_weapon_ammo)
+	var mag: GunAmmo = _weapon.ammo()
+	if mag != null and not mag.short_loaded.is_connected(_on_short_loaded):
+		mag.short_loaded.connect(_on_short_loaded)
 	_weapon.tree_exiting.connect(_on_weapon_leaving)
 	if _weapon.jam != null:
 		_weapon.jam.jammed.connect(_on_weapon_jammed)
@@ -560,6 +563,13 @@ func _on_weapon_state(state: StringName) -> void:
 func _on_weapon_ammo(loaded: int, _reserve: int) -> void:
 	if _ammo != null and _weapon != null:
 		_ammo.set_ammo(loaded, _weapon.ammo().capacity())
+
+
+## The magazine seated short. Told to the plate so the missing rounds read as a worn feed
+## rather than as a reload that failed.
+func _on_short_loaded(missing: int) -> void:
+	if _ammo != null:
+		_ammo.set_short_loaded(missing)
 
 
 func _on_weapon_jammed() -> void:

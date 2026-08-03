@@ -159,9 +159,20 @@ func full_duration() -> float:
 func expected_duration(ammo: GunAmmo) -> float:
 	if not _staged:
 		return _reload_time
+	return _reload_time * tube_start_fraction + float(pending_shells(ammo)) * _shell_time
+
+
+## How many shells a tube reload will actually seat: what is missing, capped by what is
+## left in the pouch. Zero for anything that swaps a whole magazine.
+##
+## Public because the AUDIO needs it. `GunAudio.reload_sequence` was clacking once per
+## round of CAPACITY and squeezing them into the real, shorter duration, so topping a
+## six-round tube up by three played six shells at double speed.
+func pending_shells(ammo: GunAmmo) -> int:
+	if not _staged:
+		return 0
 	var missing: int = maxi(ammo.capacity() - ammo.loaded(), 0)
-	var shells: int = missing if ammo.reserve() < 0 else mini(missing, ammo.reserve())
-	return _reload_time * tube_start_fraction + float(shells) * _shell_time
+	return missing if ammo.reserve() < 0 else mini(missing, ammo.reserve())
 
 
 func cycle_duration() -> float:

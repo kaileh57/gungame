@@ -118,6 +118,11 @@ const PICTURE_MEMORY: float = 0.5
 @export_range(2.0, 40.0, 0.5) var min_radius: float = 7.0
 @export_range(0.5, 4.0, 0.1) var tick_width: float = 1.6
 @export var reticle_color: Color = Color(0.94, 0.92, 0.88, 0.85)
+## Bracket a hostile you are pointing at. Off: the crosshair already says where you are
+## aiming and a hit marker says when you connected, so a third mark is clutter in a fight.
+@export var select_hostiles: bool = false
+## Bracket ordinary props. Off for the same reason.
+@export var select_objects: bool = false
 
 @export_group("Dot")
 ## Radius of the centre pip. Two pixels reads at 1600x900 without becoming chrome.
@@ -677,7 +682,18 @@ func _draw_cone(centre: Vector2, fade: float) -> void:
 ## The bestiary's bead, in two dimensions. A framed object when there is one, and a
 ## mark on the surface when there is not — which is still an aim indicator, and is
 ## the reason this style alone never leaves the screen empty.
+## Mark what you are aiming at, but ONLY when the answer is worth reading.
+##
+## THIS USED TO MARK EVERYTHING. Bare ground, a wall, the sky, every body and every prop
+## got a bracket or a set of ticks pinned to it, so a marker rode the aim point at all
+## times and the busiest moment on screen was the one where you were trying to shoot
+## something. A selector is an affordance, not a cursor: it is worth drawing when it tells
+## you that a thing can be WORKED, or that it would refuse. A hostile does not need one,
+## because you already have a crosshair on it and a hit marker when you connect, and bare
+## ground needs one least of all.
 func _draw_selector(centre: Vector2, fade: float) -> void:
+	if not _selector_wanted():
+		return
 	var color: Color = _selector_color()
 	color.a *= fade
 	if not _rect_valid:
@@ -791,6 +807,19 @@ func _draw_marker(centre: Vector2) -> void:
 ## Gold for something a press would work, hot accent for something a round would,
 ## warn for a control that would refuse, and dim bone for ground. Every one of them
 ## is out of `Palette` — the selector invents no hue.
+## Only controls and refusals. `select_objects` and `select_hostiles` exist because a
+## display stand or a debug view may genuinely want the old everything-marked behaviour.
+func _selector_wanted() -> bool:
+	match _kind:
+		Kind.CONTROL, Kind.REFUSED:
+			return true
+		Kind.HOSTILE:
+			return select_hostiles
+		Kind.OBJECT:
+			return select_objects
+	return false
+
+
 func _selector_color() -> Color:
 	match _kind:
 		Kind.CONTROL:

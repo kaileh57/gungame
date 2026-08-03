@@ -191,12 +191,16 @@ func click(hz: float, at: Vector3) -> void:
 ## of shells and a final bolt drop, a cylinder is three distinct movements, and
 ## everything else is a magazine out, in and home. The pattern is the feed's, so
 ## you can hear what somebody is reloading before you see it.
-func reload_sequence(spec: GunSpec, seconds: float, at: Vector3) -> void:
+## `shells` is how many rounds a TUBE reload will actually seat. It used to be inferred
+## from `spec.magazine`, i.e. the capacity — so a three-round top-up of a six-round tube
+## played six clacks compressed into the shorter duration, at double speed.
+func reload_sequence(spec: GunSpec, seconds: float, at: Vector3, shells: int = 0) -> void:
 	if _bank == null or _bank.clack == null or spec == null or seconds <= 0.0:
 		return
 	var feed := String(spec.feed)
 	if feed == "tube":
-		var n: int = clampi(spec.magazine, 1, 10)
+		var want: int = shells if shells > 0 else spec.magazine
+		var n: int = clampi(want, 1, 10)
 		for i: int in n:
 			var hz: float = 1500.0 + _rand.next() * 500.0
 			_clack(_bank.clack, at, seconds * (0.08 + 0.82 * float(i) / float(n)), hz, 0.16)

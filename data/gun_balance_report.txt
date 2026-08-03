@@ -612,5 +612,5 @@ non-finite / absurd values: none
   built 4 weapons, 18 mesh instances
   holstered Boxgun-Spitter (2.55 kg, 418 mm), rerolled barrel 11 -> 69, name Boxgun Mk.VIII
 
-elapsed              10406 ms
+elapsed              10041 ms
 FAILURES             0

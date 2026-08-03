@@ -245,6 +245,16 @@ func disengage() -> void:
 		_body.clear_aim()
 
 
+## What the LAST hit actually cost this body, after armour and after the zone multiplier.
+##
+## The number a damage pop should show. The arena was popping the weapon's raw damage,
+## which is the figure before `apply_damage` takes `profile.armour` off it and before
+## `species_stats.apply_damage` applies the head/core/limb multiplier — so an armoured
+## body showed a number it had not taken and the player could not tell armour existed.
+func damage_taken() -> float:
+	return _last_damage
+
+
 ## `AITarget` routes every hit here. `attacker` may be null for blast damage.
 func apply_damage(amount: float, from_position: Vector3, _attacker: Node) -> void:
 	if not alive:

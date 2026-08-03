@@ -35,6 +35,8 @@ const SCENE_PATH: String = "res://demos/range/ammo_counter.tscn"
 @export_range(0.05, 0.5, 0.01) var low_fraction: float = 0.25
 ## Shown instead of the count while the action is jammed.
 @export var jam_text: String = "JAM"
+## Seconds the count is held in the low colour after a magazine seated short.
+@export_range(0.0, 6.0, 0.1) var short_flash_seconds: float = 1.6
 ## Fraction of the ring each fill bar spans, in sweep order. Written by the bake off
 ## the ring's own dimensions; the default is the shipped plate's, so a counter built
 ## by hand still fills evenly instead of not at all.
@@ -46,6 +48,7 @@ var _magazine: int = 0
 var _capacity: int = 0
 var _jammed: bool = false
 var _clear: float = 0.0
+var _short_left: float = 0.0
 var _fills: Array[MeshInstance3D] = []
 
 @onready var _count: Label3D = $Count
@@ -54,6 +57,7 @@ var _fills: Array[MeshInstance3D] = []
 
 
 func _ready() -> void:
+	set_process(false)
 	_collect_fills()
 	_refresh()
 	_apply_ring()
@@ -66,6 +70,28 @@ static func spawn() -> AmmoCounter:
 	if packed == null:
 		return null
 	return packed.instantiate() as AmmoCounter
+
+
+## A fresh magazine did not seat its full count.
+##
+## `GunAmmo` has emitted `short_loaded` since the port and NOTHING LISTENED, so a worn feed
+## handed you 11 of 12 with no explanation at all and read as the reload being broken. It
+## is a real mechanic — a rough magazine fails to seat up to 16% of its rounds — and a
+## mechanic the player cannot see is indistinguishable from a bug.
+func set_short_loaded(_missing: int) -> void:
+	_short_left = short_flash_seconds
+	set_process(_short_left > 0.0)
+	_refresh()
+
+
+func _process(delta: float) -> void:
+	if _short_left <= 0.0:
+		return
+	_short_left -= delta
+	if _short_left <= 0.0:
+		_short_left = 0.0
+		set_process(false)
+		_refresh()
 
 
 ## Update the count. Call it when the number changes, not every frame.
@@ -145,6 +171,11 @@ func _refresh() -> void:
 	if _jammed:
 		_count.text = jam_text
 		_count.modulate = empty_color
+	elif _short_left > 0.0:
+		# The number is honest; the colour says the magazine is not full because it did
+		# not seat, rather than because you have been shooting.
+		_count.text = str(_magazine)
+		_count.modulate = low_color
 	else:
 		_count.text = str(_magazine)
 		_count.modulate = _state_color()

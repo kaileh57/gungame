@@ -192,7 +192,10 @@ func reload() -> void:
 	_set_state(STATE_RELOADING)
 	if _audio != null:
 		_audio.reload_sequence(
-			_spec, reload_action.expected_duration(_ammo), muzzle_transform().origin
+			_spec,
+			reload_action.expected_duration(_ammo),
+			muzzle_transform().origin,
+			reload_action.pending_shells(_ammo)
 		)
 
 

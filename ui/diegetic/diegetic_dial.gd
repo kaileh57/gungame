@@ -73,9 +73,19 @@ func step_selection(direction: int) -> void:
 		option_selected.emit(selected_index(), selected_text())
 
 
-func _actuate(local_point: Vector3) -> bool:
+## A dial always advances by one, whatever hit it and wherever on the face it landed.
+##
+## IT USED TO READ THE HIT POSITION: right of centre stepped up, left stepped down. That
+## is unpredictable in practice, because you are working these controls with BULLETS from
+## across a room — the half of the knob you hit is a function of your aim wobble and the
+## angle you happen to be standing at, not of what you meant. Two rounds fired at the same
+## dial from two positions would move it opposite ways, and a burst would walk it back and
+## forth around one detent. One direction per hit is predictable, and `wraps` means you can
+## still reach every option; the caller that genuinely wants the other way has
+## `step_selection(-1)`.
+func _actuate(_local_point: Vector3) -> bool:
 	var before: int = selected_index()
-	set_value(float(before + (1 if local_point.x >= 0.0 else -1)))
+	set_value(float(before + 1))
 	if selected_index() == before:
 		return false
 	option_selected.emit(selected_index(), selected_text())

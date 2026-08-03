@@ -56,6 +56,9 @@ const MAX_REPORTED: int = 16
 ## same reason — past a handful of streaks in one blast nobody can see a sixth —
 ## and matching it keeps a twelve-pellet shotgun off the wire twelve times a round.
 const MAX_TRACERS: int = 5
+## Where a spent case leaves the port, in the PORT'S OWN FRAME: out to the right, up, and
+## a little back. Rotated into the world at the moment of the shot.
+const SHELL_EJECT: Vector3 = Vector3(2.6, 1.7, 0.3)
 
 @export var player_path: NodePath = NodePath("../Player")
 ## Reserve ammunition is unlimited here. It is a range; you are not carrying it.
@@ -299,7 +302,11 @@ func _on_fired(origin: Vector3, direction: Vector3, _spec_fired: GunSpec) -> voi
 	if node != null:
 		var eject: Node3D = node.get_node_or_null(^"Eject") as Node3D
 		if eject != null:
-			VfxService.spawn_shell(eject, Vector3(2.6, 1.7, 0.3))
+			# TRANSFORMED BY THE PORT, NOT PASSED RAW. `VfxService.shell` documents its
+			# velocity as WORLD-space, and this handed it a constant — so every casing in
+			# the game flew the same way along world +X regardless of which way the gun was
+			# pointing. Turn round and the brass came out of the receiver sideways.
+			VfxService.spawn_shell(eject, eject.global_transform.basis * SHELL_EJECT)
 	_report_shot(origin, direction)
 
 
@@ -371,6 +378,20 @@ func _on_shot_seen(_id: int, from: Vector3, to: Vector3, surface: int) -> void:
 	if line.length_squared() < 1.0e-4:
 		return
 	VfxService.spawn_tracer(from, to, 0.0)
+	# BRASS IS SYNCED AT SPAWN, NOT SIMULATED ACROSS THE WIRE. Everybody saw their own
+	# casings and nobody else's, so a bay with four people shooting had one stream of brass
+	# in it. The round already replicates as a line, and that line carries enough to place
+	# the ejection: the bore is the direction, and right is bore x up. Each machine then
+	# tumbles its own copy, which costs nothing and needs no further traffic — two players
+	# watching the same case land a centimetre apart is not a thing anyone can perceive.
+	var bore: Vector3 = -line.normalized()
+	var right: Vector3 = bore.cross(Vector3.UP)
+	if right.length_squared() > 1.0e-6:
+		right = right.normalized()
+		var vel: Vector3 = (
+			right * SHELL_EJECT.x + Vector3.UP * SHELL_EJECT.y + bore * SHELL_EJECT.z
+		)
+		VfxService.spawn_shell_from(from, vel)
 	if surface >= 0:
 		VfxService.spawn_impact(to, line.normalized(), surface, 0.8)
 

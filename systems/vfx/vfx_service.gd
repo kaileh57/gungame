@@ -152,6 +152,11 @@ static func spawn_shell(at: Node3D, velocity: Vector3) -> void:
 		_hub.shell(at, velocity)
 
 
+static func spawn_shell_from(position: Vector3, velocity: Vector3) -> void:
+	if _hub != null:
+		_hub.shell_from(position, velocity)
+
+
 ## Powder smoke, dust, a rocket trail. `heavy` picks the 2.10 m sprite cloud over
 ## the 0.62 m one, and with it the wider near-camera cull.
 static func spawn_puff(
@@ -345,6 +350,13 @@ func shell(at: Node3D, velocity: Vector3) -> void:
 	if v.length_squared() < 1.0e-6:
 		v = at.global_transform.basis * shell_default_velocity
 	_shells.eject(at.global_position, v, _ground_y)
+
+
+## A case from a bare position and a world-space velocity, for a shot somebody else fired.
+## A remote round arrives as a line and a surface id, not as a node, so there is no eject
+## port to read a basis off.
+func shell_from(position: Vector3, velocity: Vector3) -> void:
+	_shells.eject(position, velocity, _ground_y)
 
 
 func puff(
