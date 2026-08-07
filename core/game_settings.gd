@@ -315,8 +315,6 @@ var ui_scale: float:
 	get:
 		return clampf(float(_values[&"ui_scale"]), UI_SCALE_MIN, UI_SCALE_MAX)
 
-## Pointer mode at the moment the window lost focus, so it can be handed back exactly.
-var _mouse_before_blur: Input.MouseMode = Input.MOUSE_MODE_VISIBLE
 var _values: Dictionary = {}
 var _environments: Array[Environment] = []
 var _viewports: Array[Viewport] = []
@@ -349,17 +347,19 @@ var _pushed_size: Vector2i = Vector2i.ZERO
 ## when it was still rendering. That is the second half of the alt-tab hang, the first
 ## being exclusive fullscreen; this half made a recoverable situation look terminal.
 ##
-## The previous mode is remembered rather than assumed, so returning to a menu that
-## deliberately shows the cursor does not silently recapture it.
+## ON THE WAY BACK IN IT ASKS, IT DOES NOT REMEMBER. The first version of this restored
+## the pointer mode recorded at focus-out, and that broke the pause menu in multiplayer —
+## which is precisely when you alt-tab between two windows. Focus returning while the menu
+## was open re-captured the cursor OVER it, and every button became unclickable. A
+## remembered value describes a world that may have moved on; `SceneRouter` is the single
+## owner of this question and already computes the right answer from the live state.
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			_mouse_before_blur = Input.mouse_mode
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif what == NOTIFICATION_APPLICATION_FOCUS_IN:
-		if _mouse_before_blur == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		_mouse_before_blur = Input.MOUSE_MODE_VISIBLE
+		if SceneRouter != null:
+			SceneRouter.sync_mouse()
 
 
 func _ready() -> void:

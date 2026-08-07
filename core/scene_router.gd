@@ -99,6 +99,8 @@ var current_demo: String = ""
 var _runtime_demos: Dictionary = {}
 var _fade_layer: CanvasLayer = null
 var _fade_rect: ColorRect = null
+## Last pointer decision, so it can be asserted without a display server.
+var _mouse_wanted: bool = false
 var _fade_seconds: float = 0.28
 var _menu_scene: String = "res://ui/main_menu.tscn"
 var _paused: bool = false
@@ -280,10 +282,30 @@ func set_paused(value: bool) -> void:
 	pause_changed.emit(value)
 
 
+## Re-assert the pointer mode from the current state.
+##
+## For anything that had to release the cursor for its own reasons and now needs it put
+## back the way the GAME wants it, rather than the way it happened to be. Restoring a
+## remembered value is what broke the pause menu: focus returning while the menu was open
+## re-captured the mouse over it and every button became unclickable.
+func sync_mouse() -> void:
+	_sync_mouse()
+
+
 ## Force the mouse mode. Only for the rare case where a demo wants the cursor
 ## while unpaused, such as the weapon bench; call it again with `false` after.
 func set_mouse_captured(captured: bool) -> void:
+	# Recorded as well as applied. `Input.mouse_mode` is owned by the display server and a
+	# headless run has no window to own it, so reading it back proves nothing there — every
+	# assertion about pointer capture has to be made against the INTENT.
+	_mouse_wanted = captured
 	Input.mouse_mode = (Input.MOUSE_MODE_CAPTURED if captured else Input.MOUSE_MODE_VISIBLE)
+
+
+## Whether the router currently believes the pointer should be captured. The testable
+## half of `set_mouse_captured`.
+func mouse_should_be_captured() -> bool:
+	return _mouse_wanted
 
 
 func main_menu_scene() -> String:
