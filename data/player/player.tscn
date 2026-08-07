@@ -1,30 +1,31 @@
 [gd_scene format=3]
 
-[ext_resource type="Script" path="res://systems/player/player_controller.gd" id="1_o58jl"]
-[ext_resource type="Script" path="res://systems/player/player_slide.gd" id="2_6egwn"]
-[ext_resource type="Script" path="res://systems/player/player_camera.gd" id="3_mtagk"]
-[ext_resource type="Script" path="res://systems/player/weapon_holster.gd" id="4_cxlcq"]
-[ext_resource type="Script" path="res://systems/player/player_view_effects.gd" id="5_ycsl2"]
-[ext_resource type="Script" path="res://systems/player/viewmodel/viewmodel_pass.gd" id="6_gt7j7"]
-[ext_resource type="Material" path="res://art/materials/sky_material.tres" id="7_cgp3m"]
-[ext_resource type="Script" path="res://systems/player/freecam_controller.gd" id="8_d81nt"]
+[ext_resource type="Script" path="res://systems/player/player_controller.gd" id="1_6egwn"]
+[ext_resource type="Script" path="res://systems/player/player_slide.gd" id="2_mtagk"]
+[ext_resource type="Script" path="res://systems/player/player_camera.gd" id="3_cxlcq"]
+[ext_resource type="Script" path="res://systems/player/weapon_holster.gd" id="4_ycsl2"]
+[ext_resource type="Script" path="res://systems/player/player_view_effects.gd" id="5_gt7j7"]
+[ext_resource type="Script" path="res://systems/player/player_footsteps.gd" id="6_cgp3m"]
+[ext_resource type="Script" path="res://systems/player/viewmodel/viewmodel_pass.gd" id="7_d81nt"]
+[ext_resource type="Material" path="res://art/materials/sky_material.tres" id="8_m6jpm"]
+[ext_resource type="Script" path="res://systems/player/freecam_controller.gd" id="9_qto73"]
 
-[sub_resource type="Resource" id="Resource_m6jpm"]
+[sub_resource type="Resource" id="Resource_yg7eq"]
 resource_local_to_scene = true
-script = ExtResource("2_6egwn")
+script = ExtResource("2_mtagk")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_qto73"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h33c8"]
 resource_local_to_scene = true
 height = 1.8
 radius = 0.34
 
-[sub_resource type="Sky" id="Sky_yg7eq"]
-sky_material = ExtResource("7_cgp3m")
+[sub_resource type="Sky" id="Sky_qwadb"]
+sky_material = ExtResource("8_m6jpm")
 process_mode = 3
 radiance_size = 2
 
-[sub_resource type="Environment" id="Environment_h33c8"]
-sky = SubResource("Sky_yg7eq")
+[sub_resource type="Environment" id="Environment_lpvls"]
+sky = SubResource("Sky_qwadb")
 ambient_light_source = 3
 ambient_light_energy = 0.42
 reflected_light_source = 2
@@ -34,80 +35,83 @@ adjustment_enabled = true
 adjustment_contrast = 1.04
 adjustment_saturation = 0.9
 
-[node name="Player" type="CharacterBody3D" unique_id=198506092]
+[node name="Player" type="CharacterBody3D" unique_id=590852415]
 collision_layer = 4
 collision_mask = 3
 floor_max_angle = 0.8029
 safe_margin = 0.008
-script = ExtResource("1_o58jl")
-slide = SubResource("Resource_m6jpm")
+script = ExtResource("1_6egwn")
+slide = SubResource("Resource_yg7eq")
 
-[node name="Body" type="CollisionShape3D" parent="." unique_id=379742008]
+[node name="Body" type="CollisionShape3D" parent="." unique_id=53041383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CylinderShape3D_qto73")
+shape = SubResource("CylinderShape3D_h33c8")
 
-[node name="Eye" type="Camera3D" parent="." unique_id=982428220]
+[node name="Eye" type="Camera3D" parent="." unique_id=856365083]
 top_level = true
 cull_mask = 1048447
 current = true
 fov = 78.0
 near = 0.06
 far = 1400.0
-script = ExtResource("3_mtagk")
+script = ExtResource("3_cxlcq")
 
-[node name="Holster" type="Node3D" parent="Eye" unique_id=128215305]
-script = ExtResource("4_cxlcq")
+[node name="Holster" type="Node3D" parent="Eye" unique_id=1908081728]
+script = ExtResource("4_ycsl2")
 player_path = NodePath("../..")
 
-[node name="Hand" type="Node3D" parent="Eye/Holster" unique_id=229683932]
+[node name="Hand" type="Node3D" parent="Eye/Holster" unique_id=1602509943]
 rotation_order = 0
 
-[node name="Lift" type="Node3D" parent="Eye/Holster/Hand" unique_id=1372218858]
+[node name="Lift" type="Node3D" parent="Eye/Holster/Hand" unique_id=240683763]
 
-[node name="ViewmodelKey" type="DirectionalLight3D" parent="Eye" unique_id=1410419179]
+[node name="ViewmodelKey" type="DirectionalLight3D" parent="Eye" unique_id=2067503147]
 transform = Transform3D(0.8290376, -0.34427354, 0.44065002, 0, 0.7880108, 0.6156615, -0.5591929, -0.51040655, 0.65329057, 0, 0, 0)
 layers = 128
 light_color = Color(1, 0.94, 0.86, 1)
 light_energy = 2.1
 
-[node name="ViewmodelFill" type="DirectionalLight3D" parent="Eye" unique_id=1103462961]
+[node name="ViewmodelFill" type="DirectionalLight3D" parent="Eye" unique_id=1766346760]
 transform = Transform3D(-0.61566144, -0.29519403, -0.7306309, 0, 0.92718387, -0.37460658, 0.7880108, -0.23063083, -0.57083136, 0, 0, 0)
 layers = 128
 light_color = Color(0.62, 0.68, 0.8, 1)
 light_energy = 0.55
 light_specular = 0.15
 
-[node name="Effects" type="Node" parent="." unique_id=25057985]
-script = ExtResource("5_ycsl2")
+[node name="Effects" type="Node" parent="." unique_id=184313615]
+script = ExtResource("5_gt7j7")
 
-[node name="Viewmodel" type="CanvasLayer" parent="." unique_id=208821322]
+[node name="Footsteps" type="Node3D" parent="." unique_id=291466495]
+script = ExtResource("6_cgp3m")
+
+[node name="Viewmodel" type="CanvasLayer" parent="." unique_id=762349839]
 layer = 0
-script = ExtResource("6_gt7j7")
+script = ExtResource("7_d81nt")
 
-[node name="Screen" type="SubViewportContainer" parent="Viewmodel" unique_id=1353775825]
+[node name="Screen" type="SubViewportContainer" parent="Viewmodel" unique_id=849354057]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 stretch = true
 
-[node name="View" type="SubViewport" parent="Viewmodel/Screen" unique_id=231053751]
+[node name="View" type="SubViewport" parent="Viewmodel/Screen" unique_id=720417760]
 transparent_bg = true
 handle_input_locally = false
 positional_shadow_atlas_size = 0
 render_target_update_mode = 4
 
-[node name="GunCam" type="Camera3D" parent="Viewmodel/Screen/View" unique_id=1499165581]
+[node name="GunCam" type="Camera3D" parent="Viewmodel/Screen/View" unique_id=1160636834]
 cull_mask = 128
-environment = SubResource("Environment_h33c8")
+environment = SubResource("Environment_lpvls")
 current = true
 fov = 58.0
 near = 0.006
 far = 6.0
 
-[node name="Freecam" type="Camera3D" parent="." unique_id=266489441]
+[node name="Freecam" type="Camera3D" parent="." unique_id=8706220]
 top_level = true
 cull_mask = 1048447
 far = 1400.0
-script = ExtResource("8_d81nt")
+script = ExtResource("9_qto73")
 player_path = NodePath("..")

@@ -28,6 +28,7 @@ const FREECAM_PATH: String = "res://data/player/freecam.tscn"
 const SCRIPT_CONTROLLER: String = "res://systems/player/player_controller.gd"
 const SCRIPT_CAMERA: String = "res://systems/player/player_camera.gd"
 const SCRIPT_EFFECTS: String = "res://systems/player/player_view_effects.gd"
+const SCRIPT_FOOTSTEPS: String = "res://systems/player/player_footsteps.gd"
 const SCRIPT_HOLSTER: String = "res://systems/player/weapon_holster.gd"
 const SCRIPT_VIEWMODEL: String = "res://systems/player/viewmodel/viewmodel_pass.gd"
 const SCRIPT_FREECAM: String = "res://systems/player/freecam_controller.gd"
@@ -106,6 +107,7 @@ func _build_player() -> CharacterBody3D:
 	var root: CharacterBody3D = _build_body()
 	var eye: Camera3D = _add_camera(root)
 	_add_effects(root)
+	_add_footsteps(root)
 	_add_holster(eye)
 	_add_viewmodel_lights(eye)
 	_add_viewmodel(root)
@@ -168,6 +170,18 @@ func _add_effects(root: CharacterBody3D) -> void:
 	fx.name = "Effects"
 	fx.set(&"controller_path", NodePath(".."))
 	root.add_child(fx)
+
+
+## The stride, which the controller has been emitting to nobody. Baked into the prefab so
+## every level that instances a player can hear itself walk, rather than each demo
+## remembering to add one -- the same reasoning that put the ammunition plate on the
+## holster and the reticle on the camera.
+func _add_footsteps(root: CharacterBody3D) -> void:
+	var script: Script = load(SCRIPT_FOOTSTEPS)
+	var feet: Node = script.new()
+	feet.name = "Footsteps"
+	feet.set(&"controller_path", NodePath(".."))
+	root.add_child(feet)
 
 
 ## The holster hangs off the eye, in the ordinary tree, so its hotkeys reach it and its

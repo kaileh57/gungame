@@ -325,6 +325,9 @@ func bind_weapon(weapon: Weapon) -> void:
 	var mag: GunAmmo = _weapon.ammo()
 	if mag != null and not mag.short_loaded.is_connected(_on_short_loaded):
 		mag.short_loaded.connect(_on_short_loaded)
+		mag.misfed.connect(_on_misfed)
+	if _weapon.reload_action != null and not _weapon.reload_action.fumbled.is_connected(_on_fumbled):
+		_weapon.reload_action.fumbled.connect(_on_fumbled)
 	_weapon.tree_exiting.connect(_on_weapon_leaving)
 	if _weapon.jam != null:
 		_weapon.jam.jammed.connect(_on_weapon_jammed)
@@ -570,6 +573,20 @@ func _on_weapon_ammo(loaded: int, _reserve: int) -> void:
 func _on_short_loaded(missing: int) -> void:
 	if _ammo != null:
 		_ammo.set_short_loaded(missing)
+
+
+## A shell went past the gate and onto the floor. It cost its own time and loaded nothing,
+## so without a word the reload just takes longer for no reason anybody can see.
+func _on_fumbled() -> void:
+	if _ammo != null:
+		_ammo.flag_feed_fault("DROP")
+
+
+## The stack stripped rounds it should not have. `lost` is what went with the shot beyond
+## the one actually fired -- ammunition that simply vanishes unless the plate says so.
+func _on_misfed(_lost: int) -> void:
+	if _ammo != null:
+		_ammo.flag_feed_fault("FEED")
 
 
 func _on_weapon_jammed() -> void:

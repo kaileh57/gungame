@@ -49,6 +49,7 @@ var _capacity: int = 0
 var _jammed: bool = false
 var _clear: float = 0.0
 var _short_left: float = 0.0
+var _fault_text: String = ""
 var _fills: Array[MeshInstance3D] = []
 
 @onready var _count: Label3D = $Count
@@ -72,16 +73,24 @@ static func spawn() -> AmmoCounter:
 	return packed.instantiate() as AmmoCounter
 
 
-## A fresh magazine did not seat its full count.
+## Something in the feed went wrong: a magazine seated short, a shell was dropped on the
+## way to the gate, or the stack stripped a round it should not have.
 ##
-## `GunAmmo` has emitted `short_loaded` since the port and NOTHING LISTENED, so a worn feed
-## handed you 11 of 12 with no explanation at all and read as the reload being broken. It
-## is a real mechanic — a rough magazine fails to seat up to 16% of its rounds — and a
-## mechanic the player cannot see is indistinguishable from a bug.
-func set_short_loaded(_missing: int) -> void:
+## THREE MECHANICS, ALL INVISIBLE, ALL WORKING. `short_loaded`, `fumbled` and `misfed`
+## have been emitted since the port with NOTHING LISTENING, so a worn gun handed you 11 of
+## 12, ate a shell, or quietly lost a round, and every one of those read as the gun being
+## broken rather than as the gun being bad. They share one readout because they share one
+## meaning to the shooter: that did not go the way it should have.
+func flag_feed_fault(text: String = "") -> void:
 	_short_left = short_flash_seconds
+	_fault_text = text
 	set_process(_short_left > 0.0)
 	_refresh()
+
+
+## A fresh magazine did not seat its full count.
+func set_short_loaded(_missing: int) -> void:
+	flag_feed_fault()
 
 
 func _process(delta: float) -> void:
@@ -90,6 +99,7 @@ func _process(delta: float) -> void:
 	_short_left -= delta
 	if _short_left <= 0.0:
 		_short_left = 0.0
+		_fault_text = ""
 		set_process(false)
 		_refresh()
 
@@ -172,9 +182,9 @@ func _refresh() -> void:
 		_count.text = jam_text
 		_count.modulate = empty_color
 	elif _short_left > 0.0:
-		# The number is honest; the colour says the magazine is not full because it did
-		# not seat, rather than because you have been shooting.
-		_count.text = str(_magazine)
+		# The number is honest; the colour says the magazine is not full because the feed
+		# failed, rather than because you have been shooting. A fault with a name says it.
+		_count.text = _fault_text if not _fault_text.is_empty() else str(_magazine)
 		_count.modulate = low_color
 	else:
 		_count.text = str(_magazine)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://systems/player/freecam_controller.gd" id="1_mrobg"]
 
-[node name="Freecam" type="Camera3D" unique_id=1269616980]
+[node name="Freecam" type="Camera3D" unique_id=1718483987]
 top_level = true
 cull_mask = 1048447
 far = 1400.0
